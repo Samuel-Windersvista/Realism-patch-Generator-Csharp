@@ -1,6 +1,14 @@
-# Realism Patch Generator CSharp
+# SPT现实主义数值范围编辑生成器 v0.9
 
-这是可独立运行的现实主义数值生成器 C# 工程。当前核心迁移已经完成，CLI 与 GUI 都可直接运行，生成与审计流程都只依赖当前工程目录。
+这是可独立运行的现实主义数值生成器 C# 工程。当前核心迁移已经完成，CLI 与 GUI 都可直接运行，生成与检查未遵循规则物品流程都只依赖当前工程目录。
+
+当前版本定位：v0.9
+
+当前推荐先阅读以下文档：
+
+- docs/使用说明.md：GUI 与 CLI 的日常使用方式
+- docs/规则说明.md：当前规则文件结构、分类含义与编辑建议
+- CHANGELOG.md：当前版本变更记录
 
 当前已完成内容：
 
@@ -27,31 +35,31 @@
 	- ammo profile 推断
 	- special profile 修正
 	- penetration tier 推断与修正
-- C# 原生输出审计
+- C# 原生未遵循规则物品检查
 	- 可直接扫描 output 中的补丁结果
-	- 可输出 JSON 审计报告到 audit_reports
-	- 审计逻辑与 C# 生成器共用同一套规则推断能力
+	- 可输出 JSON 检查报告到 audit_reports
+	- 检查逻辑与 C# 生成器共用同一套规则推断能力
 
 当前仍保留为后续阶段的内容：
 
 - 更细粒度的数值一致性回归
-- GUI 正式设计与结构化规则编辑界面
+- GUI 进一步打磨与交互细节优化
 - 名称回归测试与更完整的自动化测试补齐
 
 运行 CLI：
 
 dotnet run --project RealismPatchGenerator.Cli
 
-执行输出审计：
+执行未遵循规则物品检查：
 
 dotnet run --project RealismPatchGenerator.Cli -- audit
 
 可选参数：
 
-- --output-dir 自定义待审计输出目录
+- --output-dir 自定义待检查输出目录
 - --report-file 自定义报告输出路径
 - --include-ok 将正常项也写入报告
-- --include-template-exports 将 output 下所有 json 一起审计
+- --include-template-exports 将 output 下所有 json 一起检查
 - --fail-on-violations 存在违规字段时返回非 0 退出码
 
 运行 GUI：

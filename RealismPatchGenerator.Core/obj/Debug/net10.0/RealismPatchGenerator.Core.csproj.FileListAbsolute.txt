@@ -10,3 +10,15 @@ E:\云文件\GitHub\Realism-patch-Generator\Realism-patch-Generator-Csharp\Reali
 E:\云文件\GitHub\Realism-patch-Generator\Realism-patch-Generator-Csharp\RealismPatchGenerator.Core\obj\Debug\net10.0\refint\RealismPatchGenerator.Core.dll
 E:\云文件\GitHub\Realism-patch-Generator\Realism-patch-Generator-Csharp\RealismPatchGenerator.Core\obj\Debug\net10.0\RealismPatchGenerator.Core.pdb
 E:\云文件\GitHub\Realism-patch-Generator\Realism-patch-Generator-Csharp\RealismPatchGenerator.Core\obj\Debug\net10.0\ref\RealismPatchGenerator.Core.dll
+e:\云文件\GitHub\Realism-patch-Generator-Csharp\RealismPatchGenerator.Core\bin\Debug\net10.0\RealismPatchGenerator.Core.deps.json
+e:\云文件\GitHub\Realism-patch-Generator-Csharp\RealismPatchGenerator.Core\bin\Debug\net10.0\RealismPatchGenerator.Core.dll
+e:\云文件\GitHub\Realism-patch-Generator-Csharp\RealismPatchGenerator.Core\bin\Debug\net10.0\RealismPatchGenerator.Core.pdb
+e:\云文件\GitHub\Realism-patch-Generator-Csharp\RealismPatchGenerator.Core\obj\Debug\net10.0\RealismPatchGenerator.Core.GeneratedMSBuildEditorConfig.editorconfig
+e:\云文件\GitHub\Realism-patch-Generator-Csharp\RealismPatchGenerator.Core\obj\Debug\net10.0\RealismPatchGenerator.Core.AssemblyInfoInputs.cache
+e:\云文件\GitHub\Realism-patch-Generator-Csharp\RealismPatchGenerator.Core\obj\Debug\net10.0\RealismPatchGenerator.Core.AssemblyInfo.cs
+e:\云文件\GitHub\Realism-patch-Generator-Csharp\RealismPatchGenerator.Core\obj\Debug\net10.0\RealismPatchGenerator.Core.csproj.CoreCompileInputs.cache
+e:\云文件\GitHub\Realism-patch-Generator-Csharp\RealismPatchGenerator.Core\obj\Debug\net10.0\RealismPatchGenerator.Core.sourcelink.json
+e:\云文件\GitHub\Realism-patch-Generator-Csharp\RealismPatchGenerator.Core\obj\Debug\net10.0\RealismPatchGenerator.Core.dll
+e:\云文件\GitHub\Realism-patch-Generator-Csharp\RealismPatchGenerator.Core\obj\Debug\net10.0\refint\RealismPatchGenerator.Core.dll
+e:\云文件\GitHub\Realism-patch-Generator-Csharp\RealismPatchGenerator.Core\obj\Debug\net10.0\RealismPatchGenerator.Core.pdb
+e:\云文件\GitHub\Realism-patch-Generator-Csharp\RealismPatchGenerator.Core\obj\Debug\net10.0\ref\RealismPatchGenerator.Core.dll

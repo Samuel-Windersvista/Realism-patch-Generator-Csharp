@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\云文件\\GitHub\\Realism-patch-Generator-Csharp\\RealismPatchGenerator.Cli\\RealismPatchGenerator.Cli.csproj": {}
+    "e:\\云文件\\GitHub\\Realism-patch-Generator-Csharp\\RealismPatchGenerator.Cli\\RealismPatchGenerator.Cli.csproj": {}
   },
   "projects": {
-    "E:\\云文件\\GitHub\\Realism-patch-Generator-Csharp\\RealismPatchGenerator.Cli\\RealismPatchGenerator.Cli.csproj": {
+    "e:\\云文件\\GitHub\\Realism-patch-Generator-Csharp\\RealismPatchGenerator.Cli\\RealismPatchGenerator.Cli.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\云文件\\GitHub\\Realism-patch-Generator-Csharp\\RealismPatchGenerator.Cli\\RealismPatchGenerator.Cli.csproj",
+        "projectUniqueName": "e:\\云文件\\GitHub\\Realism-patch-Generator-Csharp\\RealismPatchGenerator.Cli\\RealismPatchGenerator.Cli.csproj",
         "projectName": "RealismPatchGenerator.Cli",
-        "projectPath": "E:\\云文件\\GitHub\\Realism-patch-Generator-Csharp\\RealismPatchGenerator.Cli\\RealismPatchGenerator.Cli.csproj",
+        "projectPath": "e:\\云文件\\GitHub\\Realism-patch-Generator-Csharp\\RealismPatchGenerator.Cli\\RealismPatchGenerator.Cli.csproj",
         "packagesPath": "C:\\Users\\Winde\\.nuget\\packages\\",
-        "outputPath": "E:\\云文件\\GitHub\\Realism-patch-Generator-Csharp\\RealismPatchGenerator.Cli\\obj\\",
+        "outputPath": "e:\\云文件\\GitHub\\Realism-patch-Generator-Csharp\\RealismPatchGenerator.Cli\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

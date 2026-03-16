@@ -33,11 +33,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\云文件\\GitHub\\Realism-patch-Generator-Csharp\\RealismPatchGenerator.Gui\\RealismPatchGenerator.Gui.csproj",
+      "projectUniqueName": "e:\\云文件\\GitHub\\Realism-patch-Generator-Csharp\\RealismPatchGenerator.Gui\\RealismPatchGenerator.Gui.csproj",
       "projectName": "RealismPatchGenerator.Gui",
-      "projectPath": "E:\\云文件\\GitHub\\Realism-patch-Generator-Csharp\\RealismPatchGenerator.Gui\\RealismPatchGenerator.Gui.csproj",
+      "projectPath": "e:\\云文件\\GitHub\\Realism-patch-Generator-Csharp\\RealismPatchGenerator.Gui\\RealismPatchGenerator.Gui.csproj",
       "packagesPath": "C:\\Users\\Winde\\.nuget\\packages\\",
-      "outputPath": "E:\\云文件\\GitHub\\Realism-patch-Generator-Csharp\\RealismPatchGenerator.Gui\\obj\\",
+      "outputPath": "e:\\云文件\\GitHub\\Realism-patch-Generator-Csharp\\RealismPatchGenerator.Gui\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
