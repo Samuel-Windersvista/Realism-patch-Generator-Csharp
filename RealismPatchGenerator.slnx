@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="RealismPatchGenerator.Cli/RealismPatchGenerator.Cli.csproj" />
+  <Project Path="RealismPatchGenerator.Core/RealismPatchGenerator.Core.csproj" />
+  <Project Path="RealismPatchGenerator.Gui/RealismPatchGenerator.Gui.csproj" />
+  <Project Path="RealismPatchGenerator.Tests/RealismPatchGenerator.Tests.csproj" />
+</Solution>
