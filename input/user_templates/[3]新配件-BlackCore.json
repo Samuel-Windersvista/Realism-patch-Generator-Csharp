@@ -1,0 +1,719 @@
+{
+  "672e37d16837c8feaa64be0f": {
+    "clone": "626becf9582c3e319310b837",
+    "enable": true,
+    "items": {
+      "_props": {
+        "Prefab": {
+          "path": "tactical_all_insight_wmx200_retex.bundle"
+        }
+      }
+    },
+    "handbook": {
+      "ParentId": "5b5f73ab86f774094242f195",
+      "Price": 13258
+    },
+    "locales": {
+      "Name": "Insight WMX200 战术手电筒（黑色）",
+      "Shortname": "WMX 黑",
+      "Description": "由 Insight Technologies 制造的 WMX200 战术手电筒，结合了常规手电筒和红外搜索灯功能。改装为黑色。"
+    }
+  },
+  "672e37d1027fc0fe0d13b56c": {
+    "clone": "5c6d42cb2e2216000e69d7d1",
+    "enable": true,
+    "items": {
+      "_props": {
+        "Prefab": {
+          "path": "mag_stanag_hk_polymer_mag_556x45_30_retex.bundle"
+        }
+      }
+    },
+    "handbook": {
+      "ParentId": "5b5f754a86f774094242f19b",
+      "Price": 2243
+    },
+    "locales": {
+      "Name": "5.56x45 HK 30 发 STANAG 聚合物弹匣（黑色）",
+      "Shortname": "HK 黑",
+      "Description": "用于 5.56x45 弹药的 30 发聚合物 HK 弹匣。改装为黑色。"
+    }
+  },
+  "672e37d1520640dc6dcd5cdd": {
+    "clone": "5c9a26332e2216001219ea70",
+    "enable": true,
+    "items": {
+      "_props": {
+        "Prefab": {
+          "path": "handguard_ar15_dd_ris_ii_fsp_9,5_retex.bundle"
+        }
+      }
+    },
+    "handbook": {
+      "ParentId": "5b5f75e486f77447ec5d7712",
+      "Price": 8848
+    },
+    "locales": {
+      "Name": "AR-15 Daniel Defense RIS II FSP 9.5 护木（黑色）",
+      "Shortname": "FSP 黑",
+      "Description": "Daniel Defense RIS II FSP 9.5 前握护木是美国特种作战司令部（SOCOM）SOPMOD Block II 计划的一部分，用于替换标准 M4CQBR 或 Mk18 的护木。采用轻质但坚固的航空铝合金制造，并配备 4 个导轨用于安装额外设备和配件。此护木不兼容 M203 下挂式榴弹发射器。改装为黑色。"
+    },
+    "bcCompatibilities": {
+      "mod_foregrip": [
+        "672e37d10e627f2e9563a930"
+      ]
+    }
+  },
+  "672e37d10527a90689a16240": {
+    "clone": "558022b54bdc2dac148b458d",
+    "enable": true,
+    "items": {
+      "_props": {
+        "Prefab": {
+          "path": "scope_all_eotech_exps3_retex.bundle"
+        }
+      }
+    },
+    "handbook": {
+      "ParentId": "5b5f742686f774093e6cb4ff",
+      "Price": 29400
+    },
+    "locales": {
+      "Name": "EOTech EXPS3 全息瞄准镜（黑色）",
+      "Shortname": "EXPS3-B",
+      "Description": "EOTech EXPS3 全息瞄准镜。得益于其设计特点，可广泛适配各类武器，即使带有不可折叠机械瞄具也能使用。支持夜视设备，具备 NV 分划模式。被美国特种作战司令部用于室内近距离作战。改装为黑色。"
+    }
+  },
+  "672e37d10c5f88d8ed0d056a": {
+    "clone": "5d2c76ed48f03532f2136169",
+    "enable": true,
+    "items": {
+      "_props": {
+        "Prefab": {
+          "path": "reciever_ak_akademia_bastion_retex.bundle"
+        }
+      }
+    },
+    "handbook": {
+      "ParentId": "5b5f764186f77447ec5d7714",
+      "Price": 9500
+    },
+    "locales": {
+      "Name": "AK AKademia Bastion 防尘盖（地形迷彩）",
+      "Shortname": "BAST-TOPO",
+      "Description": "Bastion 防尘盖集成皮卡汀尼导轨，兼容所有基于 AK 平台的卡拉什尼科夫自动步枪和卡宾枪。由 AKademia 制造。改装为地形线条迷彩。"
+    }
+  },
+  "672e37d1c999f94dae595a1b": {
+    "clone": "57fd23e32459772d0805bcf1",
+    "enable": true,
+    "items": {
+      "_props": {
+        "Prefab": {
+          "path": "tactical_all_holosun_ls321_retex.bundle"
+        }
+      }
+    },
+    "handbook": {
+      "ParentId": "5b5f737886f774093e6cb4fb",
+      "Price": 18000
+    },
+    "locales": {
+      "Name": "Holosun LS321 战术装置（黑色）",
+      "Shortname": "LS321-B",
+      "Description": "Holosun LS321 是一款多功能激光战术装置，包含可见光绿色激光、红外激光和红外照明灯。改装为黑色。"
+    }
+  },
+  "672e37d1a98e0628807ba29a": {
+    "clone": "606587a88900dc2d9a55b659",
+    "enable": true,
+    "items": {
+      "_props": {
+        "Prefab": {
+          "path": "reciever_mk47_cmmg_mk47_std_retex.bundle"
+        }
+      }
+    },
+    "handbook": {
+      "ParentId": "5b5f764186f77447ec5d7714",
+      "Price": 4760
+    },
+    "locales": {
+      "Name": "Mk47 Resolute 7.62x39 上机匣（地形迷彩）",
+      "Shortname": "MK47R 地形",
+      "Description": "适用于 Mk47 Mutant 突击步枪（使用 7.62x39mm 弹药）的 Resolute 上机匣。配备用于附加设备的安装座。由 CMMG 制造。改装为地形线条迷彩。"
+    }
+  },
+  "672e37d178e24689d6ff50ce": {
+    "clone": "61605d88ffa6e502ac5e7eeb",
+    "enable": true,
+    "items": {
+      "_props": {
+        "Prefab": {
+          "path": "tactical_all_wilcox_raptar_es_retex.bundle"
+        }
+      }
+    },
+    "handbook": {
+      "ParentId": "5b5f737886f774093e6cb4fb",
+      "Price": 22000
+    },
+    "locales": {
+      "Name": "Wilcox RAPTAR ES 战术测距仪（黑色）",
+      "Shortname": "RAPTAR-B",
+      "Description": "早期型号的 RAPTAR 战术装置，集成了测距仪功能。具备可见光与红外激光，以及红外照明灯。改装为黑色。"
+    }
+  },
+  "672e37d19f3e60fb0cbbe568": {
+    "clone": "618ba27d9008e4636a67f61d",
+    "enable": true,
+    "items": {
+      "_props": {
+        "Prefab": {
+          "path": "scope_30mm_razor_hd_gen_2_1_6x24_retex.bundle"
+        }
+      }
+    },
+    "handbook": {
+      "ParentId": "5b5f748386f774093e6cb501",
+      "Price": 72000
+    },
+    "locales": {
+      "Name": "Vortex Razor HD Gen.2 1-6x24 30mm 狙击镜（黑色）",
+      "Shortname": "Razor HD 黑",
+      "Description": "专为快速目标捕捉与高精度射击设计的战术瞄准镜。由 Vortex Optics 制造。改装为黑色。"
+    }
+  },
+  "67617ec9ea1e82ea5e103054": {
+    "clone": "6567e7681265c8a131069b0f",
+    "enable": true,
+    "items": {
+      "_props": {
+        "Prefab": {
+          "path": "scope_30mm_sig_tango6t_1_6x24_retex.bundle"
+        }
+      }
+    },
+    "handbook": {
+      "ParentId": "5b5f748386f774093e6cb501",
+      "Price": 68601
+    },
+    "locales": {
+      "Name": "SIG TANGO6T 1-6x24 30mm 狙击镜（黑色）",
+      "Shortname": "TANGO6T 黑",
+      "Description": "TANGO6T 是一款坚固耐用的低倍率可变倍瞄准镜。该型号具有 1x 至 6x 放大倍率和第一焦平面分划板。适用于中短距离作战及野外狩猎。由 SIG Sauer 制造。改装为黑色。"
+    }
+  },
+  "672e37d1603bec7640eb5459": {
+    "clone": "5c07a8770db8340023300450",
+    "enable": true,
+    "items": {
+      "_props": {
+        "Prefab": {
+          "path": "reciever_ar15_noveske_gen3_retex.bundle"
+        }
+      }
+    },
+    "handbook": {
+      "ParentId": "5b5f764186f77447ec5d7714",
+      "Price": 25150
+    },
+    "locales": {
+      "Name": "AR-15 Noveske Gen.3 5.56x45 上机匣（地形迷彩）",
+      "Shortname": "Gen.3 地形",
+      "Description": "Noveske 制造的 Gen.3 模块化 AR 系列上机匣。配备用于附加设备的安装座。改装为地形线条迷彩。"
+    },
+    "bcCompatibilities": {
+      "mod_handguard": [
+        "672e37d16b2e4ea6c4076cbc",
+        "672e37d1520640dc6dcd5cdd"
+      ]
+    }
+  },
+  "672e37d12636da3c12abb505": {
+    "clone": "5c503af12e221602b177ca02",
+    "enable": true,
+    "items": {
+      "_props": {
+        "Prefab": {
+          "path": "stock_vepr_molot_vpo-101_std_wood_retex.bundle"
+        }
+      }
+    },
+    "handbook": {
+      "ParentId": "5b5f757486f774093e6cb507",
+      "Price": 2853
+    },
+    "locales": {
+      "Name": "VPO-101 Vepr-Hunter 枪托（黑色）",
+      "Shortname": "VPO101 黑",
+      "Description": "VPO-101 Vepr Hunter 标准枪托。改装为黑色。"
+    }
+  },
+  "672e37d1f647e5253b953b08": {
+    "clone": "5ab372a310e891001717f0d8",
+    "enable": true,
+    "items": {
+      "_props": {
+        "Prefab": {
+          "path": "stock_m14_troy_sass_chassis_retex.bundle"
+        }
+      }
+    },
+    "handbook": {
+      "ParentId": "5b5f757486f774093e6cb507",
+      "Price": 36580
+    },
+    "locales": {
+      "Name": "M14 TROY S.A.S.S. 底盘枪托（黑色）",
+      "Shortname": "S.A.S.S. 黑",
+      "Description": "TROY 半自动狙击系统（S.A.S.S.）底盘设计符合 M16/M4 武器系统的人体工学。该模块化四面导轨系统提供无限扩展选项，并在野战分解时保持所有光学瞄具和附件稳固不动。改装为黑色。"
+    }
+  },
+  "672e37d1565ea85b2a92e2e4": {
+    "clone": "59bffbb386f77435b379b9c2",
+    "enable": true,
+    "items": {
+      "_props": {
+        "Prefab": {
+          "path": "silencer_mount_silencerco_hybrid_46_multi_retex.bundle"
+        }
+      }
+    },
+    "handbook": {
+      "ParentId": "5b5f731a86f774093e6cb4f9",
+      "Price": 69600
+    },
+    "locales": {
+      "Name": "SilencerCo Hybrid 46 多口径消音器（特别版）",
+      "Shortname": "Hybrid 46 S",
+      "Description": "多口径 SilencerCo Hybrid 46 消音器适用于 9mm 至 .45 ACP 手枪及 5.56mm 至 .45 口径步枪。安装需搭配相应转接环。改装为数码迷彩风格。"
+    }
+  },
+  "672e37d16dd16ffec1f6019e": {
+    "clone": "62e7c98b550c8218d602cbb4",
+    "enable": true,
+    "items": {
+      "_props": {
+        "Prefab": {
+          "path": "mag_aug_steyr_std_556x45_30_retex.bundle"
+        }
+      }
+    },
+    "handbook": {
+      "ParentId": "5b5f754a86f774094242f19b",
+      "Price": 3400
+    },
+    "locales": {
+      "Name": "Steyr AUG 5.56x45 30 发弹匣（黑色）",
+      "Shortname": "AUG 黑",
+      "Description": "用于 5.56x45 弹药的 30 发聚合物 Steyr AUG 弹匣。改装为黑色。"
+    }
+  },
+  "672e37d1974eeef8028990a4": {
+    "clone": "5b222d405acfc400153af4fe",
+    "enable": true,
+    "items": {
+      "_props": {
+        "Prefab": {
+          "path": "stock_ak_zenit_pt_1_retex.bundle"
+        }
+      }
+    },
+    "handbook": {
+      "ParentId": "5b5f757486f774093e6cb507",
+      "Price": 11758
+    },
+    "locales": {
+      "Name": "AK Zenit PT-1 枪托（特别版）",
+      "Shortname": "PT-1-S",
+      "Description": "伸缩式 PT-1 枪托可安装于 AK-103/104/105/74M、AKS74U 及 PP Vityaz 的标准枪托位置，具备长度调节机制和可调贴腮板。安装需专用锁扣。特别版。"
+    }
+  },
+  "672e37d1af063ed84beecc40": {
+    "clone": "5b30ac585acfc433000eb79c",
+    "enable": true,
+    "items": {
+      "_props": {
+        "Prefab": {
+          "path": "pistolgrip_ak_magpul_moe_ak_retex.bundle"
+        }
+      }
+    },
+    "handbook": {
+      "ParentId": "5b5f761f86f774094242f1a1",
+      "Price": 7356
+    },
+    "locales": {
+      "Name": "AK Magpul MOE 握把（特别版）",
+      "Shortname": "MOE AK-S",
+      "Description": "Magpul 生产的轻量化 AK 握把。特别版。"
+    }
+  },
+  "672e37d1d3f662d053528ca3": {
+    "clone": "628a83c29179c324ed269508",
+    "enable": true,
+    "items": {
+      "_props": {
+        "Prefab": {
+          "path": "gas_block_akp_slr_ak_railed_gas_tube_retex.bundle"
+        }
+      }
+    },
+    "handbook": {
+      "ParentId": "5b5f760586f774093e6cb509",
+      "Price": 21300
+    },
+    "locales": {
+      "Name": "RD-704 SLR ION Lite + 导轨气管组合护木（特别版）",
+      "Shortname": "ION Lite S",
+      "Description": "ION Lite 9 英寸护木与导轨气管组合套件，适用于 RD-704 突击步枪。由 SLR 制造。特别版。"
+    }
+  },
+  "672e37d1bbce23f93c60de67": {
+    "clone": "5d2c772c48f0355d95672c25",
+    "enable": true,
+    "items": {
+      "_props": {
+        "Prefab": {
+          "path": "reciever_ak_texas_weapon_systems_dog_leg_rail_gen_3_retex.bundle"
+        }
+      }
+    },
+    "handbook": {
+      "ParentId": "5b5f764186f77447ec5d7714",
+      "Price": 11600
+    },
+    "locales": {
+      "Name": "AK TWS Dog Leg Rail 防尘盖（特别版）",
+      "Shortname": "Dog Leg Rail S",
+      "Description": "TWS Dog Leg Rail 防尘盖集成皮卡汀尼导轨，兼容所有基于 AK 平台的卡拉什尼科夫自动步枪和卡宾枪。特别版。"
+    }
+  },
+  "672e37d16b2e4ea6c4076cbc": {
+    "clone": "63888bbd28e5cc32cc09d2b6",
+    "enable": true,
+    "items": {
+      "_props": {
+        "Prefab": {
+          "path": "handguard_ar15_precision_reflex_carbon_fiber_delta_gen_3_retex.bundle"
+        }
+      }
+    },
+    "handbook": {
+      "ParentId": "5b5f75e486f77447ec5d7712",
+      "Price": 32000
+    },
+    "locales": {
+      "Name": "AR-15 Precision Reflex GEN III Delta 碳纤维护木（黑色）",
+      "Shortname": "Delta Carbon 黑",
+      "Description": "Precision Reflex 制造的 AR-15 GEN III Delta 碳纤维护木，配备自定义接口用于安装额外设备和配件。黑色碳纤版本。"
+    }
+  },
+  "672e37d1ffec1409f4571dd7": {
+    "clone": "5c0e66e2d174af02a96252f4",
+    "enable": true,
+    "items": {
+      "_props": {
+        "Prefab": {
+          "path": "helmet_armor_slaap.bundle"
+        }
+      }
+    },
+    "handbook": {
+      "ParentId": "5b5f704686f77447ec5d76d7",
+      "Price": 89300
+    },
+    "locales": {
+      "Name": "SLAAP 装甲板（骷髅）",
+      "Shortname": "SLAAP 骷髅",
+      "Description": "由商人 Painter 提供的 Ops-Core FAST 头盔专用定制装甲板，采用特殊聚乙烯材质制成。"
+    }
+  },
+  "672e37d126a93d06f86b177a": {
+    "clone": "5a6f5e048dc32e00094b97da",
+    "enable": true,
+    "items": {
+      "_props": {
+        "Prefab": {
+          "path": "reciever_glock_glock_17_std_retex.bundle"
+        }
+      }
+    },
+    "handbook": {
+      "ParentId": "5b5f764186f77447ec5d7714",
+      "Price": 7000
+    },
+    "locales": {
+      "Name": "Glock 17 9x19 手枪套筒（地形迷彩）",
+      "Shortname": "G17 TOPO",
+      "Description": "由商人 Painter 提供的 Glock 17 定制套筒。改装为地形线条迷彩。"
+    }
+  },
+  "672e37d127e81492ac0c21a4": {
+    "clone": "5a6f5f078dc32e00094b97dd",
+    "enable": true,
+    "items": {
+      "_props": {
+        "Prefab": {
+          "path": "reciever_glock_gspc_viper_slide_cut_retex.bundle"
+        }
+      }
+    },
+    "handbook": {
+      "ParentId": "5b5f764186f77447ec5d7714",
+      "Price": 20000
+    },
+    "locales": {
+      "Name": "Glock Viper Cut 手枪套筒（特别版）",
+      "Shortname": "G17 SPEC",
+      "Description": "由商人 Painter 提供的 Glock 17 定制套筒。采用特殊涂装。"
+    }
+  },
+  "672e37d1b6df87f2230c0b61": {
+    "clone": "55d480c04bdc2d1d4e8b456a",
+    "enable": true,
+    "items": {
+      "_props": {
+        "Prefab": {
+          "path": "mag_ak74_izhmash_6l23_545x39_30_retex.bundle"
+        }
+      }
+    },
+    "handbook": {
+      "ParentId": "5b5f754a86f774094242f19b",
+      "Price": 2999
+    },
+    "locales": {
+      "Name": "AK-74 5.45x39 6L23 30 发弹匣（特别版）",
+      "Shortname": "6L23 SPEC",
+      "Description": "用于 AK-74 及兼容系统的 30 发聚合物伊热夫斯克 6L23 弹匣，适配 5.45x39 弹药。有黑色和李子色可选。采用特殊涂装。"
+    }
+  },
+  "672e37d1249244ae3a50bb2f": {
+    "clone": "59bfe68886f7746004266202",
+    "enable": true,
+    "items": {
+      "_props": {
+        "Prefab": {
+          "path": "reciever_ar15_vltor_mur-1s_retex.bundle"
+        }
+      }
+    },
+    "handbook": {
+      "ParentId": "5b5f764186f77447ec5d7714",
+      "Price": 45000
+    },
+    "locales": {
+      "Name": "AR-15 Vltor MUR-1S 5.56x45 上机匣（Painter 版）",
+      "Shortname": "MUR-1S PE",
+      "Description": "Vltor 公司生产的 MUR-1S 模块化 AR 系列上机匣。配备用于附加设备的安装座。Painter 版本。"
+    },
+    "bcCompatibilities": {
+      "mod_handguard": [
+        "672e37d16b2e4ea6c4076cbc",
+        "672e37d1520640dc6dcd5cdd"
+      ]
+    }
+  },
+  "672e37d10e627f2e9563a930": {
+    "clone": "5c7fc87d2e221644f31c0298",
+    "enable": true,
+    "items": {
+      "_props": {
+        "Prefab": {
+          "path": "foregrip_all_bcm_mod_3_new.bundle"
+        }
+      }
+    },
+    "handbook": {
+      "ParentId": "5b5f71de86f774093f2ecf13",
+      "Price": 4900
+    },
+    "locales": {
+      "Name": "斜握把",
+      "Shortname": "斜握把",
+      "Description": "由 Painter 制作的斜握把。"
+    }
+  },
+  "672e37d19811257c1de39e6d": {
+    "clone": "65293c38fc460e50a509cb25",
+    "enable": true,
+    "items": {
+      "_props": {
+        "Prefab": {
+          "path": "mag_ar10_lancer_l7_awm_762x51_20.bundle"
+        }
+      }
+    },
+    "handbook": {
+      "ParentId": "5b5f754a86f774094242f19b",
+      "Price": 3716
+    },
+    "locales": {
+      "Name": "AR-10 7.62x51 Lancer L7AWM 20 发弹匣（黑色）",
+      "Shortname": "L7AWM",
+      "Description": "适用于 7.62x51 NATO 弹药的双排 20 发 L7AWM 弹匣。由 Lancer Systems 制造。改装为黑色。"
+    }
+  },
+  "672e37d15fe804508ab7c6e6": {
+    "clone": "65293c7a17e14363030ad308",
+    "enable": true,
+    "items": {
+      "_props": {
+        "Prefab": {
+          "path": "mag_ar10_lancer_l7_awm_762x51_25.bundle"
+        }
+      }
+    },
+    "handbook": {
+      "ParentId": "5b5f754a86f774094242f19b",
+      "Price": 3716
+    },
+    "locales": {
+      "Name": "AR-10 7.62x51 Lancer L7AWM 25 发弹匣（黑色）",
+      "Shortname": "L7AWM",
+      "Description": "适用于 7.62x51 NATO 弹药的双排 25 发 L7AWM 弹匣。由 Lancer Systems 制造。改装为黑色。"
+    }
+  },
+  "672e37d1861c12c7e1d94089": {
+    "clone": "652911675ae2ae97b80fdf3c",
+    "enable": true,
+    "items": {
+      "_props": {
+        "Prefab": {
+          "path": "pistolgrip_ar15_sig_reduced_angle_pistol_grip_ct_retex.bundle"
+        }
+      }
+    },
+    "handbook": {
+      "ParentId": "5b5f761f86f774094242f1a1",
+      "Price": 7356
+    },
+    "locales": {
+      "Name": "AR-15 SIG M400 小角度握把",
+      "Shortname": "M400",
+      "Description": "SIG Sauer 制造的聚合物 M400 小角度握把，适用于所有兼容 AR-15 系统的武器。改装为黑色。"
+    }
+  },
+  "672e37d1d9a55146e49287d6": {
+    "clone": "6529370c405a5f51dd023db8",
+    "enable": true,
+    "items": {
+      "_props": {
+        "Prefab": {
+          "path": "stock_ar15_magpul_moe_sl_k_carbine_ct_retex.bundle"
+        }
+      }
+    },
+    "handbook": {
+      "ParentId": "5b5f757486f774093e6cb507",
+      "Price": 9614
+    },
+    "locales": {
+      "Name": "AR-15 Magpul MOE SL-K 枪托（黑色）",
+      "Shortname": "MOE SL-K",
+      "Description": "适用于 AR-15/M16 步枪（军规缓冲管）的快拆枪托。由 Magpul Original Equipment 制造。黑色版本。"
+    }
+  },
+  "672e37d1d0d67e193f688afa": {
+    "clone": "603409c80ca681766b6a0fb2",
+    "enable": true,
+    "items": {
+      "_props": {
+        "Prefab": {
+          "path": "glasses/item_equipment_glasses_npp_retex.bundle"
+        }
+      }
+    },
+    "handbook": {
+      "ParentId": "5b47574386f77428ca22b331",
+      "Price": 22500
+    },
+    "locales": {
+      "Name": "NPP KlASS Condor 渐变射击眼镜",
+      "Shortname": "Condor",
+      "Description": "重型防弹射击眼镜，配备抗冲击镜片。"
+    }
+  },
+  "672e37d1988fac66b10d23c8": {
+    "clone": "59f9d81586f7744c7506ee62",
+    "enable": true,
+    "items": {
+      "_props": {
+        "Prefab": {
+          "path": "scope_all_vortex_razor_amg_uh-1_retex.bundle"
+        }
+      }
+    },
+    "handbook": {
+      "ParentId": "5b5f742686f774093e6cb4ff",
+      "Price": 25847
+    },
+    "locales": {
+      "Name": "Vortex Razor AMG UH-1 全息瞄准镜（v2）",
+      "Shortname": "UH-1",
+      "Description": "Vortex Razor AMG UH-1 全息瞄准镜不仅拥有未来感的设计，据其制造商称，也是全息与反射式瞄准镜领域的一次革命。改装为黑色。"
+    }
+  },
+  "672e37d1c3f0ee2b60c5854d": {
+    "clone": "544909bb4bdc2d6f028b4577",
+    "enable": true,
+    "items": {
+      "_props": {
+        "Prefab": {
+          "path": "tactical_all_insight_anpeq15_retex.bundle"
+        }
+      }
+    },
+    "handbook": {
+      "ParentId": "5b5f737886f774093e6cb4fb",
+      "Price": 19137
+    },
+    "locales": {
+      "Name": "AN/PEQ-15 战术装置（黑色）",
+      "Shortname": "AN/PEQ-15",
+      "Description": "L3 Technologies生产的先进目标指示照明瞄准激光器（ATPIAL）是一款坚固耐用、经实战验证且易于使用的瞄准系统，集成了红外和可见光瞄准激光器以及红外照明器。改装黑色款。"
+        }
+    },
+    "672e37d1713443a0355d72e8": {
+        "clone": "602e620f9b513876d4338d9a",
+        "enable": true,
+        "items": {
+            "_props": {
+                "Prefab": {
+                    "path": "stock_ar15_fab_defense_gl_core_retex.bundle"
+                }
+            }
+        },
+        "handbook": {
+            "ParentId": "5b5f757486f774093e6cb507",
+            "Price": 4100
+        },
+        "locales": {
+            "Name": "AR-15 FAB Defense GL-CORE 黑色枪托",
+"Shortname": "GL-CORE",
+"Description": "由 FAB Defense 制造的伸缩式枪托。集成的贴腮板、符合人体工学的橡胶枪托底板，以及可更换的缓冲管转接器，使其能完美适配军规（Mil-Spec）和商用缓冲管，在效率与舒适性方面表现卓越。配备符合人体工学的橡胶化枪托底垫，便于快速抵肩和灵活操控武器。改装版黑色。"
+        }
+    },
+    "6782e59050893b2c1e2cabc8": {
+        "clone": "5c0558060db834001b735271",
+        "enable": true,
+        "items": {
+            "_props": {
+                "Prefab": {
+                    "path": "nvg_l3_gpnvg-18_anvis_retex.bundle"
+                }
+            }
+        },
+        "handbook": {
+            "ParentId": "5b5f749986f774094242f199",
+            "Price": 145004
+        },
+        "locales": {
+            "Name": "L3Harris GPNVG-18 夜视仪（黑色）",
+"Shortname": "GPNVG-18",
+"Description": "GPNVG-18（地面全景夜视 goggles）是一款全景夜视仪。它与其他夜视仪最核心的区别在于配备了四支独立的像增强管——每只眼睛各两支。其中两支中央像增强管朝向前方，另外两支则分别向外侧偏转。这一创新设计将视野扩大至97度。改装版黑色。"
+        }
+    }
+}

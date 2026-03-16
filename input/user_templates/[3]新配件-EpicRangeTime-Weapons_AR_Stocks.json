@@ -1,0 +1,2714 @@
+{
+	"70eb49132ee4b5a739b8fa7f": {
+		"itemTplToClone": "5ae30c9a5acfc408fb139a03",
+		"parentId": "STOCK",
+		"handbookParentId": "MOD_STOCK",
+		"overrideProperties": {
+			"ExaminedByDefault": true,
+			"Prefab": {
+				"path": "Mods/Stocks/b5_bravo_blk.bundle",
+				"rcid": ""
+			},
+			"Ergonomics": 9,
+			"ConflictingItems": [
+				"5c0e2ff6d174af02a1659d4a",
+				"5a33e75ac4a2826c6e06d759"
+			]
+		},
+		"locales": {
+			"en": {
+				"name": "AR-15 B5 Systems 布拉沃枪托",
+				"shortName": "布拉沃",
+				"description": "布拉沃枪托保持SOPMOD颊部焊接，单件防旋转快速断开吊索挂载，无滑垫屁股垫和改进的握枪锁销。布拉沃省略了SOPMOD的存储功能，提供了更纤细的轮廓，并将枪托后部向上倾斜，确保快速和一致的枪托与肩膀和颊部的接触。采用Mil-Spec材料和涂层。以美国为荣制造。"
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": true,
+		"modSlot": [
+			"mod_stock_000",
+			"mod_stock"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+		"fleaPriceRoubles": 8250,
+		"handbookPriceRoubles": 4699,
+		"addtoTraders": true,
+		"traderId": "MECHANIC",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 8200,
+				"_tpl": "ROUBLES"
+			}
+		],
+		"loyallevelitems": 2,
+		"addtoBots": false,
+		"addtostaticlootcontainer": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 2600
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 2600
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 2600
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X5",
+				"Probability": 2600
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 2600
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WOODEN_CRATE",
+				"Probability": 2600
+			}
+		],
+		"masteries": false,
+		"masterySections": [
+			{
+				"Name": "M4",
+				"Templates": [
+					"4b81488c78c8a8ac7d37f9b9"
+				]
+			}
+		],
+		"addweaponpreset": false,
+		"weaponpresets": []
+	},
+	"857f6f505667d85233704faa": {
+		"itemTplToClone": "5ae30c9a5acfc408fb139a03",
+		"parentId": "STOCK",
+		"handbookParentId": "MOD_STOCK",
+		"overrideProperties": {
+			"ExaminedByDefault": true,
+			"Prefab": {
+				"path": "Mods/Stocks/b5_bravo_cb.bundle",
+				"rcid": ""
+			},
+			"Ergonomics": 9,
+			"ConflictingItems": [
+				"5c0e2ff6d174af02a1659d4a",
+				"5a33e75ac4a2826c6e06d759"
+			]
+		},
+		"locales": {
+			"en": {
+				"name": "AR-15 B5 Systems 布拉沃枪托（土狼色）",
+				"shortName": "布拉沃",
+				"description": "布拉沃枪托保持SOPMOD颊部焊接，单件防旋转快速断开吊索挂载，无滑垫屁股垫和改进的握枪锁销。布拉沃省略了SOPMOD的存储功能，提供了更纤细的轮廓，并将枪托后部向上倾斜，确保快速和一致的枪托与肩膀和颊部的接触。采用Mil-Spec材料和涂层。以美国为荣制造。"
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": true,
+		"modSlot": [
+			"mod_stock_000",
+			"mod_stock"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+		"fleaPriceRoubles": 8250,
+		"handbookPriceRoubles": 4699,
+		"addtoTraders": true,
+		"traderId": "MECHANIC",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 8200,
+				"_tpl": "ROUBLES"
+			}
+		],
+		"loyallevelitems": 2,
+		"addtoBots": false,
+		"addtostaticlootcontainer": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 2600
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 2600
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 2600
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X5",
+				"Probability": 2600
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 2600
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WOODEN_CRATE",
+				"Probability": 2600
+			}
+		],
+		"masteries": false,
+		"masterySections": [
+			{
+				"Name": "M4",
+				"Templates": [
+					"4b81488c78c8a8ac7d37f9b9"
+				]
+			}
+		],
+		"addweaponpreset": false,
+		"weaponpresets": []
+	},
+	"3f9e58d5bea75f1a0ca43399": {
+		"itemTplToClone": "5ae30c9a5acfc408fb139a03",
+		"parentId": "STOCK",
+		"handbookParentId": "MOD_STOCK",
+		"overrideProperties": {
+			"ExaminedByDefault": true,
+			"Prefab": {
+				"path": "Mods/Stocks/b5_bravo_fde.bundle",
+				"rcid": ""
+			},
+			"Ergonomics": 9,
+			"ConflictingItems": [
+				"5c0e2ff6d174af02a1659d4a",
+				"5a33e75ac4a2826c6e06d759"
+			]
+		},
+		"locales": {
+			"en": {
+				"name": "AR-15 B5 Systems 布拉沃枪托（FDE）",
+				"shortName": "布拉沃",
+				"description": "布拉沃枪托保持SOPMOD颊部焊接，单件防旋转快速断开吊索挂载，无滑垫屁股垫和改进的握枪锁销。布拉沃省略了SOPMOD的存储功能，提供了更纤细的轮廓，并将枪托后部向上倾斜，确保快速和一致的枪托与肩膀和颊部的接触。采用Mil-Spec材料和涂层。以美国为荣制造。"
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": true,
+		"modSlot": [
+			"mod_stock_000",
+			"mod_stock"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+		"fleaPriceRoubles": 8250,
+		"handbookPriceRoubles": 4699,
+		"addtoTraders": true,
+		"traderId": "MECHANIC",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 8200,
+				"_tpl": "ROUBLES"
+			}
+		],
+		"loyallevelitems": 2,
+		"addtoBots": false,
+		"addtostaticlootcontainer": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 2600
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 2600
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 2600
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X5",
+				"Probability": 2600
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 2600
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WOODEN_CRATE",
+				"Probability": 2600
+			}
+		],
+		"masteries": false,
+		"masterySections": [
+			{
+				"Name": "M4",
+				"Templates": [
+					"4b81488c78c8a8ac7d37f9b9"
+				]
+			}
+		],
+		"addweaponpreset": false,
+		"weaponpresets": []
+	},
+	"b6ec2a1724ebddcb6ff9f16c": {
+		"itemTplToClone": "5ae30c9a5acfc408fb139a03",
+		"parentId": "STOCK",
+		"handbookParentId": "MOD_STOCK",
+		"overrideProperties": {
+			"ExaminedByDefault": true,
+			"Prefab": {
+				"path": "Mods/Stocks/b5_bravo_grey.bundle",
+				"rcid": ""
+			},
+			"Ergonomics": 9,
+			"ConflictingItems": [
+				"5c0e2ff6d174af02a1659d4a",
+				"5a33e75ac4a2826c6e06d759"
+			]
+		},
+		"locales": {
+			"en": {
+				"name": "AR-15 B5 Systems 布拉沃枪托（灰色）",
+				"shortName": "布拉沃",
+				"description": "布拉沃枪托保持SOPMOD颊部焊接，单件防旋转快速断开吊索挂载，无滑垫屁股垫和改进的握枪锁销。布拉沃省略了SOPMOD的存储功能，提供了更纤细的轮廓，并将枪托后部向上倾斜，确保快速和一致的枪托与肩膀和颊部的接触。采用Mil-Spec材料和涂层。以美国为荣制造。"
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": true,
+		"modSlot": [
+			"mod_stock_000",
+			"mod_stock"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+		"fleaPriceRoubles": 8250,
+		"handbookPriceRoubles": 4699,
+		"addtoTraders": true,
+		"traderId": "MECHANIC",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 8200,
+				"_tpl": "ROUBLES"
+			}
+		],
+		"loyallevelitems": 2,
+		"addtoBots": false,
+		"addtostaticlootcontainer": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 2600
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 2600
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 2600
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X5",
+				"Probability": 2600
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 2600
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WOODEN_CRATE",
+				"Probability": 2600
+			}
+		],
+		"masteries": false,
+		"masterySections": [
+			{
+				"Name": "M4",
+				"Templates": [
+					"4b81488c78c8a8ac7d37f9b9"
+				]
+			}
+		],
+		"addweaponpreset": false,
+		"weaponpresets": []
+	},
+	"cbd2e6731fb69eb72df5cd78": {
+		"itemTplToClone": "5ae30c9a5acfc408fb139a03",
+		"parentId": "STOCK",
+		"handbookParentId": "MOD_STOCK",
+		"overrideProperties": {
+			"ExaminedByDefault": true,
+			"Prefab": {
+				"path": "Mods/Stocks/b5_bravo_odg.bundle",
+				"rcid": ""
+			},
+			"Ergonomics": 9,
+			"ConflictingItems": [
+				"5c0e2ff6d174af02a1659d4a",
+				"5a33e75ac4a2826c6e06d759"
+			]
+		},
+		"locales": {
+			"en": {
+				"name": "AR-15 B5 Systems 布拉沃枪托（ODG）",
+				"shortName": "布拉沃",
+				"description": "布拉沃枪托保持SOPMOD颊部焊接，单件防旋转快速断开吊索挂载，无滑垫屁股垫和改进的握枪锁销。布拉沃省略了SOPMOD的存储功能，提供了更纤细的轮廓，并将枪托后部向上倾斜，确保快速和一致的枪托与肩膀和颊部的接触。采用Mil-Spec材料和涂层。以美国为荣制造。"
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": true,
+		"modSlot": [
+			"mod_stock_000",
+			"mod_stock"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+		"fleaPriceRoubles": 8250,
+		"handbookPriceRoubles": 4699,
+		"addtoTraders": true,
+		"traderId": "MECHANIC",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 8200,
+				"_tpl": "ROUBLES"
+			}
+		],
+		"loyallevelitems": 2,
+		"addtoBots": false,
+		"addtostaticlootcontainer": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 2600
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 2600
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 2600
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X5",
+				"Probability": 2600
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 2600
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WOODEN_CRATE",
+				"Probability": 2600
+			}
+		],
+		"masteries": false,
+		"masterySections": [
+			{
+				"Name": "M4",
+				"Templates": [
+					"4b81488c78c8a8ac7d37f9b9"
+				]
+			}
+		],
+		"addweaponpreset": false,
+		"weaponpresets": []
+	},
+	"2a6882a9265b63e56b00f0e8": {
+		"itemTplToClone": "5ae30c9a5acfc408fb139a03",
+		"parentId": "STOCK",
+		"handbookParentId": "MOD_STOCK",
+		"overrideProperties": {
+			"ExaminedByDefault": true,
+			"Prefab": {
+				"path": "Mods/Stocks/prs_lite_blk.bundle",
+				"rcid": ""
+			},
+			"Ergonomics": 7,
+			"Recoil": -23,
+			"Weight": 0.515,
+			"ConflictingItems": [
+				"5c0e2ff6d174af02a1659d4a",
+				"5a33e75ac4a2826c6e06d759"
+			]
+		},
+		"locales": {
+			"en": {
+				"name": "AR-15 Magpul PRS Lite stock",
+				"shortName": "Lite",
+				"description": "The PRS Lite provides much of the same adjustability and many features of our PRS GEN3 Precision-Adjustable Stock, with the added benefits of reduced weight and a price that’s almost half of its fully featured counterpart."
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": true,
+		"modSlot": [
+			"mod_stock_000",
+			"mod_stock"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+		"fleaPriceRoubles": 8250,
+		"handbookPriceRoubles": 4699,
+		"addtoTraders": true,
+		"traderId": "BADGER",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 146,
+				"_tpl": "DOLLARS"
+			}
+		],
+		"loyallevelitems": 2,
+		"addtoBots": false,
+		"addtostaticlootcontainer": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X5",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WOODEN_CRATE",
+				"Probability": 2200
+			}
+		],
+		"masteries": false,
+		"masterySections": [
+			{
+				"Name": "M4",
+				"Templates": [
+					"4b81488c78c8a8ac7d37f9b9"
+				]
+			}
+		],
+		"addweaponpreset": false,
+		"weaponpresets": []
+	},
+	"e7033144137177533f1fe6cf": {
+		"itemTplToClone": "5ae30c9a5acfc408fb139a03",
+		"parentId": "STOCK",
+		"handbookParentId": "MOD_STOCK",
+		"overrideProperties": {
+			"ExaminedByDefault": true,
+			"Prefab": {
+				"path": "Mods/Stocks/prs_lite_fde.bundle",
+				"rcid": ""
+			},
+			"Ergonomics": 7,
+			"Recoil": -23,
+			"Weight": 0.515,
+			"ConflictingItems": [
+				"5c0e2ff6d174af02a1659d4a",
+				"5a33e75ac4a2826c6e06d759"
+			]
+		},
+		"locales": {
+			"en": {
+				"name": "AR-15 Magpul PRS Lite stock (FDE)",
+				"shortName": "Lite",
+				"description": "The PRS Lite provides much of the same adjustability and many features of our PRS GEN3 Precision-Adjustable Stock, with the added benefits of reduced weight and a price that’s almost half of its fully featured counterpart."
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": true,
+		"modSlot": [
+			"mod_stock_000",
+			"mod_stock"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+		"fleaPriceRoubles": 8250,
+		"handbookPriceRoubles": 4699,
+		"addtoTraders": true,
+		"traderId": "PEACEKEEPER",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 146,
+				"_tpl": "DOLLARS"
+			}
+		],
+		"loyallevelitems": 2,
+		"addtoBots": false,
+		"addtostaticlootcontainer": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X5",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WOODEN_CRATE",
+				"Probability": 2200
+			}
+		],
+		"masteries": false,
+		"masterySections": [
+			{
+				"Name": "M4",
+				"Templates": [
+					"4b81488c78c8a8ac7d37f9b9"
+				]
+			}
+		],
+		"addweaponpreset": false,
+		"weaponpresets": []
+	},
+	"26aab2ba6d945ea7877cfded": {
+		"itemTplToClone": "5d44069ca4b9361ebd26fc37",
+		"parentId": "STOCK",
+		"handbookParentId": "MOD_STOCK",
+		"overrideProperties": {
+			"ExaminedByDefault": true,
+			"Prefab": {
+				"path": "Mods/Stocks/stock_m16a1.bundle",
+				"rcid": ""
+			},
+			"Ergonomics": 4,
+			"Recoil": -21,
+			"Weight": 0.204,
+			"ConflictingItems": [
+				"5c0e2ff6d174af02a1659d4a",
+				"5a33e75ac4a2826c6e06d759"
+			]
+		},
+		"locales": {
+			"en": {
+				"name": "AR-15 Armalite M16A1 固定枪托D型",
+				"shortName": "M16A1 D型",
+				"description": "由Armalite在60年代中期为美国军方生产，这些固定M16枪托没有活板门和橡胶屁股垫。由玻璃纤维模塑而成，非常轻盈，不会让你失望。"
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": true,
+		"modSlot": [
+			"mod_stock_000",
+			"mod_stock"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+		"fleaPriceRoubles": 9200,
+		"handbookPriceRoubles": 2000,
+		"addtoTraders": true,
+		"traderId": "BADGER",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 96,
+				"_tpl": "DOLLARS"
+			}
+		],
+		"loyallevelitems": 1,
+		"addtoBots": false,
+		"addtostaticlootcontainer": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X5",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WOODEN_CRATE",
+				"Probability": 2200
+			}
+		],
+		"masteries": false,
+		"masterySections": [
+			{
+				"Name": "M4",
+				"Templates": [
+					"4b81488c78c8a8ac7d37f9b9"
+				]
+			}
+		],
+		"addweaponpreset": false,
+		"weaponpresets": []
+	},
+	"bfe86caecde6728199b9eed5": {
+		"itemTplToClone": "5d44069ca4b9361ebd26fc37",
+		"parentId": "STOCK",
+		"handbookParentId": "MOD_STOCK",
+		"overrideProperties": {
+			"ExaminedByDefault": true,
+			"Prefab": {
+				"path": "Mods/Stocks/stock_m16a2.bundle",
+				"rcid": ""
+			},
+			"Ergonomics": 4,
+			"Recoil": -20,
+			"Weight": 0.272,
+			"ConflictingItems": [
+				"5c0e2ff6d174af02a1659d4a",
+				"5a33e75ac4a2826c6e06d759"
+			],
+			"Slots": [
+				{
+					"_name": "mod_tactical",
+					"_id": "63b063231033d44ad1782676",
+					"_parent": "bfe86caecde6728199b9eed5",
+					"_props": {
+						"filters": [
+							{
+								"Shift": 0,
+								"Filter": [
+									"5448ff904bdc2d6f028b456e",
+									"65815f0e647e3d7246384e14",
+									"544fb6cc4bdc2d34748b456e",
+									"56742c284bdc2d98058b456d",
+									"5e2af2bc86f7746d3f3c33fc",
+									"57347b8b24597737dd42e192",
+									"56742c2e4bdc2d95058b456d",
+									"5e2af37686f774755a234b65",
+									"57347c5b245977448d35f6e1",
+									"57347c77245977448d35f6e2",
+									"5672cb124bdc2d1a0f8b4568",
+									"5e2aedd986f7746d404f3aa4",
+									"5e2af22086f7746d3f3c33fa",
+									"5d235a5986f77443f6329bc6"
+								]
+							}
+						]
+					},
+					"_required": false,
+					"_mergeSlotWithChildren": false,
+					"_proto": "55d30c4c4bdc2db4468b457e"
+				}
+			]
+		},
+		"locales": {
+			"en": {
+				"name": "AR-15 Colt M16A2 固定枪托",
+				"shortName": "M16A2固定",
+				"description": "由Colt为美国军方生产至今，这些固定M16枪托有一个活板门用于存储您最喜欢的零食。由玻璃纤维模塑而成，非常轻盈，不会让你失望。"
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": true,
+		"modSlot": [
+			"mod_stock_000",
+			"mod_stock"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+		"fleaPriceRoubles": 9200,
+		"handbookPriceRoubles": 2000,
+		"addtoTraders": true,
+		"traderId": "BADGER",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 102,
+				"_tpl": "DOLLARS"
+			}
+		],
+		"loyallevelitems": 1,
+		"addtoBots": false,
+		"addtostaticlootcontainer": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X5",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WOODEN_CRATE",
+				"Probability": 2200
+			}
+		],
+		"masteries": false,
+		"masterySections": [
+			{
+				"Name": "M4",
+				"Templates": [
+					"4b81488c78c8a8ac7d37f9b9"
+				]
+			}
+		],
+		"addweaponpreset": false,
+		"weaponpresets": []
+	},
+	"788eac2547e9e3f30daa57ba": {
+		"itemTplToClone": "5d44069ca4b9361ebd26fc37",
+		"parentId": "STOCK",
+		"handbookParentId": "MOD_STOCK",
+		"overrideProperties": {
+			"ExaminedByDefault": true,
+			"Prefab": {
+				"path": "Mods/Stocks/stock_m16a2_fde.bundle",
+				"rcid": ""
+			},
+			"Ergonomics": 4,
+			"Recoil": -20,
+			"Weight": 0.272,
+			"ConflictingItems": [
+				"5c0e2ff6d174af02a1659d4a",
+				"5a33e75ac4a2826c6e06d759"
+			],
+			"Slots": [
+				{
+					"_name": "mod_tactical",
+					"_id": "63b063231033d44ad1782676",
+					"_parent": "bfe86caecde6728199b9eed5",
+					"_props": {
+						"filters": [
+							{
+								"Shift": 0,
+								"Filter": [
+									"5448ff904bdc2d6f028b456e",
+									"65815f0e647e3d7246384e14",
+									"544fb6cc4bdc2d34748b456e",
+									"56742c284bdc2d98058b456d",
+									"5e2af2bc86f7746d3f3c33fc",
+									"57347b8b24597737dd42e192",
+									"56742c2e4bdc2d95058b456d",
+									"5e2af37686f774755a234b65",
+									"57347c5b245977448d35f6e1",
+									"57347c77245977448d35f6e2",
+									"5672cb124bdc2d1a0f8b4568",
+									"5e2aedd986f7746d404f3aa4",
+									"5e2af22086f7746d3f3c33fa",
+									"5d235a5986f77443f6329bc6"
+								]
+							}
+						]
+					},
+					"_required": false,
+					"_mergeSlotWithChildren": false,
+					"_proto": "55d30c4c4bdc2db4468b457e"
+				}
+			]
+		},
+		"locales": {
+			"en": {
+				"name": "AR-15 UTG M16A2 风格固定枪托（FDE）",
+				"shortName": "M16A2固定",
+				"description": "由UTG为美国Brownells生产，这些固定M16风格枪托有一个活板门用于存储您最喜欢的零食。由尼龙聚合物模塑而成，非常轻盈，不会让你失望。"
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": true,
+		"modSlot": [
+			"mod_stock_000",
+			"mod_stock"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+		"fleaPriceRoubles": 9200,
+		"handbookPriceRoubles": 2000,
+		"addtoTraders": true,
+		"traderId": "BADGER",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 107,
+				"_tpl": "DOLLARS"
+			}
+		],
+		"loyallevelitems": 2,
+		"addtoBots": false,
+		"addtostaticlootcontainer": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X5",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WOODEN_CRATE",
+				"Probability": 2200
+			}
+		],
+		"masteries": false,
+		"masterySections": [
+			{
+				"Name": "M4",
+				"Templates": [
+					"4b81488c78c8a8ac7d37f9b9"
+				]
+			}
+		],
+		"addweaponpreset": false,
+		"weaponpresets": []
+	},
+	"bb51865a7e56f49a5af59829": {
+		"itemTplToClone": "55d4ae6c4bdc2d8b2f8b456e",
+		"parentId": "STOCK",
+		"handbookParentId": "MOD_STOCK",
+		"overrideProperties": {
+			"ExaminedByDefault": true,
+			"Prefab": {
+				"path": "Mods/Stocks/stock_car15.bundle",
+				"rcid": ""
+			},
+			"Weight": 0.121,
+			"ConflictingItems": [
+				"5c0e2ff6d174af02a1659d4a",
+				"5a33e75ac4a2826c6e06d759"
+			]
+		},
+		"locales": {
+			"en": {
+				"name": "AR-15 Colt 纤维枪托",
+				"shortName": "纤维",
+				"description": "CAR-15上的原始枪托，由玻璃纤维制成，就像80年代的许多东西一样。"
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": true,
+		"modSlot": [
+			"mod_stock_000",
+			"mod_stock"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+		"fleaPriceRoubles": 9200,
+		"handbookPriceRoubles": 2000,
+		"addtoTraders": true,
+		"traderId": "BADGER",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 67,
+				"_tpl": "DOLLARS"
+			}
+		],
+		"loyallevelitems": 1,
+		"addtoBots": false,
+		"addtostaticlootcontainer": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X5",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WOODEN_CRATE",
+				"Probability": 2200
+			}
+		],
+		"masteries": false,
+		"masterySections": [
+			{
+				"Name": "M4",
+				"Templates": [
+					"4b81488c78c8a8ac7d37f9b9"
+				]
+			}
+		],
+		"addweaponpreset": false,
+		"weaponpresets": []
+	},
+	"d69ecdc7b49d7b7aa6f8d4b8": {
+		"itemTplToClone": "5c5db6f82e2216003a0fe914",
+		"parentId": "STOCK",
+		"handbookParentId": "MOD_STOCK",
+		"overrideProperties": {
+			"ExaminedByDefault": true,
+			"Prefab": {
+				"path": "Mods/Stocks/stock_midwestindustriesfixed.bundle",
+				"rcid": ""
+			},
+			"Ergonomics": 3,
+			"Recoil": -24,
+			"Weight": 0.439
+		},
+		"locales": {
+			"en": {
+				"name": "AR-15 中西部工业 固定挤压枪托",
+				"shortName": "中西部挤压",
+				"description": "中西部工业为皮卡汀尼枪托支架生产的重型固定枪托。完全由6061铝和4140热处理钢制成，具有最大的刚性。"
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": true,
+		"modSlot": [
+			"mod_stock_000",
+			"mod_stock"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+		"fleaPriceRoubles": 9200,
+		"handbookPriceRoubles": 2000,
+		"addtoTraders": true,
+		"traderId": "BADGER",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 57,
+				"_tpl": "DOLLARS"
+			}
+		],
+		"loyallevelitems": 3,
+		"addtoBots": false,
+		"addtostaticlootcontainer": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X5",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WOODEN_CRATE",
+				"Probability": 2200
+			}
+		],
+		"masteries": false,
+		"masterySections": [
+			{
+				"Name": "M4",
+				"Templates": [
+					"4b81488c78c8a8ac7d37f9b9"
+				]
+			}
+		],
+		"addweaponpreset": false,
+		"weaponpresets": []
+	},
+	"d1d91c5935812a383f894338": {
+		"itemTplToClone": "5d135e83d7ad1a21b83f42d8",
+		"parentId": "STOCK",
+		"handbookParentId": "MOD_STOCK",
+		"overrideProperties": {
+			"ExaminedByDefault": true,
+			"Prefab": {
+				"path": "Mods/Stocks/magpul_dt_pr_blk.bundle",
+				"rcid": ""
+			},
+			"Recoil": -21,
+			"Ergonomics": 12,
+			"Weight": 0.303,
+			"ConflictingItems": [
+				"5c0e2ff6d174af02a1659d4a",
+				"5a33e75ac4a2826c6e06d759"
+			]
+		},
+		"locales": {
+			"en": {
+				"name": "AR-15 Magpul DT-PR Carbine Stock (BLK)",
+				"shortName": "DT-PR",
+				"description": "The DT-PR stock is the Precision Rifle (PR) variant of our new Dual-Tension (DT) series of carbine stocks. It incorporates Magpul’s proprietary, patent-pending DT adjustment system, mitigating play between the buffer tube and the stock, resulting in a tighter fit across the stock’s entire length of pull."
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": true,
+		"modSlot": [
+			"mod_stock_000",
+			"mod_stock"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+		"fleaPriceRoubles": 9200,
+		"handbookPriceRoubles": 2000,
+		"addtoTraders": true,
+		"traderId": "BADGER",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 76,
+				"_tpl": "DOLLARS"
+			}
+		],
+		"loyallevelitems": 2,
+		"addtoBots": false,
+		"addtostaticlootcontainer": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X5",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WOODEN_CRATE",
+				"Probability": 2200
+			}
+		],
+		"masteries": false,
+		"masterySections": [
+			{
+				"Name": "M4",
+				"Templates": [
+					"4b81488c78c8a8ac7d37f9b9"
+				]
+			}
+		],
+		"addweaponpreset": false,
+		"weaponpresets": []
+	},
+	"394ddec62819583ac6b760d7": {
+		"itemTplToClone": "5d135e83d7ad1a21b83f42d8",
+		"parentId": "STOCK",
+		"handbookParentId": "MOD_STOCK",
+		"overrideProperties": {
+			"ExaminedByDefault": true,
+			"Prefab": {
+				"path": "Mods/Stocks/magpul_dt_pr_fde.bundle",
+				"rcid": ""
+			},
+			"Recoil": -21,
+			"Ergonomics": 12,
+			"Weight": 0.303,
+			"ConflictingItems": [
+				"5c0e2ff6d174af02a1659d4a",
+				"5a33e75ac4a2826c6e06d759"
+			]
+		},
+		"locales": {
+			"en": {
+				"name": "AR-15 Magpul DT-PR Carbine Stock (FDE)",
+				"shortName": "DT-PR",
+				"description": "The DT-PR stock is the Precision Rifle (PR) variant of our new Dual-Tension (DT) series of carbine stocks. It incorporates Magpul’s proprietary, patent-pending DT adjustment system, mitigating play between the buffer tube and the stock, resulting in a tighter fit across the stock’s entire length of pull."
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": true,
+		"modSlot": [
+			"mod_stock_000",
+			"mod_stock"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+		"fleaPriceRoubles": 9200,
+		"handbookPriceRoubles": 2000,
+		"addtoTraders": true,
+		"traderId": "BADGER",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 76,
+				"_tpl": "DOLLARS"
+			}
+		],
+		"loyallevelitems": 2,
+		"addtoBots": false,
+		"addtostaticlootcontainer": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X5",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WOODEN_CRATE",
+				"Probability": 2200
+			}
+		],
+		"masteries": false,
+		"masterySections": [
+			{
+				"Name": "M4",
+				"Templates": [
+					"4b81488c78c8a8ac7d37f9b9"
+				]
+			}
+		],
+		"addweaponpreset": false,
+		"weaponpresets": []
+	},
+	"364b69dba974eba7ec8a4f1a": {
+		"itemTplToClone": "5d135e83d7ad1a21b83f42d8",
+		"parentId": "STOCK",
+		"handbookParentId": "MOD_STOCK",
+		"overrideProperties": {
+			"ExaminedByDefault": true,
+			"Prefab": {
+				"path": "Mods/Stocks/str_stock_blk.bundle",
+				"rcid": ""
+			},
+			"Recoil": -21,
+			"Ergonomics": 12,
+			"Weight": 0.303,
+			"ConflictingItems": [
+				"5c0e2ff6d174af02a1659d4a",
+				"5a33e75ac4a2826c6e06d759"
+			]
+		},
+		"locales": {
+			"en": {
+				"name": "AR-15 Magpul STR 卡宾枪托（黑色）",
+				"shortName": "STR",
+				"description": "Magpul STR（存储/类型受限）卡宾枪托 - Mil-Spec是使用Mil-Spec尺寸接收器延伸管的AR15/M4卡宾枪的现成更换屁股托。CTR®的存储能力版本，STR具有改进的颊部焊接和两个防水电池管，采用紧凑、强化的聚合物A框架设计。"
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": true,
+		"modSlot": [
+			"mod_stock_000",
+			"mod_stock"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+		"fleaPriceRoubles": 9200,
+		"handbookPriceRoubles": 2000,
+		"addtoTraders": true,
+		"traderId": "BADGER",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 76,
+				"_tpl": "DOLLARS"
+			}
+		],
+		"loyallevelitems": 2,
+		"addtoBots": false,
+		"addtostaticlootcontainer": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X5",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WOODEN_CRATE",
+				"Probability": 2200
+			}
+		],
+		"masteries": false,
+		"masterySections": [
+			{
+				"Name": "M4",
+				"Templates": [
+					"4b81488c78c8a8ac7d37f9b9"
+				]
+			}
+		],
+		"addweaponpreset": false,
+		"weaponpresets": []
+	},
+	"ffbf7c0c8acab5ec67bf4788": {
+		"itemTplToClone": "5d135e83d7ad1a21b83f42d8",
+		"parentId": "STOCK",
+		"handbookParentId": "MOD_STOCK",
+		"overrideProperties": {
+			"ExaminedByDefault": true,
+			"Prefab": {
+				"path": "Mods/Stocks/str_stock_fde.bundle",
+				"rcid": ""
+			},
+			"Recoil": -21,
+			"Ergonomics": 12,
+			"Weight": 0.303,
+			"ConflictingItems": [
+				"5c0e2ff6d174af02a1659d4a",
+				"5a33e75ac4a2826c6e06d759"
+			]
+		},
+		"locales": {
+			"en": {
+				"name": "AR-15 Magpul STR 卡宾枪托（FDE）",
+				"shortName": "STR",
+				"description": "Magpul STR（存储/类型受限）卡宾枪托 - Mil-Spec是使用Mil-Spec尺寸接收器延伸管的AR15/M4卡宾枪的现成更换屁股托。CTR®的存储能力版本，STR具有改进的颊部焊接和两个防水电池管，采用紧凑、强化的聚合物A框架设计。"
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": true,
+		"modSlot": [
+			"mod_stock_000",
+			"mod_stock"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+		"fleaPriceRoubles": 9200,
+		"handbookPriceRoubles": 2000,
+		"addtoTraders": true,
+		"traderId": "BADGER",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 76,
+				"_tpl": "DOLLARS"
+			}
+		],
+		"loyallevelitems": 2,
+		"addtoBots": false,
+		"addtostaticlootcontainer": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X5",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WOODEN_CRATE",
+				"Probability": 2200
+			}
+		],
+		"masteries": false,
+		"masterySections": [
+			{
+				"Name": "M4",
+				"Templates": [
+					"4b81488c78c8a8ac7d37f9b9"
+				]
+			}
+		],
+		"addweaponpreset": false,
+		"weaponpresets": []
+	},
+	"2adbfe8b01c45020b7a77a9e": {
+		"itemTplToClone": "58d2946386f774496974c37e",
+		"parentId": "STOCK",
+		"handbookParentId": "MOD_STOCK",
+		"overrideProperties": {
+			"ExaminedByDefault": true,
+			"Prefab": {
+				"path": "Mods/Stocks/magpul_dt_carbine_stock_blk.bundle",
+				"rcid": ""
+			},
+			"Recoil": -25,
+			"Ergonomics": 11,
+			"Weight": 0.277,
+			"ConflictingItems": [
+				"5c0e2ff6d174af02a1659d4a",
+				"5a33e75ac4a2826c6e06d759"
+			],
+			"Slots": []
+		},
+		"locales": {
+			"en": {
+				"name": "AR-15 Magpul DT Carbine Stock (Black)",
+				"shortName": "DT",
+				"description": "The DT Carbine Stock is a drop-in replacement buttstock for AR15/M16/M4 carbines (or comparable platforms) equipped with Mil-Spec profile receiver extensions. It merges the best features of the SL® and CTR® product lines with its new dual tensioning technology, which provides greater strength and security for a more rugged and stable platform that’s easy to adjust."
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": true,
+		"modSlot": [
+			"mod_stock_000",
+			"mod_stock"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+		"fleaPriceRoubles": 62000,
+		"handbookPriceRoubles": 8000,
+		"addtoTraders": true,
+		"traderId": "BADGER",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 79,
+				"_tpl": "DOLLARS"
+			}
+		],
+		"loyallevelitems": 1,
+		"addtoBots": false,
+		"addtostaticlootcontainer": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X5",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WOODEN_CRATE",
+				"Probability": 2200
+			}
+		],
+		"masteries": false,
+		"addweaponpreset": false,
+		"weaponpresets": []
+	},
+	"bc1310a6a0aaa46970321e55": {
+		"itemTplToClone": "58d2946386f774496974c37e",
+		"parentId": "STOCK",
+		"handbookParentId": "MOD_STOCK",
+		"overrideProperties": {
+			"ExaminedByDefault": true,
+			"Prefab": {
+				"path": "Mods/Stocks/magpul_dt_carbine_stock_tan.bundle",
+				"rcid": ""
+			},
+			"Recoil": -25,
+			"Ergonomics": 11,
+			"Weight": 0.277,
+			"ConflictingItems": [
+				"5c0e2ff6d174af02a1659d4a",
+				"5a33e75ac4a2826c6e06d759"
+			],
+			"Slots": []
+		},
+		"locales": {
+			"en": {
+				"name": "AR-15 Magpul DT Carbine Stock (FDE)",
+				"shortName": "DT FDE",
+				"description": "The DT Carbine Stock is a drop-in replacement buttstock for AR15/M16/M4 carbines (or comparable platforms) equipped with Mil-Spec profile receiver extensions. It merges the best features of the SL® and CTR® product lines with its new dual tensioning technology, which provides greater strength and security for a more rugged and stable platform that’s easy to adjust."
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": true,
+		"modSlot": [
+			"mod_stock_000",
+			"mod_stock"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+		"fleaPriceRoubles": 46000,
+		"handbookPriceRoubles": 8000,
+		"addtoTraders": true,
+		"traderId": "BADGER",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 82,
+				"_tpl": "DOLLARS"
+			}
+		],
+		"loyallevelitems": 2,
+		"addtoBots": false,
+		"addtostaticlootcontainer": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X5",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WOODEN_CRATE",
+				"Probability": 2200
+			}
+		],
+		"masteries": false,
+		"addweaponpreset": false,
+		"weaponpresets": []
+	},
+	"c492dd59489e2096f9461ffb": {
+		"itemTplToClone": "58d2946386f774496974c37e",
+		"parentId": "STOCK",
+		"handbookParentId": "MOD_STOCK",
+		"overrideProperties": {
+			"ExaminedByDefault": true,
+			"Prefab": {
+				"path": "Mods/Stocks/magpul_dt_carbine_stock_grn.bundle",
+				"rcid": ""
+			},
+			"Recoil": -25,
+			"Ergonomics": 11,
+			"Weight": 0.277,
+			"ConflictingItems": [
+				"5c0e2ff6d174af02a1659d4a",
+				"5a33e75ac4a2826c6e06d759"
+			],
+			"Slots": []
+		},
+		"locales": {
+			"en": {
+				"name": "AR-15 Magpul DT Carbine Stock (Foliage Green)",
+				"shortName": "DT FG",
+				"description": "The DT Carbine Stock is a drop-in replacement buttstock for AR15/M16/M4 carbines (or comparable platforms) equipped with Mil-Spec profile receiver extensions. It merges the best features of the SL® and CTR® product lines with its new dual tensioning technology, which provides greater strength and security for a more rugged and stable platform that’s easy to adjust."
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": true,
+		"modSlot": [
+			"mod_stock_000",
+			"mod_stock"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+		"fleaPriceRoubles": 29000,
+		"handbookPriceRoubles": 8000,
+		"addtoTraders": true,
+		"traderId": "BADGER",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 64,
+				"_tpl": "DOLLARS"
+			}
+		],
+		"loyallevelitems": 3,
+		"addtoBots": false,
+		"addtostaticlootcontainer": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X5",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WOODEN_CRATE",
+				"Probability": 2200
+			}
+		],
+		"masteries": false,
+		"addweaponpreset": false,
+		"weaponpresets": []
+	},
+	"eb35aa47f15f9bd6f211c967": {
+		"itemTplToClone": "606587d11246154cad35d635",
+		"parentId": "STOCK",
+		"handbookParentId": "MOD_STOCK",
+		"overrideProperties": {
+			"ExaminedByDefault": true,
+			"Prefab": {
+				"path": "Mods/Stocks/mft_minimalist_blk.bundle",
+				"rcid": ""
+			},
+			"Recoil": -19.5,
+			"Ergonomics": 9.5,
+			"Weight": 0.164,
+			"ConflictingItems": [
+				"5c0e2ff6d174af02a1659d4a",
+				"5a33e75ac4a2826c6e06d759"
+			],
+			"Slots": []
+		},
+		"locales": {
+			"en": {
+				"name": "AR-15 MFT BATTLELINK 极简枪托（黑色）",
+				"shortName": "极简",
+				"description": "在保持6盎司以下重量的同时满足所有功能要求。这支枪托通过使用自定义配件支架来适应和改变您的环境或运营需求，并接受新的优化吊索配置。"
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": true,
+		"modSlot": [
+			"mod_stock_000",
+			"mod_stock"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+		"fleaPriceRoubles": 22000,
+		"handbookPriceRoubles": 5000,
+		"addtoTraders": true,
+		"traderId": "BADGER",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 42,
+				"_tpl": "DOLLARS"
+			}
+		],
+		"loyallevelitems": 2,
+		"addtoBots": false,
+		"addtostaticlootcontainer": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X5",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WOODEN_CRATE",
+				"Probability": 2200
+			}
+		],
+		"masteries": false,
+		"addweaponpreset": false,
+		"weaponpresets": []
+	},
+	"cfb17094a69e2094a4886fb8": {
+		"itemTplToClone": "606587d11246154cad35d635",
+		"parentId": "STOCK",
+		"handbookParentId": "MOD_STOCK",
+		"overrideProperties": {
+			"ExaminedByDefault": true,
+			"Prefab": {
+				"path": "Mods/Stocks/mft_minimalist_fde.bundle",
+				"rcid": ""
+			},
+			"Recoil": -19.5,
+			"Ergonomics": 9.5,
+			"Weight": 0.164,
+			"ConflictingItems": [
+				"5c0e2ff6d174af02a1659d4a",
+				"5a33e75ac4a2826c6e06d759"
+			],
+			"Slots": []
+		},
+		"locales": {
+			"en": {
+				"name": "AR-15 MFT BATTLELINK 极简枪托（SDE）",
+				"shortName": "极简",
+				"description": "在保持6盎司以下重量的同时满足所有功能要求。这支枪托通过使用自定义配件支架来适应和改变您的环境或运营需求，并接受新的优化吊索配置。"
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": true,
+		"modSlot": [
+			"mod_stock_000",
+			"mod_stock"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+		"fleaPriceRoubles": 18000,
+		"handbookPriceRoubles": 5000,
+		"addtoTraders": true,
+		"traderId": "BADGER",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 42,
+				"_tpl": "DOLLARS"
+			}
+		],
+		"loyallevelitems": 2,
+		"addtoBots": false,
+		"addtostaticlootcontainer": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X5",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WOODEN_CRATE",
+				"Probability": 2200
+			}
+		],
+		"masteries": false,
+		"addweaponpreset": false,
+		"weaponpresets": []
+	},
+	"e486df50a1cc3fbc01855f96": {
+		"itemTplToClone": "591aef7986f774139d495f03",
+		"parentId": "STOCK",
+		"handbookParentId": "MOD_STOCK",
+		"overrideProperties": {
+			"ExaminedByDefault": true,
+			"Prefab": {
+				"path": "Mods/Stocks/maxim_cqb_gen7_stock_blk.bundle",
+				"rcid": ""
+			},
+			"Recoil": -8,
+			"Ergonomics": 2,
+			"Weight": 0.283,
+			"ConflictingItems": [
+				"5c0e2ff6d174af02a1659d4a",
+				"5a33e75ac4a2826c6e06d759"
+			],
+			"Slots": [
+				{
+					"_id": "5649dbce4bdc2d9d198b456c",
+					"_mergeSlotWithChildren": false,
+					"_name": "mod_stock_000",
+					"_parent": "5649be884bdc2d79388b4577",
+					"_props": {
+						"filters": [
+							{
+								"Filter": [
+									"e191f12b24388f954a284c20",
+									"9d60f153bb8ee15f018f180b"
+								],
+								"Shift": 0
+							}
+						]
+					},
+					"_proto": "55d30c4c4bdc2db4468b457e",
+					"_required": false
+				}
+			]
+		},
+		"locales": {
+			"en": {
+				"name": "AR-15 Maxim Gen 7 CQB stock tube (Black)",
+				"shortName": "Maxim CQB",
+				"description": "The Gen 7 is a CQB stock built for comfort and durability for real-world use. No buttons to push, just pull the stock to deploy. At its most collapsed position, this CQB stock only adds 5.35” to your AR15. At full extension, the Maxim CQB stock is the length of an extended carbine stock."
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": true,
+		"modSlot": [
+			"mod_stock_000",
+			"mod_stock"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+		"fleaPriceRoubles": 16000,
+		"handbookPriceRoubles": 4000,
+		"addtoTraders": true,
+		"traderId": "BADGER",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 24,
+				"_tpl": "DOLLARS"
+			}
+		],
+		"loyallevelitems": 2,
+		"addtoBots": false,
+		"addtostaticlootcontainer": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X5",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WOODEN_CRATE",
+				"Probability": 2200
+			}
+		],
+		"masteries": false,
+		"addweaponpreset": false,
+		"weaponpresets": []
+	},
+	"4eac102401922d4979e4e3e1": {
+		"itemTplToClone": "591aef7986f774139d495f03",
+		"parentId": "STOCK",
+		"handbookParentId": "MOD_STOCK",
+		"overrideProperties": {
+			"ExaminedByDefault": true,
+			"Prefab": {
+				"path": "Mods/Stocks/maxim_cqb_gen7_stock_fde.bundle",
+				"rcid": ""
+			},
+			"Recoil": -8,
+			"Ergonomics": 2,
+			"Weight": 0.283,
+			"ConflictingItems": [
+				"5c0e2ff6d174af02a1659d4a",
+				"5a33e75ac4a2826c6e06d759"
+			],
+			"Slots": [
+				{
+					"_id": "5649dbce4bdc2d9d198b456c",
+					"_mergeSlotWithChildren": false,
+					"_name": "mod_stock_000",
+					"_parent": "5649be884bdc2d79388b4577",
+					"_props": {
+						"filters": [
+							{
+								"Filter": [
+									"e191f12b24388f954a284c20",
+									"9d60f153bb8ee15f018f180b"
+								],
+								"Shift": 0
+							}
+						]
+					},
+					"_proto": "55d30c4c4bdc2db4468b457e",
+					"_required": false
+				}
+			]
+		},
+		"locales": {
+			"en": {
+				"name": "AR-15 Maxim Gen 7 CQB stock tube (Arid)",
+				"shortName": "Maxim CQB",
+				"description": "The Gen 7 is a CQB stock built for comfort and durability for real-world use. No buttons to push, just pull the stock to deploy. At its most collapsed position, this CQB stock only adds 5.35” to your AR15. At full extension, the Maxim CQB stock is the length of an extended carbine stock."
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": true,
+		"modSlot": [
+			"mod_stock_000",
+			"mod_stock"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+		"fleaPriceRoubles": 14000,
+		"handbookPriceRoubles": 3500,
+		"addtoTraders": true,
+		"traderId": "BADGER",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 24,
+				"_tpl": "DOLLARS"
+			}
+		],
+		"loyallevelitems": 2,
+		"addtoBots": false,
+		"addtostaticlootcontainer": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X5",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WOODEN_CRATE",
+				"Probability": 2200
+			}
+		],
+		"masteries": false,
+		"addweaponpreset": false,
+		"weaponpresets": []
+	},
+	"e191f12b24388f954a284c20": {
+		"itemTplToClone": "5649be884bdc2d79388b4577",
+		"parentId": "STOCK",
+		"handbookParentId": "MOD_STOCK",
+		"overrideProperties": {
+			"ExaminedByDefault": true,
+			"Prefab": {
+				"path": "Mods/Stocks/maxim_cqb_buttpad_fde.bundle",
+				"rcid": ""
+			},
+			"Recoil": -11,
+			"Ergonomics": 18,
+			"Weight": 0.240,
+			"ExtraSizeRight": 0,
+			"ConflictingItems": [],
+			"Slots": []
+		},
+		"locales": {
+			"en": {
+				"name": "AR-15 Maxim Gen 7 CQB buttpad (Arid)",
+				"shortName": "Maxim CQB",
+				"description": "The Gen 7 is a CQB stock built for comfort and durability for real-world use. No buttons to push, just pull the stock to deploy. At its most collapsed position, this CQB stock only adds 5.35” to your AR15. At full extension, the Maxim CQB stock is the length of an extended carbine stock."
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": false,
+		"modSlot": [],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+		"fleaPriceRoubles": 6900,
+		"handbookPriceRoubles": 2500,
+		"addtoTraders": true,
+		"traderId": "BADGER",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 18,
+				"_tpl": "DOLLARS"
+			}
+		],
+		"loyallevelitems": 2,
+		"addtoBots": false,
+		"addtostaticlootcontainer": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X5",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WOODEN_CRATE",
+				"Probability": 2200
+			}
+		],
+		"masteries": false,
+		"addweaponpreset": false,
+		"weaponpresets": []
+	},
+	"9d60f153bb8ee15f018f180b": {
+		"itemTplToClone": "5649be884bdc2d79388b4577",
+		"parentId": "STOCK",
+		"handbookParentId": "MOD_STOCK",
+		"overrideProperties": {
+			"ExaminedByDefault": true,
+			"Prefab": {
+				"path": "Mods/Stocks/maxim_cqb_buttpad_blk.bundle",
+				"rcid": ""
+			},
+			"Recoil": -11,
+			"Ergonomics": 18,
+			"Weight": 0.240,
+			"ExtraSizeRight": 0,
+			"ConflictingItems": [],
+			"Slots": []
+		},
+		"locales": {
+			"en": {
+				"name": "AR-15 Maxim Gen 7 CQB buttpad (Black)",
+				"shortName": "Maxim CQB",
+				"description": "The Gen 7 is a CQB stock built for comfort and durability for real-world use. No buttons to push, just pull the stock to deploy. At its most collapsed position, this CQB stock only adds 5.35” to your AR15. At full extension, the Maxim CQB stock is the length of an extended carbine stock."
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": false,
+		"modSlot": [],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+		"fleaPriceRoubles": 6800,
+		"handbookPriceRoubles": 2500,
+		"addtoTraders": true,
+		"traderId": "BADGER",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 18,
+				"_tpl": "DOLLARS"
+			}
+		],
+		"loyallevelitems": 2,
+		"addtoBots": false,
+		"addtostaticlootcontainer": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X5",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WOODEN_CRATE",
+				"Probability": 2200
+			}
+		],
+		"masteries": false,
+		"addweaponpreset": false,
+		"weaponpresets": []
+	},
+	"80cf189d3de1a40fb52a902f": {
+		"itemTplToClone": "58d2946386f774496974c37e",
+		"parentId": "STOCK",
+		"handbookParentId": "MOD_STOCK",
+		"overrideProperties": {
+			"ExaminedByDefault": true,
+			"Prefab": {
+				"path": "Mods/Stocks/hogue_stock_black.bundle",
+				"rcid": ""
+			},
+			"Recoil": -22,
+			"Ergonomics": 10,
+			"Weight": 0.235,
+			"ConflictingItems": [
+				"5c0e2ff6d174af02a1659d4a",
+				"5a33e75ac4a2826c6e06d759"
+			],
+			"Slots": []
+		},
+		"locales": {
+			"en": {
+				"name": "AR-15 Hogue 过模卡宾枪托（黑色）",
+				"shortName": "过模黑",
+				"description": "为满足最苛刻的射手的要求而设计，Hogue屁股托按MilSpec容差制造。"
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": true,
+		"modSlot": [
+			"mod_stock_000",
+			"mod_stock"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+		"fleaPriceRoubles": 38000,
+		"handbookPriceRoubles": 6000,
+		"addtoTraders": true,
+		"traderId": "BADGER",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 78,
+				"_tpl": "DOLLARS"
+			}
+		],
+		"loyallevelitems": 1,
+		"addtoBots": false,
+		"addtostaticlootcontainer": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X5",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WOODEN_CRATE",
+				"Probability": 2200
+			}
+		],
+		"masteries": false,
+		"addweaponpreset": false,
+		"weaponpresets": []
+	},
+	"eb3ba7bf51c35159a78e90e9": {
+		"itemTplToClone": "58d2946386f774496974c37e",
+		"parentId": "STOCK",
+		"handbookParentId": "MOD_STOCK",
+		"overrideProperties": {
+			"ExaminedByDefault": true,
+			"Prefab": {
+				"path": "Mods/Stocks/hogue_stock_blue.bundle",
+				"rcid": ""
+			},
+			"Recoil": -22,
+			"Ergonomics": 10,
+			"Weight": 0.235,
+			"ConflictingItems": [
+				"5c0e2ff6d174af02a1659d4a",
+				"5a33e75ac4a2826c6e06d759"
+			],
+			"Slots": []
+		},
+		"locales": {
+			"en": {
+				"name": "AR-15 Hogue 过模卡宾枪托（青蓝）",
+				"shortName": "过模青蓝",
+				"description": "为满足最苛刻的射手的要求而设计，Hogue屁股托按MilSpec容差制造。"
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": true,
+		"modSlot": [
+			"mod_stock_000",
+			"mod_stock"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+		"fleaPriceRoubles": 38000,
+		"handbookPriceRoubles": 6000,
+		"addtoTraders": true,
+		"traderId": "BADGER",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 78,
+				"_tpl": "DOLLARS"
+			}
+		],
+		"loyallevelitems": 1,
+		"addtoBots": false,
+		"addtostaticlootcontainer": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X5",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WOODEN_CRATE",
+				"Probability": 2200
+			}
+		],
+		"masteries": false,
+		"addweaponpreset": false,
+		"weaponpresets": []
+	},
+	"ac318298b846df28e18338ab": {
+		"itemTplToClone": "58d2946386f774496974c37e",
+		"parentId": "STOCK",
+		"handbookParentId": "MOD_STOCK",
+		"overrideProperties": {
+			"ExaminedByDefault": true,
+			"Prefab": {
+				"path": "Mods/Stocks/hogue_stock_green.bundle",
+				"rcid": ""
+			},
+			"Recoil": -22,
+			"Ergonomics": 10,
+			"Weight": 0.235,
+			"ConflictingItems": [
+				"5c0e2ff6d174af02a1659d4a",
+				"5a33e75ac4a2826c6e06d759"
+			],
+			"Slots": []
+		},
+		"locales": {
+			"en": {
+				"name": "AR-15 Hogue 过模卡宾枪托（OD绿）",
+				"shortName": "过模OD",
+				"description": "为满足最苛刻的射手的要求而设计，Hogue屁股托按MilSpec容差制造。"
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": true,
+		"modSlot": [
+			"mod_stock_000",
+			"mod_stock"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+		"fleaPriceRoubles": 38000,
+		"handbookPriceRoubles": 6000,
+		"addtoTraders": true,
+		"traderId": "BADGER",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 78,
+				"_tpl": "DOLLARS"
+			}
+		],
+		"loyallevelitems": 1,
+		"addtoBots": false,
+		"addtostaticlootcontainer": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X5",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WOODEN_CRATE",
+				"Probability": 2200
+			}
+		],
+		"masteries": false,
+		"addweaponpreset": false,
+		"weaponpresets": []
+	},
+	"308b73dbcf2997db750985dc": {
+		"itemTplToClone": "58d2946386f774496974c37e",
+		"parentId": "STOCK",
+		"handbookParentId": "MOD_STOCK",
+		"overrideProperties": {
+			"ExaminedByDefault": true,
+			"Prefab": {
+				"path": "Mods/Stocks/hogue_stock_grey.bundle",
+				"rcid": ""
+			},
+			"Recoil": -22,
+			"Ergonomics": 10,
+			"Weight": 0.235,
+			"ConflictingItems": [
+				"5c0e2ff6d174af02a1659d4a",
+				"5a33e75ac4a2826c6e06d759"
+			],
+			"Slots": []
+		},
+		"locales": {
+			"en": {
+				"name": "AR-15 Hogue 过模卡宾枪托（灰色）",
+				"shortName": "过模灰",
+				"description": "为满足最苛刻的射手的要求而设计，Hogue屁股托按MilSpec容差制造。"
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": true,
+		"modSlot": [
+			"mod_stock_000",
+			"mod_stock"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+		"fleaPriceRoubles": 38000,
+		"handbookPriceRoubles": 6000,
+		"addtoTraders": true,
+		"traderId": "BADGER",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 78,
+				"_tpl": "DOLLARS"
+			}
+		],
+		"loyallevelitems": 1,
+		"addtoBots": false,
+		"addtostaticlootcontainer": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X5",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WOODEN_CRATE",
+				"Probability": 2200
+			}
+		],
+		"masteries": false,
+		"addweaponpreset": false,
+		"weaponpresets": []
+	},
+	"9798b0087903422f1eb5475a": {
+		"itemTplToClone": "58d2946386f774496974c37e",
+		"parentId": "STOCK",
+		"handbookParentId": "MOD_STOCK",
+		"overrideProperties": {
+			"ExaminedByDefault": true,
+			"Prefab": {
+				"path": "Mods/Stocks/hogue_stock_pink.bundle",
+				"rcid": ""
+			},
+			"Recoil": -22,
+			"Ergonomics": 10,
+			"Weight": 0.235,
+			"ConflictingItems": [
+				"5c0e2ff6d174af02a1659d4a",
+				"5a33e75ac4a2826c6e06d759"
+			],
+			"Slots": []
+		},
+		"locales": {
+			"en": {
+				"name": "AR-15 Hogue 过模卡宾枪托（粉红）",
+				"shortName": "过模粉",
+				"description": "为满足最苛刻的射手的要求而设计，Hogue屁股托按MilSpec容差制造。"
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": true,
+		"modSlot": [
+			"mod_stock_000",
+			"mod_stock"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+		"fleaPriceRoubles": 38000,
+		"handbookPriceRoubles": 6000,
+		"addtoTraders": true,
+		"traderId": "BADGER",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 78,
+				"_tpl": "DOLLARS"
+			}
+		],
+		"loyallevelitems": 1,
+		"addtoBots": false,
+		"addtostaticlootcontainer": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X5",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 2200
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WOODEN_CRATE",
+				"Probability": 2200
+			}
+		],
+		"masteries": false,
+		"addweaponpreset": false,
+		"weaponpresets": []
+	}
+}

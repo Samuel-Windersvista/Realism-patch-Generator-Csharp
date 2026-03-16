@@ -1,0 +1,903 @@
+{
+	"68b0a169dcf794dd9a0544b2": {
+		"itemTplToClone": "5ac50c185acfc400163398d4",
+		"parentId": "55818a594bdc2db9688b456a",
+		"handbookParentId": "5b5f757486f774093e6cb507",
+		"overrideProperties": {
+			"ExaminedByDefault": true,
+			"Prefab": {
+				"path": "Mods/AK_Stuff/akms_stock_adapter.bundle",
+				"rcid": ""
+			},
+			"CanSellOnRagfair": false,
+			"CanRequireOnRagfair": false,
+			"Ergonomics": 1,
+			"Weight": 0.4,
+			"Recoil": 2,
+			"Slots": [
+				{
+					"_id": "f46351aae8613b8db5f360e4",
+					"_mergeSlotWithChildren": false,
+					"_name": "mod_stock_akms",
+					"_parent": "5b5f757486f774093e6cb507",
+					"_props": {
+						"filters": [
+							{
+								"Filter": [
+									"59ff3b6a86f77477562ff5ed",
+									"6761763448fa5c377e06fc39",
+									"5abcd472d8ce8700166032ae"
+								],
+								"Shift": 0
+							}
+						]
+					},
+					"_proto": "55d30c4c4bdc2db4468b457e",
+					"_required": false
+				}
+			]
+			
+
+		},
+		"locales": {
+			"en": {
+				"name": "AKMS Stock Adapter",
+				"shortName": "AKMS Adapter",
+				"description": "an AKMS stock, adapted to fit on any AK-74 Variants"
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": true,
+		"modSlot": [
+			"mod_stock"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+		"fleaPriceRoubles": 8250,
+		"handbookPriceRoubles": 4699,
+		"addtoTraders": true,
+		"traderId": "MECHANIC",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 8200,
+				"_tpl": "ROUBLES"
+			}
+		],
+		"loyallevelitems": 1,
+		"addtoBots": false,
+		"addtostaticlootcontainer": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 3000
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 3000
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 3000
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X5",
+				"Probability": 3000
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 3000
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WOODEN_CRATE",
+				"Probability": 3000
+			}
+		],
+		"masteries": false,
+		"masterySections": [
+			{
+				"Name": "M4",
+				"Templates": [
+					"4b81488c78c8a8ac7d37f9b9"
+				]
+			}
+		],
+		"addweaponpreset": false,
+		"weaponpresets": []
+	},
+	"68b1e5ef72ad20d8b10e7ce9": {
+		"itemTplToClone": "59ccfdba86f7747f2109a587",
+		"parentId": "56ea9461d2720b67698b456f",
+		"handbookParentId": "5b5f760586f774093e6cb509",
+		"overrideProperties": {
+			"ExaminedByDefault": true,
+			"Prefab": {
+				"path": "Mods/AK_Stuff/ultimak_gas_block.bundle",
+				"rcid": ""
+			},
+			"CanSellOnRagfair": false,
+			"CanRequireOnRagfair": false,
+			"ConflictingItems": [],
+			"Slots": [
+			{
+					"_name": "mod_tactical_000",
+					"_id": "6858239e26ac48ff0a28f8ba",
+					"_parent": "6858233fe23b980eb4f1514f",
+					"_props": {
+						"filters": [
+							{
+								"Filter": [
+									"5a800961159bd4315e3a1657",
+									"57fd23e32459772d0805bcf1",
+									"544909bb4bdc2d6f028b4577",
+									"5c06595c0db834001a66af6c",
+									"5cc9c20cd7f00c001336c65d",
+									"5d2369418abbc306c62e0c80",
+									"5b07dd285acfc4001754240d",
+									"56def37dd2720bec348b456a",
+									"5a7b483fe899ef0016170d15",
+									"61605d88ffa6e502ac5e7eeb",
+									"5a5f1ce64f39f90b401987bc",
+									"560d657b4bdc2da74d8b4572",
+									"5b3a337e5acfc4704b4a19a0",
+									"5c5952732e2216398b5abda2",
+									"57d17e212459775a1179a0f5",
+									"6267c6396b642f77f56f5c1c",
+									"6272370ee4013c5d7e31f418",
+									"6272379924e29f06af4d5ecb",
+									"626becf9582c3e319310b837",
+									"644a3df63b0b6f03e101e065",
+									"646f6322f43d0c5d62063715"
+								],
+								"Shift": 0
+							}
+						]
+					},
+					"_required": false,
+					"_mergeSlotWithChildren": false,
+					"_proto": "55d30c4c4bdc2db4468b457e"
+			},
+			{
+					"_name": "mod_scope",
+					"_id": "685b0b0b27321a36e3c0aacf",
+					"_parent": "685b0a6054f4bf2b066d6c2c",
+					"_props": {
+						"filters": [
+							{
+								"Filter": [
+                                    "591c4efa86f7741030027726",
+                                    "570fd79bd2720bc7458b4583",
+                                    "570fd6c2d2720bc6458b457f",
+                                    "558022b54bdc2dac148b458d",
+                                    "58491f3324597764bc48fa02",
+                                    "584924ec24597768f12ae244",
+                                    "5b30b0dc5acfc400153b7124",
+                                    "6165ac8c290d254f5e6b2f6c",
+                                    "60a23797a37c940de7062d02",
+                                    "5d2da1e948f035477b1ce2ba",
+                                    "5c0505e00db834001b735073",
+                                    "609a63b6e2ff132951242d09",
+                                    "584984812459776a704a82a6",
+                                    "59f9d81586f7744c7506ee62",
+                                    "570fd721d2720bc5458b4596",
+                                    "57ae0171245977343c27bfcf",
+                                    "58d39d3d86f77445bb794ae7",
+                                    "616554fe50224f204c1da2aa",
+                                    "5c7d55f52e221644f31bff6a",
+                                    "616584766ef05c2ce828ef57",
+                                    "615d8d878004cc50514c3233",
+                                    "577d128124597739d65d0e56",
+                                    "58d2664f86f7747fec5834f6",
+                                    "5649a2464bdc2d91118b45a8",
+                                    "61714b2467085e45ef140b2c",
+                                    "5a33b2c9c4a282000c5a9511",
+                                    "64785e7c19d732620e045e15",
+                                    "644a3df63b0b6f03e101e065",
+                                    "655f13e0a246670fb0373245",
+									"61605d88ffa6e502ac5e7eeb",
+									"5d10b49bd7ad1a1a560708b0",
+									"544909bb4bdc2d6f028b4577",
+									"5c06595c0db834001a66af6c",
+									"57fd23e32459772d0805bcf1",
+                                    "6845a2443b726a816a6ca79e",
+                                    "6845a36582114b67fdc12a16",
+                                    "6845a394ddfdb4cac936974e",
+                                    "6845a930e3dfd938256267a2",
+									"68bd7b4d8ce7029b6409b4a2",
+									"68bd7b4d8ce7029b6409b4a3"
+                                ],
+                                "Shift": 0
+							}
+						]
+					},
+					"_required": false,
+					"_mergeSlotWithChildren": false,
+					"_proto": "55d30c4c4bdc2db4468b457e"
+			},
+			{
+					"_name": "mod_handguard",
+					"_id": "685b0b0b27321a36e3c0aacf",
+					"_parent": "685b0a6054f4bf2b066d6c2c",
+					"_props": {
+						"filters": [
+							{
+								"Filter": [
+									"68b1e5ef72ad20d8b10e7ce8"
+                                ],
+                                "Shift": 0
+							}
+						]
+					},
+					"_required": true,
+					"_mergeSlotWithChildren": false,
+					"_proto": "55d30c4c4bdc2db4468b457e"
+			}
+			]
+
+		},
+		"locales": {
+			"en": {
+				"name": "AK Ultimak M1-B gas tube",
+				"shortName": "M1-B",
+				"description": "The UltiMAK M1-B gas tube for AK assault rifles sets the gas piston movement direction and, at the same time, serves as a mount for installing reflex sights and tactical devices."
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": true,
+		"modSlot": [
+			"mod_gas_block"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+		"fleaPriceRoubles": 8250,
+		"handbookPriceRoubles": 4699,
+		"addtoTraders": true,
+		"traderId": "MECHANIC",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 8200,
+				"_tpl": "ROUBLES"
+			}
+		],
+		"loyallevelitems": 1,
+		"addtoBots": false,
+		"addtostaticlootcontainer": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 3000
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 3000
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 3000
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X5",
+				"Probability": 3000
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 3000
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WOODEN_CRATE",
+				"Probability": 3000
+			}
+		],
+		"masteries": false,
+		"masterySections": [
+			{
+				"Name": "AK",
+				"Templates": [
+					"4b81488c78c8a8ac7d37f9b9"
+				]
+			}
+		],
+		"addweaponpreset": false,
+		"weaponpresets": []
+	},
+	"68b1e5ef72ad20d8b10e7ce8": {
+		"itemTplToClone": "5d2c829448f0353a5c7d6674",
+		"parentId": "55818a104bdc2db9688b4569",
+		"handbookParentId": "5b5f75e486f77447ec5d7712",
+		"overrideProperties": {
+			"ExaminedByDefault": true,
+			"Prefab": {
+				"path": "Mods/AK_Stuff/shark_fin_lower.bundle",
+				"rcid": ""
+			},
+			"CanSellOnRagfair": false,
+			"CanRequireOnRagfair": false,
+			"ConflictingItems": [
+				"62e7e7bbe6da9612f743f1e0"
+			],
+
+			"Weight": 0.2,
+			"Recoil": -1,
+			"Ergonomics": 5,
+			"Slots": [
+			]
+
+		},
+		"locales": {
+			"en": {
+				"name": "Shark fin lower handguard",
+				"shortName": "Shark fin",
+				"description": "modified Romanian lower handguard"
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": false,
+		"modSlot": [],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+		"fleaPriceRoubles": 8250,
+		"handbookPriceRoubles": 4699,
+		"addtoTraders": true,
+		"traderId": "MECHANIC",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 8200,
+				"_tpl": "ROUBLES"
+			}
+		],
+		"loyallevelitems": 1,
+		"addtoBots": false,
+		"addtostaticlootcontainer": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 3000
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 3000
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 3000
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X5",
+				"Probability": 3000
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 3000
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WOODEN_CRATE",
+				"Probability": 3000
+			}
+		],
+		"masteries": false,
+		"masterySections": [
+			{
+				"Name": "AK",
+				"Templates": [
+					"4b81488c78c8a8ac7d37f9b9"
+				]
+			}
+		],
+		"addweaponpreset": false,
+		"weaponpresets": []
+	},
+	"68c74b75cac1ff3d420fcecd": {
+		"itemTplToClone": "649ec127c93611967b034957",
+		"parentId": "55818a104bdc2db9688b4569",
+		"handbookParentId": "5b5f75e486f77447ec5d7712",
+		"overrideProperties": {
+			"Prefab": {
+				"path": "Mods/AK_Stuff/rotor_43_handguard.bundle",
+				"rcid": ""
+			},
+			"ConflictingItems": [
+				"62e7e7bbe6da9612f743f1e0"
+			],
+			"Slots": [
+				{
+					"_name": "mod_foregrip",
+					"_id": "685b0d77e261a4215c0ec3f6",
+					"_parent": "685b0d680624e87899344355",
+					"_props": {
+                        "filters": [
+                            {
+                                "Filter": [
+                                    "5b7be4895acfc400170e2dd5",
+                                    "57cffb66245977632f391a99",
+                                    "57cffcd624597763133760c5",
+                                    "57cffcdd24597763f5110006",
+                                    "57cffce524597763b31685d8",
+                                    "651a8e529829226ceb67c319",
+                                    "651a8bf3a8520e48047bf708",
+                                    "665d5d9e338229cfd6078da1",
+                                    "665edce564fb556f940ab32a"
+                                ],
+                                "Shift": 0
+							}
+						]
+					},
+					"_required": false,
+					"_mergeSlotWithChildren": false,
+					"_proto": "55d30c4c4bdc2db4468b457e"
+				},
+				{
+					"_name": "mod_tactical_000",
+					"_id": "685b0d732d2113c83e740c83",
+					"_parent": "685b0d680624e87899344355",
+					"_props": {
+						"filters": [
+							{
+								"Filter": [
+									"669a6a4a525be1d2d004b8eb",
+									"5b7be47f5acfc400170e2dd2",
+                                    "6269220d70b6c02e665f2635",
+                                    "671126b049e181972e0681fa"
+								],
+								"Shift": 0
+							}
+						]
+					},
+					"_required": false,
+					"_mergeSlotWithChildren": false,
+					"_proto": "55d30c4c4bdc2db4468b457e"
+				},
+				{
+					"_name": "mod_tactical_001",
+					"_id": "685b0d72aa3e1c7094b24b96",
+					"_parent": "685b0d680624e87899344355",
+					"_props": {
+						"filters": [
+							{
+								"Filter": [
+									"669a6a4a525be1d2d004b8eb",
+									"5b7be47f5acfc400170e2dd2",
+                                    "6269220d70b6c02e665f2635"
+								],
+								"Shift": 0
+							}
+						]
+					},
+					"_required": false,
+					"_mergeSlotWithChildren": false,
+					"_proto": "55d30c4c4bdc2db4468b457e"
+				},
+				{
+					"_name": "mod_tactical_002",
+					"_id": "685b0d6f6a3667abbc0d1a5c",
+					"_parent": "685b0d680624e87899344355",
+					"_props": {
+						"filters": [
+							{
+								"Filter": [
+									"669a6a4a525be1d2d004b8eb",
+									"5b7be47f5acfc400170e2dd2",
+                                    "6269220d70b6c02e665f2635"
+								],
+								"Shift": 0
+							}
+						]
+					},
+					"_required": false,
+					"_mergeSlotWithChildren": false,
+					"_proto": "55d30c4c4bdc2db4468b457e"
+				},
+                {
+					"_name": "mod_scope",
+					"_id": "685b0d759601b00d3f96ce6a",
+					"_parent": "685b0d680624e87899344355",
+					"_props": {
+						"filters": [
+							{
+								"Filter": [
+                                    "591c4efa86f7741030027726",
+                                    "570fd79bd2720bc7458b4583",
+                                    "570fd6c2d2720bc6458b457f",
+                                    "558022b54bdc2dac148b458d",
+                                    "58491f3324597764bc48fa02",
+                                    "584924ec24597768f12ae244",
+                                    "5b30b0dc5acfc400153b7124",
+                                    "6165ac8c290d254f5e6b2f6c",
+                                    "60a23797a37c940de7062d02",
+                                    "5d2da1e948f035477b1ce2ba",
+                                    "5c0505e00db834001b735073",
+                                    "609a63b6e2ff132951242d09",
+                                    "584984812459776a704a82a6",
+                                    "59f9d81586f7744c7506ee62",
+                                    "570fd721d2720bc5458b4596",
+                                    "57ae0171245977343c27bfcf",
+                                    "58d39d3d86f77445bb794ae7",
+                                    "616554fe50224f204c1da2aa",
+                                    "5c7d55f52e221644f31bff6a",
+                                    "616584766ef05c2ce828ef57",
+                                    "615d8d878004cc50514c3233",
+                                    "577d128124597739d65d0e56",
+                                    "58d2664f86f7747fec5834f6",
+                                    "5649a2464bdc2d91118b45a8",
+                                    "61714b2467085e45ef140b2c",
+                                    "5a33b2c9c4a282000c5a9511",
+                                    "64785e7c19d732620e045e15",
+                                    "644a3df63b0b6f03e101e065",
+                                    "655f13e0a246670fb0373245",
+									"61605d88ffa6e502ac5e7eeb",
+									"5d10b49bd7ad1a1a560708b0",
+									"544909bb4bdc2d6f028b4577",
+									"5c06595c0db834001a66af6c",
+									"57fd23e32459772d0805bcf1",
+                                    "6845a2443b726a816a6ca79e",
+                                    "6845a36582114b67fdc12a16",
+                                    "6845a394ddfdb4cac936974e",
+                                    "6845a930e3dfd938256267a2",
+									"68bd7b4d8ce7029b6409b4a2",
+									"68bd7b4d8ce7029b6409b4a3"
+                                ],
+                                "Shift": 0
+							}
+						]
+					},
+					"_required": false,
+					"_mergeSlotWithChildren": false,
+					"_proto": "55d30c4c4bdc2db4468b457e"
+				},
+				{
+					"_name": "mod_mount_001",
+					"_id": "685b0d732d2113c83e740c83",
+					"_parent": "685b0d680624e87899344355",
+					"_props": {
+						"filters": [
+							{
+								"Filter": [
+									"5beecbb80db834001d2c465e"
+								],
+								"Shift": 0
+							}
+						]
+					},
+					"_required": false,
+					"_mergeSlotWithChildren": false,
+					"_proto": "55d30c4c4bdc2db4468b457e"
+				},
+				{
+					"_name": "mod_mount_000",
+					"_id": "685b0d732d2113c83e740c83",
+					"_parent": "685b0d680624e87899344355",
+					"_props": {
+						"filters": [
+							{
+								"Filter": [
+									"5beecbb80db834001d2c465e"
+								],
+								"Shift": 0
+							}
+						]
+					},
+					"_required": false,
+					"_mergeSlotWithChildren": false,
+					"_proto": "55d30c4c4bdc2db4468b457e"
+				}
+			]
+		},
+		"locales": {
+			"en": {
+				"name": "AK-12用Rotor 43护木",
+"shortName": "ROTOR",
+"description": "Rotor 43护木专为AK-12突击步枪设计，顶部配有全长皮卡汀尼导轨，侧面和底部设有M-LOK接口，可用于安装各类战术附件。"
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": true,
+		"modSlot": [
+			"mod_handguard"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+		"addtoTraders": true,
+		"traderId": "PEACEKEEPER",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 2
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 310,
+				"_tpl": "DOLLARS"
+			}
+		],
+		"loyallevelitems": 3,
+		"fleaPriceRoubles": 18657,
+		"handbookPriceRoubles": 12200,
+		"addtoStaticLootContainers": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 7
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 6
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 5
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 1
+			}
+		]
+	},
+	"68c74b75cac1ff3d420fceca": {
+		"itemTplToClone": "649ec127c93611967b034957",
+		"parentId": "55818a104bdc2db9688b4569",
+		"handbookParentId": "5b5f75e486f77447ec5d7712",
+		"overrideProperties": {
+			"Prefab": {
+				"path": "Mods/AK_Stuff/rotor_43_handguard_fde.bundle",
+				"rcid": ""
+			},
+			"ConflictingItems": [
+				"62e7e7bbe6da9612f743f1e0"
+			],
+			"Slots": [
+				{
+					"_name": "mod_foregrip",
+					"_id": "685b0d77e261a4215c0ec3f6",
+					"_parent": "685b0d680624e87899344355",
+					"_props": {
+                        "filters": [
+                            {
+                                "Filter": [
+                                    "5b7be4895acfc400170e2dd5",
+                                    "57cffb66245977632f391a99",
+                                    "57cffcd624597763133760c5",
+                                    "57cffcdd24597763f5110006",
+                                    "57cffce524597763b31685d8",
+                                    "651a8e529829226ceb67c319",
+                                    "651a8bf3a8520e48047bf708",
+                                    "665d5d9e338229cfd6078da1",
+                                    "665edce564fb556f940ab32a"
+                                ],
+                                "Shift": 0
+							}
+						]
+					},
+					"_required": false,
+					"_mergeSlotWithChildren": false,
+					"_proto": "55d30c4c4bdc2db4468b457e"
+				},
+				{
+					"_name": "mod_tactical_000",
+					"_id": "685b0d732d2113c83e740c83",
+					"_parent": "685b0d680624e87899344355",
+					"_props": {
+						"filters": [
+							{
+								"Filter": [
+									"669a6a4a525be1d2d004b8eb",
+									"5b7be47f5acfc400170e2dd2",
+                                    "6269220d70b6c02e665f2635",
+                                    "671126b049e181972e0681fa"
+								],
+								"Shift": 0
+							}
+						]
+					},
+					"_required": false,
+					"_mergeSlotWithChildren": false,
+					"_proto": "55d30c4c4bdc2db4468b457e"
+				},
+				{
+					"_name": "mod_tactical_001",
+					"_id": "685b0d72aa3e1c7094b24b96",
+					"_parent": "685b0d680624e87899344355",
+					"_props": {
+						"filters": [
+							{
+								"Filter": [
+									"669a6a4a525be1d2d004b8eb",
+									"5b7be47f5acfc400170e2dd2",
+                                    "6269220d70b6c02e665f2635"
+								],
+								"Shift": 0
+							}
+						]
+					},
+					"_required": false,
+					"_mergeSlotWithChildren": false,
+					"_proto": "55d30c4c4bdc2db4468b457e"
+				},
+				{
+					"_name": "mod_tactical_002",
+					"_id": "685b0d6f6a3667abbc0d1a5c",
+					"_parent": "685b0d680624e87899344355",
+					"_props": {
+						"filters": [
+							{
+								"Filter": [
+									"669a6a4a525be1d2d004b8eb",
+									"5b7be47f5acfc400170e2dd2",
+                                    "6269220d70b6c02e665f2635"
+								],
+								"Shift": 0
+							}
+						]
+					},
+					"_required": false,
+					"_mergeSlotWithChildren": false,
+					"_proto": "55d30c4c4bdc2db4468b457e"
+				},
+                {
+					"_name": "mod_scope",
+					"_id": "685b0d759601b00d3f96ce6a",
+					"_parent": "685b0d680624e87899344355",
+					"_props": {
+						"filters": [
+							{
+								"Filter": [
+                                    "591c4efa86f7741030027726",
+                                    "570fd79bd2720bc7458b4583",
+                                    "570fd6c2d2720bc6458b457f",
+                                    "558022b54bdc2dac148b458d",
+                                    "58491f3324597764bc48fa02",
+                                    "584924ec24597768f12ae244",
+                                    "5b30b0dc5acfc400153b7124",
+                                    "6165ac8c290d254f5e6b2f6c",
+                                    "60a23797a37c940de7062d02",
+                                    "5d2da1e948f035477b1ce2ba",
+                                    "5c0505e00db834001b735073",
+                                    "609a63b6e2ff132951242d09",
+                                    "584984812459776a704a82a6",
+                                    "59f9d81586f7744c7506ee62",
+                                    "570fd721d2720bc5458b4596",
+                                    "57ae0171245977343c27bfcf",
+                                    "58d39d3d86f77445bb794ae7",
+                                    "616554fe50224f204c1da2aa",
+                                    "5c7d55f52e221644f31bff6a",
+                                    "616584766ef05c2ce828ef57",
+                                    "615d8d878004cc50514c3233",
+                                    "577d128124597739d65d0e56",
+                                    "58d2664f86f7747fec5834f6",
+                                    "5649a2464bdc2d91118b45a8",
+                                    "61714b2467085e45ef140b2c",
+                                    "5a33b2c9c4a282000c5a9511",
+                                    "64785e7c19d732620e045e15",
+                                    "644a3df63b0b6f03e101e065",
+                                    "655f13e0a246670fb0373245",
+									"61605d88ffa6e502ac5e7eeb",
+									"5d10b49bd7ad1a1a560708b0",
+									"544909bb4bdc2d6f028b4577",
+									"5c06595c0db834001a66af6c",
+									"57fd23e32459772d0805bcf1",
+                                    "6845a2443b726a816a6ca79e",
+                                    "6845a36582114b67fdc12a16",
+                                    "6845a394ddfdb4cac936974e",
+                                    "6845a930e3dfd938256267a2",
+									"68bd7b4d8ce7029b6409b4a2",
+									"68bd7b4d8ce7029b6409b4a3"
+                                ],
+                                "Shift": 0
+							}
+						]
+					},
+					"_required": false,
+					"_mergeSlotWithChildren": false,
+					"_proto": "55d30c4c4bdc2db4468b457e"
+				},
+				{
+					"_name": "mod_mount_001",
+					"_id": "685b0d732d2113c83e740c83",
+					"_parent": "685b0d680624e87899344355",
+					"_props": {
+						"filters": [
+							{
+								"Filter": [
+									"5beecbb80db834001d2c465e"
+								],
+								"Shift": 0
+							}
+						]
+					},
+					"_required": false,
+					"_mergeSlotWithChildren": false,
+					"_proto": "55d30c4c4bdc2db4468b457e"
+				},
+				{
+					"_name": "mod_mount_000",
+					"_id": "685b0d732d2113c83e740c83",
+					"_parent": "685b0d680624e87899344355",
+					"_props": {
+						"filters": [
+							{
+								"Filter": [
+									"5beecbb80db834001d2c465e"
+								],
+								"Shift": 0
+							}
+						]
+					},
+					"_required": false,
+					"_mergeSlotWithChildren": false,
+					"_proto": "55d30c4c4bdc2db4468b457e"
+				}
+			]
+		},
+		"locales": {
+			"en": {
+				"name": "AK-12用Rotor 43护木（FDE色）",
+"shortName": "ROTOR",
+"description": "Rotor 43护木专为AK-12突击步枪设计，顶部配有全长皮卡汀尼导轨，侧面和底部设有M-LOK接口，可用于安装各类战术附件。此为扁平深土色（Flat Dark Earth，FDE）版本。"
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": true,
+		"modSlot": [
+			"mod_handguard"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+		"addtoTraders": true,
+		"traderId": "PEACEKEEPER",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 2
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 310,
+				"_tpl": "DOLLARS"
+			}
+		],
+		"loyallevelitems": 3,
+		"fleaPriceRoubles": 18657,
+		"handbookPriceRoubles": 12200,
+		"addtoStaticLootContainers": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 7
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 6
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 5
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 1
+			}
+		]
+	}
+}

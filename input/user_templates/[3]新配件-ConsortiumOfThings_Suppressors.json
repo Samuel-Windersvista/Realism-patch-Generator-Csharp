@@ -1,0 +1,152 @@
+{
+    "686ad244771ad06c4fd8c970": {
+		"itemTplToClone": "5fc4b992187fea44d52edaa9",
+		"parentId": "550aa4cd4bdc2dd8348b456c",
+		"handbookParentId": "5b5f731a86f774093e6cb4f9",
+		"overrideProperties": {
+			"Prefab": {
+				"path": "Attachments/Silencers/silencer_all_tirant_45s_blk.bundle",
+				"rcid": ""
+			},
+			"Loudness": -30,
+			"Ergonomics": -19,
+			"Recoil": -6.5,
+			"ExtraSizeLeft": 1,
+			"Width": 2,
+			"Velocity": 0.85,
+			"DurabilityBurnModificator": 1.7,
+			"HeatFactor": 1.13,
+			"Slots": [],
+			"CanSellOnRagfair": true,
+			"RagFairCommissionModifier": 1.25,
+            "muzzleModType": "silencer"
+		},
+		"locales": {
+			"en": {
+				"name": "AAC Ti-RANT 45S .45 ACP 消音器",
+"shortName": "Ti-RANT",
+"description": "由先进武器公司（Advanced Armament Corp.）开发的紧凑型消音器，适用于.45 ACP手枪和冲锋枪。Ti-RANT 45S采用轻质钛合金与铝合金结构，在有效降低噪音的同时避免过度增加体积。相比标准型号更短，兼顾了消音性能与操作灵活性。"
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": true,
+		"modSlot": [
+			"mod_muzzle"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+		"addtoTraders": true,
+		"traderId": "PEACEKEEPER",
+		"traderItems": [
+			{
+				"unlimitedCount": false,
+				"stackObjectsCount": 2
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 419,
+				"_tpl": "DOLLARS"
+			}
+		],
+		"loyallevelitems": 3,
+		"fleaPriceRoubles": 76362,
+		"handbookPriceRoubles": 35400,
+		"addtoStaticLootContainers": true,
+        "addtoragfair": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 7
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 6
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 5
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 1
+			}
+		]
+	},
+    "686ad2e1cb1cd4ac811bfe81": {
+		"itemTplToClone": "5fc4b992187fea44d52edaa9",
+		"parentId": "550aa4cd4bdc2dd8348b456c",
+		"handbookParentId": "5b5f731a86f774093e6cb4f9",
+		"overrideProperties": {
+			"Prefab": {
+				"path": "Attachments/Silencers/silencer_all_tirant_45s_fde.bundle",
+				"rcid": ""
+			},
+			"Loudness": -30,
+			"Ergonomics": -19,
+			"Recoil": -6.5,
+			"ExtraSizeLeft": 1,
+			"Width": 2,
+			"Velocity": 0.85,
+			"DurabilityBurnModificator": 1.7,
+			"HeatFactor": 1.13,
+			"Slots": [],
+			"CanSellOnRagfair": true,
+			"RagFairCommissionModifier": 1.25,
+            "muzzleModType": "silencer"
+		},
+		"locales": {
+			"en": {
+				"name": "AAC Ti-RANT 45S .45 ACP 消音器（FDE色）",
+"shortName": "Ti-RANT",
+"description": "由先进武器公司（Advanced Armament Corp.）开发的紧凑型消音器，适用于.45 ACP手枪和冲锋枪。Ti-RANT 45S采用轻质钛合金与铝合金结构，在有效降低噪音的同时避免过度增加体积。相比标准型号更短，兼顾了消音性能与操作灵活性。此为扁平深土色（Flat Dark Earth）版本。"
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": true,
+		"modSlot": [
+			"mod_muzzle"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+		"addtoTraders": true,
+		"traderId": "PEACEKEEPER",
+		"traderItems": [
+			{
+				"unlimitedCount": false,
+				"stackObjectsCount": 2
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 419,
+				"_tpl": "DOLLARS"
+			}
+		],
+		"loyallevelitems": 4,
+		"fleaPriceRoubles": 76362,
+		"handbookPriceRoubles": 35400,
+		"addtoStaticLootContainers": true,
+		"addtoragfair": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 7
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 6
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 5
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 1
+			}
+		]
+	}
+}

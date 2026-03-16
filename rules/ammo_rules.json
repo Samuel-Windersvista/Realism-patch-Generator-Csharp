@@ -1,0 +1,2453 @@
+{
+  "ammoProfileRanges": {
+    "rifle_545x39": {
+      "InitialSpeed": {
+        "min": 840,
+        "max": 930,
+        "preferInt": true
+      },
+      "BulletMassGram": {
+        "min": 3.2,
+        "max": 4.2,
+        "preferInt": false
+      },
+      "Damage": {
+        "min": 38,
+        "max": 58,
+        "preferInt": true
+      },
+      "PenetrationPower": {
+        "min": 36,
+        "max": 82,
+        "preferInt": true
+      },
+      "ammoRec": {
+        "min": -8,
+        "max": 8,
+        "preferInt": true
+      },
+      "ammoAccr": {
+        "min": -2,
+        "max": 12,
+        "preferInt": true
+      },
+      "ArmorDamage": {
+        "min": 1.08,
+        "max": 1.16,
+        "preferInt": false
+      },
+      "HeatFactor": {
+        "min": 0.95,
+        "max": 1.15,
+        "preferInt": false
+      },
+      "HeavyBleedingDelta": {
+        "min": 0,
+        "max": 0.12,
+        "preferInt": false
+      },
+      "LightBleedingDelta": {
+        "min": 0.04,
+        "max": 0.2,
+        "preferInt": false
+      },
+      "DurabilityBurnModificator": {
+        "min": 0.9,
+        "max": 1.15,
+        "preferInt": false
+      },
+      "BallisticCoeficient": {
+        "min": 0.16,
+        "max": 0.28,
+        "preferInt": false
+      },
+      "MalfMisfireChance": {
+        "min": 0.001,
+        "max": 0.008,
+        "preferInt": false
+      },
+      "MisfireChance": {
+        "min": 0.001,
+        "max": 0.008,
+        "preferInt": false
+      },
+      "MalfFeedChance": {
+        "min": 0.001,
+        "max": 0.008,
+        "preferInt": false
+      }
+    },
+    "rifle_556x45": {
+      "InitialSpeed": {
+        "min": 860,
+        "max": 980,
+        "preferInt": true
+      },
+      "BulletMassGram": {
+        "min": 3.6,
+        "max": 4.8,
+        "preferInt": false
+      },
+      "Damage": {
+        "min": 40,
+        "max": 62,
+        "preferInt": true
+      },
+      "PenetrationPower": {
+        "min": 40,
+        "max": 88,
+        "preferInt": true
+      },
+      "ammoRec": {
+        "min": -6,
+        "max": 10,
+        "preferInt": true
+      },
+      "ammoAccr": {
+        "min": -4,
+        "max": 10,
+        "preferInt": true
+      },
+      "ArmorDamage": {
+        "min": 1.09,
+        "max": 1.17,
+        "preferInt": false
+      },
+      "HeatFactor": {
+        "min": 0.96,
+        "max": 1.18,
+        "preferInt": false
+      },
+      "HeavyBleedingDelta": {
+        "min": 0,
+        "max": 0.14,
+        "preferInt": false
+      },
+      "LightBleedingDelta": {
+        "min": 0.04,
+        "max": 0.22,
+        "preferInt": false
+      },
+      "DurabilityBurnModificator": {
+        "min": 0.92,
+        "max": 1.18,
+        "preferInt": false
+      },
+      "BallisticCoeficient": {
+        "min": 0.18,
+        "max": 0.31,
+        "preferInt": false
+      },
+      "MalfMisfireChance": {
+        "min": 0.001,
+        "max": 0.008,
+        "preferInt": false
+      },
+      "MisfireChance": {
+        "min": 0.001,
+        "max": 0.008,
+        "preferInt": false
+      },
+      "MalfFeedChance": {
+        "min": 0.001,
+        "max": 0.008,
+        "preferInt": false
+      }
+    },
+    "rifle_762x39": {
+      "InitialSpeed": {
+        "min": 680,
+        "max": 760,
+        "preferInt": true
+      },
+      "BulletMassGram": {
+        "min": 7.5,
+        "max": 8.5,
+        "preferInt": false
+      },
+      "Damage": {
+        "min": 52,
+        "max": 74,
+        "preferInt": true
+      },
+      "PenetrationPower": {
+        "min": 28,
+        "max": 72,
+        "preferInt": true
+      },
+      "ammoRec": {
+        "min": 4,
+        "max": 18,
+        "preferInt": true
+      },
+      "ammoAccr": {
+        "min": -8,
+        "max": 6,
+        "preferInt": true
+      },
+      "ArmorDamage": {
+        "min": 1.07,
+        "max": 1.15,
+        "preferInt": false
+      },
+      "HeatFactor": {
+        "min": 1,
+        "max": 1.2,
+        "preferInt": false
+      },
+      "HeavyBleedingDelta": {
+        "min": 0.02,
+        "max": 0.2,
+        "preferInt": false
+      },
+      "LightBleedingDelta": {
+        "min": 0.06,
+        "max": 0.28,
+        "preferInt": false
+      },
+      "DurabilityBurnModificator": {
+        "min": 0.95,
+        "max": 1.25,
+        "preferInt": false
+      },
+      "BallisticCoeficient": {
+        "min": 0.24,
+        "max": 0.36,
+        "preferInt": false
+      },
+      "MalfMisfireChance": {
+        "min": 0.001,
+        "max": 0.008,
+        "preferInt": false
+      },
+      "MisfireChance": {
+        "min": 0.001,
+        "max": 0.008,
+        "preferInt": false
+      },
+      "MalfFeedChance": {
+        "min": 0.001,
+        "max": 0.008,
+        "preferInt": false
+      }
+    },
+    "rifle_762x51": {
+      "InitialSpeed": {
+        "min": 790,
+        "max": 900,
+        "preferInt": true
+      },
+      "BulletMassGram": {
+        "min": 9.3,
+        "max": 11.8,
+        "preferInt": false
+      },
+      "Damage": {
+        "min": 58,
+        "max": 82,
+        "preferInt": true
+      },
+      "PenetrationPower": {
+        "min": 52,
+        "max": 108,
+        "preferInt": true
+      },
+      "ammoRec": {
+        "min": 10,
+        "max": 26,
+        "preferInt": true
+      },
+      "ammoAccr": {
+        "min": -10,
+        "max": 4,
+        "preferInt": true
+      },
+      "ArmorDamage": {
+        "min": 1.12,
+        "max": 1.2,
+        "preferInt": false
+      },
+      "HeatFactor": {
+        "min": 1.05,
+        "max": 1.32,
+        "preferInt": false
+      },
+      "HeavyBleedingDelta": {
+        "min": 0.02,
+        "max": 0.28,
+        "preferInt": false
+      },
+      "LightBleedingDelta": {
+        "min": 0.08,
+        "max": 0.34,
+        "preferInt": false
+      },
+      "DurabilityBurnModificator": {
+        "min": 1.05,
+        "max": 1.4,
+        "preferInt": false
+      },
+      "BallisticCoeficient": {
+        "min": 0.3,
+        "max": 0.46,
+        "preferInt": false
+      },
+      "MalfMisfireChance": {
+        "min": 0.001,
+        "max": 0.015,
+        "preferInt": false
+      },
+      "MisfireChance": {
+        "min": 0.001,
+        "max": 0.015,
+        "preferInt": false
+      },
+      "MalfFeedChance": {
+        "min": 0.001,
+        "max": 0.015,
+        "preferInt": false
+      }
+    },
+    "rifle_9x39": {
+      "InitialSpeed": {
+        "min": 270,
+        "max": 330,
+        "preferInt": true
+      },
+      "BulletMassGram": {
+        "min": 15,
+        "max": 18.5,
+        "preferInt": false
+      },
+      "Damage": {
+        "min": 60,
+        "max": 78,
+        "preferInt": true
+      },
+      "PenetrationPower": {
+        "min": 45,
+        "max": 85,
+        "preferInt": true
+      },
+      "ammoRec": {
+        "min": 6,
+        "max": 15,
+        "preferInt": true
+      },
+      "ammoAccr": {
+        "min": -10,
+        "max": -5,
+        "preferInt": true
+      },
+      "ArmorDamage": {
+        "min": 1,
+        "max": 1.15,
+        "preferInt": false
+      },
+      "HeatFactor": {
+        "min": 1.05,
+        "max": 1.3,
+        "preferInt": false
+      },
+      "HeavyBleedingDelta": {
+        "min": 0.02,
+        "max": 0.3,
+        "preferInt": false
+      },
+      "LightBleedingDelta": {
+        "min": 0.08,
+        "max": 0.34,
+        "preferInt": false
+      },
+      "DurabilityBurnModificator": {
+        "min": 1.1,
+        "max": 1.45,
+        "preferInt": false
+      },
+      "BallisticCoeficient": {
+        "min": 0.34,
+        "max": 0.54,
+        "preferInt": false
+      },
+      "MalfMisfireChance": {
+        "min": 0.001,
+        "max": 0.008,
+        "preferInt": false
+      },
+      "MisfireChance": {
+        "min": 0.001,
+        "max": 0.008,
+        "preferInt": false
+      },
+      "MalfFeedChance": {
+        "min": 0.001,
+        "max": 0.008,
+        "preferInt": false
+      }
+    },
+    "rifle_300blk": {
+      "InitialSpeed": {
+        "min": 520,
+        "max": 760,
+        "preferInt": true
+      },
+      "BulletMassGram": {
+        "min": 7,
+        "max": 13,
+        "preferInt": false
+      },
+      "Damage": {
+        "min": 50,
+        "max": 72,
+        "preferInt": true
+      },
+      "PenetrationPower": {
+        "min": 24,
+        "max": 70,
+        "preferInt": true
+      },
+      "ammoRec": {
+        "min": 2,
+        "max": 20,
+        "preferInt": true
+      },
+      "ammoAccr": {
+        "min": -10,
+        "max": 6,
+        "preferInt": true
+      },
+      "ArmorDamage": {
+        "min": 1.06,
+        "max": 1.15,
+        "preferInt": false
+      },
+      "HeatFactor": {
+        "min": 1,
+        "max": 1.22,
+        "preferInt": false
+      },
+      "HeavyBleedingDelta": {
+        "min": 0.01,
+        "max": 0.22,
+        "preferInt": false
+      },
+      "LightBleedingDelta": {
+        "min": 0.06,
+        "max": 0.3,
+        "preferInt": false
+      },
+      "DurabilityBurnModificator": {
+        "min": 0.98,
+        "max": 1.3,
+        "preferInt": false
+      },
+      "BallisticCoeficient": {
+        "min": 0.24,
+        "max": 0.48,
+        "preferInt": false
+      },
+      "MalfMisfireChance": {
+        "min": 0.001,
+        "max": 0.008,
+        "preferInt": false
+      },
+      "MisfireChance": {
+        "min": 0.001,
+        "max": 0.008,
+        "preferInt": false
+      },
+      "MalfFeedChance": {
+        "min": 0.001,
+        "max": 0.008,
+        "preferInt": false
+      }
+    },
+    "pistol_compact": {
+      "InitialSpeed": {
+        "min": 280,
+        "max": 430,
+        "preferInt": true
+      },
+      "BulletMassGram": {
+        "min": 4,
+        "max": 10,
+        "preferInt": false
+      },
+      "Damage": {
+        "min": 44,
+        "max": 78,
+        "preferInt": true
+      },
+      "PenetrationPower": {
+        "min": 8,
+        "max": 36,
+        "preferInt": true
+      },
+      "ammoRec": {
+        "min": -8,
+        "max": 10,
+        "preferInt": true
+      },
+      "ammoAccr": {
+        "min": -6,
+        "max": 8,
+        "preferInt": true
+      },
+      "ArmorDamage": {
+        "min": 1,
+        "max": 1.08,
+        "preferInt": false
+      },
+      "HeatFactor": {
+        "min": 0.85,
+        "max": 1.05,
+        "preferInt": false
+      },
+      "HeavyBleedingDelta": {
+        "min": 0,
+        "max": 0.18,
+        "preferInt": false
+      },
+      "LightBleedingDelta": {
+        "min": 0.08,
+        "max": 0.4,
+        "preferInt": false
+      },
+      "DurabilityBurnModificator": {
+        "min": 0.75,
+        "max": 1,
+        "preferInt": false
+      },
+      "BallisticCoeficient": {
+        "min": 0.09,
+        "max": 0.2,
+        "preferInt": false
+      },
+      "MalfMisfireChance": {
+        "min": 0.001,
+        "max": 0.008,
+        "preferInt": false
+      },
+      "MisfireChance": {
+        "min": 0.001,
+        "max": 0.008,
+        "preferInt": false
+      },
+      "MalfFeedChance": {
+        "min": 0.001,
+        "max": 0.008,
+        "preferInt": false
+      }
+    },
+    "pdw_small_high_velocity": {
+      "InitialSpeed": {
+        "min": 560,
+        "max": 780,
+        "preferInt": true
+      },
+      "BulletMassGram": {
+        "min": 1.8,
+        "max": 3.8,
+        "preferInt": false
+      },
+      "Damage": {
+        "min": 36,
+        "max": 65,
+        "preferInt": true
+      },
+      "PenetrationPower": {
+        "min": 18,
+        "max": 54,
+        "preferInt": true
+      },
+      "ammoRec": {
+        "min": -14,
+        "max": 2,
+        "preferInt": true
+      },
+      "ammoAccr": {
+        "min": 0,
+        "max": 14,
+        "preferInt": true
+      },
+      "ArmorDamage": {
+        "min": 1.04,
+        "max": 1.12,
+        "preferInt": false
+      },
+      "HeatFactor": {
+        "min": 0.95,
+        "max": 1.15,
+        "preferInt": false
+      },
+      "HeavyBleedingDelta": {
+        "min": 0,
+        "max": 0.1,
+        "preferInt": false
+      },
+      "LightBleedingDelta": {
+        "min": 0.04,
+        "max": 0.22,
+        "preferInt": false
+      },
+      "DurabilityBurnModificator": {
+        "min": 0.85,
+        "max": 1.15,
+        "preferInt": false
+      },
+      "BallisticCoeficient": {
+        "min": 0.11,
+        "max": 0.22,
+        "preferInt": false
+      },
+      "MalfMisfireChance": {
+        "min": 0.001,
+        "max": 0.008,
+        "preferInt": false
+      },
+      "MisfireChance": {
+        "min": 0.001,
+        "max": 0.008,
+        "preferInt": false
+      },
+      "MalfFeedChance": {
+        "min": 0.001,
+        "max": 0.008,
+        "preferInt": false
+      }
+    },
+    "intermediate_rifle": {
+      "InitialSpeed": {
+        "min": 650,
+        "max": 940,
+        "preferInt": true
+      },
+      "BulletMassGram": {
+        "min": 3.2,
+        "max": 11,
+        "preferInt": false
+      },
+      "Damage": {
+        "min": 58,
+        "max": 74,
+        "preferInt": true
+      },
+      "PenetrationPower": {
+        "min": 58,
+        "max": 89,
+        "preferInt": true
+      },
+      "ammoRec": {
+        "min": -4,
+        "max": 10,
+        "preferInt": true
+      },
+      "ammoAccr": {
+        "min": -3,
+        "max": 5,
+        "preferInt": true
+      },
+      "ArmorDamage": {
+        "min": 1.06,
+        "max": 1.14,
+        "preferInt": false
+      },
+      "HeatFactor": {
+        "min": 0.95,
+        "max": 1.2,
+        "preferInt": false
+      },
+      "HeavyBleedingDelta": {
+        "min": 0,
+        "max": 0.2,
+        "preferInt": false
+      },
+      "LightBleedingDelta": {
+        "min": 0.06,
+        "max": 0.28,
+        "preferInt": false
+      },
+      "DurabilityBurnModificator": {
+        "min": 0.9,
+        "max": 1.2,
+        "preferInt": false
+      },
+      "BallisticCoeficient": {
+        "min": 0.13,
+        "max": 0.32,
+        "preferInt": false
+      },
+      "MalfMisfireChance": {
+        "min": 0.001,
+        "max": 0.008,
+        "preferInt": false
+      },
+      "MisfireChance": {
+        "min": 0.001,
+        "max": 0.008,
+        "preferInt": false
+      },
+      "MalfFeedChance": {
+        "min": 0.001,
+        "max": 0.008,
+        "preferInt": false
+      }
+    },
+    "full_power_rifle": {
+      "InitialSpeed": {
+        "min": 720,
+        "max": 980,
+        "preferInt": true
+      },
+      "BulletMassGram": {
+        "min": 8,
+        "max": 17.5,
+        "preferInt": false
+      },
+      "Damage": {
+        "min": 55,
+        "max": 90,
+        "preferInt": true
+      },
+      "PenetrationPower": {
+        "min": 48,
+        "max": 104,
+        "preferInt": true
+      },
+      "ammoRec": {
+        "min": 6,
+        "max": 28,
+        "preferInt": true
+      },
+      "ammoAccr": {
+        "min": -8,
+        "max": 8,
+        "preferInt": true
+      },
+      "ArmorDamage": {
+        "min": 1.1,
+        "max": 1.2,
+        "preferInt": false
+      },
+      "HeatFactor": {
+        "min": 1,
+        "max": 1.3,
+        "preferInt": false
+      },
+      "HeavyBleedingDelta": {
+        "min": 0.02,
+        "max": 0.3,
+        "preferInt": false
+      },
+      "LightBleedingDelta": {
+        "min": 0.08,
+        "max": 0.36,
+        "preferInt": false
+      },
+      "DurabilityBurnModificator": {
+        "min": 1,
+        "max": 1.35,
+        "preferInt": false
+      },
+      "BallisticCoeficient": {
+        "min": 0.2,
+        "max": 0.42,
+        "preferInt": false
+      },
+      "MalfMisfireChance": {
+        "min": 0.001,
+        "max": 0.015,
+        "preferInt": false
+      },
+      "MisfireChance": {
+        "min": 0.001,
+        "max": 0.015,
+        "preferInt": false
+      },
+      "MalfFeedChance": {
+        "min": 0.001,
+        "max": 0.015,
+        "preferInt": false
+      }
+    },
+    "magnum_heavy": {
+      "InitialSpeed": {
+        "min": 820,
+        "max": 1020,
+        "preferInt": true
+      },
+      "BulletMassGram": {
+        "min": 12,
+        "max": 28,
+        "preferInt": false
+      },
+      "Damage": {
+        "min": 70,
+        "max": 115,
+        "preferInt": true
+      },
+      "PenetrationPower": {
+        "min": 58,
+        "max": 118,
+        "preferInt": true
+      },
+      "ammoRec": {
+        "min": 16,
+        "max": 44,
+        "preferInt": true
+      },
+      "ammoAccr": {
+        "min": -10,
+        "max": 6,
+        "preferInt": true
+      },
+      "ArmorDamage": {
+        "min": 1.12,
+        "max": 1.2,
+        "preferInt": false
+      },
+      "HeatFactor": {
+        "min": 1.1,
+        "max": 1.45,
+        "preferInt": false
+      },
+      "HeavyBleedingDelta": {
+        "min": 0.08,
+        "max": 0.4,
+        "preferInt": false
+      },
+      "LightBleedingDelta": {
+        "min": 0.1,
+        "max": 0.42,
+        "preferInt": false
+      },
+      "DurabilityBurnModificator": {
+        "min": 1.15,
+        "max": 1.6,
+        "preferInt": false
+      },
+      "BallisticCoeficient": {
+        "min": 0.28,
+        "max": 0.58,
+        "preferInt": false
+      },
+      "MalfMisfireChance": {
+        "min": 0.001,
+        "max": 0.015,
+        "preferInt": false
+      },
+      "MisfireChance": {
+        "min": 0.001,
+        "max": 0.015,
+        "preferInt": false
+      },
+      "MalfFeedChance": {
+        "min": 0.001,
+        "max": 0.015,
+        "preferInt": false
+      }
+    },
+    "shotgun_shell": {
+      "InitialSpeed": {
+        "min": 320,
+        "max": 520,
+        "preferInt": true
+      },
+      "BulletMassGram": {
+        "min": 22,
+        "max": 46,
+        "preferInt": false
+      },
+      "Damage": {
+        "min": 110,
+        "max": 235,
+        "preferInt": true
+      },
+      "PenetrationPower": {
+        "min": 1,
+        "max": 30,
+        "preferInt": true
+      },
+      "ammoRec": {
+        "min": 20,
+        "max": 52,
+        "preferInt": true
+      },
+      "ammoAccr": {
+        "min": -24,
+        "max": -5,
+        "preferInt": true
+      },
+      "ArmorDamage": {
+        "min": 1,
+        "max": 1.1,
+        "preferInt": false
+      },
+      "HeatFactor": {
+        "min": 0.95,
+        "max": 1.25,
+        "preferInt": false
+      },
+      "HeavyBleedingDelta": {
+        "min": 0.08,
+        "max": 0.55,
+        "preferInt": false
+      },
+      "LightBleedingDelta": {
+        "min": 0.18,
+        "max": 0.6,
+        "preferInt": false
+      },
+      "DurabilityBurnModificator": {
+        "min": 1,
+        "max": 1.35,
+        "preferInt": false
+      },
+      "BallisticCoeficient": {
+        "min": 0.03,
+        "max": 0.12,
+        "preferInt": false
+      },
+      "MalfMisfireChance": {
+        "min": 0.001,
+        "max": 0.008,
+        "preferInt": false
+      },
+      "MisfireChance": {
+        "min": 0.001,
+        "max": 0.008,
+        "preferInt": false
+      },
+      "MalfFeedChance": {
+        "min": 0.001,
+        "max": 0.008,
+        "preferInt": false
+      }
+    },
+    "anti_materiel_50bmg": {
+      "InitialSpeed": {
+        "min": 840,
+        "max": 930,
+        "preferInt": true
+      },
+      "BulletMassGram": {
+        "min": 38,
+        "max": 52,
+        "preferInt": false
+      },
+      "Damage": {
+        "min": 150,
+        "max": 220,
+        "preferInt": true
+      },
+      "PenetrationPower": {
+        "min": 80,
+        "max": 130,
+        "preferInt": true
+      },
+      "ammoRec": {
+        "min": 35,
+        "max": 75,
+        "preferInt": true
+      },
+      "ammoAccr": {
+        "min": -14,
+        "max": 5,
+        "preferInt": true
+      },
+      "ArmorDamage": {
+        "min": 1.14,
+        "max": 1.2,
+        "preferInt": false
+      },
+      "HeatFactor": {
+        "min": 1.2,
+        "max": 1.7,
+        "preferInt": false
+      },
+      "HeavyBleedingDelta": {
+        "min": 0.25,
+        "max": 0.8,
+        "preferInt": false
+      },
+      "LightBleedingDelta": {
+        "min": 0.3,
+        "max": 0.9,
+        "preferInt": false
+      },
+      "DurabilityBurnModificator": {
+        "min": 1.4,
+        "max": 2.1,
+        "preferInt": false
+      },
+      "BallisticCoeficient": {
+        "min": 0.55,
+        "max": 0.95,
+        "preferInt": false
+      },
+      "MalfMisfireChance": {
+        "min": 0.001,
+        "max": 0.015,
+        "preferInt": false
+      },
+      "MisfireChance": {
+        "min": 0.001,
+        "max": 0.015,
+        "preferInt": false
+      },
+      "MalfFeedChance": {
+        "min": 0.001,
+        "max": 0.015,
+        "preferInt": false
+      }
+    }
+  },
+  "ammoProfileKeywords": [
+    {
+      "profile": "rifle_762x51",
+      "keywords": [
+        "7.62x51",
+        "762x51",
+        "7.62 nato",
+        "762 nato",
+        "7.62x63",
+        "762x63",
+        "308",
+        ".308"
+      ]
+    },
+    {
+      "profile": "rifle_762x39",
+      "keywords": [
+        "7.62x39",
+        "762x39"
+      ]
+    },
+    {
+      "profile": "rifle_556x45",
+      "keywords": [
+        "5.56x45",
+        "556x45",
+        "5.56 nato",
+        "556 nato",
+        ".223",
+        "223 rem",
+        "caliber556x45"
+      ]
+    },
+    {
+      "profile": "rifle_545x39",
+      "keywords": [
+        "5.45x39",
+        "545x39",
+        "caliber545x39"
+      ]
+    },
+    {
+      "profile": "rifle_9x39",
+      "keywords": [
+        "9x39"
+      ]
+    },
+    {
+      "profile": "rifle_300blk",
+      "keywords": [
+        ".300 aac",
+        "300 blackout",
+        ".300 blk"
+      ]
+    },
+    {
+      "profile": "anti_materiel_50bmg",
+      "keywords": [
+        ".50 bmg",
+        "50bmg",
+        "12.7x99",
+        "12,7x99"
+      ]
+    },
+    {
+      "profile": "magnum_heavy",
+      "keywords": [
+        ".338",
+        "338",
+        ".300 wm",
+        "300 wm",
+        "300 win mag",
+        "300 winchester magnum",
+        "8.6 blackout",
+        "86 blackout",
+        "12.7x55",
+        "7.62x54",
+        "7.62x54r"
+      ]
+    },
+    {
+      "profile": "shotgun_shell",
+      "keywords": [
+        "12x70",
+        "12x76",
+        "12 gauge",
+        "20 gauge",
+        "12/70",
+        "12/76",
+        "20/70",
+        "23x75"
+      ]
+    },
+    {
+      "profile": "full_power_rifle",
+      "keywords": [
+        "7.62x51",
+        "7.62 nato",
+        "7.62x63",
+        "7.62x67",
+        "7.92x57",
+        "792x57",
+        "8mm mauser",
+        "6.8",
+        "6x38",
+        "6 mm arc",
+        "6mm arc",
+        "6.5 creedmoor",
+        "6.5x48",
+        "6.5 creed"
+      ]
+    },
+    {
+      "profile": "intermediate_rifle",
+      "keywords": [
+        "5.8x42",
+        "58x42",
+        "caliber58x42",
+        "6.5 grendel"
+      ]
+    },
+    {
+      "profile": "pdw_small_high_velocity",
+      "keywords": [
+        "4.6x30",
+        "5.7x28"
+      ]
+    },
+    {
+      "profile": "pistol_compact",
+      "keywords": [
+        "9x18",
+        "9x19",
+        "9x21",
+        ".45 acp",
+        "10x25",
+        "357",
+        "40 s&w"
+      ]
+    }
+  ],
+  "ammoSpecialKeywords": [
+    {
+      "profile": "ap_extreme",
+      "keywords": [
+        "m993",
+        "m61",
+        "7n39",
+        "7n37",
+        "7n40",
+        "7n42",
+        "snb",
+        "slaap",
+        "m995",
+        "995"
+      ]
+    },
+    {
+      "profile": "tracer",
+      "keywords": [
+        "tracer",
+        "m62",
+        "m856",
+        "856",
+        "m856a1",
+        "856a1",
+        "t46m",
+        "bt"
+      ]
+    },
+    {
+      "profile": "ap_high",
+      "keywords": [
+        "ap",
+        "api",
+        "bs",
+        "bp",
+        "pbm",
+        "pp",
+        "upz",
+        "cbj",
+        "ss190",
+        "l191",
+        "m855a1",
+        "855a1"
+      ]
+    },
+    {
+      "profile": "subsonic_heavy",
+      "keywords": [
+        "subsonic",
+        "us",
+        "pab9",
+        "sb193",
+        "sp6",
+        "spp"
+      ]
+    },
+    {
+      "profile": "expanding",
+      "keywords": [
+        "hp",
+        "jhp",
+        "jsp",
+        "sp",
+        "rip",
+        "hydra",
+        "hydra_shok",
+        "vmax",
+        "r37f",
+        "r37x",
+        "piranha",
+        "warmageddon"
+      ]
+    },
+    {
+      "profile": "shot_shell_payload",
+      "keywords": [
+        "buckshot",
+        "flechette",
+        "slug"
+      ]
+    },
+    {
+      "profile": "ball_standard",
+      "keywords": [
+        "fmj",
+        "fmj43",
+        "gzh",
+        "pst",
+        "pso",
+        "prs",
+        "ps",
+        "ppo",
+        "psv",
+        "akbs",
+        "lrn",
+        "lrnpc"
+      ]
+    }
+  ],
+  "ammoSpecialModifiers": {
+    "ap_extreme": {
+      "PenetrationPower": {
+        "min": 8,
+        "max": 16,
+        "preferInt": true
+      },
+      "Damage": {
+        "min": -8,
+        "max": -2,
+        "preferInt": true
+      },
+      "ArmorDamage": {
+        "min": 0.02,
+        "max": 0.04,
+        "preferInt": false
+      },
+      "HeatFactor": {
+        "min": 0.08,
+        "max": 0.2,
+        "preferInt": false
+      },
+      "DurabilityBurnModificator": {
+        "min": 0.12,
+        "max": 0.28,
+        "preferInt": false
+      },
+      "ammoRec": {
+        "min": 4,
+        "max": 12,
+        "preferInt": true
+      },
+      "ammoAccr": {
+        "min": -8,
+        "max": -2,
+        "preferInt": true
+      },
+      "MalfMisfireChance": {
+        "min": 0.001,
+        "max": 0.004,
+        "preferInt": false
+      },
+      "MisfireChance": {
+        "min": 0.001,
+        "max": 0.004,
+        "preferInt": false
+      },
+      "MalfFeedChance": {
+        "min": 0.001,
+        "max": 0.004,
+        "preferInt": false
+      }
+    },
+    "tracer": {
+      "InitialSpeed": {
+        "min": 12,
+        "max": 36,
+        "preferInt": true
+      },
+      "PenetrationPower": {
+        "min": 0,
+        "max": 6,
+        "preferInt": true
+      },
+      "Damage": {
+        "min": -2,
+        "max": 4,
+        "preferInt": true
+      },
+      "HeatFactor": {
+        "min": 0.03,
+        "max": 0.1,
+        "preferInt": false
+      },
+      "DurabilityBurnModificator": {
+        "min": 0.03,
+        "max": 0.1,
+        "preferInt": false
+      },
+      "ammoRec": {
+        "min": 1,
+        "max": 6,
+        "preferInt": true
+      },
+      "ammoAccr": {
+        "min": -3,
+        "max": 2,
+        "preferInt": true
+      },
+      "LightBleedingDelta": {
+        "min": 0,
+        "max": 0.04,
+        "preferInt": false
+      }
+    },
+    "ap_high": {
+      "PenetrationPower": {
+        "min": 4,
+        "max": 10,
+        "preferInt": true
+      },
+      "Damage": {
+        "min": -4,
+        "max": 2,
+        "preferInt": true
+      },
+      "ArmorDamage": {
+        "min": 0.01,
+        "max": 0.03,
+        "preferInt": false
+      },
+      "HeatFactor": {
+        "min": 0.04,
+        "max": 0.14,
+        "preferInt": false
+      },
+      "DurabilityBurnModificator": {
+        "min": 0.06,
+        "max": 0.2,
+        "preferInt": false
+      },
+      "ammoRec": {
+        "min": 2,
+        "max": 8,
+        "preferInt": true
+      },
+      "ammoAccr": {
+        "min": -5,
+        "max": -1,
+        "preferInt": true
+      },
+      "MalfMisfireChance": {
+        "min": 0.0005,
+        "max": 0.003,
+        "preferInt": false
+      },
+      "MisfireChance": {
+        "min": 0.0005,
+        "max": 0.003,
+        "preferInt": false
+      },
+      "MalfFeedChance": {
+        "min": 0.0005,
+        "max": 0.003,
+        "preferInt": false
+      }
+    },
+    "subsonic_heavy": {
+      "InitialSpeed": {
+        "min": -120,
+        "max": -35,
+        "preferInt": true
+      },
+      "BulletMassGram": {
+        "min": 1.5,
+        "max": 4,
+        "preferInt": false
+      },
+      "PenetrationPower": {
+        "min": -4,
+        "max": 3,
+        "preferInt": true
+      },
+      "Damage": {
+        "min": 4,
+        "max": 12,
+        "preferInt": true
+      },
+      "BallisticCoeficient": {
+        "min": 0.02,
+        "max": 0.08,
+        "preferInt": false
+      },
+      "ammoRec": {
+        "min": 0,
+        "max": 8,
+        "preferInt": true
+      },
+      "ammoAccr": {
+        "min": -3,
+        "max": 3,
+        "preferInt": true
+      }
+    },
+    "expanding": {
+      "PenetrationPower": {
+        "min": -10,
+        "max": -3,
+        "preferInt": true
+      },
+      "Damage": {
+        "min": 8,
+        "max": 20,
+        "preferInt": true
+      },
+      "ArmorDamage": {
+        "min": -0.015,
+        "max": 0.005,
+        "preferInt": false
+      },
+      "HeatFactor": {
+        "min": -0.04,
+        "max": 0.04,
+        "preferInt": false
+      },
+      "HeavyBleedingDelta": {
+        "min": 0.05,
+        "max": 0.15,
+        "preferInt": false
+      },
+      "LightBleedingDelta": {
+        "min": 0.05,
+        "max": 0.15,
+        "preferInt": false
+      },
+      "ammoRec": {
+        "min": -4,
+        "max": 2,
+        "preferInt": true
+      },
+      "ammoAccr": {
+        "min": 0,
+        "max": 6,
+        "preferInt": true
+      }
+    },
+    "shot_shell_payload": {
+      "InitialSpeed": {
+        "min": -30,
+        "max": 20,
+        "preferInt": true
+      },
+      "BulletMassGram": {
+        "min": 2,
+        "max": 8,
+        "preferInt": false
+      },
+      "PenetrationPower": {
+        "min": -8,
+        "max": 2,
+        "preferInt": true
+      },
+      "Damage": {
+        "min": 12,
+        "max": 30,
+        "preferInt": true
+      },
+      "HeavyBleedingDelta": {
+        "min": 0.08,
+        "max": 0.24,
+        "preferInt": false
+      },
+      "LightBleedingDelta": {
+        "min": 0.08,
+        "max": 0.2,
+        "preferInt": false
+      },
+      "ammoAccr": {
+        "min": -6,
+        "max": 0,
+        "preferInt": true
+      }
+    },
+    "ball_standard": {
+      "PenetrationPower": {
+        "min": -2,
+        "max": 4,
+        "preferInt": true
+      },
+      "Damage": {
+        "min": -2,
+        "max": 8,
+        "preferInt": true
+      },
+      "ArmorDamage": {
+        "min": -0.005,
+        "max": 0.01,
+        "preferInt": false
+      },
+      "HeatFactor": {
+        "min": -0.02,
+        "max": 0.06,
+        "preferInt": false
+      },
+      "DurabilityBurnModificator": {
+        "min": -0.03,
+        "max": 0.1,
+        "preferInt": false
+      },
+      "ammoRec": {
+        "min": -2,
+        "max": 4,
+        "preferInt": true
+      },
+      "ammoAccr": {
+        "min": -1,
+        "max": 4,
+        "preferInt": true
+      }
+    }
+  },
+  "ammoPenetrationTiers": {
+    "pen_lvl_1": {
+      "min": 1,
+      "max": 10,
+      "preferInt": true
+    },
+    "pen_lvl_2": {
+      "min": 11,
+      "max": 20,
+      "preferInt": true
+    },
+    "pen_lvl_3": {
+      "min": 21,
+      "max": 30,
+      "preferInt": true
+    },
+    "pen_lvl_4": {
+      "min": 31,
+      "max": 40,
+      "preferInt": true
+    },
+    "pen_lvl_5": {
+      "min": 41,
+      "max": 50,
+      "preferInt": true
+    },
+    "pen_lvl_6": {
+      "min": 51,
+      "max": 60,
+      "preferInt": true
+    },
+    "pen_lvl_7": {
+      "min": 61,
+      "max": 70,
+      "preferInt": true
+    },
+    "pen_lvl_8": {
+      "min": 71,
+      "max": 80,
+      "preferInt": true
+    },
+    "pen_lvl_9": {
+      "min": 81,
+      "max": 90,
+      "preferInt": true
+    },
+    "pen_lvl_10": {
+      "min": 91,
+      "max": 100,
+      "preferInt": true
+    },
+    "pen_lvl_11": {
+      "min": 101,
+      "max": 130,
+      "preferInt": true
+    }
+  },
+  "ammoPenetrationModifiers": {
+    "pen_lvl_1": {
+      "InitialSpeed": {
+        "min": -40,
+        "max": -5,
+        "preferInt": true
+      },
+      "BulletMassGram": {
+        "min": 0.5,
+        "max": 2.5,
+        "preferInt": false
+      },
+      "Damage": {
+        "min": 14,
+        "max": 34,
+        "preferInt": true
+      },
+      "PenetrationPower": {
+        "min": -9,
+        "max": -4,
+        "preferInt": true
+      },
+      "ammoRec": {
+        "min": -12,
+        "max": -2,
+        "preferInt": true
+      },
+      "ammoAccr": {
+        "min": 4,
+        "max": 14,
+        "preferInt": true
+      },
+      "ArmorDamage": {
+        "min": -0.02,
+        "max": -0.005,
+        "preferInt": false
+      },
+      "HeatFactor": {
+        "min": -0.12,
+        "max": -0.03,
+        "preferInt": false
+      },
+      "HeavyBleedingDelta": {
+        "min": 0.08,
+        "max": 0.24,
+        "preferInt": false
+      },
+      "LightBleedingDelta": {
+        "min": 0.08,
+        "max": 0.2,
+        "preferInt": false
+      },
+      "DurabilityBurnModificator": {
+        "min": -0.2,
+        "max": -0.06,
+        "preferInt": false
+      },
+      "BallisticCoeficient": {
+        "min": -0.03,
+        "max": 0.02,
+        "preferInt": false
+      },
+      "MalfMisfireChance": {
+        "min": -0.001,
+        "max": 0,
+        "preferInt": false
+      },
+      "MisfireChance": {
+        "min": -0.001,
+        "max": 0,
+        "preferInt": false
+      },
+      "MalfFeedChance": {
+        "min": -0.001,
+        "max": 0,
+        "preferInt": false
+      }
+    },
+    "pen_lvl_2": {
+      "InitialSpeed": {
+        "min": -18,
+        "max": 8,
+        "preferInt": true
+      },
+      "BulletMassGram": {
+        "min": 0,
+        "max": 1.5,
+        "preferInt": false
+      },
+      "Damage": {
+        "min": 10,
+        "max": 24,
+        "preferInt": true
+      },
+      "PenetrationPower": {
+        "min": -7,
+        "max": -2,
+        "preferInt": true
+      },
+      "ammoRec": {
+        "min": -8,
+        "max": 2,
+        "preferInt": true
+      },
+      "ammoAccr": {
+        "min": 0,
+        "max": 8,
+        "preferInt": true
+      },
+      "ArmorDamage": {
+        "min": -0.015,
+        "max": -0.003,
+        "preferInt": false
+      },
+      "HeatFactor": {
+        "min": -0.08,
+        "max": 0.02,
+        "preferInt": false
+      },
+      "HeavyBleedingDelta": {
+        "min": 0.04,
+        "max": 0.14,
+        "preferInt": false
+      },
+      "LightBleedingDelta": {
+        "min": 0.04,
+        "max": 0.12,
+        "preferInt": false
+      },
+      "DurabilityBurnModificator": {
+        "min": -0.12,
+        "max": 0,
+        "preferInt": false
+      },
+      "BallisticCoeficient": {
+        "min": -0.02,
+        "max": 0.03,
+        "preferInt": false
+      },
+      "MalfMisfireChance": {
+        "min": -0.001,
+        "max": 0,
+        "preferInt": false
+      },
+      "MisfireChance": {
+        "min": -0.001,
+        "max": 0,
+        "preferInt": false
+      },
+      "MalfFeedChance": {
+        "min": -0.001,
+        "max": 0,
+        "preferInt": false
+      }
+    },
+    "pen_lvl_3": {
+      "InitialSpeed": {
+        "min": -6,
+        "max": 10,
+        "preferInt": true
+      },
+      "BulletMassGram": {
+        "min": -0.5,
+        "max": 1,
+        "preferInt": false
+      },
+      "Damage": {
+        "min": 4,
+        "max": 16,
+        "preferInt": true
+      },
+      "PenetrationPower": {
+        "min": -5,
+        "max": 0,
+        "preferInt": true
+      },
+      "ammoRec": {
+        "min": -2,
+        "max": 5,
+        "preferInt": true
+      },
+      "ammoAccr": {
+        "min": -4,
+        "max": 4,
+        "preferInt": true
+      },
+      "ArmorDamage": {
+        "min": -0.005,
+        "max": 0.01,
+        "preferInt": false
+      },
+      "HeatFactor": {
+        "min": -0.03,
+        "max": 0.05,
+        "preferInt": false
+      },
+      "HeavyBleedingDelta": {
+        "min": -0.01,
+        "max": 0.05,
+        "preferInt": false
+      },
+      "LightBleedingDelta": {
+        "min": -0.01,
+        "max": 0.05,
+        "preferInt": false
+      },
+      "DurabilityBurnModificator": {
+        "min": -0.05,
+        "max": 0.08,
+        "preferInt": false
+      },
+      "BallisticCoeficient": {
+        "min": -0.01,
+        "max": 0.04,
+        "preferInt": false
+      },
+      "MalfMisfireChance": {
+        "min": -0.0005,
+        "max": 0.001,
+        "preferInt": false
+      },
+      "MisfireChance": {
+        "min": -0.0005,
+        "max": 0.001,
+        "preferInt": false
+      },
+      "MalfFeedChance": {
+        "min": -0.0005,
+        "max": 0.001,
+        "preferInt": false
+      }
+    },
+    "pen_lvl_4": {
+      "InitialSpeed": {
+        "min": 8,
+        "max": 28,
+        "preferInt": true
+      },
+      "BulletMassGram": {
+        "min": -1,
+        "max": 0.5,
+        "preferInt": false
+      },
+      "Damage": {
+        "min": -4,
+        "max": 8,
+        "preferInt": true
+      },
+      "PenetrationPower": {
+        "min": -3,
+        "max": 2,
+        "preferInt": true
+      },
+      "ammoRec": {
+        "min": 4,
+        "max": 15,
+        "preferInt": true
+      },
+      "ammoAccr": {
+        "min": -10,
+        "max": -2,
+        "preferInt": true
+      },
+      "ArmorDamage": {
+        "min": 0.005,
+        "max": 0.02,
+        "preferInt": false
+      },
+      "HeatFactor": {
+        "min": 0.02,
+        "max": 0.1,
+        "preferInt": false
+      },
+      "HeavyBleedingDelta": {
+        "min": -0.05,
+        "max": 0.02,
+        "preferInt": false
+      },
+      "LightBleedingDelta": {
+        "min": -0.05,
+        "max": 0.02,
+        "preferInt": false
+      },
+      "DurabilityBurnModificator": {
+        "min": 0.06,
+        "max": 0.2,
+        "preferInt": false
+      },
+      "BallisticCoeficient": {
+        "min": 0.01,
+        "max": 0.06,
+        "preferInt": false
+      },
+      "MalfMisfireChance": {
+        "min": 0.001,
+        "max": 0.004,
+        "preferInt": false
+      },
+      "MisfireChance": {
+        "min": 0.001,
+        "max": 0.004,
+        "preferInt": false
+      },
+      "MalfFeedChance": {
+        "min": 0.001,
+        "max": 0.004,
+        "preferInt": false
+      }
+    },
+    "pen_lvl_5": {
+      "InitialSpeed": {
+        "min": 14,
+        "max": 36,
+        "preferInt": true
+      },
+      "BulletMassGram": {
+        "min": -1.5,
+        "max": 0.5,
+        "preferInt": false
+      },
+      "Damage": {
+        "min": -6,
+        "max": 4,
+        "preferInt": true
+      },
+      "PenetrationPower": {
+        "min": -1,
+        "max": 3,
+        "preferInt": true
+      },
+      "ammoRec": {
+        "min": 8,
+        "max": 22,
+        "preferInt": true
+      },
+      "ammoAccr": {
+        "min": -14,
+        "max": -4,
+        "preferInt": true
+      },
+      "ArmorDamage": {
+        "min": 0,
+        "max": 0.015,
+        "preferInt": false
+      },
+      "HeatFactor": {
+        "min": 0.08,
+        "max": 0.18,
+        "preferInt": false
+      },
+      "HeavyBleedingDelta": {
+        "min": -0.08,
+        "max": 0,
+        "preferInt": false
+      },
+      "LightBleedingDelta": {
+        "min": -0.08,
+        "max": 0,
+        "preferInt": false
+      },
+      "DurabilityBurnModificator": {
+        "min": 0.12,
+        "max": 0.3,
+        "preferInt": false
+      },
+      "BallisticCoeficient": {
+        "min": 0.02,
+        "max": 0.07,
+        "preferInt": false
+      },
+      "MalfMisfireChance": {
+        "min": 0.002,
+        "max": 0.006,
+        "preferInt": false
+      },
+      "MisfireChance": {
+        "min": 0.002,
+        "max": 0.006,
+        "preferInt": false
+      },
+      "MalfFeedChance": {
+        "min": 0.002,
+        "max": 0.006,
+        "preferInt": false
+      }
+    },
+    "pen_lvl_6": {
+      "InitialSpeed": {
+        "min": 16,
+        "max": 38,
+        "preferInt": true
+      },
+      "BulletMassGram": {
+        "min": -1.8,
+        "max": 0.3,
+        "preferInt": false
+      },
+      "Damage": {
+        "min": -10,
+        "max": 0,
+        "preferInt": true
+      },
+      "PenetrationPower": {
+        "min": 1,
+        "max": 5,
+        "preferInt": true
+      },
+      "ammoRec": {
+        "min": 10,
+        "max": 24,
+        "preferInt": true
+      },
+      "ammoAccr": {
+        "min": -16,
+        "max": -5,
+        "preferInt": true
+      },
+      "ArmorDamage": {
+        "min": 0.005,
+        "max": 0.02,
+        "preferInt": false
+      },
+      "HeatFactor": {
+        "min": 0.08,
+        "max": 0.18,
+        "preferInt": false
+      },
+      "HeavyBleedingDelta": {
+        "min": -0.08,
+        "max": -0.01,
+        "preferInt": false
+      },
+      "LightBleedingDelta": {
+        "min": -0.08,
+        "max": -0.01,
+        "preferInt": false
+      },
+      "DurabilityBurnModificator": {
+        "min": 0.12,
+        "max": 0.3,
+        "preferInt": false
+      },
+      "BallisticCoeficient": {
+        "min": 0.02,
+        "max": 0.07,
+        "preferInt": false
+      },
+      "MalfMisfireChance": {
+        "min": 0.002,
+        "max": 0.006,
+        "preferInt": false
+      },
+      "MisfireChance": {
+        "min": 0.002,
+        "max": 0.006,
+        "preferInt": false
+      },
+      "MalfFeedChance": {
+        "min": 0.002,
+        "max": 0.006,
+        "preferInt": false
+      }
+    },
+    "pen_lvl_7": {
+      "InitialSpeed": {
+        "min": 18,
+        "max": 40,
+        "preferInt": true
+      },
+      "BulletMassGram": {
+        "min": -2,
+        "max": 0.2,
+        "preferInt": false
+      },
+      "Damage": {
+        "min": -14,
+        "max": -3,
+        "preferInt": true
+      },
+      "PenetrationPower": {
+        "min": 3,
+        "max": 8,
+        "preferInt": true
+      },
+      "ammoRec": {
+        "min": 12,
+        "max": 28,
+        "preferInt": true
+      },
+      "ammoAccr": {
+        "min": -18,
+        "max": -6,
+        "preferInt": true
+      },
+      "ArmorDamage": {
+        "min": 0.01,
+        "max": 0.025,
+        "preferInt": false
+      },
+      "HeatFactor": {
+        "min": 0.1,
+        "max": 0.2,
+        "preferInt": false
+      },
+      "HeavyBleedingDelta": {
+        "min": -0.1,
+        "max": -0.02,
+        "preferInt": false
+      },
+      "LightBleedingDelta": {
+        "min": -0.1,
+        "max": -0.02,
+        "preferInt": false
+      },
+      "DurabilityBurnModificator": {
+        "min": 0.16,
+        "max": 0.34,
+        "preferInt": false
+      },
+      "BallisticCoeficient": {
+        "min": 0.03,
+        "max": 0.08,
+        "preferInt": false
+      },
+      "MalfMisfireChance": {
+        "min": 0.003,
+        "max": 0.007,
+        "preferInt": false
+      },
+      "MisfireChance": {
+        "min": 0.003,
+        "max": 0.007,
+        "preferInt": false
+      },
+      "MalfFeedChance": {
+        "min": 0.003,
+        "max": 0.007,
+        "preferInt": false
+      }
+    },
+    "pen_lvl_8": {
+      "InitialSpeed": {
+        "min": 20,
+        "max": 42,
+        "preferInt": true
+      },
+      "BulletMassGram": {
+        "min": -2,
+        "max": 0.1,
+        "preferInt": false
+      },
+      "Damage": {
+        "min": -18,
+        "max": -6,
+        "preferInt": true
+      },
+      "PenetrationPower": {
+        "min": 6,
+        "max": 11,
+        "preferInt": true
+      },
+      "ammoRec": {
+        "min": 14,
+        "max": 32,
+        "preferInt": true
+      },
+      "ammoAccr": {
+        "min": -19,
+        "max": -7,
+        "preferInt": true
+      },
+      "ArmorDamage": {
+        "min": 0.015,
+        "max": 0.03,
+        "preferInt": false
+      },
+      "HeatFactor": {
+        "min": 0.1,
+        "max": 0.22,
+        "preferInt": false
+      },
+      "HeavyBleedingDelta": {
+        "min": -0.11,
+        "max": -0.03,
+        "preferInt": false
+      },
+      "LightBleedingDelta": {
+        "min": -0.11,
+        "max": -0.03,
+        "preferInt": false
+      },
+      "DurabilityBurnModificator": {
+        "min": 0.18,
+        "max": 0.38,
+        "preferInt": false
+      },
+      "BallisticCoeficient": {
+        "min": 0.03,
+        "max": 0.09,
+        "preferInt": false
+      },
+      "MalfMisfireChance": {
+        "min": 0.003,
+        "max": 0.008,
+        "preferInt": false
+      },
+      "MisfireChance": {
+        "min": 0.003,
+        "max": 0.008,
+        "preferInt": false
+      },
+      "MalfFeedChance": {
+        "min": 0.003,
+        "max": 0.008,
+        "preferInt": false
+      }
+    },
+    "pen_lvl_9": {
+      "InitialSpeed": {
+        "min": 22,
+        "max": 44,
+        "preferInt": true
+      },
+      "BulletMassGram": {
+        "min": -2.1,
+        "max": 0,
+        "preferInt": false
+      },
+      "Damage": {
+        "min": -24,
+        "max": -10,
+        "preferInt": true
+      },
+      "PenetrationPower": {
+        "min": 9,
+        "max": 15,
+        "preferInt": true
+      },
+      "ammoRec": {
+        "min": 15,
+        "max": 34,
+        "preferInt": true
+      },
+      "ammoAccr": {
+        "min": -20,
+        "max": -8,
+        "preferInt": true
+      },
+      "ArmorDamage": {
+        "min": 0.02,
+        "max": 0.035,
+        "preferInt": false
+      },
+      "HeatFactor": {
+        "min": 0.11,
+        "max": 0.23,
+        "preferInt": false
+      },
+      "HeavyBleedingDelta": {
+        "min": -0.12,
+        "max": -0.04,
+        "preferInt": false
+      },
+      "LightBleedingDelta": {
+        "min": -0.12,
+        "max": -0.04,
+        "preferInt": false
+      },
+      "DurabilityBurnModificator": {
+        "min": 0.2,
+        "max": 0.4,
+        "preferInt": false
+      },
+      "BallisticCoeficient": {
+        "min": 0.03,
+        "max": 0.1,
+        "preferInt": false
+      },
+      "MalfMisfireChance": {
+        "min": 0.004,
+        "max": 0.009,
+        "preferInt": false
+      },
+      "MisfireChance": {
+        "min": 0.004,
+        "max": 0.009,
+        "preferInt": false
+      },
+      "MalfFeedChance": {
+        "min": 0.004,
+        "max": 0.009,
+        "preferInt": false
+      }
+    },
+    "pen_lvl_10": {
+      "InitialSpeed": {
+        "min": 20,
+        "max": 45,
+        "preferInt": true
+      },
+      "BulletMassGram": {
+        "min": -2,
+        "max": 0,
+        "preferInt": false
+      },
+      "Damage": {
+        "min": -30,
+        "max": -12,
+        "preferInt": true
+      },
+      "PenetrationPower": {
+        "min": 12,
+        "max": 20,
+        "preferInt": true
+      },
+      "ammoRec": {
+        "min": 15,
+        "max": 35,
+        "preferInt": true
+      },
+      "ammoAccr": {
+        "min": -20,
+        "max": -8,
+        "preferInt": true
+      },
+      "ArmorDamage": {
+        "min": 0.025,
+        "max": 0.04,
+        "preferInt": false
+      },
+      "HeatFactor": {
+        "min": 0.1,
+        "max": 0.22,
+        "preferInt": false
+      },
+      "HeavyBleedingDelta": {
+        "min": -0.1,
+        "max": -0.02,
+        "preferInt": false
+      },
+      "LightBleedingDelta": {
+        "min": -0.1,
+        "max": -0.02,
+        "preferInt": false
+      },
+      "DurabilityBurnModificator": {
+        "min": 0.2,
+        "max": 0.4,
+        "preferInt": false
+      },
+      "BallisticCoeficient": {
+        "min": 0.03,
+        "max": 0.1,
+        "preferInt": false
+      },
+      "MalfMisfireChance": {
+        "min": 0.005,
+        "max": 0.01,
+        "preferInt": false
+      },
+      "MisfireChance": {
+        "min": 0.005,
+        "max": 0.01,
+        "preferInt": false
+      },
+      "MalfFeedChance": {
+        "min": 0.005,
+        "max": 0.01,
+        "preferInt": false
+      }
+    },
+    "pen_lvl_11": {
+      "InitialSpeed": {
+        "min": 22,
+        "max": 48,
+        "preferInt": true
+      },
+      "BulletMassGram": {
+        "min": -2.2,
+        "max": 0,
+        "preferInt": false
+      },
+      "Damage": {
+        "min": -36,
+        "max": -16,
+        "preferInt": true
+      },
+      "PenetrationPower": {
+        "min": 14,
+        "max": 24,
+        "preferInt": true
+      },
+      "ammoRec": {
+        "min": 18,
+        "max": 40,
+        "preferInt": true
+      },
+      "ammoAccr": {
+        "min": -24,
+        "max": -10,
+        "preferInt": true
+      },
+      "ArmorDamage": {
+        "min": 0.03,
+        "max": 0.045,
+        "preferInt": false
+      },
+      "HeatFactor": {
+        "min": 0.12,
+        "max": 0.24,
+        "preferInt": false
+      },
+      "HeavyBleedingDelta": {
+        "min": -0.12,
+        "max": -0.04,
+        "preferInt": false
+      },
+      "LightBleedingDelta": {
+        "min": -0.12,
+        "max": -0.04,
+        "preferInt": false
+      },
+      "DurabilityBurnModificator": {
+        "min": 0.24,
+        "max": 0.45,
+        "preferInt": false
+      },
+      "BallisticCoeficient": {
+        "min": 0.04,
+        "max": 0.11,
+        "preferInt": false
+      },
+      "MalfMisfireChance": {
+        "min": 0.006,
+        "max": 0.012,
+        "preferInt": false
+      },
+      "MisfireChance": {
+        "min": 0.006,
+        "max": 0.012,
+        "preferInt": false
+      },
+      "MalfFeedChance": {
+        "min": 0.006,
+        "max": 0.012,
+        "preferInt": false
+      }
+    }
+  }
+}

@@ -1,0 +1,866 @@
+{
+  "weaponParentGroups": {
+    "assault": [
+      "5447b5f14bdc2d61278b4567",
+      "5447b5fc4bdc2d87278b4567"
+    ],
+    "pistol": [
+      "5447b5cf4bdc2d65278b4567"
+    ],
+    "smg": [
+      "5447b5e04bdc2d62278b4567"
+    ],
+    "sniper": [
+      "5447b6194bdc2d67278b4567",
+      "5447b6254bdc2dc3278b4568"
+    ],
+    "shotgun": [
+      "5447b6094bdc2dc3278b4567"
+    ],
+    "machinegun": [
+      "5447bed64bdc2d97278b4568"
+    ],
+    "launcher": [
+      "5447bedf4bdc2d87278b4568"
+    ]
+  },
+  "gunClampRules": {
+    "Ergonomics": {
+      "min": 10,
+      "max": 100,
+      "preferInt": true
+    },
+    "VerticalRecoil": {
+      "min": 10,
+      "max": 700,
+      "preferInt": true
+    },
+    "HorizontalRecoil": {
+      "min": 20,
+      "max": 700,
+      "preferInt": true
+    },
+    "Convergence": {
+      "min": 1,
+      "max": 40,
+      "preferInt": true
+    },
+    "LoyaltyLevel": {
+      "min": 1,
+      "max": 5,
+      "preferInt": true
+    }
+  },
+  "weaponProfileRanges": {
+    "assault": {
+      "VerticalRecoil": {
+        "min": 80,
+        "max": 110,
+        "preferInt": true
+      },
+      "HorizontalRecoil": {
+        "min": 140,
+        "max": 185,
+        "preferInt": true
+      },
+      "Convergence": {
+        "min": 2,
+        "max": 25,
+        "preferInt": true
+      },
+      "Dispersion": {
+        "min": 4,
+        "max": 8,
+        "preferInt": true
+      },
+      "VisualMulti": {
+        "min": 1.05,
+        "max": 1.25,
+        "preferInt": false
+      },
+      "Ergonomics": {
+        "min": 85,
+        "max": 95,
+        "preferInt": true
+      },
+      "RecoilIntensity": {
+        "min": 0.12,
+        "max": 0.22,
+        "preferInt": false
+      }
+    },
+    "pistol": {
+      "VerticalRecoil": {
+        "min": 325,
+        "max": 525,
+        "preferInt": true
+      },
+      "HorizontalRecoil": {
+        "min": 250,
+        "max": 380,
+        "preferInt": true
+      },
+      "Convergence": {
+        "min": 12,
+        "max": 18,
+        "preferInt": true
+      },
+      "Dispersion": {
+        "min": 10,
+        "max": 18,
+        "preferInt": true
+      },
+      "VisualMulti": {
+        "min": 2,
+        "max": 2.6,
+        "preferInt": false
+      },
+      "Ergonomics": {
+        "min": 92,
+        "max": 100,
+        "preferInt": true
+      },
+      "BaseTorque": {
+        "min": -2,
+        "max": -1,
+        "preferInt": false
+      }
+    },
+    "smg": {
+      "VerticalRecoil": {
+        "min": 37,
+        "max": 64,
+        "preferInt": true
+      },
+      "HorizontalRecoil": {
+        "min": 70,
+        "max": 120,
+        "preferInt": true
+      },
+      "Convergence": {
+        "min": 16,
+        "max": 22,
+        "preferInt": true
+      },
+      "Dispersion": {
+        "min": 6,
+        "max": 12,
+        "preferInt": true
+      },
+      "VisualMulti": {
+        "min": 0.85,
+        "max": 1.15,
+        "preferInt": false
+      },
+      "Ergonomics": {
+        "min": 88,
+        "max": 98,
+        "preferInt": true
+      },
+      "RecoilIntensity": {
+        "min": 0.08,
+        "max": 0.16,
+        "preferInt": false
+      }
+    },
+    "sniper": {
+      "VerticalRecoil": {
+        "min": 115,
+        "max": 185,
+        "preferInt": true
+      },
+      "HorizontalRecoil": {
+        "min": 150,
+        "max": 300,
+        "preferInt": true
+      },
+      "Convergence": {
+        "min": 8,
+        "max": 13,
+        "preferInt": true
+      },
+      "Dispersion": {
+        "min": 0.5,
+        "max": 3,
+        "preferInt": false
+      },
+      "VisualMulti": {
+        "min": 1.1,
+        "max": 1.8,
+        "preferInt": false
+      },
+      "Ergonomics": {
+        "min": 68,
+        "max": 83,
+        "preferInt": true
+      }
+    },
+    "shotgun": {
+      "VerticalRecoil": {
+        "min": 245,
+        "max": 425,
+        "preferInt": true
+      },
+      "HorizontalRecoil": {
+        "min": 240,
+        "max": 460,
+        "preferInt": true
+      },
+      "Dispersion": {
+        "min": 15,
+        "max": 30,
+        "preferInt": true
+      },
+      "VisualMulti": {
+        "min": 1.8,
+        "max": 2.3,
+        "preferInt": false
+      },
+      "Ergonomics": {
+        "min": 68,
+        "max": 88,
+        "preferInt": true
+      },
+      "RecoilIntensity": {
+        "min": 0.32,
+        "max": 0.52,
+        "preferInt": false
+      },
+      "ShotgunDispersion": {
+        "min": 1,
+        "max": 1,
+        "preferInt": true
+      }
+    },
+    "machinegun": {
+      "VerticalRecoil": {
+        "min": 135,
+        "max": 245,
+        "preferInt": true
+      },
+      "HorizontalRecoil": {
+        "min": 200,
+        "max": 360,
+        "preferInt": true
+      },
+      "Convergence": {
+        "min": 4,
+        "max": 14,
+        "preferInt": true
+      },
+      "Dispersion": {
+        "min": 6,
+        "max": 14,
+        "preferInt": true
+      },
+      "VisualMulti": {
+        "min": 1.1,
+        "max": 1.6,
+        "preferInt": false
+      },
+      "Ergonomics": {
+        "min": 70,
+        "max": 90,
+        "preferInt": true
+      },
+      "RecoilIntensity": {
+        "min": 0.2,
+        "max": 0.35,
+        "preferInt": false
+      }
+    },
+    "launcher": {
+      "VerticalRecoil": {
+        "min": 185,
+        "max": 365,
+        "preferInt": true
+      },
+      "HorizontalRecoil": {
+        "min": 240,
+        "max": 500,
+        "preferInt": true
+      },
+      "Convergence": {
+        "min": 2,
+        "max": 10,
+        "preferInt": true
+      },
+      "Dispersion": {
+        "min": 8,
+        "max": 18,
+        "preferInt": true
+      },
+      "VisualMulti": {
+        "min": 1.6,
+        "max": 2.6,
+        "preferInt": false
+      },
+      "Ergonomics": {
+        "min": 45,
+        "max": 68,
+        "preferInt": true
+      },
+      "RecoilIntensity": {
+        "min": 0.28,
+        "max": 0.5,
+        "preferInt": false
+      }
+    }
+  },
+  "weaponCaliberRuleModifiers": {
+    "pistol_caliber": {
+      "VerticalRecoil": {
+        "min": 10,
+        "max": 25,
+        "preferInt": true
+      },
+      "HorizontalRecoil": {
+        "min": 12,
+        "max": 55,
+        "preferInt": true
+      },
+      "Convergence": {
+        "min": 1,
+        "max": 4,
+        "preferInt": true
+      },
+      "Velocity": {
+        "min": -3,
+        "max": 2,
+        "preferInt": true
+      },
+      "RecoilIntensity": {
+        "min": 0.01,
+        "max": 0.06,
+        "preferInt": false
+      }
+    },
+    "small_high_velocity": {
+      "VerticalRecoil": {
+        "min": -5,
+        "max": 5,
+        "preferInt": true
+      },
+      "HorizontalRecoil": {
+        "min": -5,
+        "max": 5,
+        "preferInt": true
+      },
+      "Convergence": {
+        "min": 0,
+        "max": 3,
+        "preferInt": true
+      },
+      "Velocity": {
+        "min": 0,
+        "max": 3,
+        "preferInt": true
+      },
+      "RecoilIntensity": {
+        "min": -0.03,
+        "max": 0.02,
+        "preferInt": false
+      }
+    },
+    "intermediate_rifle_58x42": {
+      "VerticalRecoil": {
+        "min": 12,
+        "max": 12,
+        "preferInt": true
+      },
+      "HorizontalRecoil": {
+        "min": 18,
+        "max": 18,
+        "preferInt": true
+      },
+      "Convergence": {
+        "min": -1,
+        "max": 3,
+        "preferInt": true
+      },
+      "Velocity": {
+        "min": 3,
+        "max": 3,
+        "preferInt": true
+      },
+      "RecoilIntensity": {
+        "min": -0.01,
+        "max": 0.04,
+        "preferInt": false
+      }
+    },
+    "intermediate_rifle_762x39": {
+      "VerticalRecoil": {
+        "min": 8,
+        "max": 45,
+        "preferInt": true
+      },
+      "HorizontalRecoil": {
+        "min": 4,
+        "max": 32,
+        "preferInt": true
+      },
+      "Convergence": {
+        "min": -1,
+        "max": 2,
+        "preferInt": true
+      },
+      "Velocity": {
+        "min": 2,
+        "max": 6,
+        "preferInt": true
+      },
+      "RecoilIntensity": {
+        "min": 0.01,
+        "max": 0.06,
+        "preferInt": false
+      }
+    },
+    "subsonic_heavy_9x39": {
+      "VerticalRecoil": {
+        "min": -45,
+        "max": -60,
+        "preferInt": true
+      },
+      "HorizontalRecoil": {
+        "min": -20,
+        "max": -35,
+        "preferInt": true
+      },
+      "Convergence": {
+        "min": -4,
+        "max": 2,
+        "preferInt": true
+      },
+      "Velocity": {
+        "min": -8,
+        "max": -6,
+        "preferInt": true
+      },
+      "RecoilIntensity": {
+        "min": 0.03,
+        "max": 0.09,
+        "preferInt": false
+      }
+    },
+    "full_power_rifle": {
+      "VerticalRecoil": {
+        "min": 20,
+        "max": 90,
+        "preferInt": true
+      },
+      "HorizontalRecoil": {
+        "min": 14,
+        "max": 65,
+        "preferInt": true
+      },
+      "Convergence": {
+        "min": -3,
+        "max": 1,
+        "preferInt": true
+      },
+      "Velocity": {
+        "min": 5,
+        "max": 15,
+        "preferInt": true
+      },
+      "RecoilIntensity": {
+        "min": 0.02,
+        "max": 0.1,
+        "preferInt": false
+      }
+    },
+    "full_power_rifle_rimmed": {
+      "VerticalRecoil": {
+        "min": 30,
+        "max": 105,
+        "preferInt": true
+      },
+      "HorizontalRecoil": {
+        "min": 18,
+        "max": 75,
+        "preferInt": true
+      },
+      "Convergence": {
+        "min": -4,
+        "max": 0,
+        "preferInt": true
+      },
+      "Velocity": {
+        "min": 7,
+        "max": 15,
+        "preferInt": true
+      },
+      "RecoilIntensity": {
+        "min": 0.03,
+        "max": 0.11,
+        "preferInt": false
+      }
+    },
+    "magnum_heavy": {
+      "VerticalRecoil": {
+        "min": 80,
+        "max": 180,
+        "preferInt": true
+      },
+      "HorizontalRecoil": {
+        "min": 50,
+        "max": 130,
+        "preferInt": true
+      },
+      "Convergence": {
+        "min": -5,
+        "max": -1,
+        "preferInt": true
+      },
+      "Velocity": {
+        "min": 10,
+        "max": 25,
+        "preferInt": true
+      },
+      "RecoilIntensity": {
+        "min": 0.08,
+        "max": 0.2,
+        "preferInt": false
+      }
+    },
+    "shotgun_shell": {
+      "VerticalRecoil": {
+        "min": 50,
+        "max": 120,
+        "preferInt": true
+      },
+      "HorizontalRecoil": {
+        "min": 22,
+        "max": 85,
+        "preferInt": true
+      },
+      "ShotgunDispersion": {
+        "min": 1,
+        "max": 3,
+        "preferInt": true
+      },
+      "Convergence": {
+        "min": -2,
+        "max": 2,
+        "preferInt": true
+      },
+      "RecoilIntensity": {
+        "min": 0.06,
+        "max": 0.16,
+        "preferInt": false
+      }
+    },
+    "pdw_high_pen_small": {
+      "VerticalRecoil": {
+        "min": -15,
+        "max": 10,
+        "preferInt": true
+      },
+      "HorizontalRecoil": {
+        "min": -20,
+        "max": 10,
+        "preferInt": true
+      },
+      "Convergence": {
+        "min": 2,
+        "max": 6,
+        "preferInt": true
+      },
+      "Velocity": {
+        "min": 5,
+        "max": 12,
+        "preferInt": true
+      },
+      "RecoilIntensity": {
+        "min": -0.05,
+        "max": 0.02,
+        "preferInt": false
+      }
+    }
+  },
+  "weaponStockRuleModifiers": {
+    "fixed_stock": {
+      "VerticalRecoil": {
+        "min": -5,
+        "max": 5,
+        "preferInt": true
+      },
+      "HorizontalRecoil": {
+        "min": -10,
+        "max": -3,
+        "preferInt": true
+      },
+      "Convergence": {
+        "min": 2,
+        "max": 6,
+        "preferInt": true
+      },
+      "CameraRecoil": {
+        "min": -0.02,
+        "max": -0.006,
+        "preferInt": false
+      },
+      "VisualMulti": {
+        "min": -0.08,
+        "max": -0.02,
+        "preferInt": false
+      },
+      "Ergonomics": {
+        "min": -4,
+        "max": 2,
+        "preferInt": true
+      },
+      "BaseReloadSpeedMulti": {
+        "min": 0.98,
+        "max": 1.05,
+        "preferInt": false
+      }
+    },
+    "folding_stock_extended": {
+      "VerticalRecoil": {
+        "min": 2,
+        "max": 12,
+        "preferInt": true
+      },
+      "HorizontalRecoil": {
+        "min": -5,
+        "max": 3,
+        "preferInt": true
+      },
+      "Convergence": {
+        "min": 0,
+        "max": 3,
+        "preferInt": true
+      },
+      "CameraRecoil": {
+        "min": -0.01,
+        "max": 0.004,
+        "preferInt": false
+      },
+      "VisualMulti": {
+        "min": -0.03,
+        "max": 0.04,
+        "preferInt": false
+      },
+      "Ergonomics": {
+        "min": 0,
+        "max": 5,
+        "preferInt": true
+      },
+      "BaseReloadSpeedMulti": {
+        "min": 0.98,
+        "max": 1.03,
+        "preferInt": false
+      }
+    },
+    "folding_stock_collapsed": {
+      "VerticalRecoil": {
+        "min": 20,
+        "max": 65,
+        "preferInt": true
+      },
+      "HorizontalRecoil": {
+        "min": 8,
+        "max": 45,
+        "preferInt": true
+      },
+      "Convergence": {
+        "min": -6,
+        "max": -2,
+        "preferInt": true
+      },
+      "CameraRecoil": {
+        "min": 0.01,
+        "max": 0.05,
+        "preferInt": false
+      },
+      "Ergonomics": {
+        "min": 3,
+        "max": 12,
+        "preferInt": true
+      },
+      "VisualMulti": {
+        "min": 0.08,
+        "max": 0.25,
+        "preferInt": false
+      }
+    },
+    "bullpup": {
+      "VerticalRecoil": {
+        "min": -12,
+        "max": 2,
+        "preferInt": true
+      },
+      "HorizontalRecoil": {
+        "min": -14,
+        "max": -5,
+        "preferInt": true
+      },
+      "Convergence": {
+        "min": 3,
+        "max": 8,
+        "preferInt": true
+      },
+      "CameraRecoil": {
+        "min": 0.004,
+        "max": 0.02,
+        "preferInt": false
+      },
+      "VisualMulti": {
+        "min": 0.03,
+        "max": 0.12,
+        "preferInt": false
+      },
+      "Ergonomics": {
+        "min": -6,
+        "max": 2,
+        "preferInt": true
+      },
+      "BaseReloadSpeedMulti": {
+        "min": 0.84,
+        "max": 0.95,
+        "preferInt": false
+      },
+      "BaseChamberCheckSpeed": {
+        "min": 0.9,
+        "max": 1.05,
+        "preferInt": false
+      }
+    },
+    "stockless": {
+      "VerticalRecoil": {
+        "min": -10,
+        "max": 4,
+        "preferInt": true
+      },
+      "HorizontalRecoil": {
+        "min": -12,
+        "max": -4,
+        "preferInt": true
+      },
+      "Convergence": {
+        "min": 1,
+        "max": 6,
+        "preferInt": true
+      },
+      "CameraRecoil": {
+        "min": 0.02,
+        "max": 0.07,
+        "preferInt": false
+      },
+      "VisualMulti": {
+        "min": 0.15,
+        "max": 0.55,
+        "preferInt": false
+      },
+      "RecoilIntensity": {
+        "min": 0.02,
+        "max": 0.1,
+        "preferInt": false
+      }
+    }
+  },
+  "templateFileToWeaponProfile": {
+    "AssaultRifleTemplates.json": "assault",
+    "AssaultCarbineTemplates.json": "assault",
+    "PistolTemplates.json": "pistol",
+    "SMGTemplates.json": "smg",
+    "MarksmanRifleTemplates.json": "sniper",
+    "SniperRifleTemplates.json": "sniper",
+    "ShotgunTemplates.json": "shotgun",
+    "MachinegunTemplates.json": "machinegun",
+    "GrenadeLauncherTemplates.json": "launcher",
+    "SpecialWeaponTemplates.json": "assault"
+  },
+  "caliberProfileKeywords": [
+    {
+      "profile": "magnum_heavy",
+      "keywords": [
+        ".338",
+        "338lm",
+        "338 lapua",
+        ".300 wm",
+        "300wm",
+        "300 win mag",
+        "12.7x",
+        "50 bmg"
+      ]
+    },
+    {
+      "profile": "shotgun_shell",
+      "keywords": [
+        "12g",
+        "12 ga",
+        "12 gauge",
+        "20g",
+        "20 gauge"
+      ]
+    },
+    {
+      "profile": "pdw_high_pen_small",
+      "keywords": [
+        "4.6x30",
+        "5.7x28"
+      ]
+    },
+    {
+      "profile": "full_power_rifle_rimmed",
+      "keywords": [
+        "7.62x54",
+        "54r",
+        "7.62x54r"
+      ]
+    },
+    {
+      "profile": "full_power_rifle",
+      "keywords": [
+        "7.62x51",
+        "308",
+        ".308",
+        "6.8"
+      ]
+    },
+    {
+      "profile": "intermediate_rifle_762x39",
+      "keywords": [
+        "7.62x39"
+      ]
+    },
+    {
+      "profile": "intermediate_rifle_58x42",
+      "keywords": [
+        "5.8x42",
+        "58x42",
+        "caliber58x42",
+        "5.8x42mm"
+      ]
+    },
+    {
+      "profile": "subsonic_heavy_9x39",
+      "keywords": [
+        "9x39"
+      ]
+    },
+    {
+      "profile": "small_high_velocity",
+      "keywords": [
+        "5.45x39",
+        "5.56x45",
+        "5.56",
+        "223",
+        ".223"
+      ]
+    },
+    {
+      "profile": "pistol_caliber",
+      "keywords": [
+        "9x19",
+        "9mm",
+        ".45",
+        "45acp",
+        "10mm"
+      ]
+    }
+  ]
+}

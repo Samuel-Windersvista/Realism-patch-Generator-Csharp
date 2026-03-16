@@ -1,0 +1,810 @@
+{
+    "686e9cc971fdf3a50ea5b9f3": {
+        "itemTplToClone": "5c46fbd72e2216398b5a8c9c",
+        "parentId": "5447b6194bdc2d67278b4567",
+        "handbookParentId": "5b5f791486f774093f2ed3be",
+        "overrideProperties": {
+            "Prefab": {
+                "path": "assets/content/weapons/ak50/weapon_theakguy_ak50_127x99_container.bundle",
+                "rcid": ""
+            },
+            "Weight": 7.963,
+            "RecoilForceBack": 1163,
+            "RecoilForceUp": 624,
+            "RecolDispersion": 11,
+            "Ergonomics": 21,
+            "Width": 5,
+            "Height": 1,
+            "SightingRange": 100,
+            "HipAccuracyRestorationDelay": 0.2,
+            "HipAccuracyRestorationSpeed": 7,
+            "HipInnaccuracyGain": 0.16,
+            "AimPlane": 0.22,
+            "Foldable": false,
+            "CanSellOnRagfair": false,
+            "CompactHandling": false,
+            "Slots": [
+                {
+                    "_name": "mod_reciever",
+                    "_id": "68580ea73f92c88e12d1b846",
+                    "_parent": "686e9cc971fdf3a50ea5b9f3",
+                    "_props": {
+                        "filters": [
+                            {
+                                "Shift": 0,
+                                "Filter": [
+                                    "686ea301341c74a9d8f5dfde"
+                                ]
+                            }
+                        ]
+                    },
+                    "_required": true,
+                    "_mergeSlotWithChildren": false,
+                    "_proto": "55d30c4c4bdc2db4468b457e"
+                },
+                {
+                    "_name": "mod_magazine",
+                    "_id": "68580ea979f701d346afe66e",
+                    "_parent": "686e9cc971fdf3a50ea5b9f3",
+                    "_props": {
+                        "filters": [
+                            {
+                                "Shift": 0,
+                                "Filter": [
+                                    "686e96247283228774e7875e"
+                                ]
+                            }
+                        ]
+                    },
+                    "_required": false,
+                    "_mergeSlotWithChildren": false,
+                    "_proto": "55d30c4c4bdc2db4468b457e"
+                },
+                {
+                    "_name": "mod_pistol_grip",
+                    "_id": "68580eaa88f3671b6b8bbd00",
+                    "_parent": "686e9cc971fdf3a50ea5b9f3",
+                    "_props": {
+                        "filters": [
+                            {
+                                "Shift": 0,
+                                "Filter": [
+                                    "5f6341043ada5942720e2dc5",
+                                    "6087e663132d4d12c81fd96b",
+                                    "5beec8ea0db834001a6f9dbf",
+                                    "5649ad3f4bdc2df8348b4585",
+                                    "5649ade84bdc2d1b2b8b4587",
+                                    "59e62cc886f77440d40b52a1",
+                                    "5a0071d486f77404e23a12b2",
+                                    "57e3dba62459770f0c32322b",
+                                    "5cf54404d7f00c108840b2ef",
+                                    "5e2192a498a36665e8337386",
+                                    "5b30ac585acfc433000eb79c",
+                                    "59e6318286f77444dd62c4cc",
+                                    "5cf50850d7f00c056e24104c",
+                                    "5cf508bfd7f00c056e24104e",
+                                    "5947f92f86f77427344a76b1",
+                                    "5947fa2486f77425b47c1a9b",
+                                    "5c6bf4aa2e2216001219b0ae",
+                                    "5649ae4a4bdc2d1b2b8b4588",
+                                    "5998517986f7746017232f7e",
+                                    "623c3be0484b5003161840dc",
+                                    "628a664bccaab13006640e47",
+                                    "628c9ab845c59e5b80768a81",
+                                    "63f4da90f31d4a33b87bd054",
+                                    "648ae3e356c6310a830fc291",
+                                    "651580dc71a4f10aec4b6056"
+                                ]
+                            }
+                        ]
+                    },
+                    "_required": true,
+                    "_mergeSlotWithChildren": false,
+                    "_proto": "55d30c4c4bdc2db4468b457e"
+                },
+                {
+                    "_name": "mod_barrel",
+                    "_id": "68580eac9766900bdfc622cf",
+                    "_parent": "686e9cc971fdf3a50ea5b9f3",
+                    "_props": {
+                        "filters": [
+                            {
+                                "Filter": [
+                                    "686e9f47c82265f70c65a0bc"
+                                ]
+                            }
+                        ]
+                    },
+                    "_required": true,
+                    "_mergeSlotWithChildren": false,
+                    "_proto": "55d30c394bdc2dae468b4577"
+                }
+            ],
+            "ammoCaliber": "Caliber127x99",
+            "Chambers": [
+                {
+                    "_name": "patron_in_weapon",
+                    "_id": "fa96f39be80152b330a7455a",
+                    "_parent": "686e9cc971fdf3a50ea5b9f3",
+                    "_props": {
+                        "filters": [
+                            {
+                                "Filter": [
+                                    "686e90abd63bee9a05dcf5db",
+                                    "686e926498b323bfbbe1fc7c",
+                                    "686e93d861bcbeca0b805201",
+                                    "686e959752397d5b3485ad75"
+                                ]
+                            }
+                        ]
+                    },
+                    "_required": false,
+                    "_mergeSlotWithChildren": false,
+                    "_proto": "55d4af244bdc2d962f8b4571"
+                }
+            ]
+        },
+        "locales": {
+            "en": {
+                "name": "TheAKGuy AK-50 .50 BMG 狙击步枪",
+"shortName": "AK-50",
+"description": "AK-50 半自动反器材步枪是一项开创性的实验项目，首次将卡拉什尼科夫平台适配至 .50 BMG 弹药。该枪具备卓越的穿透力与射程，是一款威力强大的狙击步枪。此原型由枪械制造商兼 YouTube 博主 Brandon Herrera 及其团队在 The AK Guy LTD 旗下开发。"
+            }
+        },
+        "clearClonedProps": false,
+        "addtoInventorySlots": [],
+        "addtoModSlots": false,
+        "modSlot": [],
+        "ModdableItemWhitelist": [],
+        "ModdableItemBlacklist": [],
+        "fleaPriceRoubles": 1800000,
+        "handbookPriceRoubles": 180000,
+        "addtoTraders": false,
+        "traderId": "PEACEKEEPER",
+        "traderItems": [
+            {
+                "unlimitedCount": true,
+                "stackObjectsCount": 99
+            }
+        ],
+        "barterScheme": [
+            {
+                "count": 19028,
+                "_tpl": "ROUBLES"
+            }
+        ],
+        "loyallevelitems": 4,
+        "addtoBots": false,
+        "addtostaticlootcontainer": true,
+        "StaticLootContainers": [
+            {
+                "ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+                "Probability": 1
+            }
+        ],
+        "masteries": true,
+        "masterySections": [
+            {
+                "Name": "Mk18",
+                "Templates": [
+                    "686e9cc971fdf3a50ea5b9f3"
+                ]
+            }
+        ],
+        "addweaponpreset": true,
+        "weaponpresets": [
+            {
+                "_id": "6876720a2e6e193e5511a504",
+                "_changeWeaponName": false,
+                "_encyclopedia": "686e9cc971fdf3a50ea5b9f3",
+                "_items": [
+                    {
+                        "_id": "68767252535e57c00072e257",
+                        "_tpl": "686e9cc971fdf3a50ea5b9f3",
+                        "upd": {
+                            "Repairable": {
+                                "MaxDurability": 100,
+                                "Durability": 100
+                            },
+                            "FireMode": {
+                                "FireMode": "single"
+                            }
+                        }
+                    },
+                    {
+                        "_id": "6876726257a0b2f2152f1d71",
+                        "_tpl": "686ea301341c74a9d8f5dfde",
+                        "slotId": "mod_reciever",
+                        "parentId": "68767252535e57c00072e257"
+                    },
+                    {
+                        "_id": "687672643f5b04c2f119f319",
+                        "_tpl": "686e96247283228774e7875e",
+                        "slotId": "mod_magazine",
+                        "parentId": "68767252535e57c00072e257"
+                    },
+                    {
+                        "_id": "687672658f63f352320e7885",
+                        "_tpl": "5649ade84bdc2d1b2b8b4587",
+                        "slotId": "mod_pistol_grip",
+                        "parentId": "68767252535e57c00072e257"
+                    },
+                    {
+                        "_id": "68767267daba56bc68eba797",
+                        "_tpl": "686e9f47c82265f70c65a0bc",
+                        "slotId": "mod_barrel",
+                        "parentId": "68767252535e57c00072e257"
+                    },
+                    {
+                        "_id": "6876726d903ed529aad3b872",
+                        "_tpl": "686ea09e22b105b8adc86579",
+                        "slotId": "mod_muzzle",
+                        "parentId": "68767267daba56bc68eba797"
+                    },
+                    {
+                        "_id": "6876726c3771d06996ee3266",
+                        "_tpl": "686ea1787aaea0639d6587b4",
+                        "slotId": "mod_gas_block",
+                        "parentId": "68767267daba56bc68eba797"
+                    }
+                ],
+                "_name": "P320 base",
+                "_parent": "68767252535e57c00072e257",
+                "_type": "Preset"
+            }
+        ]
+    },
+    "686ea1787aaea0639d6587b4": {
+        "itemTplToClone": "56eabcd4d2720b66698b4574",
+        "parentId": "56ea9461d2720b67698b456f",
+        "handbookParentId": "5b5f760586f774093e6cb509",
+        "overrideProperties": {
+            "Prefab": {
+                "path": "ak50rip/gas_block_ak50_theakguy_ak50_gastube_handguard_combo_mlok.bundle",
+                "rcid": ""
+            },
+            "Height": 1,
+            "Weight": 1,
+            "HeatFactor": 1.0944,
+            "CoolFactor": 1.095,
+            "Ergonomics": 2,
+            "Recoil": -3,
+            "Slots": [
+                {
+                    "_name": "mod_tactical",
+                    "_id": "686ea17bfaa139a6203d722e",
+                    "_parent": "686ea1787aaea0639d6587b4",
+                    "_props": {
+                        "filters": [
+                            {
+                                "Shift": 0,
+                                "Filter": [
+                                    "57fd23e32459772d0805bcf1",
+                                    "544909bb4bdc2d6f028b4577",
+                                    "5d10b49bd7ad1a1a560708b0",
+                                    "5c06595c0db834001a66af6c",
+                                    "5a7b483fe899ef0016170d15",
+                                    "61605d88ffa6e502ac5e7eeb",
+                                    "5c5952732e2216398b5abda2",
+                                    "644a3df63b0b6f03e101e065"
+                                ]
+                            }
+                        ]
+                    },
+                    "_required": false,
+                    "_mergeSlotWithChildren": false,
+                    "_proto": "55d30c4c4bdc2db4468b457e"
+                },
+                {
+                    "_name": "mod_mount_000",
+                    "_id": "686ea17bfaa139a6203d722e",
+                    "_parent": "686ea1787aaea0639d6587b4",
+                    "_props": {
+                        "filters": [
+                            {
+                                "Shift": 0,
+                                "Filter": [
+                                    "5b7be47f5acfc400170e2dd2",
+                                    "6269220d70b6c02e665f2635",
+                                    "6269545d0e57f218e4548ca2",
+                                    "669a6a4a525be1d2d004b8eb",
+                                    "671126b049e181972e0681fa"
+                                ]
+                            }
+                        ]
+                    },
+                    "_required": false,
+                    "_mergeSlotWithChildren": false,
+                    "_proto": "55d30c4c4bdc2db4468b457e"
+                },
+                {
+                    "_name": "mod_mount_001",
+                    "_id": "686ea17bfaa139a6203d722e",
+                    "_parent": "686ea1787aaea0639d6587b4",
+                    "_props": {
+                        "filters": [
+                            {
+                                "Shift": 0,
+                                "Filter": [
+                                    "5b7be47f5acfc400170e2dd2",
+                                    "6269220d70b6c02e665f2635",
+                                    "6269545d0e57f218e4548ca2",
+                                    "669a6a4a525be1d2d004b8eb"
+                                ]
+                            }
+                        ]
+                    },
+                    "_required": false,
+                    "_mergeSlotWithChildren": false,
+                    "_proto": "55d30c4c4bdc2db4468b457e"
+                },
+                {
+                    "_name": "mod_mount_002",
+                    "_id": "686ea17bfaa139a6203d722e",
+                    "_parent": "686ea1787aaea0639d6587b4",
+                    "_props": {
+                        "filters": [
+                            {
+                                "Shift": 0,
+                                "Filter": [
+                                    "5b7be47f5acfc400170e2dd2",
+                                    "6269220d70b6c02e665f2635",
+                                    "6269545d0e57f218e4548ca2",
+                                    "669a6a4a525be1d2d004b8eb"
+                                ]
+                            }
+                        ]
+                    },
+                    "_required": false,
+                    "_mergeSlotWithChildren": false,
+                    "_proto": "55d30c4c4bdc2db4468b457e"
+                },
+                {
+                    "_name": "mod_sight_front",
+                    "_id": "686ea17bfaa139a6203d722e",
+                    "_parent": "686ea1787aaea0639d6587b4",
+                    "_props": {
+                        "filters": [
+                            {
+                                "Shift": 0,
+                                "Filter": [
+                                    "5ba26b01d4351e0085325a51",
+                                    "5dfa3d950dee1b22f862eae0",
+                                    "5c17804b2e2216152006c02f",
+                                    "5fb6567747ce63734e3fa1dc",
+                                    "5bc09a30d4351e00367fb7c8",
+                                    "5c18b90d2e2216152142466b",
+                                    "5fc0fa362770a0045c59c677",
+                                    "5894a73486f77426d259076c",
+                                    "55d4af3a4bdc2d972f8b456f"
+                                ]
+                            }
+                        ]
+                    },
+                    "_required": false,
+                    "_mergeSlotWithChildren": false,
+                    "_proto": "55d30c4c4bdc2db4468b457e"
+                }
+            ]
+        },
+        "locales": {
+            "en": {
+                "name": "AK-50 带导气管的 M-LOK 护木",
+"shortName": "AK-50 M-LOK",
+"description": "专为 AK-50 设计的护木与导气管组件。护木采用 M-LOK 标准接口，可用于安装各类附件，同时还配有皮卡汀尼导轨，便于加装战术配件。由 The AK Guy LTD 制造。"
+            }
+        },
+        "clearClonedProps": false,
+        "addtoInventorySlots": [],
+        "addtoModSlots": false,
+        "modSlot": [
+            "mod_magazine"
+        ],
+        "ModdableItemWhitelist": [],
+        "ModdableItemBlacklist": [],
+        "fleaPriceRoubles": 20353,
+        "handbookPriceRoubles": 3576,
+        "addtoTraders": false,
+        "traderId": "PEACEKEEPER",
+        "traderItems": [
+            {
+                "unlimitedCount": true,
+                "stackObjectsCount": 99
+            }
+        ],
+        "barterScheme": [
+            {
+                "count": 1,
+                "_tpl": "ROUBLES"
+            }
+        ],
+        "loyallevelitems": 4,
+        "addtoBots": false,
+        "addtostaticlootcontainer": false,
+        "StaticLootContainers": [
+            {
+                "ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+                "Probability": 250
+            },
+            {
+                "ContainerName": "LOOTCONTAINER_DEAD_SCAV",
+                "Probability": 150
+            }
+        ],
+        "masteries": false,
+        "masterySections": [],
+        "addweaponpreset": false,
+        "weaponpresets": []
+    },
+    "686e9f47c82265f70c65a0bc": {
+        "itemTplToClone": "5c471cb32e221602b177afaa",
+        "parentId": "555ef6e44bdc2de9068b457e",
+        "handbookParentId": "5b5f75c686f774094242f19f",
+        "overrideProperties": {
+            "Prefab": {
+                "path": "ak50rip/barrel_ak50_theakguy_std_612mm_127x99.bundle",
+                "rcid": ""
+            },
+            "CenterOfImpact": 0.01,
+            "Length": 1,
+            "Width": 4,
+            "Weight": 1.62,
+            "ExtraSizeLeft": 2,
+            "HeatFactor": 0.78,
+            "CoolFactor": 0.926,
+            "Ergonomics": -12,
+            "Recoil": -6,
+            "Slots": [
+                {
+                    "_name": "mod_muzzle",
+                    "_id": "686ea0661bd4585592ec498e",
+                    "_parent": "686e9f47c82265f70c65a0bc",
+                    "_props": {
+                        "filters": [
+                            {
+                                "Shift": 0,
+                                "Filter": [
+                                    "686ea09e22b105b8adc86579"
+                                ]
+                            }
+                        ]
+                    },
+                    "_required": false,
+                    "_mergeSlotWithChildren": false,
+                    "_proto": "55d30c4c4bdc2db4468b457e"
+                },
+                {
+                    "_name": "mod_gas_block",
+                    "_id": "686ea1920ed84a4c65a18558",
+                    "_parent": "686e9f47c82265f70c65a0bc",
+                    "_props": {
+                        "filters": [
+                            {
+                                "Shift": 0,
+                                "Filter": [
+                                    "686ea1787aaea0639d6587b4"
+                                ]
+                            }
+                        ]
+                    },
+                    "_required": true,
+                    "_mergeSlotWithChildren": false,
+                    "_proto": "55d30c4c4bdc2db4468b457e"
+                }
+            ]
+        },
+        "locales": {
+            "en": {
+                "name": "AK-50 .50 BMG 24 英寸枪管",
+"shortName": "AK-50 24\"",
+"description": "专为 AK-50 设计的 24 英寸（612 毫米）枪管，由 The AK Guy LTD 制造。"
+            }
+        },
+        "clearClonedProps": false,
+        "addtoInventorySlots": [],
+        "addtoModSlots": false,
+        "modSlot": [
+            "mod_magazine"
+        ],
+        "ModdableItemWhitelist": [],
+        "ModdableItemBlacklist": [],
+        "fleaPriceRoubles": 67572,
+        "handbookPriceRoubles": 8378,
+        "addtoTraders": false,
+        "traderId": "PEACEKEEPER",
+        "traderItems": [
+            {
+                "unlimitedCount": true,
+                "stackObjectsCount": 99
+            }
+        ],
+        "barterScheme": [
+            {
+                "count": 1,
+                "_tpl": "ROUBLES"
+            }
+        ],
+        "loyallevelitems": 4,
+        "addtoBots": false,
+        "addtostaticlootcontainer": false,
+        "StaticLootContainers": [
+            {
+                "ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+                "Probability": 250
+            },
+            {
+                "ContainerName": "LOOTCONTAINER_DEAD_SCAV",
+                "Probability": 150
+            }
+        ],
+        "masteries": false,
+        "masterySections": [],
+        "addweaponpreset": false,
+        "weaponpresets": []
+    },
+    "686ea09e22b105b8adc86579": {
+        "itemTplToClone": "5c471bfc2e221602b21d4e17",
+        "parentId": "550aa4bf4bdc2dd6348b456b",
+        "handbookParentId": "5b5f724c86f774093f2ecf15",
+        "overrideProperties": {
+            "Prefab": {
+                "path": "ak50rip/muzzle_ak50_theakguy_ak50_muzzle_brake_127x99.bundle",
+                "rcid": ""
+            },
+            "HeatFactor": 0.976,
+            "Loudness": 20,
+            "DurabilityBurnModificator": 0.977,
+            "Ergonomics": -4,
+            "Recoil": -8,
+            "Slots": []
+        },
+        "locales": {
+            "en": {
+                "name": "AK-50 .50 BMG 枪口制退器",
+"shortName": "AK-50",
+"description": "专为 AK-50 设计的枪口制退器，可有效降低后坐力和枪口上跳。由 The AK Guy LTD 制造。"
+            }
+        },
+        "clearClonedProps": false,
+        "addtoInventorySlots": [],
+        "addtoModSlots": false,
+        "modSlot": [
+            "mod_magazine"
+        ],
+        "ModdableItemWhitelist": [],
+        "ModdableItemBlacklist": [],
+        "fleaPriceRoubles": 20353,
+        "handbookPriceRoubles": 6666,
+        "addtoTraders": false,
+        "traderId": "PEACEKEEPER",
+        "traderItems": [
+            {
+                "unlimitedCount": true,
+                "stackObjectsCount": 99
+            }
+        ],
+        "barterScheme": [
+            {
+                "count": 1,
+                "_tpl": "ROUBLES"
+            }
+        ],
+        "loyallevelitems": 4,
+        "addtoBots": false,
+        "addtostaticlootcontainer": false,
+        "StaticLootContainers": [
+            {
+                "ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+                "Probability": 250
+            },
+            {
+                "ContainerName": "LOOTCONTAINER_DEAD_SCAV",
+                "Probability": 150
+            }
+        ],
+        "masteries": false,
+        "masterySections": [],
+        "addweaponpreset": false,
+        "weaponpresets": []
+    },
+    "686ea301341c74a9d8f5dfde": {
+        "itemTplToClone": "56eabcd4d2720b66698b4574",
+        "parentId": "55818a304bdc2db5418b457d",
+        "handbookParentId": "5b5f764186f77447ec5d7714",
+        "overrideProperties": {
+            "Prefab": {
+                "path": "ak50rip/reciever_ak50_theakguy_ak50_cover.bundle",
+                "rcid": ""
+            },
+            "Weight": 1.644,
+            "Width": 3,
+            "Height": 1,
+            "DurabilityBurnModificator": 0.97,
+            "Ergonomics": 2,
+            "Recoil": -3,
+            "Slots": [
+                {
+                    "_name": "mod_scope",
+                    "_id": "686ea4066733142e56386dd2",
+                    "_parent": "686ea301341c74a9d8f5dfde",
+                    "_props": {
+                        "filters": [
+                            {
+                                "Shift": 0,
+                                "Filter": [
+                                    "57ac965c24597706be5f975c",
+                                    "57aca93d2459771f2c7e26db",
+                                    "544a3f024bdc2d1d388b4568",
+                                    "544a3a774bdc2d3a388b4567",
+                                    "5d2dc3e548f035404a1a4798",
+                                    "57adff4f24597737f373b6e6",
+                                    "5c0517910db83400232ffee5",
+                                    "591c4efa86f7741030027726",
+                                    "570fd79bd2720bc7458b4583",
+                                    "570fd6c2d2720bc6458b457f",
+                                    "558022b54bdc2dac148b458d",
+                                    "5c07dd120db834001c39092d",
+                                    "5c0a2cec0db834001b7ce47d",
+                                    "58491f3324597764bc48fa02",
+                                    "584924ec24597768f12ae244",
+                                    "5b30b0dc5acfc400153b7124",
+                                    "6165ac8c290d254f5e6b2f6c",
+                                    "60a23797a37c940de7062d02",
+                                    "5d2da1e948f035477b1ce2ba",
+                                    "5c0505e00db834001b735073",
+                                    "609a63b6e2ff132951242d09",
+                                    "584984812459776a704a82a6",
+                                    "59f9d81586f7744c7506ee62",
+                                    "570fd721d2720bc5458b4596",
+                                    "57ae0171245977343c27bfcf",
+                                    "5dfe6104585a0c3e995c7b82",
+                                    "544a3d0a4bdc2d1b388b4567",
+                                    "5d1b5e94d7ad1a2b865a96b0",
+                                    "609bab8b455afd752b2e6138",
+                                    "58d39d3d86f77445bb794ae7",
+                                    "616554fe50224f204c1da2aa",
+                                    "5c7d55f52e221644f31bff6a",
+                                    "616584766ef05c2ce828ef57",
+                                    "5b3b6dc75acfc47a8773fb1e",
+                                    "615d8d878004cc50514c3233",
+                                    "5b2389515acfc4771e1be0c0",
+                                    "577d128124597739d65d0e56",
+                                    "618b9643526131765025ab35",
+                                    "618bab21526131765025ab3f",
+                                    "5c86592b2e2216000e69e77c",
+                                    "5a37ca54c4a282000d72296a",
+                                    "5d0a29fed7ad1a002769ad08",
+                                    "5c064c400db834001d23f468",
+                                    "58d2664f86f7747fec5834f6",
+                                    "57c69dd424597774c03b7bbc",
+                                    "5b3b99265acfc4704b4a1afb",
+                                    "5aa66a9be5b5b0214e506e89",
+                                    "5aa66c72e5b5b00016327c93",
+                                    "5c1cdd302e221602b3137250",
+                                    "61714b2467085e45ef140b2c",
+                                    "6171407e50224f204c1da3c5",
+                                    "61713cc4d8e3106d9806c109",
+                                    "5b31163c5acfc400153b71cb",
+                                    "5a33b652c4a28232996e407c",
+                                    "5a33b2c9c4a282000c5a9511",
+                                    "59db7eed86f77461f8380365",
+                                    "5a1ead28fcdbcb001912fa9f",
+                                    "5dff77c759400025ea5150cf",
+                                    "626bb8532c923541184624b4",
+                                    "62811f461d5df4475f46a332",
+                                    "63fc449f5bd61c6cf3784a88",
+                                    "6478641c19d732620e045e17",
+                                    "6477772ea8a38bb2050ed4db",
+                                    "64785e7c19d732620e045e15",
+                                    "65392f611406374f82152ba5",
+                                    "653931da5db71d30ab1d6296",
+                                    "655f13e0a246670fb0373245",
+                                    "6567e751a715f85433025998",
+                                    "67641a851b2899700609901a",
+                                    "6761759e7ee06333f108bf86"
+                                ]
+                            }
+                        ]
+                    },
+                    "_required": false,
+                    "_mergeSlotWithChildren": false,
+                    "_proto": "55d30c4c4bdc2db4468b457e"
+                },
+                {
+                    "_name": "mod_sight_rear",
+                    "_id": "686ea4396a38261648349d6d",
+                    "_parent": "686ea301341c74a9d8f5dfde",
+                    "_props": {
+                        "filters": [
+                            {
+                                "Shift": 0,
+                                "Filter": [
+                                    "5bb20e49d4351e3bac1212de",
+                                    "5ba26b17d4351e00367f9bdd",
+                                    "5dfa3d7ac41b2312ea33362a",
+                                    "5c1780312e221602b66cc189",
+                                    "5fb6564947ce63734e3fa1da",
+                                    "5bc09a18d4351e003562b68e",
+                                    "5c18b9192e2216398b5a8104",
+                                    "5fc0fa957283c4046c58147e",
+                                    "5894a81786f77427140b8347",
+                                    "55d5f46a4bdc2d1b198b4567",
+                                    "5ae30bad5acfc400185c2dc4"
+                                ]
+                            }
+                        ]
+                    },
+                    "_required": false,
+                    "_mergeSlotWithChildren": false,
+                    "_proto": "55d30c4c4bdc2db4468b457e"
+                },
+                {
+                    "_name": "mod_mount",
+                    "_id": "686ea43b6f8794ab5fbc50d3",
+                    "_parent": "686ea301341c74a9d8f5dfde",
+                    "_props": {
+                        "filters": [
+                            {
+                                "Shift": 0,
+                                "Filter": [
+                                    "5649a2464bdc2d91118b45a8"
+                                ]
+                            }
+                        ]
+                    },
+                    "_required": false,
+                    "_mergeSlotWithChildren": false,
+                    "_proto": "55d30c4c4bdc2db4468b457e"
+                }
+            ]
+        },
+        "locales": {
+            "en": {
+                "name": "AK-50 防尘盖",
+"shortName": "AK-50 DC",
+"description": "专为 AK-50 狙击步枪设计的机匣防尘盖。"
+            }
+        },
+        "clearClonedProps": false,
+        "addtoInventorySlots": [],
+        "addtoModSlots": false,
+        "modSlot": [
+            "mod_magazine"
+        ],
+        "ModdableItemWhitelist": [],
+        "ModdableItemBlacklist": [],
+        "fleaPriceRoubles": 20353,
+        "handbookPriceRoubles": 2222,
+        "addtoTraders": false,
+        "traderId": "PEACEKEEPER",
+        "traderItems": [
+            {
+                "unlimitedCount": true,
+                "stackObjectsCount": 99
+            }
+        ],
+        "barterScheme": [
+            {
+                "count": 1,
+                "_tpl": "ROUBLES"
+            }
+        ],
+        "loyallevelitems": 4,
+        "addtoBots": false,
+        "addtostaticlootcontainer": false,
+        "StaticLootContainers": [
+            {
+                "ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+                "Probability": 250
+            },
+            {
+                "ContainerName": "LOOTCONTAINER_DEAD_SCAV",
+                "Probability": 150
+            }
+        ],
+        "masteries": false,
+        "masterySections": [],
+        "addweaponpreset": false,
+        "weaponpresets": []
+    }
+}
