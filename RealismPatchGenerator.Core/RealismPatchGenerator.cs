@@ -36,6 +36,7 @@ public sealed class RealismPatchGenerator
     private readonly List<string> logs = [];
     private readonly CompatibleRandom random = new(20260313);
     private readonly RuleSet rules;
+    private readonly ItemExceptionDocument itemExceptions;
 
     public RealismPatchGenerator(string basePath)
     {
@@ -43,6 +44,7 @@ public sealed class RealismPatchGenerator
         inputPath = Path.Combine(this.basePath, "input");
         templatesBasePath = Path.Combine(this.basePath, "现实主义物品模板");
         rules = RuleSetLoader.Load(this.basePath, Log);
+        itemExceptions = ItemExceptionStore.Load(this.basePath);
     }
 
     public GenerationResult Generate(string? outputDirectory = null)
@@ -826,8 +828,27 @@ public sealed class RealismPatchGenerator
         MergeInputProperties(patch, itemInfo);
         EnsureBasicFields(itemId, patch, itemInfo);
         ApplyRealismSanityCheck(patch, itemInfo);
+        ApplyItemException(itemId, patch);
         AddToFilePatches(itemId, patch, sourceFile);
         processedItems.Add(itemId);
+    }
+
+    private void ApplyItemException(string itemId, JsonObject patch)
+    {
+        if (!itemExceptions.TryGetEntry(itemId, out var exceptionEntry))
+        {
+            return;
+        }
+
+        foreach (var pair in exceptionEntry.Overrides)
+        {
+            patch[pair.Key] = pair.Value?.DeepClone();
+        }
+
+        if (exceptionEntry.Overrides.Count > 0)
+        {
+            Log($"应用例外物品覆盖: {itemId} ({exceptionEntry.Overrides.Count} 个字段)");
+        }
     }
 
     private void EnsureBasicFields(string itemId, JsonObject patch, ItemInfo itemInfo)
@@ -892,11 +913,21 @@ public sealed class RealismPatchGenerator
 
         foreach (var pair in itemInfo.Properties)
         {
-            if (pair.Value is not null)
+            if (pair.Value is not null && ShouldMergeSourceProperty(patch, itemInfo, pair.Key))
             {
                 patch[pair.Key] = pair.Value.DeepClone();
             }
         }
+    }
+
+    private static bool ShouldMergeSourceProperty(JsonObject patch, ItemInfo itemInfo, string fieldName)
+    {
+        if (itemInfo.Format == ItemFormat.CurrentPatch)
+        {
+            return true;
+        }
+
+        return patch.ContainsKey(fieldName);
     }
 
     private void AddToFilePatches(string itemId, JsonObject patch, string sourceFile)
@@ -991,7 +1022,6 @@ public sealed class RealismPatchGenerator
     private void SavePatches(string outputPath)
     {
         Directory.CreateDirectory(outputPath);
-        ClearOutputDirectory(outputPath);
 
         foreach (var pair in fileBasedPatches.OrderBy(pair => pair.Key, StringComparer.OrdinalIgnoreCase))
         {
@@ -1018,19 +1048,6 @@ public sealed class RealismPatchGenerator
 
             File.WriteAllText(outputFile, json.ToJsonString(OutputJsonOptions));
             Log($"已导出: {Path.GetRelativePath(outputPath, outputFile)}");
-        }
-    }
-
-    private static void ClearOutputDirectory(string outputPath)
-    {
-        foreach (var directory in Directory.EnumerateDirectories(outputPath))
-        {
-            Directory.Delete(directory, true);
-        }
-
-        foreach (var file in Directory.EnumerateFiles(outputPath))
-        {
-            File.Delete(file);
         }
     }
 

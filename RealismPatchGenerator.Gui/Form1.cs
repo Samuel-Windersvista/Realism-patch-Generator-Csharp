@@ -27,6 +27,7 @@ public partial class Form1 : Form
     private bool suppressTreeSelection;
     private bool suppressLanguageSelection;
     private string currentStateKey = "State.Ready";
+    private string? selectedGroupKey;
     private RuleEditorSectionDefinition? selectedSection;
     private string? selectedProfileKey;
 
@@ -59,7 +60,7 @@ public partial class Form1 : Form
         basePathTextBox.Text = currentRepositoryRoot ?? string.Empty;
         outputPathTextBox.Text = currentRepositoryRoot is not null
             ? Path.Combine(currentRepositoryRoot, "output")
-            : string.Empty;
+            : @"-user\mods\SPT-Realism\db\templates";
     }
 
     private void ApplyLanguage()
@@ -72,17 +73,26 @@ public partial class Form1 : Form
         browseButton.Text = T("Button.Browse");
         saveAllButton.Text = T("Button.SaveAll");
         reloadButton.Text = T("Button.Reload");
+        exceptionsButton.Text = T("Button.Exceptions");
         generateButton.Text = T("Button.Generate");
         auditButton.Text = T("Button.Audit");
+        modifiedOnlyCheckBox.Text = T("Label.ModifiedOnly");
         languageLabel.Text = T("Label.Language");
         searchLabel.Text = T("Label.Search");
         explanationTabPage.Text = T("Tab.Explanation");
+        exceptionsOverviewTabPage.Text = T("Tab.ExceptionsOverview");
         logTabPage.Text = T("Tab.Log");
         fieldColumn.HeaderText = T("Column.Field");
         minColumn.HeaderText = T("Column.Min");
         maxColumn.HeaderText = T("Column.Max");
         preferIntColumn.HeaderText = T("Column.PreferInt");
         sourceColumn.HeaderText = T("Column.Source");
+        exceptionEnabledColumn.HeaderText = T("Column.Enabled");
+        exceptionItemIdColumn.HeaderText = T("Column.ItemId");
+        exceptionNameColumn.HeaderText = T("Column.Name");
+        exceptionFieldCountColumn.HeaderText = T("Column.OverrideCount");
+        exceptionSourceFileColumn.HeaderText = T("Column.SourceFile");
+        exceptionNotesColumn.HeaderText = T("Column.Notes");
 
         suppressLanguageSelection = true;
         languageComboBox.Items[0] = T("Language.Chinese");
@@ -94,6 +104,7 @@ public partial class Form1 : Form
         RebuildTree(preserveSelection: true, selectFirstNode: false);
         RefreshGrid(preserveSelection: true);
         UpdateExplanation();
+        RefreshExceptionOverview();
         RefreshStatus();
     }
 
@@ -246,7 +257,34 @@ public partial class Form1 : Form
         outputPathTextBox.Text = dialog.SelectedPath;
     }
 
+    private void exceptionsButton_Click(object sender, EventArgs e)
+    {
+        var repositoryRoot = ResolveDataRoot();
+        if (repositoryRoot is null)
+        {
+            ShowInvalidDataRootMessage();
+            return;
+        }
+
+        using var dialog = new ItemExceptionsForm(repositoryRoot, ResolveOutputPath(), currentLanguage);
+        dialog.ShowDialog(this);
+        if (!dialog.SavedToDisk)
+        {
+            return;
+        }
+
+        RefreshExceptionOverview();
+        AppendLog(Tf("Log.ExceptionSaveSuccess", ItemExceptionStore.FileName));
+        SetState("State.ExceptionSaved");
+        RefreshStatus();
+    }
+
     private void searchTextBox_TextChanged(object sender, EventArgs e)
+    {
+        RefreshGrid(preserveSelection: false);
+    }
+
+    private void modifiedOnlyCheckBox_CheckedChanged(object sender, EventArgs e)
     {
         RefreshGrid(preserveSelection: false);
     }
@@ -260,11 +298,13 @@ public partial class Form1 : Form
 
         if (e.Node?.Tag is not RuleTreeSelection selection)
         {
+            selectedGroupKey = null;
             selectedSection = null;
             selectedProfileKey = null;
         }
         else
         {
+            selectedGroupKey = selection.GroupKey;
             selectedSection = selection.Section;
             selectedProfileKey = selection.ProfileKey;
         }
@@ -447,6 +487,7 @@ public partial class Form1 : Form
             }
 
             SetState("State.Loaded");
+            RefreshExceptionOverview();
         }
         catch (Exception ex)
         {
@@ -564,12 +605,28 @@ public partial class Form1 : Form
 
         foreach (var section in RuleEditorCatalog.Sections)
         {
-            var sectionEntryCount = allEntries.Count(entry => entry.Section.Key == section.Key);
-            var sectionNode = new TreeNode(section.DisplayName.Get(currentLanguage))
+            var groupNode = ruleTreeView.Nodes
+                .Cast<TreeNode>()
+                .FirstOrDefault(node => node.Tag is RuleTreeSelection treeSelection
+                    && string.Equals(treeSelection.GroupKey, section.GroupKey, StringComparison.OrdinalIgnoreCase)
+                    && treeSelection.Section is null
+                    && treeSelection.ProfileKey is null);
+
+            if (groupNode is null)
             {
-                Tag = new RuleTreeSelection(section, null),
+                var groupEntryCount = allEntries.Count(entry => string.Equals(entry.Section.GroupKey, section.GroupKey, StringComparison.OrdinalIgnoreCase));
+                groupNode = new TreeNode(Tf("Tree.GroupNode", RuleEditorCatalog.GetGroupDisplayName(section.GroupKey, currentLanguage), groupEntryCount))
+                {
+                    Tag = new RuleTreeSelection(section.GroupKey, null, null),
+                };
+                ruleTreeView.Nodes.Add(groupNode);
+            }
+
+            var sectionEntryCount = allEntries.Count(entry => entry.Section.Key == section.Key);
+            var sectionNode = new TreeNode(Tf("Tree.SectionNode", section.DisplayName.Get(currentLanguage), sectionEntryCount))
+            {
+                Tag = new RuleTreeSelection(section.GroupKey, section, null),
             };
-            sectionNode.Text = Tf("Tree.SectionNode", section.DisplayName.Get(currentLanguage), sectionEntryCount);
 
             var profileKeys = allEntries
                 .Where(entry => entry.Section.Key == section.Key)
@@ -582,11 +639,11 @@ public partial class Form1 : Form
             {
                 sectionNode.Nodes.Add(new TreeNode(DisplayProfileKey(profileKey))
                 {
-                    Tag = new RuleTreeSelection(section, profileKey),
+                    Tag = new RuleTreeSelection(section.GroupKey, section, profileKey),
                 });
             }
 
-            ruleTreeView.Nodes.Add(sectionNode);
+            groupNode.Nodes.Add(sectionNode);
         }
 
         ruleTreeView.ExpandAll();
@@ -596,7 +653,9 @@ public partial class Form1 : Form
         TreeNode? nodeToSelect = null;
         if (selected is not null)
         {
-            nodeToSelect = FindTreeNode(selected.Section.Key, selected.ProfileKey);
+            nodeToSelect = selected.Section is not null
+                ? FindTreeNode(selected.Section.Key, selected.ProfileKey)
+                : FindGroupNode(selected.GroupKey);
         }
 
         if (nodeToSelect is null && selectFirstNode && ruleTreeView.Nodes.Count > 0)
@@ -613,23 +672,44 @@ public partial class Form1 : Form
 
     private TreeNode? FindTreeNode(string sectionKey, string? profileKey)
     {
-        foreach (TreeNode sectionNode in ruleTreeView.Nodes)
+        foreach (TreeNode groupNode in ruleTreeView.Nodes)
         {
-            if (sectionNode.Tag is RuleTreeSelection sectionSelection
-                && string.Equals(sectionSelection.Section.Key, sectionKey, StringComparison.OrdinalIgnoreCase)
-                && profileKey is null)
+            foreach (TreeNode sectionNode in groupNode.Nodes)
             {
-                return sectionNode;
-            }
-
-            foreach (TreeNode childNode in sectionNode.Nodes)
-            {
-                if (childNode.Tag is RuleTreeSelection childSelection
-                    && string.Equals(childSelection.Section.Key, sectionKey, StringComparison.OrdinalIgnoreCase)
-                    && string.Equals(childSelection.ProfileKey, profileKey, StringComparison.OrdinalIgnoreCase))
+                if (sectionNode.Tag is RuleTreeSelection sectionSelection
+                    && sectionSelection.Section is not null
+                    && string.Equals(sectionSelection.Section.Key, sectionKey, StringComparison.OrdinalIgnoreCase)
+                    && profileKey is null)
                 {
-                    return childNode;
+                    return sectionNode;
                 }
+
+                foreach (TreeNode childNode in sectionNode.Nodes)
+                {
+                    if (childNode.Tag is RuleTreeSelection childSelection
+                        && childSelection.Section is not null
+                        && string.Equals(childSelection.Section.Key, sectionKey, StringComparison.OrdinalIgnoreCase)
+                        && string.Equals(childSelection.ProfileKey, profileKey, StringComparison.OrdinalIgnoreCase))
+                    {
+                        return childNode;
+                    }
+                }
+            }
+        }
+
+        return null;
+    }
+
+    private TreeNode? FindGroupNode(string groupKey)
+    {
+        foreach (TreeNode groupNode in ruleTreeView.Nodes)
+        {
+            if (groupNode.Tag is RuleTreeSelection selection
+                && string.Equals(selection.GroupKey, groupKey, StringComparison.OrdinalIgnoreCase)
+                && selection.Section is null
+                && selection.ProfileKey is null)
+            {
+                return groupNode;
             }
         }
 
@@ -692,12 +772,23 @@ public partial class Form1 : Form
 
     private bool MatchesSelectionAndSearch(RuleRangeEntry entry)
     {
+        if (!string.IsNullOrWhiteSpace(selectedGroupKey)
+            && !string.Equals(entry.Section.GroupKey, selectedGroupKey, StringComparison.OrdinalIgnoreCase))
+        {
+            return false;
+        }
+
         if (selectedSection is not null && !string.Equals(entry.Section.Key, selectedSection.Key, StringComparison.OrdinalIgnoreCase))
         {
             return false;
         }
 
         if (!string.IsNullOrWhiteSpace(selectedProfileKey) && !string.Equals(entry.ProfileKey, selectedProfileKey, StringComparison.OrdinalIgnoreCase))
+        {
+            return false;
+        }
+
+        if (modifiedOnlyCheckBox.Checked && !entry.IsDirty)
         {
             return false;
         }
@@ -713,6 +804,7 @@ public partial class Form1 : Form
             || entry.FieldKey.Contains(query, StringComparison.OrdinalIgnoreCase)
             || fieldHelp.DisplayName.Chinese.Contains(query, StringComparison.OrdinalIgnoreCase)
             || fieldHelp.DisplayName.English.Contains(query, StringComparison.OrdinalIgnoreCase)
+            || RuleEditorCatalog.GetGroupDisplayName(entry.Section.GroupKey, currentLanguage).Contains(query, StringComparison.OrdinalIgnoreCase)
             || entry.Section.DisplayName.Chinese.Contains(query, StringComparison.OrdinalIgnoreCase)
             || entry.Section.DisplayName.English.Contains(query, StringComparison.OrdinalIgnoreCase);
     }
@@ -724,6 +816,17 @@ public partial class Form1 : Form
         {
             if (selectedSection is null)
             {
+                if (!string.IsNullOrWhiteSpace(selectedGroupKey))
+                {
+                    explanationTextBox.Text = string.Join(Environment.NewLine, new[]
+                    {
+                        $"{T("Explanation.Section")}: {RuleEditorCatalog.GetGroupDisplayName(selectedGroupKey, currentLanguage)}",
+                        string.Empty,
+                        T("Message.NoFieldSelected"),
+                    });
+                    return;
+                }
+
                 explanationTextBox.Text = T("Message.ExplanationHint");
                 return;
             }
@@ -755,6 +858,30 @@ public partial class Form1 : Form
             string.Empty,
             $"{T("Explanation.DirectionHint")}: {help.DirectionHint.Get(currentLanguage)}",
         });
+    }
+
+    private void RefreshExceptionOverview()
+    {
+        exceptionsOverviewGridView.Rows.Clear();
+
+        var repositoryRoot = ResolveDataRoot();
+        if (repositoryRoot is null)
+        {
+            return;
+        }
+
+        var document = ItemExceptionStore.Load(repositoryRoot);
+        foreach (var pair in document.Items.OrderBy(pair => pair.Key, StringComparer.OrdinalIgnoreCase))
+        {
+            var entry = pair.Value;
+            exceptionsOverviewGridView.Rows.Add(
+                entry.Enabled,
+                entry.ItemId,
+                entry.Name,
+                entry.Overrides.Count,
+                entry.SourceFile,
+                entry.Notes);
+        }
     }
 
     private RuleRangeEntry? GetSelectedEntry()
@@ -820,6 +947,7 @@ public partial class Form1 : Form
         browseButton.Enabled = !busy;
         saveAllButton.Enabled = !busy;
         reloadButton.Enabled = !busy;
+        exceptionsButton.Enabled = !busy;
         generateButton.Enabled = !busy && ResolveDataRoot() is not null;
         auditButton.Enabled = !busy && ResolveDataRoot() is not null;
         searchTextBox.Enabled = !busy;
@@ -875,14 +1003,22 @@ public partial class Form1 : Form
         ruleTreeView.Nodes.Clear();
         ruleGridView.Rows.Clear();
         selectedSection = null;
+        selectedGroupKey = null;
         selectedProfileKey = null;
         explanationTextBox.Text = T("Message.ExplanationHint");
+        exceptionsOverviewGridView.Rows.Clear();
         UpdateGroupTitles();
     }
 
     private void UpdateGroupTitles()
     {
         navigationGroupBox.Text = Tf("Group.NavigationWithCount", RuleEditorCatalog.Sections.Count);
+
+        if (!string.IsNullOrWhiteSpace(selectedGroupKey) && selectedSection is null)
+        {
+            gridGroupBox.Text = Tf("Group.GridRoot", RuleEditorCatalog.GetGroupDisplayName(selectedGroupKey, currentLanguage), visibleEntries.Count);
+            return;
+        }
 
         if (selectedSection is null)
         {
@@ -919,5 +1055,5 @@ public partial class Form1 : Form
             || double.TryParse(text, NumberStyles.Float | NumberStyles.AllowThousands, CultureInfo.CurrentCulture, out value);
     }
 
-    private sealed record RuleTreeSelection(RuleEditorSectionDefinition Section, string? ProfileKey);
+    private sealed record RuleTreeSelection(string GroupKey, RuleEditorSectionDefinition? Section, string? ProfileKey);
 }

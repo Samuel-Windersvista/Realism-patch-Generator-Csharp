@@ -16,6 +16,7 @@ public sealed class OutputRuleAuditor
     private readonly bool includeOk;
     private readonly bool includeTemplateExports;
     private readonly RealismPatchGenerator generator;
+    private readonly ItemExceptionDocument itemExceptions;
     private readonly Dictionary<string, JsonObject?> sourceFileCache = new(StringComparer.OrdinalIgnoreCase);
 
     public OutputRuleAuditor(string basePath, OutputAuditOptions? options = null)
@@ -25,6 +26,7 @@ public sealed class OutputRuleAuditor
         includeOk = options?.IncludeOk ?? false;
         includeTemplateExports = options?.IncludeTemplateExports ?? false;
         generator = new RealismPatchGenerator(this.basePath);
+        itemExceptions = ItemExceptionStore.Load(this.basePath);
     }
 
     public AuditReport Audit()
@@ -245,6 +247,17 @@ public sealed class OutputRuleAuditor
         {
             ["source_file"] = sourceFile,
         };
+        var exceptionFields = itemExceptions.GetOverrideFieldSet(itemId);
+        if (exceptionFields.Count > 0)
+        {
+            var fieldsArray = new JsonArray();
+            foreach (var field in exceptionFields.OrderBy(value => value, StringComparer.OrdinalIgnoreCase))
+            {
+                fieldsArray.Add(field);
+            }
+
+            context["exception_fields"] = fieldsArray;
+        }
 
         var auditExemption = GetAuditExemption(itemInfo, patch);
         if (!string.IsNullOrWhiteSpace(auditExemption))
@@ -255,7 +268,7 @@ public sealed class OutputRuleAuditor
 
         if (itemType.Contains("RealismMod.Gun", StringComparison.OrdinalIgnoreCase))
         {
-            CollectRangeViolations(violations, patch, generator.GetWeaponClampRules(), "global_clamp");
+            CollectRangeViolations(violations, patch, generator.GetWeaponClampRules(), "global_clamp", exceptionFields);
             var weaponProfile = generator.AuditInferWeaponProfile(patch, itemInfo);
             context["weapon_profile"] = weaponProfile;
             if (!string.IsNullOrWhiteSpace(weaponProfile))
@@ -263,7 +276,7 @@ public sealed class OutputRuleAuditor
                 var (expectedRanges, caliberProfile, stockProfile) = generator.BuildWeaponExpectedRanges(patch, itemInfo, weaponProfile!);
                 context["caliber_profile"] = caliberProfile;
                 context["stock_profile"] = stockProfile;
-                CollectRangeViolations(violations, patch, expectedRanges, "weapon_rule");
+                CollectRangeViolations(violations, patch, expectedRanges, "weapon_rule", exceptionFields);
             }
             else
             {
@@ -272,12 +285,16 @@ public sealed class OutputRuleAuditor
                 warningDetails.Add(detail);
             }
 
-            if (TryGetNumericValue(patch["RecoilAngle"], out var recoilAngle) && (recoilAngle < 30 || recoilAngle > 150))
+            if (!IsFieldExempt(exceptionFields, "RecoilAngle")
+                && TryGetNumericValue(patch["RecoilAngle"], out var recoilAngle)
+                && (recoilAngle < 30 || recoilAngle > 150))
             {
                 violations.Add(BuildRangeViolation("RecoilAngle", patch["RecoilAngle"], 30, 150, "weapon_special"));
             }
 
-            if (string.Equals(weaponProfile, "pistol", StringComparison.OrdinalIgnoreCase) && patch["HasShoulderContact"]?.GetValue<bool?>() != false)
+            if (!IsFieldExempt(exceptionFields, "HasShoulderContact")
+                && string.Equals(weaponProfile, "pistol", StringComparison.OrdinalIgnoreCase)
+                && patch["HasShoulderContact"]?.GetValue<bool?>() != false)
             {
                 violations.Add(new AuditViolation
                 {
@@ -291,13 +308,13 @@ public sealed class OutputRuleAuditor
         }
         else if (itemType.Contains("RealismMod.WeaponMod", StringComparison.OrdinalIgnoreCase))
         {
-            CollectRangeViolations(violations, patch, generator.GetAttachmentClampRules(), "global_clamp");
+            CollectRangeViolations(violations, patch, generator.GetAttachmentClampRules(), "global_clamp", exceptionFields);
             var modProfile = generator.AuditInferModProfile(patch, itemInfo);
             context["mod_profile"] = modProfile;
             context["template_file"] = itemInfo.TemplateFile;
             if (!string.IsNullOrWhiteSpace(modProfile) && generator.TryGetAttachmentProfileRanges(modProfile!, out var modRanges))
             {
-                CollectRangeViolations(violations, patch, modRanges, "mod_rule");
+                CollectRangeViolations(violations, patch, modRanges, "mod_rule", exceptionFields);
             }
             else
             {
@@ -312,7 +329,7 @@ public sealed class OutputRuleAuditor
                 warningDetails.Add(detail);
             }
 
-            if (TryGetNumericValue(patch["Velocity"], out var velocity))
+            if (!IsFieldExempt(exceptionFields, "Velocity") && TryGetNumericValue(patch["Velocity"], out var velocity))
             {
                 var maxVelocity = (patch["Name"]?.GetValue<string?>() ?? string.Empty).Contains("barrel", StringComparison.OrdinalIgnoreCase) ? 15.0 : 5.0;
                 if (velocity < -maxVelocity || velocity > maxVelocity)
@@ -321,7 +338,8 @@ public sealed class OutputRuleAuditor
                 }
             }
 
-            if (string.Equals(modProfile, "muzzle_suppressor", StringComparison.OrdinalIgnoreCase)
+            if (!IsFieldExempt(exceptionFields, "CanCycleSubs")
+                && string.Equals(modProfile, "muzzle_suppressor", StringComparison.OrdinalIgnoreCase)
                 && patch.ContainsKey("CanCycleSubs")
                 && patch["CanCycleSubs"]?.GetValue<bool?>() != true)
             {
@@ -357,7 +375,7 @@ public sealed class OutputRuleAuditor
             if (generator.TryGetAmmoProfileRanges(ammoProfile, out _))
             {
                 var expectedRanges = generator.BuildAmmoExpectedRanges(ammoProfile, penetrationTier, specialProfile);
-                CollectRangeViolations(violations, patch, expectedRanges, "ammo_rule");
+                CollectRangeViolations(violations, patch, expectedRanges, "ammo_rule", exceptionFields);
             }
             else
             {
@@ -368,12 +386,12 @@ public sealed class OutputRuleAuditor
         }
         else if (itemType.Contains("RealismMod.Gear", StringComparison.OrdinalIgnoreCase))
         {
-            CollectRangeViolations(violations, patch, generator.GetGearClampRules(), "gear_clamp");
+            CollectRangeViolations(violations, patch, generator.GetGearClampRules(), "gear_clamp", exceptionFields);
             var gearProfile = generator.AuditInferGearProfile(patch, itemInfo);
             context["gear_profile"] = gearProfile;
             if (!string.IsNullOrWhiteSpace(gearProfile) && generator.TryGetGearProfileRanges(gearProfile!, out var gearRanges))
             {
-                CollectRangeViolations(violations, patch, gearRanges, "gear_rule");
+                CollectRangeViolations(violations, patch, gearRanges, "gear_rule", exceptionFields);
             }
             else
             {
@@ -585,10 +603,15 @@ public sealed class OutputRuleAuditor
         };
     }
 
-    private static void CollectRangeViolations(List<AuditViolation> violations, JsonObject patch, IReadOnlyDictionary<string, NumericRange> expectedRanges, string ruleName)
+    private static void CollectRangeViolations(List<AuditViolation> violations, JsonObject patch, IReadOnlyDictionary<string, NumericRange> expectedRanges, string ruleName, IReadOnlySet<string>? exemptFields)
     {
         foreach (var pair in expectedRanges)
         {
+            if (IsFieldExempt(exemptFields, pair.Key))
+            {
+                continue;
+            }
+
             if (!patch.ContainsKey(pair.Key) || !TryGetNumericValue(patch[pair.Key], out var current))
             {
                 continue;
@@ -599,6 +622,11 @@ public sealed class OutputRuleAuditor
                 violations.Add(BuildRangeViolation(pair.Key, patch[pair.Key], pair.Value.Min, pair.Value.Max, ruleName));
             }
         }
+    }
+
+    private static bool IsFieldExempt(IReadOnlySet<string>? exemptFields, string field)
+    {
+        return exemptFields is not null && exemptFields.Contains(field);
     }
 
     private static AuditViolation BuildRangeViolation(string field, JsonNode? value, double min, double max, string ruleName)

@@ -1,0 +1,50 @@
+{
+  "items": {
+    "668bc5cd834c88e06b08b6a9": {
+      "enabled": true,
+      "name": "DevTac Ronin 防弹头盔（高山迷彩）",
+      "sourceFile": "user_templates/[4]新商人-Artem_Helmets_realism_patch.json",
+      "notes": null,
+      "overrides": {
+        "$type": "RealismMod.Gear, RealismMod",
+        "AllowADS": true,
+        "ArmorClass": "NIJ IIIA",
+        "CanSpall": false,
+        "Comfort": 1.07,
+        "GasProtection": 0.96,
+        "IsGasMask": true,
+        "LoyaltyLevel": 4,
+        "MaskToUse": "ronin",
+        "Name": "DevTac Ronin 防弹头盔（高山迷彩）",
+        "Price": 8534000,
+        "RadProtection": 0.92,
+        "ReloadSpeedMulti": 1.2,
+        "SpallReduction": 0.92,
+        "TemplateType": "gear"
+      }
+    },
+    "668bc5cd834c88e06b08b6aa": {
+      "enabled": true,
+      "name": "DevTac Ronin 防弹头盔（黑色）",
+      "sourceFile": "user_templates/[4]新商人-Artem_Helmets_realism_patch.json",
+      "notes": null,
+      "overrides": {
+        "$type": "RealismMod.Gear, RealismMod",
+        "AllowADS": true,
+        "ArmorClass": "NIJ IIIA",
+        "CanSpall": false,
+        "Comfort": 1.07,
+        "GasProtection": 0.96,
+        "IsGasMask": true,
+        "LoyaltyLevel": 4,
+        "MaskToUse": "ronin",
+        "Name": "DevTac Ronin 防弹头盔（黑色）",
+        "Price": 8534000,
+        "RadProtection": 0.92,
+        "ReloadSpeedMulti": 1.2,
+        "SpallReduction": 0.82,
+        "TemplateType": "gear"
+      }
+    }
+  }
+}

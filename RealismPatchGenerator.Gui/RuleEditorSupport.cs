@@ -28,6 +28,7 @@ internal sealed class RuleDocument
 internal sealed class RuleEditorSectionDefinition
 {
     public required string Key { get; init; }
+    public required string GroupKey { get; init; }
     public required LocalizedText DisplayName { get; init; }
     public required string FileName { get; init; }
     public required string SectionProperty { get; init; }
@@ -80,6 +81,7 @@ internal static class UiTextCatalog
         ["App.Title"] = new("SPT现实主义数值范围编辑生成器 v0.9", "SPT Realism Range Editor Generator v0.9"),
         ["Label.DataRoot"] = new("数据目录:", "Data Root:"),
         ["Label.OutputPath"] = new("输出路径:", "Output Path:"),
+        ["Label.ModifiedOnly"] = new("只看已修改项", "Modified Only"),
         ["Label.Search"] = new("搜索:", "Search:"),
         ["Label.Language"] = new("语言:", "Language:"),
         ["Language.Chinese"] = new("中文", "Chinese"),
@@ -87,17 +89,31 @@ internal static class UiTextCatalog
         ["Button.Browse"] = new("选择输出路径", "Browse Output"),
         ["Button.SaveAll"] = new("保存全部", "Save All"),
         ["Button.Reload"] = new("重新加载", "Reload"),
+        ["Button.Exceptions"] = new("例外物品", "Item Exceptions"),
         ["Button.Generate"] = new("生成补丁", "Generate"),
         ["Button.Audit"] = new("检查未遵循规则物品", "Check Rule Violations"),
         ["Group.Navigation"] = new("规则分类", "Rule Categories"),
         ["Group.Grid"] = new("规则范围", "Rule Ranges"),
         ["Group.NavigationWithCount"] = new("规则分类 ({0})", "Rule Categories ({0})"),
         ["Group.GridAll"] = new("规则范围 ({0})", "Rule Ranges ({0})"),
+        ["Group.GridRoot"] = new("规则范围 - {0} ({1})", "Rule Ranges - {0} ({1})"),
         ["Group.GridSection"] = new("规则范围 - {0} ({1})", "Rule Ranges - {0} ({1})"),
         ["Group.GridProfile"] = new("规则范围 - {0} / {1} ({2})", "Rule Ranges - {0} / {1} ({2})"),
+        ["Tree.GroupNode"] = new("{0} ({1})", "{0} ({1})"),
         ["Tree.SectionNode"] = new("{0} ({1})", "{0} ({1})"),
+        ["TreeGroup.Weapon"] = new("武器", "Weapons"),
+        ["TreeGroup.Attachment"] = new("附件", "Attachments"),
+        ["TreeGroup.Ammo"] = new("弹药", "Ammo"),
+        ["TreeGroup.Gear"] = new("装备", "Gear"),
         ["Tab.Explanation"] = new("字段说明", "Field Help"),
+        ["Tab.ExceptionsOverview"] = new("例外总览", "Exception Overview"),
         ["Tab.Log"] = new("运行日志", "Run Log"),
+        ["Column.Enabled"] = new("启用", "Enabled"),
+        ["Column.ItemId"] = new("ItemID", "ItemID"),
+        ["Column.Name"] = new("名称", "Name"),
+        ["Column.OverrideCount"] = new("字段数", "Fields"),
+        ["Column.SourceFile"] = new("来源文件", "Source File"),
+        ["Column.Notes"] = new("备注", "Notes"),
         ["Column.Profile"] = new("档位", "Profile"),
         ["Column.Field"] = new("字段", "Field"),
         ["Column.Min"] = new("最小值", "Min"),
@@ -112,6 +128,7 @@ internal static class UiTextCatalog
         ["State.Loaded"] = new("规则已加载", "Rules loaded"),
         ["State.Saved"] = new("规则已保存", "Rules saved"),
         ["State.Reloaded"] = new("规则已重新加载", "Rules reloaded"),
+        ["State.ExceptionSaved"] = new("例外物品已保存", "Item exceptions saved"),
         ["State.Saving"] = new("正在保存规则", "Saving rules"),
         ["State.Generating"] = new("正在生成补丁", "Generating patches"),
         ["State.GenerateDone"] = new("生成完成", "Generation complete"),
@@ -132,7 +149,7 @@ internal static class UiTextCatalog
         ["Message.MinGreaterThanMax"] = new("最小值不能大于最大值。", "Min cannot be greater than max."),
         ["Message.NoFieldSelected"] = new("请选择一条规则查看字段说明。", "Select a rule entry to view field help."),
         ["Message.ExplanationHint"] = new("左侧选择规则分类，右侧编辑最小值和最大值。", "Choose a rule category on the left, then edit min and max values on the right."),
-        ["Message.OutputPathHint"] = new("建议定位到你的现实主义模版路径即-user\\mods\\SPT-Realism\\db\\templates", "Recommended target: -user\\mods\\SPT-Realism\\db\\templates"),
+        ["Message.OutputPathHint"] = new("建议输出到 -user\\mods\\SPT-Realism\\db\\templates", "Recommended output: -user\\mods\\SPT-Realism\\db\\templates"),
         ["Label.ProfileGlobal"] = new("全局", "Global"),
         ["Label.Yes"] = new("是", "Yes"),
         ["Label.No"] = new("否", "No"),
@@ -151,6 +168,7 @@ internal static class UiTextCatalog
         ["Log.StartAudit"] = new("开始检查未遵循规则物品，数据目录: {0}", "Rule violation check started, data root: {0}"),
         ["Log.SaveSuccess"] = new("已保存规则文件: {0}", "Saved rule file: {0}"),
         ["Log.ReloadSuccess"] = new("规则已从磁盘重新加载。", "Rules reloaded from disk."),
+        ["Log.ExceptionSaveSuccess"] = new("已保存例外物品配置: {0}", "Saved item exception settings: {0}"),
     };
 
     public static string Get(string key, UiLanguage language)
@@ -171,6 +189,7 @@ internal static class RuleEditorCatalog
         new()
         {
             Key = "weapon-clamp",
+            GroupKey = "weapon",
             DisplayName = new("武器全局夹紧", "Weapon Global Clamps"),
             FileName = "weapon_rules.json",
             SectionProperty = "gunClampRules",
@@ -181,6 +200,7 @@ internal static class RuleEditorCatalog
         new()
         {
             Key = "weapon-base",
+            GroupKey = "weapon",
             DisplayName = new("武器基础规则", "Weapon Base Rules"),
             FileName = "weapon_rules.json",
             SectionProperty = "weaponProfileRanges",
@@ -191,6 +211,7 @@ internal static class RuleEditorCatalog
         new()
         {
             Key = "weapon-caliber",
+            GroupKey = "weapon",
             DisplayName = new("武器口径补修", "Weapon Caliber Modifiers"),
             FileName = "weapon_rules.json",
             SectionProperty = "weaponCaliberRuleModifiers",
@@ -201,6 +222,7 @@ internal static class RuleEditorCatalog
         new()
         {
             Key = "weapon-stock",
+            GroupKey = "weapon",
             DisplayName = new("武器枪托补修", "Weapon Stock Modifiers"),
             FileName = "weapon_rules.json",
             SectionProperty = "weaponStockRuleModifiers",
@@ -211,6 +233,7 @@ internal static class RuleEditorCatalog
         new()
         {
             Key = "attachment-clamp",
+            GroupKey = "attachment",
             DisplayName = new("附件全局夹紧", "Attachment Global Clamps"),
             FileName = "attachment_rules.json",
             SectionProperty = "modClampRules",
@@ -221,6 +244,7 @@ internal static class RuleEditorCatalog
         new()
         {
             Key = "attachment-base",
+            GroupKey = "attachment",
             DisplayName = new("附件规则", "Attachment Rules"),
             FileName = "attachment_rules.json",
             SectionProperty = "modProfileRanges",
@@ -231,6 +255,7 @@ internal static class RuleEditorCatalog
         new()
         {
             Key = "ammo-base",
+            GroupKey = "ammo",
             DisplayName = new("弹药基础规则", "Ammo Base Rules"),
             FileName = "ammo_rules.json",
             SectionProperty = "ammoProfileRanges",
@@ -241,6 +266,7 @@ internal static class RuleEditorCatalog
         new()
         {
             Key = "ammo-special",
+            GroupKey = "ammo",
             DisplayName = new("弹药特殊修正", "Ammo Special Modifiers"),
             FileName = "ammo_rules.json",
             SectionProperty = "ammoSpecialModifiers",
@@ -251,6 +277,7 @@ internal static class RuleEditorCatalog
         new()
         {
             Key = "ammo-penetration",
+            GroupKey = "ammo",
             DisplayName = new("弹药穿深档位修正", "Ammo Penetration Tier Modifiers"),
             FileName = "ammo_rules.json",
             SectionProperty = "ammoPenetrationModifiers",
@@ -261,6 +288,7 @@ internal static class RuleEditorCatalog
         new()
         {
             Key = "gear-clamp",
+            GroupKey = "gear",
             DisplayName = new("装备全局夹紧", "Gear Global Clamps"),
             FileName = "gear_rules.json",
             SectionProperty = "gearClampRules",
@@ -271,6 +299,7 @@ internal static class RuleEditorCatalog
         new()
         {
             Key = "gear-base",
+            GroupKey = "gear",
             DisplayName = new("装备规则", "Gear Rules"),
             FileName = "gear_rules.json",
             SectionProperty = "gearProfileRanges",
@@ -333,6 +362,19 @@ internal static class RuleEditorCatalog
             ["LoyaltyLevel"] = new() { DisplayName = new("商人等级", "Trader Loyalty Level"), Effect = new("影响物品解锁或审计时允许出现的商人等级区间。", "Controls allowed trader loyalty levels in rule outputs or audits."), DirectionHint = new("调低更早可用，调高更晚解锁。", "Lower unlocks earlier, higher unlocks later.") },
         };
 
+    public static IReadOnlyList<(string Key, LocalizedText DisplayName)> SectionGroups { get; } =
+    [
+        ("weapon", new LocalizedText("武器", "Weapons")),
+        ("attachment", new LocalizedText("附件", "Attachments")),
+        ("ammo", new LocalizedText("弹药", "Ammo")),
+        ("gear", new LocalizedText("装备", "Gear")),
+    ];
+
+    public static string GetGroupDisplayName(string groupKey, UiLanguage language)
+    {
+        return SectionGroups.FirstOrDefault(group => string.Equals(group.Key, groupKey, StringComparison.OrdinalIgnoreCase)).DisplayName.Get(language);
+    }
+
     private static readonly IReadOnlyDictionary<string, LocalizedText> ProfileDisplayNames =
         new Dictionary<string, LocalizedText>(StringComparer.OrdinalIgnoreCase)
         {
@@ -351,7 +393,7 @@ internal static class RuleEditorCatalog
             ["armor_vest_heavy"] = new("重型防弹衣", "Heavy Armor Vest"),
             ["armor_vest_light"] = new("轻型防弹衣", "Light Armor Vest"),
             ["assault"] = new("突击步枪", "Assault Rifle"),
-            ["back_panel"] = new("背板模块", "Back Panel"),
+            ["back_panel"] = new("背挂扩展板", "Back Panel"),
             ["backpack_compact"] = new("紧凑背包", "Compact Backpack"),
             ["backpack_full"] = new("大型背包", "Full Backpack"),
             ["ball_standard"] = new("标准球弹", "Standard Ball"),
@@ -359,17 +401,17 @@ internal static class RuleEditorCatalog
             ["barrel_long"] = new("长枪管", "Long Barrel"),
             ["barrel_medium"] = new("中型枪管", "Medium Barrel"),
             ["barrel_short"] = new("短枪管", "Short Barrel"),
-            ["belt_harness"] = new("腰带挂载", "Belt Harness"),
+            ["belt_harness"] = new("战术腰封", "Belt Harness"),
             ["bipod"] = new("两脚架", "Bipod"),
             ["buffer_adapter"] = new("缓冲管转接件", "Buffer Adapter"),
             ["bullpup"] = new("无托结构", "Bullpup"),
-            ["catch"] = new("卡笋机构", "Catch"),
+            ["catch"] = new("卡榫机构", "Catch"),
             ["charging_handle"] = new("拉机柄", "Charging Handle"),
             ["chest_rig_heavy"] = new("重型胸挂", "Heavy Chest Rig"),
             ["chest_rig_light"] = new("轻型胸挂", "Light Chest Rig"),
-            ["cosmetic_gasmask"] = new("装饰防毒面具", "Cosmetic Gas Mask"),
-            ["cosmetic_headwear"] = new("装饰头饰", "Cosmetic Headwear"),
-            ["expanding"] = new("扩张弹", "Expanding"),
+            ["cosmetic_gasmask"] = new("外观防毒面具", "Cosmetic Gas Mask"),
+            ["cosmetic_headwear"] = new("外观头饰", "Cosmetic Headwear"),
+            ["expanding"] = new("扩张型弹", "Expanding"),
             ["fixed_stock"] = new("固定枪托", "Fixed Stock"),
             ["flashlight_laser"] = new("战术灯激光器", "Flashlight and Laser"),
             ["folding_stock_collapsed"] = new("折叠枪托 收起", "Folding Stock Collapsed"),
@@ -389,7 +431,7 @@ internal static class RuleEditorCatalog
             ["intermediate_rifle_58x42"] = new("5.8x42 中间威力步枪弹", "5.8x42 Intermediate Rifle"),
             ["intermediate_rifle_762x39"] = new("7.62x39 中间威力步枪弹", "7.62x39 Intermediate Rifle"),
             ["iron_sight"] = new("机械瞄具", "Iron Sight"),
-            ["launcher"] = new("发射器", "Launcher"),
+            ["launcher"] = new("榴弹发射器", "Launcher"),
             ["machinegun"] = new("机枪", "Machine Gun"),
             ["magazine"] = new("弹匣", "Magazine"),
             ["magazine_compact"] = new("紧凑弹匣", "Compact Magazine"),
@@ -403,9 +445,9 @@ internal static class RuleEditorCatalog
             ["muzzle_flashhider"] = new("消焰器", "Flash Hider"),
             ["muzzle_suppressor"] = new("消音器", "Suppressor"),
             ["muzzle_suppressor_compact"] = new("紧凑消音器", "Compact Suppressor"),
-            ["muzzle_thread"] = new("枪口螺纹件", "Muzzle Thread"),
+            ["muzzle_thread"] = new("枪口螺纹保护件", "Muzzle Thread"),
             ["optic_eyecup"] = new("目镜罩", "Optic Eyecup"),
-            ["optic_killflash"] = new("杀反光罩", "Killflash"),
+            ["optic_killflash"] = new("消反光罩", "Killflash"),
             ["pdw_high_pen_small"] = new("高穿透小口径 PDW 弹", "High-Pen Small PDW"),
             ["pdw_small_high_velocity"] = new("高初速小口径 PDW 弹", "High-Velocity Small PDW"),
             ["pen_lvl_1"] = new("穿深档位 1", "Penetration Tier 1"),
@@ -443,11 +485,11 @@ internal static class RuleEditorCatalog
             ["sniper"] = new("狙击步枪", "Sniper Rifle"),
             ["stock"] = new("枪托", "Stock"),
             ["stock_adapter"] = new("枪托转接件", "Stock Adapter"),
-            ["stock_ads_support"] = new("瞄准支撑配件", "ADS Support Stock Part"),
+            ["stock_ads_support"] = new("贴腮支撑件", "ADS Support Stock Part"),
             ["stock_buttpad"] = new("枪托垫", "Buttpad"),
             ["stock_fixed"] = new("固定式枪托", "Fixed Stock"),
             ["stock_folding"] = new("折叠式枪托", "Folding Stock"),
-            ["stock_rear_hook"] = new("尾钩枪托", "Rear Hook Stock"),
+            ["stock_rear_hook"] = new("尾钩式枪托", "Rear Hook Stock"),
             ["stockless"] = new("无枪托", "Stockless"),
             ["subsonic_heavy"] = new("重型亚音速弹", "Heavy Subsonic"),
             ["subsonic_heavy_9x39"] = new("9x39 重型亚音速弹", "9x39 Heavy Subsonic"),
