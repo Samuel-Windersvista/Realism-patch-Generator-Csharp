@@ -1,4 +1,4 @@
-# SPT Realism Value Range Editor Generator v1.1 Rule Overview
+# SPT Realism Value Range Generator v1.1 Rule Overview
 
 This document explains the responsibility of each rule file under the current rules directory and how the GUI categories map to the underlying JSON structure.
 

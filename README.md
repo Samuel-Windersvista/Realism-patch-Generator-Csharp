@@ -1,6 +1,6 @@
-# SPT Realism Value Range Editor Generator v1.2
+# SPT Realism Value Range Generator v1.2
 
-SPT Realism Value Range Editor Generator is a standalone C# toolset for editing realism value ranges, generating patch output, auditing generated results, and applying item-specific exceptions.
+SPT Realism Value Range Generator is a standalone C# toolset for editing realism value ranges, generating patch output, auditing generated results, and applying item-specific exceptions.
 
 SPT 现实主义数值范围编辑生成器是一个独立的 C# 工具集，用于编辑现实主义数值规则、生成补丁输出、审计生成结果，以及对特定物品应用例外覆盖。
 

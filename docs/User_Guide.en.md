@@ -1,4 +1,4 @@
-# SPT Realism Value Range Editor Generator v1.2 User Guide
+# SPT Realism Value Range Generator v1.2 User Guide
 
 This document reflects the current state of the C# project and covers the GUI, CLI, rule editing, item exception management, and audit workflow.
 
