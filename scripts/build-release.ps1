@@ -3,7 +3,8 @@ param(
     [string]$RuntimeIdentifier = "win-x64",
     [string]$Configuration = "Release",
     [string]$ArtifactsRoot = "artifacts\release",
-    [switch]$FrameworkDependent
+    [switch]$FrameworkDependent,
+    [switch]$SeparateGuiCliPackages
 )
 
 Set-StrictMode -Version Latest
@@ -87,6 +88,79 @@ function Get-TemplatesDirectory {
         Select-Object -First 1
 }
 
+function Copy-CommonPayload {
+    param(
+        [string]$Destination,
+        [System.IO.DirectoryInfo]$TemplatesDirectory
+    )
+
+    Copy-Item -Path (Join-Path $repoRoot "README.md") -Destination $Destination -Force
+    Copy-Item -Path (Join-Path $repoRoot "CHANGELOG.md") -Destination $Destination -Force
+    Copy-Item -Path (Join-Path $repoRoot "docs") -Destination $Destination -Recurse -Force
+    Copy-Item -Path (Join-Path $repoRoot "rules") -Destination $Destination -Recurse -Force
+    Copy-Item -Path (Join-Path $repoRoot "input") -Destination $Destination -Recurse -Force
+    Copy-Item -Path $TemplatesDirectory.FullName -Destination $Destination -Recurse -Force
+
+    New-Item -ItemType Directory -Path (Join-Path $Destination "output") | Out-Null
+    New-Item -ItemType Directory -Path (Join-Path $Destination "audit_reports") | Out-Null
+}
+
+function Write-ReleaseInfo {
+    param(
+        [string]$Destination,
+        [string[]]$EntryPoints,
+        [string[]]$RecommendedUsage,
+        [System.IO.DirectoryInfo]$TemplatesDirectory,
+        [string]$PackageKind
+    )
+
+    $entryPointText = ($EntryPoints | ForEach-Object { "- $_" }) -join [Environment]::NewLine
+    $recommendedUsageText = ($RecommendedUsage | ForEach-Object { "- $_" }) -join [Environment]::NewLine
+
+    $releaseInfo = @"
+SPT Realism Patch Generator v$Version
+Package: $PackageKind
+Build: $Configuration
+Runtime: $RuntimeIdentifier
+Deployment: $deploymentMode
+
+Entry points:
+$entryPointText
+
+Bundled data directories:
+- input
+- $($TemplatesDirectory.Name)
+- rules
+- docs
+- output
+- audit_reports
+
+Recommended usage:
+$recommendedUsageText
+
+Runtime requirement:
+- $(if ($FrameworkDependent) { '.NET Desktop Runtime / .NET Runtime must already be installed on the target machine.' } else { 'No preinstalled .NET runtime is required on the target machine.' })
+
+Packaging mode:
+- $(if ($FrameworkDependent) { 'Multi-file publish optimized for smaller package size.' } else { 'Single-file publish optimized for no-install distribution.' })
+"@
+
+    Set-Content -Path (Join-Path $Destination "RELEASE.txt") -Value $releaseInfo -Encoding UTF8
+}
+
+function New-ZipFromDirectory {
+    param(
+        [string]$DirectoryPath,
+        [string]$ZipFilePath
+    )
+
+    if (Test-Path $ZipFilePath) {
+        Remove-Item -Path $ZipFilePath -Force
+    }
+
+    Compress-Archive -Path $DirectoryPath -DestinationPath $ZipFilePath -CompressionLevel Optimal
+}
+
 Reset-Directory -Path $releaseRoot
 New-Item -ItemType Directory -Path $tempRoot | Out-Null
 
@@ -122,63 +196,71 @@ dotnet publish $cliProject `
     -p:DebugSymbols=false `
     -o $cliPublishRoot
 
-Reset-Directory -Path $packageRoot
+if ($SeparateGuiCliPackages) {
+    $guiPackageName = "RealismPatchGenerator-Gui-v$Version-$RuntimeIdentifier$packageSuffix"
+    $cliPackageName = "RealismPatchGenerator-Cli-v$Version-$RuntimeIdentifier$packageSuffix"
+    $guiPackageRoot = Join-Path $releaseRoot $guiPackageName
+    $cliPackageRoot = Join-Path $releaseRoot $cliPackageName
+    $guiZipPath = Join-Path $releaseRoot ($guiPackageName + ".zip")
+    $cliZipPath = Join-Path $releaseRoot ($cliPackageName + ".zip")
 
-Copy-Item -Path (Join-Path $guiPublishRoot "*") -Destination $packageRoot -Recurse -Force
-if ($FrameworkDependent) {
-    Copy-Item -Path (Join-Path $cliPublishRoot "*") -Destination $packageRoot -Recurse -Force
+    Reset-Directory -Path $guiPackageRoot
+    Reset-Directory -Path $cliPackageRoot
+
+    Copy-Item -Path (Join-Path $guiPublishRoot "*") -Destination $guiPackageRoot -Recurse -Force
+    Copy-Item -Path (Join-Path $cliPublishRoot "*") -Destination $cliPackageRoot -Recurse -Force
+
+    Copy-CommonPayload -Destination $guiPackageRoot -TemplatesDirectory $templatesDirectory
+    Copy-CommonPayload -Destination $cliPackageRoot -TemplatesDirectory $templatesDirectory
+
+    Write-ReleaseInfo -Destination $guiPackageRoot `
+        -EntryPoints @("RealismPatchGenerator.Gui.exe: GUI application") `
+        -RecommendedUsage @("Use GUI for rule editing, generation, item exception management, and audit review") `
+        -TemplatesDirectory $templatesDirectory `
+        -PackageKind "GUI"
+
+    Write-ReleaseInfo -Destination $cliPackageRoot `
+        -EntryPoints @("RealismPatchGenerator.Cli.exe: CLI generate and audit tool") `
+        -RecommendedUsage @("Use CLI for batch generation, fixed-seed reruns, and output audits") `
+        -TemplatesDirectory $templatesDirectory `
+        -PackageKind "CLI"
+
+    New-ZipFromDirectory -DirectoryPath $guiPackageRoot -ZipFilePath $guiZipPath
+    New-ZipFromDirectory -DirectoryPath $cliPackageRoot -ZipFilePath $cliZipPath
+
+    Write-Host "GUI 发布目录: $guiPackageRoot"
+    Write-Host "GUI 发布压缩包: $guiZipPath"
+    Write-Host "CLI 发布目录: $cliPackageRoot"
+    Write-Host "CLI 发布压缩包: $cliZipPath"
 }
 else {
-    Copy-Item -Path (Join-Path $cliPublishRoot "RealismPatchGenerator.Cli.exe") -Destination $packageRoot -Force
+    Reset-Directory -Path $packageRoot
+
+    Copy-Item -Path (Join-Path $guiPublishRoot "*") -Destination $packageRoot -Recurse -Force
+    if ($FrameworkDependent) {
+        Copy-Item -Path (Join-Path $cliPublishRoot "*") -Destination $packageRoot -Recurse -Force
+    }
+    else {
+        Copy-Item -Path (Join-Path $cliPublishRoot "RealismPatchGenerator.Cli.exe") -Destination $packageRoot -Force
+    }
+
+    Copy-CommonPayload -Destination $packageRoot -TemplatesDirectory $templatesDirectory
+    Write-ReleaseInfo -Destination $packageRoot `
+        -EntryPoints @(
+            "RealismPatchGenerator.Gui.exe: GUI application",
+            "RealismPatchGenerator.Cli.exe: CLI generate and audit tool"
+        ) `
+        -RecommendedUsage @(
+            "Use GUI for rule editing and item exception management",
+            "Use CLI for batch generation and audits"
+        ) `
+        -TemplatesDirectory $templatesDirectory `
+        -PackageKind "Combined"
+
+    New-ZipFromDirectory -DirectoryPath $packageRoot -ZipFilePath $zipPath
+
+    Write-Host "发布目录: $packageRoot"
+    Write-Host "发布压缩包: $zipPath"
 }
 
-Copy-Item -Path (Join-Path $repoRoot "README.md") -Destination $packageRoot -Force
-Copy-Item -Path (Join-Path $repoRoot "CHANGELOG.md") -Destination $packageRoot -Force
-Copy-Item -Path (Join-Path $repoRoot "docs") -Destination $packageRoot -Recurse -Force
-Copy-Item -Path (Join-Path $repoRoot "rules") -Destination $packageRoot -Recurse -Force
-Copy-Item -Path (Join-Path $repoRoot "input") -Destination $packageRoot -Recurse -Force
-Copy-Item -Path $templatesDirectory.FullName -Destination $packageRoot -Recurse -Force
-
-New-Item -ItemType Directory -Path (Join-Path $packageRoot "output") | Out-Null
-New-Item -ItemType Directory -Path (Join-Path $packageRoot "audit_reports") | Out-Null
-
-$releaseInfo = @"
-SPT Realism Patch Generator v$Version
-Build: $Configuration
-Runtime: $RuntimeIdentifier
-Deployment: $deploymentMode
-
-Entry points:
-- RealismPatchGenerator.Gui.exe: GUI application
-- RealismPatchGenerator.Cli.exe: CLI generate and audit tool
-
-Bundled data directories:
-- input
-- $($templatesDirectory.Name)
-- rules
-- docs
-- output
-- audit_reports
-
-Recommended usage:
-- Use GUI for rule editing and item exception management
-- Use CLI for batch generation and audits
-
-Runtime requirement:
-- $(if ($FrameworkDependent) { '.NET Desktop Runtime / .NET Runtime must already be installed on the target machine.' } else { 'No preinstalled .NET runtime is required on the target machine.' })
-
-Packaging mode:
-- $(if ($FrameworkDependent) { 'Multi-file publish optimized for smaller package size.' } else { 'Single-file publish optimized for no-install distribution.' })
-"@
-
-Set-Content -Path (Join-Path $packageRoot "RELEASE.txt") -Value $releaseInfo -Encoding UTF8
-
-if (Test-Path $zipPath) {
-    Remove-Item -Path $zipPath -Force
-}
-
-Compress-Archive -Path $packageRoot -DestinationPath $zipPath -CompressionLevel Optimal
 Remove-Item -Path $tempRoot -Recurse -Force
-
-Write-Host "发布目录: $packageRoot"
-Write-Host "发布压缩包: $zipPath"

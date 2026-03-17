@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "rVMVl2vli2g=",
+  "dgSpecHash": "XzTKYDwQZiA=",
   "success": true,
   "projectFilePath": "E:\\云文件\\GitHub\\Realism-patch-Generator-Csharp\\RealismPatchGenerator.Cli\\RealismPatchGenerator.Cli.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Winde\\.nuget\\packages\\microsoft.net.illink.tasks\\10.0.3\\microsoft.net.illink.tasks.10.0.3.nupkg.sha512",
+    "C:\\Users\\Winde\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\10.0.3\\microsoft.netcore.app.runtime.win-x64.10.0.3.nupkg.sha512",
+    "C:\\Users\\Winde\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\10.0.3\\microsoft.windowsdesktop.app.runtime.win-x64.10.0.3.nupkg.sha512",
+    "C:\\Users\\Winde\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\10.0.3\\microsoft.aspnetcore.app.runtime.win-x64.10.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

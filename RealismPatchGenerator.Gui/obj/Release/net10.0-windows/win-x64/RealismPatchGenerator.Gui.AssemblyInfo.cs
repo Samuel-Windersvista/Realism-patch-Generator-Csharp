@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Project Contributors")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.2.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.2.0+153e273ec62e6dc88c71a6a5c27411fba99287d7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.2.0+8c1d1a9c635712d11f38f49d27e19de74bb50a24")]
 [assembly: System.Reflection.AssemblyProductAttribute("SPT现实主义数值范围编辑生成器")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RealismPatchGenerator.Gui")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.2.0.0")]
