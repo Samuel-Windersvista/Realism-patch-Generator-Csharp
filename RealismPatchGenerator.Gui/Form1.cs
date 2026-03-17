@@ -30,6 +30,7 @@ public partial class Form1 : Form
     private string? selectedGroupKey;
     private RuleEditorSectionDefinition? selectedSection;
     private string? selectedProfileKey;
+    private uint? lastGeneratedSeed;
 
     public Form1()
     {
@@ -69,7 +70,10 @@ public partial class Form1 : Form
         titleLabel.Text = T("App.Title");
         pathLabel.Text = T("Label.DataRoot");
         outputPathLabel.Text = T("Label.OutputPath");
-        outputHintLabel.Text = T("Message.OutputPathHint");
+        seedLabel.Text = T("Label.Seed");
+        seedTextBox.PlaceholderText = T("Message.SeedPlaceholder");
+        clearSeedButton.Text = T("Button.ClearSeed");
+        useLastSeedButton.Text = T("Button.UseLastSeed");
         browseButton.Text = T("Button.Browse");
         saveAllButton.Text = T("Button.SaveAll");
         reloadButton.Text = T("Button.Reload");
@@ -100,6 +104,7 @@ public partial class Form1 : Form
         languageComboBox.SelectedIndex = currentLanguage == UiLanguage.English ? 1 : 0;
         suppressLanguageSelection = false;
 
+        UpdateSeedUi();
         UpdateGroupTitles();
         RebuildTree(preserveSelection: true, selectFirstNode: false);
         RefreshGrid(preserveSelection: true);
@@ -153,6 +158,11 @@ public partial class Form1 : Form
             return;
         }
 
+        if (!TryResolveGenerationSeed(out var generationSeed))
+        {
+            return;
+        }
+
         if (!await ConfirmSaveBeforeRunAsync())
         {
             return;
@@ -167,11 +177,17 @@ public partial class Form1 : Form
         try
         {
             EnsureRulesInitialized(repositoryRoot, appendToLog: false);
-            var result = await Task.Run(() => new PatchGenerator(repositoryRoot).Generate(outputPath));
+            var result = await Task.Run(() =>
+                generationSeed.HasValue
+                    ? new PatchGenerator(repositoryRoot, generationSeed.Value).Generate(outputPath)
+                    : new PatchGenerator(repositoryRoot).Generate(outputPath));
             foreach (var line in result.Logs)
             {
                 AppendLog(line);
             }
+
+            lastGeneratedSeed = result.UsedSeed;
+            UpdateSeedUi();
 
             AppendLog(string.Empty);
             AppendLog($"{T("Button.Generate")}: {result.Statistics.TotalCount}");
@@ -255,6 +271,24 @@ public partial class Form1 : Form
         }
 
         outputPathTextBox.Text = dialog.SelectedPath;
+    }
+
+    private void clearSeedButton_Click(object sender, EventArgs e)
+    {
+        seedTextBox.Clear();
+        seedTextBox.Focus();
+    }
+
+    private void useLastSeedButton_Click(object sender, EventArgs e)
+    {
+        if (!lastGeneratedSeed.HasValue)
+        {
+            return;
+        }
+
+        seedTextBox.Text = lastGeneratedSeed.Value.ToString(CultureInfo.InvariantCulture);
+        seedTextBox.Focus();
+        seedTextBox.SelectionStart = seedTextBox.TextLength;
     }
 
     private void exceptionsButton_Click(object sender, EventArgs e)
@@ -920,6 +954,38 @@ public partial class Form1 : Form
         return Path.GetFullPath(outputPath);
     }
 
+    private bool TryResolveGenerationSeed(out uint? seed)
+    {
+        var rawValue = seedTextBox.Text.Trim();
+        if (string.IsNullOrWhiteSpace(rawValue))
+        {
+            seed = null;
+            return true;
+        }
+
+        if (uint.TryParse(rawValue, NumberStyles.None, CultureInfo.InvariantCulture, out var parsed)
+            || uint.TryParse(rawValue, NumberStyles.None, CultureInfo.CurrentCulture, out parsed))
+        {
+            seed = parsed;
+            return true;
+        }
+
+        seed = null;
+        seedTextBox.Focus();
+        seedTextBox.SelectAll();
+        ShowInfoMessage(T("Message.InvalidSeed"), T("Message.GenerateFailedTitle"));
+        return false;
+    }
+
+    private void UpdateSeedUi()
+    {
+        outputHintLabel.Text = lastGeneratedSeed.HasValue
+            ? Tf("Message.OutputPathHintWithLastSeed", lastGeneratedSeed.Value)
+            : T("Message.OutputPathHint");
+        useLastSeedButton.Enabled = !isBusy && lastGeneratedSeed.HasValue;
+        clearSeedButton.Enabled = !isBusy;
+    }
+
     private void EnsureRulesInitialized(string repositoryRoot, bool appendToLog)
     {
         RuleWorkspace.EnsureInitialized(repositoryRoot, message =>
@@ -950,8 +1016,11 @@ public partial class Form1 : Form
         exceptionsButton.Enabled = !busy;
         generateButton.Enabled = !busy && ResolveDataRoot() is not null;
         auditButton.Enabled = !busy && ResolveDataRoot() is not null;
+        useLastSeedButton.Enabled = !busy && lastGeneratedSeed.HasValue;
+        clearSeedButton.Enabled = !busy;
         searchTextBox.Enabled = !busy;
         outputPathTextBox.Enabled = !busy;
+        seedTextBox.Enabled = !busy;
         ruleTreeView.Enabled = !busy;
         ruleGridView.Enabled = !busy;
         languageComboBox.Enabled = !busy;
@@ -963,6 +1032,8 @@ public partial class Form1 : Form
         {
             RefreshStatus();
         }
+
+        UpdateSeedUi();
     }
 
     private void RefreshStatus()

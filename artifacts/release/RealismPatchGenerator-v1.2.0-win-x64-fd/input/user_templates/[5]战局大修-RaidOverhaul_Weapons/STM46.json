@@ -1,0 +1,185 @@
+{
+    "6628f3786c4f8a10a65adee4": {
+        "ItemToClone": "SMG_STM9",
+        "OverrideProperties": {
+            "Chambers": [
+                {
+                    "_id": "668b401927ef539b2cc78603",
+                    "_mergeSlotWithChildren": false,
+                    "_name": "patron_in_weapon",
+                    "_parent": "6628f3786c4f8a10a65adee4",
+                    "_props": {
+                        "filters": [
+                            {
+                                "Filter": [
+                                    "5ba26812d4351e003201fef1",
+                                    "5ba26835d4351e0035628ff5",
+                                    "5ba2678ad4351e44f824b344",
+                                    "5ba26844d4351e00334c9475",
+                                    "64b6979341772715af0f9c39"
+                                ]
+                            }
+                        ]
+                    },
+                    "_proto": "55d4af244bdc2d962f8b4571",
+                    "_required": false
+                }
+            ],
+            "ConflictingItems": [
+                "5efb0da7a29a85116f6ea05f",
+                "5c3df7d588a4501f290594e5",
+                "58864a4f2459770fcc257101",
+                "56d59d3ad2720bdb418b4577",
+                "5c925fa22e221601da359b7b",
+                "5a3c16fe86f77452b62de32a",
+                "5efb0e16aeb21837e749c7ff",
+                "5c0d56a986f774449d5de529",
+                "64b7bbb74b75259c590fa897"
+            ],
+            "ammoCaliber": "Caliber46x30",
+            "defAmmo": "5ba2678ad4351e44f824b344",
+            "defMagType": "6628f38262cab98c01ffada1",
+            "weapFireType": ["single", "fullauto"]
+        },
+        "LocalePush": {
+            "name": "Soyuz-TM STM-46 第二代 4.6x30 卡宾枪",
+"shortName": "STM 4.6x30",
+"description": "由Soyuz-TM Arms制造的一款高性能冲锋卡宾枪（PCC），出厂即具备卓越表现。设计过程中有半自动步枪世界锦标赛铜牌得主瓦迪姆·米哈伊洛夫（Vadim Mikhailov）参与。兼具高精度、快速操控与舒适的后坐控制，并兼容定制的4.6x30毫米弹匣。"
+        },
+        "HandbookParent": "SMGs",
+        "HandbookPrice": 47999,
+        "PushMastery": true,
+        "CloneToFilters": true,
+        "LootPush": {
+            "LootContainersToAdd": [
+                "5909d89086f77472591234a0",
+                "5909d7cf86f77470ee57d75a",
+                "5909d76c86f77471e53d2adf",
+                "5909d5ef86f77467974efbd8",
+                "578f87ad245977356274f2cc"
+            ],
+            "StaticLootProbability": 5
+        }
+    },
+    "6628f38262cab98c01ffada1": {
+        "ItemToClone": "MAGAZINE_9X19_BIG_STICK_33RND",
+        "OverrideProperties": {
+            "Cartridges": [
+                {
+                    "_name": "cartridges",
+                    "_id": "668b403088866bc0dd9ec71b",
+                    "_max_count": 33,
+                    "_parent": "6628f38262cab98c01ffada1",
+                    "_props": {
+                        "filters": [
+                            {
+                                "Filter": [
+                                    "5ba26812d4351e003201fef1",
+                                    "5ba26835d4351e0035628ff5",
+                                    "5ba2678ad4351e44f824b344",
+                                    "5ba26844d4351e00334c9475",
+                                    "64b6979341772715af0f9c39"
+                                ]
+                            }
+                        ]
+                    },
+                    "_proto": "5748538b2459770af276a261"
+                }
+            ]
+        },
+        "LocalePush": {
+            "name": "格洛克 4.6x30「大棒」33发弹匣",
+"shortName": "STM-46M",
+"description": "专为定制型Soyuz-TM STM-46第二代4.6x30毫米卡宾枪设计的原厂33发容量4.6x30弹匣。"
+        },
+        "HandbookParent": "Magazines",
+        "HandbookPrice": 8999,
+        "LootPush": {
+            "LootContainersToAdd": [
+                "5909d89086f77472591234a0",
+                "5909d7cf86f77470ee57d75a",
+                "5909d76c86f77471e53d2adf",
+                "5909d5ef86f77467974efbd8",
+                "578f87ad245977356274f2cc"
+            ],
+            "StaticLootProbability": 5
+        }
+    },
+    "6628f38835c496a91efdef37": {
+        "ItemToClone": "MAGAZINE_9X19_G_SGMT_50RND",
+        "OverrideProperties": {
+            "Cartridges": [
+                {
+                    "_name": "cartridges",
+                    "_id": "668b40351a85167413194a92",
+                    "_max_count": 50,
+                    "_parent": "6628f38262cab98c01ffada1",
+                    "_props": {
+                        "filters": [
+                            {
+                                "Filter": [
+                                    "5ba26812d4351e003201fef1",
+                                    "5ba26835d4351e0035628ff5",
+                                    "5ba2678ad4351e44f824b344",
+                                    "5ba26844d4351e00334c9475",
+                                    "64b6979341772715af0f9c39"
+                                ]
+                            }
+                        ]
+                    },
+                    "_proto": "5748538b2459770af276a261"
+                }
+            ]
+        },
+        "LocalePush": {
+            "name": "定制格洛克 4.6x30 SGM战术50发弹鼓",
+"shortName": "STM-46D",
+"description": "专为定制型Soyuz-TM STM-46第二代4.6x30毫米卡宾枪设计的高容量50发弹鼓。由韩国制造，SGM Tactical进口。实际可容纳超过50发子弹，但制造商不建议超量装填。"
+        },
+        "HandbookParent": "Magazines",
+        "HandbookPrice": 18499,
+        "LootPush": {
+            "LootContainersToAdd": [
+                "5909d89086f77472591234a0",
+                "5909d7cf86f77470ee57d75a",
+                "5909d76c86f77471e53d2adf",
+                "5909d5ef86f77467974efbd8",
+                "578f87ad245977356274f2cc"
+            ],
+            "StaticLootProbability": 5
+        }
+    },
+    "6628f37eb50e789115223da9": {
+        "ItemToClone": "RECEIVER_STM9",
+        "OverrideProperties": {
+            "ConflictingItems": [
+                "5efb0da7a29a85116f6ea05f",
+                "5c3df7d588a4501f290594e5",
+                "58864a4f2459770fcc257101",
+                "56d59d3ad2720bdb418b4577",
+                "5c925fa22e221601da359b7b",
+                "5a3c16fe86f77452b62de32a",
+                "5efb0e16aeb21837e749c7ff",
+                "5c0d56a986f774449d5de529",
+                "64b7bbb74b75259c590fa897"
+            ]
+        },
+        "LocalePush": {
+            "name": "STM-46 4.6x30 上机匣",
+"shortName": "STM 4.6x30",
+"description": "适用于STM-46第二代4.6x30卡宾枪的上机匣，配备导轨接口，可用于安装各类战术附件。"
+        },
+        "HandbookParent": "ReceiversAndSlides",
+        "HandbookPrice": 31999,
+        "LootPush": {
+            "LootContainersToAdd": [
+                "5909d89086f77472591234a0",
+                "5909d7cf86f77470ee57d75a",
+                "5909d76c86f77471e53d2adf",
+                "5909d5ef86f77467974efbd8",
+                "578f87ad245977356274f2cc"
+            ],
+            "StaticLootProbability": 5
+        }
+    }
+}

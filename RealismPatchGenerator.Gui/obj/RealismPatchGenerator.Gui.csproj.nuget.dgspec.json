@@ -5,7 +5,7 @@
   },
   "projects": {
     "E:\\云文件\\GitHub\\Realism-patch-Generator-Csharp\\RealismPatchGenerator.Core\\RealismPatchGenerator.Core.csproj": {
-      "version": "1.1.0",
+      "version": "1.2.0",
       "restore": {
         "projectUniqueName": "E:\\云文件\\GitHub\\Realism-patch-Generator-Csharp\\RealismPatchGenerator.Core\\RealismPatchGenerator.Core.csproj",
         "projectName": "RealismPatchGenerator.Core",
@@ -349,7 +349,7 @@
       }
     },
     "E:\\云文件\\GitHub\\Realism-patch-Generator-Csharp\\RealismPatchGenerator.Gui\\RealismPatchGenerator.Gui.csproj": {
-      "version": "1.1.0",
+      "version": "1.2.0",
       "restore": {
         "projectUniqueName": "E:\\云文件\\GitHub\\Realism-patch-Generator-Csharp\\RealismPatchGenerator.Gui\\RealismPatchGenerator.Gui.csproj",
         "projectName": "RealismPatchGenerator.Gui",

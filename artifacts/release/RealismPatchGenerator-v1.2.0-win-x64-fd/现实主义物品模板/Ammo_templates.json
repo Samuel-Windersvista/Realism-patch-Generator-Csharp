@@ -1,0 +1,18 @@
+{
+    "4D4341544C4153474541520F": {
+        "$type": "RealismMod.Ammo, RealismMod",
+        "ItemID": "4D4341544C4153474541520F",
+        "Name": ".300 AAC Blackout APXT",
+        "TemplateType": "ammo",
+	    "Damage":67,
+	    "PenetrationPower":65
+    },
+    "4D4341544C41534745415210": {
+        "$type": "RealismMod.Ammo, RealismMod",
+        "ItemID": "4D4341544C41534745415210",
+        "Name": ".300 AAC Blackout TT",
+        "TemplateType": "ammo",
+	    "Damage":69,
+	    "PenetrationPower":63
+    }
+}

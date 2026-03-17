@@ -9,7 +9,7 @@
       "RealismPatchGenerator.Tests/1.0.0": {
         "dependencies": {
           "Microsoft.NET.Test.Sdk": "17.12.0",
-          "RealismPatchGenerator.Core": "1.1.0",
+          "RealismPatchGenerator.Core": "1.2.0",
           "xunit": "2.9.3"
         },
         "runtime": {
@@ -331,11 +331,11 @@
           }
         }
       },
-      "RealismPatchGenerator.Core/1.1.0": {
+      "RealismPatchGenerator.Core/1.2.0": {
         "runtime": {
           "RealismPatchGenerator.Core.dll": {
-            "assemblyVersion": "1.1.0.0",
-            "fileVersion": "1.1.0.0"
+            "assemblyVersion": "1.2.0.0",
+            "fileVersion": "1.2.0.0"
           }
         }
       }
@@ -424,7 +424,7 @@
       "path": "xunit.extensibility.execution/2.9.3",
       "hashPath": "xunit.extensibility.execution.2.9.3.nupkg.sha512"
     },
-    "RealismPatchGenerator.Core/1.1.0": {
+    "RealismPatchGenerator.Core/1.2.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

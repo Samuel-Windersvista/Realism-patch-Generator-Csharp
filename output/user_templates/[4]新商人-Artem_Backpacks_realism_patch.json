@@ -6,8 +6,8 @@
     "AllowADS": true,
     "LoyaltyLevel": 2,
     "ReloadSpeedMulti": 1,
-    "Comfort": 0.89,
-    "speedPenaltyPercent": -3.19,
+    "Comfort": 0.77,
+    "speedPenaltyPercent": -2.63,
     "mousePenalty": -3,
     "weaponErgonomicPenalty": -7
   },
@@ -18,8 +18,8 @@
     "AllowADS": true,
     "LoyaltyLevel": 2,
     "ReloadSpeedMulti": 1,
-    "Comfort": 0.81,
-    "speedPenaltyPercent": -4.56,
+    "Comfort": 0.82,
+    "speedPenaltyPercent": -4.43,
     "mousePenalty": -3,
     "weaponErgonomicPenalty": -7
   }

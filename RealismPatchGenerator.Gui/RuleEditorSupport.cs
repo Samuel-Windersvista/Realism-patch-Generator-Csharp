@@ -78,9 +78,10 @@ internal static class UiTextCatalog
 {
     private static readonly IReadOnlyDictionary<string, LocalizedText> Texts = new Dictionary<string, LocalizedText>(StringComparer.Ordinal)
     {
-        ["App.Title"] = new("SPT现实主义数值范围编辑生成器 v1.1", "SPT Realism Range Editor Generator v1.1"),
+        ["App.Title"] = new("SPT现实主义数值范围编辑生成器 v1.2", "SPT Realism Range Editor Generator v1.2"),
         ["Label.DataRoot"] = new("数据目录:", "Data Root:"),
         ["Label.OutputPath"] = new("输出路径:", "Output Path:"),
+        ["Label.Seed"] = new("Seed:", "Seed:"),
         ["Label.ModifiedOnly"] = new("只看已修改项", "Modified Only"),
         ["Label.Search"] = new("搜索:", "Search:"),
         ["Label.Language"] = new("语言:", "Language:"),
@@ -92,6 +93,8 @@ internal static class UiTextCatalog
         ["Button.Exceptions"] = new("例外物品", "Exception Items"),
         ["Button.Generate"] = new("生成补丁", "Generate"),
         ["Button.Audit"] = new("检查未遵循规则物品", "Check Rule Violations"),
+        ["Button.ClearSeed"] = new("清空", "Clear"),
+        ["Button.UseLastSeed"] = new("填回上次", "Use Last"),
         ["Group.Navigation"] = new("规则分类", "Rule Categories"),
         ["Group.Grid"] = new("规则范围", "Rule Ranges"),
         ["Group.NavigationWithCount"] = new("规则分类 ({0})", "Rule Categories ({0})"),
@@ -147,9 +150,12 @@ internal static class UiTextCatalog
         ["Message.AuditFailedTitle"] = new("检查失败", "Check Failed"),
         ["Message.ParseNumber"] = new("请输入有效数字。", "Enter a valid number."),
         ["Message.MinGreaterThanMax"] = new("最小值不能大于最大值。", "Min cannot be greater than max."),
+        ["Message.InvalidSeed"] = new("Seed 必须是 0 到 4294967295 之间的无符号整数。", "Seed must be an unsigned integer between 0 and 4294967295."),
         ["Message.NoFieldSelected"] = new("请选择一条规则查看字段说明。", "Select a rule entry to view field help."),
         ["Message.ExplanationHint"] = new("左侧选择规则分类，右侧编辑最小值和最大值。", "Choose a rule category on the left, then edit min and max values on the right."),
+        ["Message.SeedPlaceholder"] = new("留空=每次随机", "Blank = new random seed"),
         ["Message.OutputPathHint"] = new("建议输出到 -user\\mods\\SPT-Realism\\db\\templates", "Recommended output: -user\\mods\\SPT-Realism\\db\\templates"),
+        ["Message.OutputPathHintWithLastSeed"] = new("建议输出到 -user\\mods\\SPT-Realism\\db\\templates | 上次生成 seed: {0}", "Recommended output: -user\\mods\\SPT-Realism\\db\\templates | Last generation seed: {0}"),
         ["Label.ProfileGlobal"] = new("全局", "Global"),
         ["Label.Yes"] = new("是", "Yes"),
         ["Label.No"] = new("否", "No"),

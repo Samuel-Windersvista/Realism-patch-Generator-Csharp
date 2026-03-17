@@ -1,5 +1,5 @@
 param(
-    [string]$Version = "1.1.0",
+    [string]$Version = "1.2.0",
     [string]$RuntimeIdentifier = "win-x64",
     [string]$Configuration = "Release",
     [string]$ArtifactsRoot = "artifacts\release",
@@ -39,14 +39,41 @@ function Get-TemplatesDirectory {
         return Get-Item -LiteralPath $preferredPath
     }
 
+    $structuredTemplateDirectory = Get-ChildItem -LiteralPath $Root -Directory |
+        Where-Object {
+            (Test-Path -LiteralPath (Join-Path $_.FullName "Ammo_templates.json")) -or
+            (
+                (Test-Path -LiteralPath (Join-Path $_.FullName "ammo")) -and
+                (Test-Path -LiteralPath (Join-Path $_.FullName "weapons")) -and
+                (Test-Path -LiteralPath (Join-Path $_.FullName "gear"))
+            )
+        } |
+        Select-Object -First 1
+
+    if ($null -ne $structuredTemplateDirectory) {
+        return $structuredTemplateDirectory
+    }
+
+    $namedTemplateDirectory = Get-ChildItem -LiteralPath $Root -Directory |
+        Where-Object { $_.Name -like "*模板*" } |
+        Select-Object -First 1
+
+    if ($null -ne $namedTemplateDirectory) {
+        return $namedTemplateDirectory
+    }
+
     $knownNames = @(
+        ".venv",
         ".vs",
         ".git",
         "artifacts",
         "audit_reports",
+        "bin",
         "docs",
         "input",
+        "obj",
         "output",
+        "Realism-patch-Generator-Output",
         "rules",
         "scripts"
     )
@@ -54,6 +81,7 @@ function Get-TemplatesDirectory {
     return Get-ChildItem -LiteralPath $Root -Directory |
         Where-Object {
             $knownNames -notcontains $_.Name -and
+            -not $_.Name.StartsWith("seed_check", [System.StringComparison]::OrdinalIgnoreCase) -and
             -not $_.Name.StartsWith("RealismPatchGenerator", [System.StringComparison]::OrdinalIgnoreCase)
         } |
         Select-Object -First 1

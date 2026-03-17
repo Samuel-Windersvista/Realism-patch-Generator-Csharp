@@ -8,7 +8,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.25,
+    "SpallReduction": 0.32,
     "TemplateType": "gear"
   },
   "64ad2dac6f9247c2f4012439": {
@@ -20,7 +20,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.15,
+    "SpallReduction": 0.44,
     "TemplateType": "gear"
   },
   "64ad2dba0b9840e4c80c2485": {
@@ -32,7 +32,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.39,
+    "SpallReduction": 0.21,
     "TemplateType": "gear"
   },
   "64ad2dc66f9247c2f401243d": {
@@ -44,7 +44,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.25,
+    "SpallReduction": 0.19,
     "TemplateType": "gear"
   },
   "64ad2dd30b9840e4c80c2489": {
@@ -56,7 +56,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.3,
+    "SpallReduction": 0.39,
     "TemplateType": "gear"
   },
   "64afc71497cf3a403c01ff38": {
@@ -68,7 +68,7 @@
     "ReloadSpeedMulti": 1,
     "Comfort": 1,
     "CanSpall": true,
-    "SpallReduction": 0.75,
+    "SpallReduction": 0.29,
     "ArmorClass": "Br5",
     "TemplateType": "gear",
     "Price": 47000
@@ -81,7 +81,7 @@
     "LoyaltyLevel": 4,
     "ReloadSpeedMulti": 1,
     "CanSpall": true,
-    "SpallReduction": 0.29,
+    "SpallReduction": 0.36,
     "ArmorClass": "Br5",
     "TemplateType": "gear",
     "Price": 7000
@@ -94,10 +94,36 @@
     "LoyaltyLevel": 4,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.53,
+    "SpallReduction": 0.79,
     "ArmorClass": "ESBI",
     "TemplateType": "gear",
     "Price": 6000
+  },
+  "6783ae9ee00fdb2053bf6848": {
+    "$type": "RealismMod.Gear, RealismMod",
+    "ItemID": "6783ae9ee00fdb2053bf6848",
+    "Name": "xsapi_chest",
+    "AllowADS": true,
+    "LoyaltyLevel": 4,
+    "ReloadSpeedMulti": 1,
+    "CanSpall": false,
+    "SpallReduction": 0.45,
+    "ArmorClass": "XSAPI",
+    "TemplateType": "gear",
+    "Price": 50000
+  },
+  "6783aec223d48324c0b278f5": {
+    "$type": "RealismMod.Gear, RealismMod",
+    "ItemID": "6783aec223d48324c0b278f5",
+    "Name": "mk4a_plate",
+    "AllowADS": true,
+    "LoyaltyLevel": 4,
+    "ReloadSpeedMulti": 1,
+    "CanSpall": false,
+    "SpallReduction": 0.58,
+    "ArmorClass": "Mk4A",
+    "TemplateType": "gear",
+    "Price": 38000
   },
   "64afdcb83efdfea28601d041": {
     "$type": "RealismMod.Gear, RealismMod",
@@ -107,7 +133,7 @@
     "LoyaltyLevel": 4,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.53,
+    "SpallReduction": 0.72,
     "ArmorClass": "ESAPI",
     "TemplateType": "gear",
     "Price": 40000
@@ -121,7 +147,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.13,
+    "SpallReduction": 0.31,
     "TemplateType": "gear"
   },
   "64afeecb977493a0ee026213": {
@@ -133,7 +159,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.26,
+    "SpallReduction": 0.4,
     "TemplateType": "gear"
   },
   "64afef49977493a0ee026217": {
@@ -145,7 +171,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.35,
+    "SpallReduction": 0.13,
     "TemplateType": "gear"
   },
   "64b111fe1be308f1800688c1": {
@@ -157,7 +183,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.27,
+    "SpallReduction": 0.12,
     "TemplateType": "gear"
   },
   "64b11c08506a73f6a10f9364": {
@@ -169,7 +195,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.69,
+    "SpallReduction": 0.8,
     "TemplateType": "gear"
   },
   "654a4a964b446df1ad03f192": {
@@ -180,7 +206,7 @@
     "LoyaltyLevel": 4,
     "ReloadSpeedMulti": 1,
     "CanSpall": true,
-    "SpallReduction": 0.42,
+    "SpallReduction": 0.54,
     "ArmorClass": "4RS",
     "TemplateType": "gear",
     "Price": 16000
@@ -193,7 +219,7 @@
     "LoyaltyLevel": 3,
     "ReloadSpeedMulti": 1,
     "CanSpall": true,
-    "SpallReduction": 0.5,
+    "SpallReduction": 0.56,
     "ArmorClass": "GOST 5",
     "TemplateType": "gear",
     "Price": 23000
@@ -206,7 +232,7 @@
     "LoyaltyLevel": 4,
     "ReloadSpeedMulti": 1,
     "CanSpall": true,
-    "SpallReduction": 0.41,
+    "SpallReduction": 0.59,
     "ArmorClass": "GOST 5",
     "TemplateType": "gear",
     "Price": 3000
@@ -220,7 +246,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.17,
+    "SpallReduction": 0.28,
     "TemplateType": "gear"
   },
   "654a8ae00337d53f9102c2aa": {
@@ -232,7 +258,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.35,
+    "SpallReduction": 0.41,
     "TemplateType": "gear"
   },
   "654a8b0b0337d53f9102c2ae": {
@@ -244,7 +270,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.28,
+    "SpallReduction": 0.24,
     "TemplateType": "gear"
   },
   "654a8b3df414fcea4004d78f": {
@@ -256,7 +282,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.23,
+    "SpallReduction": 0.36,
     "TemplateType": "gear"
   },
   "654a8b60f414fcea4004d793": {
@@ -268,7 +294,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.21,
+    "SpallReduction": 0.31,
     "TemplateType": "gear"
   },
   "654a8b80f414fcea4004d797": {
@@ -280,7 +306,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.24,
+    "SpallReduction": 0.23,
     "TemplateType": "gear"
   },
   "654a8ba90337d53f9102c2b2": {
@@ -292,7 +318,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.25,
+    "SpallReduction": 0.34,
     "TemplateType": "gear"
   },
   "654a8bc5f414fcea4004d79b": {
@@ -304,7 +330,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.18,
+    "SpallReduction": 0.4,
     "TemplateType": "gear"
   },
   "654a90aff4f81a421b0a7c86": {
@@ -316,7 +342,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.88,
+    "SpallReduction": 0.94,
     "TemplateType": "gear"
   },
   "654a91068e1ce698150fd1e2": {
@@ -328,7 +354,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.69,
+    "SpallReduction": 0.76,
     "TemplateType": "gear"
   },
   "654a9189bcc67a392b056c79": {
@@ -340,7 +366,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.89,
+    "SpallReduction": 0.91,
     "TemplateType": "gear"
   },
   "6551fec55d0cf82e51014288": {
@@ -352,7 +378,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.93,
+    "SpallReduction": 0.75,
     "TemplateType": "gear"
   },
   "655200ba0ef76cf7be09d528": {
@@ -364,7 +390,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.7,
+    "SpallReduction": 0.78,
     "TemplateType": "gear"
   },
   "65573fa5655447403702a816": {
@@ -375,7 +401,7 @@
     "LoyaltyLevel": 3,
     "ReloadSpeedMulti": 1,
     "CanSpall": true,
-    "SpallReduction": 0.44,
+    "SpallReduction": 0.26,
     "ArmorClass": "Br4",
     "TemplateType": "gear",
     "Price": 38000
@@ -388,7 +414,7 @@
     "LoyaltyLevel": 3,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.44,
+    "SpallReduction": 0.78,
     "ArmorClass": "SSAPI",
     "TemplateType": "gear",
     "Price": 4000
@@ -401,7 +427,7 @@
     "LoyaltyLevel": 4,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.72,
+    "SpallReduction": 0.64,
     "ArmorClass": "SAPI",
     "TemplateType": "gear",
     "Price": 33000
@@ -415,7 +441,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.28,
+    "SpallReduction": 0.42,
     "TemplateType": "gear"
   },
   "655751db58aa1b6dbd0cc295": {
@@ -427,7 +453,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.43,
+    "SpallReduction": 0.26,
     "TemplateType": "gear"
   },
   "656efaf54772930db4031ff5": {
@@ -438,7 +464,7 @@
     "LoyaltyLevel": 2,
     "ReloadSpeedMulti": 1,
     "CanSpall": true,
-    "SpallReduction": 0.36,
+    "SpallReduction": 0.37,
     "ArmorClass": "GOST 4",
     "TemplateType": "gear",
     "Price": 16000
@@ -451,7 +477,7 @@
     "LoyaltyLevel": 3,
     "ReloadSpeedMulti": 1,
     "CanSpall": true,
-    "SpallReduction": 0.31,
+    "SpallReduction": 0.58,
     "ArmorClass": "GOST 5A",
     "TemplateType": "gear",
     "Price": 31000
@@ -464,7 +490,7 @@
     "LoyaltyLevel": 1,
     "ReloadSpeedMulti": 1,
     "CanSpall": true,
-    "SpallReduction": 0.65,
+    "SpallReduction": 0.61,
     "ArmorClass": "GOST 3",
     "TemplateType": "gear",
     "Price": 10000
@@ -477,7 +503,7 @@
     "LoyaltyLevel": 4,
     "ReloadSpeedMulti": 1,
     "CanSpall": true,
-    "SpallReduction": 0.7,
+    "SpallReduction": 0.54,
     "ArmorClass": "GOST 5A",
     "TemplateType": "gear",
     "Price": 37000
@@ -490,7 +516,7 @@
     "LoyaltyLevel": 3,
     "ReloadSpeedMulti": 1,
     "CanSpall": true,
-    "SpallReduction": 0.29,
+    "SpallReduction": 0.7,
     "ArmorClass": "GOST 4",
     "TemplateType": "gear",
     "Price": 20000
@@ -503,7 +529,7 @@
     "LoyaltyLevel": 4,
     "ReloadSpeedMulti": 1,
     "CanSpall": true,
-    "SpallReduction": 0.21,
+    "SpallReduction": 0.47,
     "ArmorClass": "4RS",
     "TemplateType": "gear",
     "Price": 38000
@@ -516,7 +542,7 @@
     "LoyaltyLevel": 3,
     "ReloadSpeedMulti": 1,
     "CanSpall": true,
-    "SpallReduction": 0.46,
+    "SpallReduction": 0.34,
     "ArmorClass": "GOST 5",
     "TemplateType": "gear",
     "Price": 24000
@@ -529,7 +555,7 @@
     "LoyaltyLevel": 3,
     "ReloadSpeedMulti": 1,
     "CanSpall": true,
-    "SpallReduction": 0.29,
+    "SpallReduction": 0.38,
     "ArmorClass": "GOST 6A",
     "TemplateType": "gear",
     "Price": 44000
@@ -542,7 +568,7 @@
     "LoyaltyLevel": 2,
     "ReloadSpeedMulti": 1,
     "CanSpall": true,
-    "SpallReduction": 0.34,
+    "SpallReduction": 0.45,
     "ArmorClass": "NIJ III",
     "TemplateType": "gear",
     "Price": 15000
@@ -555,7 +581,7 @@
     "LoyaltyLevel": 3,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.65,
+    "SpallReduction": 0.59,
     "ArmorClass": "NIJ III",
     "TemplateType": "gear",
     "Price": 16000
@@ -568,7 +594,7 @@
     "LoyaltyLevel": 3,
     "ReloadSpeedMulti": 1,
     "CanSpall": true,
-    "SpallReduction": 0.8,
+    "SpallReduction": 0.52,
     "ArmorClass": "NIJ III+",
     "TemplateType": "gear",
     "Price": 24000
@@ -581,7 +607,7 @@
     "LoyaltyLevel": 2,
     "ReloadSpeedMulti": 1,
     "CanSpall": true,
-    "SpallReduction": 0.64,
+    "SpallReduction": 0.43,
     "ArmorClass": "NIJ III",
     "TemplateType": "gear",
     "Price": 16000
@@ -594,7 +620,7 @@
     "LoyaltyLevel": 4,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.45,
+    "SpallReduction": 0.69,
     "ArmorClass": "NIJ IV",
     "TemplateType": "gear",
     "Price": 39000
@@ -607,7 +633,7 @@
     "LoyaltyLevel": 4,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.64,
+    "SpallReduction": 0.31,
     "ArmorClass": "NIJ III+",
     "TemplateType": "gear",
     "Price": 28000
@@ -620,7 +646,7 @@
     "LoyaltyLevel": 2,
     "ReloadSpeedMulti": 1,
     "CanSpall": true,
-    "SpallReduction": 0.31,
+    "SpallReduction": 0.52,
     "ArmorClass": "NIJ III",
     "TemplateType": "gear",
     "Price": 14000
@@ -633,7 +659,7 @@
     "LoyaltyLevel": 2,
     "ReloadSpeedMulti": 1,
     "CanSpall": true,
-    "SpallReduction": 0.49,
+    "SpallReduction": 0.52,
     "ArmorClass": "NIJ III+",
     "TemplateType": "gear",
     "Price": 26000
@@ -646,7 +672,7 @@
     "LoyaltyLevel": 3,
     "ReloadSpeedMulti": 1,
     "CanSpall": true,
-    "SpallReduction": 0.67,
+    "SpallReduction": 0.38,
     "ArmorClass": "NIJ III+",
     "TemplateType": "gear",
     "Price": 25000
@@ -659,7 +685,7 @@
     "LoyaltyLevel": 3,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.47,
+    "SpallReduction": 0.56,
     "ArmorClass": "NIJ III",
     "TemplateType": "gear",
     "Price": 22000
@@ -672,7 +698,7 @@
     "LoyaltyLevel": 3,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.39,
+    "SpallReduction": 0.81,
     "ArmorClass": "NIJ III+",
     "TemplateType": "gear",
     "Price": 34000
@@ -685,7 +711,7 @@
     "LoyaltyLevel": 3,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.76,
+    "SpallReduction": 0.8,
     "ArmorClass": "NIJ III",
     "TemplateType": "gear",
     "Price": 21000
@@ -698,7 +724,7 @@
     "LoyaltyLevel": 4,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.75,
+    "SpallReduction": 0.39,
     "ArmorClass": "NIJ III+",
     "TemplateType": "gear",
     "Price": 31000
@@ -711,7 +737,7 @@
     "LoyaltyLevel": 4,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.67,
+    "SpallReduction": 0.29,
     "ArmorClass": "NIJ IV",
     "TemplateType": "gear",
     "Price": 41000
@@ -724,7 +750,7 @@
     "LoyaltyLevel": 3,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.71,
+    "SpallReduction": 0.72,
     "ArmorClass": "NIJ III+",
     "TemplateType": "gear",
     "Price": 32000
@@ -737,7 +763,7 @@
     "LoyaltyLevel": 2,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.69,
+    "SpallReduction": 0.62,
     "ArmorClass": "NIJ III",
     "TemplateType": "gear",
     "Price": 19000
@@ -751,7 +777,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": true,
-    "SpallReduction": 0.2,
+    "SpallReduction": 0.17,
     "TemplateType": "gear"
   },
   "656fd89bf5a9631d4e042575": {
@@ -763,7 +789,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": true,
-    "SpallReduction": 0.16,
+    "SpallReduction": 0.22,
     "TemplateType": "gear"
   },
   "65702f87722744627e05cdb8": {
@@ -775,7 +801,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.26,
+    "SpallReduction": 0.33,
     "TemplateType": "gear"
   },
   "65702fe593b7ea9c330f4ce8": {
@@ -787,7 +813,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.41,
+    "SpallReduction": 0.37,
     "TemplateType": "gear"
   },
   "6570305d93b7ea9c330f4ced": {
@@ -799,7 +825,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.42,
+    "SpallReduction": 0.19,
     "TemplateType": "gear"
   },
   "65703472c9030b928a0a8a78": {
@@ -811,7 +837,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.31,
+    "SpallReduction": 0.41,
     "TemplateType": "gear"
   },
   "65703d866584602f7d057a8a": {
@@ -823,7 +849,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.12,
+    "SpallReduction": 0.2,
     "TemplateType": "gear"
   },
   "65703fa06584602f7d057a8e": {
@@ -835,7 +861,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.41,
+    "SpallReduction": 0.4,
     "TemplateType": "gear"
   },
   "65703fe46a912c8b5c03468b": {
@@ -847,7 +873,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.27,
+    "SpallReduction": 0.18,
     "TemplateType": "gear"
   },
   "657040374e67e8ec7a0d261c": {
@@ -859,7 +885,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.43,
+    "SpallReduction": 0.4,
     "TemplateType": "gear"
   },
   "657044e971369562b300ce9b": {
@@ -871,7 +897,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.42,
+    "SpallReduction": 0.44,
     "TemplateType": "gear"
   },
   "657045741bd9beedc40b7299": {
@@ -883,7 +909,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.34,
+    "SpallReduction": 0.43,
     "TemplateType": "gear"
   },
   "657045b97e80617cee095bda": {
@@ -907,7 +933,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.2,
+    "SpallReduction": 0.33,
     "TemplateType": "gear"
   },
   "6570495b45d573133d0d6adb": {
@@ -919,7 +945,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.21,
+    "SpallReduction": 0.42,
     "TemplateType": "gear"
   },
   "657049d23425b19bbc0502f0": {
@@ -931,7 +957,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.2,
+    "SpallReduction": 0.38,
     "TemplateType": "gear"
   },
   "65704de13e7bba58ea0285c8": {
@@ -943,7 +969,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.36,
+    "SpallReduction": 0.23,
     "TemplateType": "gear"
   },
   "65705c3c14f2ed6d7d0b7738": {
@@ -955,7 +981,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.41,
+    "SpallReduction": 0.4,
     "TemplateType": "gear"
   },
   "65705c777260e1139e091408": {
@@ -967,7 +993,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.35,
+    "SpallReduction": 0.39,
     "TemplateType": "gear"
   },
   "65705cb314f2ed6d7d0b773c": {
@@ -979,7 +1005,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.21,
+    "SpallReduction": 0.34,
     "TemplateType": "gear"
   },
   "65705cea4916448ae1050897": {
@@ -991,7 +1017,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.43,
+    "SpallReduction": 0.39,
     "TemplateType": "gear"
   },
   "6570653e89fd4926380b733e": {
@@ -1003,7 +1029,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.15,
+    "SpallReduction": 0.21,
     "TemplateType": "gear"
   },
   "6570658a89fd4926380b7346": {
@@ -1015,7 +1041,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.31,
+    "SpallReduction": 0.43,
     "TemplateType": "gear"
   },
   "65707fc348c7a887f2010432": {
@@ -1027,7 +1053,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.41,
+    "SpallReduction": 0.22,
     "TemplateType": "gear"
   },
   "6570800612755ae0d907acf8": {
@@ -1039,7 +1065,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.21,
+    "SpallReduction": 0.18,
     "TemplateType": "gear"
   },
   "65708070f65e2491bf00972c": {
@@ -1051,7 +1077,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.43,
+    "SpallReduction": 0.27,
     "TemplateType": "gear"
   },
   "657080a212755ae0d907ad04": {
@@ -1063,7 +1089,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.17,
+    "SpallReduction": 0.42,
     "TemplateType": "gear"
   },
   "657080ca12755ae0d907ad5e": {
@@ -1075,7 +1101,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.21,
+    "SpallReduction": 0.31,
     "TemplateType": "gear"
   },
   "65708122f65e2491bf009755": {
@@ -1087,7 +1113,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.39,
+    "SpallReduction": 0.36,
     "TemplateType": "gear"
   },
   "65708165696fe382cf073255": {
@@ -1099,7 +1125,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.21,
+    "SpallReduction": 0.35,
     "TemplateType": "gear"
   },
   "657087577f6d4590ac0d2109": {
@@ -1111,7 +1137,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": true,
-    "SpallReduction": 0.34,
+    "SpallReduction": 0.43,
     "TemplateType": "gear"
   },
   "6570880f4a747dbb63005ee5": {
@@ -1123,7 +1149,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": true,
-    "SpallReduction": 0.34,
+    "SpallReduction": 0.18,
     "TemplateType": "gear"
   },
   "65708afe4a747dbb63005eee": {
@@ -1135,7 +1161,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.38,
+    "SpallReduction": 0.41,
     "TemplateType": "gear"
   },
   "65708b4c4a747dbb63005ef3": {
@@ -1147,7 +1173,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.34,
+    "SpallReduction": 0.22,
     "TemplateType": "gear"
   },
   "6570df294cc0d2ab1e05ed74": {
@@ -1159,7 +1185,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.3,
+    "SpallReduction": 0.33,
     "TemplateType": "gear"
   },
   "6570df9c615f54368b04fca9": {
@@ -1183,7 +1209,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.42,
+    "SpallReduction": 0.27,
     "TemplateType": "gear"
   },
   "6570e0610b57c03ec90b96ef": {
@@ -1195,7 +1221,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.24,
+    "SpallReduction": 0.41,
     "TemplateType": "gear"
   },
   "6570e479a6560e4ee50c2b02": {
@@ -1207,7 +1233,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.33,
+    "SpallReduction": 0.31,
     "TemplateType": "gear"
   },
   "6570e5100b57c03ec90b970a": {
@@ -1219,7 +1245,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.32,
+    "SpallReduction": 0.4,
     "TemplateType": "gear"
   },
   "6570e5674cc0d2ab1e05edbb": {
@@ -1231,7 +1257,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.33,
+    "SpallReduction": 0.32,
     "TemplateType": "gear"
   },
   "6570e59b0b57c03ec90b970e": {
@@ -1243,7 +1269,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.4,
+    "SpallReduction": 0.23,
     "TemplateType": "gear"
   },
   "6570e83223c1f638ef0b0ede": {
@@ -1255,7 +1281,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.34,
+    "SpallReduction": 0.36,
     "TemplateType": "gear"
   },
   "6570e87c23c1f638ef0b0ee2": {
@@ -1267,7 +1293,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.3,
+    "SpallReduction": 0.27,
     "TemplateType": "gear"
   },
   "6570e8a623c1f638ef0b0ee6": {
@@ -1279,7 +1305,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.24,
+    "SpallReduction": 0.19,
     "TemplateType": "gear"
   },
   "6570e8e7ab49e964120b4563": {
@@ -1291,7 +1317,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.18,
+    "SpallReduction": 0.12,
     "TemplateType": "gear"
   },
   "6570e90b3a5689d85f08db97": {
@@ -1303,7 +1329,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.27,
+    "SpallReduction": 0.41,
     "TemplateType": "gear"
   },
   "6570f30b0921c914bf07964c": {
@@ -1315,7 +1341,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.33,
+    "SpallReduction": 0.38,
     "TemplateType": "gear"
   },
   "6570f35cd67d0309980a7acb": {
@@ -1327,7 +1353,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.35,
+    "SpallReduction": 0.34,
     "TemplateType": "gear"
   },
   "6570f3890b4ae5847f060dad": {
@@ -1339,7 +1365,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.35,
+    "SpallReduction": 0.38,
     "TemplateType": "gear"
   },
   "6570f3bb0b4ae5847f060db2": {
@@ -1351,7 +1377,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.4,
+    "SpallReduction": 0.19,
     "TemplateType": "gear"
   },
   "6570f6e774d84423df065f21": {
@@ -1363,7 +1389,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.2,
+    "SpallReduction": 0.28,
     "TemplateType": "gear"
   },
   "6570f71dd67d0309980a7af8": {
@@ -1375,7 +1401,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.33,
+    "SpallReduction": 0.39,
     "TemplateType": "gear"
   },
   "6570f74774d84423df065f25": {
@@ -1387,7 +1413,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.24,
+    "SpallReduction": 0.42,
     "TemplateType": "gear"
   },
   "6570f79c4c65ab77a6015121": {
@@ -1399,7 +1425,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.42,
+    "SpallReduction": 0.4,
     "TemplateType": "gear"
   },
   "6570fa1f4c65ab77a601512f": {
@@ -1411,7 +1437,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.29,
+    "SpallReduction": 0.27,
     "TemplateType": "gear"
   },
   "6570fae34c65ab77a6015146": {
@@ -1423,7 +1449,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.36,
+    "SpallReduction": 0.39,
     "TemplateType": "gear"
   },
   "6570fb22584a51c23e03251f": {
@@ -1435,7 +1461,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.18,
+    "SpallReduction": 0.32,
     "TemplateType": "gear"
   },
   "6570fb6ad3eefd23430f8c7c": {
@@ -1447,7 +1473,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.39,
+    "SpallReduction": 0.25,
     "TemplateType": "gear"
   },
   "6570fb8f4c65ab77a601514d": {
@@ -1459,7 +1485,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.19,
+    "SpallReduction": 0.32,
     "TemplateType": "gear"
   },
   "6570fbdd74d84423df065f60": {
@@ -1471,7 +1497,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.36,
+    "SpallReduction": 0.33,
     "TemplateType": "gear"
   },
   "6570fc41d3eefd23430f8c83": {
@@ -1483,7 +1509,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.36,
+    "SpallReduction": 0.34,
     "TemplateType": "gear"
   },
   "657112234269e9a568089eac": {
@@ -1495,7 +1521,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.71,
+    "SpallReduction": 0.9,
     "TemplateType": "gear"
   },
   "657112a4818110db4600aa66": {
@@ -1507,7 +1533,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.9,
+    "SpallReduction": 0.87,
     "TemplateType": "gear"
   },
   "657112ce22996eaf110881fb": {
@@ -1519,7 +1545,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.82,
+    "SpallReduction": 0.95,
     "TemplateType": "gear"
   },
   "657112fa818110db4600aa6b": {
@@ -1531,7 +1557,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.81,
+    "SpallReduction": 0.91,
     "TemplateType": "gear"
   },
   "6571133d22996eaf11088200": {
@@ -1543,7 +1569,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.92,
+    "SpallReduction": 0.81,
     "TemplateType": "gear"
   },
   "6571138e818110db4600aa71": {
@@ -1555,7 +1581,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.69,
+    "SpallReduction": 0.86,
     "TemplateType": "gear"
   },
   "6571199565daf6aa960c9b10": {
@@ -1567,7 +1593,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.91,
+    "SpallReduction": 0.95,
     "TemplateType": "gear"
   },
   "657119d49eb8c145180dbb95": {
@@ -1579,7 +1605,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.72,
+    "SpallReduction": 0.88,
     "TemplateType": "gear"
   },
   "657119fea330b8c9060f7afc": {
@@ -1591,7 +1617,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.83,
+    "SpallReduction": 0.91,
     "TemplateType": "gear"
   },
   "65711b07a330b8c9060f7b01": {
@@ -1603,7 +1629,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.88,
+    "SpallReduction": 0.76,
     "TemplateType": "gear"
   },
   "65711b489eb8c145180dbb9d": {
@@ -1615,7 +1641,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.92,
+    "SpallReduction": 0.9,
     "TemplateType": "gear"
   },
   "65711b706d197c216005b31c": {
@@ -1627,7 +1653,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.73,
+    "SpallReduction": 0.82,
     "TemplateType": "gear"
   },
   "65711b9b65daf6aa960c9b1b": {
@@ -1639,7 +1665,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.7,
+    "SpallReduction": 0.79,
     "TemplateType": "gear"
   },
   "65711bc79eb8c145180dbba1": {
@@ -1651,7 +1677,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.81,
+    "SpallReduction": 0.93,
     "TemplateType": "gear"
   },
   "6571b27a6d84a2b8b6007f92": {
@@ -1663,7 +1689,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.33,
+    "SpallReduction": 0.34,
     "TemplateType": "gear"
   },
   "6571baa74cb80d995d0a1490": {
@@ -1675,7 +1701,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.44,
+    "SpallReduction": 0.28,
     "TemplateType": "gear"
   },
   "6571baac6d84a2b8b6007fa3": {
@@ -1687,7 +1713,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.27,
+    "SpallReduction": 0.22,
     "TemplateType": "gear"
   },
   "6571bab0f41985531a038091": {
@@ -1699,7 +1725,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.29,
+    "SpallReduction": 0.28,
     "TemplateType": "gear"
   },
   "6571babb4076795e5e07383f": {
@@ -1711,7 +1737,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.4,
+    "SpallReduction": 0.36,
     "TemplateType": "gear"
   },
   "6571babf4cb80d995d0a1494": {
@@ -1723,7 +1749,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.26,
+    "SpallReduction": 0.25,
     "TemplateType": "gear"
   },
   "6571bac34076795e5e073843": {
@@ -1735,7 +1761,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.35,
+    "SpallReduction": 0.39,
     "TemplateType": "gear"
   },
   "6571dbd388ead79fcf091d71": {
@@ -1747,7 +1773,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.34,
+    "SpallReduction": 0.28,
     "TemplateType": "gear"
   },
   "6571dbda88ead79fcf091d75": {
@@ -1759,7 +1785,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.13,
+    "SpallReduction": 0.35,
     "TemplateType": "gear"
   },
   "6571dbe07c02ae206002502e": {
@@ -1771,7 +1797,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.42,
+    "SpallReduction": 0.22,
     "TemplateType": "gear"
   },
   "6571dbeaee8ec43d520cf89e": {
@@ -1783,7 +1809,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.31,
+    "SpallReduction": 0.32,
     "TemplateType": "gear"
   },
   "6571dbef88ead79fcf091d79": {
@@ -1795,7 +1821,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.22,
+    "SpallReduction": 0.24,
     "TemplateType": "gear"
   },
   "6572e048371fccfbf909d5d8": {
@@ -1807,7 +1833,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.3,
+    "SpallReduction": 0.26,
     "TemplateType": "gear"
   },
   "6572e059371fccfbf909d5dc": {
@@ -1819,7 +1845,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.31,
+    "SpallReduction": 0.25,
     "TemplateType": "gear"
   },
   "6572e06219b4b511af012f89": {
@@ -1831,7 +1857,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.31,
+    "SpallReduction": 0.29,
     "TemplateType": "gear"
   },
   "6572e06819b4b511af012f8d": {
@@ -1843,7 +1869,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.26,
+    "SpallReduction": 0.41,
     "TemplateType": "gear"
   },
   "6572e5221b5bc1185508c24f": {
@@ -1855,7 +1881,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.27,
+    "SpallReduction": 0.29,
     "TemplateType": "gear"
   },
   "6572e52f73c0eabb700109a0": {
@@ -1867,7 +1893,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.43,
+    "SpallReduction": 0.35,
     "TemplateType": "gear"
   },
   "6572e53c73c0eabb700109a4": {
@@ -1879,7 +1905,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.4,
+    "SpallReduction": 0.37,
     "TemplateType": "gear"
   },
   "6572e54873c0eabb700109a8": {
@@ -1891,7 +1917,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.38,
+    "SpallReduction": 0.39,
     "TemplateType": "gear"
   },
   "6572eb0e55beba16bc04079f": {
@@ -1903,7 +1929,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.3,
+    "SpallReduction": 0.27,
     "TemplateType": "gear"
   },
   "6572eb1b04ee6483ef039882": {
@@ -1915,7 +1941,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.2,
+    "SpallReduction": 0.41,
     "TemplateType": "gear"
   },
   "6572eb3004ee6483ef039886": {
@@ -1927,7 +1953,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.38,
+    "SpallReduction": 0.32,
     "TemplateType": "gear"
   },
   "6572eb3b04ee6483ef03988a": {
@@ -1939,7 +1965,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.34,
+    "SpallReduction": 0.33,
     "TemplateType": "gear"
   },
   "6572eb865b5eac12f10a03ee": {
@@ -1951,7 +1977,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.38,
+    "SpallReduction": 0.35,
     "TemplateType": "gear"
   },
   "6572f1ca4c8d903cc60c874e": {
@@ -1963,7 +1989,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.44,
+    "SpallReduction": 0.15,
     "TemplateType": "gear"
   },
   "6572f1d60103b4a3270332db": {
@@ -1975,7 +2001,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.39,
+    "SpallReduction": 0.33,
     "TemplateType": "gear"
   },
   "6572f1e10103b4a3270332df": {
@@ -1987,7 +2013,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.29,
+    "SpallReduction": 0.35,
     "TemplateType": "gear"
   },
   "6572f1edea457732140ce875": {
@@ -1999,7 +2025,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.35,
+    "SpallReduction": 0.37,
     "TemplateType": "gear"
   },
   "6572f1f7ea457732140ce879": {
@@ -2011,7 +2037,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.2,
+    "SpallReduction": 0.27,
     "TemplateType": "gear"
   },
   "6572fc809a866b80ab07eb59": {
@@ -2023,7 +2049,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.33,
+    "SpallReduction": 0.43,
     "TemplateType": "gear"
   },
   "6572fc8c9a866b80ab07eb5d": {
@@ -2035,7 +2061,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.41,
+    "SpallReduction": 0.32,
     "TemplateType": "gear"
   },
   "6572fc989a866b80ab07eb61": {
@@ -2047,7 +2073,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.19,
+    "SpallReduction": 0.4,
     "TemplateType": "gear"
   },
   "6572fca39a866b80ab07eb65": {
@@ -2059,7 +2085,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.26,
+    "SpallReduction": 0.23,
     "TemplateType": "gear"
   },
   "65730c0e292ecadbfa09ad49": {
@@ -2071,7 +2097,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.32,
+    "SpallReduction": 0.3,
     "TemplateType": "gear"
   },
   "65730c2213a2f660f60bea96": {
@@ -2083,7 +2109,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.4,
+    "SpallReduction": 0.36,
     "TemplateType": "gear"
   },
   "65730c2b292ecadbfa09ad50": {
@@ -2095,7 +2121,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.42,
+    "SpallReduction": 0.3,
     "TemplateType": "gear"
   },
   "65730c35292ecadbfa09ad54": {
@@ -2107,7 +2133,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.33,
+    "SpallReduction": 0.18,
     "TemplateType": "gear"
   },
   "6573101e292ecadbfa09b389": {
@@ -2119,7 +2145,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.37,
+    "SpallReduction": 0.31,
     "TemplateType": "gear"
   },
   "6573102b292ecadbfa09b38d": {
@@ -2131,7 +2157,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.41,
+    "SpallReduction": 0.33,
     "TemplateType": "gear"
   },
   "65731038292ecadbfa09b391": {
@@ -2143,7 +2169,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.21,
+    "SpallReduction": 0.19,
     "TemplateType": "gear"
   },
   "65731045f31d5be00e08a75a": {
@@ -2155,7 +2181,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.32,
+    "SpallReduction": 0.38,
     "TemplateType": "gear"
   },
   "65731b46cea9255e2102360a": {
@@ -2167,7 +2193,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.21,
+    "SpallReduction": 0.33,
     "TemplateType": "gear"
   },
   "65731b4fcea9255e2102360e": {
@@ -2179,7 +2205,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.37,
+    "SpallReduction": 0.4,
     "TemplateType": "gear"
   },
   "65731b576e709cddd001ec3f": {
@@ -2191,7 +2217,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.28,
+    "SpallReduction": 0.19,
     "TemplateType": "gear"
   },
   "65731b60ff6dc44a7d068c4a": {
@@ -2203,7 +2229,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.23,
+    "SpallReduction": 0.42,
     "TemplateType": "gear"
   },
   "65731b666e709cddd001ec43": {
@@ -2215,7 +2241,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.43,
+    "SpallReduction": 0.24,
     "TemplateType": "gear"
   },
   "65731b6b6042b0f210020ef6": {
@@ -2227,7 +2253,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.14,
+    "SpallReduction": 0.36,
     "TemplateType": "gear"
   },
   "65731b716e709cddd001ec47": {
@@ -2239,7 +2265,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.41,
+    "SpallReduction": 0.35,
     "TemplateType": "gear"
   },
   "657322988c1cc6dcd9098b2d": {
@@ -2251,7 +2277,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.38,
+    "SpallReduction": 0.25,
     "TemplateType": "gear"
   },
   "657322a4cea9255e21023651": {
@@ -2263,7 +2289,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.4,
+    "SpallReduction": 0.17,
     "TemplateType": "gear"
   },
   "657322acd9d89ff7ac0d961b": {
@@ -2275,7 +2301,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.34,
+    "SpallReduction": 0.19,
     "TemplateType": "gear"
   },
   "657322b7d9d89ff7ac0d961f": {
@@ -2287,7 +2313,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.41,
+    "SpallReduction": 0.4,
     "TemplateType": "gear"
   },
   "65732688d9d89ff7ac0d9c4c": {
@@ -2299,7 +2325,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.36,
+    "SpallReduction": 0.33,
     "TemplateType": "gear"
   },
   "657326978c1cc6dcd9098b56": {
@@ -2311,7 +2337,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.28,
+    "SpallReduction": 0.41,
     "TemplateType": "gear"
   },
   "657326a28c1cc6dcd9098b5a": {
@@ -2323,7 +2349,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.26,
+    "SpallReduction": 0.16,
     "TemplateType": "gear"
   },
   "657326b08c1cc6dcd9098b5e": {
@@ -2335,7 +2361,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.41,
+    "SpallReduction": 0.33,
     "TemplateType": "gear"
   },
   "657326bc5d3a3129fb05f36b": {
@@ -2347,7 +2373,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.38,
+    "SpallReduction": 0.25,
     "TemplateType": "gear"
   },
   "65732de75d3a3129fb05f3dd": {
@@ -2359,7 +2385,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.33,
+    "SpallReduction": 0.28,
     "TemplateType": "gear"
   },
   "65732df4d0acf75aea06c87b": {
@@ -2371,7 +2397,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.19,
+    "SpallReduction": 0.32,
     "TemplateType": "gear"
   },
   "65732e05d0acf75aea06c87f": {
@@ -2383,7 +2409,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.26,
+    "SpallReduction": 0.33,
     "TemplateType": "gear"
   },
   "65732e0f6784ca384b0167ad": {
@@ -2395,7 +2421,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.37,
+    "SpallReduction": 0.36,
     "TemplateType": "gear"
   },
   "65732e215d3a3129fb05f3e1": {
@@ -2407,7 +2433,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.22,
+    "SpallReduction": 0.38,
     "TemplateType": "gear"
   },
   "65732e30dd8739f6440ef383": {
@@ -2419,7 +2445,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.38,
+    "SpallReduction": 0.39,
     "TemplateType": "gear"
   },
   "65733312ca0ca984940a2d53": {
@@ -2431,7 +2457,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.34,
+    "SpallReduction": 0.28,
     "TemplateType": "gear"
   },
   "657333232cc8dfad2c0a3d97": {
@@ -2443,7 +2469,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.4,
+    "SpallReduction": 0.28,
     "TemplateType": "gear"
   },
   "657333302cc8dfad2c0a3d9b": {
@@ -2455,7 +2481,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.36,
+    "SpallReduction": 0.28,
     "TemplateType": "gear"
   },
   "6573333eca0ca984940a2d57": {
@@ -2467,7 +2493,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.36,
+    "SpallReduction": 0.21,
     "TemplateType": "gear"
   },
   "6573334aca0ca984940a2d5b": {
@@ -2479,7 +2505,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.32,
+    "SpallReduction": 0.36,
     "TemplateType": "gear"
   },
   "65733375b7a8d286530e3dd7": {
@@ -2491,7 +2517,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.17,
+    "SpallReduction": 0.32,
     "TemplateType": "gear"
   },
   "6573337f2cc8dfad2c0a3da7": {
@@ -2503,7 +2529,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.3,
+    "SpallReduction": 0.29,
     "TemplateType": "gear"
   },
   "6575bc88c6700bd6b40e8a57": {
@@ -2515,7 +2541,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.31,
+    "SpallReduction": 0.2,
     "TemplateType": "gear"
   },
   "6575bca0dc9932aed601c5d7": {
@@ -2527,7 +2553,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.27,
+    "SpallReduction": 0.36,
     "TemplateType": "gear"
   },
   "6575c2adefc786cd9101a5d9": {
@@ -2539,7 +2565,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.3,
+    "SpallReduction": 0.31,
     "TemplateType": "gear"
   },
   "6575c2be52b7f8c76a05ee25": {
@@ -2551,7 +2577,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.34,
+    "SpallReduction": 0.26,
     "TemplateType": "gear"
   },
   "6575c2cd52b7f8c76a05ee29": {
@@ -2563,7 +2589,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.4,
+    "SpallReduction": 0.14,
     "TemplateType": "gear"
   },
   "6575c2d852b7f8c76a05ee2d": {
@@ -2575,7 +2601,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.35,
+    "SpallReduction": 0.13,
     "TemplateType": "gear"
   },
   "6575c2e4efc786cd9101a5dd": {
@@ -2587,7 +2613,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.26,
+    "SpallReduction": 0.33,
     "TemplateType": "gear"
   },
   "6575c2f7efc786cd9101a5e1": {
@@ -2599,7 +2625,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.4,
+    "SpallReduction": 0.33,
     "TemplateType": "gear"
   },
   "6575c30352b7f8c76a05ee31": {
@@ -2611,7 +2637,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.3,
+    "SpallReduction": 0.42,
     "TemplateType": "gear"
   },
   "6575c31b52b7f8c76a05ee35": {
@@ -2623,7 +2649,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.42,
+    "SpallReduction": 0.17,
     "TemplateType": "gear"
   },
   "6575c326c6700bd6b40e8a80": {
@@ -2635,7 +2661,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.25,
+    "SpallReduction": 0.29,
     "TemplateType": "gear"
   },
   "6575c342efc786cd9101a5e5": {
@@ -2647,7 +2673,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.34,
+    "SpallReduction": 0.37,
     "TemplateType": "gear"
   },
   "6575c34bc6700bd6b40e8a84": {
@@ -2659,7 +2685,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.28,
+    "SpallReduction": 0.33,
     "TemplateType": "gear"
   },
   "6575c35bc6700bd6b40e8a88": {
@@ -2671,7 +2697,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.29,
+    "SpallReduction": 0.37,
     "TemplateType": "gear"
   },
   "6575c366c6700bd6b40e8a8c": {
@@ -2695,7 +2721,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.38,
+    "SpallReduction": 0.39,
     "TemplateType": "gear"
   },
   "6575c385dc9932aed601c5f0": {
@@ -2707,7 +2733,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.32,
+    "SpallReduction": 0.43,
     "TemplateType": "gear"
   },
   "6575c390efc786cd9101a5e9": {
@@ -2719,7 +2745,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.36,
+    "SpallReduction": 0.13,
     "TemplateType": "gear"
   },
   "6575c3b3dc9932aed601c5f4": {
@@ -2731,7 +2757,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.42,
+    "SpallReduction": 0.26,
     "TemplateType": "gear"
   },
   "6575c3beefc786cd9101a5ed": {
@@ -2743,7 +2769,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.3,
+    "SpallReduction": 0.34,
     "TemplateType": "gear"
   },
   "6575c3cdc6700bd6b40e8a90": {
@@ -2755,7 +2781,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.32,
+    "SpallReduction": 0.37,
     "TemplateType": "gear"
   },
   "6575c3dfdc9932aed601c5f8": {
@@ -2767,7 +2793,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.19,
+    "SpallReduction": 0.38,
     "TemplateType": "gear"
   },
   "6575c3ec52b7f8c76a05ee39": {
@@ -2779,7 +2805,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.36,
+    "SpallReduction": 0.34,
     "TemplateType": "gear"
   },
   "6575c3fd52b7f8c76a05ee3d": {
@@ -2791,7 +2817,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.43,
+    "SpallReduction": 0.31,
     "TemplateType": "gear"
   },
   "6575c40c52b7f8c76a05ee41": {
@@ -2803,7 +2829,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.43,
+    "SpallReduction": 0.22,
     "TemplateType": "gear"
   },
   "6575ce3716c2762fba0057fd": {
@@ -2815,7 +2841,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.28,
+    "SpallReduction": 0.24,
     "TemplateType": "gear"
   },
   "6575ce45dc9932aed601c616": {
@@ -2827,7 +2853,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.25,
+    "SpallReduction": 0.24,
     "TemplateType": "gear"
   },
   "6575ce5016c2762fba005802": {
@@ -2839,7 +2865,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.44,
+    "SpallReduction": 0.4,
     "TemplateType": "gear"
   },
   "6575ce5befc786cd9101a671": {
@@ -2851,7 +2877,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.34,
+    "SpallReduction": 0.12,
     "TemplateType": "gear"
   },
   "6575ce6f16c2762fba005806": {
@@ -2863,7 +2889,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.35,
+    "SpallReduction": 0.39,
     "TemplateType": "gear"
   },
   "6575ce8bdc9932aed601c61e": {
@@ -2887,7 +2913,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.41,
+    "SpallReduction": 0.36,
     "TemplateType": "gear"
   },
   "6575cea8b15fef3dd405162c": {
@@ -2899,7 +2925,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.38,
+    "SpallReduction": 0.34,
     "TemplateType": "gear"
   },
   "6575d561b15fef3dd4051670": {
@@ -2911,7 +2937,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.34,
+    "SpallReduction": 0.25,
     "TemplateType": "gear"
   },
   "6575d56b16c2762fba005818": {
@@ -2923,7 +2949,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.39,
+    "SpallReduction": 0.29,
     "TemplateType": "gear"
   },
   "6575d57a16c2762fba00581c": {
@@ -2935,7 +2961,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.17,
+    "SpallReduction": 0.32,
     "TemplateType": "gear"
   },
   "6575d589b15fef3dd4051674": {
@@ -2947,7 +2973,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.17,
+    "SpallReduction": 0.33,
     "TemplateType": "gear"
   },
   "6575d598b15fef3dd4051678": {
@@ -2959,7 +2985,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.21,
+    "SpallReduction": 0.35,
     "TemplateType": "gear"
   },
   "6575d5a616c2762fba005820": {
@@ -2971,7 +2997,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.23,
+    "SpallReduction": 0.41,
     "TemplateType": "gear"
   },
   "6575d5b316c2762fba005824": {
@@ -2983,7 +3009,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.34,
+    "SpallReduction": 0.28,
     "TemplateType": "gear"
   },
   "6575d5bd16c2762fba005828": {
@@ -2995,7 +3021,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.4,
+    "SpallReduction": 0.39,
     "TemplateType": "gear"
   },
   "6575d9a79e27f4a85e08112d": {
@@ -3007,7 +3033,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.28,
+    "SpallReduction": 0.4,
     "TemplateType": "gear"
   },
   "6575d9b8945bf78edd04c427": {
@@ -3031,7 +3057,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.27,
+    "SpallReduction": 0.2,
     "TemplateType": "gear"
   },
   "6575d9cf0546f8b1de093df2": {
@@ -3043,7 +3069,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.36,
+    "SpallReduction": 0.24,
     "TemplateType": "gear"
   },
   "6575d9d8945bf78edd04c42b": {
@@ -3055,7 +3081,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.21,
+    "SpallReduction": 0.42,
     "TemplateType": "gear"
   },
   "6575d9e7945bf78edd04c42f": {
@@ -3067,7 +3093,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.27,
+    "SpallReduction": 0.3,
     "TemplateType": "gear"
   },
   "6575d9f816c2762fba00588d": {
@@ -3079,7 +3105,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.43,
+    "SpallReduction": 0.39,
     "TemplateType": "gear"
   },
   "6575da07945bf78edd04c433": {
@@ -3091,7 +3117,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.36,
+    "SpallReduction": 0.29,
     "TemplateType": "gear"
   },
   "6575da159e27f4a85e081131": {
@@ -3103,7 +3129,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.15,
+    "SpallReduction": 0.35,
     "TemplateType": "gear"
   },
   "6575dd3e9e27f4a85e081142": {
@@ -3115,7 +3141,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.33,
+    "SpallReduction": 0.16,
     "TemplateType": "gear"
   },
   "6575dd519e27f4a85e081146": {
@@ -3127,7 +3153,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.38,
+    "SpallReduction": 0.19,
     "TemplateType": "gear"
   },
   "6575dd64945bf78edd04c438": {
@@ -3139,7 +3165,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.33,
+    "SpallReduction": 0.27,
     "TemplateType": "gear"
   },
   "6575dd6e9d3a0ddf660b9047": {
@@ -3151,7 +3177,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.36,
+    "SpallReduction": 0.26,
     "TemplateType": "gear"
   },
   "6575dd769d3a0ddf660b904b": {
@@ -3163,7 +3189,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.28,
+    "SpallReduction": 0.37,
     "TemplateType": "gear"
   },
   "6575dd800546f8b1de093df6": {
@@ -3175,7 +3201,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.38,
+    "SpallReduction": 0.29,
     "TemplateType": "gear"
   },
   "6575dd94945bf78edd04c43c": {
@@ -3187,7 +3213,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.29,
+    "SpallReduction": 0.27,
     "TemplateType": "gear"
   },
   "6575e71760703324250610c3": {
@@ -3199,7 +3225,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.34,
+    "SpallReduction": 0.27,
     "TemplateType": "gear"
   },
   "6575e72660703324250610c7": {
@@ -3211,7 +3237,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.22,
+    "SpallReduction": 0.33,
     "TemplateType": "gear"
   },
   "6575ea3060703324250610da": {
@@ -3223,7 +3249,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.29,
+    "SpallReduction": 0.12,
     "TemplateType": "gear"
   },
   "6575ea4cf6a13a7b7100adc4": {
@@ -3235,7 +3261,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.3,
+    "SpallReduction": 0.37,
     "TemplateType": "gear"
   },
   "6575ea5cf6a13a7b7100adc8": {
@@ -3247,7 +3273,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.27,
+    "SpallReduction": 0.42,
     "TemplateType": "gear"
   },
   "6575ea6760703324250610de": {
@@ -3259,7 +3285,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.33,
+    "SpallReduction": 0.38,
     "TemplateType": "gear"
   },
   "6575ea719c7cad336508e418": {
@@ -3271,7 +3297,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.42,
+    "SpallReduction": 0.28,
     "TemplateType": "gear"
   },
   "6575ea7c60703324250610e2": {
@@ -3283,7 +3309,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.38,
+    "SpallReduction": 0.42,
     "TemplateType": "gear"
   },
   "6575ef599c7cad336508e453": {
@@ -3295,7 +3321,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.4,
+    "SpallReduction": 0.41,
     "TemplateType": "gear"
   },
   "6575ef6bf6a13a7b7100b093": {
@@ -3307,7 +3333,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.36,
+    "SpallReduction": 0.38,
     "TemplateType": "gear"
   },
   "6575ef78da698a4e980677eb": {
@@ -3319,7 +3345,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.42,
+    "SpallReduction": 0.43,
     "TemplateType": "gear"
   },
   "6575ef7f9c7cad336508e457": {
@@ -3331,7 +3357,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.23,
+    "SpallReduction": 0.44,
     "TemplateType": "gear"
   },
   "6575f24ff6a13a7b7100b09e": {
@@ -3343,7 +3369,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.26,
+    "SpallReduction": 0.15,
     "TemplateType": "gear"
   },
   "6575f25ada698a4e98067836": {
@@ -3355,7 +3381,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.23,
+    "SpallReduction": 0.28,
     "TemplateType": "gear"
   },
   "6575f2649cfdfe416f0399b8": {
@@ -3367,7 +3393,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.21,
+    "SpallReduction": 0.42,
     "TemplateType": "gear"
   },
   "6575f26d9c7cad336508e480": {
@@ -3379,7 +3405,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.3,
+    "SpallReduction": 0.17,
     "TemplateType": "gear"
   },
   "6575f5cbf6a13a7b7100b0bf": {
@@ -3391,7 +3417,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.33,
+    "SpallReduction": 0.37,
     "TemplateType": "gear"
   },
   "6575f5e1da698a4e98067869": {
@@ -3403,7 +3429,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.37,
+    "SpallReduction": 0.24,
     "TemplateType": "gear"
   },
   "65764275d8537eb26a0355e9": {
@@ -3415,7 +3441,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.36,
+    "SpallReduction": 0.34,
     "TemplateType": "gear"
   },
   "657642b0e6d5dd75f40688a5": {
@@ -3427,7 +3453,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.28,
+    "SpallReduction": 0.36,
     "TemplateType": "gear"
   },
   "6576434820cc24d17102b148": {
@@ -3439,7 +3465,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.16,
+    "SpallReduction": 0.32,
     "TemplateType": "gear"
   },
   "657643732bc38ef78e076477": {
@@ -3451,7 +3477,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.41,
+    "SpallReduction": 0.31,
     "TemplateType": "gear"
   },
   "657643a220cc24d17102b14c": {
@@ -3463,7 +3489,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.2,
+    "SpallReduction": 0.37,
     "TemplateType": "gear"
   },
   "65764a4cd8537eb26a0355ee": {
@@ -3475,7 +3501,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": true,
-    "SpallReduction": 0.35,
+    "SpallReduction": 0.34,
     "TemplateType": "gear"
   },
   "65764bc22bc38ef78e076485": {
@@ -3487,7 +3513,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": true,
-    "SpallReduction": 0.36,
+    "SpallReduction": 0.22,
     "TemplateType": "gear"
   },
   "65764c39526e320fbe035777": {
@@ -3499,7 +3525,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.19,
+    "SpallReduction": 0.24,
     "TemplateType": "gear"
   },
   "65764c6b526e320fbe03577b": {
@@ -3511,7 +3537,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.37,
+    "SpallReduction": 0.32,
     "TemplateType": "gear"
   },
   "65764e1e2bc38ef78e076489": {
@@ -3523,7 +3549,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": true,
-    "SpallReduction": 0.31,
+    "SpallReduction": 0.17,
     "TemplateType": "gear"
   },
   "65764fae2bc38ef78e07648d": {
@@ -3547,7 +3573,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.22,
+    "SpallReduction": 0.35,
     "TemplateType": "gear"
   },
   "6576504b526e320fbe035783": {
@@ -3559,7 +3585,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.34,
+    "SpallReduction": 0.37,
     "TemplateType": "gear"
   },
   "657b22485f444d6dff0c6c2f": {
@@ -3570,7 +3596,7 @@
     "LoyaltyLevel": 4,
     "ReloadSpeedMulti": 1,
     "CanSpall": true,
-    "SpallReduction": 0.65,
+    "SpallReduction": 0.53,
     "ArmorClass": "GOST 5A",
     "TemplateType": "gear",
     "Price": 30000
@@ -3583,7 +3609,7 @@
     "LoyaltyLevel": 3,
     "ReloadSpeedMulti": 1,
     "CanSpall": true,
-    "SpallReduction": 0.36,
+    "SpallReduction": 0.78,
     "ArmorClass": "GOST 5",
     "TemplateType": "gear",
     "Price": 22000
@@ -3596,7 +3622,7 @@
     "LoyaltyLevel": 4,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.47,
+    "SpallReduction": 0.35,
     "ArmorClass": "GOST 6A",
     "TemplateType": "gear",
     "Price": 35000
@@ -3610,7 +3636,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.62,
+    "SpallReduction": 0.69,
     "TemplateType": "gear"
   },
   "657ba145e57570b7f80a17ff": {
@@ -3622,7 +3648,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.93,
+    "SpallReduction": 0.86,
     "TemplateType": "gear"
   },
   "657ba18923918923cb0df568": {
@@ -3634,7 +3660,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.92,
+    "SpallReduction": 0.94,
     "TemplateType": "gear"
   },
   "657ba2eef58ba5a625010798": {
@@ -3646,7 +3672,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.9,
+    "SpallReduction": 0.68,
     "TemplateType": "gear"
   },
   "657ba34b9ba22f103e08139b": {
@@ -3658,7 +3684,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.94,
+    "SpallReduction": 0.95,
     "TemplateType": "gear"
   },
   "657ba50c23918923cb0df56c": {
@@ -3670,7 +3696,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.71,
+    "SpallReduction": 0.91,
     "TemplateType": "gear"
   },
   "657ba5439ba22f103e08139f": {
@@ -3682,7 +3708,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.69,
+    "SpallReduction": 0.97,
     "TemplateType": "gear"
   },
   "657ba57af58ba5a62501079e": {
@@ -3694,7 +3720,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.89,
+    "SpallReduction": 0.97,
     "TemplateType": "gear"
   },
   "657ba6c3c6f689d3a205b857": {
@@ -3706,7 +3732,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.74,
+    "SpallReduction": 0.92,
     "TemplateType": "gear"
   },
   "657ba737b7e9ca9a02045bf6": {
@@ -3718,7 +3744,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.79,
+    "SpallReduction": 0.88,
     "TemplateType": "gear"
   },
   "657ba75e23918923cb0df573": {
@@ -3730,7 +3756,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.96,
+    "SpallReduction": 0.72,
     "TemplateType": "gear"
   },
   "657ba85ecfcf63c951052da7": {
@@ -3742,7 +3768,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.63,
+    "SpallReduction": 0.98,
     "TemplateType": "gear"
   },
   "657ba8bccfcf63c951052dab": {
@@ -3754,7 +3780,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.7,
+    "SpallReduction": 0.98,
     "TemplateType": "gear"
   },
   "657ba8eab7e9ca9a02045bfd": {
@@ -3766,7 +3792,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.77,
+    "SpallReduction": 0.69,
     "TemplateType": "gear"
   },
   "657baaf0b7e9ca9a02045c02": {
@@ -3778,7 +3804,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.84,
+    "SpallReduction": 0.78,
     "TemplateType": "gear"
   },
   "657bab6ec6f689d3a205b85f": {
@@ -3790,7 +3816,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.75,
+    "SpallReduction": 0.91,
     "TemplateType": "gear"
   },
   "657babc6f58ba5a6250107a2": {
@@ -3802,7 +3828,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.74,
+    "SpallReduction": 0.86,
     "TemplateType": "gear"
   },
   "657bae18b7e9ca9a02045c0a": {
@@ -3814,7 +3840,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.63,
+    "SpallReduction": 0.81,
     "TemplateType": "gear"
   },
   "657baeaacfcf63c951052db3": {
@@ -3826,7 +3852,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.8,
+    "SpallReduction": 0.79,
     "TemplateType": "gear"
   },
   "657baecbc6f689d3a205b863": {
@@ -3838,7 +3864,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.94,
+    "SpallReduction": 0.66,
     "TemplateType": "gear"
   },
   "657bb70486c7f9ef7a009936": {
@@ -3850,7 +3876,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.93,
+    "SpallReduction": 0.86,
     "TemplateType": "gear"
   },
   "657bb79ba1c61ee0c303631a": {
@@ -3862,7 +3888,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.91,
+    "SpallReduction": 0.72,
     "TemplateType": "gear"
   },
   "657bb7d7b30eca9763051176": {
@@ -3874,7 +3900,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.85,
+    "SpallReduction": 0.88,
     "TemplateType": "gear"
   },
   "657bb92fa1c61ee0c303631f": {
@@ -3886,7 +3912,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.96,
+    "SpallReduction": 0.72,
     "TemplateType": "gear"
   },
   "657bb99db30eca976305117f": {
@@ -3898,7 +3924,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.81,
+    "SpallReduction": 0.69,
     "TemplateType": "gear"
   },
   "657bbad7a1c61ee0c3036323": {
@@ -3910,7 +3936,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.85,
+    "SpallReduction": 0.89,
     "TemplateType": "gear"
   },
   "657bbb31b30eca9763051183": {
@@ -3922,7 +3948,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.71,
+    "SpallReduction": 0.68,
     "TemplateType": "gear"
   },
   "657bbcc9a1c61ee0c3036327": {
@@ -3934,7 +3960,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.73,
+    "SpallReduction": 0.67,
     "TemplateType": "gear"
   },
   "657bbcffbbd440df880b2dd5": {
@@ -3946,7 +3972,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.95,
+    "SpallReduction": 0.92,
     "TemplateType": "gear"
   },
   "657bbe73a1c61ee0c303632b": {
@@ -3958,7 +3984,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.93,
+    "SpallReduction": 0.82,
     "TemplateType": "gear"
   },
   "657bbed0aab96fccee08be96": {
@@ -3970,7 +3996,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.78,
+    "SpallReduction": 0.68,
     "TemplateType": "gear"
   },
   "657bbefeb30eca9763051189": {
@@ -3982,7 +4008,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.85,
+    "SpallReduction": 0.82,
     "TemplateType": "gear"
   },
   "657bc06daab96fccee08be9b": {
@@ -3994,7 +4020,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.72,
+    "SpallReduction": 0.92,
     "TemplateType": "gear"
   },
   "657bc0d8a1c61ee0c303632f": {
@@ -4006,7 +4032,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.93,
+    "SpallReduction": 0.95,
     "TemplateType": "gear"
   },
   "657bc107aab96fccee08be9f": {
@@ -4018,7 +4044,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.82,
+    "SpallReduction": 0.8,
     "TemplateType": "gear"
   },
   "657bc285aab96fccee08bea3": {
@@ -4030,7 +4056,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.83,
+    "SpallReduction": 0.88,
     "TemplateType": "gear"
   },
   "657bc2c5a1c61ee0c3036333": {
@@ -4042,7 +4068,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.98,
+    "SpallReduction": 0.86,
     "TemplateType": "gear"
   },
   "657bc2e7b30eca976305118d": {
@@ -4054,7 +4080,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.87,
+    "SpallReduction": 0.99,
     "TemplateType": "gear"
   },
   "657f8a8d7db258e5600fe33d": {
@@ -4066,7 +4092,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.81,
+    "SpallReduction": 0.6,
     "TemplateType": "gear"
   },
   "657f8b05f4c82973640b2348": {
@@ -4078,7 +4104,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.9,
+    "SpallReduction": 0.88,
     "TemplateType": "gear"
   },
   "657f8b43f92cd718b70154fb": {
@@ -4090,7 +4116,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.79,
+    "SpallReduction": 0.73,
     "TemplateType": "gear"
   },
   "657f8b94f92cd718b70154ff": {
@@ -4102,7 +4128,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.63,
+    "SpallReduction": 0.93,
     "TemplateType": "gear"
   },
   "657f8ec5f4c82973640b234c": {
@@ -4114,7 +4140,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.66,
+    "SpallReduction": 0.79,
     "TemplateType": "gear"
   },
   "657f8f10f4c82973640b2350": {
@@ -4126,7 +4152,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.82,
+    "SpallReduction": 0.64,
     "TemplateType": "gear"
   },
   "657f925dada5fadd1f07a57a": {
@@ -4138,7 +4164,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.67,
+    "SpallReduction": 0.73,
     "TemplateType": "gear"
   },
   "657f92acada5fadd1f07a57e": {
@@ -4150,7 +4176,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.98,
+    "SpallReduction": 0.89,
     "TemplateType": "gear"
   },
   "657f92e7f4c82973640b2354": {
@@ -4162,7 +4188,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.97,
+    "SpallReduction": 0.75,
     "TemplateType": "gear"
   },
   "657f95bff92cd718b701550c": {
@@ -4174,7 +4200,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.98,
+    "SpallReduction": 0.86,
     "TemplateType": "gear"
   },
   "657f9605f4c82973640b2358": {
@@ -4186,7 +4212,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.88,
+    "SpallReduction": 0.93,
     "TemplateType": "gear"
   },
   "657f9897f4c82973640b235e": {
@@ -4198,7 +4224,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.95,
+    "SpallReduction": 0.84,
     "TemplateType": "gear"
   },
   "657f98fbada5fadd1f07a585": {
@@ -4210,7 +4236,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.92,
+    "SpallReduction": 0.82,
     "TemplateType": "gear"
   },
   "657f9a55c6679fefb3051e19": {
@@ -4222,7 +4248,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.83,
+    "SpallReduction": 0.8,
     "TemplateType": "gear"
   },
   "657f9a94ada5fadd1f07a589": {
@@ -4234,7 +4260,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.89,
+    "SpallReduction": 0.75,
     "TemplateType": "gear"
   },
   "657f9c78ada5fadd1f07a58d": {
@@ -4246,7 +4272,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.82,
+    "SpallReduction": 0.91,
     "TemplateType": "gear"
   },
   "657f9cb587e11c61f70bfaca": {
@@ -4258,7 +4284,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.97,
+    "SpallReduction": 0.78,
     "TemplateType": "gear"
   },
   "657f9eb7e9433140ad0baf86": {
@@ -4270,7 +4296,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.65,
+    "SpallReduction": 0.98,
     "TemplateType": "gear"
   },
   "657f9ef6c6679fefb3051e1f": {
@@ -4282,7 +4308,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.61,
+    "SpallReduction": 0.85,
     "TemplateType": "gear"
   },
   "657fa009d4caf976440afe3a": {
@@ -4294,7 +4320,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.86,
+    "SpallReduction": 0.92,
     "TemplateType": "gear"
   },
   "657fa04ac6679fefb3051e24": {
@@ -4306,7 +4332,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.81,
+    "SpallReduction": 0.94,
     "TemplateType": "gear"
   },
   "657fa07387e11c61f70bface": {
@@ -4318,7 +4344,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.91,
+    "SpallReduction": 0.9,
     "TemplateType": "gear"
   },
   "657fa0fcd4caf976440afe3e": {
@@ -4330,7 +4356,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.71,
+    "SpallReduction": 0.76,
     "TemplateType": "gear"
   },
   "657fa168e9433140ad0baf8e": {
@@ -4342,7 +4368,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.82,
+    "SpallReduction": 0.75,
     "TemplateType": "gear"
   },
   "657fa186d4caf976440afe42": {
@@ -4354,7 +4380,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.85,
+    "SpallReduction": 0.93,
     "TemplateType": "gear"
   },
   "658188edf026a90c1708c827": {
@@ -4366,7 +4392,7 @@
     "Price": 0,
     "ReloadSpeedMulti": 1,
     "CanSpall": false,
-    "SpallReduction": 0.95,
+    "SpallReduction": 0.81,
     "TemplateType": "gear"
   },
   "65818e4e566d2de69901b1b1": {
@@ -4379,33 +4405,7 @@
     "ReloadSpeedMulti": 1,
     "Comfort": 1,
     "CanSpall": false,
-    "SpallReduction": 0.9,
+    "SpallReduction": 0.95,
     "TemplateType": "gear"
-  },
-  "6783ae9ee00fdb2053bf6848": {
-    "$type": "RealismMod.Gear, RealismMod",
-    "ItemID": "6783ae9ee00fdb2053bf6848",
-    "Name": "xsapi_chest",
-    "AllowADS": true,
-    "LoyaltyLevel": 4,
-    "ReloadSpeedMulti": 1,
-    "CanSpall": false,
-    "SpallReduction": 0.72,
-    "ArmorClass": "XSAPI",
-    "TemplateType": "gear",
-    "Price": 50000
-  },
-  "6783aec223d48324c0b278f5": {
-    "$type": "RealismMod.Gear, RealismMod",
-    "ItemID": "6783aec223d48324c0b278f5",
-    "Name": "mk4a_plate",
-    "AllowADS": true,
-    "LoyaltyLevel": 4,
-    "ReloadSpeedMulti": 1,
-    "CanSpall": false,
-    "SpallReduction": 0.49,
-    "ArmorClass": "Mk4A",
-    "TemplateType": "gear",
-    "Price": 38000
   }
 }

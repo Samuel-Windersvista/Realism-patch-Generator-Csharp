@@ -41,12 +41,24 @@ catch (Exception ex)
 static int RunGenerate(string repositoryRoot, string[] args)
 {
 	var outputDirectory = GetOptionValue(args, "--output-dir");
+	if (!TryGetUIntOption(args, "--seed", out var seedValue, out var seedProvided))
+	{
+		Console.Error.WriteLine("参数错误: --seed 必须是 0 到 4294967295 之间的无符号整数。");
+		return 1;
+	}
+
 	Console.WriteLine("============================================================");
 	Console.WriteLine("EFT 现实主义数值生成器 C# 版");
 	Console.WriteLine("============================================================");
 	Console.WriteLine($"数据目录: {repositoryRoot}");
+	if (seedProvided)
+	{
+		Console.WriteLine($"指定随机种子: {seedValue}");
+	}
 
-	var generator = new PatchGenerator(repositoryRoot);
+	var generator = seedProvided
+		? new PatchGenerator(repositoryRoot, seedValue)
+		: new PatchGenerator(repositoryRoot);
 	var result = generator.Generate(outputDirectory);
 
 	foreach (var log in result.Logs)
@@ -133,6 +145,19 @@ static int TryGetIntOption(IReadOnlyList<string> args, string optionName, int fa
 {
 	var rawValue = GetOptionValue(args, optionName);
 	return int.TryParse(rawValue, out var parsed) ? parsed : fallback;
+}
+
+static bool TryGetUIntOption(IReadOnlyList<string> args, string optionName, out uint value, out bool provided)
+{
+	var rawValue = GetOptionValue(args, optionName);
+	provided = !string.IsNullOrWhiteSpace(rawValue);
+	if (!provided)
+	{
+		value = default;
+		return true;
+	}
+
+	return uint.TryParse(rawValue, out value);
 }
 
 static string ResolvePath(string repositoryRoot, string path)

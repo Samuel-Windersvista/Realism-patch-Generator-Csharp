@@ -8,13 +8,13 @@
     "WeapAccuracy": 0,
     "BaseTorque": 1,
     "HasShoulderContact": false,
-    "Ergonomics": 93,
-    "VerticalRecoil": 82,
-    "HorizontalRecoil": 161,
-    "Dispersion": 7,
-    "CameraRecoil": 0.04,
-    "VisualMulti": 1.36,
-    "Convergence": 19,
+    "Ergonomics": 88,
+    "VerticalRecoil": 85,
+    "HorizontalRecoil": 147,
+    "Dispersion": 5,
+    "CameraRecoil": 0.03,
+    "VisualMulti": 1.44,
+    "Convergence": 16,
     "RecoilAngle": 90,
     "BaseMalfunctionChance": 0.001,
     "HeatFactorGun": 0.27,
@@ -44,6 +44,6 @@
     "BaseChamberCheckSpeed": 1.5,
     "BaseFixSpeed": 1.2,
     "OffsetRotation": 0.008,
-    "RecoilIntensity": 0.22
+    "RecoilIntensity": 0.19
   }
 }

@@ -6,10 +6,14 @@ partial class Form1
     private Label titleLabel;
     private Label pathLabel;
     private Label outputPathLabel;
+    private Label seedLabel;
     private Label outputHintLabel;
     private TextBox basePathTextBox;
     private TextBox outputPathTextBox;
+    private TextBox seedTextBox;
     private Button browseButton;
+    private Button clearSeedButton;
+    private Button useLastSeedButton;
     private Button saveAllButton;
     private Button reloadButton;
     private Button exceptionsButton;
@@ -82,10 +86,14 @@ partial class Form1
         titleLabel = new Label();
         pathLabel = new Label();
         outputPathLabel = new Label();
+        seedLabel = new Label();
         outputHintLabel = new Label();
         basePathTextBox = new TextBox();
         outputPathTextBox = new TextBox();
+        seedTextBox = new TextBox();
         browseButton = new Button();
+        clearSeedButton = new Button();
+        useLastSeedButton = new Button();
         saveAllButton = new Button();
         reloadButton = new Button();
         exceptionsButton = new Button();
@@ -155,7 +163,7 @@ partial class Form1
         MinimumSize = new Size(1200, 760);
         Name = "Form1";
         StartPosition = FormStartPosition.CenterScreen;
-        Text = "SPT现实主义数值范围编辑生成器 v1.0";
+        Text = "SPT现实主义数值范围编辑生成器 v1.2";
 
         headerPanel.Controls.Add(titleLabel);
         headerPanel.Dock = DockStyle.Top;
@@ -167,7 +175,7 @@ partial class Form1
         titleLabel.Location = new Point(16, 12);
         titleLabel.Name = "titleLabel";
         titleLabel.Size = new Size(520, 28);
-        titleLabel.Text = "SPT现实主义数值范围编辑生成器 v1.0";
+        titleLabel.Text = "SPT现实主义数值范围编辑生成器 v1.2";
 
         toolbarPanel.Controls.Add(toolbarTable);
         toolbarPanel.Dock = DockStyle.Top;
@@ -206,13 +214,21 @@ partial class Form1
         dataRootTable.Size = new Size(1348, 26);
         dataRootTable.TabIndex = 0;
 
-        outputTable.ColumnCount = 3;
+        outputTable.ColumnCount = 7;
         outputTable.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 80F));
         outputTable.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
         outputTable.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 110F));
+        outputTable.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 72F));
+        outputTable.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 132F));
+        outputTable.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 68F));
+        outputTable.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 98F));
         outputTable.Controls.Add(outputPathLabel, 0, 0);
         outputTable.Controls.Add(outputPathTextBox, 1, 0);
         outputTable.Controls.Add(browseButton, 2, 0);
+        outputTable.Controls.Add(seedLabel, 3, 0);
+        outputTable.Controls.Add(seedTextBox, 4, 0);
+        outputTable.Controls.Add(clearSeedButton, 5, 0);
+        outputTable.Controls.Add(useLastSeedButton, 6, 0);
         outputTable.Dock = DockStyle.Fill;
         outputTable.Location = new Point(0, 26);
         outputTable.Margin = new Padding(0);
@@ -349,8 +365,44 @@ partial class Form1
         outputPathTextBox.Location = new Point(83, 2);
         outputPathTextBox.Margin = new Padding(0, 2, 8, 2);
         outputPathTextBox.Name = "outputPathTextBox";
-        outputPathTextBox.Size = new Size(1157, 23);
+        outputPathTextBox.Size = new Size(783, 23);
         outputPathTextBox.TabIndex = 1;
+
+        seedLabel.Anchor = AnchorStyles.Left;
+        seedLabel.AutoSize = true;
+        seedLabel.Location = new Point(1030, 5);
+        seedLabel.Margin = new Padding(0, 0, 6, 0);
+        seedLabel.Name = "seedLabel";
+        seedLabel.Size = new Size(40, 17);
+        seedLabel.Text = "Seed:";
+
+        seedTextBox.Dock = DockStyle.Fill;
+        seedTextBox.Location = new Point(1102, 2);
+        seedTextBox.Margin = new Padding(0, 2, 0, 2);
+        seedTextBox.Name = "seedTextBox";
+        seedTextBox.PlaceholderText = "留空=每次随机";
+        seedTextBox.Size = new Size(132, 23);
+        seedTextBox.TabIndex = 3;
+
+        clearSeedButton.Anchor = AnchorStyles.Right;
+        clearSeedButton.Location = new Point(1237, 1);
+        clearSeedButton.Margin = new Padding(0, 1, 0, 1);
+        clearSeedButton.Name = "clearSeedButton";
+        clearSeedButton.Size = new Size(64, 25);
+        clearSeedButton.TabIndex = 4;
+        clearSeedButton.Text = "清空";
+        clearSeedButton.UseVisualStyleBackColor = true;
+        clearSeedButton.Click += clearSeedButton_Click;
+
+        useLastSeedButton.Anchor = AnchorStyles.Right;
+        useLastSeedButton.Location = new Point(1250, 1);
+        useLastSeedButton.Margin = new Padding(0, 1, 0, 1);
+        useLastSeedButton.Name = "useLastSeedButton";
+        useLastSeedButton.Size = new Size(98, 25);
+        useLastSeedButton.TabIndex = 5;
+        useLastSeedButton.Text = "填回上次";
+        useLastSeedButton.UseVisualStyleBackColor = true;
+        useLastSeedButton.Click += useLastSeedButton_Click;
 
         outputHintLabel.AutoSize = true;
         outputHintLabel.Dock = DockStyle.Fill;
@@ -359,7 +411,7 @@ partial class Form1
         outputHintLabel.Location = new Point(3, 52);
         outputHintLabel.Margin = new Padding(80, -1, 0, 0);
         outputHintLabel.Name = "outputHintLabel";
-        outputHintLabel.Size = new Size(1268, 14);
+        outputHintLabel.Size = new Size(1265, 14);
         outputHintLabel.TextAlign = ContentAlignment.MiddleLeft;
         outputHintLabel.Text = "建议定位到你的现实主义模版路径即-user\\mods\\SPT-Realism\\db\\templates";
 

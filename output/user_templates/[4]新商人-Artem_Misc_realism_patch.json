@@ -41,20 +41,6 @@
     "ItemID": "66326bfd46817c660d015150",
     "Name": "零食包-Z"
   },
-  "66326bfd46817c660d015154": {
-    "$type": "RealismMod.WeaponMod, RealismMod",
-    "ModType": "",
-    "Ergonomics": 0,
-    "Weight": 0.15,
-    "ConflictingItems": [],
-    "LoyaltyLevel": 1,
-    "VerticalRecoil": 0,
-    "HorizontalRecoil": 0,
-    "AimSpeed": 0,
-    "Accuracy": 0,
-    "ItemID": "66326bfd46817c660d015154",
-    "Name": "Groovey 的闪存盘"
-  },
   "6673b1ac5cae0610f1079d76": {
     "$type": "RealismMod.WeaponMod, RealismMod",
     "ModType": "",
@@ -68,5 +54,19 @@
     "Accuracy": 0,
     "ItemID": "6673b1ac5cae0610f1079d76",
     "Name": "丹尼斯的项圈"
+  },
+  "66326bfd46817c660d015154": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ModType": "",
+    "Ergonomics": 0,
+    "Weight": 0.15,
+    "ConflictingItems": [],
+    "LoyaltyLevel": 1,
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "AimSpeed": 0,
+    "Accuracy": 0,
+    "ItemID": "66326bfd46817c660d015154",
+    "Name": "Groovey 的闪存盘"
   }
 }

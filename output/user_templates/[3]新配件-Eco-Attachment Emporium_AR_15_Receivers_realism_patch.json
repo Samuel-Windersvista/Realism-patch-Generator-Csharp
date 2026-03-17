@@ -4,13 +4,13 @@
     "ItemID": "68b9ea8178d7ac07030cc218",
     "Name": "AR-15 BCM MK2 5.56x45 upper receiver (Pax Armata)",
     "ModType": "",
-    "ModMalfunctionChance": 0,
-    "Accuracy": 1,
-    "HeatFactor": 0.96,
-    "CoolFactor": 1.03,
+    "ModMalfunctionChance": 1,
+    "Accuracy": 0,
+    "HeatFactor": 0.98,
+    "CoolFactor": 0.96,
     "DurabilityBurnModificator": 0.966,
     "ConflictingItems": [],
-    "Ergonomics": 6,
+    "Ergonomics": 3,
     "Weight": 0.44,
     "VerticalRecoil": 0,
     "HorizontalRecoil": 0,
@@ -18,6 +18,6 @@
     "LoyaltyLevel": 1,
     "AutoROF": 1,
     "SemiROF": 1,
-    "Convergence": 9
+    "Convergence": 7
   }
 }

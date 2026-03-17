@@ -9,7 +9,7 @@
     "CanSpall": false,
     "SpallReduction": 1,
     "ReloadSpeedMulti": 1,
-    "Comfort": 0.84,
+    "Comfort": 0.92,
     "TemplateType": "gear",
     "Price": 34000
   },
@@ -23,7 +23,7 @@
     "CanSpall": false,
     "SpallReduction": 1,
     "ReloadSpeedMulti": 1,
-    "Comfort": 0.9,
+    "Comfort": 0.87,
     "TemplateType": "gear",
     "Price": 34000
   },
@@ -37,7 +37,7 @@
     "CanSpall": false,
     "SpallReduction": 1,
     "ReloadSpeedMulti": 1,
-    "Comfort": 0.85,
+    "Comfort": 0.91,
     "TemplateType": "gear",
     "Price": 34000
   },
@@ -51,7 +51,7 @@
     "CanSpall": false,
     "SpallReduction": 1,
     "ReloadSpeedMulti": 1,
-    "Comfort": 0.92,
+    "Comfort": 0.91,
     "TemplateType": "gear",
     "Price": 34000
   },
@@ -65,7 +65,7 @@
     "CanSpall": false,
     "SpallReduction": 1,
     "ReloadSpeedMulti": 1,
-    "Comfort": 0.89,
+    "Comfort": 0.91,
     "TemplateType": "gear",
     "Price": 34000
   },
@@ -79,7 +79,7 @@
     "CanSpall": false,
     "SpallReduction": 1,
     "ReloadSpeedMulti": 1,
-    "Comfort": 0.95,
+    "Comfort": 0.94,
     "TemplateType": "gear",
     "Price": 34000
   },
@@ -93,7 +93,7 @@
     "CanSpall": false,
     "SpallReduction": 1,
     "ReloadSpeedMulti": 1,
-    "Comfort": 0.94,
+    "Comfort": 0.85,
     "TemplateType": "gear",
     "Price": 34000
   },
@@ -107,7 +107,7 @@
     "CanSpall": false,
     "SpallReduction": 1,
     "ReloadSpeedMulti": 1,
-    "Comfort": 0.9,
+    "Comfort": 0.93,
     "TemplateType": "gear",
     "Price": 34000
   },
@@ -121,9 +121,287 @@
     "CanSpall": false,
     "SpallReduction": 1,
     "ReloadSpeedMulti": 1,
-    "Comfort": 0.91,
+    "Comfort": 1.01,
     "TemplateType": "gear",
     "Price": 34000
+  },
+  "6673b1ac5cae0610f1079d7e": {
+    "$type": "RealismMod.Gear, RealismMod",
+    "ItemID": "6673b1ac5cae0610f1079d7e",
+    "Name": "战术防撞头盔（高山迷彩）",
+    "AllowADS": true,
+    "LoyaltyLevel": 4,
+    "ArmorClass": "NIJ IIIA",
+    "CanSpall": false,
+    "SpallReduction": 1,
+    "ReloadSpeedMulti": 1,
+    "Comfort": 0.96,
+    "TemplateType": "gear",
+    "Price": 34000
+  },
+  "669819683571cb050b0b6393": {
+    "$type": "RealismMod.Gear, RealismMod",
+    "ItemID": "669819683571cb050b0b6393",
+    "Name": "ACH 高切战术头盔（高山迷彩）",
+    "AllowADS": true,
+    "LoyaltyLevel": 4,
+    "ArmorClass": "NIJ IIIA",
+    "CanSpall": false,
+    "SpallReduction": 1,
+    "ReloadSpeedMulti": 1,
+    "Comfort": 0.88,
+    "TemplateType": "gear",
+    "Price": 34000
+  },
+  "669819683571cb050b0b6394": {
+    "$type": "RealismMod.Gear, RealismMod",
+    "ItemID": "669819683571cb050b0b6394",
+    "Name": "ACH 高切战术头盔（黑色）",
+    "AllowADS": true,
+    "LoyaltyLevel": 4,
+    "ArmorClass": "NIJ IIIA",
+    "CanSpall": false,
+    "SpallReduction": 1,
+    "ReloadSpeedMulti": 1,
+    "Comfort": 0.93,
+    "TemplateType": "gear",
+    "Price": 34000
+  },
+  "66bf757f27d0b097db0ace44": {
+    "$type": "RealismMod.Gear, RealismMod",
+    "ItemID": "66bf757f27d0b097db0ace44",
+    "Name": "Ops-Core SF 高切头盔（多地形迷彩）",
+    "AllowADS": true,
+    "LoyaltyLevel": 4,
+    "ArmorClass": "NIJ IIIA",
+    "CanSpall": false,
+    "SpallReduction": 1,
+    "ReloadSpeedMulti": 1,
+    "Comfort": 1.03,
+    "TemplateType": "gear",
+    "Price": 34000
+  },
+  "66bf757f27d0b097db0ace58": {
+    "$type": "RealismMod.Gear, RealismMod",
+    "ItemID": "66bf757f27d0b097db0ace58",
+    "Name": "Ops-Core SF 高切头盔（橄榄绿）",
+    "AllowADS": true,
+    "LoyaltyLevel": 4,
+    "ArmorClass": "NIJ IIIA",
+    "CanSpall": false,
+    "SpallReduction": 1,
+    "ReloadSpeedMulti": 1,
+    "Comfort": 0.86,
+    "TemplateType": "gear",
+    "Price": 34000
+  },
+  "66bf757f27d0b097db0ace61": {
+    "$type": "RealismMod.Gear, RealismMod",
+    "ItemID": "66bf757f27d0b097db0ace61",
+    "Name": "Ops-Core SF 高切头盔（黑色）",
+    "AllowADS": true,
+    "LoyaltyLevel": 4,
+    "ArmorClass": "NIJ IIIA",
+    "CanSpall": false,
+    "SpallReduction": 1,
+    "ReloadSpeedMulti": 1,
+    "Comfort": 0.93,
+    "TemplateType": "gear",
+    "Price": 34000
+  },
+  "676a1476242dea0ba69ebbd8": {
+    "$type": "RealismMod.Gear, RealismMod",
+    "ItemID": "676a1476242dea0ba69ebbd8",
+    "Name": "Ops-Core SF 战士头盔（黑色）",
+    "AllowADS": true,
+    "LoyaltyLevel": 4,
+    "ArmorClass": "NIJ IIIA",
+    "CanSpall": false,
+    "SpallReduction": 1,
+    "ReloadSpeedMulti": 1,
+    "Comfort": 0.86,
+    "TemplateType": "gear",
+    "Price": 34000
+  },
+  "66bf757f27d0b097db0ace46": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "66bf757f27d0b097db0ace46",
+    "Name": "MOHOC® IR Camera",
+    "ModType": "",
+    "Ergonomics": 0,
+    "Accuracy": 0,
+    "ConflictingItems": [
+      "5a16b7e1fcdbcb00165aa6c9"
+    ],
+    "Weight": 0.02,
+    "LoyaltyLevel": 1,
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "Dispersion": 0,
+    "AimStability": 0,
+    "Handling": 0
+  },
+  "66bf757f27d0b097db0ace45": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "66bf757f27d0b097db0ace45",
+    "Name": "Core Survival HEL-STAR 6® 第三代",
+    "ModType": "",
+    "Ergonomics": 0,
+    "Accuracy": 0,
+    "ConflictingItems": [
+      "5a16b7e1fcdbcb00165aa6c9"
+    ],
+    "Weight": 0.02,
+    "LoyaltyLevel": 1,
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "Dispersion": 0,
+    "AimStability": 0,
+    "Handling": 0
+  },
+  "67708ffbd78ed00a0b03b271": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "67708ffbd78ed00a0b03b271",
+    "Name": "V‑Lites（红）",
+    "ModType": "",
+    "Ergonomics": 0,
+    "Accuracy": 0,
+    "ConflictingItems": [
+      "5a16b7e1fcdbcb00165aa6c9"
+    ],
+    "Weight": 0.02,
+    "LoyaltyLevel": 1,
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "Dispersion": 0,
+    "AimStability": 0,
+    "Handling": 0
+  },
+  "67709e1ac9f65ea01033498b": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "67709e1ac9f65ea01033498b",
+    "Name": "V‑Lites（蓝）",
+    "ModType": "",
+    "Ergonomics": 1,
+    "Accuracy": 0,
+    "ConflictingItems": [
+      "5a16b7e1fcdbcb00165aa6c9"
+    ],
+    "Weight": 0.02,
+    "LoyaltyLevel": 1,
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "Dispersion": 0,
+    "AimStability": 0,
+    "Handling": 0
+  },
+  "6773f2fc34e508088a53800f": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "6773f2fc34e508088a53800f",
+    "Name": "Augmento™ 头盔吉利罩 第二代（Multicam）",
+    "ModType": "",
+    "Ergonomics": -1,
+    "Accuracy": 0,
+    "ConflictingItems": [
+      "5a16b7e1fcdbcb00165aa6c9"
+    ],
+    "Weight": 0.02,
+    "LoyaltyLevel": 1,
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "Dispersion": 0,
+    "AimStability": 0,
+    "Handling": 0
+  },
+  "6773f6a441e9ad98ad1e00f8": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "6773f6a441e9ad98ad1e00f8",
+    "Name": "Augmento™ 头盔吉利罩第二代（高山迷彩）",
+    "ModType": "",
+    "Ergonomics": 0,
+    "Accuracy": 0,
+    "ConflictingItems": [
+      "5a16b7e1fcdbcb00165aa6c9"
+    ],
+    "Weight": 0.02,
+    "LoyaltyLevel": 1,
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "Dispersion": 0,
+    "AimStability": 0,
+    "Handling": 0
+  },
+  "6773f8527775544a1b59da0a": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "6773f8527775544a1b59da0a",
+    "Name": "Augmento™ 头盔吉利罩第二代（多地形黑）",
+    "ModType": "",
+    "Ergonomics": 1,
+    "Accuracy": 0,
+    "ConflictingItems": [
+      "5a16b7e1fcdbcb00165aa6c9"
+    ],
+    "Weight": 0.02,
+    "LoyaltyLevel": 1,
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "Dispersion": 0,
+    "AimStability": 0,
+    "Handling": 0
+  },
+  "6773fbc54cafcf4c255207bd": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "6773fbc54cafcf4c255207bd",
+    "Name": "Augmento™ 头盔吉利罩 第二代（游骑兵绿）",
+    "ModType": "",
+    "Ergonomics": 0,
+    "Accuracy": 0,
+    "ConflictingItems": [
+      "5a16b7e1fcdbcb00165aa6c9"
+    ],
+    "Weight": 0.02,
+    "LoyaltyLevel": 1,
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "Dispersion": 0,
+    "AimStability": 0,
+    "Handling": 0
+  },
+  "67709f35bcb7344a48a13c10": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "67709f35bcb7344a48a13c10",
+    "Name": "V‑Lites（绿）",
+    "ModType": "",
+    "Ergonomics": 0,
+    "Accuracy": 0,
+    "ConflictingItems": [
+      "5a16b7e1fcdbcb00165aa6c9"
+    ],
+    "Weight": 0.02,
+    "LoyaltyLevel": 1,
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "Dispersion": 0,
+    "AimStability": 0,
+    "Handling": 0
+  },
+  "6770ba90ecb0e684560d8184": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "6770ba90ecb0e684560d8184",
+    "Name": "V‑Lites（红外）",
+    "ModType": "",
+    "Ergonomics": 0,
+    "Accuracy": 0,
+    "ConflictingItems": [
+      "5a16b7e1fcdbcb00165aa6c9"
+    ],
+    "Weight": 0.02,
+    "LoyaltyLevel": 1,
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "Dispersion": 0,
+    "AimStability": 0,
+    "Handling": 0
   },
   "66326bfd46817c660d01512e": {
     "$type": "RealismMod.WeaponMod, RealismMod",
@@ -144,25 +422,6 @@
     "ItemID": "66326bfd46817c660d01512e",
     "Name": "GPNVG-18 夜视仪（白色）"
   },
-  "66326bfd46817c660d015146": {
-    "$type": "RealismMod.WeaponMod, RealismMod",
-    "ModType": "",
-    "Ergonomics": 0,
-    "Weight": 0.88,
-    "ConflictingItems": [
-      "5a16b672fcdbcb001912fa83",
-      "5a16b7e1fcdbcb00165aa6c9",
-      "5e00cdd986f7747473332240",
-      "5e01f37686f774773c6f6c15"
-    ],
-    "LoyaltyLevel": 1,
-    "VerticalRecoil": 0,
-    "HorizontalRecoil": 0,
-    "AimSpeed": 0,
-    "Accuracy": 0,
-    "ItemID": "66326bfd46817c660d015146",
-    "Name": "GPNVG-18 夜视仪（黑色）"
-  },
   "66326bfd46817c660d015148": {
     "$type": "RealismMod.WeaponMod, RealismMod",
     "ModType": "",
@@ -182,19 +441,24 @@
     "ItemID": "66326bfd46817c660d015148",
     "Name": "GPNVG-18 夜视仪（橄榄绿）"
   },
-  "6673b1ac5cae0610f1079d7e": {
-    "$type": "RealismMod.Gear, RealismMod",
-    "ItemID": "6673b1ac5cae0610f1079d7e",
-    "Name": "战术防撞头盔（高山迷彩）",
-    "AllowADS": true,
-    "LoyaltyLevel": 4,
-    "ArmorClass": "NIJ IIIA",
-    "CanSpall": false,
-    "SpallReduction": 1,
-    "ReloadSpeedMulti": 1,
-    "Comfort": 0.89,
-    "TemplateType": "gear",
-    "Price": 34000
+  "66326bfd46817c660d015146": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ModType": "",
+    "Ergonomics": 0,
+    "Weight": 0.88,
+    "ConflictingItems": [
+      "5a16b672fcdbcb001912fa83",
+      "5a16b7e1fcdbcb00165aa6c9",
+      "5e00cdd986f7747473332240",
+      "5e01f37686f774773c6f6c15"
+    ],
+    "LoyaltyLevel": 1,
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "AimSpeed": 0,
+    "Accuracy": 0,
+    "ItemID": "66326bfd46817c660d015146",
+    "Name": "GPNVG-18 夜视仪（黑色）"
   },
   "668bc5cd834c88e06b08b6a9": {
     "$type": "RealismMod.Gear, RealismMod",
@@ -232,91 +496,13 @@
     "IsGasMask": true,
     "RadProtection": 0.92
   },
-  "669819683571cb050b0b6393": {
-    "$type": "RealismMod.Gear, RealismMod",
-    "ItemID": "669819683571cb050b0b6393",
-    "Name": "ACH 高切战术头盔（高山迷彩）",
-    "AllowADS": true,
-    "LoyaltyLevel": 4,
-    "ArmorClass": "NIJ IIIA",
-    "CanSpall": false,
-    "SpallReduction": 1,
-    "ReloadSpeedMulti": 1,
-    "Comfort": 0.86,
-    "TemplateType": "gear",
-    "Price": 34000
-  },
-  "669819683571cb050b0b6394": {
-    "$type": "RealismMod.Gear, RealismMod",
-    "ItemID": "669819683571cb050b0b6394",
-    "Name": "ACH 高切战术头盔（黑色）",
-    "AllowADS": true,
-    "LoyaltyLevel": 4,
-    "ArmorClass": "NIJ IIIA",
-    "CanSpall": false,
-    "SpallReduction": 1,
-    "ReloadSpeedMulti": 1,
-    "Comfort": 1.01,
-    "TemplateType": "gear",
-    "Price": 34000
-  },
-  "66bf757f27d0b097db0ace44": {
-    "$type": "RealismMod.Gear, RealismMod",
-    "ItemID": "66bf757f27d0b097db0ace44",
-    "Name": "Ops-Core SF 高切头盔（多地形迷彩）",
-    "AllowADS": true,
-    "LoyaltyLevel": 4,
-    "ArmorClass": "NIJ IIIA",
-    "CanSpall": false,
-    "SpallReduction": 1,
-    "ReloadSpeedMulti": 1,
-    "Comfort": 0.91,
-    "TemplateType": "gear",
-    "Price": 34000
-  },
-  "66bf757f27d0b097db0ace45": {
-    "$type": "RealismMod.WeaponMod, RealismMod",
-    "ItemID": "66bf757f27d0b097db0ace45",
-    "Name": "Core Survival HEL-STAR 6® 第三代",
-    "ModType": "",
-    "Ergonomics": 1,
-    "Accuracy": 0,
-    "ConflictingItems": [
-      "5a16b7e1fcdbcb00165aa6c9"
-    ],
-    "Weight": 0.02,
-    "LoyaltyLevel": 1,
-    "VerticalRecoil": 0,
-    "HorizontalRecoil": 0,
-    "Dispersion": 0,
-    "AimStability": 0,
-    "Handling": 0
-  },
-  "66bf757f27d0b097db0ace46": {
-    "$type": "RealismMod.WeaponMod, RealismMod",
-    "ItemID": "66bf757f27d0b097db0ace46",
-    "Name": "MOHOC® IR Camera",
-    "ModType": "",
-    "Ergonomics": 0,
-    "Accuracy": 0,
-    "ConflictingItems": [
-      "5a16b7e1fcdbcb00165aa6c9"
-    ],
-    "Weight": 0.02,
-    "LoyaltyLevel": 1,
-    "VerticalRecoil": 0,
-    "HorizontalRecoil": 0,
-    "Dispersion": 0,
-    "AimStability": 0,
-    "Handling": 0
-  },
   "66bf757f27d0b097db0ace48": {
     "$type": "RealismMod.Gear, RealismMod",
     "ItemID": "66bf757f27d0b097db0ace48",
     "Name": "Peltor ComTac 2 耳机（已安装）",
     "AllowADS": true,
     "LoyaltyLevel": 3,
-    "dB": 21,
+    "dB": 23,
     "speedPenaltyPercent": 0,
     "mousePenalty": 0,
     "weaponErgonomicPenalty": 0
@@ -327,7 +513,7 @@
     "Name": "Peltor ComTac 2 耳机（已安装）",
     "AllowADS": true,
     "LoyaltyLevel": 3,
-    "dB": 21,
+    "dB": 23,
     "speedPenaltyPercent": 0,
     "mousePenalty": 0,
     "weaponErgonomicPenalty": 0
@@ -343,41 +529,13 @@
     "mousePenalty": 0,
     "weaponErgonomicPenalty": 0
   },
-  "66bf757f27d0b097db0ace58": {
-    "$type": "RealismMod.Gear, RealismMod",
-    "ItemID": "66bf757f27d0b097db0ace58",
-    "Name": "Ops-Core SF 高切头盔（橄榄绿）",
-    "AllowADS": true,
-    "LoyaltyLevel": 4,
-    "ArmorClass": "NIJ IIIA",
-    "CanSpall": false,
-    "SpallReduction": 1,
-    "ReloadSpeedMulti": 1,
-    "Comfort": 0.87,
-    "TemplateType": "gear",
-    "Price": 34000
-  },
-  "66bf757f27d0b097db0ace61": {
-    "$type": "RealismMod.Gear, RealismMod",
-    "ItemID": "66bf757f27d0b097db0ace61",
-    "Name": "Ops-Core SF 高切头盔（黑色）",
-    "AllowADS": true,
-    "LoyaltyLevel": 4,
-    "ArmorClass": "NIJ IIIA",
-    "CanSpall": false,
-    "SpallReduction": 1,
-    "ReloadSpeedMulti": 1,
-    "Comfort": 0.94,
-    "TemplateType": "gear",
-    "Price": 34000
-  },
   "674e4ef58257d9804d145885": {
     "$type": "RealismMod.Gear, RealismMod",
     "ItemID": "674e4ef58257d9804d145885",
     "Name": "RAC headsets(1)",
     "AllowADS": true,
     "LoyaltyLevel": 3,
-    "dB": 20,
+    "dB": 22,
     "speedPenaltyPercent": 0,
     "mousePenalty": 0,
     "weaponErgonomicPenalty": 0
@@ -388,7 +546,7 @@
     "Name": "RAC headsets(2)",
     "AllowADS": true,
     "LoyaltyLevel": 3,
-    "dB": 23,
+    "dB": 20,
     "speedPenaltyPercent": 0,
     "mousePenalty": 0,
     "weaponErgonomicPenalty": 0
@@ -399,7 +557,7 @@
     "Name": "RAC headsets(3)",
     "AllowADS": true,
     "LoyaltyLevel": 3,
-    "dB": 22,
+    "dB": 20,
     "speedPenaltyPercent": 0,
     "mousePenalty": 0,
     "weaponErgonomicPenalty": 0
@@ -410,7 +568,7 @@
     "Name": "RAC headsets(4)",
     "AllowADS": true,
     "LoyaltyLevel": 3,
-    "dB": 22,
+    "dB": 24,
     "speedPenaltyPercent": 0,
     "mousePenalty": 0,
     "weaponErgonomicPenalty": 0
@@ -442,163 +600,5 @@
     "Accuracy": 0,
     "ItemID": "6754946b62f4db9c0404bd2b",
     "Name": "PVS-31 (Wide)"
-  },
-  "676a1476242dea0ba69ebbd8": {
-    "$type": "RealismMod.Gear, RealismMod",
-    "ItemID": "676a1476242dea0ba69ebbd8",
-    "Name": "Ops-Core SF 战士头盔（黑色）",
-    "AllowADS": true,
-    "LoyaltyLevel": 4,
-    "ArmorClass": "NIJ IIIA",
-    "CanSpall": false,
-    "SpallReduction": 1,
-    "ReloadSpeedMulti": 1,
-    "Comfort": 0.85,
-    "TemplateType": "gear",
-    "Price": 34000
-  },
-  "67708ffbd78ed00a0b03b271": {
-    "$type": "RealismMod.WeaponMod, RealismMod",
-    "ItemID": "67708ffbd78ed00a0b03b271",
-    "Name": "V‑Lites（红）",
-    "ModType": "",
-    "Ergonomics": 1,
-    "Accuracy": 0,
-    "ConflictingItems": [
-      "5a16b7e1fcdbcb00165aa6c9"
-    ],
-    "Weight": 0.02,
-    "LoyaltyLevel": 1,
-    "VerticalRecoil": 0,
-    "HorizontalRecoil": 0,
-    "Dispersion": 0,
-    "AimStability": 0,
-    "Handling": 0
-  },
-  "67709e1ac9f65ea01033498b": {
-    "$type": "RealismMod.WeaponMod, RealismMod",
-    "ItemID": "67709e1ac9f65ea01033498b",
-    "Name": "V‑Lites（蓝）",
-    "ModType": "",
-    "Ergonomics": 0,
-    "Accuracy": 0,
-    "ConflictingItems": [
-      "5a16b7e1fcdbcb00165aa6c9"
-    ],
-    "Weight": 0.02,
-    "LoyaltyLevel": 1,
-    "VerticalRecoil": 0,
-    "HorizontalRecoil": 0,
-    "Dispersion": 0,
-    "AimStability": 0,
-    "Handling": 0
-  },
-  "67709f35bcb7344a48a13c10": {
-    "$type": "RealismMod.WeaponMod, RealismMod",
-    "ItemID": "67709f35bcb7344a48a13c10",
-    "Name": "V‑Lites（绿）",
-    "ModType": "",
-    "Ergonomics": -1,
-    "Accuracy": 0,
-    "ConflictingItems": [
-      "5a16b7e1fcdbcb00165aa6c9"
-    ],
-    "Weight": 0.02,
-    "LoyaltyLevel": 1,
-    "VerticalRecoil": 0,
-    "HorizontalRecoil": 0,
-    "Dispersion": 0,
-    "AimStability": 0,
-    "Handling": 0
-  },
-  "6770ba90ecb0e684560d8184": {
-    "$type": "RealismMod.WeaponMod, RealismMod",
-    "ItemID": "6770ba90ecb0e684560d8184",
-    "Name": "V‑Lites（红外）",
-    "ModType": "",
-    "Ergonomics": 0,
-    "Accuracy": 0,
-    "ConflictingItems": [
-      "5a16b7e1fcdbcb00165aa6c9"
-    ],
-    "Weight": 0.02,
-    "LoyaltyLevel": 1,
-    "VerticalRecoil": 0,
-    "HorizontalRecoil": 0,
-    "Dispersion": 0,
-    "AimStability": 0,
-    "Handling": 0
-  },
-  "6773f2fc34e508088a53800f": {
-    "$type": "RealismMod.WeaponMod, RealismMod",
-    "ItemID": "6773f2fc34e508088a53800f",
-    "Name": "Augmento™ 头盔吉利罩 第二代（Multicam）",
-    "ModType": "",
-    "Ergonomics": 0,
-    "Accuracy": 0,
-    "ConflictingItems": [
-      "5a16b7e1fcdbcb00165aa6c9"
-    ],
-    "Weight": 0.02,
-    "LoyaltyLevel": 1,
-    "VerticalRecoil": 0,
-    "HorizontalRecoil": 0,
-    "Dispersion": 0,
-    "AimStability": 0,
-    "Handling": 0
-  },
-  "6773f6a441e9ad98ad1e00f8": {
-    "$type": "RealismMod.WeaponMod, RealismMod",
-    "ItemID": "6773f6a441e9ad98ad1e00f8",
-    "Name": "Augmento™ 头盔吉利罩第二代（高山迷彩）",
-    "ModType": "",
-    "Ergonomics": 0,
-    "Accuracy": 0,
-    "ConflictingItems": [
-      "5a16b7e1fcdbcb00165aa6c9"
-    ],
-    "Weight": 0.02,
-    "LoyaltyLevel": 1,
-    "VerticalRecoil": 0,
-    "HorizontalRecoil": 0,
-    "Dispersion": 0,
-    "AimStability": 0,
-    "Handling": 0
-  },
-  "6773f8527775544a1b59da0a": {
-    "$type": "RealismMod.WeaponMod, RealismMod",
-    "ItemID": "6773f8527775544a1b59da0a",
-    "Name": "Augmento™ 头盔吉利罩第二代（多地形黑）",
-    "ModType": "",
-    "Ergonomics": 0,
-    "Accuracy": 0,
-    "ConflictingItems": [
-      "5a16b7e1fcdbcb00165aa6c9"
-    ],
-    "Weight": 0.02,
-    "LoyaltyLevel": 1,
-    "VerticalRecoil": 0,
-    "HorizontalRecoil": 0,
-    "Dispersion": 0,
-    "AimStability": 0,
-    "Handling": 0
-  },
-  "6773fbc54cafcf4c255207bd": {
-    "$type": "RealismMod.WeaponMod, RealismMod",
-    "ItemID": "6773fbc54cafcf4c255207bd",
-    "Name": "Augmento™ 头盔吉利罩 第二代（游骑兵绿）",
-    "ModType": "",
-    "Ergonomics": -1,
-    "Accuracy": 0,
-    "ConflictingItems": [
-      "5a16b7e1fcdbcb00165aa6c9"
-    ],
-    "Weight": 0.02,
-    "LoyaltyLevel": 1,
-    "VerticalRecoil": 0,
-    "HorizontalRecoil": 0,
-    "Dispersion": 0,
-    "AimStability": 0,
-    "Handling": 0
   }
 }

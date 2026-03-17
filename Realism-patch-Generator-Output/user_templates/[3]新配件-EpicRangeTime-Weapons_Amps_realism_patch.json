@@ -1,0 +1,50 @@
+{
+    "252d9d1d2552909d0a76033c": {
+        "$type": "RealismMod.Gear, RealismMod",
+        "ItemID": "252d9d1d2552909d0a76033c",
+        "Name": "Ops-Core AMP通讯耳機(黑色)",
+        "AllowADS": true,
+        "LoyaltyLevel": 4,
+        "dB": "22",
+        "speedPenaltyPercent": 0,
+        "mousePenalty": 0,
+        "weaponErgonomicPenalty": 0,
+        "Weight": 0.426
+    },
+    "cd54f04eb7f0410772acbf35": {
+        "$type": "RealismMod.Gear, RealismMod",
+        "ItemID": "cd54f04eb7f0410772acbf35",
+        "Name": "Ops-Core AMP通讯耳機(黑色㚳纺)",
+        "AllowADS": true,
+        "LoyaltyLevel": 4,
+        "dB": "22",
+        "speedPenaltyPercent": 0,
+        "mousePenalty": 0,
+        "weaponErgonomicPenalty": 0,
+        "Weight": 0.426
+    },
+    "5b6e75274d865619855c447a": {
+        "$type": "RealismMod.Gear, RealismMod",
+        "ItemID": "5b6e75274d865619855c447a",
+        "Name": "Ops-Core AMP通讯耳機(棕色)",
+        "AllowADS": true,
+        "LoyaltyLevel": 4,
+        "dB": "22",
+        "speedPenaltyPercent": 0,
+        "mousePenalty": 0,
+        "weaponErgonomicPenalty": 0,
+        "Weight": 0.426
+    },
+    "7e6c09774462ad3ef5025f08": {
+        "$type": "RealismMod.Gear, RealismMod",
+        "ItemID": "7e6c09774462ad3ef5025f08",
+        "Name": "Ops-Core AMP通讯耳機(棕色㚳纺)",
+        "AllowADS": true,
+        "LoyaltyLevel": 4,
+        "dB": "22",
+        "speedPenaltyPercent": 0,
+        "mousePenalty": 0,
+        "weaponErgonomicPenalty": 0,
+        "Weight": 0.426
+    }
+}

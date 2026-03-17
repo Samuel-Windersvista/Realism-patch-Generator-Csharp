@@ -1,0 +1,14 @@
+{
+    "6621b28d9411498998d408c3": {
+        "$type": "RealismMod.Gear, RealismMod",
+        "ItemID": "6621b28d9411498998d408c3",
+        "Name": "Oakley Kitchen Sink 支援型背包",
+        "AllowADS": true,
+        "LoyaltyLevel": 2,
+        "ReloadSpeedMulti": 1.0,
+        "Comfort": 0.94,
+        "speedPenaltyPercent": -2.34,
+        "mousePenalty": 0,
+        "weaponErgonomicPenalty": 0
+    }
+}

@@ -1,39 +1,17 @@
 {
-  "43ff431b62452e9c6ebc24c7": {
-    "$type": "RealismMod.WeaponMod, RealismMod",
-    "ItemID": "43ff431b62452e9c6ebc24c7",
-    "Name": "AR-15 Daniel Defense RIS II 12.25 lower handguard (Coyote Brown) alt",
-    "ModType": "",
-    "VerticalRecoil": -4,
-    "HorizontalRecoil": -3,
-    "Dispersion": -2.5,
-    "AimSpeed": 3,
-    "Ergonomics": 4,
-    "Accuracy": 0,
-    "HeatFactor": 1,
-    "CoolFactor": 0.91,
-    "ConflictingItems": [
-      "6357c98711fb55120211f7e1"
-    ],
-    "Weight": 0.125,
-    "LoyaltyLevel": 3,
-    "Handling": 4,
-    "AimStability": 8,
-    "DurabilityBurnModificator": 1
-  },
   "cabcc6939632138bbb740c0f": {
     "$type": "RealismMod.WeaponMod, RealismMod",
     "ItemID": "cabcc6939632138bbb740c0f",
     "Name": "AR-15 Daniel Defense RIS II FSP 12.25 inch handguard",
     "ModType": "",
-    "VerticalRecoil": -5,
-    "HorizontalRecoil": -4,
+    "VerticalRecoil": -4,
+    "HorizontalRecoil": -3,
     "Dispersion": 0,
-    "AimSpeed": 3,
-    "Ergonomics": 3,
+    "AimSpeed": 1,
+    "Ergonomics": 4,
     "Accuracy": 15,
-    "HeatFactor": 1,
-    "CoolFactor": 0.92,
+    "HeatFactor": 0.98,
+    "CoolFactor": 0.91,
     "ConflictingItems": [
       "55d35ee94bdc2d61338b4568",
       "2d2dbf0375f49c5b7ac899ab",
@@ -48,7 +26,29 @@
     "Weight": 0.375,
     "LoyaltyLevel": 4,
     "AimStability": 8,
-    "Handling": 2,
+    "Handling": 4,
+    "DurabilityBurnModificator": 1
+  },
+  "43ff431b62452e9c6ebc24c7": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "43ff431b62452e9c6ebc24c7",
+    "Name": "AR-15 Daniel Defense RIS II 12.25 lower handguard (Coyote Brown) alt",
+    "ModType": "",
+    "VerticalRecoil": -6,
+    "HorizontalRecoil": -3,
+    "Dispersion": -2.5,
+    "AimSpeed": 1,
+    "Ergonomics": 4,
+    "Accuracy": 0,
+    "HeatFactor": 1.02,
+    "CoolFactor": 0.96,
+    "ConflictingItems": [
+      "6357c98711fb55120211f7e1"
+    ],
+    "Weight": 0.125,
+    "LoyaltyLevel": 3,
+    "Handling": 5,
+    "AimStability": 9,
     "DurabilityBurnModificator": 1
   }
 }

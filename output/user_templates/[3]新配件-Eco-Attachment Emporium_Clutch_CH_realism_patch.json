@@ -7,13 +7,13 @@
     "ReloadSpeed": 0,
     "ConflictingItems": [],
     "FixSpeed": 0,
-    "Ergonomics": 1,
+    "Ergonomics": 0,
     "Weight": 0.113,
     "VerticalRecoil": 0,
-    "HorizontalRecoil": -1,
-    "ChamberSpeed": 17,
+    "HorizontalRecoil": 0,
+    "ChamberSpeed": 10,
     "LoyaltyLevel": 1,
-    "ModMalfunctionChance": 1
+    "ModMalfunctionChance": -1
   },
   "68a98fc93c8091c6890e81c6": {
     "$type": "RealismMod.WeaponMod, RealismMod",
@@ -25,11 +25,11 @@
     "FixSpeed": 0,
     "Ergonomics": 1,
     "Weight": 0.113,
-    "VerticalRecoil": 0,
+    "VerticalRecoil": -1,
     "HorizontalRecoil": -1,
-    "ChamberSpeed": 5,
+    "ChamberSpeed": 13,
     "LoyaltyLevel": 1,
-    "ModMalfunctionChance": 0
+    "ModMalfunctionChance": 1
   },
   "68a9997c3c8091c6890e81ca": {
     "$type": "RealismMod.WeaponMod, RealismMod",
@@ -39,11 +39,11 @@
     "ReloadSpeed": 0,
     "ConflictingItems": [],
     "FixSpeed": 0,
-    "Ergonomics": -1,
+    "Ergonomics": 1,
     "Weight": 0.113,
-    "VerticalRecoil": -1,
-    "HorizontalRecoil": 0,
-    "ChamberSpeed": 6,
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": -1,
+    "ChamberSpeed": 23,
     "LoyaltyLevel": 1,
     "ModMalfunctionChance": 0
   },
@@ -55,13 +55,13 @@
     "ReloadSpeed": 0,
     "ConflictingItems": [],
     "FixSpeed": 0,
-    "Ergonomics": 0,
+    "Ergonomics": 1,
     "Weight": 0.113,
-    "VerticalRecoil": 0,
+    "VerticalRecoil": -1,
     "HorizontalRecoil": 0,
-    "ChamberSpeed": 12,
+    "ChamberSpeed": 8,
     "LoyaltyLevel": 1,
-    "ModMalfunctionChance": 0
+    "ModMalfunctionChance": 2
   },
   "68a9b3afc172cbefce0cde80": {
     "$type": "RealismMod.WeaponMod, RealismMod",
@@ -75,9 +75,9 @@
     "Weight": 0.113,
     "VerticalRecoil": 0,
     "HorizontalRecoil": 0,
-    "ChamberSpeed": 15,
+    "ChamberSpeed": 13,
     "LoyaltyLevel": 1,
-    "ModMalfunctionChance": 0
+    "ModMalfunctionChance": 2
   },
   "68a9b3afc172cbefce0cde81": {
     "$type": "RealismMod.WeaponMod, RealismMod",
@@ -87,10 +87,10 @@
     "ReloadSpeed": 0,
     "ConflictingItems": [],
     "FixSpeed": 0,
-    "Ergonomics": 1,
+    "Ergonomics": 0,
     "Weight": 0.113,
-    "VerticalRecoil": 0,
-    "HorizontalRecoil": -1,
+    "VerticalRecoil": -1,
+    "HorizontalRecoil": 0,
     "ChamberSpeed": 22,
     "LoyaltyLevel": 1,
     "ModMalfunctionChance": 1

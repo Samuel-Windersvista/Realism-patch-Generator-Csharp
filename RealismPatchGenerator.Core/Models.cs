@@ -45,6 +45,7 @@ public sealed class GenerationResult
 {
     public required string BasePath { get; init; }
     public required string OutputPath { get; init; }
+    public required uint UsedSeed { get; init; }
     public required GenerationStatistics Statistics { get; init; }
     public IReadOnlyList<string> Logs { get; init; } = [];
 }

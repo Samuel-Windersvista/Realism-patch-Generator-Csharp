@@ -1,4 +1,5 @@
 using System.Globalization;
+using System.Security.Cryptography;
 using System.Text.Encodings.Web;
 using System.Text.Json;
 using System.Text.Json.Nodes;
@@ -29,20 +30,24 @@ public sealed class RealismPatchGenerator
     private readonly Dictionary<string, JsonObject> ammoPatches = new(StringComparer.OrdinalIgnoreCase);
     private readonly Dictionary<string, JsonObject> gearPatches = new(StringComparer.OrdinalIgnoreCase);
     private readonly Dictionary<string, JsonObject> consumablePatches = new(StringComparer.OrdinalIgnoreCase);
-    private readonly Dictionary<string, SortedDictionary<string, JsonObject>> fileBasedPatches = new(StringComparer.OrdinalIgnoreCase);
+    private readonly Dictionary<string, OrderedPatchGroup> fileBasedPatches = new(StringComparer.OrdinalIgnoreCase);
+    private readonly List<string> fileBasedPatchOrder = [];
     private readonly Dictionary<string, string> fileOutputModes = new(StringComparer.OrdinalIgnoreCase);
     private readonly Dictionary<string, List<string>> templateParentIndex = new(StringComparer.OrdinalIgnoreCase);
     private readonly Dictionary<string, SortedDictionary<string, JsonObject>> templates = new(StringComparer.OrdinalIgnoreCase);
     private readonly List<string> logs = [];
-    private readonly CompatibleRandom random = new(20260313);
+    private readonly uint generationSeed;
+    private readonly CompatibleRandom random;
     private readonly RuleSet rules;
     private readonly ItemExceptionDocument itemExceptions;
 
-    public RealismPatchGenerator(string basePath)
+    public RealismPatchGenerator(string basePath, uint? seed = null)
     {
         this.basePath = Path.GetFullPath(basePath);
         inputPath = Path.Combine(this.basePath, "input");
         templatesBasePath = Path.Combine(this.basePath, "现实主义物品模板");
+        generationSeed = seed ?? CreateRuntimeSeed();
+        random = new CompatibleRandom(generationSeed);
         rules = RuleSetLoader.Load(this.basePath, Log);
         itemExceptions = ItemExceptionStore.Load(this.basePath);
     }
@@ -53,6 +58,7 @@ public sealed class RealismPatchGenerator
         LoadAllTemplates();
 
         Log($"开始生成现实主义补丁，工作目录: {basePath}");
+        Log($"本次生成随机种子: {generationSeed}");
         var jsonFiles = Directory.EnumerateFiles(inputPath, "*.json", SearchOption.AllDirectories)
             .OrderBy(path => Path.GetRelativePath(inputPath, path), StringComparer.OrdinalIgnoreCase)
             .ToList();
@@ -80,6 +86,7 @@ public sealed class RealismPatchGenerator
         {
             BasePath = basePath,
             OutputPath = outputPath,
+            UsedSeed = generationSeed,
             Statistics = statistics,
             Logs = logs.ToArray(),
         };
@@ -934,11 +941,12 @@ public sealed class RealismPatchGenerator
     {
         if (!fileBasedPatches.TryGetValue(sourceFile, out var group))
         {
-            group = new SortedDictionary<string, JsonObject>(StringComparer.OrdinalIgnoreCase);
+            group = new OrderedPatchGroup();
             fileBasedPatches[sourceFile] = group;
+            fileBasedPatchOrder.Add(sourceFile);
         }
 
-        group[itemId] = (JsonObject)patch.DeepClone();
+        group.AddOrUpdate(itemId, patch);
     }
 
     private void StorePrimaryPatch(string itemId, JsonObject patch, string parentId, ItemInfo itemInfo)
@@ -1023,17 +1031,18 @@ public sealed class RealismPatchGenerator
     {
         Directory.CreateDirectory(outputPath);
 
-        foreach (var pair in fileBasedPatches.OrderBy(pair => pair.Key, StringComparer.OrdinalIgnoreCase))
+        foreach (var sourceFile in fileBasedPatchOrder)
         {
-            if (pair.Value.Count == 0)
+            var group = fileBasedPatches[sourceFile];
+            if (group.Count == 0)
             {
                 continue;
             }
 
-            var sourceRelative = pair.Key.Replace('\\', '/');
+            var sourceRelative = sourceFile.Replace('\\', '/');
             var sourceDir = Path.GetDirectoryName(sourceRelative) ?? string.Empty;
             var sourceName = Path.GetFileName(sourceRelative);
-            var outputMode = fileOutputModes.GetValueOrDefault(pair.Key, "suffix");
+            var outputMode = fileOutputModes.GetValueOrDefault(sourceFile, "suffix");
             var outputFileName = string.Equals(outputMode, "plain", StringComparison.OrdinalIgnoreCase)
                 ? $"{sourceName}.json"
                 : $"{sourceName}_realism_patch.json";
@@ -1041,7 +1050,7 @@ public sealed class RealismPatchGenerator
             Directory.CreateDirectory(Path.GetDirectoryName(outputFile)!);
 
             var json = new JsonObject();
-            foreach (var item in pair.Value)
+            foreach (var item in group.Entries)
             {
                 json[item.Key] = item.Value.DeepClone();
             }
@@ -2846,6 +2855,35 @@ public sealed class RealismPatchGenerator
             || ContainsAnyKeyword(itemName, ["护木", "forend", "handguard", "front-end assembly", "front end assembly", "цевье"]);
     }
 
+    private sealed class OrderedPatchGroup
+    {
+        private readonly Dictionary<string, JsonObject> items = new(StringComparer.OrdinalIgnoreCase);
+        private readonly List<string> itemOrder = [];
+
+        public int Count => items.Count;
+
+        public IEnumerable<KeyValuePair<string, JsonObject>> Entries
+        {
+            get
+            {
+                foreach (var itemId in itemOrder)
+                {
+                    yield return new KeyValuePair<string, JsonObject>(itemId, items[itemId]);
+                }
+            }
+        }
+
+        public void AddOrUpdate(string itemId, JsonObject patch)
+        {
+            if (!items.ContainsKey(itemId))
+            {
+                itemOrder.Add(itemId);
+            }
+
+            items[itemId] = (JsonObject)patch.DeepClone();
+        }
+    }
+
     private static string InferHandguardProfileFromName(string itemName)
     {
         if (ContainsAnyKeyword(itemName, ["short", "carbine", "pdw", "compact"]))
@@ -3059,6 +3097,13 @@ public sealed class RealismPatchGenerator
 
         var seed = min <= 0 && max >= 0 ? 0.0 : (min + max) / 2.0;
         return preferInt ? Math.Round(seed) : seed;
+    }
+
+    private static uint CreateRuntimeSeed()
+    {
+        Span<byte> bytes = stackalloc byte[sizeof(uint)];
+        RandomNumberGenerator.Fill(bytes);
+        return BitConverter.ToUInt32(bytes);
     }
 
     private static JsonNode CreateNumericNode(double value, bool preferInt, params double[] precisionHints)

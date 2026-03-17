@@ -151,7 +151,7 @@ public sealed class ItemExceptionIntegrationTests : IDisposable
         var generator = new global::RealismPatchGenerator.Core.RealismPatchGenerator(basePath);
         var result = generator.Generate(Path.Combine(basePath, "output"));
 
-        var outputFile = Path.Combine(result.OutputPath, "user_templates", "test_mask.json_realism_patch.json");
+        var outputFile = Path.Combine(result.OutputPath, "user_templates", "test_mask_realism_patch.json");
         var root = JsonNode.Parse(File.ReadAllText(outputFile))!.AsObject();
         var patch = root["custom-mask"]!.AsObject();
 
@@ -161,6 +161,82 @@ public sealed class ItemExceptionIntegrationTests : IDisposable
         Assert.False(patch.ContainsKey("description"));
         Assert.False(patch.ContainsKey("mousePenalty"));
         Assert.True(patch.ContainsKey("MaskToUse"));
+    }
+
+    [Fact]
+    public void Generate_PreservesInputItemOrderInOutput()
+    {
+        var input = new JsonObject
+        {
+            ["z-last"] = new JsonObject
+            {
+                ["$type"] = "RealismMod.Gun, RealismMod",
+                ["ItemID"] = "z-last",
+                ["Name"] = "Z Last",
+                ["WeapType"] = "pistol",
+                ["HasShoulderContact"] = false,
+                ["RecoilAngle"] = 90,
+            },
+            ["a-first"] = new JsonObject
+            {
+                ["$type"] = "RealismMod.Gun, RealismMod",
+                ["ItemID"] = "a-first",
+                ["Name"] = "A First",
+                ["WeapType"] = "pistol",
+                ["HasShoulderContact"] = false,
+                ["RecoilAngle"] = 90,
+            },
+            ["m-middle"] = new JsonObject
+            {
+                ["$type"] = "RealismMod.Gun, RealismMod",
+                ["ItemID"] = "m-middle",
+                ["Name"] = "M Middle",
+                ["WeapType"] = "pistol",
+                ["HasShoulderContact"] = false,
+                ["RecoilAngle"] = 90,
+            },
+        };
+
+        File.WriteAllText(Path.Combine(basePath, "input", "weapons", "order_test.json"), input.ToJsonString());
+
+        var generator = new global::RealismPatchGenerator.Core.RealismPatchGenerator(basePath);
+        var result = generator.Generate(Path.Combine(basePath, "output"));
+
+        var outputFile = Path.Combine(result.OutputPath, "weapons", "order_test.json");
+        var root = JsonNode.Parse(File.ReadAllText(outputFile))!.AsObject();
+        var keys = root.Select(pair => pair.Key).ToArray();
+
+        Assert.Equal(["z-last", "a-first", "m-middle"], keys);
+    }
+
+    [Fact]
+    public void Generate_WithExplicitSeed_ProducesRepeatableOutput()
+    {
+        var input = new JsonObject
+        {
+            ["seeded-item"] = new JsonObject
+            {
+                ["$type"] = "RealismMod.Gun, RealismMod",
+                ["ItemID"] = "seeded-item",
+                ["Name"] = "Seeded Test Weapon",
+                ["WeapType"] = "pistol",
+                ["HasShoulderContact"] = false,
+                ["RecoilAngle"] = 90,
+            },
+        };
+
+        File.WriteAllText(Path.Combine(basePath, "input", "weapons", "seed_test.json"), input.ToJsonString());
+
+        var generatorA = new global::RealismPatchGenerator.Core.RealismPatchGenerator(basePath, 123456789u);
+        var resultA = generatorA.Generate(Path.Combine(basePath, "output_a"));
+
+        var generatorB = new global::RealismPatchGenerator.Core.RealismPatchGenerator(basePath, 123456789u);
+        var resultB = generatorB.Generate(Path.Combine(basePath, "output_b"));
+
+        var fileA = Path.Combine(resultA.OutputPath, "weapons", "seed_test.json");
+        var fileB = Path.Combine(resultB.OutputPath, "weapons", "seed_test.json");
+
+        Assert.Equal(File.ReadAllText(fileA), File.ReadAllText(fileB));
     }
 
     private void WriteItemExceptions(string itemId, JsonObject overrides)

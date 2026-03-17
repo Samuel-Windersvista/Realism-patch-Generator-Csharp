@@ -1,0 +1,26 @@
+﻿SPT Realism Patch Generator v1.2.0
+Build: Release
+Runtime: win-x64
+Deployment: framework-dependent
+
+Entry points:
+- RealismPatchGenerator.Gui.exe: GUI application
+- RealismPatchGenerator.Cli.exe: CLI generate and audit tool
+
+Bundled data directories:
+- input
+- 现实主义物品模板
+- rules
+- docs
+- output
+- audit_reports
+
+Recommended usage:
+- Use GUI for rule editing and item exception management
+- Use CLI for batch generation and audits
+
+Runtime requirement:
+- .NET Desktop Runtime / .NET Runtime must already be installed on the target machine.
+
+Packaging mode:
+- Multi-file publish optimized for smaller package size.

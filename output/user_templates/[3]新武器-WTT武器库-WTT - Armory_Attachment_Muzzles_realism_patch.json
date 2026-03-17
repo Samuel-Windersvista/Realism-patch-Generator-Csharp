@@ -15,7 +15,7 @@
     "Accuracy": 0,
     "HeatFactor": 0.995,
     "CoolFactor": 1,
-    "DurabilityBurnModificator": 1.04,
+    "DurabilityBurnModificator": 1.02,
     "Velocity": 0,
     "RecoilAngle": 0,
     "ConflictingItems": [],
@@ -24,6 +24,6 @@
     "Loudness": 40,
     "Convergence": 0,
     "LoyaltyLevel": 3,
-    "Flash": -3
+    "Flash": 1
   }
 }
