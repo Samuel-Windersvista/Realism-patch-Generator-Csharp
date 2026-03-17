@@ -1,0 +1,15 @@
+E:\云文件\GitHub\Realism-patch-Generator-Csharp\RealismPatchGenerator.Cli\bin\Release\net10.0\win-x64\RealismPatchGenerator.Cli.exe
+E:\云文件\GitHub\Realism-patch-Generator-Csharp\RealismPatchGenerator.Cli\bin\Release\net10.0\win-x64\RealismPatchGenerator.Cli.deps.json
+E:\云文件\GitHub\Realism-patch-Generator-Csharp\RealismPatchGenerator.Cli\bin\Release\net10.0\win-x64\RealismPatchGenerator.Cli.runtimeconfig.json
+E:\云文件\GitHub\Realism-patch-Generator-Csharp\RealismPatchGenerator.Cli\bin\Release\net10.0\win-x64\RealismPatchGenerator.Cli.dll
+E:\云文件\GitHub\Realism-patch-Generator-Csharp\RealismPatchGenerator.Cli\bin\Release\net10.0\win-x64\RealismPatchGenerator.Core.dll
+E:\云文件\GitHub\Realism-patch-Generator-Csharp\RealismPatchGenerator.Cli\obj\Release\net10.0\win-x64\RealismPatchGenerator.Cli.csproj.AssemblyReference.cache
+E:\云文件\GitHub\Realism-patch-Generator-Csharp\RealismPatchGenerator.Cli\obj\Release\net10.0\win-x64\RealismPatchGenerator.Cli.GeneratedMSBuildEditorConfig.editorconfig
+E:\云文件\GitHub\Realism-patch-Generator-Csharp\RealismPatchGenerator.Cli\obj\Release\net10.0\win-x64\RealismPatchGenerator.Cli.AssemblyInfoInputs.cache
+E:\云文件\GitHub\Realism-patch-Generator-Csharp\RealismPatchGenerator.Cli\obj\Release\net10.0\win-x64\RealismPatchGenerator.Cli.AssemblyInfo.cs
+E:\云文件\GitHub\Realism-patch-Generator-Csharp\RealismPatchGenerator.Cli\obj\Release\net10.0\win-x64\RealismPatchGenerator.Cli.csproj.CoreCompileInputs.cache
+E:\云文件\GitHub\Realism-patch-Generator-Csharp\RealismPatchGenerator.Cli\obj\Release\net10.0\win-x64\RealismP.68379FE5.Up2Date
+E:\云文件\GitHub\Realism-patch-Generator-Csharp\RealismPatchGenerator.Cli\obj\Release\net10.0\win-x64\RealismPatchGenerator.Cli.dll
+E:\云文件\GitHub\Realism-patch-Generator-Csharp\RealismPatchGenerator.Cli\obj\Release\net10.0\win-x64\refint\RealismPatchGenerator.Cli.dll
+E:\云文件\GitHub\Realism-patch-Generator-Csharp\RealismPatchGenerator.Cli\obj\Release\net10.0\win-x64\RealismPatchGenerator.Cli.genruntimeconfig.cache
+E:\云文件\GitHub\Realism-patch-Generator-Csharp\RealismPatchGenerator.Cli\obj\Release\net10.0\win-x64\ref\RealismPatchGenerator.Cli.dll

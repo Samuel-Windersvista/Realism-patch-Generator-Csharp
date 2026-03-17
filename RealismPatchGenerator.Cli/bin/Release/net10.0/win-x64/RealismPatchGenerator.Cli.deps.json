@@ -1,0 +1,40 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0/win-x64",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {},
+    ".NETCoreApp,Version=v10.0/win-x64": {
+      "RealismPatchGenerator.Cli/1.1.0": {
+        "dependencies": {
+          "RealismPatchGenerator.Core": "1.1.0"
+        },
+        "runtime": {
+          "RealismPatchGenerator.Cli.dll": {}
+        }
+      },
+      "RealismPatchGenerator.Core/1.1.0": {
+        "runtime": {
+          "RealismPatchGenerator.Core.dll": {
+            "assemblyVersion": "1.1.0.0",
+            "fileVersion": "1.1.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "RealismPatchGenerator.Cli/1.1.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "RealismPatchGenerator.Core/1.1.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

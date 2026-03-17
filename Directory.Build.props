@@ -1,0 +1,10 @@
+<Project>
+  <PropertyGroup Condition="'$(MSBuildProjectName)' != 'RealismPatchGenerator.Tests'">
+    <Version>1.1.0</Version>
+    <AssemblyVersion>1.1.0.0</AssemblyVersion>
+    <FileVersion>1.1.0.0</FileVersion>
+    <InformationalVersion>1.1.0</InformationalVersion>
+    <Product>SPT现实主义数值范围编辑生成器</Product>
+    <Authors>Project Contributors</Authors>
+  </PropertyGroup>
+</Project>

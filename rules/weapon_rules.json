@@ -524,14 +524,14 @@
         "preferInt": false
       }
     },
-    "shotgun_shell": {
+    "shotgun_shell_12g": {
       "VerticalRecoil": {
-        "min": 50,
+        "min": 55,
         "max": 120,
         "preferInt": true
       },
       "HorizontalRecoil": {
-        "min": 22,
+        "min": 25,
         "max": 85,
         "preferInt": true
       },
@@ -546,8 +546,62 @@
         "preferInt": true
       },
       "RecoilIntensity": {
-        "min": 0.06,
+        "min": 0.07,
         "max": 0.16,
+        "preferInt": false
+      }
+    },
+    "shotgun_shell_20g": {
+      "VerticalRecoil": {
+        "min": 20,
+        "max": 70,
+        "preferInt": true
+      },
+      "HorizontalRecoil": {
+        "min": 10,
+        "max": 55,
+        "preferInt": true
+      },
+      "ShotgunDispersion": {
+        "min": 0,
+        "max": 2,
+        "preferInt": true
+      },
+      "Convergence": {
+        "min": 0,
+        "max": 4,
+        "preferInt": true
+      },
+      "RecoilIntensity": {
+        "min": 0.02,
+        "max": 0.1,
+        "preferInt": false
+      }
+    },
+    "shotgun_shell_23x75": {
+      "VerticalRecoil": {
+        "min": 95,
+        "max": 180,
+        "preferInt": true
+      },
+      "HorizontalRecoil": {
+        "min": 40,
+        "max": 115,
+        "preferInt": true
+      },
+      "ShotgunDispersion": {
+        "min": 2,
+        "max": 5,
+        "preferInt": true
+      },
+      "Convergence": {
+        "min": -4,
+        "max": 0,
+        "preferInt": true
+      },
+      "RecoilIntensity": {
+        "min": 0.12,
+        "max": 0.28,
         "preferInt": false
       }
     },
@@ -788,13 +842,31 @@
       ]
     },
     {
-      "profile": "shotgun_shell",
+      "profile": "shotgun_shell_12g",
       "keywords": [
         "12g",
         "12 ga",
+        "12ga",
         "12 gauge",
+        "12x70",
+        "12x76"
+      ]
+    },
+    {
+      "profile": "shotgun_shell_20g",
+      "keywords": [
         "20g",
-        "20 gauge"
+        "20 ga",
+        "20ga",
+        "20 gauge",
+        "20x70"
+      ]
+    },
+    {
+      "profile": "shotgun_shell_23x75",
+      "keywords": [
+        "23x75",
+        "ks23"
       ]
     },
     {

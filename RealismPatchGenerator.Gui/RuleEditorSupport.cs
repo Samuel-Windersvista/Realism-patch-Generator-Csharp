@@ -78,7 +78,7 @@ internal static class UiTextCatalog
 {
     private static readonly IReadOnlyDictionary<string, LocalizedText> Texts = new Dictionary<string, LocalizedText>(StringComparer.Ordinal)
     {
-        ["App.Title"] = new("SPT现实主义数值范围编辑生成器 v0.9", "SPT Realism Range Editor Generator v0.9"),
+        ["App.Title"] = new("SPT现实主义数值范围编辑生成器 v1.1", "SPT Realism Range Editor Generator v1.1"),
         ["Label.DataRoot"] = new("数据目录:", "Data Root:"),
         ["Label.OutputPath"] = new("输出路径:", "Output Path:"),
         ["Label.ModifiedOnly"] = new("只看已修改项", "Modified Only"),
@@ -89,7 +89,7 @@ internal static class UiTextCatalog
         ["Button.Browse"] = new("选择输出路径", "Browse Output"),
         ["Button.SaveAll"] = new("保存全部", "Save All"),
         ["Button.Reload"] = new("重新加载", "Reload"),
-        ["Button.Exceptions"] = new("例外物品", "Item Exceptions"),
+        ["Button.Exceptions"] = new("例外物品", "Exception Items"),
         ["Button.Generate"] = new("生成补丁", "Generate"),
         ["Button.Audit"] = new("检查未遵循规则物品", "Check Rule Violations"),
         ["Group.Navigation"] = new("规则分类", "Rule Categories"),
@@ -106,7 +106,7 @@ internal static class UiTextCatalog
         ["TreeGroup.Ammo"] = new("弹药", "Ammo"),
         ["TreeGroup.Gear"] = new("装备", "Gear"),
         ["Tab.Explanation"] = new("字段说明", "Field Help"),
-        ["Tab.ExceptionsOverview"] = new("例外总览", "Exception Overview"),
+        ["Tab.ExceptionsOverview"] = new("例外总览", "Exception Items Overview"),
         ["Tab.Log"] = new("运行日志", "Run Log"),
         ["Column.Enabled"] = new("启用", "Enabled"),
         ["Column.ItemId"] = new("ItemID", "ItemID"),
@@ -128,7 +128,7 @@ internal static class UiTextCatalog
         ["State.Loaded"] = new("规则已加载", "Rules loaded"),
         ["State.Saved"] = new("规则已保存", "Rules saved"),
         ["State.Reloaded"] = new("规则已重新加载", "Rules reloaded"),
-        ["State.ExceptionSaved"] = new("例外物品已保存", "Item exceptions saved"),
+        ["State.ExceptionSaved"] = new("例外物品已保存", "Exception items saved"),
         ["State.Saving"] = new("正在保存规则", "Saving rules"),
         ["State.Generating"] = new("正在生成补丁", "Generating patches"),
         ["State.GenerateDone"] = new("生成完成", "Generation complete"),
@@ -168,7 +168,7 @@ internal static class UiTextCatalog
         ["Log.StartAudit"] = new("开始检查未遵循规则物品，数据目录: {0}", "Rule violation check started, data root: {0}"),
         ["Log.SaveSuccess"] = new("已保存规则文件: {0}", "Saved rule file: {0}"),
         ["Log.ReloadSuccess"] = new("规则已从磁盘重新加载。", "Rules reloaded from disk."),
-        ["Log.ExceptionSaveSuccess"] = new("已保存例外物品配置: {0}", "Saved item exception settings: {0}"),
+        ["Log.ExceptionSaveSuccess"] = new("已保存例外物品配置: {0}", "Saved exception item settings: {0}"),
     };
 
     public static string Get(string key, UiLanguage language)
@@ -480,6 +480,9 @@ internal static class RuleEditorCatalog
             ["shot_shell_payload"] = new("霰弹装药", "Shot Shell Payload"),
             ["shotgun"] = new("霰弹枪", "Shotgun"),
             ["shotgun_shell"] = new("霰弹枪弹药", "Shotgun Shell"),
+            ["shotgun_shell_12g"] = new("12 号霰弹", "12 Gauge Shell"),
+            ["shotgun_shell_20g"] = new("20 号霰弹", "20 Gauge Shell"),
+            ["shotgun_shell_23x75"] = new("23x75 霰弹", "23x75 Shell"),
             ["small_high_velocity"] = new("小口径高初速弹", "Small High-Velocity"),
             ["smg"] = new("冲锋枪", "SMG"),
             ["sniper"] = new("狙击步枪", "Sniper Rifle"),

@@ -10,13 +10,13 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("RealismPatchGenerator.Gui")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("Project Contributors")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
-[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8c5c401921983b29ea5b28c6f00df93c7d0ace67")]
-[assembly: System.Reflection.AssemblyProductAttribute("RealismPatchGenerator.Gui")]
+[assembly: System.Reflection.AssemblyFileVersionAttribute("1.1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.1.0+dd1d551e7ca38e04c74e8d7666eaed0f75669369")]
+[assembly: System.Reflection.AssemblyProductAttribute("SPT现实主义数值范围编辑生成器")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RealismPatchGenerator.Gui")]
-[assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
+[assembly: System.Reflection.AssemblyVersionAttribute("1.1.0.0")]
 [assembly: System.Runtime.Versioning.TargetPlatformAttribute("Windows7.0")]
 [assembly: System.Runtime.Versioning.SupportedOSPlatformAttribute("Windows7.0")]
 

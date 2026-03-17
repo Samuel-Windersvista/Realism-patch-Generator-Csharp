@@ -1,5 +1,21 @@
 # 更新日志
 
+## v1.1
+
+### 调整
+
+- 弹药规则中的霰弹基础档拆分为 shotgun_shell_12g、shotgun_shell_20g、shotgun_shell_23x75
+- 武器规则中的霰弹口径补修同步拆分为 12g、20g、23x75 三档
+- GUI profile 名称、README 和主说明文档同步更新到霰弹分口径设计
+
+### 验证
+
+- 新增审计测试，确认 ammo_profile 与 weapon caliber_profile 能正确命中新霰弹档位
+
+### 当前保留项
+
+- 仍需基于实际生成结果继续微调 12g、20g、23x75 三档的手感范围
+
 ## v1.0
 
 ### 新增

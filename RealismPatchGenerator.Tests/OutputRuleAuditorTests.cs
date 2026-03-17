@@ -81,6 +81,84 @@ public sealed class OutputRuleAuditorTests : IDisposable
         Assert.Equal(1, expandedReport.FileCount);
     }
 
+    [Fact]
+    public void Audit_InfersSplitShotgunAmmoProfiles()
+    {
+        Directory.CreateDirectory(Path.Combine(basePath, "output", "ammo"));
+        var patch = new JsonObject
+        {
+            ["shell-12g"] = new JsonObject
+            {
+                ["$type"] = "RealismMod.Ammo, RealismMod",
+                ["Name"] = "patron_12x70_slug",
+                ["Caliber"] = "12x70",
+            },
+            ["shell-20g"] = new JsonObject
+            {
+                ["$type"] = "RealismMod.Ammo, RealismMod",
+                ["Name"] = "patron_20x70_buckshot",
+                ["Caliber"] = "20x70",
+            },
+            ["shell-23x75"] = new JsonObject
+            {
+                ["$type"] = "RealismMod.Ammo, RealismMod",
+                ["Name"] = "patron_23x75_shrapnel_10",
+                ["Caliber"] = "23x75",
+            },
+        };
+
+        File.WriteAllText(
+            Path.Combine(basePath, "output", "ammo", "test_realism_patch.json"),
+            patch.ToJsonString());
+
+        var auditor = new OutputRuleAuditor(basePath, new OutputAuditOptions { IncludeOk = true });
+        var report = auditor.Audit();
+
+        var file = Assert.Single(report.Files);
+        Assert.Contains(file.Items, item => item.ItemId == "shell-12g" && item.Context["ammo_profile"]?.GetValue<string>() == "shotgun_shell_12g");
+        Assert.Contains(file.Items, item => item.ItemId == "shell-20g" && item.Context["ammo_profile"]?.GetValue<string>() == "shotgun_shell_20g");
+        Assert.Contains(file.Items, item => item.ItemId == "shell-23x75" && item.Context["ammo_profile"]?.GetValue<string>() == "shotgun_shell_23x75");
+    }
+
+    [Fact]
+    public void Audit_InfersSplitShotgunWeaponCaliberProfiles()
+    {
+        Directory.CreateDirectory(Path.Combine(basePath, "output", "weapons"));
+        var patch = new JsonObject
+        {
+            ["weapon-12g"] = new JsonObject
+            {
+                ["$type"] = "RealismMod.Gun, RealismMod",
+                ["Name"] = "weapon_mr133_12g",
+                ["WeapType"] = "shotgun",
+            },
+            ["weapon-20g"] = new JsonObject
+            {
+                ["$type"] = "RealismMod.Gun, RealismMod",
+                ["Name"] = "weapon_toz_toz-106_20g",
+                ["WeapType"] = "shotgun",
+            },
+            ["weapon-23x75"] = new JsonObject
+            {
+                ["$type"] = "RealismMod.Gun, RealismMod",
+                ["Name"] = "weapon_toz_ks23m_23x75",
+                ["WeapType"] = "shotgun",
+            },
+        };
+
+        File.WriteAllText(
+            Path.Combine(basePath, "output", "weapons", "test_realism_patch.json"),
+            patch.ToJsonString());
+
+        var auditor = new OutputRuleAuditor(basePath, new OutputAuditOptions { IncludeOk = true });
+        var report = auditor.Audit();
+
+        var file = Assert.Single(report.Files);
+        Assert.Contains(file.Items, item => item.ItemId == "weapon-12g" && item.Context["caliber_profile"]?.GetValue<string>() == "shotgun_shell_12g");
+        Assert.Contains(file.Items, item => item.ItemId == "weapon-20g" && item.Context["caliber_profile"]?.GetValue<string>() == "shotgun_shell_20g");
+        Assert.Contains(file.Items, item => item.ItemId == "weapon-23x75" && item.Context["caliber_profile"]?.GetValue<string>() == "shotgun_shell_23x75");
+    }
+
     public void Dispose()
     {
         if (Directory.Exists(basePath))

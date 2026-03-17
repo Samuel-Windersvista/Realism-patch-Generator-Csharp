@@ -192,13 +192,29 @@ internal static class WeaponRuleData
                 ["Velocity"] = new(10, 25, true),
                 ["RecoilIntensity"] = new(0.08, 0.2),
             }),
-            ["shotgun_shell"] = CreateRanges(new Dictionary<string, NumericRange>(StringComparer.OrdinalIgnoreCase)
+            ["shotgun_shell_12g"] = CreateRanges(new Dictionary<string, NumericRange>(StringComparer.OrdinalIgnoreCase)
             {
-                ["VerticalRecoil"] = new(50, 120, true),
-                ["HorizontalRecoil"] = new(22, 85, true),
+                ["VerticalRecoil"] = new(55, 120, true),
+                ["HorizontalRecoil"] = new(25, 85, true),
                 ["ShotgunDispersion"] = new(1, 3, true),
                 ["Convergence"] = new(-2, 2, true),
-                ["RecoilIntensity"] = new(0.06, 0.16),
+                ["RecoilIntensity"] = new(0.07, 0.16),
+            }),
+            ["shotgun_shell_20g"] = CreateRanges(new Dictionary<string, NumericRange>(StringComparer.OrdinalIgnoreCase)
+            {
+                ["VerticalRecoil"] = new(20, 70, true),
+                ["HorizontalRecoil"] = new(10, 55, true),
+                ["ShotgunDispersion"] = new(0, 2, true),
+                ["Convergence"] = new(0, 4, true),
+                ["RecoilIntensity"] = new(0.02, 0.10),
+            }),
+            ["shotgun_shell_23x75"] = CreateRanges(new Dictionary<string, NumericRange>(StringComparer.OrdinalIgnoreCase)
+            {
+                ["VerticalRecoil"] = new(95, 180, true),
+                ["HorizontalRecoil"] = new(40, 115, true),
+                ["ShotgunDispersion"] = new(2, 5, true),
+                ["Convergence"] = new(-4, 0, true),
+                ["RecoilIntensity"] = new(0.12, 0.28),
             }),
             ["pdw_high_pen_small"] = CreateRanges(new Dictionary<string, NumericRange>(StringComparer.OrdinalIgnoreCase)
             {
@@ -282,7 +298,9 @@ internal static class WeaponRuleData
     public static readonly IReadOnlyList<(string Profile, string[] Keywords)> CaliberProfileKeywords =
     [
         ("magnum_heavy", [".338", "338lm", "338 lapua", ".300 wm", "300wm", "300 win mag", "12.7x", "50 bmg"]),
-        ("shotgun_shell", ["12g", "12 ga", "12 gauge", "20g", "20 gauge"]),
+        ("shotgun_shell_12g", ["12g", "12 ga", "12ga", "12 gauge", "12x70", "12x76"]),
+        ("shotgun_shell_20g", ["20g", "20 ga", "20ga", "20 gauge", "20x70"]),
+        ("shotgun_shell_23x75", ["23x75", "ks23"]),
         ("pdw_high_pen_small", ["4.6x30", "5.7x28"]),
         ("full_power_rifle_rimmed", ["7.62x54", "54r", "7.62x54r"]),
         ("full_power_rifle", ["7.62x51", "308", ".308", "6.8"]),

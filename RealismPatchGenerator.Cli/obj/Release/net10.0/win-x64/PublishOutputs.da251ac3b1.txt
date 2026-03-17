@@ -1,0 +1,5 @@
+E:\云文件\GitHub\Realism-patch-Generator-Csharp\artifacts\size-probe\cli-fd-multi\RealismPatchGenerator.Cli.exe
+E:\云文件\GitHub\Realism-patch-Generator-Csharp\artifacts\size-probe\cli-fd-multi\RealismPatchGenerator.Cli.dll
+E:\云文件\GitHub\Realism-patch-Generator-Csharp\artifacts\size-probe\cli-fd-multi\RealismPatchGenerator.Cli.deps.json
+E:\云文件\GitHub\Realism-patch-Generator-Csharp\artifacts\size-probe\cli-fd-multi\RealismPatchGenerator.Cli.runtimeconfig.json
+E:\云文件\GitHub\Realism-patch-Generator-Csharp\artifacts\size-probe\cli-fd-multi\RealismPatchGenerator.Core.dll

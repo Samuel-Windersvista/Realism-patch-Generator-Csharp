@@ -84,11 +84,25 @@ internal static class AmmoRuleData
                 ["HeavyBleedingDelta"] = new(0.08, 0.40), ["LightBleedingDelta"] = new(0.10, 0.42), ["DurabilityBurnModificator"] = new(1.15, 1.60), ["BallisticCoeficient"] = new(0.28, 0.58),
                 ["MalfMisfireChance"] = new(0.001, 0.015), ["MisfireChance"] = new(0.001, 0.015), ["MalfFeedChance"] = new(0.001, 0.015),
             }),
-            ["shotgun_shell"] = CreateRanges(new Dictionary<string, NumericRange>(StringComparer.OrdinalIgnoreCase)
+            ["shotgun_shell_12g"] = CreateRanges(new Dictionary<string, NumericRange>(StringComparer.OrdinalIgnoreCase)
             {
-                ["InitialSpeed"] = new(320, 520, true), ["BulletMassGram"] = new(22.0, 46.0), ["Damage"] = new(110, 235, true), ["PenetrationPower"] = new(1, 30, true),
-                ["ammoRec"] = new(20, 52, true), ["ammoAccr"] = new(-24, -5, true), ["ArmorDamage"] = new(1.00, 1.10), ["HeatFactor"] = new(0.95, 1.25),
-                ["HeavyBleedingDelta"] = new(0.08, 0.55), ["LightBleedingDelta"] = new(0.18, 0.60), ["DurabilityBurnModificator"] = new(1.00, 1.35), ["BallisticCoeficient"] = new(0.03, 0.12),
+                ["InitialSpeed"] = new(320, 520, true), ["BulletMassGram"] = new(26.0, 46.0), ["Damage"] = new(125, 235, true), ["PenetrationPower"] = new(1, 30, true),
+                ["ammoRec"] = new(24, 52, true), ["ammoAccr"] = new(-24, -6, true), ["ArmorDamage"] = new(1.00, 1.10), ["HeatFactor"] = new(0.97, 1.25),
+                ["HeavyBleedingDelta"] = new(0.10, 0.55), ["LightBleedingDelta"] = new(0.20, 0.60), ["DurabilityBurnModificator"] = new(1.00, 1.35), ["BallisticCoeficient"] = new(0.03, 0.12),
+                ["MalfMisfireChance"] = new(0.001, 0.008), ["MisfireChance"] = new(0.001, 0.008), ["MalfFeedChance"] = new(0.001, 0.008),
+            }),
+            ["shotgun_shell_20g"] = CreateRanges(new Dictionary<string, NumericRange>(StringComparer.OrdinalIgnoreCase)
+            {
+                ["InitialSpeed"] = new(330, 530, true), ["BulletMassGram"] = new(18.0, 32.0), ["Damage"] = new(95, 185, true), ["PenetrationPower"] = new(1, 24, true),
+                ["ammoRec"] = new(12, 34, true), ["ammoAccr"] = new(-18, -2, true), ["ArmorDamage"] = new(1.00, 1.08), ["HeatFactor"] = new(0.90, 1.15),
+                ["HeavyBleedingDelta"] = new(0.06, 0.42), ["LightBleedingDelta"] = new(0.14, 0.50), ["DurabilityBurnModificator"] = new(0.92, 1.20), ["BallisticCoeficient"] = new(0.025, 0.10),
+                ["MalfMisfireChance"] = new(0.001, 0.008), ["MisfireChance"] = new(0.001, 0.008), ["MalfFeedChance"] = new(0.001, 0.008),
+            }),
+            ["shotgun_shell_23x75"] = CreateRanges(new Dictionary<string, NumericRange>(StringComparer.OrdinalIgnoreCase)
+            {
+                ["InitialSpeed"] = new(270, 420, true), ["BulletMassGram"] = new(38.0, 62.0), ["Damage"] = new(140, 270, true), ["PenetrationPower"] = new(1, 28, true),
+                ["ammoRec"] = new(38, 75, true), ["ammoAccr"] = new(-30, -8, true), ["ArmorDamage"] = new(1.00, 1.11), ["HeatFactor"] = new(1.00, 1.35),
+                ["HeavyBleedingDelta"] = new(0.14, 0.65), ["LightBleedingDelta"] = new(0.22, 0.72), ["DurabilityBurnModificator"] = new(1.05, 1.45), ["BallisticCoeficient"] = new(0.04, 0.14),
                 ["MalfMisfireChance"] = new(0.001, 0.008), ["MisfireChance"] = new(0.001, 0.008), ["MalfFeedChance"] = new(0.001, 0.008),
             }),
             ["anti_materiel_50bmg"] = CreateRanges(new Dictionary<string, NumericRange>(StringComparer.OrdinalIgnoreCase)
@@ -110,7 +124,9 @@ internal static class AmmoRuleData
         ("rifle_300blk", [".300 aac", "300 blackout", ".300 blk"]),
         ("anti_materiel_50bmg", [".50 bmg", "50bmg", "12.7x99", "12,7x99"]),
         ("magnum_heavy", [".338", "338", ".300 wm", "300 wm", "300 win mag", "300 winchester magnum", "8.6 blackout", "86 blackout", "12.7x55", "7.62x54", "7.62x54r"]),
-        ("shotgun_shell", ["12x70", "12x76", "12 gauge", "20 gauge", "12/70", "12/76", "20/70", "23x75"]),
+        ("shotgun_shell_12g", ["12x70", "12x76", "12g", "12ga", "12 gauge", "12/70", "12/76"]),
+        ("shotgun_shell_20g", ["20x70", "20g", "20ga", "20/70", "20 gauge"]),
+        ("shotgun_shell_23x75", ["23x75"]),
         ("full_power_rifle", ["7.62x51", "7.62 nato", "7.62x63", "7.62x67", "7.92x57", "792x57", "8mm mauser", "6.8", "6x38", "6 mm arc", "6mm arc", "6.5 creedmoor", "6.5x48", "6.5 creed"]),
         ("intermediate_rifle", ["5.8x42", "58x42", "caliber58x42", "6.5 grendel"]),
         ("pdw_small_high_velocity", ["4.6x30", "5.7x28"]),
