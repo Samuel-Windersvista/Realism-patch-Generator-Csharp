@@ -1,10 +1,9 @@
 param(
-    [string]$Version = "1.2.0",
+    [string]$Version = "1.22.0",
     [string]$RuntimeIdentifier = "win-x64",
     [string]$Configuration = "Release",
     [string]$ArtifactsRoot = "artifacts\release",
-    [switch]$FrameworkDependent,
-    [switch]$SeparateGuiCliPackages
+    [switch]$FrameworkDependent
 )
 
 Set-StrictMode -Version Latest
@@ -19,7 +18,6 @@ $packageName = "RealismPatchGenerator-v$Version-$RuntimeIdentifier$packageSuffix
 $packageRoot = Join-Path $releaseRoot $packageName
 $tempRoot = Join-Path $releaseRoot "_tmp_$packageName"
 $guiPublishRoot = Join-Path $tempRoot "gui"
-$cliPublishRoot = Join-Path $tempRoot "cli"
 $zipPath = Join-Path $releaseRoot ($packageName + ".zip")
 
 function Reset-Directory {
@@ -165,7 +163,6 @@ Reset-Directory -Path $releaseRoot
 New-Item -ItemType Directory -Path $tempRoot | Out-Null
 
 $guiProject = Join-Path $repoRoot "RealismPatchGenerator.Gui\RealismPatchGenerator.Gui.csproj"
-$cliProject = Join-Path $repoRoot "RealismPatchGenerator.Cli\RealismPatchGenerator.Cli.csproj"
 $templatesDirectory = Get-TemplatesDirectory -Root $repoRoot
 
 if ($null -eq $templatesDirectory) {
@@ -186,81 +183,20 @@ dotnet publish $guiProject `
     -p:DebugSymbols=false `
     -o $guiPublishRoot
 
-dotnet publish $cliProject `
-    -c $Configuration `
-    -r $RuntimeIdentifier `
-    --self-contained $selfContainedValue `
-    -p:PublishSingleFile=$publishSingleFileValue `
-    -p:IncludeNativeLibrariesForSelfExtract=$includeNativeLibrariesValue `
-    -p:DebugType=None `
-    -p:DebugSymbols=false `
-    -o $cliPublishRoot
+Reset-Directory -Path $packageRoot
 
-if ($SeparateGuiCliPackages) {
-    $guiPackageName = "RealismPatchGenerator-Gui-v$Version-$RuntimeIdentifier$packageSuffix"
-    $cliPackageName = "RealismPatchGenerator-Cli-v$Version-$RuntimeIdentifier$packageSuffix"
-    $guiPackageRoot = Join-Path $releaseRoot $guiPackageName
-    $cliPackageRoot = Join-Path $releaseRoot $cliPackageName
-    $guiZipPath = Join-Path $releaseRoot ($guiPackageName + ".zip")
-    $cliZipPath = Join-Path $releaseRoot ($cliPackageName + ".zip")
+Copy-Item -Path (Join-Path $guiPublishRoot "*") -Destination $packageRoot -Recurse -Force
 
-    Reset-Directory -Path $guiPackageRoot
-    Reset-Directory -Path $cliPackageRoot
+Copy-CommonPayload -Destination $packageRoot -TemplatesDirectory $templatesDirectory
+Write-ReleaseInfo -Destination $packageRoot `
+    -EntryPoints @("RealismPatchGenerator.Gui.exe: GUI application") `
+    -RecommendedUsage @("Use GUI for rule editing, generation, item exception management, and audit review") `
+    -TemplatesDirectory $templatesDirectory `
+    -PackageKind "GUI"
 
-    Copy-Item -Path (Join-Path $guiPublishRoot "*") -Destination $guiPackageRoot -Recurse -Force
-    Copy-Item -Path (Join-Path $cliPublishRoot "*") -Destination $cliPackageRoot -Recurse -Force
+New-ZipFromDirectory -DirectoryPath $packageRoot -ZipFilePath $zipPath
 
-    Copy-CommonPayload -Destination $guiPackageRoot -TemplatesDirectory $templatesDirectory
-    Copy-CommonPayload -Destination $cliPackageRoot -TemplatesDirectory $templatesDirectory
-
-    Write-ReleaseInfo -Destination $guiPackageRoot `
-        -EntryPoints @("RealismPatchGenerator.Gui.exe: GUI application") `
-        -RecommendedUsage @("Use GUI for rule editing, generation, item exception management, and audit review") `
-        -TemplatesDirectory $templatesDirectory `
-        -PackageKind "GUI"
-
-    Write-ReleaseInfo -Destination $cliPackageRoot `
-        -EntryPoints @("RealismPatchGenerator.Cli.exe: CLI generate and audit tool") `
-        -RecommendedUsage @("Use CLI for batch generation, fixed-seed reruns, and output audits") `
-        -TemplatesDirectory $templatesDirectory `
-        -PackageKind "CLI"
-
-    New-ZipFromDirectory -DirectoryPath $guiPackageRoot -ZipFilePath $guiZipPath
-    New-ZipFromDirectory -DirectoryPath $cliPackageRoot -ZipFilePath $cliZipPath
-
-    Write-Host "GUI 发布目录: $guiPackageRoot"
-    Write-Host "GUI 发布压缩包: $guiZipPath"
-    Write-Host "CLI 发布目录: $cliPackageRoot"
-    Write-Host "CLI 发布压缩包: $cliZipPath"
-}
-else {
-    Reset-Directory -Path $packageRoot
-
-    Copy-Item -Path (Join-Path $guiPublishRoot "*") -Destination $packageRoot -Recurse -Force
-    if ($FrameworkDependent) {
-        Copy-Item -Path (Join-Path $cliPublishRoot "*") -Destination $packageRoot -Recurse -Force
-    }
-    else {
-        Copy-Item -Path (Join-Path $cliPublishRoot "RealismPatchGenerator.Cli.exe") -Destination $packageRoot -Force
-    }
-
-    Copy-CommonPayload -Destination $packageRoot -TemplatesDirectory $templatesDirectory
-    Write-ReleaseInfo -Destination $packageRoot `
-        -EntryPoints @(
-            "RealismPatchGenerator.Gui.exe: GUI application",
-            "RealismPatchGenerator.Cli.exe: CLI generate and audit tool"
-        ) `
-        -RecommendedUsage @(
-            "Use GUI for rule editing and item exception management",
-            "Use CLI for batch generation and audits"
-        ) `
-        -TemplatesDirectory $templatesDirectory `
-        -PackageKind "Combined"
-
-    New-ZipFromDirectory -DirectoryPath $packageRoot -ZipFilePath $zipPath
-
-    Write-Host "发布目录: $packageRoot"
-    Write-Host "发布压缩包: $zipPath"
-}
+Write-Host "发布目录: $packageRoot"
+Write-Host "发布压缩包: $zipPath"
 
 Remove-Item -Path $tempRoot -Recurse -Force

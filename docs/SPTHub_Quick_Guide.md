@@ -1,15 +1,15 @@
 # SPT Hub Release Quick Guide / SPTHub 发布简版说明
 
-SPT Realism Value Range Generator v1.2 is a standalone C# toolset for editing realism value ranges, generating patch output, auditing generated results, and applying item-specific exceptions.
+SPT Realism Value Range Generator v1.22 is a standalone C# toolset for editing realism value ranges, generating patch output, auditing generated results, and applying item-specific exceptions.
 
-SPT 现实主义数值范围编辑生成器 v1.2 是一个独立的 C# 工具集，用于编辑现实主义数值规则、生成补丁输出、审计生成结果，以及对特定物品应用字段级例外。
+SPT 现实主义数值范围编辑生成器 v1.22 是一个独立的 C# 工具集，用于编辑现实主义数值规则、生成补丁输出、审计生成结果，以及对特定物品应用字段级例外。
 
 ## Key Features / 核心功能
 
 - GUI-based editing for weapon, attachment, ammo, and gear rules.
 - 图形化编辑武器、附件、弹药、装备四大类规则。
-- CLI generation and audit workflow.
-- 支持 CLI 生成与审计工作流。
+- GUI generation and audit workflow.
+- 支持 GUI 生成与审计工作流。
 - Item-specific exception overrides through rules/item_exceptions.json.
 - 支持通过 rules/item_exceptions.json 对个别物品做例外覆盖。
 - Shotgun handling split into 12g, 20g, and 23x75 on both ammo and weapon sides.
@@ -19,8 +19,8 @@ SPT 现实主义数值范围编辑生成器 v1.2 是一个独立的 C# 工具集
 
 1. Put source JSON files into input.
 1. 将源 JSON 放入 input。
-1. Run the GUI or CLI generator.
-1. 运行 GUI 或 CLI 生成器。
+1. Run the GUI.
+1. 运行 GUI。
 1. Check generated results under output.
 1. 在 output 中查看生成结果。
 1. Re-running generation will resample values inside the configured ranges, so the same item can change between runs.
@@ -37,23 +37,9 @@ dotnet run --project RealismPatchGenerator.Gui
 - GUI seed box: leave it blank for fresh randomness, enter a fixed seed to reproduce, clear it to go back to random generation, or reuse the most recently used seed.
 - GUI Seed 框：留空表示每次重新随机，输入固定 seed 可复现结果，也可以一键清空，或回填最近一次实际使用的 seed。
 
-CLI generate:
+Audit and generation are both executed inside the GUI.
 
-```powershell
-dotnet run --project RealismPatchGenerator.Cli
-```
-
-CLI generate with fixed seed:
-
-```powershell
-dotnet run --project RealismPatchGenerator.Cli -- --seed 123456
-```
-
-CLI audit:
-
-```powershell
-dotnet run --project RealismPatchGenerator.Cli -- audit
-```
+生成与审计均在 GUI 内执行。
 
 ## Audit Scope / 审计范围说明
 

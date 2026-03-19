@@ -12,11 +12,11 @@ using System.Reflection;
 
 [assembly: System.Reflection.AssemblyCompanyAttribute("Project Contributors")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
-[assembly: System.Reflection.AssemblyFileVersionAttribute("1.2.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.2.0+8c1d1a9c635712d11f38f49d27e19de74bb50a24")]
+[assembly: System.Reflection.AssemblyFileVersionAttribute("1.22.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.22.0+6c8cfea3aa88bf1858c691150deb6046c0422db1")]
 [assembly: System.Reflection.AssemblyProductAttribute("SPT现实主义数值范围编辑生成器")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RealismPatchGenerator.Core")]
-[assembly: System.Reflection.AssemblyVersionAttribute("1.2.0.0")]
+[assembly: System.Reflection.AssemblyVersionAttribute("1.22.0.0")]
 
 // 由 MSBuild WriteCodeFragment 类生成。
 

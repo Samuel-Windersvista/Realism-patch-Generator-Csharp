@@ -390,7 +390,7 @@
           "build/net6.0/xunit.runner.visualstudio.props": {}
         }
       },
-      "RealismPatchGenerator.Core/1.2.0": {
+      "RealismPatchGenerator.Core/1.22.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
         "compile": {
@@ -830,7 +830,7 @@
         "xunit.runner.visualstudio.nuspec"
       ]
     },
-    "RealismPatchGenerator.Core/1.2.0": {
+    "RealismPatchGenerator.Core/1.22.0": {
       "type": "project",
       "path": "../RealismPatchGenerator.Core/RealismPatchGenerator.Core.csproj",
       "msbuildProject": "../RealismPatchGenerator.Core/RealismPatchGenerator.Core.csproj"
@@ -839,7 +839,7 @@
   "projectFileDependencyGroups": {
     "net10.0": [
       "Microsoft.NET.Test.Sdk >= 17.12.0",
-      "RealismPatchGenerator.Core >= 1.2.0",
+      "RealismPatchGenerator.Core >= 1.22.0",
       "xunit >= 2.9.3",
       "xunit.runner.visualstudio >= 2.8.2"
     ]
@@ -892,7 +892,7 @@
         "auditLevel": "low",
         "auditMode": "all"
       },
-      "SdkAnalysisLevel": "10.0.100"
+      "SdkAnalysisLevel": "10.0.200"
     },
     "frameworks": {
       "net10.0": {
@@ -929,7 +929,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.103/PortableRuntimeIdentifierGraph.json",
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.201/PortableRuntimeIdentifierGraph.json",
         "packagesToPrune": {
           "Microsoft.CSharp": "(,4.7.32767]",
           "Microsoft.VisualBasic": "(,10.4.32767]",

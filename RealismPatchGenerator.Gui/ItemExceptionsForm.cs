@@ -8,6 +8,11 @@ namespace RealismPatchGenerator.Gui;
 
 internal sealed class ItemExceptionsForm : Form
 {
+    private const int MainSplitPanel1MinSize = 430;
+    private const int MainSplitPanel2MinSize = 700;
+    private const int MainSplitPreferredDistance = 440;
+    private const int LeftSplitPreferredDistance = 410;
+
     private static readonly JsonSerializerOptions JsonWriteOptions = new()
     {
         WriteIndented = true,
@@ -29,6 +34,7 @@ internal sealed class ItemExceptionsForm : Form
     private bool currentDirty;
     private bool suppressFieldSelectionChanged;
     private bool suppressEditorChanges;
+    private bool initialSplitLayoutApplied;
 
     private readonly Label introLabel = new();
     private readonly SplitContainer mainSplitContainer = new();
@@ -102,45 +108,63 @@ internal sealed class ItemExceptionsForm : Form
         introLabel.Text = T("Intro");
 
         mainSplitContainer.Dock = DockStyle.Fill;
-        mainSplitContainer.SplitterDistance = 500;
 
         leftSplitContainer.Dock = DockStyle.Fill;
         leftSplitContainer.Orientation = Orientation.Horizontal;
-        leftSplitContainer.SplitterDistance = 410;
 
         searchGroupBox.Dock = DockStyle.Fill;
         searchGroupBox.Padding = new Padding(8);
         searchGroupBox.Text = T("SearchGroup");
 
         searchPanel.Dock = DockStyle.Top;
-        searchPanel.Height = 72;
+        searchPanel.Height = 102;
 
         sourceComboBox.Visible = false;
 
-        searchTextBox.Location = new Point(8, 10);
-        searchTextBox.Size = new Size(300, 23);
+        var searchLayoutPanel = new TableLayoutPanel
+        {
+            Dock = DockStyle.Fill,
+            ColumnCount = 2,
+            RowCount = 3,
+            Padding = new Padding(8, 10, 8, 6),
+        };
+        searchLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+        searchLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize));
+        searchLayoutPanel.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+        searchLayoutPanel.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+        searchLayoutPanel.RowStyles.Add(new RowStyle(SizeType.AutoSize));
 
-        searchButton.Location = new Point(316, 9);
-        searchButton.Size = new Size(110, 26);
+        searchTextBox.Dock = DockStyle.Fill;
+        searchTextBox.Margin = new Padding(0, 0, 8, 8);
+
+        searchButton.AutoSize = true;
+        searchButton.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+        searchButton.Dock = DockStyle.Fill;
+        searchButton.Margin = new Padding(0, 0, 0, 8);
         searchButton.Text = T("Search");
         searchButton.UseVisualStyleBackColor = true;
         searchButton.Click += searchButton_Click;
 
         searchNoteLabel.AutoSize = true;
-        searchNoteLabel.Location = new Point(8, 44);
-        searchNoteLabel.Size = new Size(420, 18);
+        searchNoteLabel.Margin = new Padding(0, 0, 0, 8);
         searchNoteLabel.Text = T("SearchNote");
 
-        loadSearchResultButton.Location = new Point(320, 40);
         loadSearchResultButton.Size = new Size(152, 26);
+        loadSearchResultButton.AutoSize = true;
+        loadSearchResultButton.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+        loadSearchResultButton.Anchor = AnchorStyles.Right | AnchorStyles.Top;
+        loadSearchResultButton.Margin = new Padding(0);
         loadSearchResultButton.Text = T("LoadSelectedSearch");
         loadSearchResultButton.UseVisualStyleBackColor = true;
         loadSearchResultButton.Click += loadSearchResultButton_Click;
 
-        searchPanel.Controls.Add(searchTextBox);
-        searchPanel.Controls.Add(searchButton);
-        searchPanel.Controls.Add(searchNoteLabel);
-        searchPanel.Controls.Add(loadSearchResultButton);
+        searchLayoutPanel.Controls.Add(searchTextBox, 0, 0);
+        searchLayoutPanel.Controls.Add(searchButton, 1, 0);
+        searchLayoutPanel.Controls.Add(searchNoteLabel, 0, 1);
+        searchLayoutPanel.SetColumnSpan(searchNoteLabel, 2);
+        searchLayoutPanel.Controls.Add(loadSearchResultButton, 1, 2);
+
+        searchPanel.Controls.Add(searchLayoutPanel);
 
         searchResultsGridView.AllowUserToAddRows = false;
         searchResultsGridView.AllowUserToDeleteRows = false;
@@ -443,7 +467,57 @@ internal sealed class ItemExceptionsForm : Form
         Controls.Add(introLabel);
 
         FormClosing += ItemExceptionsForm_FormClosing;
+        Shown += ItemExceptionsForm_Shown;
         ResumeLayout(false);
+    }
+
+    private void ItemExceptionsForm_Shown(object? sender, EventArgs e)
+    {
+        ApplyInitialSplitLayout();
+    }
+
+    private void ApplyInitialSplitLayout()
+    {
+        if (initialSplitLayoutApplied)
+        {
+            return;
+        }
+
+        ApplyMainSplitConstraints();
+        ApplySplitterDistance(mainSplitContainer, MainSplitPreferredDistance);
+        ApplySplitterDistance(leftSplitContainer, LeftSplitPreferredDistance);
+        initialSplitLayoutApplied = true;
+    }
+
+    private void ApplyMainSplitConstraints()
+    {
+        int splitterWidth = mainSplitContainer.SplitterWidth;
+        int availableWidth = mainSplitContainer.Width - splitterWidth;
+        if (availableWidth <= 0)
+        {
+            return;
+        }
+
+        int panel1MinSize = Math.Min(MainSplitPanel1MinSize, availableWidth);
+        int remainingWidth = Math.Max(0, availableWidth - panel1MinSize);
+        int panel2MinSize = Math.Min(MainSplitPanel2MinSize, remainingWidth);
+
+        mainSplitContainer.Panel1MinSize = panel1MinSize;
+        mainSplitContainer.Panel2MinSize = panel2MinSize;
+    }
+
+    private static void ApplySplitterDistance(SplitContainer splitContainer, int preferredDistance)
+    {
+        int maxDistance = splitContainer.Orientation == Orientation.Vertical
+            ? splitContainer.Width - splitContainer.Panel2MinSize
+            : splitContainer.Height - splitContainer.Panel2MinSize;
+
+        if (maxDistance < splitContainer.Panel1MinSize)
+        {
+            return;
+        }
+
+        splitContainer.SplitterDistance = Math.Clamp(preferredDistance, splitContainer.Panel1MinSize, maxDistance);
     }
 
     private void LoadDocument()

@@ -36,10 +36,10 @@ These files are the current priority set:
 
 ## C. Minimum Checks After Each Change
 
-### C1. GUI and CLI
+### C1. GUI
 
 - Confirm the GUI launch command is still dotnet run --project RealismPatchGenerator.Gui
-- Confirm the audit command is still dotnet run --project RealismPatchGenerator.Cli -- audit
+- Confirm the docs still state that generation and audit are performed through the GUI
 - Confirm the button names in the user guide still match the current GUI labels
 
 ### C2. Item Exceptions
@@ -70,6 +70,6 @@ These files are the current priority set:
 1. Modify code, rules, and template-related logic.
 2. Run dotnet build RealismPatchGenerator.slnx.
 3. Generate a small output sample and check the key file structures.
-4. Run the CLI audit and review audit_reports.
+4. Run the audit from the GUI and review audit_reports.
 5. Synchronize docs and version numbers.
 6. Perform full generation and manual regression checks last.

@@ -78,7 +78,7 @@ internal static class UiTextCatalog
 {
     private static readonly IReadOnlyDictionary<string, LocalizedText> Texts = new Dictionary<string, LocalizedText>(StringComparer.Ordinal)
     {
-        ["App.Title"] = new("SPT现实主义数值范围编辑生成器 v1.2", "SPT Realism Range Editor Generator v1.2"),
+        ["App.Title"] = new("SPT现实主义数值范围编辑生成器 v1.22", "SPT Realism Range Editor Generator v1.22"),
         ["Label.DataRoot"] = new("数据目录:", "Data Root:"),
         ["Label.OutputPath"] = new("输出路径:", "Output Path:"),
         ["Label.Seed"] = new("Seed:", "Seed:"),

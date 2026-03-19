@@ -1,11 +1,11 @@
-# SPT Realism Value Range Generator v1.2 User Guide
+# SPT Realism Value Range Generator v1.22 User Guide
 
-This document reflects the current state of the C# project and covers the GUI, CLI, rule editing, item exception management, and audit workflow.
+This document reflects the current state of the C# project and covers the GUI, rule editing, item exception management, and audit workflow.
 
 ## 1. Version Positioning
 
-- Version: v1.2
-- Runtime form: standalone .NET GUI + CLI toolchain
+- Version: v1.22
+- Runtime form: standalone .NET GUI tool
 - Current focus: rule editing, patch generation, audit checks, and item exception overrides are all handled inside one solution
 
 ## 2. Directory Conventions
@@ -87,34 +87,21 @@ Current audit behavior:
 - mod_profile_unresolved entries in attachments are excluded from unresolved attachment noise
 - Fields explicitly overridden in item_exceptions are exempted per field rather than skipping the whole item
 
-## 6. CLI Usage
+## 6. Launch Mode
 
-Run generation:
+The standalone CLI entry point has been removed. Generation and audit are now performed through the GUI only.
 
-```powershell
-dotnet run --project RealismPatchGenerator.Cli
-```
-
-Run generation with a fixed seed:
+Start the GUI in a development environment:
 
 ```powershell
-dotnet run --project RealismPatchGenerator.Cli -- --seed 123456
+dotnet run --project RealismPatchGenerator.Gui
 ```
 
-Run audit:
+If you need to reproduce a specific generation run:
 
-```powershell
-dotnet run --project RealismPatchGenerator.Cli -- audit
-```
-
-Common parameters:
-
-- --seed: specify a fixed random seed to reproduce the same generation result
-- --output-dir: specify the output directory to audit
-- --report-file: specify the audit report path
-- --include-ok: include passing items in the report
-- --include-template-exports: include all JSON files under output in the audit scope
-- --fail-on-violations: return a non-zero exit code when violations exist
+- Enter a fixed unsigned integer in the GUI Seed box
+- Click Generate Patch to run with that explicit seed
+- Clear the Seed box to return to random generation
 
 ## 7. Current Boundaries
 
