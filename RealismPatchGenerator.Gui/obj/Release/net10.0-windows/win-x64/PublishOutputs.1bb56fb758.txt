@@ -1,5 +1,0 @@
-E:\云文件\GitHub\Realism-patch-Generator-Csharp\artifacts\release\_tmp_RealismPatchGenerator-v1.22.0-win-x64-fd\gui\RealismPatchGenerator.Gui.exe
-E:\云文件\GitHub\Realism-patch-Generator-Csharp\artifacts\release\_tmp_RealismPatchGenerator-v1.22.0-win-x64-fd\gui\RealismPatchGenerator.Gui.dll
-E:\云文件\GitHub\Realism-patch-Generator-Csharp\artifacts\release\_tmp_RealismPatchGenerator-v1.22.0-win-x64-fd\gui\RealismPatchGenerator.Gui.deps.json
-E:\云文件\GitHub\Realism-patch-Generator-Csharp\artifacts\release\_tmp_RealismPatchGenerator-v1.22.0-win-x64-fd\gui\RealismPatchGenerator.Gui.runtimeconfig.json
-E:\云文件\GitHub\Realism-patch-Generator-Csharp\artifacts\release\_tmp_RealismPatchGenerator-v1.22.0-win-x64-fd\gui\RealismPatchGenerator.Core.dll
