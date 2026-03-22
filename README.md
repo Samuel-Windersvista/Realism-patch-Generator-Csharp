@@ -34,12 +34,12 @@ This project consolidates the GUI editor, rule files, item exception management,
 ### Main Features
 
 - Generate Realism patches quickly.
-- Use a logical rule system and value ranges to standardize generated patch values.
+- Use a logical structure rule system based on RealismItemTemplates and numeric ranges based on RealismItemRules to standardize generated patch values.
 - Allow users to adjust the value ranges themselves.
 - Generate patch values through a pseudorandom seed-based system.
-- Use RealismItemRules/item_exceptions.json to customize exceptions for specific item properties, allowing flexible stat design without breaking overall balance.
+- Use item_exceptions.json to customize exceptions for specific item properties, allowing flexible stat design without breaking overall balance.
 - Provide an audit feature to automatically check whether generated patches violate the rules.
-- Support reading and generating six different item mod data structure styles used around version 3.11.4.
+- Support reading and generating six common item-mod data structure styles used in SPT 3.11.4, with fallback handling to remain as compatible as possible when the input style cannot be fully recognized.
 
 ### Quick Start
 
@@ -92,12 +92,12 @@ SPT 现实主义数值范围编辑生成器 v1.30.0 是专门为SPT Realism Mod 
 ### 主要功能
 
 - 可快捷地生成现实主义补丁
-- 使用一套符合逻辑的规则体系和数值范围来规范生成的补丁数值
+- 使用一套符合逻辑的规则体系（RealismItemTemplates）和数值范围（RealismItemRules）来规范生成的补丁数值
 - 数值范围可由用户自行调整
 - 补丁的数值由随机种子系统进行伪随机生成
-- 通过 RealismItemRules/item_exceptions.json，可对个别物品的属性进行例外定制。在不破坏数值平衡的情况下，可随意设计属性。
+- 通过 item_exceptions.json，可对个别物品的属性进行例外定制。在不破坏数值平衡的情况下，可随意设计属性。
 - 检修功能，可自动化检查生成的补丁是否违反规则。
-- 支持读取和生成3.11.4版本时期六种不同编写习惯的物品MOD数据结构。
+- 支持读取和生成SPT3.11.4版本的六种不同编写习惯的物品MOD数据结构，并用兜底机制尽可能兼容未能识别的编写规范。
 
 ### 快速开始
 
