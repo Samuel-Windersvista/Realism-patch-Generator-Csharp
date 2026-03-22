@@ -5,7 +5,7 @@
   },
   "projects": {
     "E:\\云文件\\GitHub\\Realism-patch-Generator-Csharp\\RealismPatchGenerator.Core\\RealismPatchGenerator.Core.csproj": {
-      "version": "1.22.0",
+      "version": "1.30.0",
       "restore": {
         "projectUniqueName": "E:\\云文件\\GitHub\\Realism-patch-Generator-Csharp\\RealismPatchGenerator.Core\\RealismPatchGenerator.Core.csproj",
         "projectName": "RealismPatchGenerator.Core",
@@ -340,6 +340,11 @@
             "System.Xml.XPath": "(,4.3.32767]",
             "System.Xml.XPath.XDocument": "(,5.0.32767]"
           }
+        }
+      },
+      "runtimes": {
+        "win-x64": {
+          "#import": []
         }
       }
     }

@@ -3,7 +3,8 @@ param(
     [string]$RuntimeIdentifier = "win-x64",
     [string]$Configuration = "Release",
     [string]$ArtifactsRoot = "artifacts\release",
-    [switch]$FrameworkDependent
+    [switch]$FrameworkDependent,
+    [switch]$BuildBoth
 )
 
 Set-StrictMode -Version Latest
@@ -12,13 +13,6 @@ $ErrorActionPreference = "Stop"
 $scriptRoot = Split-Path -Parent $MyInvocation.MyCommand.Path
 $repoRoot = [System.IO.Path]::GetFullPath((Join-Path $scriptRoot ".."))
 $releaseRoot = Join-Path $repoRoot $ArtifactsRoot
-$deploymentMode = if ($FrameworkDependent) { "framework-dependent" } else { "self-contained" }
-$packageSuffix = if ($FrameworkDependent) { "-fd" } else { "" }
-$packageName = "RealismPatchGenerator-v$Version-$RuntimeIdentifier$packageSuffix"
-$packageRoot = Join-Path $releaseRoot $packageName
-$tempRoot = Join-Path $releaseRoot "_tmp_$packageName"
-$guiPublishRoot = Join-Path $tempRoot "gui"
-$zipPath = Join-Path $releaseRoot ($packageName + ".zip")
 
 function Reset-Directory {
     param([string]$Path)
@@ -109,7 +103,9 @@ function Write-ReleaseInfo {
         [string[]]$EntryPoints,
         [string[]]$RecommendedUsage,
         [System.IO.DirectoryInfo]$TemplatesDirectory,
-        [string]$PackageKind
+        [string]$PackageKind,
+        [bool]$IsFrameworkDependent,
+        [string]$DeploymentMode
     )
 
     $entryPointText = ($EntryPoints | ForEach-Object { "- $_" }) -join [Environment]::NewLine
@@ -137,10 +133,10 @@ Recommended usage:
 $recommendedUsageText
 
 Runtime requirement:
-- $(if ($FrameworkDependent) { '.NET Desktop Runtime / .NET Runtime must already be installed on the target machine.' } else { 'No preinstalled .NET runtime is required on the target machine.' })
+- $(if ($IsFrameworkDependent) { '.NET Desktop Runtime / .NET Runtime must already be installed on the target machine.' } else { 'No preinstalled .NET runtime is required on the target machine.' })
 
 Packaging mode:
-- $(if ($FrameworkDependent) { 'Multi-file publish optimized for smaller package size.' } else { 'Single-file publish optimized for no-install distribution.' })
+- $(if ($IsFrameworkDependent) { 'Multi-file publish optimized for smaller package size.' } else { 'Single-file publish optimized for no-install distribution.' })
 "@
 
     Set-Content -Path (Join-Path $Destination "RELEASE.txt") -Value $releaseInfo -Encoding UTF8
@@ -159,9 +155,6 @@ function New-ZipFromDirectory {
     Compress-Archive -Path $DirectoryPath -DestinationPath $ZipFilePath -CompressionLevel Optimal
 }
 
-Reset-Directory -Path $releaseRoot
-New-Item -ItemType Directory -Path $tempRoot | Out-Null
-
 $guiProject = Join-Path $repoRoot "RealismPatchGenerator.Gui\RealismPatchGenerator.Gui.csproj"
 $templatesDirectory = Get-TemplatesDirectory -Root $repoRoot
 
@@ -169,34 +162,51 @@ if ($null -eq $templatesDirectory) {
     throw "Template directory not found under repository root."
 }
 
-$selfContainedValue = if ($FrameworkDependent) { "false" } else { "true" }
-$publishSingleFileValue = if ($FrameworkDependent) { "false" } else { "true" }
-$includeNativeLibrariesValue = if ($FrameworkDependent) { "false" } else { "true" }
+Reset-Directory -Path $releaseRoot
 
-dotnet publish $guiProject `
-    -c $Configuration `
-    -r $RuntimeIdentifier `
-    --self-contained $selfContainedValue `
-    -p:PublishSingleFile=$publishSingleFileValue `
-    -p:IncludeNativeLibrariesForSelfExtract=$includeNativeLibrariesValue `
-    -p:DebugType=None `
-    -p:DebugSymbols=false `
-    -o $guiPublishRoot
+$packageModes = if ($BuildBoth) { @($false, $true) } else { @($FrameworkDependent.IsPresent) }
 
-Reset-Directory -Path $packageRoot
+foreach ($isFrameworkDependent in $packageModes) {
+    $deploymentMode = if ($isFrameworkDependent) { "framework-dependent" } else { "self-contained" }
+    $packageSuffix = if ($isFrameworkDependent) { "-fd" } else { "" }
+    $packageName = "RealismPatchGenerator-v$Version-$RuntimeIdentifier$packageSuffix"
+    $packageRoot = Join-Path $releaseRoot $packageName
+    $tempRoot = Join-Path $releaseRoot "_tmp_$packageName"
+    $guiPublishRoot = Join-Path $tempRoot "gui"
+    $zipPath = Join-Path $releaseRoot ($packageName + ".zip")
+    $selfContainedValue = if ($isFrameworkDependent) { "false" } else { "true" }
+    $publishSingleFileValue = if ($isFrameworkDependent) { "false" } else { "true" }
+    $includeNativeLibrariesValue = if ($isFrameworkDependent) { "false" } else { "true" }
 
-Copy-Item -Path (Join-Path $guiPublishRoot "*") -Destination $packageRoot -Recurse -Force
+    Reset-Directory -Path $tempRoot
 
-Copy-CommonPayload -Destination $packageRoot -TemplatesDirectory $templatesDirectory
-Write-ReleaseInfo -Destination $packageRoot `
-    -EntryPoints @("RealismPatchGenerator.Gui.exe: GUI application") `
-    -RecommendedUsage @("Use GUI for rule editing, generation, item exception management, and audit review") `
-    -TemplatesDirectory $templatesDirectory `
-    -PackageKind "GUI"
+    dotnet publish $guiProject `
+        -c $Configuration `
+        -r $RuntimeIdentifier `
+        --self-contained $selfContainedValue `
+        -p:PublishSingleFile=$publishSingleFileValue `
+        -p:IncludeNativeLibrariesForSelfExtract=$includeNativeLibrariesValue `
+        -p:DebugType=None `
+        -p:DebugSymbols=false `
+        -o $guiPublishRoot
 
-New-ZipFromDirectory -DirectoryPath $packageRoot -ZipFilePath $zipPath
+    Reset-Directory -Path $packageRoot
 
-Write-Host "发布目录: $packageRoot"
-Write-Host "发布压缩包: $zipPath"
+    Copy-Item -Path (Join-Path $guiPublishRoot "*") -Destination $packageRoot -Recurse -Force
 
-Remove-Item -Path $tempRoot -Recurse -Force
+    Copy-CommonPayload -Destination $packageRoot -TemplatesDirectory $templatesDirectory
+    Write-ReleaseInfo -Destination $packageRoot `
+        -EntryPoints @("RealismPatchGenerator.Gui.exe: GUI application") `
+        -RecommendedUsage @("Use GUI for rule editing, generation, item exception management, and audit review") `
+        -TemplatesDirectory $templatesDirectory `
+        -PackageKind "GUI" `
+        -IsFrameworkDependent $isFrameworkDependent `
+        -DeploymentMode $deploymentMode
+
+    New-ZipFromDirectory -DirectoryPath $packageRoot -ZipFilePath $zipPath
+
+    Write-Host "发布目录: $packageRoot"
+    Write-Host "发布压缩包: $zipPath"
+
+    Remove-Item -Path $tempRoot -Recurse -Force
+}

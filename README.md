@@ -50,8 +50,9 @@ This project consolidates the GUI editor, rule files, item exception management,
 
 Release package notes:
 
-- Full package: no preinstalled .NET runtime required, but the package is larger.
-- Lightweight package: much smaller, but the target machine must already have the matching .NET Desktop Runtime installed.
+- Full package: no preinstalled .NET runtime required, but the package is larger. Recommended for most users.
+- Lightweight package: much smaller, but the target machine must already have the matching .NET Desktop Runtime installed. Recommended only if you already know the target machine has the required runtime.
+- Current release output provides both package types side by side: `RealismPatchGenerator-v<version>-win-x64.zip` and `RealismPatchGenerator-v<version>-win-x64-fd.zip`.
 
 ### Directory Layout
 
@@ -107,8 +108,9 @@ SPT 现实主义数值范围编辑生成器 v1.30.0 是专门为SPT Realism Mod 
 
 发布包说明:
 
-- 完整包: 体积较大，但目标机器不需要预装 .NET 运行时。
-- 轻量包: 体积更小，但目标机器需要预装匹配的 .NET Desktop Runtime。
+- 完整包: 体积较大，但目标机器不需要预装 .NET 运行时。一般用户优先选这个。
+- 轻量包: 体积更小，但目标机器需要预装匹配的 .NET Desktop Runtime。只有在你明确知道目标机器已经装好运行时的情况下才建议选这个。
+- 当前发布会同时提供两种压缩包: `RealismPatchGenerator-v<版本>-win-x64.zip` 和 `RealismPatchGenerator-v<版本>-win-x64-fd.zip`。
 
 ### 目录约定
 

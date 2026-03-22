@@ -7,9 +7,9 @@
   "targets": {
     ".NETCoreApp,Version=v10.0": {},
     ".NETCoreApp,Version=v10.0/win-x64": {
-      "RealismPatchGenerator.Gui/1.22.0": {
+      "RealismPatchGenerator.Gui/1.30.0": {
         "dependencies": {
-          "RealismPatchGenerator.Core": "1.22.0",
+          "RealismPatchGenerator.Core": "1.30.0",
           "runtimepack.Microsoft.NETCore.App.Runtime.win-x64": "10.0.5",
           "runtimepack.Microsoft.WindowsDesktop.App.Runtime.win-x64": "10.0.5"
         },
@@ -821,18 +821,18 @@
           }
         }
       },
-      "RealismPatchGenerator.Core/1.22.0": {
+      "RealismPatchGenerator.Core/1.30.0": {
         "runtime": {
           "RealismPatchGenerator.Core.dll": {
-            "assemblyVersion": "1.22.0.0",
-            "fileVersion": "1.22.0.0"
+            "assemblyVersion": "1.30.0.0",
+            "fileVersion": "1.30.0.0"
           }
         }
       }
     }
   },
   "libraries": {
-    "RealismPatchGenerator.Gui/1.22.0": {
+    "RealismPatchGenerator.Gui/1.30.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -847,7 +847,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "RealismPatchGenerator.Core/1.22.0": {
+    "RealismPatchGenerator.Core/1.30.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

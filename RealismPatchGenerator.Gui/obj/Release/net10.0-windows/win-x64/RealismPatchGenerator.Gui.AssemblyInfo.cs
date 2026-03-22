@@ -12,11 +12,11 @@ using System.Reflection;
 
 [assembly: System.Reflection.AssemblyCompanyAttribute("Project Contributors")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
-[assembly: System.Reflection.AssemblyFileVersionAttribute("1.22.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.22.0+2afec91129d36659536acb19b44569ddabe51e29")]
+[assembly: System.Reflection.AssemblyFileVersionAttribute("1.30.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.30.0+6e04460c84eb05b766b8c21e2554674acac0ce25")]
 [assembly: System.Reflection.AssemblyProductAttribute("SPT现实主义数值范围编辑生成器")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RealismPatchGenerator.Gui")]
-[assembly: System.Reflection.AssemblyVersionAttribute("1.22.0.0")]
+[assembly: System.Reflection.AssemblyVersionAttribute("1.30.0.0")]
 [assembly: System.Runtime.Versioning.TargetPlatformAttribute("Windows7.0")]
 [assembly: System.Runtime.Versioning.SupportedOSPlatformAttribute("Windows7.0")]
 

@@ -2,7 +2,19 @@
   "version": 3,
   "targets": {
     "net10.0-windows7.0": {
-      "RealismPatchGenerator.Core/1.22.0": {
+      "RealismPatchGenerator.Core/1.30.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "compile": {
+          "bin/placeholder/RealismPatchGenerator.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/RealismPatchGenerator.Core.dll": {}
+        }
+      }
+    },
+    "net10.0-windows7.0/win-x64": {
+      "RealismPatchGenerator.Core/1.30.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
         "compile": {
@@ -15,7 +27,7 @@
     }
   },
   "libraries": {
-    "RealismPatchGenerator.Core/1.22.0": {
+    "RealismPatchGenerator.Core/1.30.0": {
       "type": "project",
       "path": "../RealismPatchGenerator.Core/RealismPatchGenerator.Core.csproj",
       "msbuildProject": "../RealismPatchGenerator.Core/RealismPatchGenerator.Core.csproj"
@@ -23,7 +35,7 @@
   },
   "projectFileDependencyGroups": {
     "net10.0-windows7.0": [
-      "RealismPatchGenerator.Core >= 1.22.0"
+      "RealismPatchGenerator.Core >= 1.30.0"
     ]
   },
   "packageFolders": {
@@ -31,7 +43,7 @@
     "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
-    "version": "1.22.0",
+    "version": "1.30.0",
     "restore": {
       "projectUniqueName": "E:\\云文件\\GitHub\\Realism-patch-Generator-Csharp\\RealismPatchGenerator.Gui\\RealismPatchGenerator.Gui.csproj",
       "projectName": "RealismPatchGenerator.Gui",
@@ -389,6 +401,11 @@
           "System.Xml.XPath": "(,4.3.32767]",
           "System.Xml.XPath.XDocument": "(,5.0.32767]"
         }
+      }
+    },
+    "runtimes": {
+      "win-x64": {
+        "#import": []
       }
     }
   }

@@ -56,10 +56,12 @@ Audit and generation are both executed inside the GUI.
 
 ## Release Package Notes / 发布包说明
 
-- Full package: larger size, no preinstalled runtime required.
-- 完整包：体积较大，但不需要预装运行时。
-- Lightweight package: much smaller size, requires matching .NET runtime on the target machine.
-- 轻量包：体积更小，但目标机器需要预装对应 .NET 运行时。
+- Full package: larger size, no preinstalled runtime required. Recommended for most users.
+- 完整包：体积较大，但不需要预装运行时。大多数用户直接选这个。
+- Lightweight package: much smaller size, requires matching .NET runtime on the target machine. Use it only when the runtime is already installed.
+- 轻量包：体积更小，但目标机器需要预装对应 .NET 运行时。只有确认目标机器已经安装运行时时才建议选用。
+- Release output now includes both archives side by side: `RealismPatchGenerator-v<version>-win-x64.zip` and `RealismPatchGenerator-v<version>-win-x64-fd.zip`.
+- 当前发布会同时提供两种压缩包：`RealismPatchGenerator-v<版本>-win-x64.zip` 和 `RealismPatchGenerator-v<版本>-win-x64-fd.zip`。
 
 ## Documentation / 文档入口
 
