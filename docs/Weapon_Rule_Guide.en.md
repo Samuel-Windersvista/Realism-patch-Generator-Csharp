@@ -1,6 +1,6 @@
-# Weapon Rule Guide v1.1
+# Weapon Rule Guide v1.30.0
 
-This document covers the current C# weapon rule pipeline. The source of truth is rules/weapon_rules.json, and the document is aligned with the current behavior of RealismPatchGenerator.Core/WeaponRuleData.cs and RealismPatchGenerator.Core/RealismPatchGenerator.cs.
+This document covers the current C# weapon rule pipeline. The source of truth is RealismItemRules/weapon_rules.json, and the document is aligned with the current behavior of RealismPatchGenerator.Core/WeaponRuleData.cs and RealismPatchGenerator.Core/RealismPatchGenerator.cs.
 
 ## 1. Rule File Structure
 
@@ -139,7 +139,7 @@ Some representative current traits:
 
 If you want to modify current weapon rules, start with these entry points:
 
-- rules/weapon_rules.json: source of truth for the rules
+- RealismItemRules/weapon_rules.json: source of truth for the rules
 - docs/规则说明.md: mapping between GUI categories and rule files
 - docs/使用说明.md: day-to-day workflow documentation
 

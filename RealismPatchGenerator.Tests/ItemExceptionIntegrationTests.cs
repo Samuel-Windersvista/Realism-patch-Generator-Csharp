@@ -106,6 +106,11 @@ public sealed class ItemExceptionIntegrationTests : IDisposable
                 ["ReloadSpeedMulti"] = 1,
                 ["BlocksMouth"] = true,
                 ["MaskToUse"] = "atomic",
+                ["TemplateType"] = "gear",
+                ["Price"] = 12345,
+                ["IsGasMask"] = true,
+                ["GasProtection"] = 0.82,
+                ["RadProtection"] = 0.65,
             },
         };
 
@@ -161,6 +166,131 @@ public sealed class ItemExceptionIntegrationTests : IDisposable
         Assert.False(patch.ContainsKey("description"));
         Assert.False(patch.ContainsKey("mousePenalty"));
         Assert.True(patch.ContainsKey("MaskToUse"));
+        Assert.Equal("gear", patch["TemplateType"]!.GetValue<string>());
+        Assert.Equal(12345, patch["Price"]!.GetValue<int>());
+        Assert.True(patch["IsGasMask"]!.GetValue<bool>());
+        Assert.Equal(0.82, patch["GasProtection"]!.GetValue<double>());
+        Assert.Equal(0.65, patch["RadProtection"]!.GetValue<double>());
+    }
+
+    [Fact]
+    public void Generate_PreservesWeaponTemplateOnlyFieldsFromCloneTemplate()
+    {
+        Directory.CreateDirectory(Path.Combine(basePath, "input", "user_templates"));
+        Directory.CreateDirectory(Path.Combine(RuleWorkspace.GetTemplatesDirectory(basePath), "weapons"));
+
+        var templateRoot = new JsonObject
+        {
+            ["template-weapon"] = new JsonObject
+            {
+                ["$type"] = "RealismMod.Gun, RealismMod",
+                ["ItemID"] = "template-weapon",
+                ["Name"] = "weapon_test_burst",
+                ["WeapType"] = "rifle",
+                ["VerticalRecoil"] = 92,
+                ["HorizontalRecoil"] = 160,
+                ["Dispersion"] = 6,
+                ["VisualMulti"] = 1.1,
+                ["Ergonomics"] = 88,
+                ["RecoilIntensity"] = 0.18,
+                ["Weight"] = 3.4,
+                ["LoyaltyLevel"] = 2,
+                ["BurstShotsCount"] = 2,
+                ["weapFireType"] = new JsonArray("single", "burst", "fullauto"),
+                ["MinReloadSpeed"] = 0.8,
+                ["MaxReloadSpeed"] = 1.05,
+                ["EnableBSGVisRecoil"] = true,
+            },
+        };
+
+        File.WriteAllText(
+            Path.Combine(RuleWorkspace.GetTemplatesDirectory(basePath), "weapons", "AssaultCarbineTemplates.json"),
+            templateRoot.ToJsonString());
+
+        var inputRoot = new JsonObject
+        {
+            ["custom-weapon"] = new JsonObject
+            {
+                ["itemTplToClone"] = "template-weapon",
+                ["parentId"] = "5447b5fc4bdc2d87278b4567",
+                ["overrideProperties"] = new JsonObject
+                {
+                    ["Ergonomics"] = 90,
+                    ["description"] = "should not be copied into template-style output",
+                },
+                ["locales"] = new JsonObject
+                {
+                    ["en"] = new JsonObject
+                    {
+                        ["name"] = "Custom Burst Weapon",
+                    },
+                },
+            },
+        };
+
+        File.WriteAllText(
+            Path.Combine(basePath, "input", "user_templates", "test_weapon_template_fields.json"),
+            inputRoot.ToJsonString());
+
+        var generator = new global::RealismPatchGenerator.Core.RealismPatchGenerator(basePath);
+        var result = generator.Generate(Path.Combine(basePath, "output"));
+
+        var outputFile = Path.Combine(result.OutputPath, "user_templates", "test_weapon_template_fields_realism_patch.json");
+        var root = JsonNode.Parse(File.ReadAllText(outputFile))!.AsObject();
+        var patch = root["custom-weapon"]!.AsObject();
+
+        Assert.Equal("Custom Burst Weapon", patch["Name"]!.GetValue<string>());
+        Assert.Equal(2, patch["BurstShotsCount"]!.GetValue<int>());
+        Assert.Equal(0.8, patch["MinReloadSpeed"]!.GetValue<double>());
+        Assert.Equal(1.05, patch["MaxReloadSpeed"]!.GetValue<double>());
+        Assert.True(patch["EnableBSGVisRecoil"]!.GetValue<bool>());
+        Assert.Equal(3, patch["weapFireType"]!.AsArray().Count);
+        Assert.False(patch.ContainsKey("description"));
+    }
+
+    [Fact]
+    public void Generate_UsesExpandedWeaponFallbackSkeletonWhenTemplateIsMissing()
+    {
+        Directory.CreateDirectory(Path.Combine(basePath, "input", "weapons"));
+
+        var inputRoot = new JsonObject
+        {
+            ["custom-fallback-weapon"] = new JsonObject
+            {
+                ["parentId"] = "5447b5fc4bdc2d87278b4567",
+                ["overrideProperties"] = new JsonObject
+                {
+                    ["Ergonomics"] = 91,
+                },
+                ["locales"] = new JsonObject
+                {
+                    ["en"] = new JsonObject
+                    {
+                        ["name"] = "Fallback Weapon",
+                    },
+                },
+            },
+        };
+
+        File.WriteAllText(
+            Path.Combine(basePath, "input", "weapons", "test_weapon_fallback.json"),
+            inputRoot.ToJsonString());
+
+        var generator = new global::RealismPatchGenerator.Core.RealismPatchGenerator(basePath);
+        var result = generator.Generate(Path.Combine(basePath, "output"));
+
+        var outputFile = Path.Combine(result.OutputPath, "weapons", "test_weapon_fallback_realism_patch.json");
+        var root = JsonNode.Parse(File.ReadAllText(outputFile))!.AsObject();
+        var patch = root["custom-fallback-weapon"]!.AsObject();
+
+        Assert.Equal("Fallback Weapon", patch["Name"]!.GetValue<string>());
+        Assert.Equal(0, patch["BurstShotsCount"]!.GetValue<int>());
+        Assert.Equal(0, patch["DoubleActionAccuracyPenalty"]!.GetValue<int>());
+        Assert.False(patch["EnableBSGVisRecoil"]!.GetValue<bool>());
+        Assert.False(patch["ReduceBSGVisRecoil"]!.GetValue<bool>());
+        Assert.Equal(0.7, patch["MinReloadSpeed"]!.GetValue<double>());
+        Assert.Equal(1.4, patch["MaxReloadSpeed"]!.GetValue<double>());
+        Assert.Equal("single", patch["weapFireType"]!.AsArray()[0]!.GetValue<string>());
     }
 
     [Fact]
@@ -1618,6 +1748,77 @@ public sealed class ItemExceptionIntegrationTests : IDisposable
 
         Assert.True(patch.ContainsKey("Convergence"));
         Assert.True(patch.ContainsKey("DurabilityBurnModificator"));
+    }
+
+    [Fact]
+    public void Generate_PreservesShotPumpGripAdaptStructureFields()
+    {
+        Directory.CreateDirectory(Path.Combine(basePath, "input", "user_templates"));
+        Directory.CreateDirectory(Path.Combine(RuleWorkspace.GetTemplatesDirectory(basePath), "attatchments"));
+
+        var templateRoot = new JsonObject
+        {
+            ["template-shot-pump-grip-adapt"] = new JsonObject
+            {
+                ["$type"] = "RealismMod.WeaponMod, RealismMod",
+                ["ItemID"] = "template-shot-pump-grip-adapt",
+                ["Name"] = "handguard_870_magpul_moe_870",
+                ["ModType"] = "shot_pump_grip_adapt",
+                ["VerticalRecoil"] = -5,
+                ["HorizontalRecoil"] = -2,
+                ["Dispersion"] = -2,
+                ["AimSpeed"] = 2,
+                ["ChamberSpeed"] = 17,
+                ["Ergonomics"] = 5,
+                ["Accuracy"] = 0,
+                ["HeatFactor"] = 1.02,
+                ["CoolFactor"] = 0.97,
+                ["ReloadSpeed"] = 0,
+                ["LoyaltyLevel"] = 3,
+                ["AimStability"] = 7,
+                ["Handling"] = 5,
+                ["DurabilityBurnModificator"] = 1.0,
+            },
+        };
+
+        File.WriteAllText(
+            Path.Combine(RuleWorkspace.GetTemplatesDirectory(basePath), "attatchments", "HandguardTemplates.json"),
+            templateRoot.ToJsonString());
+
+        var inputRoot = new JsonObject
+        {
+            ["custom-shot-pump-grip-adapt"] = new JsonObject
+            {
+                ["itemTplToClone"] = "template-shot-pump-grip-adapt",
+                ["parentId"] = "55818a104bdc2db9688b4569",
+                ["overrideProperties"] = new JsonObject
+                {
+                    ["ChamberSpeed"] = 17,
+                    ["ReloadSpeed"] = 0,
+                },
+                ["locales"] = new JsonObject
+                {
+                    ["en"] = new JsonObject
+                    {
+                        ["name"] = "Custom Shot Pump Grip Adapt",
+                    },
+                },
+            },
+        };
+
+        File.WriteAllText(
+            Path.Combine(basePath, "input", "user_templates", "test_shot_pump_grip_adapt.json"),
+            inputRoot.ToJsonString());
+
+        var generator = new global::RealismPatchGenerator.Core.RealismPatchGenerator(basePath, 123456789u);
+        var result = generator.Generate(Path.Combine(basePath, "output"));
+
+        var outputFile = Path.Combine(result.OutputPath, "user_templates", "test_shot_pump_grip_adapt_realism_patch.json");
+        var root = JsonNode.Parse(File.ReadAllText(outputFile))!.AsObject();
+        var patch = Assert.Single(root).Value!.AsObject();
+
+        Assert.True(patch.ContainsKey("ChamberSpeed"));
+        Assert.True(patch.ContainsKey("ReloadSpeed"));
     }
 
     [Fact]

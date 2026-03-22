@@ -1,8 +1,8 @@
-# SPT Realism Value Range Generator v1.22
+# SPT Realism Value Range Generator v1.30.0
 
-SPT Realism Value Range Generator v1.22 is a toolset designed specifically for SPT Realism Mod 1.6.4.
+SPT Realism Value Range Generator v1.30.0 is a toolset designed specifically for SPT Realism Mod 1.6.4.
 
-Current version: v1.22
+Current version: v1.30.0
 
 When the Realism mod is updated to SPT4, this program will be updated accordingly.
 
@@ -46,15 +46,12 @@ This project consolidates the GUI editor, rule files, item exception management,
 1. Put your source JSON files under input.
 1. Launch the GUI.
 1. Review generated files under output.
-1. Run the audit if you want a rule-violation report.
+1. Run the built-in GUI audit if you want a rule-violation report.
 
-Common audit parameters:
+Release package notes:
 
-- --output-dir
-- --report-file
-- --include-ok
-- --include-template-exports
-- --fail-on-violations
+- Full package: no preinstalled .NET runtime required, but the package is larger.
+- Lightweight package: much smaller, but the target machine must already have the matching .NET Desktop Runtime installed.
 
 ### Directory Layout
 
@@ -71,6 +68,7 @@ The program uses the repository root as its default data root.
 - output is not cleared as a whole directory before each run; only current target files are overwritten.
 - each generation samples fresh values within the configured ranges, so repeated runs can produce different numeric results for the same item.
 - output preserves input source order so generated files follow the source file item order for easier manual review.
+- audit now checks both numeric rule ranges and template-driven output structure for weapons, attachments, ammo, and gear.
 - consumable and ordinary cosmetic items are outside the generation scope.
 - Item exceptions are exempted per field during audit instead of skipping whole items.
 
@@ -80,9 +78,9 @@ The Item Exceptions window supports searching generated items by Name, loading t
 
 ## 中文
 
-SPT 现实主义数值范围编辑生成器 v1.22 是专门为SPT Realism Mod 1.6.4设计的工具集。
+SPT 现实主义数值范围编辑生成器 v1.30.0 是专门为SPT Realism Mod 1.6.4设计的工具集。
 
-当前版本: v1.22
+当前版本: v1.30.0
 
 当现实主义MOD更新到SPT4后，本程序将同步更新。
 
@@ -105,15 +103,12 @@ SPT 现实主义数值范围编辑生成器 v1.22 是专门为SPT Realism Mod 1.
 1. 将待处理 JSON 放入 input。
 1. 启动 GUI。
 1. 在 output 中检查生成结果。
-1. 如果需要规则检查报告，再运行检修。
+1. 如果需要规则检查报告，再通过 GUI 执行检修。
 
-常用检修参数:
+发布包说明:
 
-- --output-dir
-- --report-file
-- --include-ok
-- --include-template-exports
-- --fail-on-violations
+- 完整包: 体积较大，但目标机器不需要预装 .NET 运行时。
+- 轻量包: 体积更小，但目标机器需要预装匹配的 .NET Desktop Runtime。
 
 ### 目录约定
 
@@ -132,6 +127,7 @@ SPT 现实主义数值范围编辑生成器 v1.22 是专门为SPT Realism Mod 1.
 - output 不会在每次运行前整目录清空，只覆盖当前目标文件。
 - 每次生成都会在配置范围内重新采样，因此同一物品在重复生成时可能出现不同数值结果。
 - output 会保留输入源顺序，生成结果按源文件中的条目顺序写出，便于人工核对。
+- 检修现在会同时检查数值范围和模板结构，武器、附件、弹药、装备四类都按 RealismItemTemplates 做结构校验。
 - consumable 和普通 cosmetic 不在物品生成范围内。
 - item_exceptions 在检修时按字段豁免，而不是整件物品跳过。
 

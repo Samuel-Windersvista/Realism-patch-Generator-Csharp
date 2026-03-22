@@ -1,11 +1,11 @@
-# SPT Realism Value Range Generator v1.22 User Guide
+# SPT Realism Value Range Generator v1.30.0 User Guide
 
 This document reflects the current state of the C# project and covers the GUI, rule editing, item exception management, and audit workflow.
 
 ## 1. Version Positioning
 
-- Version: v1.22
-- Runtime form: standalone .NET GUI tool
+- Version: v1.30.0
+- Runtime form: standalone .NET GUI tool, with both full and framework-dependent release packages
 - Current focus: rule editing, patch generation, audit checks, and item exception overrides are all handled inside one solution
 
 ## 2. Directory Conventions
@@ -83,11 +83,19 @@ Current generation behavior:
 Current audit behavior:
 
 - Weapons, attachments, ammo, and gear can be audited
+- Audit checks both numeric rule ranges and output structure, using RealismItemTemplates as the structural standard
+- Weapons, attachments, ammo, and gear all participate in template-driven structure validation
 - consumable and ordinary cosmetic items are not part of the main rule-audit scope
 - mod_profile_unresolved entries in attachments are excluded from unresolved attachment noise
 - Fields explicitly overridden in item_exceptions are exempted per field rather than skipping the whole item
 
-## 6. Launch Mode
+## 6. Release Packages
+
+- Full package: no preinstalled .NET runtime is required on the target machine.
+- Lightweight package: runtime is not bundled, so the target machine must already have the matching .NET Desktop Runtime installed.
+- The packaging script is scripts/build-release.ps1, and the FrameworkDependent switch builds the lightweight package.
+
+## 7. Launch Mode
 
 The standalone CLI entry point has been removed. Generation and audit are now performed through the GUI only.
 
@@ -103,7 +111,7 @@ If you need to reproduce a specific generation run:
 - Click Generate Patch to run with that explicit seed
 - Clear the Seed box to return to random generation
 
-## 7. Current Boundaries
+## 8. Current Boundaries
 
 - The GUI still prioritizes the Chinese-language experience
 - Automated GUI interaction tests are still incomplete; current tests mainly cover the core library and rule logic

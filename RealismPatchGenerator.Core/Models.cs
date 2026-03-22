@@ -150,7 +150,6 @@ public static class WorkspaceLocator
     {
         return File.Exists(Path.Combine(path, "RealismPatchGenerator.slnx"))
             || (Directory.Exists(Path.Combine(path, "RealismPatchGenerator.Core"))
-                && Directory.Exists(Path.Combine(path, "RealismPatchGenerator.Cli"))
                 && Directory.Exists(Path.Combine(path, "RealismPatchGenerator.Gui")));
     }
 }

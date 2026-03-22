@@ -1,6 +1,6 @@
-# Attachment Rule Guide v1.1
+# Attachment Rule Guide v1.30.0
 
-This document covers the current C# attachment rule pipeline. The source of truth is rules/attachment_rules.json, and the document is aligned with the current behavior of RealismPatchGenerator.Core/AttachmentRuleData.cs and RealismPatchGenerator.Core/RealismPatchGenerator.cs.
+This document covers the current C# attachment rule pipeline. The source of truth is RealismItemRules/attachment_rules.json, and the document is aligned with the current behavior of RealismPatchGenerator.Core/AttachmentRuleData.cs and RealismPatchGenerator.Core/RealismPatchGenerator.cs.
 
 ## 1. Rule File Structure
 

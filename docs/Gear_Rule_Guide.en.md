@@ -1,6 +1,6 @@
-# Gear Rule Guide v1.1
+# Gear Rule Guide v1.30.0
 
-This document covers the current C# gear rule pipeline. The source of truth is rules/gear_rules.json, and the document is aligned with the current behavior of RealismPatchGenerator.Core/GearRuleData.cs and RealismPatchGenerator.Core/RealismPatchGenerator.cs.
+This document covers the current C# gear rule pipeline. The source of truth is RealismItemRules/gear_rules.json, and the document is aligned with the current behavior of RealismPatchGenerator.Core/GearRuleData.cs and RealismPatchGenerator.Core/RealismPatchGenerator.cs.
 
 ## 1. Rule File Structure
 
@@ -88,7 +88,7 @@ Some representative current profiles:
 
 - consumable and ordinary cosmetic items are not in the main audit scope
 - Fields explicitly overridden in item_exceptions are exempted per field
-- This document describes structure and representative ranges only; the full source of truth is rules/gear_rules.json
+- This document describes structure and representative ranges only; the full source of truth is RealismItemRules/gear_rules.json
 
 ## 9. Common Field Explanations
 
@@ -104,4 +104,4 @@ Some representative current profiles:
 
 ## 10. Documentation Strategy
 
-This guide describes the current gear rule structure, covered fields, and profile resolution logic. For exact numeric ranges, use rules/gear_rules.json as the source of truth. For field semantics, cross-check this guide with the weapon, attachment, and ammo rule guides when needed.
+This guide describes the current gear rule structure, covered fields, and profile resolution logic. For exact numeric ranges, use RealismItemRules/gear_rules.json as the source of truth. For field semantics, cross-check this guide with the weapon, attachment, and ammo rule guides when needed.

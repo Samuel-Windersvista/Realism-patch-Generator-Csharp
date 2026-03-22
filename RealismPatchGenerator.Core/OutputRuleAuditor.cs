@@ -305,6 +305,16 @@ public sealed class OutputRuleAuditor
                     Message = "手枪规则要求 HasShoulderContact=False",
                 });
             }
+
+            if (generator.TryGetTemplateFieldSetForAudit(itemInfo, out var weaponFieldSet))
+            {
+                CollectMissingFieldViolations(
+                    violations,
+                    patch,
+                    weaponFieldSet.OrderBy(field => field, StringComparer.OrdinalIgnoreCase).ToArray(),
+                    "weapon_structure",
+                    exceptionFields);
+            }
         }
         else if (itemType.Contains("RealismMod.WeaponMod", StringComparison.OrdinalIgnoreCase))
         {
@@ -433,6 +443,16 @@ public sealed class OutputRuleAuditor
                     patch,
                     ["Accuracy", "Dispersion"],
                     "handguard_structure",
+                    exceptionFields);
+            }
+
+            if (string.Equals(modType, "shot_pump_grip_adapt", StringComparison.OrdinalIgnoreCase))
+            {
+                CollectMissingFieldViolations(
+                    violations,
+                    patch,
+                    ["ChamberSpeed", "ReloadSpeed"],
+                    "shot_pump_grip_adapt_structure",
                     exceptionFields);
             }
 
@@ -615,6 +635,16 @@ public sealed class OutputRuleAuditor
                     "iron_sight_structure",
                     exceptionFields);
             }
+
+            if (generator.TryGetTemplateFieldSetForAudit(itemInfo, out var modFieldSet))
+            {
+                CollectMissingFieldViolations(
+                    violations,
+                    patch,
+                    modFieldSet.OrderBy(field => field, StringComparer.OrdinalIgnoreCase).ToArray(),
+                    "mod_structure",
+                    exceptionFields);
+            }
         }
         else if (itemType.Contains("RealismMod.Ammo", StringComparison.OrdinalIgnoreCase))
         {
@@ -663,6 +693,16 @@ public sealed class OutputRuleAuditor
                 var detail = BuildProfileGapWarningDetail(patch, "gear", "gear_profile_unresolved", "无法推断装备规则档位，未能校验装备范围");
                 warnings.Add(detail.Message);
                 warningDetails.Add(detail);
+            }
+
+            if (generator.TryGetTemplateFieldSetForAudit(itemInfo, out var gearFieldSet))
+            {
+                CollectMissingFieldViolations(
+                    violations,
+                    patch,
+                    gearFieldSet.OrderBy(field => field, StringComparer.OrdinalIgnoreCase).ToArray(),
+                    "gear_structure",
+                    exceptionFields);
             }
         }
         else
@@ -931,7 +971,7 @@ public sealed class OutputRuleAuditor
                 continue;
             }
 
-            if (!patch.ContainsKey(field))
+            if (!patch.ContainsKey(field) && !HasMissingFieldViolation(violations, field))
             {
                 violations.Add(new AuditViolation
                 {
@@ -942,6 +982,26 @@ public sealed class OutputRuleAuditor
                 });
             }
         }
+    }
+
+    private static bool HasMissingFieldViolation(List<AuditViolation> violations, string field)
+    {
+        foreach (var violation in violations)
+        {
+            if (!string.Equals(violation.Field, field, StringComparison.OrdinalIgnoreCase))
+            {
+                continue;
+            }
+
+            if (violation.Expected is JsonValue expectedValue
+                && expectedValue.TryGetValue<string>(out var expectedText)
+                && string.Equals(expectedText, "present", StringComparison.OrdinalIgnoreCase))
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     private static bool IsFieldExempt(IReadOnlySet<string>? exemptFields, string field)

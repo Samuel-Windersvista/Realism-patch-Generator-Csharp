@@ -66,6 +66,211 @@ public sealed class OutputRuleAuditorTests : IDisposable
     }
 
     [Fact]
+    public void Audit_FlagsGearViolations_ForOutOfRangeFields()
+    {
+        Directory.CreateDirectory(Path.Combine(basePath, "output", "gear"));
+        var patch = new JsonObject
+        {
+            ["test-gear"] = new JsonObject
+            {
+                ["$type"] = "RealismMod.Gear, RealismMod",
+                ["Name"] = "unit test armor vest",
+                ["ArmorClass"] = "NIJ IV",
+                ["SpallReduction"] = 0.99,
+                ["ReloadSpeedMulti"] = 1.2,
+                ["Comfort"] = 1.3,
+                ["speedPenaltyPercent"] = 5.0,
+                ["weaponErgonomicPenalty"] = 1.0,
+            },
+        };
+
+        File.WriteAllText(
+            Path.Combine(basePath, "output", "gear", "test_realism_patch.json"),
+            patch.ToJsonString());
+
+        var auditor = new OutputRuleAuditor(basePath, new OutputAuditOptions { IncludeOk = true, IncludeTemplateExports = true });
+        var report = auditor.Audit();
+
+        Assert.Equal(1, report.FileCount);
+        Assert.Equal(1, report.ItemCount);
+
+        var item = Assert.Single(Assert.Single(report.Files).Items);
+        Assert.Equal("violation", item.Status);
+        Assert.Equal("armor_chest_rig_heavy", item.Context["gear_profile"]?.GetValue<string>());
+        Assert.Contains(item.Violations, violation => violation.Rule == "gear_rule" && violation.Field == "SpallReduction");
+        Assert.Contains(item.Violations, violation => violation.Rule == "gear_rule" && violation.Field == "ReloadSpeedMulti");
+        Assert.Contains(item.Violations, violation => violation.Rule == "gear_rule" && violation.Field == "Comfort");
+        Assert.Contains(item.Violations, violation => violation.Rule == "gear_rule" && violation.Field == "speedPenaltyPercent");
+        Assert.Contains(item.Violations, violation => violation.Rule == "gear_rule" && violation.Field == "weaponErgonomicPenalty");
+    }
+
+    [Fact]
+    public void Audit_FlagsWeaponTemplateMissingFields()
+    {
+        Directory.CreateDirectory(Path.Combine(basePath, "input", "user_templates"));
+        Directory.CreateDirectory(Path.Combine(basePath, "output", "user_templates"));
+        Directory.CreateDirectory(Path.Combine(RuleWorkspace.GetTemplatesDirectory(basePath), "weapons"));
+
+        var templateRoot = new JsonObject
+        {
+            ["template-weapon"] = new JsonObject
+            {
+                ["$type"] = "RealismMod.Gun, RealismMod",
+                ["ItemID"] = "template-weapon",
+                ["Name"] = "weapon_template_audit",
+                ["WeapType"] = "rifle",
+                ["VerticalRecoil"] = 92,
+                ["HorizontalRecoil"] = 160,
+                ["Dispersion"] = 6,
+                ["VisualMulti"] = 1.1,
+                ["Ergonomics"] = 88,
+                ["RecoilIntensity"] = 0.18,
+                ["Weight"] = 3.4,
+                ["LoyaltyLevel"] = 2,
+                ["BurstShotsCount"] = 2,
+                ["weapFireType"] = new JsonArray("single", "burst"),
+            },
+        };
+
+        File.WriteAllText(
+            Path.Combine(RuleWorkspace.GetTemplatesDirectory(basePath), "weapons", "AssaultCarbineTemplates.json"),
+            templateRoot.ToJsonString());
+
+        var inputRoot = new JsonObject
+        {
+            ["audit-weapon"] = new JsonObject
+            {
+                ["itemTplToClone"] = "template-weapon",
+                ["parentId"] = "5447b5fc4bdc2d87278b4567",
+                ["overrideProperties"] = new JsonObject
+                {
+                    ["Ergonomics"] = 90,
+                },
+            },
+        };
+
+        File.WriteAllText(
+            Path.Combine(basePath, "input", "user_templates", "audit_weapon.json"),
+            inputRoot.ToJsonString());
+
+        var patch = new JsonObject
+        {
+            ["audit-weapon"] = new JsonObject
+            {
+                ["$type"] = "RealismMod.Gun, RealismMod",
+                ["ItemID"] = "audit-weapon",
+                ["Name"] = "weapon_template_audit",
+                ["WeapType"] = "rifle",
+                ["VerticalRecoil"] = 92,
+                ["HorizontalRecoil"] = 160,
+                ["Dispersion"] = 6,
+                ["VisualMulti"] = 1.1,
+                ["Ergonomics"] = 90,
+                ["RecoilIntensity"] = 0.18,
+                ["Weight"] = 3.4,
+                ["LoyaltyLevel"] = 2,
+            },
+        };
+
+        File.WriteAllText(
+            Path.Combine(basePath, "output", "user_templates", "audit_weapon_realism_patch.json"),
+            patch.ToJsonString());
+
+        var auditor = new OutputRuleAuditor(basePath, new OutputAuditOptions { IncludeOk = true });
+        var report = auditor.Audit();
+
+        var item = Assert.Single(Assert.Single(report.Files).Items);
+        Assert.Equal("violation", item.Status);
+        Assert.Contains(item.Violations, violation => violation.Rule == "weapon_structure" && violation.Field == "BurstShotsCount");
+        Assert.Contains(item.Violations, violation => violation.Rule == "weapon_structure" && violation.Field == "weapFireType");
+    }
+
+    [Fact]
+    public void Audit_FlagsGearTemplateMissingFields()
+    {
+        Directory.CreateDirectory(Path.Combine(basePath, "input", "user_templates"));
+        Directory.CreateDirectory(Path.Combine(basePath, "output", "user_templates"));
+        Directory.CreateDirectory(Path.Combine(RuleWorkspace.GetTemplatesDirectory(basePath), "gear"));
+
+        var templateRoot = new JsonObject
+        {
+            ["template-mask"] = new JsonObject
+            {
+                ["$type"] = "RealismMod.Gear, RealismMod",
+                ["ItemID"] = "template-mask",
+                ["Name"] = "item_equipment_atomic",
+                ["AllowADS"] = true,
+                ["LoyaltyLevel"] = 2,
+                ["ArmorClass"] = "NIJ IIIA",
+                ["CanSpall"] = false,
+                ["SpallReduction"] = 1,
+                ["ReloadSpeedMulti"] = 1,
+                ["BlocksMouth"] = true,
+                ["MaskToUse"] = "atomic",
+                ["TemplateType"] = "gear",
+                ["Price"] = 12345,
+                ["IsGasMask"] = true,
+                ["GasProtection"] = 0.82,
+                ["RadProtection"] = 0.65,
+            },
+        };
+
+        File.WriteAllText(
+            Path.Combine(RuleWorkspace.GetTemplatesDirectory(basePath), "gear", "armorMasksTemplates.json"),
+            templateRoot.ToJsonString());
+
+        var inputRoot = new JsonObject
+        {
+            ["audit-gear"] = new JsonObject
+            {
+                ["itemTplToClone"] = "template-mask",
+                ["parentId"] = "5a341c4686f77469e155819e",
+                ["overrideProperties"] = new JsonObject
+                {
+                    ["SpallReduction"] = 1,
+                },
+            },
+        };
+
+        File.WriteAllText(
+            Path.Combine(basePath, "input", "user_templates", "audit_gear.json"),
+            inputRoot.ToJsonString());
+
+        var patch = new JsonObject
+        {
+            ["audit-gear"] = new JsonObject
+            {
+                ["$type"] = "RealismMod.Gear, RealismMod",
+                ["ItemID"] = "audit-gear",
+                ["Name"] = "item_equipment_atomic",
+                ["AllowADS"] = true,
+                ["LoyaltyLevel"] = 2,
+                ["ArmorClass"] = "NIJ IIIA",
+                ["CanSpall"] = false,
+                ["SpallReduction"] = 1,
+                ["ReloadSpeedMulti"] = 1,
+                ["BlocksMouth"] = true,
+                ["MaskToUse"] = "atomic",
+                ["TemplateType"] = "gear",
+                ["Price"] = 12345,
+                ["IsGasMask"] = true,
+            },
+        };
+
+        File.WriteAllText(
+            Path.Combine(basePath, "output", "user_templates", "audit_gear_realism_patch.json"),
+            patch.ToJsonString());
+
+        var auditor = new OutputRuleAuditor(basePath, new OutputAuditOptions { IncludeOk = true });
+        var report = auditor.Audit();
+
+        var item = Assert.Single(Assert.Single(report.Files).Items);
+        Assert.Equal("violation", item.Status);
+        Assert.Contains(item.Violations, violation => violation.Rule == "gear_structure" && violation.Field == "GasProtection");
+        Assert.Contains(item.Violations, violation => violation.Rule == "gear_structure" && violation.Field == "RadProtection");
+    }
+
+    [Fact]
     public void Audit_IgnoresNonPatchJson_UnlessIncludeTemplateExportsEnabled()
     {
         File.WriteAllText(Path.Combine(basePath, "output", "plain.json"), "{}");
@@ -225,6 +430,166 @@ public sealed class OutputRuleAuditorTests : IDisposable
         Assert.Equal("violation", item.Status);
         Assert.Contains(item.Violations, violation => violation.Rule == "gasblock_structure" && violation.Field == "Loudness");
         Assert.Contains(item.Violations, violation => violation.Rule == "gasblock_structure" && violation.Field == "Velocity");
+    }
+
+    [Fact]
+    public void Audit_FlagsMissingSuppressorTemplateFields()
+    {
+        Directory.CreateDirectory(Path.Combine(basePath, "input", "user_templates"));
+        Directory.CreateDirectory(Path.Combine(basePath, "output", "user_templates"));
+        Directory.CreateDirectory(Path.Combine(RuleWorkspace.GetTemplatesDirectory(basePath), "attatchments"));
+
+        var templateRoot = new JsonObject
+        {
+            ["template-suppressor"] = new JsonObject
+            {
+                ["$type"] = "RealismMod.WeaponMod, RealismMod",
+                ["ItemID"] = "template-suppressor",
+                ["Name"] = "muzzle_wave_suppressor",
+                ["ModType"] = "suppressor",
+                ["Ergonomics"] = -12,
+                ["CameraRecoil"] = -5,
+                ["VerticalRecoil"] = -10,
+                ["HorizontalRecoil"] = -8,
+                ["Dispersion"] = -2,
+                ["Accuracy"] = 0,
+                ["Velocity"] = 2,
+                ["Loudness"] = -25,
+                ["Flash"] = -45,
+                ["ModMalfunctionChance"] = 15,
+                ["DurabilityBurnModificator"] = 1.3,
+                ["AimSpeed"] = -10,
+                ["CanCycleSubs"] = true,
+            },
+        };
+
+        File.WriteAllText(
+            Path.Combine(RuleWorkspace.GetTemplatesDirectory(basePath), "attatchments", "SuppressorTemplates.json"),
+            templateRoot.ToJsonString());
+
+        var inputRoot = new JsonObject
+        {
+            ["audit-suppressor"] = new JsonObject
+            {
+                ["itemTplToClone"] = "template-suppressor",
+                ["parentId"] = "550aa4cd4bdc2dd8348b456c",
+                ["overrideProperties"] = new JsonObject
+                {
+                    ["Loudness"] = -25,
+                },
+            },
+        };
+
+        File.WriteAllText(
+            Path.Combine(basePath, "input", "user_templates", "audit_suppressor.json"),
+            inputRoot.ToJsonString());
+
+        var patch = new JsonObject
+        {
+            ["audit-suppressor"] = new JsonObject
+            {
+                ["$type"] = "RealismMod.WeaponMod, RealismMod",
+                ["ItemID"] = "audit-suppressor",
+                ["Name"] = "muzzle_wave_suppressor",
+                ["ModType"] = "suppressor",
+                ["Ergonomics"] = -12,
+                ["CameraRecoil"] = -5,
+                ["VerticalRecoil"] = -10,
+                ["HorizontalRecoil"] = -8,
+                ["Dispersion"] = -2,
+                ["Accuracy"] = 0,
+                ["Velocity"] = 2,
+                ["Loudness"] = -25,
+                ["Flash"] = -45,
+            },
+        };
+
+        File.WriteAllText(
+            Path.Combine(basePath, "output", "user_templates", "audit_suppressor_realism_patch.json"),
+            patch.ToJsonString());
+
+        var auditor = new OutputRuleAuditor(basePath, new OutputAuditOptions { IncludeOk = true });
+        var report = auditor.Audit();
+
+        var item = Assert.Single(Assert.Single(report.Files).Items);
+        Assert.Equal("violation", item.Status);
+        Assert.Contains(item.Violations, violation => violation.Rule == "mod_structure" && violation.Field == "CanCycleSubs");
+        Assert.Contains(item.Violations, violation => violation.Rule == "mod_structure" && violation.Field == "ModMalfunctionChance");
+        Assert.Contains(item.Violations, violation => violation.Rule == "mod_structure" && violation.Field == "DurabilityBurnModificator");
+    }
+
+    [Fact]
+    public void Audit_FlagsMissingMagazineTemplateFields()
+    {
+        Directory.CreateDirectory(Path.Combine(basePath, "input", "user_templates"));
+        Directory.CreateDirectory(Path.Combine(basePath, "output", "user_templates"));
+        Directory.CreateDirectory(Path.Combine(RuleWorkspace.GetTemplatesDirectory(basePath), "attatchments"));
+
+        var templateRoot = new JsonObject
+        {
+            ["template-magazine"] = new JsonObject
+            {
+                ["$type"] = "RealismMod.WeaponMod, RealismMod",
+                ["ItemID"] = "template-magazine",
+                ["Name"] = "magazine_test_compact",
+                ["ModType"] = "magazine",
+                ["Ergonomics"] = 2,
+                ["ReloadSpeed"] = 6,
+                ["LoadUnloadModifier"] = 12,
+                ["CheckTimeModifier"] = -1,
+                ["ModMalfunctionChance"] = -1,
+                ["AimSpeed"] = 2,
+                ["Handling"] = 3,
+            },
+        };
+
+        File.WriteAllText(
+            Path.Combine(RuleWorkspace.GetTemplatesDirectory(basePath), "attatchments", "MagazineTemplates.json"),
+            templateRoot.ToJsonString());
+
+        var inputRoot = new JsonObject
+        {
+            ["audit-magazine"] = new JsonObject
+            {
+                ["itemTplToClone"] = "template-magazine",
+                ["parentId"] = "5448bc234bdc2d3c308b4569",
+                ["overrideProperties"] = new JsonObject
+                {
+                    ["ReloadSpeed"] = 6,
+                },
+            },
+        };
+
+        File.WriteAllText(
+            Path.Combine(basePath, "input", "user_templates", "audit_magazine.json"),
+            inputRoot.ToJsonString());
+
+        var patch = new JsonObject
+        {
+            ["audit-magazine"] = new JsonObject
+            {
+                ["$type"] = "RealismMod.WeaponMod, RealismMod",
+                ["ItemID"] = "audit-magazine",
+                ["Name"] = "magazine_test_compact",
+                ["ModType"] = "magazine",
+                ["Ergonomics"] = 2,
+                ["ReloadSpeed"] = 6,
+                ["AimSpeed"] = 2,
+            },
+        };
+
+        File.WriteAllText(
+            Path.Combine(basePath, "output", "user_templates", "audit_magazine_realism_patch.json"),
+            patch.ToJsonString());
+
+        var auditor = new OutputRuleAuditor(basePath, new OutputAuditOptions { IncludeOk = true });
+        var report = auditor.Audit();
+
+        var item = Assert.Single(Assert.Single(report.Files).Items);
+        Assert.Equal("violation", item.Status);
+        Assert.Contains(item.Violations, violation => violation.Rule == "mod_structure" && violation.Field == "LoadUnloadModifier");
+        Assert.Contains(item.Violations, violation => violation.Rule == "mod_structure" && violation.Field == "CheckTimeModifier");
+        Assert.Contains(item.Violations, violation => violation.Rule == "mod_structure" && violation.Field == "Handling");
     }
 
     [Fact]
@@ -398,7 +763,7 @@ public sealed class OutputRuleAuditorTests : IDisposable
         var auditor = new OutputRuleAuditor(basePath, new OutputAuditOptions { IncludeOk = true, IncludeTemplateExports = true });
         var report = auditor.Audit();
 
-        var file = Assert.Single(report.Files.Where(file => file.File.EndsWith("UBGLTempaltes.json", StringComparison.OrdinalIgnoreCase)));
+        var file = Assert.Single(report.Files, file => file.File.EndsWith("UBGLTempaltes.json", StringComparison.OrdinalIgnoreCase));
         var item = Assert.Single(file.Items);
         Assert.Equal("violation", item.Status);
         Assert.DoesNotContain(item.WarningDetails, detail => detail.Category == "unsupported_ubgl");
@@ -929,6 +1294,46 @@ public sealed class OutputRuleAuditorTests : IDisposable
         Assert.Equal("violation", item.Status);
         Assert.Contains(item.Violations, violation => violation.Rule == "hydraulic_buffer_structure" && violation.Field == "DurabilityBurnModificator");
         Assert.Contains(item.Violations, violation => violation.Rule == "hydraulic_buffer_structure" && violation.Field == "Convergence");
+    }
+
+    [Fact]
+    public void Audit_FlagsMissingShotPumpGripAdaptStructureFields()
+    {
+        Directory.CreateDirectory(Path.Combine(basePath, "output", "user_templates"));
+
+        var patch = new JsonObject
+        {
+            ["shot-pump-grip-adapt-test"] = new JsonObject
+            {
+                ["$type"] = "RealismMod.WeaponMod, RealismMod",
+                ["Name"] = "handguard_870_magpul_moe_870",
+                ["ModType"] = "shot_pump_grip_adapt",
+                ["VerticalRecoil"] = -5,
+                ["HorizontalRecoil"] = -2,
+                ["Dispersion"] = -2,
+                ["AimSpeed"] = 2,
+                ["Ergonomics"] = 5,
+                ["Accuracy"] = 0,
+                ["HeatFactor"] = 1.02,
+                ["CoolFactor"] = 0.97,
+                ["LoyaltyLevel"] = 3,
+                ["AimStability"] = 7,
+                ["Handling"] = 5,
+                ["DurabilityBurnModificator"] = 1.0,
+            },
+        };
+
+        File.WriteAllText(
+            Path.Combine(basePath, "output", "user_templates", "test_shot_pump_grip_adapt_realism_patch.json"),
+            patch.ToJsonString());
+
+        var auditor = new OutputRuleAuditor(basePath, new OutputAuditOptions { IncludeOk = true });
+        var report = auditor.Audit();
+
+        var item = Assert.Single(Assert.Single(report.Files).Items);
+        Assert.Equal("violation", item.Status);
+        Assert.Contains(item.Violations, violation => violation.Rule == "shot_pump_grip_adapt_structure" && violation.Field == "ChamberSpeed");
+        Assert.Contains(item.Violations, violation => violation.Rule == "shot_pump_grip_adapt_structure" && violation.Field == "ReloadSpeed");
     }
 
     [Fact]

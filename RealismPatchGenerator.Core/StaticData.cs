@@ -217,6 +217,7 @@ internal static class StaticData
         ["$type"] = "RealismMod.Gun, RealismMod",
         ["WeapType"] = "rifle",
         ["OperationType"] = string.Empty,
+            ["weapFireType"] = new JsonArray("single"),
         ["WeapAccuracy"] = 0,
         ["BaseTorque"] = 4.5,
         ["HasShoulderContact"] = true,
@@ -247,16 +248,22 @@ internal static class StaticData
         ["DurabilityBurnRatio"] = 0.28,
         ["AutoROF"] = 600,
         ["SemiROF"] = 340,
+        ["BurstShotsCount"] = 0,
         ["LoyaltyLevel"] = 2,
         ["BaseReloadSpeedMulti"] = 1.0,
+        ["MinReloadSpeed"] = 0.7,
+        ["MaxReloadSpeed"] = 1.4,
         ["BaseChamberSpeedMulti"] = 1,
         ["MinChamberSpeed"] = 0.7,
         ["MaxChamberSpeed"] = 1.5,
         ["IsManuallyOperated"] = false,
         ["BaseChamberCheckSpeed"] = 1,
         ["BaseFixSpeed"] = 1,
+        ["DoubleActionAccuracyPenalty"] = 0,
         ["OffsetRotation"] = 0.011,
         ["RecoilIntensity"] = 0.19,
+        ["EnableBSGVisRecoil"] = false,
+        ["ReduceBSGVisRecoil"] = false,
         ["RecoilCenter"] = new JsonObject
         {
             ["x"] = 0,
@@ -380,6 +387,11 @@ internal static class StaticData
             ["HeatFactor"] = 1,
             ["CoolFactor"] = 1,
             ["Handling"] = 0,
+        },
+        ["shot_pump_grip_adapt"] = new JsonObject
+        {
+            ["ChamberSpeed"] = 0,
+            ["ReloadSpeed"] = 0,
         },
         ["bipod"] = new JsonObject
         {

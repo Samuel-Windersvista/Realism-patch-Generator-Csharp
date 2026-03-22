@@ -203,6 +203,21 @@ public sealed class RealismPatchGenerator
         return new HashSet<string>(GetAmmoOutputFieldOrder(), StringComparer.OrdinalIgnoreCase);
     }
 
+    internal bool TryGetTemplateFieldSetForAudit(ItemInfo itemInfo, out IReadOnlySet<string> fieldSet)
+    {
+        EnsureAuditContextLoaded();
+
+        var template = ResolveAuditTemplate(itemInfo);
+        if (template is null)
+        {
+            fieldSet = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+            return false;
+        }
+
+        fieldSet = new HashSet<string>(template.Select(pair => pair.Key), StringComparer.OrdinalIgnoreCase);
+        return true;
+    }
+
     internal bool TryGetGearProfileRanges(string gearProfile, out IReadOnlyDictionary<string, NumericRange> ranges)
     {
         if (rules.Gear.GearProfileRanges.TryGetValue(gearProfile, out var resolvedRanges))
@@ -1143,6 +1158,40 @@ public sealed class RealismPatchGenerator
     private JsonObject? FindTemplateById(string templateId)
     {
         return templateById.TryGetValue(templateId, out var template) ? (JsonObject)template.DeepClone() : null;
+    }
+
+    private JsonObject? ResolveAuditTemplate(ItemInfo itemInfo)
+    {
+        if (!string.IsNullOrWhiteSpace(itemInfo.CloneId))
+        {
+            var cloneTemplate = FindTemplateById(itemInfo.CloneId!);
+            if (cloneTemplate is not null)
+            {
+                cloneTemplate["ItemID"] = itemInfo.ItemId;
+                return cloneTemplate;
+            }
+        }
+
+        if (!string.IsNullOrWhiteSpace(itemInfo.TemplateId))
+        {
+            var templateByTemplateId = FindTemplateById(itemInfo.TemplateId!);
+            if (templateByTemplateId is not null)
+            {
+                templateByTemplateId["ItemID"] = itemInfo.ItemId;
+                return templateByTemplateId;
+            }
+        }
+
+        if (!string.IsNullOrWhiteSpace(itemInfo.TemplateFile))
+        {
+            var selectedTemplate = SelectTemplateData(itemInfo.TemplateFile!, itemInfo.ItemId, itemInfo.CloneId);
+            if (selectedTemplate is not null)
+            {
+                return selectedTemplate;
+            }
+        }
+
+        return null;
     }
 
     private string? FindTemplateFileByTemplateId(string templateId)

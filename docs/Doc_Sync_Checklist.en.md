@@ -1,4 +1,4 @@
-# Rule and Documentation Sync Checklist v1.1
+# Rule and Documentation Sync Checklist v1.30.0
 
 Purpose: after each adjustment to rules, template mappings, item exception flow, or audit logic, quickly confirm that the codebase and docs are still aligned.
 
@@ -17,11 +17,11 @@ Baseline files to verify:
 - RealismPatchGenerator.Core/ItemExceptionFieldGuardService.cs
 - RealismPatchGenerator.Gui/Form1.cs
 - RealismPatchGenerator.Gui/ItemExceptionsForm.cs
-- rules/weapon_rules.json
-- rules/attachment_rules.json
-- rules/ammo_rules.json
-- rules/gear_rules.json
-- rules/item_exceptions.json
+- RealismItemRules/weapon_rules.json
+- RealismItemRules/attachment_rules.json
+- RealismItemRules/ammo_rules.json
+- RealismItemRules/gear_rules.json
+- RealismItemRules/item_exceptions.json
 
 ## B. Main Documents Under docs
 
@@ -62,7 +62,7 @@ These files are the current priority set:
 
 ### C5. Versioning
 
-- Confirm titles and version notes in docs are all updated to v1.1
+- Confirm titles and version notes in docs are all updated to v1.30.0
 - Confirm CHANGELOG.md and README.md are also synchronized to the same version
 
 ## D. Recommended Release Order

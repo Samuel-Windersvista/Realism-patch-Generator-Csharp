@@ -163,7 +163,7 @@ partial class Form1
         MinimumSize = new Size(1200, 760);
         Name = "Form1";
         StartPosition = FormStartPosition.CenterScreen;
-        Text = "SPT现实主义数值范围编辑生成器 v1.22";
+        Text = "SPT现实主义数值范围编辑生成器 v1.30.0";
 
         headerPanel.Controls.Add(titleLabel);
         headerPanel.Dock = DockStyle.Top;
@@ -175,7 +175,7 @@ partial class Form1
         titleLabel.Location = new Point(16, 12);
         titleLabel.Name = "titleLabel";
         titleLabel.Size = new Size(520, 28);
-        titleLabel.Text = "SPT现实主义数值范围编辑生成器 v1.22";
+        titleLabel.Text = "SPT现实主义数值范围编辑生成器 v1.30.0";
 
         toolbarPanel.Controls.Add(toolbarTable);
         toolbarPanel.Dock = DockStyle.Top;

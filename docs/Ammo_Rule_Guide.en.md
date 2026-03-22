@@ -1,6 +1,6 @@
-# Ammo Rule Guide v1.1
+# Ammo Rule Guide v1.30.0
 
-This document covers the current C# ammo rule pipeline. The source of truth is rules/ammo_rules.json, and the document is aligned with the current behavior of RealismPatchGenerator.Core/AmmoRuleData.cs and RealismPatchGenerator.Core/RealismPatchGenerator.cs.
+This document covers the current C# ammo rule pipeline. The source of truth is RealismItemRules/ammo_rules.json, and the document is aligned with the current behavior of RealismPatchGenerator.Core/AmmoRuleData.cs and RealismPatchGenerator.Core/RealismPatchGenerator.cs.
 
 ## 1. Rule File Structure
 
@@ -112,4 +112,4 @@ This layer separates damage, penetration, heat, durability burn, and malfunction
 
 - Ammo is part of the main audit scope
 - Fields explicitly overridden in item_exceptions are exempted per field
-- This document lists structure and representative ranges only; the full source of truth is rules/ammo_rules.json
+- This document lists structure and representative ranges only; the full source of truth is RealismItemRules/ammo_rules.json

@@ -122,9 +122,9 @@ internal static class AttachmentRuleData
             }),
             ["booster"] = CreateRanges(new Dictionary<string, NumericRange>(StringComparer.OrdinalIgnoreCase)
             {
-                ["AutoROF"] = new(1.0, 1.2),
-                ["SemiROF"] = new(1.0, 1.2),
-                ["ModMalfunctionChance"] = new(-15, -8, true),
+                ["AutoROF"] = new(1.2, 1.5),
+                ["SemiROF"] = new(1.2, 1.5),
+                ["ModMalfunctionChance"] = new(-25, -8, true),
             }),
             ["magazine_compact"] = CreateRanges(new Dictionary<string, NumericRange>(StringComparer.OrdinalIgnoreCase)
             {
@@ -200,7 +200,7 @@ internal static class AttachmentRuleData
             ["scope_red_dot"] = CreateRanges(new Dictionary<string, NumericRange>(StringComparer.OrdinalIgnoreCase)
             {
                 ["AimSpeed"] = new(2, 5, true),
-                ["Accuracy"] = new(-5, 5),
+                ["Accuracy"] = new(-15, 15),
                 ["AimStability"] = new(0, 3, true),
                 ["Ergonomics"] = new(-2, 2, true),
             }),

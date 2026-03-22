@@ -1,16 +1,16 @@
-# SPT Realism Value Range Generator v1.1 Rule Overview
+# SPT Realism Value Range Generator v1.30.0 Rule Overview
 
-This document explains the responsibility of each rule file under the current rules directory and how the GUI categories map to the underlying JSON structure.
+This document explains the responsibility of each rule file under the current RealismItemRules directory and how the GUI categories map to the underlying JSON structure.
 
 ## 1. Rule File List
 
-The main rule files are located under rules:
+The main rule files are located under RealismItemRules:
 
-- rules/weapon_rules.json
-- rules/attachment_rules.json
-- rules/ammo_rules.json
-- rules/gear_rules.json
-- rules/item_exceptions.json
+- RealismItemRules/weapon_rules.json
+- RealismItemRules/attachment_rules.json
+- RealismItemRules/ammo_rules.json
+- RealismItemRules/gear_rules.json
+- RealismItemRules/item_exceptions.json
 
 The first four files define range rules. item_exceptions.json defines final field overrides for specific items.
 
