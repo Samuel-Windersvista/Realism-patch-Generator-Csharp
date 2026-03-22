@@ -7,3 +7,6 @@ E:\云文件\GitHub\Realism-patch-Generator-Csharp\RealismPatchGenerator.Core\ob
 E:\云文件\GitHub\Realism-patch-Generator-Csharp\RealismPatchGenerator.Core\obj\Release\net10.0\RealismPatchGenerator.Core.dll
 E:\云文件\GitHub\Realism-patch-Generator-Csharp\RealismPatchGenerator.Core\obj\Release\net10.0\refint\RealismPatchGenerator.Core.dll
 E:\云文件\GitHub\Realism-patch-Generator-Csharp\RealismPatchGenerator.Core\obj\Release\net10.0\ref\RealismPatchGenerator.Core.dll
+E:\云文件\GitHub\Realism-patch-Generator-Csharp\RealismPatchGenerator.Core\bin\Release\net10.0\RealismPatchGenerator.Core.pdb
+E:\云文件\GitHub\Realism-patch-Generator-Csharp\RealismPatchGenerator.Core\obj\Release\net10.0\RealismPatchGenerator.Core.sourcelink.json
+E:\云文件\GitHub\Realism-patch-Generator-Csharp\RealismPatchGenerator.Core\obj\Release\net10.0\RealismPatchGenerator.Core.pdb

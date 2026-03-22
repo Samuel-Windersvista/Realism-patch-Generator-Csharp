@@ -33,7 +33,7 @@ function Reset-Directory {
 function Get-TemplatesDirectory {
     param([string]$Root)
 
-    $preferredPath = Join-Path $Root "现实主义物品模板"
+    $preferredPath = Join-Path $Root "RealismItemTemplates"
     if (Test-Path -LiteralPath $preferredPath) {
         return Get-Item -LiteralPath $preferredPath
     }
@@ -73,7 +73,7 @@ function Get-TemplatesDirectory {
         "obj",
         "output",
         "Realism-patch-Generator-Output",
-        "rules",
+        "RealismItemRules",
         "scripts"
     )
 
@@ -95,7 +95,7 @@ function Copy-CommonPayload {
     Copy-Item -Path (Join-Path $repoRoot "README.md") -Destination $Destination -Force
     Copy-Item -Path (Join-Path $repoRoot "CHANGELOG.md") -Destination $Destination -Force
     Copy-Item -Path (Join-Path $repoRoot "docs") -Destination $Destination -Recurse -Force
-    Copy-Item -Path (Join-Path $repoRoot "rules") -Destination $Destination -Recurse -Force
+    Copy-Item -Path (Join-Path $repoRoot "RealismItemRules") -Destination $Destination -Recurse -Force
     Copy-Item -Path (Join-Path $repoRoot "input") -Destination $Destination -Recurse -Force
     Copy-Item -Path $TemplatesDirectory.FullName -Destination $Destination -Recurse -Force
 
@@ -128,7 +128,7 @@ $entryPointText
 Bundled data directories:
 - input
 - $($TemplatesDirectory.Name)
-- rules
+- RealismItemRules
 - docs
 - output
 - audit_reports

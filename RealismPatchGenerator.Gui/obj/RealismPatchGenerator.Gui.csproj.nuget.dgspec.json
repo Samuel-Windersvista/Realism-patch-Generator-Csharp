@@ -341,11 +341,6 @@
             "System.Xml.XPath.XDocument": "(,5.0.32767]"
           }
         }
-      },
-      "runtimes": {
-        "win-x64": {
-          "#import": []
-        }
       }
     },
     "E:\\云文件\\GitHub\\Realism-patch-Generator-Csharp\\RealismPatchGenerator.Gui\\RealismPatchGenerator.Gui.csproj": {
@@ -707,11 +702,6 @@
             "System.Xml.XPath": "(,4.3.32767]",
             "System.Xml.XPath.XDocument": "(,5.0.32767]"
           }
-        }
-      },
-      "runtimes": {
-        "win-x64": {
-          "#import": []
         }
       }
     }

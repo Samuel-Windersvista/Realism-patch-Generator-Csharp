@@ -58,7 +58,7 @@ public static class ItemExceptionStore
 
     public static string GetFilePath(string basePath)
     {
-        return Path.Combine(Path.GetFullPath(basePath), "rules", FileName);
+        return Path.Combine(RuleWorkspace.GetRulesDirectory(basePath), FileName);
     }
 
     public static ItemExceptionDocument Load(string basePath)

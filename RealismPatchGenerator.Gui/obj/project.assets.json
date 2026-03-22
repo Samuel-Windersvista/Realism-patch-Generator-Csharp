@@ -12,18 +12,6 @@
           "bin/placeholder/RealismPatchGenerator.Core.dll": {}
         }
       }
-    },
-    "net10.0-windows7.0/win-x64": {
-      "RealismPatchGenerator.Core/1.22.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v10.0",
-        "compile": {
-          "bin/placeholder/RealismPatchGenerator.Core.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/RealismPatchGenerator.Core.dll": {}
-        }
-      }
     }
   },
   "libraries": {
@@ -401,11 +389,6 @@
           "System.Xml.XPath": "(,4.3.32767]",
           "System.Xml.XPath.XDocument": "(,5.0.32767]"
         }
-      }
-    },
-    "runtimes": {
-      "win-x64": {
-        "#import": []
       }
     }
   }

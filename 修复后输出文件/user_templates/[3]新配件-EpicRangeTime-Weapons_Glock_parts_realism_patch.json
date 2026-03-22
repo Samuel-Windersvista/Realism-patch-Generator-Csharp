@@ -1,0 +1,332 @@
+{
+  "1bae6028d20d6b3f15bac845": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "1bae6028d20d6b3f15bac845",
+    "Name": "Glock 19X Triarc V2 Pistol Slide",
+    "ModType": "",
+    "ModMalfunctionChance": -2,
+    "Accuracy": -2,
+    "HeatFactor": 1.02,
+    "CoolFactor": 0.99,
+    "DurabilityBurnModificator": 1,
+    "ConflictingItems": [],
+    "Ergonomics": 4,
+    "Weight": 0.275,
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "ChamberSpeed": 20,
+    "LoyaltyLevel": 1,
+    "Prefab": {
+      "path": "Mods/Glock_Parts/receiver_glock_triarc_mos.bundle",
+      "rcid": ""
+    },
+    "Recoil": -2.5,
+    "Slots": [
+      {
+        "_name": "mod_sight_rear",
+        "_id": "4dca5a0155b858b409f01d37",
+        "_parent": "1bae6028d20d6b3f15bac845",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "5a7d9122159bd4001438dbf4",
+                "5a6f5d528dc32e00094b97d9",
+                "5a7d912f159bd400165484f3",
+                "5a71e0fb8dc32e00094b97f2",
+                "630765cb962d0247b029dc45",
+                "50ea224769f3c313d2aaac40",
+                "ef29cf641c7f772a1c0237ad"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      },
+      {
+        "_name": "mod_sight_front",
+        "_id": "35787075f76de8f7b03a4098",
+        "_parent": "1bae6028d20d6b3f15bac845",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "5a7d90eb159bd400165484f1",
+                "5a6f58f68dc32e000a311390",
+                "5a7d9104159bd400134c8c21",
+                "5a71e0048dc32e000c52ecc8",
+                "630765777d50ff5e8a1ea718",
+                "ca019aaa059b6fdbec21f4e2",
+                "a3c95ff3a02b0d4c05130a4d"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      },
+      {
+        "_name": "mod_muzzle",
+        "_id": "419ba0ff57dc5d12c68ceb3e",
+        "_parent": "1bae6028d20d6b3f15bac845",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "5a7b32a2e899ef00135e345a"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      },
+      {
+        "_name": "mod_mount",
+        "_id": "02d001adac0c997c53b55937",
+        "_parent": "1bae6028d20d6b3f15bac845",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "5a32aa8bc4a2826c6e06d737",
+                "1ff09b0b5c6730ab15e146ba"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      }
+    ],
+    "AutoROF": 1,
+    "SemiROF": 4,
+    "Convergence": 3
+  },
+  "87b350feb4e5dfeeb4a97377": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "87b350feb4e5dfeeb4a97377",
+    "Name": "Glock 19X 9x19 Triarc Track 2.0 threaded barrel",
+    "ModType": "",
+    "VerticalRecoil": -2,
+    "HorizontalRecoil": -2,
+    "AutoROF": 0,
+    "SemiROF": 0,
+    "ModMalfunctionChance": 0,
+    "Convergence": 5,
+    "Accuracy": -1,
+    "CenterOfImpact": 0.04,
+    "HeatFactor": 1.13,
+    "CoolFactor": 1.04,
+    "DurabilityBurnModificator": 0.96,
+    "Velocity": 0,
+    "ConflictingItems": [],
+    "Ergonomics": -2,
+    "Weight": 0.11,
+    "ShotgunDispersion": 1,
+    "Loudness": 0,
+    "LoyaltyLevel": 1,
+    "Prefab": {
+      "path": "Mods/Glock_Parts/barrel_triarc_g19_threaded.bundle",
+      "rcid": ""
+    },
+    "Recoil": -8,
+    "Slots": [
+      {
+        "_name": "mod_muzzle",
+        "_id": "6aff2b4dd4e714c560476e5c",
+        "_parent": "87b350feb4e5dfeeb4a97377",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "5a7ad0c451dfba0013379712",
+                "5a7037338dc32e000d46d257",
+                "5a70366c8dc32e001207fb06",
+                "5a705e128dc32e000d46d258",
+                "5a7ad1fb51dfba0013379715",
+                "5a6b585a8dc32e5a9c28b4f1",
+                "5a6b592c8dc32e00094b97bf",
+                "5a6b59a08dc32e000b452fb7",
+                "5c7e8fab2e22165df16b889b",
+                "5a33a8ebc4a282000c5a950d",
+                "5c6165902e22160010261b28",
+                "5a32a064c4a28200741e22de",
+                "3d17dc4ba9343629fff763d6"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      }
+    ],
+    "Dispersion": 4,
+    "RecoilAngle": -2
+  },
+  "0db56c7f879a084c742e91ab": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "0db56c7f879a084c742e91ab",
+    "Name": "Glock 19X 9x19 Triarc Track 2.0 barrel",
+    "ModType": "",
+    "VerticalRecoil": -4,
+    "HorizontalRecoil": -2,
+    "AutoROF": 0,
+    "SemiROF": 0,
+    "ModMalfunctionChance": 0,
+    "Convergence": 3,
+    "Accuracy": 4,
+    "CenterOfImpact": 0.04,
+    "HeatFactor": 1.08,
+    "CoolFactor": 0.99,
+    "DurabilityBurnModificator": 0.98,
+    "Velocity": 1,
+    "ConflictingItems": [],
+    "Ergonomics": -2,
+    "Weight": 0.11,
+    "ShotgunDispersion": 1,
+    "Loudness": 0,
+    "LoyaltyLevel": 1,
+    "Prefab": {
+      "path": "Mods/Glock_Parts/barrel_triarc_g19.bundle",
+      "rcid": ""
+    },
+    "Recoil": -8,
+    "Dispersion": 1,
+    "RecoilAngle": 0
+  },
+  "ca019aaa059b6fdbec21f4e2": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "ca019aaa059b6fdbec21f4e2",
+    "Name": "Glock 19X Suppressor Height front sight",
+    "ModType": "sight",
+    "AimSpeed": 2,
+    "Accuracy": 0,
+    "ConflictingItems": [],
+    "Ergonomics": 0,
+    "Weight": 0.007,
+    "LoyaltyLevel": 2,
+    "Prefab": {
+      "path": "Mods/Glock_Parts/sight_front_glock_supp_height_triarc.bundle",
+      "rcid": ""
+    }
+  },
+  "a3c95ff3a02b0d4c05130a4d": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "a3c95ff3a02b0d4c05130a4d",
+    "Name": "Glock 19 front sight",
+    "ModType": "sight",
+    "AimSpeed": 2,
+    "Accuracy": 0,
+    "ConflictingItems": [],
+    "Ergonomics": 2,
+    "Weight": 0.007,
+    "LoyaltyLevel": 2,
+    "Prefab": {
+      "path": "Mods/Glock_Parts/sight_front_glock_triarc.bundle",
+      "rcid": ""
+    }
+  },
+  "ef29cf641c7f772a1c0237ad": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "ef29cf641c7f772a1c0237ad",
+    "Name": "Glock 19X Suppressor Height rear sight",
+    "ModType": "sight",
+    "AimSpeed": 2,
+    "Accuracy": 0,
+    "ConflictingItems": [],
+    "Ergonomics": 1,
+    "Weight": 0.008,
+    "LoyaltyLevel": 2,
+    "Prefab": {
+      "path": "Mods/Glock_Parts/sight_rear_glock_suppressor_height_triarc.bundle",
+      "rcid": ""
+    }
+  },
+  "50ea224769f3c313d2aaac40": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "50ea224769f3c313d2aaac40",
+    "Name": "Glock 19 rear sight",
+    "ModType": "sight",
+    "AimSpeed": 2,
+    "Accuracy": 0,
+    "ConflictingItems": [],
+    "Ergonomics": 1,
+    "Weight": 0.007,
+    "LoyaltyLevel": 2,
+    "Prefab": {
+      "path": "Mods/Glock_Parts/sight_rear_glock_triarc.bundle",
+      "rcid": ""
+    }
+  },
+  "3d17dc4ba9343629fff763d6": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "3d17dc4ba9343629fff763d6",
+    "Name": "Glock Triarc 9x19 thread protector",
+    "ModType": "",
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "Dispersion": 0,
+    "CameraRecoil": 0,
+    "AutoROF": 0,
+    "SemiROF": 0,
+    "ModMalfunctionChance": 0,
+    "CanCycleSubs": false,
+    "Accuracy": 0,
+    "HeatFactor": 1,
+    "CoolFactor": 1,
+    "DurabilityBurnModificator": 1.01,
+    "Velocity": 0,
+    "RecoilAngle": 0,
+    "ConflictingItems": [],
+    "Ergonomics": 0,
+    "Weight": 0.01,
+    "Loudness": 0,
+    "Convergence": 0,
+    "LoyaltyLevel": 2,
+    "Prefab": {
+      "path": "Mods/Glock_Parts/thread_prot_triarc.bundle",
+      "rcid": ""
+    },
+    "Flash": 0,
+    "AimSpeed": 0
+  },
+  "1ff09b0b5c6730ab15e146ba": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "1ff09b0b5c6730ab15e146ba",
+    "Name": "Glock ZEV Tech sight mount cap (For Triarc G19 Slide)",
+    "ModType": "",
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "AutoROF": 1,
+    "SemiROF": 3,
+    "ModMalfunctionChance": -2,
+    "AimSpeed": 0,
+    "ReloadSpeed": 0,
+    "Ergonomics": 6,
+    "Accuracy": 2,
+    "ConflictingItems": [],
+    "FixSpeed": 0,
+    "HeatFactor": 1.01,
+    "CoolFactor": 0.99,
+    "DurabilityBurnModificator": 1,
+    "Weight": 0.005,
+    "LoyaltyLevel": 1,
+    "Prefab": {
+      "path": "Mods/Glock_Parts/zev_optic_plate.bundle",
+      "rcid": ""
+    },
+    "Convergence": 4
+  }
+}

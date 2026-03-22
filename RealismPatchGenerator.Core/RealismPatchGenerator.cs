@@ -45,7 +45,7 @@ public sealed class RealismPatchGenerator
     {
         this.basePath = Path.GetFullPath(basePath);
         inputPath = Path.Combine(this.basePath, "input");
-        templatesBasePath = Path.Combine(this.basePath, "现实主义物品模板");
+        templatesBasePath = RuleWorkspace.GetTemplatesDirectory(this.basePath);
         generationSeed = seed ?? CreateRuntimeSeed();
         random = new CompatibleRandom(generationSeed);
         rules = RuleSetLoader.Load(this.basePath, Log);
@@ -196,6 +196,11 @@ public sealed class RealismPatchGenerator
 
 		ranges = new Dictionary<string, NumericRange>(StringComparer.OrdinalIgnoreCase);
         return false;
+    }
+
+    internal IReadOnlySet<string> GetAmmoOutputFieldSet()
+    {
+        return new HashSet<string>(GetAmmoOutputFieldOrder(), StringComparer.OrdinalIgnoreCase);
     }
 
     internal bool TryGetGearProfileRanges(string gearProfile, out IReadOnlyDictionary<string, NumericRange> ranges)
@@ -430,7 +435,7 @@ public sealed class RealismPatchGenerator
         }
         catch (Exception ex)
         {
-            Log($"读取失败: {relativeDisplay} - {ex.Message}");
+            Log($"读取文件失败: {relativeDisplay} - {ex.Message}");
             return;
         }
 
@@ -625,6 +630,7 @@ public sealed class RealismPatchGenerator
         }
 
         EnrichItemInfoWithSourceContext(info, itemData);
+        info.SourceProperties = (JsonObject)info.Properties.DeepClone();
         return info;
     }
 
@@ -797,6 +803,17 @@ public sealed class RealismPatchGenerator
     {
         if (IsAmmo(parentId))
         {
+            var templateFile = GetTemplateForParentId(parentId);
+            if (!string.IsNullOrWhiteSpace(templateFile))
+            {
+                var template = SelectTemplateData(templateFile!, itemId, cloneId);
+                if (template is not null)
+                {
+                    NormalizeAmmoOutputStructure(template);
+                    return template;
+                }
+            }
+
             return CreateDefaultAmmoPatch(itemId, itemInfo);
         }
 
@@ -824,10 +841,29 @@ public sealed class RealismPatchGenerator
         var matchedTemplate = SelectTemplateData(resolvedTemplateFile!, itemId, cloneId);
         if (matchedTemplate is not null)
         {
+            ApplyAttachmentTemplateStandards(matchedTemplate, resolvedTemplateFile!, itemInfo);
             return matchedTemplate;
         }
 
         return itemInfo.IsWeapon ? CreateDefaultWeaponPatch(itemId, itemInfo) : CreateDefaultModPatch(itemId, itemInfo, resolvedTemplateFile!);
+    }
+
+    private static void ApplyAttachmentTemplateStandards(JsonObject patch, string templateFile, ItemInfo itemInfo)
+    {
+        if (!IsGasblockTemplate(templateFile, itemInfo.ParentId))
+        {
+            return;
+        }
+
+        patch["Loudness"] ??= JsonValue.Create(0);
+        patch["Velocity"] ??= JsonValue.Create(0.0);
+    }
+
+    private static bool IsGasblockTemplate(string? templateFile, string? parentId)
+    {
+        return string.Equals(Path.GetFileName(templateFile), "GasblockTemplates.json", StringComparison.OrdinalIgnoreCase)
+            || string.Equals(parentId, "GAS_BLOCK", StringComparison.OrdinalIgnoreCase)
+            || string.Equals(parentId, "56ea9461d2720b67698b456f", StringComparison.OrdinalIgnoreCase);
     }
 
     private void FinalizePatch(string itemId, JsonObject patch, ItemInfo itemInfo, HashSet<string> processedItems, string sourceFile)
@@ -836,6 +872,7 @@ public sealed class RealismPatchGenerator
         EnsureBasicFields(itemId, patch, itemInfo);
         ApplyRealismSanityCheck(patch, itemInfo);
         ApplyItemException(itemId, patch);
+        NormalizeStructuredOutput(patch, itemInfo);
         AddToFilePatches(itemId, patch, sourceFile);
         processedItems.Add(itemId);
     }
@@ -935,6 +972,49 @@ public sealed class RealismPatchGenerator
         }
 
         return patch.ContainsKey(fieldName);
+    }
+
+    private void NormalizeStructuredOutput(JsonObject patch, ItemInfo itemInfo)
+    {
+        if (IsAmmo(itemInfo.ParentId)
+            || (patch["$type"]?.GetValue<string?>()?.Contains("RealismMod.Ammo", StringComparison.OrdinalIgnoreCase) ?? false))
+        {
+            NormalizeAmmoOutputStructure(patch);
+        }
+    }
+
+    private void NormalizeAmmoOutputStructure(JsonObject patch)
+    {
+        var normalized = StaticData.CreateDefaultAmmoTemplate();
+        var fieldOrder = GetAmmoOutputFieldOrder();
+        foreach (var field in fieldOrder)
+        {
+            if (patch[field] is not null)
+            {
+                normalized[field] = patch[field]!.DeepClone();
+            }
+        }
+
+        patch.Clear();
+        foreach (var field in fieldOrder)
+        {
+            patch[field] = normalized[field]?.DeepClone();
+        }
+    }
+
+    private IReadOnlyList<string> GetAmmoOutputFieldOrder()
+    {
+        if (templates.TryGetValue("ammoTemplates.json", out var templateData) && templateData.Count > 0)
+        {
+            var firstTemplate = templateData.First().Value;
+            var fields = firstTemplate.Select(pair => pair.Key).ToArray();
+            if (fields.Length > 0)
+            {
+                return fields;
+            }
+        }
+
+        return StaticData.AmmoOutputFieldOrder;
     }
 
     private void AddToFilePatches(string itemId, JsonObject patch, string sourceFile)
@@ -1148,7 +1228,10 @@ public sealed class RealismPatchGenerator
         patch["ItemID"] = itemId;
         patch["Name"] = itemInfo.Name ?? $"mod_{itemId}";
 
-        var modType = StaticData.TemplateFileToModType.TryGetValue(Path.GetFileName(templateFile), out var templateModType)
+        var sourceModType = itemInfo.SourceProperties["ModType"]?.GetValue<string?>();
+        var modType = !string.IsNullOrWhiteSpace(sourceModType)
+            ? sourceModType!
+            : StaticData.TemplateFileToModType.TryGetValue(Path.GetFileName(templateFile), out var templateModType)
             ? templateModType
             : string.Empty;
         patch["ModType"] = modType;
@@ -1301,7 +1384,11 @@ public sealed class RealismPatchGenerator
     {
         if (!templateParentIndex.TryGetValue(Path.GetFileName(templateFile), out var parentIds) || parentIds.Count == 0)
         {
-            return null;
+            return Path.GetFileName(templateFile) switch
+            {
+                "ammoTemplates.json" => "5485a8684bdc2da71d8b4567",
+                _ => null,
+            };
         }
 
         if (parentIds.Count == 1)
@@ -1316,6 +1403,7 @@ public sealed class RealismPatchGenerator
             "FlashlightLaserTemplates.json" => "55818b084bdc2d5b648b4571",
             "ReceiverTemplates.json" => "55818a304bdc2db5418b457d",
             "UBGLTempaltes.json" => "55818b014bdc2ddc698b456b",
+            "ammoTemplates.json" => "5485a8684bdc2da71d8b4567",
             "armorPlateTemplates.json" => "644120aa86ffbe10ee032b6f",
             "meds.json" => "5448f3ac4bdc2dce718b4569",
             "food.json" => "5448e8d04bdc2ddf718b4569",
@@ -1346,6 +1434,11 @@ public sealed class RealismPatchGenerator
         if (normalized is null)
         {
             return null;
+        }
+
+        if (string.Equals(normalized, "5485a8684bdc2da71d8b4567", StringComparison.OrdinalIgnoreCase))
+        {
+            return "ammoTemplates.json";
         }
 
         return StaticData.ParentIdToTemplate.TryGetValue(normalized, out var templatePath)
@@ -1557,6 +1650,34 @@ public sealed class RealismPatchGenerator
     private void ApplyAttachmentSanityCheck(JsonObject patch, ItemInfo itemInfo)
     {
         ApplyFieldClamps(patch, rules.Attachment.ModClampRules);
+
+        if ((patch["ModType"]?.GetValue<string?>() ?? string.Empty).Equals("barrel_2slot", StringComparison.OrdinalIgnoreCase))
+        {
+            if (TryGetNumericValue(patch["ModShotDispersion"], out var modShotDispersion))
+            {
+                patch["ModShotDispersion"] = CreateNumericNode(Clamp(modShotDispersion, 0, 0), IsIntegerNode(patch["ModShotDispersion"]));
+            }
+            else
+            {
+                patch["ModShotDispersion"] = 0;
+            }
+        }
+
+        if ((patch["ModType"]?.GetValue<string?>() ?? string.Empty).Equals("bipod", StringComparison.OrdinalIgnoreCase))
+        {
+            foreach (var fieldName in new[] { "AutoROF", "SemiROF", "ModMalfunctionChance", "ReloadSpeed", "FixSpeed" })
+            {
+                if (TryGetNumericValue(patch[fieldName], out var numericValue))
+                {
+                    patch[fieldName] = CreateNumericNode(Clamp(numericValue, 0, 0), IsIntegerNode(patch[fieldName]));
+                }
+                else
+                {
+                    patch[fieldName] = 0;
+                }
+            }
+        }
+
         if (TryGetNumericValue(patch["Velocity"], out var velocity))
         {
             var maxVelocity = GetLowerText(patch["Name"]).Contains("barrel", StringComparison.OrdinalIgnoreCase) ? 15.0 : 5.0;
@@ -1571,6 +1692,7 @@ public sealed class RealismPatchGenerator
         }
 
         ApplyNumericRanges(patch, ranges, ensureFields: true);
+        ApplyAttachmentPreservedSourceFields(patch, itemInfo, modProfile!, ranges);
         ApplyFieldClamps(patch, rules.Attachment.ModClampRules);
         if (modProfile.StartsWith("muzzle_suppressor", StringComparison.OrdinalIgnoreCase))
         {
@@ -1578,6 +1700,42 @@ public sealed class RealismPatchGenerator
         }
 
         ApplyGlobalSafetyClamps(patch);
+    }
+
+    private static void ApplyAttachmentPreservedSourceFields(JsonObject patch, ItemInfo itemInfo, string modProfile, IReadOnlyDictionary<string, NumericRange> ranges)
+    {
+        if (string.Equals(modProfile, "gasblock", StringComparison.OrdinalIgnoreCase))
+        {
+            PreserveSourceFieldWithinRange(patch, itemInfo.SourceProperties, "Loudness", ranges);
+            PreserveSourceFieldWithinRange(patch, itemInfo.SourceProperties, "Velocity", ranges);
+            return;
+        }
+
+        if (string.Equals(modProfile, "iron_sight", StringComparison.OrdinalIgnoreCase))
+        {
+            PreserveSourceFieldWithinRange(patch, itemInfo.SourceProperties, "Accuracy", ranges);
+            return;
+        }
+
+        if (!modProfile.StartsWith("handguard_", StringComparison.OrdinalIgnoreCase))
+        {
+            return;
+        }
+
+        PreserveSourceFieldWithinRange(patch, itemInfo.SourceProperties, "Accuracy", ranges);
+        PreserveSourceFieldWithinRange(patch, itemInfo.SourceProperties, "Dispersion", ranges);
+    }
+
+    private static void PreserveSourceFieldWithinRange(JsonObject patch, JsonObject sourceProperties, string fieldName, IReadOnlyDictionary<string, NumericRange> ranges)
+    {
+        if (!ranges.TryGetValue(fieldName, out var range)
+            || sourceProperties[fieldName] is null
+            || !TryGetNumericValue(sourceProperties[fieldName], out var sourceValue))
+        {
+            return;
+        }
+
+        patch[fieldName] = CreateNumericNode(Clamp(sourceValue, range.Min, range.Max), range.PreferInt);
     }
 
     private void ApplyGearSanityCheck(JsonObject patch, ItemInfo itemInfo)
@@ -2332,6 +2490,18 @@ public sealed class RealismPatchGenerator
             ? mappedProfile
             : null;
 
+        if (string.Equals(modType, "bayonet", StringComparison.OrdinalIgnoreCase)
+            || name.Contains("bayonet", StringComparison.OrdinalIgnoreCase))
+        {
+            return "bayonet";
+        }
+
+        if (string.Equals(modType, "booster", StringComparison.OrdinalIgnoreCase)
+            || name.Contains("booster", StringComparison.OrdinalIgnoreCase))
+        {
+            return "booster";
+        }
+
         if (modType.Contains("muzzle", StringComparison.OrdinalIgnoreCase) || (baseProfile?.StartsWith("muzzle", StringComparison.OrdinalIgnoreCase) ?? false))
         {
             if (modType is "muzzle_supp_adapter" or "sig_taper_brake" || modType.Contains("adapter", StringComparison.OrdinalIgnoreCase))
@@ -2427,6 +2597,13 @@ public sealed class RealismPatchGenerator
             return "pistol_grip";
         }
 
+        if (string.Equals(modType, "UBGL", StringComparison.OrdinalIgnoreCase)
+            || modType.Contains("grenade_launcher", StringComparison.OrdinalIgnoreCase)
+            || modType.Contains("grenade launcher", StringComparison.OrdinalIgnoreCase))
+        {
+            return "ubgl";
+        }
+
         if (modType == "receiver" || modType.Contains("receiver", StringComparison.OrdinalIgnoreCase) || modType.Contains("reciever", StringComparison.OrdinalIgnoreCase))
         {
             return "receiver";
@@ -2450,6 +2627,21 @@ public sealed class RealismPatchGenerator
         if (modType == "iron_sight")
         {
             return "iron_sight";
+        }
+
+        if (modType == "trigger")
+        {
+            return "trigger";
+        }
+
+        if (modType == "catch")
+        {
+            return "catch";
+        }
+
+        if (modType == "hammer")
+        {
+            return "hammer";
         }
 
         if (modType is "reflex_sight" or "compact_reflex_sight")
@@ -2530,6 +2722,8 @@ public sealed class RealismPatchGenerator
             "MountTemplates.json" => "mount",
             "FlashlightLaserTemplates.json" => "flashlight_laser",
             "IronSightTemplates.json" => "iron_sight",
+            "UBGLTempaltes.json" => "ubgl",
+            "UBGLTemplates.json" => "ubgl",
             _ => null,
         };
     }
@@ -2669,6 +2863,11 @@ public sealed class RealismPatchGenerator
         if (name.Contains("adapter", StringComparison.OrdinalIgnoreCase) && ContainsAnyKeyword(name, ["muzzle", "suppressor", "silencer", "taper", "qd", "消音器", "抑制器"]))
         {
             return "muzzle_adapter";
+        }
+
+        if (name.Contains("booster", StringComparison.OrdinalIgnoreCase))
+        {
+            return "booster";
         }
 
         if (ContainsAnyKeyword(name, ["thread protector", "螺纹保护", "protective cap"]))

@@ -1,0 +1,55 @@
+{
+  "664b9a705538c7da4f026f22": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "664b9a705538c7da4f026f22",
+    "Name": "OSS 7.62x51 QD Muzzle Brake",
+    "ModType": "muzzle_supp_adapter",
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": -15,
+    "Dispersion": -20,
+    "CameraRecoil": -15,
+    "AutoROF": 0,
+    "SemiROF": 0,
+    "ModMalfunctionChance": 0,
+    "CanCycleSubs": false,
+    "Accuracy": 0,
+    "HeatFactor": 0.995,
+    "CoolFactor": 1,
+    "DurabilityBurnModificator": 1.02,
+    "Velocity": 0,
+    "RecoilAngle": 0,
+    "ConflictingItems": [],
+    "Ergonomics": -1,
+    "Weight": 0.105,
+    "Loudness": 40,
+    "Convergence": 0,
+    "LoyaltyLevel": 3,
+    "Flash": 2,
+    "Prefab": {
+      "path": "Attachment_Muzzles/muzzle_oss762qd.bundle",
+      "rcid": ""
+    },
+    "Recoil": -8,
+    "Slots": [
+      {
+        "_id": "6689b044e7e6dd4326bd91eb",
+        "_mergeSlotWithChildren": false,
+        "_name": "mod_muzzle",
+        "_parent": "664b9a705538c7da4f026f22",
+        "_props": {
+          "filters": [
+            {
+              "Filter": [
+                "664b9a4798222d80ce536df6"
+              ],
+              "Shift": 0
+            }
+          ]
+        },
+        "_proto": "55d30c4c4bdc2db4468b457e",
+        "_required": false
+      }
+    ],
+    "ExaminedByDefault": true
+  }
+}

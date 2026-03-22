@@ -1,0 +1,2702 @@
+{
+  "66b1770c5f8b2271bb5887dc": {
+    "$type": "RealismMod.Gun, RealismMod",
+    "ItemID": "66b1770c5f8b2271bb5887dc",
+    "Name": "HK XM8 5.56x45 assault rifle (FDE)",
+    "WeapType": "",
+    "OperationType": "",
+    "WeapAccuracy": 0,
+    "BaseTorque": 0,
+    "HasShoulderContact": false,
+    "Ergonomics": 87,
+    "VerticalRecoil": 86,
+    "HorizontalRecoil": 150,
+    "Dispersion": 7,
+    "CameraRecoil": 0.06,
+    "VisualMulti": 1.28,
+    "Convergence": 22,
+    "RecoilAngle": 90,
+    "BaseMalfunctionChance": 0.001,
+    "HeatFactorGun": 0.95,
+    "HeatFactorByShot": 1.2,
+    "CoolFactorGun": 0.07,
+    "CoolFactorGunMods": 1,
+    "AllowOverheat": true,
+    "CenterOfImpact": 0.01,
+    "HipAccuracyRestorationDelay": 0.2,
+    "HipAccuracyRestorationSpeed": 7,
+    "HipInnaccuracyGain": 0.16,
+    "ShotgunDispersion": 0,
+    "Velocity": 1,
+    "RecoilDamping": 0.828,
+    "RecoilHandDamping": 0.75,
+    "WeaponAllowADS": false,
+    "Weight": 0.87,
+    "DurabilityBurnRatio": 0.2,
+    "AutoROF": 750,
+    "SemiROF": 385,
+    "LoyaltyLevel": 3,
+    "BaseReloadSpeedMulti": 0.95,
+    "BaseChamberSpeedMulti": 1,
+    "MinChamberSpeed": 0.7,
+    "MaxChamberSpeed": 1.5,
+    "IsManuallyOperated": false,
+    "BaseChamberCheckSpeed": 0.9,
+    "BaseFixSpeed": 0.85,
+    "OffsetRotation": 0.009,
+    "RecoilIntensity": 0.14,
+    "Prefab": {
+      "path": "WeaponXM8/xm8fde_container.bundle",
+      "rcid": ""
+    },
+    "Width": 2,
+    "Height": 1,
+    "RepairCost": 195,
+    "RecoilForceBack": 310,
+    "RecoilForceUp": 100,
+    "Foldable": true,
+    "Slots": [
+      {
+        "_name": "mod_magazine",
+        "_id": "66b29636b673c108c975d780",
+        "_parent": "6184055050224f204c1da540",
+        "_props": {
+          "filters": [
+            {
+              "AnimationIndex": -1,
+              "Filter": [
+                "ccab703b048be433c03a671c",
+                "62307b7b10d2321fa8741921"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": true,
+        "_proto": "55d30c394bdc2dae468b4577"
+      },
+      {
+        "_name": "mod_stock",
+        "_id": "66b2968b599918ba47ac8852",
+        "_parent": "55802f3e4bdc2de7118b4584",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "66b1776c8acc52a0c65be177",
+                "66b1776fe80a0cd0e59ba2c1",
+                "66b1777302b837c826f2a1ab"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": true,
+        "_proto": "66982101118de40bd9a9adfa"
+      },
+      {
+        "_name": "mod_stock_001",
+        "_id": "66b29692b65eee4c3cf93318",
+        "_parent": "55802f3e4bdc2de7118b4584",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "66b177460cc616678c424cda",
+                "66b1774a7acd78ebf84ae125",
+                "66b1774efb63f849b9b2fa12",
+                "66b1775568563febad30452e",
+                "66b1775a2395f96a493eacbd",
+                "66b1775e348cb7ecb16620e5",
+                "66b177610ed9932ce793aab1",
+                "66b177647126f9c006bb44ae",
+                "66b177670380a35378501a43"
+              ]
+            }
+          ]
+        },
+        "_required": true,
+        "_mergeSlotWithChildren": true,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      },
+      {
+        "_name": "mod_scope",
+        "_id": "66b29697b0dc24086ca6b190",
+        "_parent": "6165adcdd3a39d50044c120f",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "66b177865018c420f94de0c4",
+                "66b177922ed0146f293f4d6f"
+              ]
+            }
+          ]
+        },
+        "_required": true,
+        "_mergeSlotWithChildren": true,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      },
+      {
+        "_name": "mod_handguard",
+        "_id": "66b2969d173c302325e91d4b",
+        "_parent": "59bfe68886f7746004266202",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "66b17725e2cf432d366c1a44",
+                "66b177286a11a6564ecffae1",
+                "66b177205192a4b5bb89c7c0",
+                "66b1771c27bb1d655fb7fd16",
+                "66b1774114a15b9a0f09a69f",
+                "66b17743edd0d64c03eeed3b",
+                "66b1773e819b5700a7987155",
+                "66b1773ab2b587b20bd4430a",
+                "66b17733c11a4996fdb1eca2",
+                "66b177369857bd0e1bf7e38d",
+                "66b177301451b4fa159a8553",
+                "66b1772c42936e0387a88fc9"
+              ]
+            }
+          ]
+        },
+        "_required": true,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      },
+      {
+        "_name": "mod_barrel",
+        "_id": "66b296a1413bd871eeba49e2",
+        "_parent": "618405198004cc50514c3594",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "66b177776541b7f127ca4af0",
+                "66b1777cf41a1c521a7a449a",
+                "66b1777fef15631b8b5ca98a",
+                "66b1778236301d80c2044219"
+              ]
+            }
+          ]
+        },
+        "_required": true,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      }
+    ],
+    "ammoCaliber": "Caliber556x45NATO",
+    "Chambers": [
+      {
+        "_name": "patron_in_weapon",
+        "_id": "66b296a6e48166aa142d18bf",
+        "_parent": "6184055050224f204c1da540",
+        "_props": {
+          "filters": [
+            {
+              "Filter": [
+                "59e6920f86f77411d82aa167",
+                "59e6927d86f77411da468256",
+                "54527a984bdc2d4e668b4567",
+                "54527ac44bdc2d36668b4567",
+                "59e68f6f86f7746c9f75e846",
+                "59e6906286f7746c9f75e847",
+                "59e690b686f7746c9f75e848",
+                "59e6918f86f7746c9f75e849",
+                "60194943740c5d77f6705eea",
+                "601949593ae8f707c4608daa",
+                "5c0d5ae286f7741e46554302"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d4af244bdc2d962f8b4571"
+      }
+    ]
+  },
+  "66b177141a00c9af1fd50b2d": {
+    "$type": "RealismMod.Gun, RealismMod",
+    "ItemID": "66b177141a00c9af1fd50b2d",
+    "Name": "HK XM8 5.56x45 assault rifle (OD)",
+    "WeapType": "",
+    "OperationType": "",
+    "WeapAccuracy": 0,
+    "BaseTorque": 0,
+    "HasShoulderContact": false,
+    "Ergonomics": 91,
+    "VerticalRecoil": 102,
+    "HorizontalRecoil": 156,
+    "Dispersion": 7,
+    "CameraRecoil": 0.04,
+    "VisualMulti": 1.7,
+    "Convergence": 13,
+    "RecoilAngle": 90,
+    "BaseMalfunctionChance": 0.001,
+    "HeatFactorGun": 0.95,
+    "HeatFactorByShot": 1.2,
+    "CoolFactorGun": 0.07,
+    "CoolFactorGunMods": 1,
+    "AllowOverheat": true,
+    "CenterOfImpact": 0.01,
+    "HipAccuracyRestorationDelay": 0.2,
+    "HipAccuracyRestorationSpeed": 7,
+    "HipInnaccuracyGain": 0.16,
+    "ShotgunDispersion": 0,
+    "Velocity": 2,
+    "RecoilDamping": 0.828,
+    "RecoilHandDamping": 0.75,
+    "WeaponAllowADS": false,
+    "Weight": 0.87,
+    "DurabilityBurnRatio": 0.2,
+    "AutoROF": 750,
+    "SemiROF": 385,
+    "LoyaltyLevel": 3,
+    "BaseReloadSpeedMulti": 0.95,
+    "BaseChamberSpeedMulti": 1,
+    "MinChamberSpeed": 0.7,
+    "MaxChamberSpeed": 1.5,
+    "IsManuallyOperated": false,
+    "BaseChamberCheckSpeed": 0.9,
+    "BaseFixSpeed": 0.85,
+    "OffsetRotation": 0.009,
+    "RecoilIntensity": 0.17,
+    "Prefab": {
+      "path": "WeaponXM8/xm8od_container.bundle",
+      "rcid": ""
+    },
+    "Width": 2,
+    "Height": 1,
+    "RepairCost": 195,
+    "RecoilForceBack": 310,
+    "RecoilForceUp": 100,
+    "Foldable": true,
+    "Slots": [
+      {
+        "_name": "mod_magazine",
+        "_id": "6184055050224f204c1da543",
+        "_parent": "6184055050224f204c1da540",
+        "_props": {
+          "filters": [
+            {
+              "AnimationIndex": -1,
+              "Filter": [
+                "ccab703b048be433c03a671c",
+                "62307b7b10d2321fa8741921"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": true,
+        "_proto": "55d30c394bdc2dae468b4577"
+      },
+      {
+        "_name": "mod_stock",
+        "_id": "66b296c9a3f80973dbb18535",
+        "_parent": "55802f3e4bdc2de7118b4584",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "66b1776c8acc52a0c65be177",
+                "66b1777302b837c826f2a1ab",
+                "66b1776fe80a0cd0e59ba2c1"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": true,
+        "_proto": "66982101118de40bd9a9adfa"
+      },
+      {
+        "_name": "mod_stock_001",
+        "_id": "66b296cdd8bb56fa4a50ef70",
+        "_parent": "55802f3e4bdc2de7118b4584",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "66b177460cc616678c424cda",
+                "66b1774a7acd78ebf84ae125",
+                "66b1774efb63f849b9b2fa12",
+                "66b1775568563febad30452e",
+                "66b1775a2395f96a493eacbd",
+                "66b1775e348cb7ecb16620e5",
+                "66b177610ed9932ce793aab1",
+                "66b177670380a35378501a43",
+                "66b177647126f9c006bb44ae"
+              ]
+            }
+          ]
+        },
+        "_required": true,
+        "_mergeSlotWithChildren": true,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      },
+      {
+        "_name": "mod_scope",
+        "_id": "66b296d38e2a3582a8ced4e8",
+        "_parent": "6165adcdd3a39d50044c120f",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "66b177865018c420f94de0c4",
+                "66b177922ed0146f293f4d6f"
+              ]
+            }
+          ]
+        },
+        "_required": true,
+        "_mergeSlotWithChildren": true,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      },
+      {
+        "_name": "mod_handguard",
+        "_id": "66b296d84c0c85ed013f2d1d",
+        "_parent": "59bfe68886f7746004266202",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "66b17725e2cf432d366c1a44",
+                "66b17733c11a4996fdb1eca2",
+                "66b177286a11a6564ecffae1",
+                "66b177205192a4b5bb89c7c0",
+                "66b177369857bd0e1bf7e38d",
+                "66b177301451b4fa159a8553",
+                "66b1772c42936e0387a88fc9",
+                "66b1771c27bb1d655fb7fd16",
+                "66b17743edd0d64c03eeed3b",
+                "66b1773ab2b587b20bd4430a",
+                "66b1773e819b5700a7987155",
+                "66b1774114a15b9a0f09a69f"
+              ]
+            }
+          ]
+        },
+        "_required": true,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      },
+      {
+        "_name": "mod_barrel",
+        "_id": "66b296dc24af159ee24dd1b3",
+        "_parent": "618405198004cc50514c3594",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "66b177776541b7f127ca4af0",
+                "66b1777cf41a1c521a7a449a",
+                "66b1777fef15631b8b5ca98a",
+                "66b1778236301d80c2044219"
+              ]
+            }
+          ]
+        },
+        "_required": true,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      }
+    ],
+    "ammoCaliber": "Caliber556x45NATO",
+    "Chambers": [
+      {
+        "_name": "patron_in_weapon",
+        "_id": "66b296e05d9000ec84e35a1a",
+        "_parent": "6184055050224f204c1da540",
+        "_props": {
+          "filters": [
+            {
+              "Filter": [
+                "59e6920f86f77411d82aa167",
+                "59e6927d86f77411da468256",
+                "54527a984bdc2d4e668b4567",
+                "54527ac44bdc2d36668b4567",
+                "59e68f6f86f7746c9f75e846",
+                "59e6906286f7746c9f75e847",
+                "59e690b686f7746c9f75e848",
+                "59e6918f86f7746c9f75e849",
+                "60194943740c5d77f6705eea",
+                "601949593ae8f707c4608daa",
+                "5c0d5ae286f7741e46554302"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d4af244bdc2d962f8b4571"
+      }
+    ]
+  },
+  "66b17d6cbb296d01b4684944": {
+    "$type": "RealismMod.Gun, RealismMod",
+    "ItemID": "66b17d6cbb296d01b4684944",
+    "Name": "HK XM8 5.56x45 assault rifle (Black)",
+    "WeapType": "",
+    "OperationType": "",
+    "WeapAccuracy": 0,
+    "BaseTorque": 0,
+    "HasShoulderContact": false,
+    "Ergonomics": 88,
+    "VerticalRecoil": 74,
+    "HorizontalRecoil": 143,
+    "Dispersion": 6,
+    "CameraRecoil": 0.03,
+    "VisualMulti": 1.61,
+    "Convergence": 20,
+    "RecoilAngle": 90,
+    "BaseMalfunctionChance": 0.001,
+    "HeatFactorGun": 0.95,
+    "HeatFactorByShot": 1.2,
+    "CoolFactorGun": 0.07,
+    "CoolFactorGunMods": 1,
+    "AllowOverheat": true,
+    "CenterOfImpact": 0.01,
+    "HipAccuracyRestorationDelay": 0.2,
+    "HipAccuracyRestorationSpeed": 7,
+    "HipInnaccuracyGain": 0.16,
+    "ShotgunDispersion": 0,
+    "Velocity": 1,
+    "RecoilDamping": 0.828,
+    "RecoilHandDamping": 0.75,
+    "WeaponAllowADS": false,
+    "Weight": 0.87,
+    "DurabilityBurnRatio": 0.2,
+    "AutoROF": 750,
+    "SemiROF": 385,
+    "LoyaltyLevel": 3,
+    "BaseReloadSpeedMulti": 0.95,
+    "BaseChamberSpeedMulti": 1,
+    "MinChamberSpeed": 0.7,
+    "MaxChamberSpeed": 1.5,
+    "IsManuallyOperated": false,
+    "BaseChamberCheckSpeed": 0.9,
+    "BaseFixSpeed": 0.85,
+    "OffsetRotation": 0.009,
+    "RecoilIntensity": 0.25,
+    "Prefab": {
+      "path": "WeaponXM8/xm8blk_container.bundle",
+      "rcid": ""
+    },
+    "Width": 2,
+    "Height": 1,
+    "RepairCost": 195,
+    "RecoilForceBack": 310,
+    "RecoilForceUp": 100,
+    "Foldable": true,
+    "Slots": [
+      {
+        "_name": "mod_magazine",
+        "_id": "66b2970253314d9c0b5b387c",
+        "_parent": "6184055050224f204c1da540",
+        "_props": {
+          "filters": [
+            {
+              "AnimationIndex": -1,
+              "Filter": [
+                "ccab703b048be433c03a671c",
+                "62307b7b10d2321fa8741921"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": true,
+        "_proto": "55d30c394bdc2dae468b4577"
+      },
+      {
+        "_name": "mod_stock",
+        "_id": "66b2970d3d15690d502be512",
+        "_parent": "55802f3e4bdc2de7118b4584",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "66b1776c8acc52a0c65be177",
+                "66b1777302b837c826f2a1ab",
+                "66b1776fe80a0cd0e59ba2c1"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": true,
+        "_proto": "6699826ed9269233563de02b"
+      },
+      {
+        "_name": "mod_stock_001",
+        "_id": "66b29712c29f3c7b819f9e76",
+        "_parent": "55802f3e4bdc2de7118b4584",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "66b177460cc616678c424cda",
+                "66b1774a7acd78ebf84ae125",
+                "66b177670380a35378501a43",
+                "66b1775a2395f96a493eacbd",
+                "66b1775e348cb7ecb16620e5",
+                "66b1774efb63f849b9b2fa12",
+                "66b177647126f9c006bb44ae",
+                "66b177610ed9932ce793aab1",
+                "66b1775568563febad30452e"
+              ]
+            }
+          ]
+        },
+        "_required": true,
+        "_mergeSlotWithChildren": true,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      },
+      {
+        "_name": "mod_scope",
+        "_id": "66b29716be6e0b09d6663df7",
+        "_parent": "6165adcdd3a39d50044c120f",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "66b177865018c420f94de0c4",
+                "66b177922ed0146f293f4d6f"
+              ]
+            }
+          ]
+        },
+        "_required": true,
+        "_mergeSlotWithChildren": true,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      },
+      {
+        "_name": "mod_handguard",
+        "_id": "66b2971a62766b855124fb7f",
+        "_parent": "59bfe68886f7746004266202",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "66b17725e2cf432d366c1a44",
+                "66b17733c11a4996fdb1eca2",
+                "66b177286a11a6564ecffae1",
+                "66b177205192a4b5bb89c7c0",
+                "66b177369857bd0e1bf7e38d",
+                "66b177301451b4fa159a8553",
+                "66b1772c42936e0387a88fc9",
+                "66b1773e819b5700a7987155",
+                "66b17743edd0d64c03eeed3b",
+                "66b1773ab2b587b20bd4430a",
+                "66b1774114a15b9a0f09a69f",
+                "66b1771c27bb1d655fb7fd16"
+              ]
+            }
+          ]
+        },
+        "_required": true,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      },
+      {
+        "_name": "mod_barrel",
+        "_id": "66b2971f9f5e9739e15a8f5d",
+        "_parent": "618405198004cc50514c3594",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "66b177776541b7f127ca4af0",
+                "66b1777cf41a1c521a7a449a",
+                "66b1777fef15631b8b5ca98a",
+                "66b1778236301d80c2044219"
+              ]
+            }
+          ]
+        },
+        "_required": true,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      }
+    ],
+    "ammoCaliber": "Caliber556x45NATO",
+    "Chambers": [
+      {
+        "_name": "patron_in_weapon",
+        "_id": "66b29725a2a060e0ec47689a",
+        "_parent": "6184055050224f204c1da540",
+        "_props": {
+          "filters": [
+            {
+              "Filter": [
+                "59e6920f86f77411d82aa167",
+                "59e6927d86f77411da468256",
+                "54527a984bdc2d4e668b4567",
+                "54527ac44bdc2d36668b4567",
+                "59e68f6f86f7746c9f75e846",
+                "59e6906286f7746c9f75e847",
+                "59e690b686f7746c9f75e848",
+                "59e6918f86f7746c9f75e849",
+                "60194943740c5d77f6705eea",
+                "601949593ae8f707c4608daa",
+                "5c0d5ae286f7741e46554302"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d4af244bdc2d962f8b4571"
+      }
+    ]
+  },
+  "66b1777fef15631b8b5ca98a": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "66b1777fef15631b8b5ca98a",
+    "Name": "HK XM8 5.56x45 LMG length barrel",
+    "ModType": "",
+    "VerticalRecoil": -3,
+    "HorizontalRecoil": -1,
+    "AutoROF": -1,
+    "SemiROF": -0.5,
+    "ModMalfunctionChance": -7.5,
+    "CameraRecoil": -7.5,
+    "Convergence": 1,
+    "Accuracy": -1,
+    "CenterOfImpact": 0.02,
+    "HeatFactor": 1,
+    "CoolFactor": 1.02,
+    "DurabilityBurnModificator": 0.99,
+    "Velocity": 2,
+    "ConflictingItems": [
+      "66b1771c27bb1d655fb7fd16",
+      "66b1772c42936e0387a88fc9",
+      "66b1773ab2b587b20bd4430a"
+    ],
+    "Ergonomics": -14,
+    "Weight": 1.732,
+    "ShotgunDispersion": 1,
+    "Loudness": 0,
+    "LoyaltyLevel": 2,
+    "Prefab": {
+      "path": "WeaponXM8/xm8barrellmg.bundle",
+      "rcid": ""
+    },
+    "ExtraSizeLeft": 3,
+    "Width": 4,
+    "Recoil": -8,
+    "Slots": [
+      {
+        "_name": "mod_muzzle",
+        "_id": "66b29739c88dd913249fc124",
+        "_parent": "622b3858034a3e17ad0b81f5",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "5b3a16655acfc40016387a2a",
+                "5c7e5f112e221600106f4ede",
+                "5c0fafb6d174af02a96260ba",
+                "612e0cfc8004cc50514c2d9e",
+                "5cf6937cd7f00c056c53fb39",
+                "544a38634bdc2d58388b4568",
+                "5cff9e5ed7ad1a09407397d4",
+                "5c48a2a42e221602b66d1e07",
+                "5f6372e2865db925d54f3869",
+                "615d8e2f1cb55961fa0fd9a4",
+                "56ea8180d2720bf2698b456a",
+                "626667e87379c44d557b7550",
+                "5d02676dd7ad1a049e54f6dc",
+                "56ea6fafd2720b844b8b4593",
+                "5943ee5a86f77413872d25ec",
+                "609269c3b0e443224b421cc1",
+                "5c7fb51d2e2216001219ce11",
+                "5ea172e498dacb342978818e",
+                "5c6d710d2e22165df16b81e7",
+                "62669bccdb9ebb4daa44cd14",
+                "612e0e55a112697a4b3a66e7",
+                "5d440625a4b9361eec4ae6c5",
+                "5cc9b815d7f00c000e2579d6",
+                "5a7c147ce899ef00150bd8b8",
+                "626a74340be03179a165e30c",
+                "622f128cec80d870d349b4e8",
+                "622f0ee47762f55aaa68ac87",
+                "622f07cfae33bc505b2c4dd5",
+                "5c7954d52e221600106f4cc7",
+                "59bffc1f86f77435b128b872",
+                "5a9fbb84a2750c00137fa685",
+                "6386120cd6baa055ad1e201c",
+                "63ac5c9658d0485fc039f0b8",
+                "6405ff6bd4578826ec3e377a",
+                "64943b74e9998d641b0412ed"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      },
+      {
+        "_name": "mod_gas_block",
+        "_id": "66b2974031aa7bf094ac5cd9",
+        "_parent": "xm8barrelar",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "66b17796cd01eed07d2c3f5a"
+              ]
+            }
+          ]
+        },
+        "_required": true,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      }
+    ],
+    "Dispersion": 2,
+    "RecoilAngle": -1
+  },
+  "66b177776541b7f127ca4af0": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "66b177776541b7f127ca4af0",
+    "Name": "HK XM8 5.56x45 rifle length Barrel",
+    "ModType": "short_barrel",
+    "VerticalRecoil": -4,
+    "HorizontalRecoil": -4,
+    "AutoROF": 0,
+    "SemiROF": 0,
+    "ModMalfunctionChance": 30,
+    "Convergence": -13,
+    "Accuracy": 12,
+    "CenterOfImpact": 0.013,
+    "HeatFactor": 1.05,
+    "CoolFactor": 1.06,
+    "DurabilityBurnModificator": 0.84,
+    "Velocity": 8,
+    "ConflictingItems": [
+      "66b1771c27bb1d655fb7fd16",
+      "66b1772c42936e0387a88fc9",
+      "66b1773ab2b587b20bd4430a"
+    ],
+    "Ergonomics": -10,
+    "Weight": 1.695,
+    "ShotgunDispersion": 1,
+    "Loudness": 0,
+    "LoyaltyLevel": 1,
+    "Prefab": {
+      "path": "WeaponXM8/xm8barrelar.bundle",
+      "rcid": ""
+    },
+    "ExtraSizeLeft": 2,
+    "Width": 4,
+    "Recoil": -6,
+    "Slots": [
+      {
+        "_name": "mod_muzzle",
+        "_id": "66b2974788339f9965a7d5c8",
+        "_parent": "66b177776541b7f127ca4af0",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "5b3a16655acfc40016387a2a",
+                "5c7e5f112e221600106f4ede",
+                "5c0fafb6d174af02a96260ba",
+                "612e0cfc8004cc50514c2d9e",
+                "5cf6937cd7f00c056c53fb39",
+                "544a38634bdc2d58388b4568",
+                "5cff9e5ed7ad1a09407397d4",
+                "5c48a2a42e221602b66d1e07",
+                "5f6372e2865db925d54f3869",
+                "615d8e2f1cb55961fa0fd9a4",
+                "56ea8180d2720bf2698b456a",
+                "626667e87379c44d557b7550",
+                "5d02676dd7ad1a049e54f6dc",
+                "56ea6fafd2720b844b8b4593",
+                "5943ee5a86f77413872d25ec",
+                "609269c3b0e443224b421cc1",
+                "5c7fb51d2e2216001219ce11",
+                "5ea172e498dacb342978818e",
+                "5c6d710d2e22165df16b81e7",
+                "62669bccdb9ebb4daa44cd14",
+                "612e0e55a112697a4b3a66e7",
+                "5d440625a4b9361eec4ae6c5",
+                "5cc9b815d7f00c000e2579d6",
+                "5a7c147ce899ef00150bd8b8",
+                "626a74340be03179a165e30c",
+                "622f128cec80d870d349b4e8",
+                "622f0ee47762f55aaa68ac87",
+                "622f07cfae33bc505b2c4dd5",
+                "5c7954d52e221600106f4cc7",
+                "59bffc1f86f77435b128b872",
+                "5a9fbb84a2750c00137fa685",
+                "6386120cd6baa055ad1e201c",
+                "63ac5c9658d0485fc039f0b8",
+                "6405ff6bd4578826ec3e377a",
+                "64943b74e9998d641b0412ed"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      },
+      {
+        "_name": "mod_gas_block",
+        "_id": "66b2974cb21726079c223471",
+        "_parent": "66b177776541b7f127ca4af0",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "66b17796cd01eed07d2c3f5a"
+              ]
+            }
+          ]
+        },
+        "_required": true,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      }
+    ],
+    "Dispersion": -6,
+    "RecoilAngle": -9
+  },
+  "66b1777cf41a1c521a7a449a": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "66b1777cf41a1c521a7a449a",
+    "Name": "HK XM8 5.56x45 carbine length barrel",
+    "ModType": "short_barrel",
+    "VerticalRecoil": -3,
+    "HorizontalRecoil": 0,
+    "AutoROF": 0,
+    "SemiROF": 0,
+    "ModMalfunctionChance": 30,
+    "Convergence": 3,
+    "Accuracy": 1,
+    "CenterOfImpact": 0.03,
+    "HeatFactor": 1.05,
+    "CoolFactor": 1.02,
+    "DurabilityBurnModificator": 0.97,
+    "Velocity": 2,
+    "ConflictingItems": [
+      "66b177286a11a6564ecffae1",
+      "66b17725e2cf432d366c1a44",
+      "66b1771c27bb1d655fb7fd16",
+      "66b177369857bd0e1bf7e38d",
+      "66b17733c11a4996fdb1eca2",
+      "66b1772c42936e0387a88fc9",
+      "66b1774114a15b9a0f09a69f",
+      "66b17743edd0d64c03eeed3b",
+      "66b1773ab2b587b20bd4430a"
+    ],
+    "Ergonomics": -10,
+    "Weight": 1.685,
+    "ShotgunDispersion": 1,
+    "Loudness": 0,
+    "LoyaltyLevel": 1,
+    "Prefab": {
+      "path": "WeaponXM8/xm8barrelcarb.bundle",
+      "rcid": ""
+    },
+    "ExtraSizeLeft": 2,
+    "Width": 3,
+    "Recoil": -4,
+    "Slots": [
+      {
+        "_name": "mod_muzzle",
+        "_id": "66b29751ff069c77d301d82e",
+        "_parent": "66b1777cf41a1c521a7a449a",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "5b3a16655acfc40016387a2a",
+                "5c7e5f112e221600106f4ede",
+                "5c0fafb6d174af02a96260ba",
+                "612e0cfc8004cc50514c2d9e",
+                "5cf6937cd7f00c056c53fb39",
+                "544a38634bdc2d58388b4568",
+                "5cff9e5ed7ad1a09407397d4",
+                "5c48a2a42e221602b66d1e07",
+                "5f6372e2865db925d54f3869",
+                "615d8e2f1cb55961fa0fd9a4",
+                "56ea8180d2720bf2698b456a",
+                "626667e87379c44d557b7550",
+                "5d02676dd7ad1a049e54f6dc",
+                "56ea6fafd2720b844b8b4593",
+                "5943ee5a86f77413872d25ec",
+                "609269c3b0e443224b421cc1",
+                "5c7fb51d2e2216001219ce11",
+                "5ea172e498dacb342978818e",
+                "5c6d710d2e22165df16b81e7",
+                "62669bccdb9ebb4daa44cd14",
+                "612e0e55a112697a4b3a66e7",
+                "5d440625a4b9361eec4ae6c5",
+                "5cc9b815d7f00c000e2579d6",
+                "5a7c147ce899ef00150bd8b8",
+                "626a74340be03179a165e30c",
+                "622f128cec80d870d349b4e8",
+                "622f0ee47762f55aaa68ac87",
+                "622f07cfae33bc505b2c4dd5",
+                "5c7954d52e221600106f4cc7",
+                "59bffc1f86f77435b128b872",
+                "5a9fbb84a2750c00137fa685",
+                "6386120cd6baa055ad1e201c",
+                "63ac5c9658d0485fc039f0b8",
+                "6405ff6bd4578826ec3e377a",
+                "64943b74e9998d641b0412ed"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      },
+      {
+        "_name": "mod_gas_block",
+        "_id": "66b29756d55c8a9631a853c3",
+        "_parent": "66b1777cf41a1c521a7a449a",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "66b17796cd01eed07d2c3f5a"
+              ]
+            }
+          ]
+        },
+        "_required": true,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      }
+    ],
+    "Dispersion": 2,
+    "RecoilAngle": 2
+  },
+  "66b1778236301d80c2044219": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "66b1778236301d80c2044219",
+    "Name": "HK XM8 5.56x45 PDW length barrel",
+    "ModType": "short_barrel",
+    "VerticalRecoil": -1,
+    "HorizontalRecoil": 1,
+    "AutoROF": 6,
+    "SemiROF": 3.5,
+    "CameraRecoil": 3,
+    "ModMalfunctionChance": 60,
+    "Convergence": 6,
+    "Accuracy": 0,
+    "CenterOfImpact": 0.04,
+    "HeatFactor": 1.03,
+    "CoolFactor": 1.04,
+    "DurabilityBurnModificator": 1.02,
+    "Velocity": 1,
+    "ConflictingItems": [
+      "66b177286a11a6564ecffae1",
+      "66b17725e2cf432d366c1a44",
+      "66b177205192a4b5bb89c7c0",
+      "66b177369857bd0e1bf7e38d",
+      "66b17733c11a4996fdb1eca2",
+      "66b177301451b4fa159a8553",
+      "66b1774114a15b9a0f09a69f",
+      "66b17743edd0d64c03eeed3b",
+      "66b1773e819b5700a7987155"
+    ],
+    "Ergonomics": -6,
+    "Weight": 1.432,
+    "ShotgunDispersion": 1,
+    "Loudness": 0,
+    "LoyaltyLevel": 2,
+    "Prefab": {
+      "path": "WeaponXM8/xm8barrelpdw.bundle",
+      "rcid": ""
+    },
+    "ExtraSizeLeft": 1,
+    "Width": 2,
+    "Recoil": -2,
+    "Slots": [
+      {
+        "_name": "mod_muzzle",
+        "_id": "66b2975cdc34eddb60b24a10",
+        "_parent": "66b1778236301d80c2044219",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "5b3a16655acfc40016387a2a",
+                "5c7e5f112e221600106f4ede",
+                "5c0fafb6d174af02a96260ba",
+                "612e0cfc8004cc50514c2d9e",
+                "5cf6937cd7f00c056c53fb39",
+                "544a38634bdc2d58388b4568",
+                "5cff9e5ed7ad1a09407397d4",
+                "5c48a2a42e221602b66d1e07",
+                "5f6372e2865db925d54f3869",
+                "615d8e2f1cb55961fa0fd9a4",
+                "56ea8180d2720bf2698b456a",
+                "626667e87379c44d557b7550",
+                "5d02676dd7ad1a049e54f6dc",
+                "56ea6fafd2720b844b8b4593",
+                "5943ee5a86f77413872d25ec",
+                "609269c3b0e443224b421cc1",
+                "5c7fb51d2e2216001219ce11",
+                "5ea172e498dacb342978818e",
+                "5c6d710d2e22165df16b81e7",
+                "62669bccdb9ebb4daa44cd14",
+                "612e0e55a112697a4b3a66e7",
+                "5d440625a4b9361eec4ae6c5",
+                "5cc9b815d7f00c000e2579d6",
+                "5a7c147ce899ef00150bd8b8",
+                "626a74340be03179a165e30c",
+                "622f128cec80d870d349b4e8",
+                "622f0ee47762f55aaa68ac87",
+                "622f07cfae33bc505b2c4dd5",
+                "5c7954d52e221600106f4cc7",
+                "59bffc1f86f77435b128b872",
+                "5a9fbb84a2750c00137fa685",
+                "6386120cd6baa055ad1e201c",
+                "63ac5c9658d0485fc039f0b8",
+                "6405ff6bd4578826ec3e377a",
+                "64943b74e9998d641b0412ed"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      },
+      {
+        "_name": "mod_gas_block",
+        "_id": "66b29760906fa01c81066ac7",
+        "_parent": "66b1778236301d80c2044219",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "66b17796cd01eed07d2c3f5a"
+              ]
+            }
+          ]
+        },
+        "_required": true,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      }
+    ],
+    "Dispersion": 0,
+    "RecoilAngle": 1
+  },
+  "66b17796cd01eed07d2c3f5a": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "66b17796cd01eed07d2c3f5a",
+    "Name": "HK XM8 gas block",
+    "ModType": "",
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "Dispersion": 0,
+    "AutoROF": 0,
+    "SemiROF": 0,
+    "ModMalfunctionChance": 0,
+    "CanCycleSubs": false,
+    "Accuracy": 0,
+    "HeatFactor": 0.99,
+    "CoolFactor": 1.01,
+    "DurabilityBurnModificator": 0.98,
+    "ConflictingItems": [],
+    "Ergonomics": 1,
+    "Weight": 0.01,
+    "LoyaltyLevel": 1,
+    "Flash": -1,
+    "Prefab": {
+      "path": "WeaponXM8/xm8gasblock.bundle",
+      "rcid": ""
+    }
+  },
+  "66b177286a11a6564ecffae1": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "66b177286a11a6564ecffae1",
+    "Name": "HK XM8 LMG handguard",
+    "ModType": "",
+    "VerticalRecoil": -6,
+    "HorizontalRecoil": -2,
+    "Dispersion": -2,
+    "AimSpeed": 1,
+    "Ergonomics": 3,
+    "Accuracy": 2,
+    "HeatFactor": 0.98,
+    "CoolFactor": 0.92,
+    "ConflictingItems": [],
+    "Weight": 0.25,
+    "LoyaltyLevel": 1,
+    "AimStability": 8,
+    "Prefab": {
+      "path": "WeaponXM8/xm8hglmg.bundle",
+      "rcid": ""
+    },
+    "Width": 2,
+    "Recoil": -4,
+    "ExtraSizeLeft": 2,
+    "Slots": [
+      {
+        "_name": "mod_mount",
+        "_id": "66b29773675eb6b53d5050e2",
+        "_parent": "619666f4af1f5202c57a952d",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "66b1779b98627f711ecab7c1"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      }
+    ],
+    "Handling": 5,
+    "DurabilityBurnModificator": 1
+  },
+  "66b17725e2cf432d366c1a44": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "66b17725e2cf432d366c1a44",
+    "Name": "HK XM8 rifle length handguard",
+    "ModType": "",
+    "VerticalRecoil": -7,
+    "HorizontalRecoil": -4,
+    "Dispersion": -2,
+    "AimSpeed": -5,
+    "Ergonomics": 1,
+    "Accuracy": 2,
+    "HeatFactor": 0.9,
+    "CoolFactor": 1.02,
+    "ConflictingItems": [],
+    "Weight": 0.17,
+    "LoyaltyLevel": 1,
+    "AimStability": 13,
+    "Prefab": {
+      "path": "WeaponXM8/xm8hg.bundle",
+      "rcid": ""
+    },
+    "Width": 2,
+    "Recoil": -3,
+    "ExtraSizeLeft": 2,
+    "Slots": [
+      {
+        "_name": "mod_mount",
+        "_id": "66b2977ef9c6231f425b1feb",
+        "_parent": "619666f4af1f5202c57a952d",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "66b1779b98627f711ecab7c1"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      }
+    ],
+    "Handling": -6,
+    "DurabilityBurnModificator": 0.94
+  },
+  "66b177205192a4b5bb89c7c0": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "66b177205192a4b5bb89c7c0",
+    "Name": "HK XM8 carbine length handguard",
+    "ModType": "",
+    "VerticalRecoil": -2,
+    "HorizontalRecoil": -2,
+    "Dispersion": -1,
+    "AimSpeed": 3,
+    "Ergonomics": 8,
+    "Accuracy": 1,
+    "HeatFactor": 1.06,
+    "CoolFactor": 0.85,
+    "ConflictingItems": [],
+    "Weight": 0.125,
+    "LoyaltyLevel": 2,
+    "AimStability": 2,
+    "Handling": 8,
+    "Prefab": {
+      "path": "WeaponXM8/xm8hgcar.bundle",
+      "rcid": ""
+    },
+    "Width": 2,
+    "Recoil": -2,
+    "ExtraSizeLeft": 0,
+    "Slots": [
+      {
+        "_name": "mod_mount",
+        "_id": "66b29785db8c80bc3a68e55f",
+        "_parent": "619666f4af1f5202c57a952d",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "66b1779f427471f780dc15c4"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      }
+    ],
+    "DurabilityBurnModificator": 1
+  },
+  "66b1771c27bb1d655fb7fd16": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "66b1771c27bb1d655fb7fd16",
+    "Name": "HK XM8 PDW handguard",
+    "ModType": "",
+    "VerticalRecoil": -2,
+    "HorizontalRecoil": -1,
+    "Dispersion": -1,
+    "AimSpeed": 4,
+    "Ergonomics": 9,
+    "Accuracy": 0,
+    "HeatFactor": 1.08,
+    "CoolFactor": 0.93,
+    "ConflictingItems": [],
+    "Weight": 0.1,
+    "LoyaltyLevel": 2,
+    "AimStability": 3,
+    "Prefab": {
+      "path": "WeaponXM8/xm8hgpdw.bundle",
+      "rcid": ""
+    },
+    "Width": 2,
+    "Recoil": -2,
+    "ExtraSizeLeft": 1,
+    "Slots": [
+      {
+        "_name": "mod_mount",
+        "_id": "66b2978d3221177d11ee1452",
+        "_parent": "62386b7153757417e93a4e9f",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "66b177a2170f88748ae2c32f"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      }
+    ],
+    "Handling": 9,
+    "DurabilityBurnModificator": 1
+  },
+  "66b177369857bd0e1bf7e38d": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "66b177369857bd0e1bf7e38d",
+    "Name": "HK XM8 LMG handguard (OD)",
+    "ModType": "",
+    "VerticalRecoil": -5,
+    "HorizontalRecoil": -5,
+    "Dispersion": -2,
+    "AimSpeed": 1,
+    "Ergonomics": 3,
+    "Accuracy": 2,
+    "HeatFactor": 0.97,
+    "CoolFactor": 0.93,
+    "ConflictingItems": [],
+    "Weight": 0.25,
+    "LoyaltyLevel": 1,
+    "AimStability": 7,
+    "Prefab": {
+      "path": "WeaponXM8/xm8odhglmg.bundle",
+      "rcid": ""
+    },
+    "Width": 2,
+    "Recoil": -4,
+    "ExtraSizeLeft": 2,
+    "Slots": [
+      {
+        "_name": "mod_mount",
+        "_id": "66b2979d49623ede26365c22",
+        "_parent": "619666f4af1f5202c57a952d",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "66b1779b98627f711ecab7c1"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      }
+    ],
+    "Handling": 4,
+    "DurabilityBurnModificator": 1
+  },
+  "66b17733c11a4996fdb1eca2": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "66b17733c11a4996fdb1eca2",
+    "Name": "HK XM8 rifle length handguard (OD)",
+    "ModType": "",
+    "VerticalRecoil": -7,
+    "HorizontalRecoil": -3,
+    "Dispersion": -2,
+    "AimSpeed": -6,
+    "Ergonomics": -1,
+    "Accuracy": 2,
+    "HeatFactor": 0.94,
+    "CoolFactor": 0.96,
+    "ConflictingItems": [],
+    "Weight": 0.17,
+    "LoyaltyLevel": 1,
+    "AimStability": 12,
+    "Prefab": {
+      "path": "WeaponXM8/xm8odhgar.bundle",
+      "rcid": ""
+    },
+    "Width": 2,
+    "Recoil": -3,
+    "ExtraSizeLeft": 2,
+    "Slots": [
+      {
+        "_name": "mod_mount",
+        "_id": "66b297a45592100487091932",
+        "_parent": "619666f4af1f5202c57a952d",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "66b1779b98627f711ecab7c1"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      }
+    ],
+    "Handling": -6,
+    "DurabilityBurnModificator": 0.95
+  },
+  "66b177301451b4fa159a8553": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "66b177301451b4fa159a8553",
+    "Name": "HK XM8 carbine length handguard (OD)",
+    "ModType": "",
+    "VerticalRecoil": -2,
+    "HorizontalRecoil": -1,
+    "Dispersion": -1,
+    "AimSpeed": 7,
+    "Ergonomics": 10,
+    "Accuracy": 1,
+    "HeatFactor": 1.08,
+    "CoolFactor": 0.84,
+    "ConflictingItems": [],
+    "Weight": 0.125,
+    "LoyaltyLevel": 2,
+    "AimStability": 4,
+    "Handling": 9,
+    "Prefab": {
+      "path": "WeaponXM8/xm8odhgcar.bundle",
+      "rcid": ""
+    },
+    "Width": 2,
+    "Recoil": -2,
+    "ExtraSizeLeft": 0,
+    "Slots": [
+      {
+        "_name": "mod_mount",
+        "_id": "66b297ac63f624b2979f123f",
+        "_parent": "619666f4af1f5202c57a952d",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "66b1779f427471f780dc15c4"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      }
+    ],
+    "DurabilityBurnModificator": 1
+  },
+  "66b1772c42936e0387a88fc9": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "66b1772c42936e0387a88fc9",
+    "Name": "HK XM8 PDW handguard (OD)",
+    "ModType": "",
+    "VerticalRecoil": -2,
+    "HorizontalRecoil": -2,
+    "Dispersion": -1,
+    "AimSpeed": 3,
+    "Ergonomics": 9,
+    "Accuracy": 0,
+    "HeatFactor": 1.08,
+    "CoolFactor": 0.87,
+    "ConflictingItems": [],
+    "Weight": 0.1,
+    "LoyaltyLevel": 2,
+    "AimStability": 2,
+    "Prefab": {
+      "path": "WeaponXM8/xm8odhgpdw.bundle",
+      "rcid": ""
+    },
+    "Width": 2,
+    "Recoil": -2,
+    "ExtraSizeLeft": 1,
+    "Slots": [
+      {
+        "_name": "mod_mount",
+        "_id": "66b297b139d59eb12cce5288",
+        "_parent": "62386b7153757417e93a4e9f",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "66b177a2170f88748ae2c32f"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      }
+    ],
+    "Handling": 10,
+    "DurabilityBurnModificator": 1
+  },
+  "66b17743edd0d64c03eeed3b": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "66b17743edd0d64c03eeed3b",
+    "Name": "HK XM8 LMG handguard",
+    "ModType": "",
+    "VerticalRecoil": -5,
+    "HorizontalRecoil": -4,
+    "Dispersion": -2,
+    "AimSpeed": 3,
+    "Ergonomics": 4,
+    "Accuracy": 2,
+    "HeatFactor": 0.97,
+    "CoolFactor": 0.99,
+    "ConflictingItems": [],
+    "Weight": 0.25,
+    "LoyaltyLevel": 1,
+    "AimStability": 6,
+    "Prefab": {
+      "path": "WeaponXM8/xm8bhglmg.bundle",
+      "rcid": ""
+    },
+    "Width": 2,
+    "Recoil": -4,
+    "ExtraSizeLeft": 2,
+    "Slots": [
+      {
+        "_name": "mod_mount",
+        "_id": "66b297b6697c49c95598e8f7",
+        "_parent": "619666f4af1f5202c57a952d",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "66b1779b98627f711ecab7c1"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      }
+    ],
+    "Handling": 4,
+    "DurabilityBurnModificator": 1
+  },
+  "66b1774114a15b9a0f09a69f": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "66b1774114a15b9a0f09a69f",
+    "Name": "HK XM8 rifle length handguard",
+    "ModType": "",
+    "VerticalRecoil": -9,
+    "HorizontalRecoil": -4,
+    "Dispersion": -2,
+    "AimSpeed": -3,
+    "Ergonomics": 1,
+    "Accuracy": 2,
+    "HeatFactor": 0.93,
+    "CoolFactor": 0.93,
+    "ConflictingItems": [],
+    "Weight": 0.17,
+    "LoyaltyLevel": 1,
+    "AimStability": 14,
+    "Prefab": {
+      "path": "WeaponXM8/xm8bhgar.bundle",
+      "rcid": ""
+    },
+    "Width": 2,
+    "Recoil": -3,
+    "ExtraSizeLeft": 2,
+    "Slots": [
+      {
+        "_name": "mod_mount",
+        "_id": "66b297bd9bc794a4f9817f14",
+        "_parent": "619666f4af1f5202c57a952d",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "66b1779b98627f711ecab7c1"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      }
+    ],
+    "Handling": -5,
+    "DurabilityBurnModificator": 0.95
+  },
+  "66b1773e819b5700a7987155": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "66b1773e819b5700a7987155",
+    "Name": "HK XM8 carbine length handguard",
+    "ModType": "",
+    "VerticalRecoil": -2,
+    "HorizontalRecoil": -1,
+    "Dispersion": -1,
+    "AimSpeed": 7,
+    "Ergonomics": 8,
+    "Accuracy": 1,
+    "HeatFactor": 1.09,
+    "CoolFactor": 0.86,
+    "ConflictingItems": [],
+    "Weight": 0.125,
+    "LoyaltyLevel": 2,
+    "AimStability": 4,
+    "Handling": 7,
+    "Prefab": {
+      "path": "WeaponXM8/xm8bhgcar.bundle",
+      "rcid": ""
+    },
+    "Width": 2,
+    "Recoil": -2,
+    "ExtraSizeLeft": 0,
+    "Slots": [
+      {
+        "_name": "mod_mount",
+        "_id": "66b297c232a10dcabdfef0b8",
+        "_parent": "619666f4af1f5202c57a952d",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "66b1779f427471f780dc15c4"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      }
+    ],
+    "DurabilityBurnModificator": 1
+  },
+  "66b1773ab2b587b20bd4430a": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "66b1773ab2b587b20bd4430a",
+    "Name": "HK XM8 PDW Handguard",
+    "ModType": "",
+    "VerticalRecoil": -2,
+    "HorizontalRecoil": -2,
+    "Dispersion": -1,
+    "AimSpeed": 2,
+    "Ergonomics": 9,
+    "Accuracy": 0,
+    "HeatFactor": 1.05,
+    "CoolFactor": 0.9,
+    "ConflictingItems": [],
+    "Weight": 0.1,
+    "LoyaltyLevel": 2,
+    "AimStability": 3,
+    "Prefab": {
+      "path": "WeaponXM8/xm8bhgpdw.bundle",
+      "rcid": ""
+    },
+    "Width": 2,
+    "Recoil": -2,
+    "ExtraSizeLeft": 1,
+    "Slots": [
+      {
+        "_name": "mod_mount",
+        "_id": "66b297c8f8d11005e685e013",
+        "_parent": "62386b7153757417e93a4e9f",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "66b177a2170f88748ae2c32f"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      }
+    ],
+    "Handling": 7,
+    "DurabilityBurnModificator": 1
+  },
+  "66b177460cc616678c424cda": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "66b177460cc616678c424cda",
+    "Name": "HK XM8 Adjustable Stock",
+    "ModType": "Stock",
+    "VerticalRecoil": -10,
+    "HorizontalRecoil": -9,
+    "Dispersion": -3,
+    "CameraRecoil": -16,
+    "AimSpeed": -6,
+    "Ergonomics": 12,
+    "Accuracy": 5,
+    "HasShoulderContact": true,
+    "BlocksFolding": true,
+    "AutoROF": 0,
+    "SemiROF": 0,
+    "ModMalfunctionChance": 0,
+    "StockAllowADS": false,
+    "ConflictingItems": [],
+    "Weight": 0.375,
+    "LoyaltyLevel": 4,
+    "AimStability": 12,
+    "Prefab": {
+      "path": "WeaponXM8/xm8sf.bundle",
+      "rcid": ""
+    },
+    "Recoil": -24,
+    "Width": 2,
+    "ExtraSizeLeft": 0,
+    "ExtraSizeRight": 1,
+    "Slots": [],
+    "Convergence": 18,
+    "Handling": -7
+  },
+  "66b1774a7acd78ebf84ae125": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "66b1774a7acd78ebf84ae125",
+    "Name": "HK XM8 Stock Cap",
+    "ModType": "Stock",
+    "VerticalRecoil": -7,
+    "HorizontalRecoil": -4,
+    "Dispersion": 0,
+    "CameraRecoil": -7,
+    "AimSpeed": 0,
+    "Ergonomics": 7,
+    "Accuracy": 0,
+    "HasShoulderContact": false,
+    "BlocksFolding": true,
+    "AutoROF": 0,
+    "SemiROF": 0,
+    "ModMalfunctionChance": 0,
+    "StockAllowADS": true,
+    "ConflictingItems": [],
+    "Weight": 0.1,
+    "LoyaltyLevel": 1,
+    "Prefab": {
+      "path": "WeaponXM8/xm8sc.bundle",
+      "rcid": ""
+    },
+    "Recoil": -1,
+    "Width": 1,
+    "ExtraSizeLeft": 0,
+    "ExtraSizeRight": 0,
+    "Slots": [],
+    "Convergence": 9,
+    "AimStability": 12,
+    "Handling": 1
+  },
+  "66b177610ed9932ce793aab1": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "66b177610ed9932ce793aab1",
+    "Name": "HK XM8 folding stock adapter",
+    "ModType": "Stock",
+    "VerticalRecoil": -6,
+    "HorizontalRecoil": -4,
+    "Dispersion": -2,
+    "CameraRecoil": -9,
+    "AimSpeed": -3,
+    "Ergonomics": 6,
+    "Accuracy": 0,
+    "HasShoulderContact": true,
+    "BlocksFolding": false,
+    "AutoROF": 0,
+    "SemiROF": 0,
+    "ModMalfunctionChance": 0,
+    "StockAllowADS": false,
+    "ConflictingItems": [],
+    "Weight": 0.1,
+    "LoyaltyLevel": 1,
+    "Handling": 1,
+    "Prefab": {
+      "path": "WeaponXM8/xm8sa.bundle",
+      "rcid": ""
+    },
+    "Recoil": -1,
+    "Width": 1,
+    "ExtraSizeLeft": 0,
+    "ExtraSizeRight": 0,
+    "Convergence": 7,
+    "AimStability": 8
+  },
+  "66b1776c8acc52a0c65be177": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "66b1776c8acc52a0c65be177",
+    "Name": "HK XM8 folding stock",
+    "ModType": "",
+    "VerticalRecoil": -7,
+    "HorizontalRecoil": -5,
+    "Dispersion": -4,
+    "CameraRecoil": -8,
+    "AimSpeed": -3,
+    "Ergonomics": 8,
+    "Accuracy": 2.5,
+    "HasShoulderContact": false,
+    "BlocksFolding": false,
+    "AutoROF": 0,
+    "SemiROF": 0,
+    "ModMalfunctionChance": 0,
+    "StockAllowADS": false,
+    "ConflictingItems": [
+      "66b177460cc616678c424cda",
+      "66b1775a2395f96a493eacbd",
+      "66b1774efb63f849b9b2fa12",
+      "66b1774a7acd78ebf84ae125",
+      "66b1775e348cb7ecb16620e5",
+      "66b1775568563febad30452e"
+    ],
+    "Weight": 0.3,
+    "LoyaltyLevel": 1,
+    "AimStability": 6,
+    "Prefab": {
+      "path": "WeaponXM8/xm8se.bundle",
+      "rcid": ""
+    },
+    "Recoil": -23,
+    "Width": 2,
+    "ExtraSizeLeft": 0,
+    "ExtraSizeRight": 1,
+    "Convergence": 7,
+    "Handling": 1
+  },
+  "66b1774efb63f849b9b2fa12": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "66b1774efb63f849b9b2fa12",
+    "Name": "HK XM8 adjustable stock (OD)",
+    "ModType": "Stock",
+    "VerticalRecoil": -9,
+    "HorizontalRecoil": -8,
+    "Dispersion": -3,
+    "CameraRecoil": -18,
+    "AimSpeed": -3,
+    "Ergonomics": 12,
+    "Accuracy": 5,
+    "HasShoulderContact": true,
+    "BlocksFolding": true,
+    "AutoROF": 0,
+    "SemiROF": 0,
+    "ModMalfunctionChance": 0,
+    "StockAllowADS": false,
+    "ConflictingItems": [],
+    "Weight": 0.375,
+    "LoyaltyLevel": 4,
+    "AimStability": 14,
+    "Prefab": {
+      "path": "WeaponXM8/xm8odsf.bundle",
+      "rcid": ""
+    },
+    "Recoil": -24,
+    "Width": 2,
+    "ExtraSizeLeft": 0,
+    "ExtraSizeRight": 1,
+    "Slots": [],
+    "Convergence": 16,
+    "Handling": -8
+  },
+  "66b1775568563febad30452e": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "66b1775568563febad30452e",
+    "Name": "HK XM8 stock cap (OD)",
+    "ModType": "Stock",
+    "VerticalRecoil": -6,
+    "HorizontalRecoil": -3,
+    "Dispersion": 0,
+    "CameraRecoil": -6,
+    "AimSpeed": 0,
+    "Ergonomics": 4,
+    "Accuracy": 0,
+    "HasShoulderContact": false,
+    "BlocksFolding": true,
+    "AutoROF": 0,
+    "SemiROF": 0,
+    "ModMalfunctionChance": 0,
+    "StockAllowADS": true,
+    "ConflictingItems": [],
+    "Weight": 0.1,
+    "LoyaltyLevel": 1,
+    "Prefab": {
+      "path": "WeaponXM8/xm8odsc.bundle",
+      "rcid": ""
+    },
+    "Recoil": -1,
+    "Width": 1,
+    "ExtraSizeLeft": 0,
+    "ExtraSizeRight": 0,
+    "Slots": [],
+    "Convergence": 7,
+    "AimStability": 10,
+    "Handling": 1
+  },
+  "66b177670380a35378501a43": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "66b177670380a35378501a43",
+    "Name": "HK XM8 folding stock adapter (OD)",
+    "ModType": "Stock",
+    "VerticalRecoil": -9,
+    "HorizontalRecoil": -5,
+    "Dispersion": -2,
+    "CameraRecoil": -7,
+    "AimSpeed": -4,
+    "Ergonomics": 5,
+    "Accuracy": 0,
+    "HasShoulderContact": true,
+    "BlocksFolding": false,
+    "AutoROF": 0,
+    "SemiROF": 0,
+    "ModMalfunctionChance": 0,
+    "StockAllowADS": false,
+    "ConflictingItems": [],
+    "Weight": 0.1,
+    "LoyaltyLevel": 1,
+    "Handling": 1,
+    "Prefab": {
+      "path": "WeaponXM8/xm8odsfa.bundle",
+      "rcid": ""
+    },
+    "Recoil": -1,
+    "Width": 1,
+    "ExtraSizeLeft": 0,
+    "ExtraSizeRight": 0,
+    "Convergence": 9,
+    "AimStability": 8
+  },
+  "66b1777302b837c826f2a1ab": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "66b1777302b837c826f2a1ab",
+    "Name": "HK XM8 folding stock (OD)",
+    "ModType": "",
+    "VerticalRecoil": -7,
+    "HorizontalRecoil": -3,
+    "Dispersion": -4,
+    "CameraRecoil": -7,
+    "AimSpeed": -3,
+    "Ergonomics": 9,
+    "Accuracy": 2.5,
+    "HasShoulderContact": false,
+    "BlocksFolding": false,
+    "AutoROF": 0,
+    "SemiROF": 0,
+    "ModMalfunctionChance": 0,
+    "StockAllowADS": false,
+    "ConflictingItems": [
+      "66b177460cc616678c424cda",
+      "66b1775a2395f96a493eacbd",
+      "66b1774efb63f849b9b2fa12",
+      "66b1774a7acd78ebf84ae125",
+      "66b1775e348cb7ecb16620e5",
+      "66b1775568563febad30452e"
+    ],
+    "Weight": 0.3,
+    "LoyaltyLevel": 1,
+    "AimStability": 8,
+    "Prefab": {
+      "path": "WeaponXM8/xm8odsfe.bundle",
+      "rcid": ""
+    },
+    "Recoil": -23,
+    "Width": 2,
+    "ExtraSizeLeft": 0,
+    "ExtraSizeRight": 1,
+    "Convergence": 9,
+    "Handling": 0
+  },
+  "66b1775a2395f96a493eacbd": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "66b1775a2395f96a493eacbd",
+    "Name": "HK XM8 adjustable stock",
+    "ModType": "Stock",
+    "VerticalRecoil": -11,
+    "HorizontalRecoil": -7,
+    "Dispersion": -3,
+    "CameraRecoil": -13,
+    "AimSpeed": -9,
+    "Ergonomics": 12,
+    "Accuracy": 5,
+    "HasShoulderContact": true,
+    "BlocksFolding": true,
+    "AutoROF": 0,
+    "SemiROF": 0,
+    "ModMalfunctionChance": 0,
+    "StockAllowADS": false,
+    "ConflictingItems": [],
+    "Weight": 0.375,
+    "LoyaltyLevel": 4,
+    "AimStability": 14,
+    "Prefab": {
+      "path": "WeaponXM8/xm8bsf.bundle",
+      "rcid": ""
+    },
+    "Recoil": -24,
+    "Width": 2,
+    "ExtraSizeLeft": 0,
+    "ExtraSizeRight": 1,
+    "Slots": [],
+    "Convergence": 17,
+    "Handling": -7
+  },
+  "66b1775e348cb7ecb16620e5": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "66b1775e348cb7ecb16620e5",
+    "Name": "HK XM8 stock cap",
+    "ModType": "Stock",
+    "VerticalRecoil": -7,
+    "HorizontalRecoil": -3,
+    "Dispersion": 0,
+    "CameraRecoil": -5,
+    "AimSpeed": -1,
+    "Ergonomics": 4,
+    "Accuracy": 0,
+    "HasShoulderContact": false,
+    "BlocksFolding": true,
+    "AutoROF": 0,
+    "SemiROF": 0,
+    "ModMalfunctionChance": 0,
+    "StockAllowADS": true,
+    "ConflictingItems": [],
+    "Weight": 0.1,
+    "LoyaltyLevel": 1,
+    "Prefab": {
+      "path": "WeaponXM8/xm8bsc.bundle",
+      "rcid": ""
+    },
+    "Recoil": -1,
+    "Width": 1,
+    "ExtraSizeLeft": 0,
+    "ExtraSizeRight": 0,
+    "Slots": [],
+    "Convergence": 10,
+    "AimStability": 12,
+    "Handling": 2
+  },
+  "66b177647126f9c006bb44ae": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "66b177647126f9c006bb44ae",
+    "Name": "HK XM8 folding stock adapter",
+    "ModType": "Stock",
+    "VerticalRecoil": -7,
+    "HorizontalRecoil": -5,
+    "Dispersion": -2,
+    "CameraRecoil": -11,
+    "AimSpeed": -4,
+    "Ergonomics": 5,
+    "Accuracy": 0,
+    "HasShoulderContact": true,
+    "BlocksFolding": false,
+    "AutoROF": 0,
+    "SemiROF": 0,
+    "ModMalfunctionChance": 0,
+    "StockAllowADS": false,
+    "ConflictingItems": [],
+    "Weight": 0.1,
+    "LoyaltyLevel": 1,
+    "Handling": 1,
+    "Prefab": {
+      "path": "WeaponXM8/xm8bsa.bundle",
+      "rcid": ""
+    },
+    "Recoil": -1,
+    "Width": 1,
+    "ExtraSizeLeft": 0,
+    "ExtraSizeRight": 0,
+    "Convergence": 9,
+    "AimStability": 8
+  },
+  "66b1776fe80a0cd0e59ba2c1": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "66b1776fe80a0cd0e59ba2c1",
+    "Name": "HK XM8 folding stock",
+    "ModType": "",
+    "VerticalRecoil": -7,
+    "HorizontalRecoil": -4,
+    "Dispersion": -4,
+    "CameraRecoil": -8,
+    "AimSpeed": -4,
+    "Ergonomics": 8,
+    "Accuracy": 2.5,
+    "HasShoulderContact": false,
+    "BlocksFolding": false,
+    "AutoROF": 0,
+    "SemiROF": 0,
+    "ModMalfunctionChance": 0,
+    "StockAllowADS": false,
+    "ConflictingItems": [
+      "66b177460cc616678c424cda",
+      "66b1775a2395f96a493eacbd",
+      "66b1774efb63f849b9b2fa12",
+      "66b1774a7acd78ebf84ae125",
+      "66b1775e348cb7ecb16620e5",
+      "66b1775568563febad30452e"
+    ],
+    "Weight": 0.3,
+    "LoyaltyLevel": 1,
+    "AimStability": 7,
+    "Prefab": {
+      "path": "WeaponXM8/xm8bse.bundle",
+      "rcid": ""
+    },
+    "Recoil": -23,
+    "Width": 2,
+    "ExtraSizeLeft": 0,
+    "ExtraSizeRight": 1,
+    "Convergence": 7,
+    "Handling": 1
+  },
+  "66b177865018c420f94de0c4": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "66b177865018c420f94de0c4",
+    "Name": "HK XM8 picatinny top rail",
+    "ModType": "mount",
+    "Ergonomics": 0,
+    "Accuracy": 0,
+    "ConflictingItems": [],
+    "Weight": 0.17,
+    "LoyaltyLevel": 1,
+    "Prefab": {
+      "path": "WeaponXM8/xm8toprail.bundle",
+      "rcid": ""
+    },
+    "Width": 2,
+    "ExtraSizeLeft": 0,
+    "ExtraSizeRight": 0,
+    "Slots": [
+      {
+        "_name": "mod_scope",
+        "_id": "66b297fdb85a22d9f1475b32",
+        "_parent": "6184055050224f204c1da543",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "57ac965c24597706be5f975c",
+                "57aca93d2459771f2c7e26db",
+                "544a3f024bdc2d1d388b4568",
+                "544a3a774bdc2d3a388b4567",
+                "5d2dc3e548f035404a1a4798",
+                "57adff4f24597737f373b6e6",
+                "5c0517910db83400232ffee5",
+                "591c4efa86f7741030027726",
+                "570fd79bd2720bc7458b4583",
+                "570fd6c2d2720bc6458b457f",
+                "558022b54bdc2dac148b458d",
+                "5c07dd120db834001c39092d",
+                "5c0a2cec0db834001b7ce47d",
+                "58491f3324597764bc48fa02",
+                "584924ec24597768f12ae244",
+                "5b30b0dc5acfc400153b7124",
+                "6165ac8c290d254f5e6b2f6c",
+                "60a23797a37c940de7062d02",
+                "5d2da1e948f035477b1ce2ba",
+                "5c0505e00db834001b735073",
+                "609a63b6e2ff132951242d09",
+                "584984812459776a704a82a6",
+                "59f9d81586f7744c7506ee62",
+                "570fd721d2720bc5458b4596",
+                "57ae0171245977343c27bfcf",
+                "5dfe6104585a0c3e995c7b82",
+                "544a3d0a4bdc2d1b388b4567",
+                "5d1b5e94d7ad1a2b865a96b0",
+                "609bab8b455afd752b2e6138",
+                "58d39d3d86f77445bb794ae7",
+                "616554fe50224f204c1da2aa",
+                "5c7d55f52e221644f31bff6a",
+                "616584766ef05c2ce828ef57",
+                "5b3b6dc75acfc47a8773fb1e",
+                "615d8d878004cc50514c3233",
+                "5b2389515acfc4771e1be0c0",
+                "577d128124597739d65d0e56",
+                "618b9643526131765025ab35",
+                "618bab21526131765025ab3f",
+                "5c86592b2e2216000e69e77c",
+                "5a37ca54c4a282000d72296a",
+                "5d0a29fed7ad1a002769ad08",
+                "5c064c400db834001d23f468",
+                "58d2664f86f7747fec5834f6",
+                "57c69dd424597774c03b7bbc",
+                "5b3b99265acfc4704b4a1afb",
+                "5aa66a9be5b5b0214e506e89",
+                "5aa66c72e5b5b00016327c93",
+                "5c1cdd302e221602b3137250",
+                "61714b2467085e45ef140b2c",
+                "6171407e50224f204c1da3c5",
+                "61713cc4d8e3106d9806c109",
+                "5b31163c5acfc400153b71cb",
+                "5a33b652c4a28232996e407c",
+                "5a33b2c9c4a282000c5a9511",
+                "59db7eed86f77461f8380365",
+                "5a1ead28fcdbcb001912fa9f",
+                "5dff77c759400025ea5150cf",
+                "626bb8532c923541184624b4",
+                "62811f461d5df4475f46a332",
+                "63fc449f5bd61c6cf3784a88",
+                "6477772ea8a38bb2050ed4db",
+                "6478641c19d732620e045e17",
+                "64785e7c19d732620e045e15",
+                "65392f611406374f82152ba5",
+                "653931da5db71d30ab1d6296",
+                "655f13e0a246670fb0373245",
+                "6567e751a715f85433025998",
+                "6761759e7ee06333f108bf86",
+                "67641a851b2899700609901a",
+                "03f6c86c56945862820e1006",
+                "2322ee962f6c77a1284abc1e",
+                "5ae3d18efa17cbd51e898ced"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      },
+      {
+        "_name": "mod_tactical",
+        "_id": "66b29803cbe9f25ff2a0bd0c",
+        "_parent": "619666f4af1f5202c57a952d",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "5a800961159bd4315e3a1657",
+                "57fd23e32459772d0805bcf1",
+                "544909bb4bdc2d6f028b4577",
+                "5d10b49bd7ad1a1a560708b0",
+                "5c06595c0db834001a66af6c",
+                "626becf9582c3e319310b837",
+                "5cc9c20cd7f00c001336c65d",
+                "6272370ee4013c5d7e31f418",
+                "6272379924e29f06af4d5ecb",
+                "5d2369418abbc306c62e0c80",
+                "5b07dd285acfc4001754240d",
+                "56def37dd2720bec348b456a",
+                "5a7b483fe899ef0016170d15",
+                "61605d88ffa6e502ac5e7eeb",
+                "5a5f1ce64f39f90b401987bc",
+                "560d657b4bdc2da74d8b4572",
+                "5c5952732e2216398b5abda2",
+                "644a3df63b0b6f03e101e065"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      }
+    ],
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "Dispersion": 0,
+    "AimStability": 0,
+    "Handling": 0
+  },
+  "66b177922ed0146f293f4d6f": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "66b177922ed0146f293f4d6f",
+    "Name": "HK XM8 flat top rail",
+    "ModType": "mount",
+    "Ergonomics": 0,
+    "Accuracy": 0,
+    "ConflictingItems": [],
+    "Weight": 0.17,
+    "LoyaltyLevel": 1,
+    "Prefab": {
+      "path": "WeaponXM8/xm8toprailcarb.bundle",
+      "rcid": ""
+    },
+    "Width": 2,
+    "ExtraSizeLeft": 0,
+    "ExtraSizeRight": 0,
+    "Slots": [
+      {
+        "_name": "mod_scope",
+        "_id": "66b2980d480248d85dfc9971",
+        "_parent": "6184055050224f204c1da543",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "57ac965c24597706be5f975c",
+                "57aca93d2459771f2c7e26db",
+                "544a3f024bdc2d1d388b4568",
+                "544a3a774bdc2d3a388b4567",
+                "5d2dc3e548f035404a1a4798",
+                "57adff4f24597737f373b6e6",
+                "5c0517910db83400232ffee5",
+                "591c4efa86f7741030027726",
+                "570fd79bd2720bc7458b4583",
+                "570fd6c2d2720bc6458b457f",
+                "558022b54bdc2dac148b458d",
+                "5c07dd120db834001c39092d",
+                "5c0a2cec0db834001b7ce47d",
+                "58491f3324597764bc48fa02",
+                "584924ec24597768f12ae244",
+                "5b30b0dc5acfc400153b7124",
+                "6165ac8c290d254f5e6b2f6c",
+                "60a23797a37c940de7062d02",
+                "5d2da1e948f035477b1ce2ba",
+                "5c0505e00db834001b735073",
+                "609a63b6e2ff132951242d09",
+                "584984812459776a704a82a6",
+                "59f9d81586f7744c7506ee62",
+                "570fd721d2720bc5458b4596",
+                "57ae0171245977343c27bfcf",
+                "5dfe6104585a0c3e995c7b82",
+                "544a3d0a4bdc2d1b388b4567",
+                "5d1b5e94d7ad1a2b865a96b0",
+                "609bab8b455afd752b2e6138",
+                "58d39d3d86f77445bb794ae7",
+                "616554fe50224f204c1da2aa",
+                "5c7d55f52e221644f31bff6a",
+                "616584766ef05c2ce828ef57",
+                "5b3b6dc75acfc47a8773fb1e",
+                "615d8d878004cc50514c3233",
+                "5b2389515acfc4771e1be0c0",
+                "577d128124597739d65d0e56",
+                "618b9643526131765025ab35",
+                "618bab21526131765025ab3f",
+                "5c86592b2e2216000e69e77c",
+                "5a37ca54c4a282000d72296a",
+                "5d0a29fed7ad1a002769ad08",
+                "5c064c400db834001d23f468",
+                "58d2664f86f7747fec5834f6",
+                "57c69dd424597774c03b7bbc",
+                "5b3b99265acfc4704b4a1afb",
+                "5aa66a9be5b5b0214e506e89",
+                "5aa66c72e5b5b00016327c93",
+                "5c1cdd302e221602b3137250",
+                "61714b2467085e45ef140b2c",
+                "6171407e50224f204c1da3c5",
+                "61713cc4d8e3106d9806c109",
+                "5b31163c5acfc400153b71cb",
+                "5a33b652c4a28232996e407c",
+                "5a33b2c9c4a282000c5a9511",
+                "59db7eed86f77461f8380365",
+                "5a1ead28fcdbcb001912fa9f",
+                "5dff77c759400025ea5150cf",
+                "626bb8532c923541184624b4",
+                "62811f461d5df4475f46a332",
+                "63fc449f5bd61c6cf3784a88",
+                "6477772ea8a38bb2050ed4db",
+                "6478641c19d732620e045e17",
+                "64785e7c19d732620e045e15",
+                "65392f611406374f82152ba5",
+                "653931da5db71d30ab1d6296",
+                "655f13e0a246670fb0373245",
+                "6567e751a715f85433025998",
+                "6761759e7ee06333f108bf86",
+                "67641a851b2899700609901a",
+                "03f6c86c56945862820e1006",
+                "2322ee962f6c77a1284abc1e",
+                "5ae3d18efa17cbd51e898ced"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      }
+    ],
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "Dispersion": 0,
+    "AimStability": 0,
+    "Handling": 0
+  },
+  "66b1779b98627f711ecab7c1": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "66b1779b98627f711ecab7c1",
+    "Name": "HK XM8 AR/LMG PCAP-picatinny adapter",
+    "ModType": "",
+    "Ergonomics": -1,
+    "Accuracy": 0,
+    "ConflictingItems": [],
+    "Weight": 0.01,
+    "LoyaltyLevel": 2,
+    "Prefab": {
+      "path": "WeaponXM8/xm8flp2pa.bundle",
+      "rcid": ""
+    },
+    "Width": 1,
+    "ExtraSizeLeft": 0,
+    "ExtraSizeRight": 0,
+    "Slots": [
+      {
+        "_name": "mod_tactical_003",
+        "_id": "66b29813c76ddcaf134d9bfb",
+        "_parent": "55818b224bdc2dde698b456f",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "6267c6396b642f77f56f5c1c",
+                "5a800961159bd4315e3a1657",
+                "57fd23e32459772d0805bcf1",
+                "544909bb4bdc2d6f028b4577",
+                "5d10b49bd7ad1a1a560708b0",
+                "5c06595c0db834001a66af6c",
+                "626becf9582c3e319310b837",
+                "5cc9c20cd7f00c001336c65d",
+                "6272370ee4013c5d7e31f418",
+                "6272379924e29f06af4d5ecb",
+                "5d2369418abbc306c62e0c80",
+                "5b07dd285acfc4001754240d",
+                "56def37dd2720bec348b456a",
+                "5a7b483fe899ef0016170d15",
+                "61605d88ffa6e502ac5e7eeb",
+                "5a5f1ce64f39f90b401987bc",
+                "560d657b4bdc2da74d8b4572",
+                "5b3a337e5acfc4704b4a19a0",
+                "5c5952732e2216398b5abda2",
+                "57d17e212459775a1179a0f5",
+                "644a3df63b0b6f03e101e065"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "62444cd3674028188b052799"
+      },
+      {
+        "_name": "mod_tactical_001",
+        "_id": "66b298172c838df5fb68c0d3",
+        "_parent": "55818b224bdc2dde698b456f",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "6267c6396b642f77f56f5c1c",
+                "5a800961159bd4315e3a1657",
+                "57fd23e32459772d0805bcf1",
+                "544909bb4bdc2d6f028b4577",
+                "5d10b49bd7ad1a1a560708b0",
+                "5c06595c0db834001a66af6c",
+                "626becf9582c3e319310b837",
+                "5cc9c20cd7f00c001336c65d",
+                "6272370ee4013c5d7e31f418",
+                "6272379924e29f06af4d5ecb",
+                "5d2369418abbc306c62e0c80",
+                "5b07dd285acfc4001754240d",
+                "56def37dd2720bec348b456a",
+                "5a7b483fe899ef0016170d15",
+                "61605d88ffa6e502ac5e7eeb",
+                "5a5f1ce64f39f90b401987bc",
+                "560d657b4bdc2da74d8b4572",
+                "5b3a337e5acfc4704b4a19a0",
+                "5c5952732e2216398b5abda2",
+                "57d17e212459775a1179a0f5",
+                "644a3df63b0b6f03e101e065"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "62444cd3674028188b052799"
+      }
+    ],
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "Dispersion": 0,
+    "AimStability": 0,
+    "Handling": 0
+  },
+  "66b1779f427471f780dc15c4": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "66b1779f427471f780dc15c4",
+    "Name": "HK XM8 Carbine PCAP-picatinny adapter",
+    "ModType": "",
+    "Ergonomics": 0,
+    "Accuracy": 0,
+    "ConflictingItems": [],
+    "Weight": 0.01,
+    "LoyaltyLevel": 2,
+    "Prefab": {
+      "path": "WeaponXM8/xm8p2pc.bundle",
+      "rcid": ""
+    },
+    "Width": 1,
+    "ExtraSizeLeft": 0,
+    "ExtraSizeRight": 0,
+    "Slots": [
+      {
+        "_name": "mod_tactical_001",
+        "_id": "66b2981dbbd2d0d474d22ec2",
+        "_parent": "55818b224bdc2dde698b456f",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "6267c6396b642f77f56f5c1c",
+                "5a800961159bd4315e3a1657",
+                "57fd23e32459772d0805bcf1",
+                "544909bb4bdc2d6f028b4577",
+                "5d10b49bd7ad1a1a560708b0",
+                "5c06595c0db834001a66af6c",
+                "626becf9582c3e319310b837",
+                "5cc9c20cd7f00c001336c65d",
+                "6272370ee4013c5d7e31f418",
+                "6272379924e29f06af4d5ecb",
+                "5d2369418abbc306c62e0c80",
+                "5b07dd285acfc4001754240d",
+                "56def37dd2720bec348b456a",
+                "5a7b483fe899ef0016170d15",
+                "61605d88ffa6e502ac5e7eeb",
+                "5a5f1ce64f39f90b401987bc",
+                "560d657b4bdc2da74d8b4572",
+                "5b3a337e5acfc4704b4a19a0",
+                "5c5952732e2216398b5abda2",
+                "57d17e212459775a1179a0f5",
+                "644a3df63b0b6f03e101e065"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "62444cd3674028188b052799"
+      },
+      {
+        "_name": "mod_tactical_003",
+        "_id": "66b29822454e275f28578a38",
+        "_parent": "55818b224bdc2dde698b456f",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "6267c6396b642f77f56f5c1c",
+                "5a800961159bd4315e3a1657",
+                "57fd23e32459772d0805bcf1",
+                "544909bb4bdc2d6f028b4577",
+                "5d10b49bd7ad1a1a560708b0",
+                "5c06595c0db834001a66af6c",
+                "626becf9582c3e319310b837",
+                "5cc9c20cd7f00c001336c65d",
+                "6272370ee4013c5d7e31f418",
+                "6272379924e29f06af4d5ecb",
+                "5d2369418abbc306c62e0c80",
+                "5b07dd285acfc4001754240d",
+                "56def37dd2720bec348b456a",
+                "5a7b483fe899ef0016170d15",
+                "61605d88ffa6e502ac5e7eeb",
+                "5a5f1ce64f39f90b401987bc",
+                "560d657b4bdc2da74d8b4572",
+                "5b3a337e5acfc4704b4a19a0",
+                "5c5952732e2216398b5abda2",
+                "57d17e212459775a1179a0f5",
+                "644a3df63b0b6f03e101e065"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "62444cd3674028188b052799"
+      }
+    ],
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "Dispersion": 0,
+    "AimStability": 0,
+    "Handling": 0
+  },
+  "66b177a2170f88748ae2c32f": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "66b177a2170f88748ae2c32f",
+    "Name": "HK XM8 PDW PCAP-picatinny adapter",
+    "ModType": "",
+    "Ergonomics": 0,
+    "Accuracy": 0,
+    "ConflictingItems": [],
+    "Weight": 0.01,
+    "LoyaltyLevel": 2,
+    "Prefab": {
+      "path": "WeaponXM8/xm8p2ppdw.bundle",
+      "rcid": ""
+    },
+    "Width": 1,
+    "ExtraSizeLeft": 0,
+    "ExtraSizeRight": 0,
+    "Slots": [
+      {
+        "_name": "mod_tactical_003",
+        "_id": "66b29828bea848646d8280d0",
+        "_parent": "55818b224bdc2dde698b456f",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "6267c6396b642f77f56f5c1c",
+                "5a800961159bd4315e3a1657",
+                "57fd23e32459772d0805bcf1",
+                "544909bb4bdc2d6f028b4577",
+                "5d10b49bd7ad1a1a560708b0",
+                "5c06595c0db834001a66af6c",
+                "626becf9582c3e319310b837",
+                "5cc9c20cd7f00c001336c65d",
+                "6272370ee4013c5d7e31f418",
+                "6272379924e29f06af4d5ecb",
+                "5d2369418abbc306c62e0c80",
+                "5b07dd285acfc4001754240d",
+                "56def37dd2720bec348b456a",
+                "5a7b483fe899ef0016170d15",
+                "61605d88ffa6e502ac5e7eeb",
+                "5a5f1ce64f39f90b401987bc",
+                "560d657b4bdc2da74d8b4572",
+                "5b3a337e5acfc4704b4a19a0",
+                "5c5952732e2216398b5abda2",
+                "57d17e212459775a1179a0f5",
+                "644a3df63b0b6f03e101e065"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "62444cd3674028188b052799"
+      },
+      {
+        "_name": "mod_tactical_001",
+        "_id": "66b2982d3c0590bd15ddeb4c",
+        "_parent": "55818b224bdc2dde698b456f",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "6267c6396b642f77f56f5c1c",
+                "5a800961159bd4315e3a1657",
+                "57fd23e32459772d0805bcf1",
+                "544909bb4bdc2d6f028b4577",
+                "5d10b49bd7ad1a1a560708b0",
+                "5c06595c0db834001a66af6c",
+                "626becf9582c3e319310b837",
+                "5cc9c20cd7f00c001336c65d",
+                "6272370ee4013c5d7e31f418",
+                "6272379924e29f06af4d5ecb",
+                "5d2369418abbc306c62e0c80",
+                "5b07dd285acfc4001754240d",
+                "56def37dd2720bec348b456a",
+                "5a7b483fe899ef0016170d15",
+                "61605d88ffa6e502ac5e7eeb",
+                "5a5f1ce64f39f90b401987bc",
+                "560d657b4bdc2da74d8b4572",
+                "5b3a337e5acfc4704b4a19a0",
+                "5c5952732e2216398b5abda2",
+                "57d17e212459775a1179a0f5",
+                "644a3df63b0b6f03e101e065"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "62444cd3674028188b052799"
+      }
+    ],
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "Dispersion": 0,
+    "AimStability": 0,
+    "Handling": 0
+  }
+}

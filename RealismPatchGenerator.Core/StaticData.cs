@@ -273,7 +273,49 @@ internal static class StaticData
         ["PenetrationPower"] = 20,
         ["LoyaltyLevel"] = 1,
         ["BasePriceModifier"] = 1,
+        ["ItemID"] = string.Empty,
+        ["InitialSpeed"] = 0,
+        ["BulletMassGram"] = 0,
+        ["BallisticCoeficient"] = 0,
+        ["Weight"] = 0,
+        ["DurabilityBurnModificator"] = 1,
+        ["ammoRec"] = 0,
+        ["ammoAccr"] = 0,
+        ["ArmorDamage"] = 1,
+        ["HeatFactor"] = 1,
+        ["HeavyBleedingDelta"] = 0,
+        ["LightBleedingDelta"] = 0,
+        ["MalfMisfireChance"] = 0,
+        ["MisfireChance"] = 0,
+        ["MalfFeedChance"] = 0,
     };
+
+    public static readonly IReadOnlyList<string> AmmoOutputFieldOrder =
+    [
+        "$type",
+        "Name",
+        "Damage",
+        "PenetrationPower",
+        "LoyaltyLevel",
+        "BasePriceModifier",
+        "ItemID",
+        "InitialSpeed",
+        "BulletMassGram",
+        "BallisticCoeficient",
+        "Weight",
+        "DurabilityBurnModificator",
+        "ammoRec",
+        "ammoAccr",
+        "ArmorDamage",
+        "HeatFactor",
+        "HeavyBleedingDelta",
+        "LightBleedingDelta",
+        "MalfMisfireChance",
+        "MisfireChance",
+        "MalfFeedChance",
+    ];
+
+    public static readonly IReadOnlySet<string> AmmoOutputFieldSet = new HashSet<string>(AmmoOutputFieldOrder, StringComparer.OrdinalIgnoreCase);
 
     public static JsonObject CreateDefaultConsumableTemplate() => new()
     {
@@ -339,6 +381,51 @@ internal static class StaticData
             ["CoolFactor"] = 1,
             ["Handling"] = 0,
         },
+        ["bipod"] = new JsonObject
+        {
+            ["AutoROF"] = 0,
+            ["SemiROF"] = 0,
+            ["ModMalfunctionChance"] = 0,
+            ["ReloadSpeed"] = 0,
+            ["FixSpeed"] = 0,
+        },
+        ["buffer_adapter"] = new JsonObject
+        {
+            ["Dispersion"] = 0,
+            ["CameraRecoil"] = 0,
+            ["HasShoulderContact"] = false,
+            ["BlocksFolding"] = false,
+            ["AutoROF"] = 0,
+            ["SemiROF"] = 0,
+            ["ModMalfunctionChance"] = 0,
+            ["StockAllowADS"] = false,
+        },
+        ["buffer"] = new JsonObject
+        {
+            ["Dispersion"] = 0,
+            ["CameraRecoil"] = 0,
+            ["Convergence"] = 0,
+            ["HasShoulderContact"] = false,
+            ["BlocksFolding"] = false,
+            ["AutoROF"] = 0,
+            ["SemiROF"] = 0,
+            ["ModMalfunctionChance"] = 0,
+            ["StockAllowADS"] = false,
+            ["DurabilityBurnModificator"] = 1,
+        },
+        ["hydraulic_buffer"] = new JsonObject
+        {
+            ["Dispersion"] = 0,
+            ["CameraRecoil"] = 0,
+            ["Convergence"] = 0,
+            ["HasShoulderContact"] = false,
+            ["BlocksFolding"] = false,
+            ["AutoROF"] = 0,
+            ["SemiROF"] = 0,
+            ["ModMalfunctionChance"] = 0,
+            ["StockAllowADS"] = false,
+            ["DurabilityBurnModificator"] = 1,
+        },
         ["barrel"] = new JsonObject
         {
             ["Dispersion"] = 0,
@@ -354,6 +441,10 @@ internal static class StaticData
             ["AutoROF"] = 0,
             ["SemiROF"] = 0,
             ["ModMalfunctionChance"] = 0,
+        },
+        ["barrel_2slot"] = new JsonObject
+        {
+            ["ModShotDispersion"] = 0,
         },
         ["muzzle"] = new JsonObject
         {

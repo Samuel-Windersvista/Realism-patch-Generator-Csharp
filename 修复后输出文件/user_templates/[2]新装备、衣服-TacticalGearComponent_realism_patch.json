@@ -1,0 +1,5682 @@
+{
+  "672e2e75d122de1a20db31a5": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "672e2e75d122de1a20db31a5",
+    "Name": "SureFire X300U-A 战术灯",
+    "ModType": "",
+    "ConflictingItems": [],
+    "Ergonomics": -2,
+    "Weight": 0.2,
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "LoyaltyLevel": 4,
+    "ShortName": "",
+    "Description": "",
+    "Prefab": {
+      "path": "flashlight1.bundle",
+      "rcid": ""
+    },
+    "Handling": -4
+  },
+  "672e2e759342d416e10caa10": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "672e2e759342d416e10caa10",
+    "Name": "Surefire M640U-BK-PRO 战术灯偏移座",
+    "ModType": "",
+    "ConflictingItems": [],
+    "Ergonomics": 0,
+    "Weight": 0.15,
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "LoyaltyLevel": 4,
+    "ShortName": "",
+    "Description": "",
+    "Prefab": {
+      "path": "flashlight2.bundle",
+      "rcid": ""
+    },
+    "Handling": 0,
+    "Dispersion": 0,
+    "AimStability": 0,
+    "Accuracy": 0
+  },
+  "67b1eb6d91f8e59bc799beb1": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "67b1eb6d91f8e59bc799beb1",
+    "Name": "Surefire M640U-BK-PRO FDE 战术灯偏移座",
+    "ModType": "",
+    "ConflictingItems": [],
+    "Ergonomics": -1,
+    "Weight": 0.15,
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "LoyaltyLevel": 4,
+    "ShortName": "",
+    "Description": "",
+    "Prefab": {
+      "path": "flashlight2_fde.bundle",
+      "rcid": ""
+    },
+    "Handling": 0,
+    "Dispersion": 0,
+    "AimStability": 0,
+    "Accuracy": 0
+  },
+  "672e2e757a1e6eeae1841933": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "672e2e757a1e6eeae1841933",
+    "Name": "INFORCE WMLX GEN 2",
+    "ModType": "",
+    "ConflictingItems": [],
+    "Ergonomics": 0,
+    "Weight": 0.2,
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "LoyaltyLevel": 4,
+    "ShortName": "",
+    "Description": "",
+    "Prefab": {
+      "path": "flashlight3.bundle",
+      "rcid": ""
+    },
+    "Handling": -3
+  },
+  "672e2e7505c0ffbaf790db95": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "672e2e7505c0ffbaf790db95",
+    "Name": "SureFire 战术灯（带压力开关）",
+    "ModType": "",
+    "ConflictingItems": [],
+    "Ergonomics": -1,
+    "Weight": 0.2,
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "LoyaltyLevel": 4,
+    "ShortName": "",
+    "Description": "",
+    "Prefab": {
+      "path": "flashlight4.bundle",
+      "rcid": ""
+    },
+    "Handling": -4
+  },
+  "672e2e756174d5e5e9f677ee": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "672e2e756174d5e5e9f677ee",
+    "Name": "SureFire 战术灯（带压力开关，FDE 色）",
+    "ModType": "",
+    "ConflictingItems": [],
+    "Ergonomics": 0,
+    "Weight": 0.2,
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "LoyaltyLevel": 4,
+    "ShortName": "",
+    "Description": "",
+    "Prefab": {
+      "path": "flashlight4_fde.bundle",
+      "rcid": ""
+    },
+    "Handling": -3
+  },
+  "672e2e75ec4a3496b64346c5": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "672e2e75ec4a3496b64346c5",
+    "Name": "Surefire M640U-BK-PRO 战术灯",
+    "ModType": "",
+    "ConflictingItems": [],
+    "Ergonomics": -2,
+    "Weight": 0.15,
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "LoyaltyLevel": 4,
+    "ShortName": "",
+    "Description": "",
+    "Prefab": {
+      "path": "flashlight5.bundle",
+      "rcid": ""
+    },
+    "Handling": -3
+  },
+  "672e2e75071e71f8e4a59286": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "672e2e75071e71f8e4a59286",
+    "Name": "Wilcox 战术装置",
+    "ModType": "",
+    "ConflictingItems": [],
+    "Ergonomics": 0,
+    "Weight": 0.23,
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "LoyaltyLevel": 4,
+    "ShortName": "",
+    "Description": "",
+    "Prefab": {
+      "path": "wilcox_tactical.bundle",
+      "rcid": ""
+    },
+    "Handling": -3
+  },
+  "672e2e75f2da844c65b50d6a": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "672e2e75f2da844c65b50d6a",
+    "Name": "Wilcox 战术装置（黑色）",
+    "ModType": "",
+    "ConflictingItems": [],
+    "Ergonomics": -1,
+    "Weight": 0.23,
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "LoyaltyLevel": 4,
+    "ShortName": "",
+    "Description": "",
+    "Prefab": {
+      "path": "wilcox_tactical_blk.bundle",
+      "rcid": ""
+    },
+    "Handling": -3
+  },
+  "672e2e75e352ae625453519b": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "672e2e75e352ae625453519b",
+    "Name": "FTX 战术装置",
+    "ModType": "",
+    "ConflictingItems": [],
+    "Ergonomics": -1,
+    "Weight": 0.23,
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "LoyaltyLevel": 4,
+    "ShortName": "",
+    "Description": "",
+    "Prefab": {
+      "path": "ftx_tactical.bundle",
+      "rcid": ""
+    },
+    "Handling": -2
+  },
+  "672e2e75d41d0e93c918096a": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "672e2e75d41d0e93c918096a",
+    "Name": "AR-15 Magpul MOE 卡宾枪托（改装版）",
+    "ModType": "Stock",
+    "VerticalRecoil": -6,
+    "HorizontalRecoil": -4,
+    "Dispersion": -6,
+    "CameraRecoil": -5,
+    "AimSpeed": -3,
+    "Ergonomics": 9,
+    "Accuracy": 0,
+    "HasShoulderContact": true,
+    "BlocksFolding": false,
+    "AutoROF": 0,
+    "SemiROF": 0,
+    "ModMalfunctionChance": 0,
+    "StockAllowADS": false,
+    "ConflictingItems": [],
+    "Weight": 0.226,
+    "LoyaltyLevel": 3,
+    "AimStability": 8,
+    "Handling": 1,
+    "ShortName": "",
+    "Description": "",
+    "Prefab": {
+      "path": "ar_moe_stock.bundle",
+      "rcid": ""
+    },
+    "Convergence": 7
+  },
+  "6733edbe21f258964d0d4c5a": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "6733edbe21f258964d0d4c5a",
+    "Name": "AR-15 Honey Badger Q 枪托",
+    "ModType": "buffer_stock",
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "Dispersion": 0,
+    "CameraRecoil": 8,
+    "AimSpeed": 14,
+    "Ergonomics": 2,
+    "Accuracy": 0,
+    "HasShoulderContact": true,
+    "BlocksFolding": false,
+    "AutoROF": 4,
+    "SemiROF": 9,
+    "ModMalfunctionChance": 5,
+    "StockAllowADS": false,
+    "ConflictingItems": [],
+    "Weight": 0.4,
+    "DurabilityBurnModificator": 1.05,
+    "LoyaltyLevel": 2,
+    "AimStability": -15,
+    "ShortName": "",
+    "Description": "",
+    "Prefab": {
+      "path": "hb_stock.bundle",
+      "rcid": ""
+    }
+  },
+  "672e2e75ea372126f4fcb874": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "672e2e75ea372126f4fcb874",
+    "Name": "BCM GUNFIGHTER MOD 3 垂直前握把（反向安装）",
+    "ModType": "",
+    "VerticalRecoil": -4,
+    "HorizontalRecoil": -4,
+    "Dispersion": 0,
+    "AimSpeed": 5,
+    "Ergonomics": 12,
+    "Accuracy": 0,
+    "ConflictingItems": [],
+    "Weight": 0.053,
+    "LoyaltyLevel": 3,
+    "AimStability": 8,
+    "Handling": 13,
+    "Description": "",
+    "ShortName": "",
+    "Prefab": {
+      "path": "bcm_mod_3_reversed.bundle",
+      "rcid": ""
+    },
+    "CameraRecoil": -3,
+    "Convergence": -1
+  },
+  "672e2e757efbbef26ff61046": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "672e2e757efbbef26ff61046",
+    "Name": "BCM GUNFIGHTER MOD 3 垂直前握把（蓝色胶带版）",
+    "ModType": "",
+    "VerticalRecoil": -5,
+    "HorizontalRecoil": -4,
+    "Dispersion": 0,
+    "AimSpeed": 8,
+    "Ergonomics": 9,
+    "Accuracy": 0,
+    "ConflictingItems": [],
+    "Weight": 0.053,
+    "LoyaltyLevel": 3,
+    "AimStability": 7,
+    "Handling": 13,
+    "Description": "",
+    "ShortName": "",
+    "Prefab": {
+      "path": "bcm_mod_3_reversed_tape.bundle",
+      "rcid": ""
+    },
+    "CameraRecoil": -5,
+    "Convergence": -4,
+    "Recoil": -2
+  },
+  "672e2e7546454a975e0b7a3b": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "672e2e7546454a975e0b7a3b",
+    "Name": "BCM GUNFIGHTER MOD 3 垂直前握把（平沙色胶带版）",
+    "ModType": "",
+    "VerticalRecoil": -6,
+    "HorizontalRecoil": -2,
+    "Dispersion": 0,
+    "AimSpeed": 4,
+    "Ergonomics": 12,
+    "Accuracy": 0,
+    "ConflictingItems": [],
+    "Weight": 0.053,
+    "LoyaltyLevel": 3,
+    "AimStability": 8,
+    "Handling": 16,
+    "Description": "",
+    "ShortName": "",
+    "Prefab": {
+      "path": "bcm_mod_3_reversed_tape_fde.bundle",
+      "rcid": ""
+    },
+    "CameraRecoil": -3,
+    "Convergence": 1,
+    "Recoil": -2
+  },
+  "672e2e750c562a5e650dc9b3": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "672e2e750c562a5e650dc9b3",
+    "Name": "Scalarworks LEAP/瞄准镜座",
+    "ModType": "mount",
+    "Ergonomics": -1,
+    "Accuracy": 0,
+    "ConflictingItems": [
+      "58d39b0386f77443380bf13c"
+    ],
+    "Weight": 0.015,
+    "LoyaltyLevel": 2,
+    "Description": "",
+    "ShortName": "",
+    "Prefab": {
+      "path": "riser4.bundle",
+      "rcid": ""
+    },
+    "Slots": [
+      {
+        "_id": "673f232572166a10f7f1886e",
+        "_mergeSlotWithChildren": false,
+        "_name": "mod_scope",
+        "_parent": "672e2e750c562a5e650dc9b3",
+        "_props": {
+          "filters": [
+            {
+              "Filter": [
+                "61657230d92c473c770213d7",
+                "58d399e486f77442e0016fe7"
+              ],
+              "Shift": 0
+            }
+          ]
+        },
+        "_proto": "55d30c4c4bdc2db4468b457e",
+        "_required": false
+      }
+    ],
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "Dispersion": 0,
+    "AimStability": 0,
+    "Handling": 0
+  },
+  "672e2e754f01ef56b4aa66a3": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "672e2e754f01ef56b4aa66a3",
+    "Name": "缠绕式5.56x45消音器",
+    "ModType": "",
+    "VerticalRecoil": -8,
+    "HorizontalRecoil": -11,
+    "Dispersion": -2,
+    "CameraRecoil": -7,
+    "AutoROF": 2.25,
+    "SemiROF": 3,
+    "ModMalfunctionChance": 13,
+    "CanCycleSubs": true,
+    "Accuracy": -1,
+    "HeatFactor": 1.14,
+    "CoolFactor": 1.03,
+    "DurabilityBurnModificator": 1.22,
+    "Velocity": 2,
+    "RecoilAngle": 0,
+    "ConflictingItems": [],
+    "Ergonomics": -14,
+    "Weight": 0.472,
+    "Loudness": -37,
+    "Convergence": 0,
+    "LoyaltyLevel": 3,
+    "Flash": -51,
+    "Recoil": -15,
+    "Description": "",
+    "ShortName": "",
+    "Prefab": {
+      "path": "wrappedsilencer.bundle",
+      "rcid": ""
+    },
+    "AimSpeed": -13
+  },
+  "67b09f2f8bad925404cd80bb": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "67b09f2f8bad925404cd80bb",
+    "Name": "迷彩包裹型 5.56x45 消音器",
+    "ModType": "",
+    "VerticalRecoil": -10,
+    "HorizontalRecoil": -9,
+    "Dispersion": -3,
+    "CameraRecoil": -6,
+    "AutoROF": 2.25,
+    "SemiROF": 3,
+    "ModMalfunctionChance": 15,
+    "CanCycleSubs": true,
+    "Accuracy": -4,
+    "HeatFactor": 1.14,
+    "CoolFactor": 1.03,
+    "DurabilityBurnModificator": 1.4,
+    "Velocity": 3,
+    "RecoilAngle": 0,
+    "ConflictingItems": [],
+    "Ergonomics": -10,
+    "Weight": 0.472,
+    "Loudness": -36,
+    "Convergence": 0,
+    "LoyaltyLevel": 3,
+    "Flash": -53,
+    "Recoil": -15,
+    "Description": "",
+    "ShortName": "",
+    "Prefab": {
+      "path": "wrappedsilencer_fde.bundle",
+      "rcid": ""
+    },
+    "AimSpeed": -16
+  },
+  "672e2e758977f29e3a29cd9c": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "672e2e758977f29e3a29cd9c",
+    "Name": "KAC QDC-CQB 5.56x45 消音器",
+    "ModType": "",
+    "VerticalRecoil": -9,
+    "HorizontalRecoil": -8,
+    "Dispersion": -3,
+    "CameraRecoil": -6,
+    "AutoROF": 1.4,
+    "SemiROF": 1.5,
+    "ModMalfunctionChance": 14,
+    "CanCycleSubs": true,
+    "Accuracy": 2,
+    "HeatFactor": 1.1,
+    "CoolFactor": 1.05,
+    "DurabilityBurnModificator": 1.38,
+    "Velocity": 1,
+    "RecoilAngle": 0,
+    "ConflictingItems": [
+      "5c6d85e02e22165df16b81f4"
+    ],
+    "Ergonomics": -13,
+    "Weight": 0.412,
+    "Loudness": -30,
+    "Convergence": 0,
+    "LoyaltyLevel": 4,
+    "Flash": -37,
+    "Recoil": -10,
+    "Description": "",
+    "ShortName": "",
+    "Prefab": {
+      "path": "dqccqbsilencer.bundle",
+      "rcid": ""
+    },
+    "AimSpeed": -16
+  },
+  "672e2e7503876d1630af50b0": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "672e2e7503876d1630af50b0",
+    "Name": "Devil M-LOK 斜握把",
+    "ModType": "",
+    "VerticalRecoil": -7,
+    "HorizontalRecoil": -5,
+    "Dispersion": 0,
+    "AimSpeed": 6,
+    "Ergonomics": 10,
+    "Accuracy": 0,
+    "ConflictingItems": [],
+    "Weight": 0.034,
+    "LoyaltyLevel": 4,
+    "AimStability": 11,
+    "Description": "",
+    "ShortName": "",
+    "Prefab": {
+      "path": "flatgrip1.bundle",
+      "rcid": ""
+    },
+    "Recoil": -2,
+    "CameraRecoil": -5,
+    "Convergence": -2,
+    "Handling": 10
+  },
+  "672e2e75f3418d66159240f8": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "672e2e75f3418d66159240f8",
+    "Name": "Strike Industries LINK 握把",
+    "ModType": "",
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": -1,
+    "Dispersion": -3,
+    "AimSpeed": 3,
+    "Ergonomics": 5,
+    "Accuracy": 0,
+    "ConflictingItems": [],
+    "Weight": 0.034,
+    "LoyaltyLevel": 4,
+    "AimStability": 4,
+    "Description": "",
+    "ShortName": "",
+    "Prefab": {
+      "path": "flatgrip2.bundle",
+      "rcid": ""
+    },
+    "Recoil": -3,
+    "Handling": 5
+  },
+  "672e2e755898793d805ec2c3": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "672e2e755898793d805ec2c3",
+    "Name": "SAKO 垂直前握把（橄榄绿）",
+    "ModType": "",
+    "VerticalRecoil": -4,
+    "HorizontalRecoil": -3,
+    "Dispersion": 0,
+    "AimSpeed": 5,
+    "Ergonomics": 10,
+    "Accuracy": 0,
+    "ConflictingItems": [],
+    "Weight": 0.082,
+    "LoyaltyLevel": 4,
+    "AimStability": 7,
+    "Handling": 12,
+    "Description": "",
+    "ShortName": "",
+    "Prefab": {
+      "path": "vertgrip2.bundle",
+      "rcid": ""
+    },
+    "Recoil": -4,
+    "CameraRecoil": -5,
+    "Convergence": -3
+  },
+  "672e2e756bdff59d722213c9": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "672e2e756bdff59d722213c9",
+    "Name": "SAKO 垂直前握把",
+    "ModType": "",
+    "VerticalRecoil": -6,
+    "HorizontalRecoil": -3,
+    "Dispersion": 0,
+    "AimSpeed": 6,
+    "Ergonomics": 9,
+    "Accuracy": 0,
+    "ConflictingItems": [],
+    "Weight": 0.082,
+    "LoyaltyLevel": 4,
+    "AimStability": 7,
+    "Handling": 12,
+    "Description": "",
+    "ShortName": "",
+    "Prefab": {
+      "path": "vertgrip2_blk.bundle",
+      "rcid": ""
+    },
+    "Recoil": -4,
+    "CameraRecoil": -6,
+    "Convergence": -2
+  },
+  "672e2e75ba73d87a448e3f13": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "672e2e75ba73d87a448e3f13",
+    "Name": "Magpul FDE MOE2 手枪握把（FDE）",
+    "ModType": "",
+    "VerticalRecoil": -1,
+    "HorizontalRecoil": 1,
+    "Dispersion": 0,
+    "AimSpeed": 4,
+    "Ergonomics": 5,
+    "Accuracy": 0,
+    "ConflictingItems": [],
+    "Weight": 0.05,
+    "LoyaltyLevel": 4,
+    "AimStability": 2,
+    "ShortName": "",
+    "Description": "",
+    "Prefab": {
+      "path": "pistolgrip1.bundle",
+      "rcid": ""
+    },
+    "Handling": 7
+  },
+  "672e2e75848c5da68dd122f0": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "672e2e75848c5da68dd122f0",
+    "Name": "Magpul MOE2 手枪握把（黑色）",
+    "ModType": "",
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "Dispersion": 0,
+    "AimSpeed": 3,
+    "Ergonomics": 4,
+    "Accuracy": 0,
+    "ConflictingItems": [],
+    "Weight": 0.05,
+    "LoyaltyLevel": 4,
+    "AimStability": 3,
+    "ShortName": "",
+    "Description": "",
+    "Prefab": {
+      "path": "pistolgrip1_blk.bundle",
+      "rcid": ""
+    },
+    "Handling": 4
+  },
+  "672e2e7500543603d91e0101": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "672e2e7500543603d91e0101",
+    "Name": "Nomad 反射式瞄具",
+    "ModType": "sight",
+    "AimSpeed": 4,
+    "Accuracy": -6,
+    "ConflictingItems": [],
+    "Ergonomics": 1,
+    "Weight": 0.09,
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "LoyaltyLevel": 2,
+    "Description": "",
+    "ShortName": "",
+    "Prefab": {
+      "path": "sight1.bundle",
+      "rcid": ""
+    },
+    "AimStability": 1
+  },
+  "672e2e755ab53b635a4d4f39": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "672e2e755ab53b635a4d4f39",
+    "Name": "Trijicon MRO 反射式瞄准镜",
+    "ModType": "sight",
+    "AimSpeed": 2,
+    "Accuracy": -15,
+    "ConflictingItems": [],
+    "Ergonomics": -1,
+    "Weight": 0.16,
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "LoyaltyLevel": 2,
+    "Description": "",
+    "ShortName": "",
+    "Prefab": {
+      "path": "sight2.bundle",
+      "rcid": ""
+    },
+    "AimStability": 1
+  },
+  "672e2e75e8c2736e43530008": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "672e2e75e8c2736e43530008",
+    "Name": "Gemtech ONE-S 多口径消音器",
+    "ModType": "",
+    "VerticalRecoil": -9,
+    "HorizontalRecoil": -11,
+    "Dispersion": -2,
+    "CameraRecoil": -7,
+    "AutoROF": 1.9,
+    "SemiROF": 2.6,
+    "ModMalfunctionChance": 13,
+    "CanCycleSubs": true,
+    "Accuracy": 4,
+    "HeatFactor": 1.15,
+    "CoolFactor": 1.04,
+    "DurabilityBurnModificator": 1.41,
+    "Velocity": 0,
+    "RecoilAngle": 0,
+    "ConflictingItems": [],
+    "Ergonomics": -9,
+    "Weight": 0.322,
+    "Loudness": -34,
+    "Convergence": 0,
+    "LoyaltyLevel": 4,
+    "Flash": -60,
+    "Description": "",
+    "ShortName": "",
+    "Recoil": -4,
+    "Prefab": {
+      "path": "silencer2.bundle",
+      "rcid": ""
+    },
+    "AimSpeed": -15
+  },
+  "684ae8ebb048d86cbdf8d5d9": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "684ae8ebb048d86cbdf8d5d9",
+    "Name": "TGC橡胶鸭消音器",
+    "ModType": "",
+    "VerticalRecoil": -14,
+    "HorizontalRecoil": -7,
+    "Dispersion": -3,
+    "CameraRecoil": -7,
+    "AutoROF": 2.3,
+    "SemiROF": 3.15,
+    "ModMalfunctionChance": 21,
+    "CanCycleSubs": true,
+    "Accuracy": 3,
+    "HeatFactor": 1.15,
+    "CoolFactor": 1.05,
+    "DurabilityBurnModificator": 1.35,
+    "Velocity": 1,
+    "RecoilAngle": 0,
+    "ConflictingItems": [],
+    "Ergonomics": -12,
+    "Weight": 0.382,
+    "Loudness": -25,
+    "Convergence": 0,
+    "LoyaltyLevel": 4,
+    "Flash": -39,
+    "Description": "",
+    "ShortName": "",
+    "Recoil": -13,
+    "Prefab": {
+      "path": "tgc_silencer.bundle",
+      "rcid": ""
+    },
+    "AimSpeed": -16
+  },
+  "684ae9d928526b5c284aacb6": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "684ae9d928526b5c284aacb6",
+    "Name": "AR-10/15 TGC橡胶鸭消音器（FDE色）",
+    "ModType": "",
+    "VerticalRecoil": -12,
+    "HorizontalRecoil": -9,
+    "Dispersion": -3,
+    "CameraRecoil": -7,
+    "AutoROF": 2.3,
+    "SemiROF": 3.15,
+    "ModMalfunctionChance": 20,
+    "CanCycleSubs": true,
+    "Accuracy": 3,
+    "HeatFactor": 1.15,
+    "CoolFactor": 1.05,
+    "DurabilityBurnModificator": 1.37,
+    "Velocity": 2,
+    "RecoilAngle": 0,
+    "ConflictingItems": [],
+    "Ergonomics": -12,
+    "Weight": 0.382,
+    "Loudness": -30,
+    "Convergence": 0,
+    "LoyaltyLevel": 4,
+    "Flash": -67,
+    "Description": "",
+    "ShortName": "",
+    "Recoil": -13,
+    "Prefab": {
+      "path": "tgc_silencer_fde.bundle",
+      "rcid": ""
+    },
+    "AimSpeed": -10
+  },
+  "672e2e75a23a16d355754ef6": {
+    "$type": "RealismMod.Gear, RealismMod",
+    "ItemID": "672e2e75a23a16d355754ef6",
+    "Name": "PARACLETE APC先进防弹板携行具",
+    "AllowADS": true,
+    "LoyaltyLevel": 5,
+    "ArmorClass": "MK4A Plates",
+    "CanSpall": false,
+    "SpallReduction": 0.78,
+    "ReloadSpeedMulti": 1.03,
+    "Comfort": 0.87,
+    "speedPenaltyPercent": -2.06,
+    "mousePenalty": 0,
+    "weaponErgonomicPenalty": -2.59,
+    "TemplateType": "gear",
+    "Price": 30000,
+    "ShortName": "",
+    "Description": "",
+    "Width": 4,
+    "Height": 4,
+    "Prefab": {
+      "path": "assaultvest2_v2_blk.bundle",
+      "rcid": ""
+    },
+    "Slots": [
+      {
+        "_name": "Front_plate",
+        "_id": "672e2e75c9640d0e9b2ba85d",
+        "_parent": "672e2e75a23a16d355754ef6",
+        "_props": {
+          "filters": [
+            {
+              "locked": false,
+              "Plate": "656fa53d94b480b8a500c0e4",
+              "Filter": [
+                "656f9d5900d62bcd2e02407c",
+                "656fa8d700d62bcd2e024084",
+                "656fa99800d62bcd2e024088",
+                "656fae5f7c2d57afe200c0d7",
+                "656faf0ca0dce000a2020f77",
+                "656fa0fb498d1b7e3e071d9c",
+                "656fafe3498d1b7e3e071da4",
+                "656fa76500d62bcd2e024080",
+                "656fad8c498d1b7e3e071da0",
+                "656fa25e94b480b8a500c0e0",
+                "656fa61e94b480b8a500c0e8",
+                "656fb21fa0dce000a2020f7c",
+                "656fac30c6baea13cd07e10c",
+                "656fb0bd7c2d57afe200c0dc",
+                "656f9fa0498d1b7e3e071d98",
+                "656fa53d94b480b8a500c0e4",
+                "65573fa5655447403702a816",
+                "64afc71497cf3a403c01ff38",
+                "655746010177119f4a097ff7",
+                "64afdcb83efdfea28601d041"
+              ],
+              "armorColliders": [],
+              "armorPlateColliders": [
+                "Plate_Granit_SAPI_chest"
+              ],
+              "bluntDamageReduceFromSoftArmor": true
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": true,
+        "_proto": "64479fdf9731c8fadc0642c1"
+      },
+      {
+        "_name": "Back_plate",
+        "_id": "672e2e75df2e83cd106ccaed",
+        "_parent": "672e2e75a23a16d355754ef6",
+        "_props": {
+          "filters": [
+            {
+              "locked": false,
+              "Plate": "656fa53d94b480b8a500c0e4",
+              "Filter": [
+                "656f9d5900d62bcd2e02407c",
+                "656fa8d700d62bcd2e024084",
+                "656fa99800d62bcd2e024088",
+                "656fae5f7c2d57afe200c0d7",
+                "656faf0ca0dce000a2020f77",
+                "656fa0fb498d1b7e3e071d9c",
+                "656fafe3498d1b7e3e071da4",
+                "656fa76500d62bcd2e024080",
+                "656fa25e94b480b8a500c0e0",
+                "656fa61e94b480b8a500c0e8",
+                "656fad8c498d1b7e3e071da0",
+                "656fb21fa0dce000a2020f7c",
+                "656fac30c6baea13cd07e10c",
+                "656fb0bd7c2d57afe200c0dc",
+                "656f9fa0498d1b7e3e071d98",
+                "656fa53d94b480b8a500c0e4",
+                "65573fa5655447403702a816",
+                "64afc71497cf3a403c01ff38",
+                "655746010177119f4a097ff7",
+                "64afdcb83efdfea28601d041"
+              ],
+              "armorColliders": [],
+              "armorPlateColliders": [
+                "Plate_Granit_SAPI_back"
+              ],
+              "bluntDamageReduceFromSoftArmor": true
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": true,
+        "_proto": "64479fdf9731c8fadc0642c1"
+      },
+      {
+        "_name": "Left_side_plate",
+        "_id": "672e2e750bf040273e692148",
+        "_parent": "672e2e75a23a16d355754ef6",
+        "_props": {
+          "filters": [
+            {
+              "locked": false,
+              "Plate": "6557458f83942d705f0c4962",
+              "Filter": [
+                "6557458f83942d705f0c4962",
+                "64afdb577bb3bfe8fe03fd1d",
+                "64afd81707e2cf40e903a316"
+              ],
+              "armorColliders": [],
+              "armorPlateColliders": [
+                "Plate_Granit_SSAPI_side_left_high"
+              ],
+              "bluntDamageReduceFromSoftArmor": true
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": true,
+        "_proto": "64479fdf9731c8fadc0642c1"
+      },
+      {
+        "_name": "Right_side_plate",
+        "_id": "672e2e7573a8cfd14144539d",
+        "_parent": "672e2e75a23a16d355754ef6",
+        "_props": {
+          "filters": [
+            {
+              "locked": false,
+              "Plate": "6557458f83942d705f0c4962",
+              "Filter": [
+                "6557458f83942d705f0c4962",
+                "64afdb577bb3bfe8fe03fd1d",
+                "64afd81707e2cf40e903a316"
+              ],
+              "armorColliders": [],
+              "armorPlateColliders": [
+                "Plate_Granit_SSAPI_side_right_high"
+              ],
+              "bluntDamageReduceFromSoftArmor": true
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": true,
+        "_proto": "64479fdf9731c8fadc0642c1"
+      },
+      {
+        "_name": "Soft_armor_front",
+        "_id": "672e2e75b4b882632c90690b",
+        "_parent": "672e2e75a23a16d355754ef6",
+        "_props": {
+          "filters": [
+            {
+              "locked": true,
+              "Plate": "65733312ca0ca984940a2d53",
+              "Filter": [
+                "65733312ca0ca984940a2d53"
+              ],
+              "armorColliders": [
+                "RibcageUp",
+                "RibcageLow"
+              ],
+              "armorPlateColliders": [],
+              "bluntDamageReduceFromSoftArmor": false
+            }
+          ]
+        },
+        "_required": true,
+        "_mergeSlotWithChildren": true,
+        "_proto": "64479fdf9731c8fadc0642c1"
+      },
+      {
+        "_name": "Soft_armor_back",
+        "_id": "672e2e75cb7f3be73e096542",
+        "_parent": "672e2e75a23a16d355754ef6",
+        "_props": {
+          "filters": [
+            {
+              "locked": true,
+              "Plate": "657333232cc8dfad2c0a3d97",
+              "Filter": [
+                "657333232cc8dfad2c0a3d97"
+              ],
+              "armorColliders": [
+                "SpineTop",
+                "SpineDown"
+              ],
+              "armorPlateColliders": [],
+              "bluntDamageReduceFromSoftArmor": false
+            }
+          ]
+        },
+        "_required": true,
+        "_mergeSlotWithChildren": true,
+        "_proto": "64479fdf9731c8fadc0642c1"
+      },
+      {
+        "_name": "Soft_armor_left",
+        "_id": "672e2e75ed0f34ac2ae3c7f7",
+        "_parent": "672e2e75a23a16d355754ef6",
+        "_props": {
+          "filters": [
+            {
+              "locked": true,
+              "Plate": "657333302cc8dfad2c0a3d9b",
+              "Filter": [
+                "657333302cc8dfad2c0a3d9b"
+              ],
+              "armorColliders": [
+                "LeftSideChestDown"
+              ],
+              "armorPlateColliders": [],
+              "bluntDamageReduceFromSoftArmor": false
+            }
+          ]
+        },
+        "_required": true,
+        "_mergeSlotWithChildren": true,
+        "_proto": "64479fdf9731c8fadc0642c1"
+      },
+      {
+        "_name": "soft_armor_right",
+        "_id": "672e2e757bca9b46b6da7a64",
+        "_parent": "672e2e75a23a16d355754ef6",
+        "_props": {
+          "filters": [
+            {
+              "locked": true,
+              "Plate": "6573333eca0ca984940a2d57",
+              "Filter": [
+                "6573333eca0ca984940a2d57"
+              ],
+              "armorColliders": [
+                "RightSideChestDown"
+              ],
+              "armorPlateColliders": [],
+              "bluntDamageReduceFromSoftArmor": false
+            }
+          ]
+        },
+        "_required": true,
+        "_mergeSlotWithChildren": true,
+        "_proto": "64479fdf9731c8fadc0642c1"
+      },
+      {
+        "_name": "Collar",
+        "_id": "672e2e754cbd07b373b54184",
+        "_parent": "672e2e75a23a16d355754ef6",
+        "_props": {
+          "filters": [
+            {
+              "locked": true,
+              "Plate": "6573334aca0ca984940a2d5b",
+              "Filter": [
+                "6573334aca0ca984940a2d5b"
+              ],
+              "armorColliders": [
+                "NeckFront",
+                "NeckBack"
+              ],
+              "armorPlateColliders": [],
+              "bluntDamageReduceFromSoftArmor": false
+            }
+          ]
+        },
+        "_required": true,
+        "_mergeSlotWithChildren": true,
+        "_proto": "64479fdf9731c8fadc0642c1"
+      },
+      {
+        "_name": "Shoulder_l",
+        "_id": "672e2e75d54c4ea14896d1d3",
+        "_parent": "672e2e75a23a16d355754ef6",
+        "_props": {
+          "filters": [
+            {
+              "locked": true,
+              "Plate": "65733375b7a8d286530e3dd7",
+              "Filter": [
+                "65733375b7a8d286530e3dd7"
+              ],
+              "armorColliders": [
+                "LeftUpperArm"
+              ],
+              "armorPlateColliders": [],
+              "bluntDamageReduceFromSoftArmor": false
+            }
+          ]
+        },
+        "_required": true,
+        "_mergeSlotWithChildren": true,
+        "_proto": "64479fdf9731c8fadc0642c1"
+      },
+      {
+        "_name": "Shoulder_r",
+        "_id": "672e2e75848e863d20da6cff",
+        "_parent": "672e2e75a23a16d355754ef6",
+        "_props": {
+          "filters": [
+            {
+              "locked": true,
+              "Plate": "6573337f2cc8dfad2c0a3da7",
+              "Filter": [
+                "6573337f2cc8dfad2c0a3da7"
+              ],
+              "armorColliders": [
+                "RightUpperArm"
+              ],
+              "armorPlateColliders": [],
+              "bluntDamageReduceFromSoftArmor": false
+            }
+          ]
+        },
+        "_required": true,
+        "_mergeSlotWithChildren": true,
+        "_proto": "64479fdf9731c8fadc0642c1"
+      },
+      {
+        "_name": "Groin",
+        "_id": "672e2e752bdec13b1886cda7",
+        "_parent": "672e2e75a23a16d355754ef6",
+        "_props": {
+          "filters": [
+            {
+              "locked": true,
+              "Plate": "6575ce8bdc9932aed601c61e",
+              "Filter": [
+                "6575ce8bdc9932aed601c61e"
+              ],
+              "armorColliders": [
+                "Pelvis"
+              ],
+              "armorPlateColliders": [],
+              "bluntDamageReduceFromSoftArmor": false
+            }
+          ]
+        },
+        "_required": true,
+        "_mergeSlotWithChildren": true,
+        "_proto": "64479fdf9731c8fadc0642c1"
+      }
+    ]
+  },
+  "672e2e75be2ea9998a388b8b": {
+    "$type": "RealismMod.Gear, RealismMod",
+    "ItemID": "672e2e75be2ea9998a388b8b",
+    "Name": "PARACLETE APC先进防弹板携行具（Multicam迷彩）",
+    "AllowADS": true,
+    "LoyaltyLevel": 5,
+    "ArmorClass": "MK4A Plates",
+    "CanSpall": false,
+    "SpallReduction": 0.77,
+    "ReloadSpeedMulti": 1.02,
+    "Comfort": 0.79,
+    "speedPenaltyPercent": -5.5,
+    "mousePenalty": 0,
+    "weaponErgonomicPenalty": -6.22,
+    "TemplateType": "gear",
+    "Price": 30000,
+    "ShortName": "",
+    "Description": "",
+    "Width": 4,
+    "Height": 4,
+    "Prefab": {
+      "path": "assaultvest2_v2_fde.bundle",
+      "rcid": ""
+    },
+    "Slots": [
+      {
+        "_name": "Front_plate",
+        "_id": "672e2e75c9640d0e9b2ba85d",
+        "_parent": "672e2e75a23a16d355754ef6",
+        "_props": {
+          "filters": [
+            {
+              "locked": false,
+              "Plate": "656fa53d94b480b8a500c0e4",
+              "Filter": [
+                "656f9d5900d62bcd2e02407c",
+                "656fa8d700d62bcd2e024084",
+                "656fa99800d62bcd2e024088",
+                "656fae5f7c2d57afe200c0d7",
+                "656faf0ca0dce000a2020f77",
+                "656fa0fb498d1b7e3e071d9c",
+                "656fafe3498d1b7e3e071da4",
+                "656fa76500d62bcd2e024080",
+                "656fad8c498d1b7e3e071da0",
+                "656fa25e94b480b8a500c0e0",
+                "656fa61e94b480b8a500c0e8",
+                "656fb21fa0dce000a2020f7c",
+                "656fac30c6baea13cd07e10c",
+                "656fb0bd7c2d57afe200c0dc",
+                "656f9fa0498d1b7e3e071d98",
+                "656fa53d94b480b8a500c0e4",
+                "65573fa5655447403702a816",
+                "64afc71497cf3a403c01ff38",
+                "655746010177119f4a097ff7",
+                "64afdcb83efdfea28601d041"
+              ],
+              "armorColliders": [],
+              "armorPlateColliders": [
+                "Plate_Granit_SAPI_chest"
+              ],
+              "bluntDamageReduceFromSoftArmor": true
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": true,
+        "_proto": "64479fdf9731c8fadc0642c1"
+      },
+      {
+        "_name": "Back_plate",
+        "_id": "672e2e75df2e83cd106ccaed",
+        "_parent": "672e2e75a23a16d355754ef6",
+        "_props": {
+          "filters": [
+            {
+              "locked": false,
+              "Plate": "656fa53d94b480b8a500c0e4",
+              "Filter": [
+                "656f9d5900d62bcd2e02407c",
+                "656fa8d700d62bcd2e024084",
+                "656fa99800d62bcd2e024088",
+                "656fae5f7c2d57afe200c0d7",
+                "656faf0ca0dce000a2020f77",
+                "656fa0fb498d1b7e3e071d9c",
+                "656fafe3498d1b7e3e071da4",
+                "656fa76500d62bcd2e024080",
+                "656fa25e94b480b8a500c0e0",
+                "656fa61e94b480b8a500c0e8",
+                "656fad8c498d1b7e3e071da0",
+                "656fb21fa0dce000a2020f7c",
+                "656fac30c6baea13cd07e10c",
+                "656fb0bd7c2d57afe200c0dc",
+                "656f9fa0498d1b7e3e071d98",
+                "656fa53d94b480b8a500c0e4",
+                "65573fa5655447403702a816",
+                "64afc71497cf3a403c01ff38",
+                "655746010177119f4a097ff7",
+                "64afdcb83efdfea28601d041"
+              ],
+              "armorColliders": [],
+              "armorPlateColliders": [
+                "Plate_Granit_SAPI_back"
+              ],
+              "bluntDamageReduceFromSoftArmor": true
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": true,
+        "_proto": "64479fdf9731c8fadc0642c1"
+      },
+      {
+        "_name": "Left_side_plate",
+        "_id": "672e2e750bf040273e692148",
+        "_parent": "672e2e75a23a16d355754ef6",
+        "_props": {
+          "filters": [
+            {
+              "locked": false,
+              "Plate": "6557458f83942d705f0c4962",
+              "Filter": [
+                "6557458f83942d705f0c4962",
+                "64afdb577bb3bfe8fe03fd1d",
+                "64afd81707e2cf40e903a316"
+              ],
+              "armorColliders": [],
+              "armorPlateColliders": [
+                "Plate_Granit_SSAPI_side_left_high"
+              ],
+              "bluntDamageReduceFromSoftArmor": true
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": true,
+        "_proto": "64479fdf9731c8fadc0642c1"
+      },
+      {
+        "_name": "Right_side_plate",
+        "_id": "672e2e7573a8cfd14144539d",
+        "_parent": "672e2e75a23a16d355754ef6",
+        "_props": {
+          "filters": [
+            {
+              "locked": false,
+              "Plate": "6557458f83942d705f0c4962",
+              "Filter": [
+                "6557458f83942d705f0c4962",
+                "64afdb577bb3bfe8fe03fd1d",
+                "64afd81707e2cf40e903a316"
+              ],
+              "armorColliders": [],
+              "armorPlateColliders": [
+                "Plate_Granit_SSAPI_side_right_high"
+              ],
+              "bluntDamageReduceFromSoftArmor": true
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": true,
+        "_proto": "64479fdf9731c8fadc0642c1"
+      },
+      {
+        "_name": "Soft_armor_front",
+        "_id": "672e2e75b4b882632c90690b",
+        "_parent": "672e2e75a23a16d355754ef6",
+        "_props": {
+          "filters": [
+            {
+              "locked": true,
+              "Plate": "65733312ca0ca984940a2d53",
+              "Filter": [
+                "65733312ca0ca984940a2d53"
+              ],
+              "armorColliders": [
+                "RibcageUp",
+                "RibcageLow"
+              ],
+              "armorPlateColliders": [],
+              "bluntDamageReduceFromSoftArmor": false
+            }
+          ]
+        },
+        "_required": true,
+        "_mergeSlotWithChildren": true,
+        "_proto": "64479fdf9731c8fadc0642c1"
+      },
+      {
+        "_name": "Soft_armor_back",
+        "_id": "672e2e75cb7f3be73e096542",
+        "_parent": "672e2e75a23a16d355754ef6",
+        "_props": {
+          "filters": [
+            {
+              "locked": true,
+              "Plate": "657333232cc8dfad2c0a3d97",
+              "Filter": [
+                "657333232cc8dfad2c0a3d97"
+              ],
+              "armorColliders": [
+                "SpineTop",
+                "SpineDown"
+              ],
+              "armorPlateColliders": [],
+              "bluntDamageReduceFromSoftArmor": false
+            }
+          ]
+        },
+        "_required": true,
+        "_mergeSlotWithChildren": true,
+        "_proto": "64479fdf9731c8fadc0642c1"
+      },
+      {
+        "_name": "Soft_armor_left",
+        "_id": "672e2e75ed0f34ac2ae3c7f7",
+        "_parent": "672e2e75a23a16d355754ef6",
+        "_props": {
+          "filters": [
+            {
+              "locked": true,
+              "Plate": "657333302cc8dfad2c0a3d9b",
+              "Filter": [
+                "657333302cc8dfad2c0a3d9b"
+              ],
+              "armorColliders": [
+                "LeftSideChestDown"
+              ],
+              "armorPlateColliders": [],
+              "bluntDamageReduceFromSoftArmor": false
+            }
+          ]
+        },
+        "_required": true,
+        "_mergeSlotWithChildren": true,
+        "_proto": "64479fdf9731c8fadc0642c1"
+      },
+      {
+        "_name": "soft_armor_right",
+        "_id": "672e2e757bca9b46b6da7a64",
+        "_parent": "672e2e75a23a16d355754ef6",
+        "_props": {
+          "filters": [
+            {
+              "locked": true,
+              "Plate": "6573333eca0ca984940a2d57",
+              "Filter": [
+                "6573333eca0ca984940a2d57"
+              ],
+              "armorColliders": [
+                "RightSideChestDown"
+              ],
+              "armorPlateColliders": [],
+              "bluntDamageReduceFromSoftArmor": false
+            }
+          ]
+        },
+        "_required": true,
+        "_mergeSlotWithChildren": true,
+        "_proto": "64479fdf9731c8fadc0642c1"
+      },
+      {
+        "_name": "Collar",
+        "_id": "672e2e754cbd07b373b54184",
+        "_parent": "672e2e75a23a16d355754ef6",
+        "_props": {
+          "filters": [
+            {
+              "locked": true,
+              "Plate": "6573334aca0ca984940a2d5b",
+              "Filter": [
+                "6573334aca0ca984940a2d5b"
+              ],
+              "armorColliders": [
+                "NeckFront",
+                "NeckBack"
+              ],
+              "armorPlateColliders": [],
+              "bluntDamageReduceFromSoftArmor": false
+            }
+          ]
+        },
+        "_required": true,
+        "_mergeSlotWithChildren": true,
+        "_proto": "64479fdf9731c8fadc0642c1"
+      },
+      {
+        "_name": "Shoulder_l",
+        "_id": "672e2e75d54c4ea14896d1d3",
+        "_parent": "672e2e75a23a16d355754ef6",
+        "_props": {
+          "filters": [
+            {
+              "locked": true,
+              "Plate": "65733375b7a8d286530e3dd7",
+              "Filter": [
+                "65733375b7a8d286530e3dd7"
+              ],
+              "armorColliders": [
+                "LeftUpperArm"
+              ],
+              "armorPlateColliders": [],
+              "bluntDamageReduceFromSoftArmor": false
+            }
+          ]
+        },
+        "_required": true,
+        "_mergeSlotWithChildren": true,
+        "_proto": "64479fdf9731c8fadc0642c1"
+      },
+      {
+        "_name": "Shoulder_r",
+        "_id": "672e2e75848e863d20da6cff",
+        "_parent": "672e2e75a23a16d355754ef6",
+        "_props": {
+          "filters": [
+            {
+              "locked": true,
+              "Plate": "6573337f2cc8dfad2c0a3da7",
+              "Filter": [
+                "6573337f2cc8dfad2c0a3da7"
+              ],
+              "armorColliders": [
+                "RightUpperArm"
+              ],
+              "armorPlateColliders": [],
+              "bluntDamageReduceFromSoftArmor": false
+            }
+          ]
+        },
+        "_required": true,
+        "_mergeSlotWithChildren": true,
+        "_proto": "64479fdf9731c8fadc0642c1"
+      },
+      {
+        "_name": "Groin",
+        "_id": "672e2e752bdec13b1886cda7",
+        "_parent": "672e2e75a23a16d355754ef6",
+        "_props": {
+          "filters": [
+            {
+              "locked": true,
+              "Plate": "6575ce8bdc9932aed601c61e",
+              "Filter": [
+                "6575ce8bdc9932aed601c61e"
+              ],
+              "armorColliders": [
+                "Pelvis"
+              ],
+              "armorPlateColliders": [],
+              "bluntDamageReduceFromSoftArmor": false
+            }
+          ]
+        },
+        "_required": true,
+        "_mergeSlotWithChildren": true,
+        "_proto": "64479fdf9731c8fadc0642c1"
+      }
+    ]
+  },
+  "672e2e75b7f83e81f1dc5067": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "672e2e75b7f83e81f1dc5067",
+    "Name": "MAGPUL MOE SL-M",
+    "ModType": "Stock",
+    "VerticalRecoil": -11,
+    "HorizontalRecoil": -7,
+    "Dispersion": -6,
+    "CameraRecoil": -15,
+    "AimSpeed": -6,
+    "Ergonomics": 13,
+    "Accuracy": 1.5,
+    "HasShoulderContact": true,
+    "BlocksFolding": false,
+    "AutoROF": 0,
+    "SemiROF": 0,
+    "ModMalfunctionChance": 0,
+    "StockAllowADS": false,
+    "ConflictingItems": [],
+    "Weight": 0.148,
+    "LoyaltyLevel": 2,
+    "AimStability": 11,
+    "Description": "",
+    "ShortName": "",
+    "Prefab": {
+      "path": "magpulsl.bundle",
+      "rcid": ""
+    },
+    "Recoil": -18,
+    "Convergence": 17,
+    "Handling": -9
+  },
+  "672e2e7533a70f23dfe4c8bb": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "672e2e7533a70f23dfe4c8bb",
+    "Name": "MAGPUL MOE SL-M 沙漠色",
+    "ModType": "Stock",
+    "VerticalRecoil": -10,
+    "HorizontalRecoil": -9,
+    "Dispersion": -6,
+    "CameraRecoil": -16,
+    "AimSpeed": -5,
+    "Ergonomics": 12,
+    "Accuracy": 1.5,
+    "HasShoulderContact": true,
+    "BlocksFolding": false,
+    "AutoROF": 0,
+    "SemiROF": 0,
+    "ModMalfunctionChance": 0,
+    "StockAllowADS": false,
+    "ConflictingItems": [],
+    "Weight": 0.148,
+    "LoyaltyLevel": 2,
+    "AimStability": 14,
+    "Description": "",
+    "ShortName": "",
+    "Prefab": {
+      "path": "magpulsl_tan.bundle",
+      "rcid": ""
+    },
+    "Recoil": -18,
+    "Convergence": 14,
+    "Handling": -8
+  },
+  "672e2e75aedb36663267e181": {
+    "$type": "RealismMod.Gear, RealismMod",
+    "ItemID": "672e2e75aedb36663267e181",
+    "Name": "经典美式头盔",
+    "AllowADS": true,
+    "LoyaltyLevel": 1,
+    "ArmorClass": "GOST 1",
+    "CanSpall": false,
+    "SpallReduction": 1,
+    "ReloadSpeedMulti": 1,
+    "Comfort": 0.99,
+    "TemplateType": "gear",
+    "Price": 13000,
+    "ShortName": "",
+    "Description": "",
+    "Weight": 2.1,
+    "BackgroundColor": "black",
+    "Prefab": {
+      "path": "vietnamhelmet.bundle",
+      "rcid": ""
+    }
+  },
+  "672e2e75e12417d2656e8974": {
+    "$type": "RealismMod.Gear, RealismMod",
+    "ItemID": "672e2e75e12417d2656e8974",
+    "Name": "M1 越战头盔",
+    "AllowADS": true,
+    "LoyaltyLevel": 1,
+    "ArmorClass": "GOST 1",
+    "CanSpall": false,
+    "SpallReduction": 1,
+    "ReloadSpeedMulti": 1,
+    "Comfort": 0.9,
+    "TemplateType": "gear",
+    "Price": 13000,
+    "ShortName": "",
+    "Description": "",
+    "Weight": 1.5,
+    "BackgroundColor": "black",
+    "Prefab": {
+      "path": "vietnamhelmet2.bundle",
+      "rcid": ""
+    }
+  },
+  "672e2e75ecdecad1471639ad": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "672e2e75ecdecad1471639ad",
+    "Name": "672e2e75ecdecad1471639ad",
+    "ModType": "",
+    "ConflictingItems": [],
+    "Ergonomics": -1,
+    "Weight": 0.005,
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "LoyaltyLevel": 4,
+    "Accuracy": 0,
+    "AnimationVariantsNumber": 0,
+    "BackgroundColor": "blue",
+    "BlocksCollapsible": false,
+    "BlocksFolding": false,
+    "CanPutIntoDuringTheRaid": true,
+    "CanRequireOnRagfair": false,
+    "CanSellOnRagfair": true,
+    "CantRemoveFromSlotsDuringRaid": [],
+    "CoolFactor": 1,
+    "Description": "",
+    "DiscardLimit": -1,
+    "DiscardingBlock": false,
+    "DoubleActionAccuracyPenaltyMult": 1,
+    "DropSoundType": "None",
+    "Durability": 100,
+    "DurabilityBurnModificator": 1,
+    "EffectiveDistance": 0,
+    "ExamineExperience": 10,
+    "ExamineTime": 1,
+    "ExaminedByDefault": true,
+    "ExtraSizeDown": 0,
+    "ExtraSizeForceAdd": false,
+    "ExtraSizeLeft": 0,
+    "ExtraSizeRight": 0,
+    "ExtraSizeUp": 0,
+    "Grids": [],
+    "HasShoulderContact": false,
+    "HeatFactor": 0.98,
+    "Height": 1,
+    "HideEntrails": false,
+    "InsuranceDisabled": false,
+    "IsAlwaysAvailableForInsurance": false,
+    "IsAnimated": false,
+    "IsLockedafterEquip": false,
+    "IsSpecialSlotOnly": false,
+    "IsUnbuyable": false,
+    "IsUndiscardable": false,
+    "IsUngivable": false,
+    "IsUnremovable": false,
+    "IsUnsaleable": false,
+    "ItemSound": "mod",
+    "LootExperience": 5,
+    "Loudness": 0,
+    "MergesWithChildren": true,
+    "NotShownInSlot": false,
+    "Prefab": {
+      "path": "railskin1.bundle",
+      "rcid": ""
+    },
+    "QuestItem": false,
+    "QuestStashMaxCount": 0,
+    "RagFairCommissionModifier": 1,
+    "RaidModdable": true,
+    "Recoil": 0,
+    "RepairCost": 0,
+    "RepairSpeed": 0,
+    "ShiftsAimCamera": 0,
+    "ShortName": "",
+    "SightingRange": 0,
+    "Slots": [],
+    "StackMaxSize": 1,
+    "StackObjectsCount": 1,
+    "ToolModdable": true,
+    "Unlootable": false,
+    "UnlootableFromSide": [],
+    "UnlootableFromSlot": "FirstPrimaryWeapon",
+    "UsePrefab": {
+      "path": "",
+      "rcid": ""
+    },
+    "Velocity": 0,
+    "Width": 1,
+    "Handling": -3
+  },
+  "672e2e75645f9ad09f4b949d": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "672e2e75645f9ad09f4b949d",
+    "Name": "LWRCI Railskin（橄榄绿）",
+    "ModType": "",
+    "ConflictingItems": [],
+    "Ergonomics": 0,
+    "Weight": 0.005,
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "LoyaltyLevel": 4,
+    "Accuracy": 0,
+    "AnimationVariantsNumber": 0,
+    "BackgroundColor": "blue",
+    "BlocksCollapsible": false,
+    "BlocksFolding": false,
+    "CanPutIntoDuringTheRaid": true,
+    "CanRequireOnRagfair": false,
+    "CanSellOnRagfair": true,
+    "CantRemoveFromSlotsDuringRaid": [],
+    "CoolFactor": 1,
+    "Description": "",
+    "DiscardLimit": -1,
+    "DiscardingBlock": false,
+    "DoubleActionAccuracyPenaltyMult": 1,
+    "DropSoundType": "None",
+    "Durability": 100,
+    "DurabilityBurnModificator": 1,
+    "EffectiveDistance": 0,
+    "ExamineExperience": 10,
+    "ExamineTime": 1,
+    "ExaminedByDefault": true,
+    "ExtraSizeDown": 0,
+    "ExtraSizeForceAdd": false,
+    "ExtraSizeLeft": 0,
+    "ExtraSizeRight": 0,
+    "ExtraSizeUp": 0,
+    "Grids": [],
+    "HasShoulderContact": false,
+    "HeatFactor": 0.98,
+    "Height": 1,
+    "HideEntrails": false,
+    "InsuranceDisabled": false,
+    "IsAlwaysAvailableForInsurance": false,
+    "IsAnimated": false,
+    "IsLockedafterEquip": false,
+    "IsSpecialSlotOnly": false,
+    "IsUnbuyable": false,
+    "IsUndiscardable": false,
+    "IsUngivable": false,
+    "IsUnremovable": false,
+    "IsUnsaleable": false,
+    "ItemSound": "mod",
+    "LootExperience": 5,
+    "Loudness": 0,
+    "MergesWithChildren": true,
+    "NotShownInSlot": false,
+    "Prefab": {
+      "path": "railskin1od.bundle",
+      "rcid": ""
+    },
+    "QuestItem": false,
+    "QuestStashMaxCount": 0,
+    "RagFairCommissionModifier": 1,
+    "RaidModdable": true,
+    "Recoil": 0,
+    "RepairCost": 0,
+    "RepairSpeed": 0,
+    "ShiftsAimCamera": 0,
+    "ShortName": "",
+    "SightingRange": 0,
+    "Slots": [],
+    "StackMaxSize": 1,
+    "StackObjectsCount": 1,
+    "ToolModdable": true,
+    "Unlootable": false,
+    "UnlootableFromSide": [],
+    "UnlootableFromSlot": "FirstPrimaryWeapon",
+    "UsePrefab": {
+      "path": "",
+      "rcid": ""
+    },
+    "Velocity": 0,
+    "Width": 1,
+    "Handling": 0,
+    "Dispersion": 0,
+    "AimStability": 0
+  },
+  "672e2e75ebb3b5f3e2cb6291": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "672e2e75ebb3b5f3e2cb6291",
+    "Name": "LWRCI Railskin（FDE）",
+    "ModType": "",
+    "ConflictingItems": [],
+    "Ergonomics": -1,
+    "Weight": 0.005,
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "LoyaltyLevel": 4,
+    "Accuracy": 0,
+    "AnimationVariantsNumber": 0,
+    "BackgroundColor": "blue",
+    "BlocksCollapsible": false,
+    "BlocksFolding": false,
+    "CanPutIntoDuringTheRaid": true,
+    "CanRequireOnRagfair": false,
+    "CanSellOnRagfair": true,
+    "CantRemoveFromSlotsDuringRaid": [],
+    "CoolFactor": 1,
+    "Description": "",
+    "DiscardLimit": -1,
+    "DiscardingBlock": false,
+    "DoubleActionAccuracyPenaltyMult": 1,
+    "DropSoundType": "None",
+    "Durability": 100,
+    "DurabilityBurnModificator": 1,
+    "EffectiveDistance": 0,
+    "ExamineExperience": 10,
+    "ExamineTime": 1,
+    "ExaminedByDefault": true,
+    "ExtraSizeDown": 0,
+    "ExtraSizeForceAdd": false,
+    "ExtraSizeLeft": 0,
+    "ExtraSizeRight": 0,
+    "ExtraSizeUp": 0,
+    "Grids": [],
+    "HasShoulderContact": false,
+    "HeatFactor": 0.98,
+    "Height": 1,
+    "HideEntrails": false,
+    "InsuranceDisabled": false,
+    "IsAlwaysAvailableForInsurance": false,
+    "IsAnimated": false,
+    "IsLockedafterEquip": false,
+    "IsSpecialSlotOnly": false,
+    "IsUnbuyable": false,
+    "IsUndiscardable": false,
+    "IsUngivable": false,
+    "IsUnremovable": false,
+    "IsUnsaleable": false,
+    "ItemSound": "mod",
+    "LootExperience": 5,
+    "Loudness": 0,
+    "MergesWithChildren": true,
+    "NotShownInSlot": false,
+    "Prefab": {
+      "path": "railskin1fde.bundle",
+      "rcid": ""
+    },
+    "QuestItem": false,
+    "QuestStashMaxCount": 0,
+    "RagFairCommissionModifier": 1,
+    "RaidModdable": true,
+    "Recoil": 0,
+    "RepairCost": 0,
+    "RepairSpeed": 0,
+    "ShiftsAimCamera": 0,
+    "ShortName": "",
+    "SightingRange": 0,
+    "Slots": [],
+    "StackMaxSize": 1,
+    "StackObjectsCount": 1,
+    "ToolModdable": true,
+    "Unlootable": false,
+    "UnlootableFromSide": [],
+    "UnlootableFromSlot": "FirstPrimaryWeapon",
+    "UsePrefab": {
+      "path": "",
+      "rcid": ""
+    },
+    "Velocity": 0,
+    "Width": 1,
+    "Handling": 0,
+    "Dispersion": 0,
+    "AimStability": 0
+  },
+  "672e2e7511180730151307bc": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "672e2e7511180730151307bc",
+    "Name": "KAC 导轨护盖",
+    "ModType": "",
+    "ConflictingItems": [],
+    "Ergonomics": 0,
+    "Weight": 0.005,
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "LoyaltyLevel": 4,
+    "Accuracy": 0,
+    "AnimationVariantsNumber": 0,
+    "BackgroundColor": "blue",
+    "BlocksCollapsible": false,
+    "BlocksFolding": false,
+    "CanPutIntoDuringTheRaid": true,
+    "CanRequireOnRagfair": false,
+    "CanSellOnRagfair": true,
+    "CantRemoveFromSlotsDuringRaid": [],
+    "CoolFactor": 1,
+    "Description": "",
+    "DiscardLimit": -1,
+    "DiscardingBlock": false,
+    "DoubleActionAccuracyPenaltyMult": 1,
+    "DropSoundType": "None",
+    "Durability": 100,
+    "DurabilityBurnModificator": 1,
+    "EffectiveDistance": 0,
+    "ExamineExperience": 10,
+    "ExamineTime": 1,
+    "ExaminedByDefault": true,
+    "ExtraSizeDown": 0,
+    "ExtraSizeForceAdd": false,
+    "ExtraSizeLeft": 0,
+    "ExtraSizeRight": 0,
+    "ExtraSizeUp": 0,
+    "Grids": [],
+    "HasShoulderContact": false,
+    "HeatFactor": 0.98,
+    "Height": 1,
+    "HideEntrails": false,
+    "InsuranceDisabled": false,
+    "IsAlwaysAvailableForInsurance": false,
+    "IsAnimated": false,
+    "IsLockedafterEquip": false,
+    "IsSpecialSlotOnly": false,
+    "IsUnbuyable": false,
+    "IsUndiscardable": false,
+    "IsUngivable": false,
+    "IsUnremovable": false,
+    "IsUnsaleable": false,
+    "ItemSound": "mod",
+    "LootExperience": 5,
+    "Loudness": 0,
+    "MergesWithChildren": true,
+    "NotShownInSlot": false,
+    "Prefab": {
+      "path": "railskin_kac.bundle",
+      "rcid": ""
+    },
+    "QuestItem": false,
+    "QuestStashMaxCount": 0,
+    "RagFairCommissionModifier": 1,
+    "RaidModdable": true,
+    "Recoil": 0,
+    "RepairCost": 0,
+    "RepairSpeed": 0,
+    "ShiftsAimCamera": 0,
+    "ShortName": "",
+    "SightingRange": 0,
+    "Slots": [],
+    "StackMaxSize": 1,
+    "StackObjectsCount": 1,
+    "ToolModdable": true,
+    "Unlootable": false,
+    "UnlootableFromSide": [],
+    "UnlootableFromSlot": "FirstPrimaryWeapon",
+    "UsePrefab": {
+      "path": "",
+      "rcid": ""
+    },
+    "Velocity": 0,
+    "Width": 1,
+    "Handling": 0,
+    "Dispersion": 0,
+    "AimStability": 0
+  },
+  "672e2e759623bcd75fbfb04c": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "672e2e759623bcd75fbfb04c",
+    "Name": "Riser One 镜座",
+    "ModType": "mount",
+    "Ergonomics": 0,
+    "Accuracy": 0,
+    "ConflictingItems": [],
+    "Weight": 0.11,
+    "LoyaltyLevel": 3,
+    "Description": "",
+    "ShortName": "",
+    "Prefab": {
+      "path": "riserone.bundle",
+      "rcid": ""
+    },
+    "Slots": [
+      {
+        "_id": "673f20fbe0fe7192aa60ced4",
+        "_mergeSlotWithChildren": false,
+        "_name": "mod_scope",
+        "_parent": "672e2e759623bcd75fbfb04c",
+        "_props": {
+          "filters": [
+            {
+              "Filter": [
+                "584984812459776a704a82a6",
+                "57ae0171245977343c27bfcf",
+                "58d39d3d86f77445bb794ae7",
+                "616554fe50224f204c1da2aa",
+                "577d128124597739d65d0e56",
+                "58d2664f86f7747fec5834f6",
+                "61714b2467085e45ef140b2c",
+                "5a33b2c9c4a282000c5a9511",
+                "672e2e7500543603d91e0101",
+                "672e2e755ab53b635a4d4f39"
+              ],
+              "Shift": 0
+            }
+          ]
+        },
+        "_proto": "55d30c4c4bdc2db4468b457e",
+        "_required": false
+      }
+    ],
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "Dispersion": 0,
+    "AimStability": 0,
+    "Handling": 0
+  },
+  "672e2e75033ea9ca8bef91bc": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "672e2e75033ea9ca8bef91bc",
+    "Name": "FAST 光学抬高镜座",
+    "ModType": "mount",
+    "Ergonomics": 1,
+    "Accuracy": 0,
+    "ConflictingItems": [],
+    "Weight": 0.11,
+    "LoyaltyLevel": 3,
+    "Description": "",
+    "ShortName": "",
+    "Prefab": {
+      "path": "risertwo.bundle",
+      "rcid": ""
+    },
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "Dispersion": 0,
+    "AimStability": 0,
+    "Handling": 0
+  },
+  "672e2e75a9332b620bdf4715": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "672e2e75a9332b620bdf4715",
+    "Name": "FAST Micro",
+    "ModType": "mount",
+    "Ergonomics": 0,
+    "Accuracy": 0,
+    "ConflictingItems": [
+      "58d39b0386f77443380bf13c"
+    ],
+    "Weight": 0.015,
+    "LoyaltyLevel": 2,
+    "Description": "",
+    "ShortName": "",
+    "Prefab": {
+      "path": "riserthree.bundle",
+      "rcid": ""
+    },
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "Dispersion": 0,
+    "AimStability": 0,
+    "Handling": 0
+  },
+  "67341526d1587cba81586e7f": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "67341526d1587cba81586e7f",
+    "Name": "Magpul M-LOK 前握挡块",
+    "ModType": "",
+    "VerticalRecoil": -6,
+    "HorizontalRecoil": -3,
+    "Dispersion": 0,
+    "AimSpeed": 4,
+    "Ergonomics": 10,
+    "Accuracy": 0,
+    "ConflictingItems": [],
+    "Weight": 0.034,
+    "LoyaltyLevel": 4,
+    "AimStability": 11,
+    "Description": "",
+    "ShortName": "",
+    "Prefab": {
+      "path": "handstop_foregrip_1.bundle",
+      "rcid": ""
+    },
+    "Recoil": -2,
+    "CameraRecoil": -3,
+    "Convergence": -4,
+    "Handling": 17
+  },
+  "673d7aa5a2c68c0cfcec6b93": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "673d7aa5a2c68c0cfcec6b93",
+    "Name": "Magpul M-LOK 前握挡块（FDE色）",
+    "ModType": "",
+    "VerticalRecoil": -6,
+    "HorizontalRecoil": -3,
+    "Dispersion": 0,
+    "AimSpeed": 5,
+    "Ergonomics": 9,
+    "Accuracy": 0,
+    "ConflictingItems": [],
+    "Weight": 0.034,
+    "LoyaltyLevel": 4,
+    "AimStability": 8,
+    "Description": "",
+    "ShortName": "",
+    "Prefab": {
+      "path": "handstop_foregrip_1_fde.bundle",
+      "rcid": ""
+    },
+    "Recoil": -2,
+    "CameraRecoil": -5,
+    "Convergence": -2,
+    "Handling": 14
+  },
+  "674102e3b161458e6ee0531f": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "674102e3b161458e6ee0531f",
+    "Name": "Reptilia Dot Acro 抬高镜座",
+    "ModType": "mount",
+    "Ergonomics": 0,
+    "Accuracy": 0,
+    "ConflictingItems": [],
+    "Weight": 0.015,
+    "LoyaltyLevel": 2,
+    "Description": "",
+    "ShortName": "",
+    "Prefab": {
+      "path": "riser5.bundle",
+      "rcid": ""
+    },
+    "Slots": [
+      {
+        "_id": "674102efce212eef366af909",
+        "_mergeSlotWithChildren": false,
+        "_name": "mod_scope",
+        "_parent": "674102e3b161458e6ee0531f",
+        "_props": {
+          "filters": [
+            {
+              "Filter": [
+                "616442e4faa1272e43152193"
+              ],
+              "Shift": 0
+            }
+          ]
+        },
+        "_proto": "55d30c4c4bdc2db4468b457e",
+        "_required": false
+      }
+    ],
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "Dispersion": 0,
+    "AimStability": 0,
+    "Handling": 0
+  },
+  "67429a6fe31216a0757777e1": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "67429a6fe31216a0757777e1",
+    "Name": "SLR Aimpoint 抬高镜座",
+    "ModType": "mount",
+    "Ergonomics": 0,
+    "Accuracy": 0,
+    "ConflictingItems": [],
+    "Weight": 0.015,
+    "LoyaltyLevel": 2,
+    "Description": "",
+    "ShortName": "",
+    "Prefab": {
+      "path": "riser6.bundle",
+      "rcid": ""
+    },
+    "Slots": [
+      {
+        "_id": "67429a775c2ed730acc47861",
+        "_mergeSlotWithChildren": false,
+        "_name": "mod_scope",
+        "_parent": "67429a6fe31216a0757777e1",
+        "_props": {
+          "filters": [
+            {
+              "Filter": [
+                "58d399e486f77442e0016fe7",
+                "61657230d92c473c770213d7"
+              ],
+              "Shift": 0
+            }
+          ]
+        },
+        "_proto": "55d30c4c4bdc2db4468b457e",
+        "_required": false
+      }
+    ],
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "Dispersion": 0,
+    "AimStability": 0,
+    "Handling": 0
+  },
+  "672e2e75dbf780f902fd6d68": {
+    "$type": "RealismMod.Gear, RealismMod",
+    "ItemID": "672e2e75dbf780f902fd6d68",
+    "Name": "PARACLETE SOHPC GEN2 硬质防弹板携行背心",
+    "AllowADS": true,
+    "LoyaltyLevel": 4,
+    "ArmorClass": "NIJ III+",
+    "CanSpall": false,
+    "SpallReduction": 0.59,
+    "ReloadSpeedMulti": 1.04,
+    "Comfort": 0.81,
+    "speedPenaltyPercent": -0.3,
+    "mousePenalty": -1,
+    "weaponErgonomicPenalty": -6.15,
+    "TemplateType": "gear",
+    "Price": 33000,
+    "ShortName": "",
+    "Description": "",
+    "Width": 4,
+    "Height": 4,
+    "Prefab": {
+      "path": "assaultvest1.bundle",
+      "rcid": ""
+    }
+  },
+  "672e2e758c2bcbf1b2421359": {
+    "$type": "RealismMod.Gear, RealismMod",
+    "ItemID": "672e2e758c2bcbf1b2421359",
+    "Name": "PARACLETE SOHPC GEN2（黑色）",
+    "AllowADS": true,
+    "LoyaltyLevel": 4,
+    "ArmorClass": "NIJ III+",
+    "CanSpall": false,
+    "SpallReduction": 0.71,
+    "ReloadSpeedMulti": 1.03,
+    "Comfort": 0.88,
+    "speedPenaltyPercent": -3.72,
+    "mousePenalty": -1,
+    "weaponErgonomicPenalty": -4.83,
+    "TemplateType": "gear",
+    "Price": 33000,
+    "ShortName": "",
+    "Description": "",
+    "Width": 4,
+    "Height": 4,
+    "Prefab": {
+      "path": "assaultvest1_blk.bundle",
+      "rcid": ""
+    }
+  },
+  "672e2e7563b1a22a3c7b3895": {
+    "$type": "RealismMod.Gear, RealismMod",
+    "ItemID": "672e2e7563b1a22a3c7b3895",
+    "Name": "背部面板 v1",
+    "AllowADS": true,
+    "LoyaltyLevel": 2,
+    "ReloadSpeedMulti": 1,
+    "Comfort": 0.94,
+    "speedPenaltyPercent": -0.45,
+    "mousePenalty": 0,
+    "weaponErgonomicPenalty": 0,
+    "Description": "",
+    "ShortName": "",
+    "Prefab": {
+      "path": "backpanel1.bundle",
+      "rcid": ""
+    },
+    "Width": 4,
+    "Height": 4
+  },
+  "672e2e754544ab54214fd56c": {
+    "$type": "RealismMod.Gear, RealismMod",
+    "ItemID": "672e2e754544ab54214fd56c",
+    "Name": "背部面板 v1（黑色）",
+    "AllowADS": true,
+    "LoyaltyLevel": 2,
+    "ReloadSpeedMulti": 0.97,
+    "Comfort": 0.97,
+    "speedPenaltyPercent": -0.33,
+    "mousePenalty": 0,
+    "weaponErgonomicPenalty": 0,
+    "Description": "",
+    "ShortName": "",
+    "Prefab": {
+      "path": "backpanel1_blk.bundle",
+      "rcid": ""
+    },
+    "Width": 4,
+    "Height": 4
+  },
+  "672e2e755afaba52a4af5e45": {
+    "$type": "RealismMod.Gear, RealismMod",
+    "ItemID": "672e2e755afaba52a4af5e45",
+    "Name": "Crye Precision AVS 战术背心",
+    "AllowADS": true,
+    "LoyaltyLevel": 3,
+    "ArmorClass": "NIJ III",
+    "CanSpall": false,
+    "SpallReduction": 0.45,
+    "ReloadSpeedMulti": 0.99,
+    "Comfort": 0.9,
+    "speedPenaltyPercent": -0.97,
+    "mousePenalty": 0,
+    "weaponErgonomicPenalty": -0.73,
+    "TemplateType": "gear",
+    "Price": 36000,
+    "ShortName": "",
+    "Description": "",
+    "Width": 3,
+    "Height": 3,
+    "Prefab": {
+      "path": "assaultvest4.bundle",
+      "rcid": ""
+    }
+  },
+  "672e2e75c5ba9aeedbced57d": {
+    "$type": "RealismMod.Gear, RealismMod",
+    "ItemID": "672e2e75c5ba9aeedbced57d",
+    "Name": "Crye Precision AVS 战术背心（黑色）",
+    "AllowADS": true,
+    "LoyaltyLevel": 3,
+    "ArmorClass": "NIJ III",
+    "CanSpall": false,
+    "SpallReduction": 0.35,
+    "ReloadSpeedMulti": 0.99,
+    "Comfort": 0.97,
+    "speedPenaltyPercent": -2.56,
+    "mousePenalty": 0,
+    "weaponErgonomicPenalty": -0.3,
+    "TemplateType": "gear",
+    "Price": 36000,
+    "ShortName": "",
+    "Description": "",
+    "Width": 3,
+    "Height": 3,
+    "Prefab": {
+      "path": "assaultvest4_blk.bundle",
+      "rcid": ""
+    }
+  },
+  "672e2e755cebe435a3b4dba5": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "672e2e755cebe435a3b4dba5",
+    "Name": "Daniel Defense 5.56弹匣",
+    "ModType": "",
+    "ReloadSpeed": 2,
+    "Ergonomics": -1,
+    "MalfunctionChance": 0.015,
+    "LoadUnloadModifier": 5,
+    "CheckTimeModifier": 3,
+    "ConflictingItems": [],
+    "Weight": 0.138,
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "LoyaltyLevel": 3,
+    "ShortName": "",
+    "Description": "",
+    "Prefab": {
+      "path": "dd_magazine.bundle",
+      "rcid": ""
+    },
+    "Cartridges": [
+      {
+        "_id": "668aaadce0c27026094afbc3",
+        "_max_count": 32,
+        "_name": "cartridges",
+        "_parent": "672e2e755cebe435a3b4dba5",
+        "_props": {
+          "filters": [
+            {
+              "Filter": [
+                "59e6920f86f77411d82aa167",
+                "59e6927d86f77411da468256",
+                "54527a984bdc2d4e668b4567",
+                "54527ac44bdc2d36668b4567",
+                "59e68f6f86f7746c9f75e846",
+                "59e6906286f7746c9f75e847",
+                "59e690b686f7746c9f75e848",
+                "59e6918f86f7746c9f75e849",
+                "60194943740c5d77f6705eea",
+                "601949593ae8f707c4608daa",
+                "5c0d5ae286f7741e46554302",
+                "64b8725c4b75259c590fa899",
+                "5fbe3ffdf8b6a877a729ea82",
+                "5fd20ff893a8961fc660a954",
+                "619636be6db0f2477964e710",
+                "6196364158ef8c428c287d9f",
+                "6196365d58ef8c428c287da1",
+                "672e2e75195420ccca420a2f"
+              ]
+            }
+          ]
+        },
+        "_proto": "5748538b2459770af276a261"
+      }
+    ],
+    "ModMalfunctionChance": 0.35,
+    "AimSpeed": -1,
+    "Handling": 0
+  },
+  "67a281fafa6f0dadd5211962": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "67a281fafa6f0dadd5211962",
+    "Name": "Daniel Defense 5.56弹匣（FDE）",
+    "ModType": "",
+    "ReloadSpeed": -2,
+    "Ergonomics": -1,
+    "MalfunctionChance": 0.015,
+    "LoadUnloadModifier": 4,
+    "CheckTimeModifier": 1,
+    "ConflictingItems": [],
+    "Weight": 0.138,
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "LoyaltyLevel": 3,
+    "ShortName": "",
+    "Description": "",
+    "Prefab": {
+      "path": "dd_magazine_fde.bundle",
+      "rcid": ""
+    },
+    "Cartridges": [
+      {
+        "_id": "67a28214afdfda86300c2e03",
+        "_max_count": 32,
+        "_name": "cartridges",
+        "_parent": "67a281fafa6f0dadd5211962",
+        "_props": {
+          "filters": [
+            {
+              "Filter": [
+                "59e6920f86f77411d82aa167",
+                "59e6927d86f77411da468256",
+                "54527a984bdc2d4e668b4567",
+                "54527ac44bdc2d36668b4567",
+                "59e68f6f86f7746c9f75e846",
+                "59e6906286f7746c9f75e847",
+                "59e690b686f7746c9f75e848",
+                "59e6918f86f7746c9f75e849",
+                "60194943740c5d77f6705eea",
+                "601949593ae8f707c4608daa",
+                "5c0d5ae286f7741e46554302",
+                "64b8725c4b75259c590fa899",
+                "5fbe3ffdf8b6a877a729ea82",
+                "5fd20ff893a8961fc660a954",
+                "619636be6db0f2477964e710",
+                "6196364158ef8c428c287d9f",
+                "6196365d58ef8c428c287da1",
+                "672e2e75195420ccca420a2f"
+              ]
+            }
+          ]
+        },
+        "_proto": "5748538b2459770af276a261"
+      }
+    ],
+    "ModMalfunctionChance": -0.14,
+    "AimSpeed": 0,
+    "Handling": 0
+  },
+  "67b22feaecf38d826bb7dc43": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "67b22feaecf38d826bb7dc43",
+    "Name": "Daniel Defense X 5.56弹匣",
+    "ModType": "",
+    "ReloadSpeed": 0,
+    "Ergonomics": 0,
+    "MalfunctionChance": 0.015,
+    "LoadUnloadModifier": 8,
+    "CheckTimeModifier": 1,
+    "ConflictingItems": [],
+    "Weight": 0.138,
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "LoyaltyLevel": 3,
+    "ShortName": "",
+    "Description": "",
+    "Prefab": {
+      "path": "dd_magazine_extended.bundle",
+      "rcid": ""
+    },
+    "Cartridges": [
+      {
+        "_id": "67b22ff2fdf6db9f08c236d3",
+        "_max_count": 37,
+        "_name": "cartridges",
+        "_parent": "67b22feaecf38d826bb7dc43",
+        "_props": {
+          "filters": [
+            {
+              "Filter": [
+                "59e6920f86f77411d82aa167",
+                "59e6927d86f77411da468256",
+                "54527a984bdc2d4e668b4567",
+                "54527ac44bdc2d36668b4567",
+                "59e68f6f86f7746c9f75e846",
+                "59e6906286f7746c9f75e847",
+                "59e690b686f7746c9f75e848",
+                "59e6918f86f7746c9f75e849",
+                "60194943740c5d77f6705eea",
+                "601949593ae8f707c4608daa",
+                "5c0d5ae286f7741e46554302",
+                "64b8725c4b75259c590fa899",
+                "5fbe3ffdf8b6a877a729ea82",
+                "5fd20ff893a8961fc660a954",
+                "619636be6db0f2477964e710",
+                "6196364158ef8c428c287d9f",
+                "6196365d58ef8c428c287da1",
+                "672e2e75195420ccca420a2f"
+              ]
+            }
+          ]
+        },
+        "_proto": "5748538b2459770af276a261"
+      }
+    ],
+    "ModMalfunctionChance": 0.96,
+    "AimSpeed": -1,
+    "Handling": -1
+  },
+  "67b3252d085fe3e32bc8eeb7": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "67b3252d085fe3e32bc8eeb7",
+    "Name": "Daniel Defense X（FDE）5.56弹匣",
+    "ModType": "",
+    "ReloadSpeed": 1,
+    "Ergonomics": -1,
+    "MalfunctionChance": 0.015,
+    "LoadUnloadModifier": 4,
+    "CheckTimeModifier": 2,
+    "ConflictingItems": [],
+    "Weight": 0.138,
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "LoyaltyLevel": 3,
+    "ShortName": "",
+    "Description": "",
+    "Prefab": {
+      "path": "dd_magazine_fde_extended.bundle",
+      "rcid": ""
+    },
+    "Cartridges": [
+      {
+        "_id": "67b325339f98f49fc12fb620",
+        "_max_count": 37,
+        "_name": "cartridges",
+        "_parent": "67b3252d085fe3e32bc8eeb7",
+        "_props": {
+          "filters": [
+            {
+              "Filter": [
+                "59e6920f86f77411d82aa167",
+                "59e6927d86f77411da468256",
+                "54527a984bdc2d4e668b4567",
+                "54527ac44bdc2d36668b4567",
+                "59e68f6f86f7746c9f75e846",
+                "59e6906286f7746c9f75e847",
+                "59e690b686f7746c9f75e848",
+                "59e6918f86f7746c9f75e849",
+                "60194943740c5d77f6705eea",
+                "601949593ae8f707c4608daa",
+                "5c0d5ae286f7741e46554302",
+                "64b8725c4b75259c590fa899",
+                "5fbe3ffdf8b6a877a729ea82",
+                "5fd20ff893a8961fc660a954",
+                "619636be6db0f2477964e710",
+                "6196364158ef8c428c287d9f",
+                "6196365d58ef8c428c287da1",
+                "672e2e75195420ccca420a2f"
+              ]
+            }
+          ]
+        },
+        "_proto": "5748538b2459770af276a261"
+      }
+    ],
+    "ModMalfunctionChance": -0.66,
+    "AimSpeed": -1,
+    "Handling": -1
+  },
+  "672e2e75d89015cd6322030b": {
+    "$type": "RealismMod.Gear, RealismMod",
+    "ItemID": "672e2e75d89015cd6322030b",
+    "Name": "672e2e75d89015cd6322030b",
+    "AllowADS": true,
+    "LoyaltyLevel": 2,
+    "ArmorClass": "GOST 1",
+    "CanSpall": false,
+    "SpallReduction": 1,
+    "ReloadSpeedMulti": 1,
+    "Comfort": 1,
+    "TemplateType": "gear",
+    "Price": 12000,
+    "ShortName": "",
+    "Description": "",
+    "BackgroundColor": "yellow",
+    "Prefab": {
+      "path": "helmet_shapeshifter.bundle",
+      "rcid": ""
+    },
+    "armorClass": "5",
+    "Durability": 70,
+    "MaxDurability": 70,
+    "Slots": [
+      {
+        "_name": "mod_equipment_001",
+        "_id": "672e2e75f7a4d666ca7fcccc",
+        "_parent": "672e2e75d89015cd6322030b",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "5a16b9fffcdbcb0176308b34",
+                "5b432b965acfc47a8774094e",
+                "5aa2ba71e5b5b000137b758f",
+                "6033fa48ffd42c541047f728",
+                "5645bcc04bdc2d363b8b4572",
+                "5c165d832e2216398b5a7e36",
+                "5e4d34ca86f774264f758330",
+                "5f60cd6cf2bcbb675b00dac6",
+                "628e4e576d783146b124c64d"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      },
+      {
+        "_id": "672e2e7597789673544151fb",
+        "_mergeSlotWithChildren": true,
+        "_name": "mod_nvg",
+        "_parent": "672e2e75d89015cd6322030b",
+        "_props": {
+          "filters": [
+            {
+              "Filter": [
+                "5ea058e01dbce517f324b3e2",
+                "5c0558060db834001b735271",
+                "5a16b8a9fcdbcb00165aa6ca",
+                "6782e59050893b2c1e2cabc8"
+              ],
+              "Shift": 0
+            }
+          ]
+        },
+        "_proto": "55d30c4c4bdc2db4468b457e",
+        "_required": false
+      },
+      {
+        "_name": "Helmet_top",
+        "_id": "672e2e75db99df87d0dd416b",
+        "_parent": "672e2e75d89015cd6322030b",
+        "_props": {
+          "filters": [
+            {
+              "locked": true,
+              "Plate": "6551fec55d0cf82e51014288",
+              "Filter": [
+                "6551fec55d0cf82e51014288"
+              ],
+              "armorColliders": [
+                "ParietalHead"
+              ],
+              "armorPlateColliders": [],
+              "bluntDamageReduceFromSoftArmor": false
+            }
+          ]
+        },
+        "_required": true,
+        "_mergeSlotWithChildren": true,
+        "_proto": "64479fdf9731c8fadc0642c1"
+      },
+      {
+        "_name": "Helmet_back",
+        "_id": "672e2e75b6c8af1e67f9448c",
+        "_parent": "672e2e75d89015cd6322030b",
+        "_props": {
+          "filters": [
+            {
+              "locked": true,
+              "Plate": "655200ba0ef76cf7be09d528",
+              "Filter": [
+                "655200ba0ef76cf7be09d528"
+              ],
+              "armorColliders": [
+                "BackHead"
+              ],
+              "armorPlateColliders": [],
+              "bluntDamageReduceFromSoftArmor": false
+            }
+          ]
+        },
+        "_required": true,
+        "_mergeSlotWithChildren": true,
+        "_proto": "64479fdf9731c8fadc0642c1"
+      },
+      {
+        "_name": "helmet_eyes",
+        "_id": "672e2e753e9159d852983d47",
+        "_parent": "672e2e75d89015cd6322030b",
+        "_props": {
+          "filters": [
+            {
+              "locked": true,
+              "Plate": "65711b9b65daf6aa960c9b1b",
+              "Filter": [
+                "65711b9b65daf6aa960c9b1b"
+              ],
+              "armorColliders": [
+                "HeadCommon",
+                "Eyes"
+              ],
+              "armorPlateColliders": [],
+              "bluntDamageReduceFromSoftArmor": false
+            }
+          ]
+        },
+        "_required": true,
+        "_mergeSlotWithChildren": true,
+        "_proto": "64479fdf9731c8fadc0642c1"
+      },
+      {
+        "_name": "Helmet_ears",
+        "_id": "672e2e75658a53c22ba3cab0",
+        "_parent": "672e2e75d89015cd6322030b",
+        "_props": {
+          "filters": [
+            {
+              "locked": true,
+              "Plate": "657112ce22996eaf110881fb",
+              "Filter": [
+                "657112ce22996eaf110881fb"
+              ],
+              "armorColliders": [
+                "Ears"
+              ],
+              "armorPlateColliders": [],
+              "bluntDamageReduceFromSoftArmor": false
+            }
+          ]
+        },
+        "_required": true,
+        "_mergeSlotWithChildren": true,
+        "_proto": "64479fdf9731c8fadc0642c1"
+      }
+    ],
+    "BlocksEyewear": true,
+    "BlocksFaceCover": true,
+    "BlocksEarpiece": true,
+    "BlocksHeadwear": true,
+    "DeafStrength": "Low"
+  },
+  "672e2e753c97527a5186e73f": {
+    "$type": "RealismMod.Gear, RealismMod",
+    "ItemID": "672e2e753c97527a5186e73f",
+    "Name": "DevTac Ronin 防弹头盔（v2）",
+    "AllowADS": true,
+    "LoyaltyLevel": 5,
+    "ArmorClass": "NIJ IIIA",
+    "CanSpall": false,
+    "SpallReduction": 1,
+    "ReloadSpeedMulti": 1,
+    "Comfort": 1.14,
+    "MaskToUse": "ronin",
+    "TemplateType": "gear",
+    "Price": 34000,
+    "ShortName": "",
+    "Description": "",
+    "Prefab": {
+      "path": "devtac.bundle",
+      "rcid": ""
+    }
+  },
+  "672e2e75e97f1888187ed37d": {
+    "$type": "RealismMod.Gear, RealismMod",
+    "ItemID": "672e2e75e97f1888187ed37d",
+    "Name": "DevTac Ronin 防弹头盔（v2.1）",
+    "AllowADS": true,
+    "LoyaltyLevel": 5,
+    "ArmorClass": "NIJ IIIA",
+    "CanSpall": false,
+    "SpallReduction": 1,
+    "ReloadSpeedMulti": 1,
+    "Comfort": 1.04,
+    "MaskToUse": "ronin",
+    "TemplateType": "gear",
+    "Price": 34000,
+    "ShortName": "",
+    "Description": "",
+    "Prefab": {
+      "path": "devtac_new.bundle",
+      "rcid": ""
+    },
+    "DeafStrength": "None",
+    "BlindnessProtection": 1,
+    "Slots": [
+      {
+        "_name": "mod_equipment_001",
+        "_id": "672e2e7540ce4644e4acb3a7",
+        "_parent": "672e2e75e97f1888187ed37d",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "5a16b9fffcdbcb0176308b34",
+                "5b432b965acfc47a8774094e",
+                "5aa2ba71e5b5b000137b758f",
+                "6033fa48ffd42c541047f728",
+                "5645bcc04bdc2d363b8b4572",
+                "5c165d832e2216398b5a7e36",
+                "5e4d34ca86f774264f758330",
+                "5f60cd6cf2bcbb675b00dac6",
+                "628e4e576d783146b124c64d"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      },
+      {
+        "_id": "672e2e75934c03404cd6bd8c",
+        "_mergeSlotWithChildren": false,
+        "_name": "mod_mount",
+        "_parent": "672e2e75e97f1888187ed37d",
+        "_props": {
+          "filters": [
+            {
+              "Filter": [
+                "5a398b75c4a282000a51a266",
+                "5a398ab9c4a282000c5a9842"
+              ],
+              "Shift": 0
+            }
+          ]
+        },
+        "_proto": "55d30c4c4bdc2db4468b457e",
+        "_required": false
+      },
+      {
+        "_id": "672e2e75c95a4cf2db69d218",
+        "_mergeSlotWithChildren": true,
+        "_name": "mod_nvg",
+        "_parent": "672e2e75e97f1888187ed37d",
+        "_props": {
+          "filters": [
+            {
+              "Filter": [
+                "5c0558060db834001b735271",
+                "5a16b8a9fcdbcb00165aa6ca",
+                "5c066e3a0db834001b7353f0",
+                "6782e59050893b2c1e2cabc8"
+              ],
+              "Shift": 0
+            }
+          ]
+        },
+        "_proto": "55d30c4c4bdc2db4468b457e",
+        "_required": false
+      },
+      {
+        "_name": "Helmet_top",
+        "_id": "672e2e75ed524ba898181a0f",
+        "_parent": "5b4329f05acfc47a86086aa1",
+        "_props": {
+          "filters": [
+            {
+              "locked": true,
+              "Plate": "65711b07a330b8c9060f7b01",
+              "Filter": [
+                "65711b07a330b8c9060f7b01"
+              ],
+              "armorColliders": [
+                "ParietalHead"
+              ],
+              "armorPlateColliders": [],
+              "bluntDamageReduceFromSoftArmor": false
+            }
+          ]
+        },
+        "_required": true,
+        "_mergeSlotWithChildren": true,
+        "_proto": "64479fdf9731c8fadc0642c1"
+      },
+      {
+        "_name": "Helmet_back",
+        "_id": "672e2e75a010fd9cb10fcd9b",
+        "_parent": "5b4329f05acfc47a86086aa1",
+        "_props": {
+          "filters": [
+            {
+              "locked": true,
+              "Plate": "65711b489eb8c145180dbb9d",
+              "Filter": [
+                "65711b489eb8c145180dbb9d"
+              ],
+              "armorColliders": [
+                "BackHead"
+              ],
+              "armorPlateColliders": [],
+              "bluntDamageReduceFromSoftArmor": false
+            }
+          ]
+        },
+        "_required": true,
+        "_mergeSlotWithChildren": true,
+        "_proto": "64479fdf9731c8fadc0642c1"
+      },
+      {
+        "_name": "helmet_eyes",
+        "_id": "672e2e7575c6ab8d789f6107",
+        "_parent": "5b4329f05acfc47a86086aa1",
+        "_props": {
+          "filters": [
+            {
+              "locked": true,
+              "Plate": "65711b9b65daf6aa960c9b1b",
+              "Filter": [
+                "65711b9b65daf6aa960c9b1b"
+              ],
+              "armorColliders": [
+                "Eyes"
+              ],
+              "armorPlateColliders": [],
+              "bluntDamageReduceFromSoftArmor": false
+            }
+          ]
+        },
+        "_required": true,
+        "_mergeSlotWithChildren": true,
+        "_proto": "64479fdf9731c8fadc0642c1"
+      },
+      {
+        "_name": "helmet_jaw",
+        "_id": "672e2e7572a91796b9dafc2a",
+        "_parent": "5b4329f05acfc47a86086aa1",
+        "_props": {
+          "filters": [
+            {
+              "locked": true,
+              "Plate": "65711bc79eb8c145180dbba1",
+              "Filter": [
+                "65711bc79eb8c145180dbba1"
+              ],
+              "armorColliders": [
+                "Jaw",
+                "HeadCommon"
+              ],
+              "armorPlateColliders": [],
+              "bluntDamageReduceFromSoftArmor": false
+            }
+          ]
+        },
+        "_required": true,
+        "_mergeSlotWithChildren": true,
+        "_proto": "64479fdf9731c8fadc0642c1"
+      },
+      {
+        "_name": "Helmet_ears",
+        "_id": "672e2e758c32f90ba060f5d3",
+        "_parent": "5b4329f05acfc47a86086aa1",
+        "_props": {
+          "filters": [
+            {
+              "locked": true,
+              "Plate": "65711b706d197c216005b31c",
+              "Filter": [
+                "65711b706d197c216005b31c"
+              ],
+              "armorColliders": [
+                "Ears"
+              ],
+              "armorPlateColliders": [],
+              "bluntDamageReduceFromSoftArmor": false
+            }
+          ]
+        },
+        "_required": true,
+        "_mergeSlotWithChildren": true,
+        "_proto": "64479fdf9731c8fadc0642c1"
+      }
+    ]
+  },
+  "672e2e7553233ca6956e5358": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "672e2e7553233ca6956e5358",
+    "Name": "AR-15 5.56x45 200毫米枪管",
+    "ModType": "short_barrel",
+    "VerticalRecoil": -3,
+    "HorizontalRecoil": 0,
+    "AutoROF": 12,
+    "SemiROF": 5,
+    "CameraRecoil": 12,
+    "ModMalfunctionChance": 5,
+    "Convergence": 2,
+    "Accuracy": 0,
+    "CenterOfImpact": 0.03,
+    "HeatFactor": 1.1,
+    "CoolFactor": 1.03,
+    "DurabilityBurnModificator": 0.98,
+    "Velocity": 0,
+    "ConflictingItems": [],
+    "Ergonomics": -5,
+    "Weight": 0.6305,
+    "ShotgunDispersion": 1,
+    "Loudness": 0,
+    "LoyaltyLevel": 1,
+    "Description": "",
+    "ShortName": "",
+    "Prefab": {
+      "path": "shortbarrel_ar.bundle",
+      "rcid": ""
+    },
+    "Recoil": -1,
+    "Dispersion": 0,
+    "RecoilAngle": -2
+  },
+  "672e2e75e04c9aca3536136b": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "672e2e75e04c9aca3536136b",
+    "Name": "AR-15 5.56x45 180毫米枪管",
+    "ModType": "short_barrel",
+    "VerticalRecoil": -3,
+    "HorizontalRecoil": -2,
+    "AutoROF": 12,
+    "SemiROF": 5,
+    "CameraRecoil": 12,
+    "ModMalfunctionChance": 5,
+    "Convergence": 3,
+    "Accuracy": 2,
+    "CenterOfImpact": 0.03,
+    "HeatFactor": 1.04,
+    "CoolFactor": 0.96,
+    "DurabilityBurnModificator": 0.96,
+    "Velocity": 0,
+    "ConflictingItems": [],
+    "Ergonomics": -3,
+    "Weight": 0.6305,
+    "ShotgunDispersion": 1,
+    "Loudness": 0,
+    "LoyaltyLevel": 1,
+    "Description": "",
+    "ShortName": "",
+    "Prefab": {
+      "path": "ultra_shortbarrel_ar.bundle",
+      "rcid": ""
+    },
+    "Recoil": 0,
+    "Dispersion": 0,
+    "RecoilAngle": 0
+  },
+  "672e2e75b14ae1b5c91474b4": {
+    "$type": "RealismMod.Gear, RealismMod",
+    "ItemID": "672e2e75b14ae1b5c91474b4",
+    "Name": "Ops-Core FAST MT MODXII（M90 迷彩）",
+    "AllowADS": true,
+    "LoyaltyLevel": 3,
+    "ArmorClass": "NIJ II",
+    "CanSpall": false,
+    "SpallReduction": 1,
+    "ReloadSpeedMulti": 1,
+    "Comfort": 0.9,
+    "TemplateType": "gear",
+    "Price": 28000,
+    "ShortName": "",
+    "Description": "",
+    "Prefab": {
+      "path": "assaulthelmet_2_v2.bundle",
+      "rcid": ""
+    },
+    "Slots": [
+      {
+        "_id": "6771cfcb629eded1746e6e96",
+        "_mergeSlotWithChildren": false,
+        "_name": "mod_equipment_000",
+        "_parent": "672e2e75b14ae1b5c91474b4",
+        "_props": {
+          "filters": [
+            {
+              "Filter": [
+                "66b5f69ea7f72d197e70bcdb",
+                "66b5f6a28ca68c6461709ed8"
+              ],
+              "Shift": 0
+            }
+          ]
+        },
+        "_proto": "55d30c4c4bdc2db4468b457e",
+        "_required": false
+      },
+      {
+        "_name": "mod_equipment_001",
+        "_id": "672e2e7501ea64998aa8ddee",
+        "_parent": "672e2e75b14ae1b5c91474b4",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "5a16b672fcdbcb001912fa83",
+                "5a16b7e1fcdbcb00165aa6c9"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      },
+      {
+        "_name": "mod_equipment_002",
+        "_id": "672e2e756fa913ca9e14520d",
+        "_parent": "672e2e75b14ae1b5c91474b4",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "5c0e66e2d174af02a96252f4",
+                "4D4341544C4153474541520B",
+                "672e37d1ffec1409f4571dd7"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      },
+      {
+        "_id": "672e2e75b574e7e8eeb95089",
+        "_mergeSlotWithChildren": true,
+        "_name": "mod_nvg",
+        "_parent": "672e2e75b14ae1b5c91474b4",
+        "_props": {
+          "filters": [
+            {
+              "Filter": [
+                "5ea058e01dbce517f324b3e2",
+                "5c0558060db834001b735271",
+                "5a16b8a9fcdbcb00165aa6ca",
+                "6782e59050893b2c1e2cabc8"
+              ],
+              "Shift": 0
+            }
+          ]
+        },
+        "_proto": "55d30c4c4bdc2db4468b457e",
+        "_required": false
+      },
+      {
+        "_id": "672e2e75b1706c0fa7705b07",
+        "_mergeSlotWithChildren": false,
+        "_name": "mod_mount",
+        "_parent": "672e2e75b14ae1b5c91474b4",
+        "_props": {
+          "filters": [
+            {
+              "Filter": [
+                "5a398b75c4a282000a51a266",
+                "5a398ab9c4a282000c5a9842"
+              ],
+              "Shift": 0
+            }
+          ]
+        },
+        "_proto": "55d30c4c4bdc2db4468b457e",
+        "_required": false
+      },
+      {
+        "_name": "Helmet_top",
+        "_id": "672e2e754a8f4a9d3ab9f521",
+        "_parent": "672e2e75b14ae1b5c91474b4",
+        "_props": {
+          "filters": [
+            {
+              "locked": true,
+              "Plate": "657f8ec5f4c82973640b234c",
+              "Filter": [
+                "657f8ec5f4c82973640b234c"
+              ],
+              "armorColliders": [
+                "ParietalHead"
+              ],
+              "armorPlateColliders": [],
+              "bluntDamageReduceFromSoftArmor": false
+            }
+          ]
+        },
+        "_required": true,
+        "_mergeSlotWithChildren": true,
+        "_proto": "64479fdf9731c8fadc0642c1"
+      },
+      {
+        "_name": "Helmet_back",
+        "_id": "672e2e75f8c944bb8e0cea59",
+        "_parent": "672e2e75b14ae1b5c91474b4",
+        "_props": {
+          "filters": [
+            {
+              "locked": true,
+              "Plate": "657f8f10f4c82973640b2350",
+              "Filter": [
+                "657f8f10f4c82973640b2350"
+              ],
+              "armorColliders": [
+                "BackHead"
+              ],
+              "armorPlateColliders": [],
+              "bluntDamageReduceFromSoftArmor": false
+            }
+          ]
+        },
+        "_required": true,
+        "_mergeSlotWithChildren": true,
+        "_proto": "64479fdf9731c8fadc0642c1"
+      }
+    ],
+    "BlocksEarpiece": false,
+    "BlocksEyewear": false,
+    "BlocksHeadwear": false,
+    "BlocksFaceCover": false
+  },
+  "672e2e7595d3b3be0daf9055": {
+    "$type": "RealismMod.Gear, RealismMod",
+    "ItemID": "672e2e7595d3b3be0daf9055",
+    "Name": "Ops-Core FAST MT MODXII（黑色）",
+    "AllowADS": true,
+    "LoyaltyLevel": 3,
+    "ArmorClass": "NIJ II",
+    "CanSpall": false,
+    "SpallReduction": 1,
+    "ReloadSpeedMulti": 1,
+    "Comfort": 0.85,
+    "TemplateType": "gear",
+    "Price": 28000,
+    "ShortName": "",
+    "Description": "",
+    "Prefab": {
+      "path": "assaulthelmet_2_blk_v2.bundle",
+      "rcid": ""
+    },
+    "Slots": [
+      {
+        "_id": "6771cfcb629eded1746e6e96",
+        "_mergeSlotWithChildren": false,
+        "_name": "mod_equipment_000",
+        "_parent": "672e2e75b14ae1b5c91474b4",
+        "_props": {
+          "filters": [
+            {
+              "Filter": [
+                "66b5f69ea7f72d197e70bcdb",
+                "66b5f6a28ca68c6461709ed8"
+              ],
+              "Shift": 0
+            }
+          ]
+        },
+        "_proto": "55d30c4c4bdc2db4468b457e",
+        "_required": false
+      },
+      {
+        "_name": "mod_equipment_001",
+        "_id": "672e2e7501ea64998aa8ddee",
+        "_parent": "672e2e75b14ae1b5c91474b4",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "5a16b672fcdbcb001912fa83",
+                "5a16b7e1fcdbcb00165aa6c9"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      },
+      {
+        "_name": "mod_equipment_002",
+        "_id": "672e2e756fa913ca9e14520d",
+        "_parent": "672e2e75b14ae1b5c91474b4",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "5c0e66e2d174af02a96252f4",
+                "4D4341544C4153474541520B",
+                "672e37d1ffec1409f4571dd7"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      },
+      {
+        "_id": "672e2e75b574e7e8eeb95089",
+        "_mergeSlotWithChildren": true,
+        "_name": "mod_nvg",
+        "_parent": "672e2e75b14ae1b5c91474b4",
+        "_props": {
+          "filters": [
+            {
+              "Filter": [
+                "5ea058e01dbce517f324b3e2",
+                "5c0558060db834001b735271",
+                "5a16b8a9fcdbcb00165aa6ca",
+                "6782e59050893b2c1e2cabc8"
+              ],
+              "Shift": 0
+            }
+          ]
+        },
+        "_proto": "55d30c4c4bdc2db4468b457e",
+        "_required": false
+      },
+      {
+        "_id": "672e2e75b1706c0fa7705b07",
+        "_mergeSlotWithChildren": false,
+        "_name": "mod_mount",
+        "_parent": "672e2e75b14ae1b5c91474b4",
+        "_props": {
+          "filters": [
+            {
+              "Filter": [
+                "5a398b75c4a282000a51a266",
+                "5a398ab9c4a282000c5a9842"
+              ],
+              "Shift": 0
+            }
+          ]
+        },
+        "_proto": "55d30c4c4bdc2db4468b457e",
+        "_required": false
+      },
+      {
+        "_name": "Helmet_top",
+        "_id": "672e2e754a8f4a9d3ab9f521",
+        "_parent": "672e2e75b14ae1b5c91474b4",
+        "_props": {
+          "filters": [
+            {
+              "locked": true,
+              "Plate": "657f8ec5f4c82973640b234c",
+              "Filter": [
+                "657f8ec5f4c82973640b234c"
+              ],
+              "armorColliders": [
+                "ParietalHead"
+              ],
+              "armorPlateColliders": [],
+              "bluntDamageReduceFromSoftArmor": false
+            }
+          ]
+        },
+        "_required": true,
+        "_mergeSlotWithChildren": true,
+        "_proto": "64479fdf9731c8fadc0642c1"
+      },
+      {
+        "_name": "Helmet_back",
+        "_id": "672e2e75f8c944bb8e0cea59",
+        "_parent": "672e2e75b14ae1b5c91474b4",
+        "_props": {
+          "filters": [
+            {
+              "locked": true,
+              "Plate": "657f8f10f4c82973640b2350",
+              "Filter": [
+                "657f8f10f4c82973640b2350"
+              ],
+              "armorColliders": [
+                "BackHead"
+              ],
+              "armorPlateColliders": [],
+              "bluntDamageReduceFromSoftArmor": false
+            }
+          ]
+        },
+        "_required": true,
+        "_mergeSlotWithChildren": true,
+        "_proto": "64479fdf9731c8fadc0642c1"
+      }
+    ],
+    "BlocksEarpiece": false,
+    "BlocksEyewear": false,
+    "BlocksHeadwear": false,
+    "BlocksFaceCover": false
+  },
+  "672e2e75b5b680c7ee6aa408": {
+    "$type": "RealismMod.Gear, RealismMod",
+    "ItemID": "672e2e75b5b680c7ee6aa408",
+    "Name": "Ops-Core FAST MT MODXII（Multicam 迷彩）",
+    "AllowADS": true,
+    "LoyaltyLevel": 3,
+    "ArmorClass": "NIJ II",
+    "CanSpall": false,
+    "SpallReduction": 1,
+    "ReloadSpeedMulti": 1,
+    "Comfort": 1,
+    "TemplateType": "gear",
+    "Price": 28000,
+    "ShortName": "",
+    "Description": "",
+    "Prefab": {
+      "path": "assaulthelmet_2_od_v2.bundle",
+      "rcid": ""
+    },
+    "Slots": [
+      {
+        "_id": "6771cfcb629eded1746e6e96",
+        "_mergeSlotWithChildren": false,
+        "_name": "mod_equipment_000",
+        "_parent": "672e2e75b14ae1b5c91474b4",
+        "_props": {
+          "filters": [
+            {
+              "Filter": [
+                "66b5f69ea7f72d197e70bcdb",
+                "66b5f6a28ca68c6461709ed8"
+              ],
+              "Shift": 0
+            }
+          ]
+        },
+        "_proto": "55d30c4c4bdc2db4468b457e",
+        "_required": false
+      },
+      {
+        "_name": "mod_equipment_001",
+        "_id": "672e2e7501ea64998aa8ddee",
+        "_parent": "672e2e75b14ae1b5c91474b4",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "5a16b672fcdbcb001912fa83",
+                "5a16b7e1fcdbcb00165aa6c9"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      },
+      {
+        "_name": "mod_equipment_002",
+        "_id": "672e2e756fa913ca9e14520d",
+        "_parent": "672e2e75b14ae1b5c91474b4",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "5c0e66e2d174af02a96252f4",
+                "4D4341544C4153474541520B",
+                "672e37d1ffec1409f4571dd7"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      },
+      {
+        "_id": "672e2e75b574e7e8eeb95089",
+        "_mergeSlotWithChildren": true,
+        "_name": "mod_nvg",
+        "_parent": "672e2e75b14ae1b5c91474b4",
+        "_props": {
+          "filters": [
+            {
+              "Filter": [
+                "5ea058e01dbce517f324b3e2",
+                "5c0558060db834001b735271",
+                "5a16b8a9fcdbcb00165aa6ca",
+                "6782e59050893b2c1e2cabc8"
+              ],
+              "Shift": 0
+            }
+          ]
+        },
+        "_proto": "55d30c4c4bdc2db4468b457e",
+        "_required": false
+      },
+      {
+        "_id": "672e2e75b1706c0fa7705b07",
+        "_mergeSlotWithChildren": false,
+        "_name": "mod_mount",
+        "_parent": "672e2e75b14ae1b5c91474b4",
+        "_props": {
+          "filters": [
+            {
+              "Filter": [
+                "5a398b75c4a282000a51a266",
+                "5a398ab9c4a282000c5a9842"
+              ],
+              "Shift": 0
+            }
+          ]
+        },
+        "_proto": "55d30c4c4bdc2db4468b457e",
+        "_required": false
+      },
+      {
+        "_name": "Helmet_top",
+        "_id": "672e2e754a8f4a9d3ab9f521",
+        "_parent": "672e2e75b14ae1b5c91474b4",
+        "_props": {
+          "filters": [
+            {
+              "locked": true,
+              "Plate": "657f8ec5f4c82973640b234c",
+              "Filter": [
+                "657f8ec5f4c82973640b234c"
+              ],
+              "armorColliders": [
+                "ParietalHead"
+              ],
+              "armorPlateColliders": [],
+              "bluntDamageReduceFromSoftArmor": false
+            }
+          ]
+        },
+        "_required": true,
+        "_mergeSlotWithChildren": true,
+        "_proto": "64479fdf9731c8fadc0642c1"
+      },
+      {
+        "_name": "Helmet_back",
+        "_id": "672e2e75f8c944bb8e0cea59",
+        "_parent": "672e2e75b14ae1b5c91474b4",
+        "_props": {
+          "filters": [
+            {
+              "locked": true,
+              "Plate": "657f8f10f4c82973640b2350",
+              "Filter": [
+                "657f8f10f4c82973640b2350"
+              ],
+              "armorColliders": [
+                "BackHead"
+              ],
+              "armorPlateColliders": [],
+              "bluntDamageReduceFromSoftArmor": false
+            }
+          ]
+        },
+        "_required": true,
+        "_mergeSlotWithChildren": true,
+        "_proto": "64479fdf9731c8fadc0642c1"
+      }
+    ],
+    "BlocksEarpiece": false,
+    "BlocksEyewear": false,
+    "BlocksHeadwear": false,
+    "BlocksFaceCover": false
+  },
+  "672e2e753f9d1074231fa6a2": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "672e2e753f9d1074231fa6a2",
+    "Name": "M700 7.62x51 15英寸螺纹枪管",
+    "ModType": "",
+    "VerticalRecoil": -2,
+    "HorizontalRecoil": -2,
+    "AutoROF": 0,
+    "SemiROF": 0,
+    "ModMalfunctionChance": 0,
+    "Convergence": 2,
+    "Accuracy": 0,
+    "CenterOfImpact": 0.04,
+    "HeatFactor": 1.08,
+    "CoolFactor": 1.01,
+    "DurabilityBurnModificator": 0.98,
+    "Velocity": 1,
+    "ConflictingItems": [],
+    "Ergonomics": -8,
+    "Weight": 0.98,
+    "ShotgunDispersion": 1,
+    "Loudness": 0,
+    "LoyaltyLevel": 2,
+    "Description": "",
+    "ShortName": "",
+    "Prefab": {
+      "path": "barrel_m700.bundle",
+      "rcid": ""
+    },
+    "Recoil": -2,
+    "ExtraSizeLeft": 2,
+    "Width": 2,
+    "Dispersion": 1,
+    "RecoilAngle": -1
+  },
+  "672e2e75c7c7c5232e513062": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "672e2e75c7c7c5232e513062",
+    "Name": "AK AKademia Bastion 透明防尘盖",
+    "ModType": "mount",
+    "ModMalfunctionChance": -5,
+    "Accuracy": 0,
+    "HeatFactor": 1,
+    "CoolFactor": 1,
+    "DurabilityBurnModificator": 0.95,
+    "ConflictingItems": [
+      "5947db3f86f77447880cf76f",
+      "57486e672459770abd687134",
+      "5ac733a45acfc400192630e2",
+      "5649b0544bdc2d1b2b8b458a",
+      "5ac72e475acfc400180ae6fe",
+      "59d650cf86f7741b846413a4",
+      "5a0eb980fcdbcb001a3b00a6",
+      "59e8977386f77415a553c453",
+      "5649d9a14bdc2d79388b4580",
+      "5c82342f2e221644f31c060e",
+      "576fd4ec2459777f0b518431",
+      "5c82343a2e221644f31c0611",
+      "5cf638cbd7f00c06595bc936",
+      "5a7c74b3e899ef0014332c29",
+      "591ee00d86f774592f7b841e",
+      "5d0a29ead7ad1a0026013f27",
+      "57acb6222459771ec34b5cb0",
+      "5c61a40d2e2216001403158d",
+      "5c90c3622e221601da359851",
+      "628a7b23b0f75035732dd565"
+    ],
+    "Ergonomics": -1,
+    "Weight": 0.237,
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "ChamberSpeed": 0,
+    "LoyaltyLevel": 2,
+    "ShortName": "",
+    "Description": "",
+    "Prefab": {
+      "path": "bastion_dustcover_trans.bundle",
+      "rcid": ""
+    },
+    "Dispersion": 0,
+    "AimStability": 0,
+    "Handling": 0
+  },
+  "672e2e759bff586ad22ecbc7": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "672e2e759bff586ad22ecbc7",
+    "Name": "AR-15 Daniel Defense 拉机柄",
+    "ModType": "",
+    "ReloadSpeed": 0,
+    "ConflictingItems": [],
+    "FixSpeed": 0,
+    "Ergonomics": 0,
+    "Weight": 0.04,
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": -1,
+    "ChamberSpeed": 30,
+    "LoyaltyLevel": 4,
+    "ShortName": "",
+    "Description": "",
+    "Prefab": {
+      "path": "ar_charging_handle_1.bundle",
+      "rcid": ""
+    },
+    "ModMalfunctionChance": 1
+  },
+  "672e2e751a561533f23a2635": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "672e2e751a561533f23a2635",
+    "Name": "AR-15 Daniel Defense 15英寸护木",
+    "ModType": "",
+    "VerticalRecoil": -5,
+    "HorizontalRecoil": -3,
+    "Dispersion": 0,
+    "AimSpeed": 2,
+    "Ergonomics": 2,
+    "Accuracy": 12,
+    "HeatFactor": 0.98,
+    "CoolFactor": 0.99,
+    "ConflictingItems": [
+      "5a34fbadc4a28200741e230a",
+      "5ae30e795acfc408fb139a0b",
+      "56ea8d2fd2720b7c698b4570",
+      "55d35ee94bdc2d61338b4568",
+      "55d3632e4bdc2d972f8b4569",
+      "603372b4da11d6478d5a07ff",
+      "603372d154072b51b239f9e1"
+    ],
+    "Weight": 0.22,
+    "LoyaltyLevel": 4,
+    "Handling": 3,
+    "AimStability": 6,
+    "ShortName": "",
+    "Description": "",
+    "Prefab": {
+      "path": "dd_handguard_long.bundle",
+      "rcid": ""
+    },
+    "DurabilityBurnModificator": 1
+  },
+  "672e2e7578374ac936625f9a": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "672e2e7578374ac936625f9a",
+    "Name": "AR-15 Daniel Defense 15英寸护木（FDE）",
+    "ModType": "",
+    "VerticalRecoil": -5,
+    "HorizontalRecoil": -4,
+    "Dispersion": 0,
+    "AimSpeed": 1,
+    "Ergonomics": 3,
+    "Accuracy": 12,
+    "HeatFactor": 1.01,
+    "CoolFactor": 0.99,
+    "ConflictingItems": [
+      "5a34fbadc4a28200741e230a",
+      "5ae30e795acfc408fb139a0b",
+      "56ea8d2fd2720b7c698b4570",
+      "55d35ee94bdc2d61338b4568",
+      "55d3632e4bdc2d972f8b4569",
+      "603372b4da11d6478d5a07ff",
+      "603372d154072b51b239f9e1"
+    ],
+    "Weight": 0.22,
+    "LoyaltyLevel": 4,
+    "Handling": 4,
+    "AimStability": 7,
+    "ShortName": "",
+    "Description": "",
+    "Prefab": {
+      "path": "dd_handguard_long_v2.bundle",
+      "rcid": ""
+    },
+    "DurabilityBurnModificator": 1
+  },
+  "672e2e75c076d2093b05c764": {
+    "$type": "RealismMod.Gear, RealismMod",
+    "ItemID": "672e2e75c076d2093b05c764",
+    "Name": "Mystery Ranch NICE COMM 3 BVS 背负系统（黑色）",
+    "AllowADS": true,
+    "LoyaltyLevel": 2,
+    "ReloadSpeedMulti": 1,
+    "Comfort": 0.85,
+    "speedPenaltyPercent": -3.69,
+    "mousePenalty": 0,
+    "weaponErgonomicPenalty": 0,
+    "ShortName": "",
+    "Description": "",
+    "Prefab": {
+      "path": "backpack_boss_birdeye_blk.bundle",
+      "rcid": ""
+    },
+    "Width": 4,
+    "Height": 5,
+    "Weight": 4.5,
+    "Grids": [
+      {
+        "_name": "main",
+        "_id": "66b169fbc879bf3c92054735",
+        "_parent": "672e2e75c076d2093b05c764",
+        "_props": {
+          "filters": [
+            {
+              "Filter": [
+                "54009119af1c881c07000029"
+              ],
+              "ExcludedFilter": [
+                "5448bf274bdc2dfc2f8b456a",
+                "5c093db286f7740a1b2617e3",
+                "5e2af55f86f7746d4159f07c",
+                "5c0a840b86f7742ffa4f2482",
+                "5b7c710788a4506dec015957",
+                "5c127c4486f7745625356c13",
+                "5aafbcd986f7745e590fff23",
+                "59fb016586f7746d0d4b423a",
+                "59fb042886f7746c5005a7b2",
+                "59fb023c86f7746d0d4b423c",
+                "5b6d9ce188a4501afc1b2b25"
+              ]
+            }
+          ],
+          "cellsH": 5,
+          "cellsV": 7,
+          "minCount": 0,
+          "maxCount": 0,
+          "maxWeight": 0,
+          "isSortingTable": false
+        },
+        "_proto": "55d329c24bdc2d892f8b4567"
+      }
+    ]
+  },
+  "672e2e75b9082dbf88dd1dbd": {
+    "$type": "RealismMod.Gear, RealismMod",
+    "ItemID": "672e2e75b9082dbf88dd1dbd",
+    "Name": "Mystery Ranch NICE COMM 3 BVS 背负系统（M90）",
+    "AllowADS": true,
+    "LoyaltyLevel": 2,
+    "ReloadSpeedMulti": 1,
+    "Comfort": 0.88,
+    "speedPenaltyPercent": -3.14,
+    "mousePenalty": 0,
+    "weaponErgonomicPenalty": 0,
+    "ShortName": "",
+    "Description": "",
+    "Prefab": {
+      "path": "backpack_boss_birdeye_m90.bundle",
+      "rcid": ""
+    },
+    "Width": 4,
+    "Height": 5,
+    "Weight": 4.5,
+    "Grids": [
+      {
+        "_name": "main",
+        "_id": "66b16a00b1d1144f3eed22ee",
+        "_parent": "672e2e75b9082dbf88dd1dbd",
+        "_props": {
+          "filters": [
+            {
+              "Filter": [
+                "54009119af1c881c07000029"
+              ],
+              "ExcludedFilter": [
+                "5448bf274bdc2dfc2f8b456a",
+                "5c093db286f7740a1b2617e3",
+                "5e2af55f86f7746d4159f07c",
+                "5c0a840b86f7742ffa4f2482",
+                "5b7c710788a4506dec015957",
+                "5c127c4486f7745625356c13",
+                "5aafbcd986f7745e590fff23",
+                "59fb016586f7746d0d4b423a",
+                "59fb042886f7746c5005a7b2",
+                "59fb023c86f7746d0d4b423c",
+                "5b6d9ce188a4501afc1b2b25"
+              ]
+            }
+          ],
+          "cellsH": 5,
+          "cellsV": 7,
+          "minCount": 0,
+          "maxCount": 0,
+          "maxWeight": 0,
+          "isSortingTable": false
+        },
+        "_proto": "55d329c24bdc2d892f8b4567"
+      }
+    ]
+  },
+  "672e2e753a1ea309958b56cc": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "672e2e753a1ea309958b56cc",
+    "Name": "AR-15 BCM MCMR-10 护木（FDE色）",
+    "ModType": "",
+    "VerticalRecoil": -5,
+    "HorizontalRecoil": -4,
+    "Dispersion": 0,
+    "AimSpeed": 1,
+    "Ergonomics": 2,
+    "Accuracy": 8,
+    "HeatFactor": 1,
+    "CoolFactor": 0.93,
+    "ConflictingItems": [
+      "5a34fbadc4a28200741e230a",
+      "5ae30e795acfc408fb139a0b",
+      "56ea8d2fd2720b7c698b4570"
+    ],
+    "Weight": 0.209,
+    "LoyaltyLevel": 2,
+    "AimStability": 8,
+    "ShortName": "",
+    "Description": "",
+    "Prefab": {
+      "path": "bcm_handguard_fde.bundle",
+      "rcid": ""
+    },
+    "Handling": 6,
+    "DurabilityBurnModificator": 1
+  },
+  "672e2e75bd4a44818c26b1b0": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "672e2e75bd4a44818c26b1b0",
+    "Name": "AR-15 BCM MCMR-10 护木",
+    "ModType": "",
+    "VerticalRecoil": -6,
+    "HorizontalRecoil": -6,
+    "Dispersion": 0,
+    "AimSpeed": 4,
+    "Ergonomics": 2,
+    "Accuracy": 8,
+    "HeatFactor": 1.04,
+    "CoolFactor": 0.94,
+    "ConflictingItems": [
+      "5a34fbadc4a28200741e230a",
+      "5ae30e795acfc408fb139a0b",
+      "56ea8d2fd2720b7c698b4570"
+    ],
+    "Weight": 0.209,
+    "LoyaltyLevel": 2,
+    "AimStability": 10,
+    "ShortName": "",
+    "Description": "",
+    "Prefab": {
+      "path": "bcm_handguard_blk.bundle",
+      "rcid": ""
+    },
+    "Handling": 5,
+    "DurabilityBurnModificator": 1
+  },
+  "672e2e75dad19c7115e2489e": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "672e2e75dad19c7115e2489e",
+    "Name": "AR-15 Strike Industries 高级机匣延伸缓冲管（带转接环）",
+    "ModType": "buffer",
+    "VerticalRecoil": 1,
+    "HorizontalRecoil": 0,
+    "Dispersion": -10,
+    "CameraRecoil": 5,
+    "AimSpeed": 0,
+    "Ergonomics": 0,
+    "Accuracy": 0,
+    "HasShoulderContact": false,
+    "BlocksFolding": false,
+    "AutoROF": 5,
+    "SemiROF": 10,
+    "ModMalfunctionChance": 30,
+    "StockAllowADS": false,
+    "ConflictingItems": [],
+    "Weight": 0.11,
+    "DurabilityBurnModificator": 1.08,
+    "Convergence": 10,
+    "LoyaltyLevel": 4,
+    "ShortName": "",
+    "Description": "",
+    "Prefab": {
+      "path": "ar_adapter_stock.bundle",
+      "rcid": ""
+    }
+  },
+  "672e2e7504b1f1d5b0e4209c": {
+    "$type": "RealismMod.Gear, RealismMod",
+    "ItemID": "672e2e7504b1f1d5b0e4209c",
+    "Name": "Scott FM3 防护面罩",
+    "AllowADS": true,
+    "LoyaltyLevel": 4,
+    "ReloadSpeedMulti": 1,
+    "BlocksMouth": true,
+    "speedPenaltyPercent": -6,
+    "mousePenalty": 0,
+    "weaponErgonomicPenalty": -20,
+    "IsGasMask": true,
+    "GasProtection": 0.86,
+    "RadProtection": 0.6,
+    "MaskToUse": "gp5",
+    "ShortName": "",
+    "Description": "",
+    "Prefab": {
+      "path": "gasmask2.bundle",
+      "rcid": ""
+    },
+    "SpallReduction": 1
+  },
+  "672e2e756803734b60f5ac1e": {
+    "$type": "RealismMod.Gear, RealismMod",
+    "ItemID": "672e2e756803734b60f5ac1e",
+    "Name": "GP-9 防毒面具",
+    "AllowADS": true,
+    "LoyaltyLevel": 4,
+    "ReloadSpeedMulti": 1,
+    "BlocksMouth": true,
+    "speedPenaltyPercent": -6,
+    "mousePenalty": 0,
+    "weaponErgonomicPenalty": -20,
+    "IsGasMask": true,
+    "GasProtection": 0.86,
+    "RadProtection": 0.6,
+    "MaskToUse": "gp5",
+    "ShortName": "",
+    "Description": "",
+    "Prefab": {
+      "path": "gasmask3.bundle",
+      "rcid": ""
+    },
+    "SpallReduction": 1
+  },
+  "672e2e7521f4ccc8cc6d8335": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "672e2e7521f4ccc8cc6d8335",
+    "Name": "M16 Daniel Defense 14英寸护木",
+    "ModType": "",
+    "VerticalRecoil": -6,
+    "HorizontalRecoil": -3,
+    "Dispersion": -1.5,
+    "AimSpeed": 0,
+    "Ergonomics": 4,
+    "Accuracy": 12,
+    "HeatFactor": 1.02,
+    "CoolFactor": 0.98,
+    "ConflictingItems": [
+      "5d440b93a4b9364276578d4b",
+      "5f2aa46b878ef416f538b567",
+      "5d440b9fa4b93601354d480c",
+      "55d3632e4bdc2d972f8b4569",
+      "5c0e2f94d174af029f650d56",
+      "55d35ee94bdc2d61338b4568",
+      "63d3d44a2a49307baf09386d",
+      "63d3ce0446bd475bcb50f55f",
+      "606587a88900dc2d9a55b659",
+      "5df8e4080b92095fd441e594",
+      "5a367e5dc4a282000e49738f"
+    ],
+    "Weight": 0.58,
+    "LoyaltyLevel": 2,
+    "Handling": 3,
+    "AimStability": 9,
+    "ShortName": "",
+    "Description": "",
+    "Prefab": {
+      "path": "m16_handguard.bundle",
+      "rcid": ""
+    },
+    "DurabilityBurnModificator": 1
+  },
+  "672e2e75929d47eb157491c8": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "672e2e75929d47eb157491c8",
+    "Name": "M16 Daniel Defense 14 英寸护木",
+    "ModType": "",
+    "VerticalRecoil": -5,
+    "HorizontalRecoil": -5,
+    "Dispersion": -1.5,
+    "AimSpeed": 2,
+    "Ergonomics": 3,
+    "Accuracy": 12,
+    "HeatFactor": 1.01,
+    "CoolFactor": 0.95,
+    "ConflictingItems": [
+      "5d440b93a4b9364276578d4b",
+      "5f2aa46b878ef416f538b567",
+      "5d440b9fa4b93601354d480c",
+      "55d3632e4bdc2d972f8b4569",
+      "5c0e2f94d174af029f650d56",
+      "55d35ee94bdc2d61338b4568",
+      "63d3d44a2a49307baf09386d",
+      "63d3ce0446bd475bcb50f55f",
+      "606587a88900dc2d9a55b659",
+      "5df8e4080b92095fd441e594",
+      "5a367e5dc4a282000e49738f"
+    ],
+    "Weight": 0.58,
+    "LoyaltyLevel": 2,
+    "Handling": 4,
+    "AimStability": 6,
+    "ShortName": "",
+    "Description": "",
+    "Prefab": {
+      "path": "m16_handguard_blk.bundle",
+      "rcid": ""
+    },
+    "DurabilityBurnModificator": 1
+  },
+  "672e2e757e517ac4552086d1": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "672e2e757e517ac4552086d1",
+    "Name": "M16 5.56x45 18英寸枪管",
+    "ModType": "",
+    "VerticalRecoil": -3,
+    "HorizontalRecoil": 0,
+    "AutoROF": 0,
+    "SemiROF": 0,
+    "CameraRecoil": 0,
+    "ModMalfunctionChance": 0,
+    "Convergence": 3,
+    "Accuracy": 0,
+    "CenterOfImpact": 0.02,
+    "HeatFactor": 1.09,
+    "CoolFactor": 1.01,
+    "DurabilityBurnModificator": 0.98,
+    "Velocity": 0,
+    "ConflictingItems": [
+      "5c0e2f5cd174af02a012cfc9",
+      "5ae30db85acfc408fb139a05",
+      "55d459824bdc2d892f8b4573",
+      "5c78f2792e221600106f4683",
+      "5c78f26f2e221601da3581d1",
+      "5d00e0cbd7ad1a6c6566a42d",
+      "5d00f63bd7ad1a59283b1c1e"
+    ],
+    "Ergonomics": 0,
+    "Weight": 0.7326,
+    "ShotgunDispersion": 1,
+    "Loudness": 0,
+    "LoyaltyLevel": 2,
+    "Description": "",
+    "ShortName": "",
+    "Slots": [
+      {
+        "_name": "mod_muzzle",
+        "_id": "672e2e75e00c20a6ebcf59e3",
+        "_parent": "5d440b93a4b9364276578d4b",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "5b3a16655acfc40016387a2a",
+                "5c7e5f112e221600106f4ede",
+                "5c0fafb6d174af02a96260ba",
+                "612e0cfc8004cc50514c2d9e",
+                "5cf6937cd7f00c056c53fb39",
+                "544a38634bdc2d58388b4568",
+                "5cff9e5ed7ad1a09407397d4",
+                "5c48a2a42e221602b66d1e07",
+                "5f6372e2865db925d54f3869",
+                "615d8e2f1cb55961fa0fd9a4",
+                "56ea8180d2720bf2698b456a",
+                "5d02676dd7ad1a049e54f6dc",
+                "56ea6fafd2720b844b8b4593",
+                "5943ee5a86f77413872d25ec",
+                "609269c3b0e443224b421cc1",
+                "5c7fb51d2e2216001219ce11",
+                "5ea172e498dacb342978818e",
+                "5c6d710d2e22165df16b81e7",
+                "612e0e55a112697a4b3a66e7",
+                "5d440625a4b9361eec4ae6c5",
+                "5cc9b815d7f00c000e2579d6",
+                "5a7c147ce899ef00150bd8b8",
+                "5c7954d52e221600106f4cc7",
+                "59bffc1f86f77435b128b872",
+                "5a9fbb84a2750c00137fa685",
+                "626667e87379c44d557b7550",
+                "62669bccdb9ebb4daa44cd14",
+                "626a74340be03179a165e30c",
+                "6386120cd6baa055ad1e201c",
+                "63ac5c9658d0485fc039f0b8"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      },
+      {
+        "_name": "mod_gas_block",
+        "_id": "672e2e7520f858c2014afdaf",
+        "_parent": "5d440b93a4b9364276578d4b",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "5ae30e795acfc408fb139a0b",
+                "56eabcd4d2720b66698b4574",
+                "5d00ec68d7ad1a04a067e5be",
+                "56ea8d2fd2720b7c698b4570"
+              ]
+            }
+          ]
+        },
+        "_required": true,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      },
+      {
+        "_name": "mod_launcher",
+        "_id": "672e2e75d1049bca353a3cbe",
+        "_parent": "55d3632e4bdc2d972f8b4569",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "6357c98711fb55120211f7e1"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      }
+    ],
+    "Prefab": {
+      "path": "barrel_ar15_m16_18in.bundle",
+      "rcid": ""
+    },
+    "Dispersion": 4,
+    "RecoilAngle": 0
+  },
+  "672e2e7535b901cc0cb57e73": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "672e2e7535b901cc0cb57e73",
+    "Name": "M16 5.56x45 20英寸枪管",
+    "ModType": "",
+    "VerticalRecoil": -3,
+    "HorizontalRecoil": -2,
+    "AutoROF": 0,
+    "SemiROF": 0,
+    "CameraRecoil": 0,
+    "ModMalfunctionChance": 0,
+    "Convergence": 6,
+    "Accuracy": 1,
+    "CenterOfImpact": 0.05,
+    "HeatFactor": 1.07,
+    "CoolFactor": 1,
+    "DurabilityBurnModificator": 1.01,
+    "Velocity": 0,
+    "ConflictingItems": [
+      "5c0e2f5cd174af02a012cfc9",
+      "5ae30db85acfc408fb139a05",
+      "55d459824bdc2d892f8b4573",
+      "5c78f2792e221600106f4683",
+      "5c78f26f2e221601da3581d1",
+      "5d00e0cbd7ad1a6c6566a42d",
+      "5d00f63bd7ad1a59283b1c1e"
+    ],
+    "Ergonomics": 0,
+    "Weight": 0.7326,
+    "ShotgunDispersion": 1,
+    "Loudness": 0,
+    "LoyaltyLevel": 2,
+    "Description": "",
+    "ShortName": "",
+    "Slots": [
+      {
+        "_name": "mod_muzzle",
+        "_id": "672e2e750361a3758abbf398",
+        "_parent": "5d440b93a4b9364276578d4b",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "5b3a16655acfc40016387a2a",
+                "5c7e5f112e221600106f4ede",
+                "5c0fafb6d174af02a96260ba",
+                "612e0cfc8004cc50514c2d9e",
+                "5cf6937cd7f00c056c53fb39",
+                "544a38634bdc2d58388b4568",
+                "5cff9e5ed7ad1a09407397d4",
+                "5c48a2a42e221602b66d1e07",
+                "5f6372e2865db925d54f3869",
+                "615d8e2f1cb55961fa0fd9a4",
+                "56ea8180d2720bf2698b456a",
+                "5d02676dd7ad1a049e54f6dc",
+                "56ea6fafd2720b844b8b4593",
+                "5943ee5a86f77413872d25ec",
+                "609269c3b0e443224b421cc1",
+                "5c7fb51d2e2216001219ce11",
+                "5ea172e498dacb342978818e",
+                "5c6d710d2e22165df16b81e7",
+                "612e0e55a112697a4b3a66e7",
+                "5d440625a4b9361eec4ae6c5",
+                "5cc9b815d7f00c000e2579d6",
+                "5a7c147ce899ef00150bd8b8",
+                "5c7954d52e221600106f4cc7",
+                "59bffc1f86f77435b128b872",
+                "5a9fbb84a2750c00137fa685",
+                "626667e87379c44d557b7550",
+                "62669bccdb9ebb4daa44cd14",
+                "626a74340be03179a165e30c",
+                "6386120cd6baa055ad1e201c",
+                "63ac5c9658d0485fc039f0b8"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      },
+      {
+        "_name": "mod_gas_block",
+        "_id": "672e2e755a8ebaa0d9909b81",
+        "_parent": "5d440b93a4b9364276578d4b",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "5ae30e795acfc408fb139a0b",
+                "56eabcd4d2720b66698b4574",
+                "5d00ec68d7ad1a04a067e5be",
+                "56ea8d2fd2720b7c698b4570"
+              ]
+            }
+          ]
+        },
+        "_required": true,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      },
+      {
+        "_name": "mod_launcher",
+        "_id": "672e2e755b3f3b35209dcac1",
+        "_parent": "55d3632e4bdc2d972f8b4569",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "6357c98711fb55120211f7e1"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      }
+    ],
+    "Prefab": {
+      "path": "barrel_ar15_m16_20in.bundle",
+      "rcid": ""
+    },
+    "Dispersion": 7,
+    "RecoilAngle": -4
+  },
+  "672e2e75a16c1d2034c384cf": {
+    "$type": "RealismMod.Gear, RealismMod",
+    "ItemID": "672e2e75a16c1d2034c384cf",
+    "Name": "TGC 战术腰带（棕色）",
+    "AllowADS": true,
+    "LoyaltyLevel": 1,
+    "ArmorClass": "",
+    "CanSpall": false,
+    "SpallReduction": 1,
+    "ReloadSpeedMulti": 1.04,
+    "Comfort": 1.04,
+    "speedPenaltyPercent": -0.46,
+    "mousePenalty": 0,
+    "weaponErgonomicPenalty": 0,
+    "Description": "",
+    "ShortName": "",
+    "Width": 2,
+    "Height": 1,
+    "Prefab": {
+      "path": "combatbelt1.bundle",
+      "rcid": ""
+    }
+  },
+  "672e2e750ea81b3b93b943ac": {
+    "$type": "RealismMod.Gear, RealismMod",
+    "ItemID": "672e2e750ea81b3b93b943ac",
+    "Name": "TGC 战术腰带（黑色）",
+    "AllowADS": true,
+    "LoyaltyLevel": 1,
+    "ArmorClass": "",
+    "CanSpall": false,
+    "SpallReduction": 1,
+    "ReloadSpeedMulti": 1.08,
+    "Comfort": 1.06,
+    "speedPenaltyPercent": -0.33,
+    "mousePenalty": 0,
+    "weaponErgonomicPenalty": 0,
+    "Description": "",
+    "ShortName": "",
+    "Width": 2,
+    "Height": 1,
+    "Prefab": {
+      "path": "combatbelt1_blk.bundle",
+      "rcid": ""
+    }
+  },
+  "672e2e75c3973efd2d011d2f": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "672e2e75c3973efd2d011d2f",
+    "Name": "Magpul 5.56/7.62 战术改装弹匣",
+    "ModType": "",
+    "ReloadSpeed": 1,
+    "Ergonomics": -2,
+    "MalfunctionChance": 0.015,
+    "LoadUnloadModifier": 8,
+    "CheckTimeModifier": 3,
+    "ConflictingItems": [],
+    "Weight": 0.138,
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "LoyaltyLevel": 3,
+    "ShortName": "",
+    "Description": "",
+    "Prefab": {
+      "path": "ar_magazine.bundle",
+      "rcid": ""
+    },
+    "Cartridges": [
+      {
+        "_id": "668aaadce0c27026094afbc3",
+        "_max_count": 30,
+        "_name": "cartridges",
+        "_parent": "672e2e755cebe435a3b4dba5",
+        "_props": {
+          "filters": [
+            {
+              "Filter": [
+                "59e6920f86f77411d82aa167",
+                "59e6927d86f77411da468256",
+                "54527a984bdc2d4e668b4567",
+                "54527ac44bdc2d36668b4567",
+                "59e68f6f86f7746c9f75e846",
+                "59e6906286f7746c9f75e847",
+                "59e690b686f7746c9f75e848",
+                "59e6918f86f7746c9f75e849",
+                "60194943740c5d77f6705eea",
+                "601949593ae8f707c4608daa",
+                "5c0d5ae286f7741e46554302",
+                "64b8725c4b75259c590fa899",
+                "5fbe3ffdf8b6a877a729ea82",
+                "5fd20ff893a8961fc660a954",
+                "619636be6db0f2477964e710",
+                "6196364158ef8c428c287d9f",
+                "6196365d58ef8c428c287da1",
+                "672e2e75195420ccca420a2f"
+              ]
+            }
+          ]
+        },
+        "_proto": "5748538b2459770af276a261"
+      }
+    ],
+    "ModMalfunctionChance": 0.69,
+    "AimSpeed": -3,
+    "Handling": -1
+  },
+  "672e2e754e6844af8e197b00": {
+    "$type": "RealismMod.Gear, RealismMod",
+    "ItemID": "672e2e754e6844af8e197b00",
+    "Name": "MSA TC2000 ACH MICH 头盔",
+    "AllowADS": true,
+    "LoyaltyLevel": 3,
+    "ArmorClass": "NIJ II",
+    "CanSpall": false,
+    "SpallReduction": 1,
+    "ReloadSpeedMulti": 1,
+    "Comfort": 1.03,
+    "TemplateType": "gear",
+    "Price": 28000,
+    "ShortName": "",
+    "Description": "",
+    "Prefab": {
+      "path": "assaulthelmet3.bundle",
+      "rcid": ""
+    },
+    "Slots": [
+      {
+        "_id": "672e2e75078da411c83aa9d9",
+        "_mergeSlotWithChildren": true,
+        "_name": "mod_nvg",
+        "_parent": "672e2e754e6844af8e197b00",
+        "_props": {
+          "filters": [
+            {
+              "Filter": [
+                "5ea058e01dbce517f324b3e2",
+                "5c0558060db834001b735271",
+                "5a16b8a9fcdbcb00165aa6ca",
+                "6782e59050893b2c1e2cabc8"
+              ],
+              "Shift": 0
+            }
+          ]
+        },
+        "_proto": "55d30c4c4bdc2db4468b457e",
+        "_required": false
+      },
+      {
+        "_name": "Helmet_top",
+        "_id": "672e2e751619b4e231e48ee4",
+        "_parent": "672e2e754e6844af8e197b00",
+        "_props": {
+          "filters": [
+            {
+              "locked": true,
+              "Plate": "657f8ec5f4c82973640b234c",
+              "Filter": [
+                "657f8ec5f4c82973640b234c"
+              ],
+              "armorColliders": [
+                "ParietalHead"
+              ],
+              "armorPlateColliders": [],
+              "bluntDamageReduceFromSoftArmor": false
+            }
+          ]
+        },
+        "_required": true,
+        "_mergeSlotWithChildren": true,
+        "_proto": "64479fdf9731c8fadc0642c1"
+      },
+      {
+        "_name": "Helmet_back",
+        "_id": "672e2e758eb7377e10bbbe38",
+        "_parent": "672e2e754e6844af8e197b00",
+        "_props": {
+          "filters": [
+            {
+              "locked": true,
+              "Plate": "657f8f10f4c82973640b2350",
+              "Filter": [
+                "657f8f10f4c82973640b2350"
+              ],
+              "armorColliders": [
+                "BackHead"
+              ],
+              "armorPlateColliders": [],
+              "bluntDamageReduceFromSoftArmor": false
+            }
+          ]
+        },
+        "_required": true,
+        "_mergeSlotWithChildren": true,
+        "_proto": "64479fdf9731c8fadc0642c1"
+      },
+      {
+        "_name": "Helmet_ears",
+        "_id": "672e2e755fa51544eafa1d14",
+        "_parent": "672e2e754e6844af8e197b00",
+        "_props": {
+          "filters": [
+            {
+              "locked": true,
+              "Plate": "657112ce22996eaf110881fb",
+              "Filter": [
+                "657112ce22996eaf110881fb"
+              ],
+              "armorColliders": [
+                "Ears"
+              ],
+              "armorPlateColliders": [],
+              "bluntDamageReduceFromSoftArmor": false
+            }
+          ]
+        },
+        "_required": true,
+        "_mergeSlotWithChildren": true,
+        "_proto": "64479fdf9731c8fadc0642c1"
+      }
+    ],
+    "BlocksEarpiece": false,
+    "BlocksEyewear": false,
+    "BlocksHeadwear": false,
+    "BlocksFaceCover": false
+  },
+  "672e2e75b74647fc82da299c": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "672e2e75b74647fc82da299c",
+    "Name": "AR-15 M16 stock",
+    "ModType": "Stock",
+    "VerticalRecoil": -8,
+    "HorizontalRecoil": -7,
+    "Dispersion": -10,
+    "CameraRecoil": -14,
+    "AimSpeed": -5,
+    "Ergonomics": 11,
+    "Accuracy": 7.5,
+    "HasShoulderContact": true,
+    "BlocksFolding": false,
+    "AutoROF": 0,
+    "SemiROF": 0,
+    "ModMalfunctionChance": 0,
+    "StockAllowADS": false,
+    "ConflictingItems": [],
+    "Weight": 0.788,
+    "LoyaltyLevel": 4,
+    "AimStability": 13,
+    "Description": "",
+    "ShortName": "",
+    "Prefab": {
+      "path": "m16_stock.bundle",
+      "rcid": ""
+    },
+    "Recoil": -23,
+    "Convergence": 17,
+    "Handling": -7
+  },
+  "672e2e753ffe524d70e8cd8f": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "672e2e753ffe524d70e8cd8f",
+    "Name": "AR-15 M16 v2 枪托",
+    "ModType": "Stock",
+    "VerticalRecoil": -9,
+    "HorizontalRecoil": -5,
+    "Dispersion": -10,
+    "CameraRecoil": -6,
+    "AimSpeed": -5,
+    "Ergonomics": 8,
+    "Accuracy": 7.5,
+    "HasShoulderContact": true,
+    "BlocksFolding": false,
+    "AutoROF": 0,
+    "SemiROF": 0,
+    "ModMalfunctionChance": 0,
+    "StockAllowADS": false,
+    "ConflictingItems": [],
+    "Weight": 0.788,
+    "LoyaltyLevel": 4,
+    "AimStability": 6,
+    "Description": "",
+    "ShortName": "",
+    "Prefab": {
+      "path": "m16_stock_2.bundle",
+      "rcid": ""
+    },
+    "Recoil": -23,
+    "Convergence": 10,
+    "Handling": 0
+  },
+  "672e2e75ed6ad7cc5028734f": {
+    "$type": "RealismMod.Gear, RealismMod",
+    "ItemID": "672e2e75ed6ad7cc5028734f",
+    "Name": "Crye Precision JPC",
+    "AllowADS": true,
+    "LoyaltyLevel": 5,
+    "ArmorClass": "NIJ IV",
+    "CanSpall": false,
+    "SpallReduction": 0.79,
+    "ReloadSpeedMulti": 1.05,
+    "Comfort": 0.8,
+    "speedPenaltyPercent": -2.84,
+    "mousePenalty": 0,
+    "weaponErgonomicPenalty": -1.85,
+    "TemplateType": "gear",
+    "Price": 30000,
+    "ShortName": "",
+    "Description": "",
+    "Width": 3,
+    "Height": 3,
+    "Prefab": {
+      "path": "assaultvest5.bundle",
+      "rcid": ""
+    }
+  },
+  "672e2e75d276dfa8dd76770c": {
+    "$type": "RealismMod.Gear, RealismMod",
+    "ItemID": "672e2e75d276dfa8dd76770c",
+    "Name": "背部面板 v2",
+    "AllowADS": true,
+    "LoyaltyLevel": 3,
+    "ReloadSpeedMulti": 1,
+    "Comfort": 0.93,
+    "speedPenaltyPercent": -0.33,
+    "mousePenalty": 0,
+    "weaponErgonomicPenalty": 0,
+    "Description": "",
+    "ShortName": "",
+    "Prefab": {
+      "path": "backpanel2.bundle",
+      "rcid": ""
+    },
+    "Width": 4,
+    "Height": 4
+  },
+  "672e2e75592eb3c91e248717": {
+    "$type": "RealismMod.Gear, RealismMod",
+    "ItemID": "672e2e75592eb3c91e248717",
+    "Name": "背部面板 v2（黑色）",
+    "AllowADS": true,
+    "LoyaltyLevel": 3,
+    "ReloadSpeedMulti": 0.98,
+    "Comfort": 0.93,
+    "speedPenaltyPercent": -0.3,
+    "mousePenalty": 0,
+    "weaponErgonomicPenalty": 0,
+    "Description": "",
+    "ShortName": "",
+    "Prefab": {
+      "path": "backpanel2_blk.bundle",
+      "rcid": ""
+    },
+    "Width": 4,
+    "Height": 4
+  },
+  "672e2e75a26efb53bc703d45": {
+    "$type": "RealismMod.Gear, RealismMod",
+    "ItemID": "672e2e75a26efb53bc703d45",
+    "Name": "TGC 警用腰带",
+    "AllowADS": true,
+    "LoyaltyLevel": 1,
+    "ArmorClass": "",
+    "CanSpall": false,
+    "SpallReduction": 1,
+    "ReloadSpeedMulti": 1.09,
+    "Comfort": 1.09,
+    "speedPenaltyPercent": -0.07,
+    "mousePenalty": 0,
+    "weaponErgonomicPenalty": 0,
+    "Description": "",
+    "ShortName": "",
+    "Width": 2,
+    "Height": 1,
+    "Prefab": {
+      "path": "belt2.bundle",
+      "rcid": ""
+    }
+  },
+  "672e2e757e294bf6e5ecb944": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "672e2e757e294bf6e5ecb944",
+    "Name": "TGC M-LOK 2.8英寸导轨",
+    "ModType": "foregrip_adapter",
+    "Ergonomics": 0,
+    "Accuracy": 0,
+    "ConflictingItems": [],
+    "Weight": 0.07,
+    "LoyaltyLevel": 3,
+    "Prefab": {
+      "path": "tgc_mlok.bundle",
+      "rcid": ""
+    },
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "Dispersion": 0,
+    "AimStability": 0,
+    "Handling": 0
+  },
+  "672e2e75500922dee75bf400": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "672e2e75500922dee75bf400",
+    "Name": "AR-15 ZipLine 护木",
+    "ModType": "",
+    "VerticalRecoil": -6,
+    "HorizontalRecoil": -3,
+    "Dispersion": -1,
+    "AimSpeed": 2,
+    "Ergonomics": 3,
+    "Accuracy": 10,
+    "HeatFactor": 1.02,
+    "CoolFactor": 0.98,
+    "ConflictingItems": [
+      "5a34fbadc4a28200741e230a",
+      "5ae30e795acfc408fb139a0b",
+      "56ea8d2fd2720b7c698b4570",
+      "55d35ee94bdc2d61338b4568",
+      "5df8ce05b11454561e39243b"
+    ],
+    "Weight": 0.502,
+    "LoyaltyLevel": 2,
+    "Handling": 3,
+    "ShortName": "",
+    "Description": "",
+    "Prefab": {
+      "path": "zipline_ar15_handguard.bundle",
+      "rcid": ""
+    },
+    "AimStability": 9,
+    "DurabilityBurnModificator": 1
+  },
+  "672e2e75c24f8de5c9a1bdfc": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "672e2e75c24f8de5c9a1bdfc",
+    "Name": "AR-15 ZipLine 机匣",
+    "ModType": "",
+    "ModMalfunctionChance": 1,
+    "Accuracy": 3,
+    "HeatFactor": 0.99,
+    "CoolFactor": 1.03,
+    "DurabilityBurnModificator": 0.97,
+    "ConflictingItems": [],
+    "Ergonomics": 2,
+    "Weight": 0.285,
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "ChamberSpeed": 0,
+    "LoyaltyLevel": 3,
+    "ShortName": "",
+    "Description": "",
+    "Prefab": {
+      "path": "zipline_ar15_reciever.bundle",
+      "rcid": ""
+    },
+    "AutoROF": 2,
+    "SemiROF": 4,
+    "Convergence": 7
+  },
+  "672e2e75a8d84451e1b9d793": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "672e2e75a8d84451e1b9d793",
+    "Name": "AR-15 ZipLine 手枪握把",
+    "ModType": "",
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "Dispersion": 0,
+    "AimSpeed": 1,
+    "Ergonomics": 6,
+    "Accuracy": 0,
+    "ConflictingItems": [],
+    "Weight": 0.092,
+    "LoyaltyLevel": 4,
+    "AimStability": 4,
+    "Handling": 4,
+    "ShortName": "",
+    "Description": "",
+    "Prefab": {
+      "path": "zipline_ar15_pistolgrip.bundle",
+      "rcid": ""
+    }
+  },
+  "672e2e750cd8dfd1fee34a08": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "672e2e750cd8dfd1fee34a08",
+    "Name": "AR-15 ZipLine 枪托",
+    "ModType": "Stock",
+    "VerticalRecoil": -8,
+    "HorizontalRecoil": -5,
+    "Dispersion": -6,
+    "CameraRecoil": -10,
+    "AimSpeed": -5,
+    "Ergonomics": 8,
+    "Accuracy": 1.5,
+    "HasShoulderContact": true,
+    "BlocksFolding": false,
+    "AutoROF": 0,
+    "SemiROF": 0,
+    "ModMalfunctionChance": 0,
+    "StockAllowADS": false,
+    "ConflictingItems": [],
+    "Weight": 0.148,
+    "LoyaltyLevel": 2,
+    "AimStability": 7,
+    "Description": "",
+    "ShortName": "",
+    "Prefab": {
+      "path": "zipline_ar15_stock.bundle",
+      "rcid": ""
+    },
+    "Recoil": -18,
+    "Convergence": 10,
+    "Handling": -2
+  },
+  "672e2e75bfad327651a1a19b": {
+    "$type": "RealismMod.Gear, RealismMod",
+    "ItemID": "672e2e75bfad327651a1a19b",
+    "Name": "TGC MULE 战术腰带",
+    "AllowADS": true,
+    "LoyaltyLevel": 2,
+    "ArmorClass": "",
+    "CanSpall": false,
+    "SpallReduction": 1,
+    "ReloadSpeedMulti": 1.05,
+    "Comfort": 1.08,
+    "speedPenaltyPercent": -0.39,
+    "mousePenalty": 0,
+    "weaponErgonomicPenalty": 0,
+    "Description": "",
+    "ShortName": "",
+    "Width": 2,
+    "Height": 1,
+    "Weight": 0.4,
+    "Prefab": {
+      "path": "belt3.bundle",
+      "rcid": ""
+    }
+  },
+  "672e2e751ff683e9432cb5af": {
+    "$type": "RealismMod.Gear, RealismMod",
+    "ItemID": "672e2e751ff683e9432cb5af",
+    "Name": "TGC MULE 战术腰带（黑色）",
+    "AllowADS": true,
+    "LoyaltyLevel": 2,
+    "ArmorClass": "",
+    "CanSpall": false,
+    "SpallReduction": 1,
+    "ReloadSpeedMulti": 1.02,
+    "Comfort": 1.1,
+    "speedPenaltyPercent": -0.25,
+    "mousePenalty": 0,
+    "weaponErgonomicPenalty": 0,
+    "Description": "",
+    "ShortName": "",
+    "Width": 2,
+    "Height": 1,
+    "Weight": 0.4,
+    "Prefab": {
+      "path": "belt3_black.bundle",
+      "rcid": ""
+    }
+  },
+  "672e2e75e2cb5715ab46ae15": {
+    "$type": "RealismMod.Gear, RealismMod",
+    "ItemID": "672e2e75e2cb5715ab46ae15",
+    "Name": "BOPE 贝雷帽",
+    "AllowADS": true,
+    "LoyaltyLevel": 3,
+    "ReloadSpeedMulti": 1,
+    "BlocksMouth": false,
+    "speedPenaltyPercent": 0,
+    "mousePenalty": 0,
+    "weaponErgonomicPenalty": 0,
+    "ShortName": "",
+    "Description": "",
+    "Prefab": {
+      "path": "bope_beret.bundle",
+      "rcid": ""
+    }
+  },
+  "672e2e755c49aef3e8a3dd0c": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "672e2e755c49aef3e8a3dd0c",
+    "Name": "AR-15 M16 M203 隔热护木",
+    "ModType": "",
+    "VerticalRecoil": -5,
+    "HorizontalRecoil": -3,
+    "Dispersion": 0,
+    "AimSpeed": 2,
+    "Ergonomics": 5,
+    "Accuracy": -7,
+    "HeatFactor": 1.02,
+    "CoolFactor": 0.94,
+    "ConflictingItems": [
+      "55d35ee94bdc2d61338b4568",
+      "55d3632e4bdc2d972f8b4569",
+      "5c0e2f94d174af029f650d56",
+      "63d3ce0446bd475bcb50f55f",
+      "63d3d44a2a49307baf09386d",
+      "637f589af5ef8c33840d36d3",
+      "63969c9019971040b005049b",
+      "672e2e7553233ca6956e5358",
+      "672e2e75e04c9aca3536136b"
+    ],
+    "Weight": 0.171,
+    "LoyaltyLevel": 1,
+    "ShortName": "",
+    "Description": "",
+    "Prefab": {
+      "path": "m16_heatshield_handguard.bundle",
+      "rcid": ""
+    },
+    "AimStability": 8,
+    "Handling": 6,
+    "DurabilityBurnModificator": 1
+  },
+  "672e2e75ec239cfca3bedf6d": {
+    "$type": "RealismMod.Gear, RealismMod",
+    "ItemID": "672e2e75ec239cfca3bedf6d",
+    "Name": "幽灵面罩",
+    "AllowADS": true,
+    "LoyaltyLevel": 1,
+    "ArmorClass": "Unclassified",
+    "CanSpall": false,
+    "SpallReduction": 1,
+    "ReloadSpeedMulti": 1,
+    "BlocksMouth": true,
+    "MaskToUse": "atomic",
+    "ShortName": "",
+    "Description": "",
+    "Prefab": {
+      "path": "ghost_mask.bundle",
+      "rcid": ""
+    },
+    "ConflictingItems": [
+      "5c091a4e0db834001d5addc8",
+      "5c0e874186f7745dc7616606",
+      "5b432b965acfc47a8774094e"
+    ],
+    "BlocksEyewear": true,
+    "BlocksHeadwear": false,
+    "BackgroundColor": "yellow",
+    "armorClass": "3",
+    "RepairCost": 400,
+    "ArmorMaterial": "UHMWPE",
+    "BluntThroughput": 0.119,
+    "Weight": 0.52,
+    "Durability": 55,
+    "MaxDurability": 55
+  },
+  "672e2e75eae8c670d0f7740d": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "672e2e75eae8c670d0f7740d",
+    "Name": "HK MP7 TGC 枪托",
+    "ModType": "Stock",
+    "VerticalRecoil": -6,
+    "HorizontalRecoil": -4,
+    "Dispersion": 0,
+    "CameraRecoil": -7,
+    "AimSpeed": -3,
+    "Ergonomics": 7,
+    "Accuracy": 0,
+    "HasShoulderContact": true,
+    "BlocksFolding": false,
+    "AutoROF": 0,
+    "SemiROF": 0,
+    "ModMalfunctionChance": 0,
+    "StockAllowADS": false,
+    "ConflictingItems": [],
+    "Weight": 0.2,
+    "LoyaltyLevel": 1,
+    "Description": "",
+    "ShortName": "",
+    "Prefab": {
+      "path": "mp7_stock_1.bundle",
+      "rcid": ""
+    },
+    "Recoil": -14,
+    "IsAnimated": false,
+    "SizeReduceRight": 0,
+    "RaidModdable": true,
+    "Foldable": false,
+    "Retractable": false,
+    "Convergence": 8,
+    "AimStability": 7,
+    "Handling": 1
+  },
+  "672e2e75f863ac94cae32632": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "672e2e75f863ac94cae32632",
+    "Name": "HK MP7 TGC 枪托缓冲管",
+    "ModType": "Stock",
+    "VerticalRecoil": -6,
+    "HorizontalRecoil": -5,
+    "Dispersion": 0,
+    "CameraRecoil": -6,
+    "AimSpeed": -5,
+    "Ergonomics": 5,
+    "Accuracy": 0,
+    "HasShoulderContact": true,
+    "BlocksFolding": false,
+    "AutoROF": 0,
+    "SemiROF": 0,
+    "ModMalfunctionChance": 0,
+    "StockAllowADS": false,
+    "ConflictingItems": [],
+    "Weight": 0.2,
+    "LoyaltyLevel": 1,
+    "Description": "",
+    "ShortName": "",
+    "Prefab": {
+      "path": "mp7_stock_2.bundle",
+      "rcid": ""
+    },
+    "Recoil": -1,
+    "IsAnimated": false,
+    "SizeReduceRight": 0,
+    "RaidModdable": true,
+    "Foldable": false,
+    "Retractable": false,
+    "Slots": [
+      {
+        "_name": "mod_stock_000",
+        "_id": "672e2e75627698af37e73a2b",
+        "_parent": "5c793fb92e221644f31bfb64",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "5fc2369685fd526b824a5713",
+                "606587d11246154cad35d635",
+                "602e620f9b513876d4338d9a",
+                "5a9eb32da2750c00171b3f9c",
+                "5bfe86df0db834001b734685",
+                "55d4ae6c4bdc2d8b2f8b456e",
+                "5c87a07c2e2216001219d4a2",
+                "5bb20e70d4351e0035629f8f",
+                "5beec8c20db834001d2c465c",
+                "5fbbaa86f9986c4cff3fe5f6",
+                "5fce16961f152d4312622bc9",
+                "5ae30c9a5acfc408fb139a03",
+                "5d135e83d7ad1a21b83f42d8",
+                "5d135ecbd7ad1a21c176542e",
+                "56eabf3bd2720b75698b4569",
+                "58d2946386f774496974c37e",
+                "58d2946c86f7744e271174b5",
+                "58d2947686f774485c6a1ee5",
+                "58d2947e86f77447aa070d53",
+                "5d44069ca4b9361ebd26fc37",
+                "5d4406a8a4b9361e4f6eb8b7",
+                "5947c73886f7747701588af5",
+                "5c793fde2e221601da358614",
+                "5b39f8db5acfc40016387a1b",
+                "628a85ee6b1d481ff772e9d5",
+                "6516e91f609aaf354b34b3e2",
+                "6516e971a3d4c6497930b450",
+                "6529370c405a5f51dd023db8",
+                "672e2e75b7f83e81f1dc5067",
+                "672e2e7533a70f23dfe4c8bb",
+                "672e2e750cd8dfd1fee34a08"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      }
+    ],
+    "Convergence": 10,
+    "AimStability": 8,
+    "Handling": -1
+  },
+  "672e2e755aa052b1e954dd68": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "672e2e755aa052b1e954dd68",
+    "Name": "HK MP7 TGC Stelio 4.6x30 毫米消音器",
+    "ModType": "",
+    "VerticalRecoil": -9,
+    "HorizontalRecoil": -8,
+    "Dispersion": -4,
+    "CameraRecoil": -7,
+    "AutoROF": 1.1,
+    "SemiROF": 1.2,
+    "ModMalfunctionChance": 24,
+    "CanCycleSubs": true,
+    "Accuracy": -1,
+    "HeatFactor": 1.13,
+    "CoolFactor": 1,
+    "DurabilityBurnModificator": 1.25,
+    "Velocity": 0,
+    "RecoilAngle": 0,
+    "ConflictingItems": [],
+    "Ergonomics": -14,
+    "Weight": 0.51,
+    "Loudness": -29,
+    "Convergence": 0,
+    "LoyaltyLevel": 3,
+    "Flash": -65,
+    "Recoil": -7,
+    "Description": "",
+    "ShortName": "",
+    "Prefab": {
+      "path": "mp7_silencer_1.bundle",
+      "rcid": ""
+    },
+    "AimSpeed": -20
+  },
+  "672e2e75e21492038fb1b118": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "672e2e75e21492038fb1b118",
+    "Name": "HK MP7 TGC Stelio S 4.6x30 毫米消音器",
+    "ModType": "",
+    "VerticalRecoil": -12,
+    "HorizontalRecoil": -9,
+    "Dispersion": -4,
+    "CameraRecoil": -6,
+    "AutoROF": 1.1,
+    "SemiROF": 1.2,
+    "ModMalfunctionChance": 21,
+    "CanCycleSubs": true,
+    "Accuracy": 2,
+    "HeatFactor": 1.13,
+    "CoolFactor": 1,
+    "DurabilityBurnModificator": 1.41,
+    "Velocity": 2,
+    "RecoilAngle": 0,
+    "ConflictingItems": [],
+    "Ergonomics": -13,
+    "Weight": 0.462,
+    "Loudness": -31,
+    "Convergence": 0,
+    "LoyaltyLevel": 3,
+    "Flash": -61,
+    "Recoil": -7,
+    "Description": "",
+    "ShortName": "",
+    "Prefab": {
+      "path": "mp7_silencer_1_spec.bundle",
+      "rcid": ""
+    },
+    "AimSpeed": -17
+  },
+  "672e2e75ba8f56d981dc6e2c": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "672e2e75ba8f56d981dc6e2c",
+    "Name": "HK MP7 4.6x30 毫米 60 发弹匣",
+    "ModType": "",
+    "ReloadSpeed": -3,
+    "Ergonomics": -5,
+    "MalfunctionChance": 0.05,
+    "LoadUnloadModifier": 11,
+    "CheckTimeModifier": 4,
+    "ConflictingItems": [],
+    "Weight": 0.2,
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "LoyaltyLevel": 3,
+    "ShortName": "",
+    "Description": "",
+    "Prefab": {
+      "path": "mp7_magazine_1.bundle",
+      "rcid": ""
+    },
+    "VisibleAmmoRangesString": "1-4",
+    "Cartridges": [
+      {
+        "_name": "cartridges",
+        "_id": "668aaab5793a1749dc0c7701",
+        "_parent": "672e2e75ba8f56d981dc6e2c",
+        "_max_count": 60,
+        "_props": {
+          "filters": [
+            {
+              "Filter": [
+                "5ba26812d4351e003201fef1",
+                "5ba26835d4351e0035628ff5",
+                "5ba2678ad4351e44f824b344",
+                "5ba26844d4351e00334c9475",
+                "64b6979341772715af0f9c39"
+              ]
+            }
+          ]
+        },
+        "_proto": "5748538b2459770af276a261"
+      }
+    ],
+    "ModMalfunctionChance": 2,
+    "AimSpeed": -4,
+    "Handling": -5
+  },
+  "672e2e75afb25b57bd1d1455": {
+    "$type": "RealismMod.Gear, RealismMod",
+    "ItemID": "672e2e75afb25b57bd1d1455",
+    "Name": "CGPC3 TQS（绿色款）",
+    "AllowADS": true,
+    "LoyaltyLevel": 4,
+    "ArmorClass": "NIJ III+",
+    "CanSpall": false,
+    "SpallReduction": 0.83,
+    "ReloadSpeedMulti": 1.07,
+    "Comfort": 0.82,
+    "speedPenaltyPercent": -5.15,
+    "mousePenalty": 0,
+    "weaponErgonomicPenalty": -2.75,
+    "TemplateType": "gear",
+    "Price": 36000,
+    "ShortName": "",
+    "Description": "",
+    "Width": 3,
+    "Height": 4,
+    "Prefab": {
+      "path": "assaultvest6.bundle",
+      "rcid": ""
+    }
+  },
+  "672e2e7531ffa75ea676c3ea": {
+    "$type": "RealismMod.Gear, RealismMod",
+    "ItemID": "672e2e7531ffa75ea676c3ea",
+    "Name": "CGPC3 TQS（沙色款）",
+    "AllowADS": true,
+    "LoyaltyLevel": 4,
+    "ArmorClass": "NIJ III+",
+    "CanSpall": false,
+    "SpallReduction": 0.62,
+    "ReloadSpeedMulti": 1.03,
+    "Comfort": 0.93,
+    "speedPenaltyPercent": -1.71,
+    "mousePenalty": 0,
+    "weaponErgonomicPenalty": -3.34,
+    "TemplateType": "gear",
+    "Price": 36000,
+    "ShortName": "",
+    "Description": "",
+    "Width": 3,
+    "Height": 4,
+    "Prefab": {
+      "path": "assaultvest6_tan.bundle",
+      "rcid": ""
+    }
+  },
+  "672e2e75fa61ef193bdbd7e6": {
+    "$type": "RealismMod.Gear, RealismMod",
+    "ItemID": "672e2e75fa61ef193bdbd7e6",
+    "Name": "CGPC3 TQS（城市款）",
+    "AllowADS": true,
+    "LoyaltyLevel": 4,
+    "ArmorClass": "NIJ III+",
+    "CanSpall": false,
+    "SpallReduction": 0.73,
+    "ReloadSpeedMulti": 0.94,
+    "Comfort": 0.92,
+    "speedPenaltyPercent": -0.88,
+    "mousePenalty": 0,
+    "weaponErgonomicPenalty": -2.1,
+    "TemplateType": "gear",
+    "Price": 36000,
+    "ShortName": "",
+    "Description": "",
+    "Width": 3,
+    "Height": 4,
+    "Prefab": {
+      "path": "assaultvest6_blk.bundle",
+      "rcid": ""
+    }
+  },
+  "67b8d6cd220640e6846aed85": {
+    "$type": "RealismMod.Gear, RealismMod",
+    "ItemID": "67b8d6cd220640e6846aed85",
+    "Name": "CGPC3 TQS（深色款）",
+    "AllowADS": true,
+    "LoyaltyLevel": 4,
+    "ArmorClass": "NIJ III+",
+    "CanSpall": false,
+    "SpallReduction": 0.79,
+    "ReloadSpeedMulti": 1,
+    "Comfort": 0.89,
+    "speedPenaltyPercent": -4.65,
+    "mousePenalty": 0,
+    "weaponErgonomicPenalty": -2.23,
+    "TemplateType": "gear",
+    "Price": 36000,
+    "ShortName": "",
+    "Description": "",
+    "Width": 3,
+    "Height": 4,
+    "Prefab": {
+      "path": "assaultvest6_blk_od.bundle",
+      "rcid": ""
+    }
+  },
+  "672e2e75195420ccca420a2f": {
+    "$type": "RealismMod.Ammo, RealismMod",
+    "ItemID": "672e2e75195420ccca420a2f",
+    "Name": "6x38mm ARC",
+    "LoyaltyLevel": 4,
+    "BasePriceModifier": 1,
+    "ShortName": "",
+    "Description": "",
+    "Prefab": {
+      "path": "patron_6mm_arc.bundle",
+      "rcid": ""
+    },
+    "StackMaxSize": 90,
+    "CanSellOnRagfair": false,
+    "CanRequireOnRagfair": false,
+    "InitialSpeed": 855,
+    "BallisticCoeficient": 0.34,
+    "BulletMassGram": 13.04,
+    "BulletDiameterMilimeters": 6,
+    "Damage": 81,
+    "ammoAccr": -5,
+    "ammoRec": 36,
+    "PenetrationPower": 55,
+    "MisfireChance": 0.005,
+    "PenetrationDamageMod": 0.175,
+    "PenetrationChanceObstacle": 0.45,
+    "RicochetChance": 0.3,
+    "FragmentationChance": 0.33,
+    "Deterioration": 1,
+    "SpeedRetardation": 2.3e-5,
+    "ArmorDamage": 1.12,
+    "MalfMisfireChance": 0.009,
+    "DurabilityBurnModificator": 1.61,
+    "HeatFactor": 1.28,
+    "MalfFeedChance": 0.009,
+    "Weight": 0.019,
+    "HeavyBleedingDelta": 0.03,
+    "LightBleedingDelta": 0.12
+  },
+  "672e2e759b231e2b1a95516f": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "672e2e759b231e2b1a95516f",
+    "Name": "AR-15 TGC 护木",
+    "ModType": "",
+    "VerticalRecoil": -6,
+    "HorizontalRecoil": -3,
+    "Dispersion": 0,
+    "AimSpeed": 1,
+    "Ergonomics": 5,
+    "Accuracy": 8,
+    "HeatFactor": 1.01,
+    "CoolFactor": 0.98,
+    "ConflictingItems": [
+      "5a34fbadc4a28200741e230a",
+      "5ae30e795acfc408fb139a0b",
+      "56ea8d2fd2720b7c698b4570"
+    ],
+    "Weight": 0.209,
+    "LoyaltyLevel": 2,
+    "AimStability": 6,
+    "ShortName": "",
+    "Description": "",
+    "Prefab": {
+      "path": "ar_handguard.bundle",
+      "rcid": ""
+    },
+    "Handling": 4,
+    "DurabilityBurnModificator": 1
+  },
+  "6733edc58add9191997aec92": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "6733edc58add9191997aec92",
+    "Name": "AR-15 TGC 分体式护木",
+    "ModType": "",
+    "VerticalRecoil": -4,
+    "HorizontalRecoil": -3,
+    "Dispersion": -2,
+    "AimSpeed": 2,
+    "Ergonomics": 4,
+    "Accuracy": 12,
+    "HeatFactor": 0.96,
+    "CoolFactor": 0.98,
+    "ConflictingItems": [
+      "5a34fbadc4a28200741e230a",
+      "55d35ee94bdc2d61338b4568",
+      "5c0e2f94d174af029f650d56",
+      "63d3ce0446bd475bcb50f55f",
+      "63d3d44a2a49307baf09386d",
+      "672e2e757e517ac4552086d1",
+      "672e2e7535b901cc0cb57e73",
+      "5d440b9fa4b93601354d480c",
+      "5d440b93a4b9364276578d4b"
+    ],
+    "Weight": 0.343,
+    "LoyaltyLevel": 3,
+    "AimStability": 6,
+    "Handling": 3,
+    "ShortName": "",
+    "Description": "",
+    "Prefab": {
+      "path": "ar_split_handguard.bundle",
+      "rcid": ""
+    },
+    "Slots": [
+      {
+        "_id": "6733f456c44c37874b0b5fca",
+        "_mergeSlotWithChildren": false,
+        "_name": "mod_mount_000",
+        "_parent": "6733edc58add9191997aec92",
+        "_props": {
+          "filters": [
+            {
+              "Filter": [
+                "5b7be47f5acfc400170e2dd2",
+                "6269220d70b6c02e665f2635",
+                "6269545d0e57f218e4548ca2",
+                "669a6a4a525be1d2d004b8eb"
+              ],
+              "Shift": 0
+            }
+          ]
+        },
+        "_proto": "55d30c4c4bdc2db4468b457e",
+        "_required": false
+      },
+      {
+        "_id": "6733f4619c09b40d4cce7afe",
+        "_mergeSlotWithChildren": false,
+        "_name": "mod_mount_001",
+        "_parent": "6733edc58add9191997aec92",
+        "_props": {
+          "filters": [
+            {
+              "Filter": [
+                "5b7be47f5acfc400170e2dd2",
+                "6269220d70b6c02e665f2635",
+                "6269545d0e57f218e4548ca2",
+                "669a6a4a525be1d2d004b8eb"
+              ],
+              "Shift": 0
+            }
+          ]
+        },
+        "_proto": "55d30c4c4bdc2db4468b457e",
+        "_required": false
+      },
+      {
+        "_id": "6733f467e2be31cf40b24a70",
+        "_mergeSlotWithChildren": false,
+        "_name": "mod_tactical",
+        "_parent": "6733edc58add9191997aec92",
+        "_props": {
+          "filters": [
+            {
+              "Filter": [
+                "57fd23e32459772d0805bcf1",
+                "544909bb4bdc2d6f028b4577",
+                "5d10b49bd7ad1a1a560708b0",
+                "5c06595c0db834001a66af6c",
+                "5d2369418abbc306c62e0c80",
+                "5a7b483fe899ef0016170d15",
+                "61605d88ffa6e502ac5e7eeb",
+                "644a3df63b0b6f03e101e065"
+              ],
+              "Shift": 0
+            }
+          ]
+        },
+        "_proto": "55d30c4c4bdc2db4468b457e",
+        "_required": false
+      },
+      {
+        "_id": "6733f54087a3c7dd4b1e6f23",
+        "_mergeSlotWithChildren": false,
+        "_name": "mod_tactical_003",
+        "_parent": "6733edc58add9191997aec92",
+        "_props": {
+          "filters": [
+            {
+              "Filter": [
+                "57fd23e32459772d0805bcf1",
+                "544909bb4bdc2d6f028b4577",
+                "5d10b49bd7ad1a1a560708b0",
+                "5c06595c0db834001a66af6c",
+                "5d2369418abbc306c62e0c80",
+                "5a7b483fe899ef0016170d15",
+                "61605d88ffa6e502ac5e7eeb",
+                "644a3df63b0b6f03e101e065"
+              ],
+              "Shift": 0
+            }
+          ]
+        },
+        "_proto": "55d30c4c4bdc2db4468b457e",
+        "_required": false
+      },
+      {
+        "_id": "6733f47337a33927ce0684ea",
+        "_mergeSlotWithChildren": false,
+        "_name": "mod_foregrip",
+        "_parent": "6733edc58add9191997aec92",
+        "_props": {
+          "filters": [
+            {
+              "Filter": [
+                "5c7fc87d2e221644f31c0298",
+                "5cda9bcfd7f00c0c0b53e900",
+                "59f8a37386f7747af3328f06",
+                "5a7dbfc1159bd40016548fde",
+                "619386379fb0c665d5490dbe",
+                "5c87ca002e221600114cb150",
+                "588226d124597767ad33f787",
+                "588226dd24597767ad33f789",
+                "588226e62459776e3e094af7",
+                "588226ef24597767af46e39c",
+                "59fc48e086f77463b1118392",
+                "5fce0cf655375d18a253eff0",
+                "5cf4fb76d7f00c065703d3ac",
+                "5b057b4f5acfc4771e1bd3e9",
+                "5c791e872e2216001219c40a",
+                "558032614bdc2de7118b4585",
+                "58c157be86f77403c74b2bb6",
+                "58c157c886f774032749fb06",
+                "5f6340d3ca442212f4047eb2",
+                "591af28e86f77414a27a9e1d",
+                "5c1cd46f2e22164bef5cfedb",
+                "5c1bc4812e22164bef5cfde7",
+                "5c1bc5612e221602b5429350",
+                "5c1bc5af2e221602b412949b",
+                "5c1bc5fb2e221602b1779b32",
+                "5c1bc7432e221602b412949d",
+                "5c1bc7752e221602b1779b34",
+                "64806bdd26c80811d408d37a",
+                "64807a29e5ffe165600abc97",
+                "648067db042be0705c0b3009",
+                "65169d5b30425317755f8e25",
+                "655df24fdf80b12750626d0a",
+                "655dccfdbdcc6b5df71382b6",
+                "661e52e29c8b4dadef008577",
+                "661e53149c8b4dadef008579",
+                "661e52415be02310ed07a07a",
+                "661e52b5b099f32c28003586",
+                "672e2e755898793d805ec2c3",
+                "672e2e756bdff59d722213c9",
+                "672e2e75ea372126f4fcb874",
+                "672e2e757efbbef26ff61046",
+                "672e2e7546454a975e0b7a3b"
+              ],
+              "Shift": 0
+            }
+          ]
+        },
+        "_proto": "55d30c4c4bdc2db4468b457e",
+        "_required": false
+      },
+      {
+        "_id": "6733f479d3cbb160b6a880fe",
+        "_mergeSlotWithChildren": false,
+        "_name": "mod_sight_front",
+        "_parent": "6733edc58add9191997aec92",
+        "_props": {
+          "filters": [
+            {
+              "Filter": [
+                "5ba26b01d4351e0085325a51",
+                "5dfa3d950dee1b22f862eae0",
+                "5c17804b2e2216152006c02f",
+                "5fb6567747ce63734e3fa1dc",
+                "5bc09a30d4351e00367fb7c8",
+                "5c18b90d2e2216152142466b",
+                "5fc0fa362770a0045c59c677",
+                "5894a73486f77426d259076c",
+                "55d4af3a4bdc2d972f8b456f"
+              ],
+              "Shift": 0
+            }
+          ]
+        },
+        "_proto": "55d30c4c4bdc2db4468b457e",
+        "_required": false
+      },
+      {
+        "_id": "6733f47eb28ec6a137c9d636",
+        "_mergeSlotWithChildren": false,
+        "_name": "mod_scope",
+        "_parent": "6733edc58add9191997aec92",
+        "_props": {
+          "filters": [
+            {
+              "Filter": [
+                "5649a2464bdc2d91118b45a8"
+              ],
+              "Shift": 0
+            }
+          ]
+        },
+        "_proto": "55d30c4c4bdc2db4468b457e",
+        "_required": false
+      }
+    ],
+    "DurabilityBurnModificator": 1
+  },
+  "685009b24c99357a3da143e4": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "685009b24c99357a3da143e4",
+    "Name": "Velociraptor 聚合物护木（TGC）",
+    "ModType": "",
+    "VerticalRecoil": -6,
+    "HorizontalRecoil": -3,
+    "Dispersion": 0,
+    "AimSpeed": 2,
+    "ChamberSpeed": 0,
+    "Ergonomics": 3,
+    "Accuracy": 0,
+    "HeatFactor": 0.99,
+    "CoolFactor": 0.95,
+    "ConflictingItems": [],
+    "Weight": 0.17,
+    "ShortName": "",
+    "Description": "",
+    "Prefab": {
+      "path": "velo_handguard.bundle",
+      "rcid": ""
+    },
+    "Slots": [
+      {
+        "_id": "685009bbcc6a1e05d2e3716e",
+        "_mergeSlotWithChildren": false,
+        "_name": "mod_foregrip",
+        "_parent": "685009b24c99357a3da143e4",
+        "_props": {
+          "filters": [
+            {
+              "Filter": [
+                "672e2e757e294bf6e5ecb944"
+              ],
+              "Shift": 0
+            }
+          ]
+        },
+        "_proto": "55d30c4c4bdc2db4468b457e",
+        "_required": false
+      },
+      {
+        "_id": "685043d20801e2b780391810",
+        "_mergeSlotWithChildren": false,
+        "_name": "mod_tactical",
+        "_parent": "685009b24c99357a3da143e4",
+        "_props": {
+          "filters": [
+            {
+              "Filter": [
+                "5b7be47f5acfc400170e2dd2",
+                "6269220d70b6c02e665f2635",
+                "6269545d0e57f218e4548ca2"
+              ],
+              "Shift": 0
+            }
+          ]
+        },
+        "_proto": "55d30c4c4bdc2db4468b457e",
+        "_required": false
+      }
+    ],
+    "LoyaltyLevel": 1,
+    "AimStability": 6,
+    "Handling": 4,
+    "DurabilityBurnModificator": 1
+  }
+}

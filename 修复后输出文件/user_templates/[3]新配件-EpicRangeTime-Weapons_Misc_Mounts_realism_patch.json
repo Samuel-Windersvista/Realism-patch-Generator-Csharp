@@ -1,0 +1,2399 @@
+{
+  "877f002b7dadc7ae31d1fda1": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "877f002b7dadc7ae31d1fda1",
+    "Name": "Unity Tactical FAST Micro Mount, 2.26",
+    "ModType": "mount",
+    "Ergonomics": 0,
+    "Accuracy": 0,
+    "ConflictingItems": [],
+    "Weight": 0.015,
+    "LoyaltyLevel": 2,
+    "ExaminedByDefault": true,
+    "Prefab": {
+      "path": "Mods/Mounts/unity_micro_226_blk.bundle",
+      "rcid": ""
+    },
+    "Conflictingitems": [
+      "5ae30bad5acfc400185c2dc4"
+    ],
+    "Width": 1,
+    "Slots": [
+      {
+        "_name": "mod_scope",
+        "_id": "243d80e1c423d7be2aa5491e",
+        "_parent": "877f002b7dadc7ae31d1fda1",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "61657230d92c473c770213d7",
+                "58d399e486f77442e0016fe7",
+                "5b3116595acfc40019476364"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      }
+    ],
+    "SightingRange": 100,
+    "DoubleActionAccuracyPenaltyMult": 1,
+    "UniqueAnimationModID": 0,
+    "CustomAimPlane": "",
+    "sightModType": "iron",
+    "ScopesCount": 1,
+    "AimSensitivity": [
+      [
+        0.7
+      ]
+    ],
+    "ModesCount": [
+      1
+    ],
+    "Zooms": [
+      [
+        1
+      ]
+    ],
+    "CalibrationDistances": [
+      [
+        100
+      ]
+    ],
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "Dispersion": 0,
+    "AimStability": 0,
+    "Handling": 0
+  },
+  "c26f2af872656829feb27c08": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "c26f2af872656829feb27c08",
+    "Name": "Unity Tactical FAST Micro Mount, 2.26 (FDE)",
+    "ModType": "mount",
+    "Ergonomics": 0,
+    "Accuracy": 0,
+    "ConflictingItems": [],
+    "Weight": 0.015,
+    "LoyaltyLevel": 2,
+    "ExaminedByDefault": true,
+    "Prefab": {
+      "path": "Mods/Mounts/unity_micro_226_fde.bundle",
+      "rcid": ""
+    },
+    "Conflictingitems": [
+      "5ae30bad5acfc400185c2dc4"
+    ],
+    "Width": 1,
+    "Slots": [
+      {
+        "_name": "mod_scope",
+        "_id": "130a58166dd5c860c759be0e",
+        "_parent": "c26f2af872656829feb27c08",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "61657230d92c473c770213d7",
+                "58d399e486f77442e0016fe7",
+                "5b3116595acfc40019476364"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      }
+    ],
+    "SightingRange": 100,
+    "DoubleActionAccuracyPenaltyMult": 1,
+    "UniqueAnimationModID": 0,
+    "CustomAimPlane": "",
+    "sightModType": "iron",
+    "ScopesCount": 1,
+    "AimSensitivity": [
+      [
+        0.7
+      ]
+    ],
+    "ModesCount": [
+      1
+    ],
+    "Zooms": [
+      [
+        1
+      ]
+    ],
+    "CalibrationDistances": [
+      [
+        100
+      ]
+    ],
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "Dispersion": 0,
+    "AimStability": 0,
+    "Handling": 0
+  },
+  "de53b0fd978f0eaad71c5528": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "de53b0fd978f0eaad71c5528",
+    "Name": "GBRS Hydra riser combo mount",
+    "ModType": "mount",
+    "Ergonomics": 0,
+    "Accuracy": 0,
+    "ConflictingItems": [],
+    "Weight": 0.11,
+    "LoyaltyLevel": 3,
+    "ExaminedByDefault": true,
+    "Prefab": {
+      "path": "Mods/Mounts/hydra-mid-blk.bundle",
+      "rcid": ""
+    },
+    "Conflictingitems": [
+      "5ae30bad5acfc400185c2dc4"
+    ],
+    "Width": 2,
+    "Slots": [
+      {
+        "_name": "mod_tactical",
+        "_id": "3fc01ec5a3357590ed760b80",
+        "_parent": "de53b0fd978f0eaad71c5528",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "57fd23e32459772d0805bcf1",
+                "544909bb4bdc2d6f028b4577",
+                "5c06595c0db834001a66af6c",
+                "61605d88ffa6e502ac5e7eeb",
+                "5c5952732e2216398b5abda2",
+                "644a3df63b0b6f03e101e065",
+                "275def25d1abe9b101511271",
+                "d62cced77df83a0683e38fbc",
+                "d4f59f06b5099086743e3b62"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      },
+      {
+        "_name": "mod_scope",
+        "_id": "ea43f44dcf38d4370f43ef18",
+        "_parent": "de53b0fd978f0eaad71c5528",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "558022b54bdc2dac148b458d",
+                "59f9d81586f7744c7506ee62",
+                "60a23797a37c940de7062d02"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      }
+    ],
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "Dispersion": 0,
+    "AimStability": 0,
+    "Handling": 0
+  },
+  "d3e07e32dc01693c226878dc": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "d3e07e32dc01693c226878dc",
+    "Name": "GBRS Hydra riser combo mount (FDE)",
+    "ModType": "mount",
+    "Ergonomics": -1,
+    "Accuracy": 0,
+    "ConflictingItems": [],
+    "Weight": 0.11,
+    "LoyaltyLevel": 3,
+    "ExaminedByDefault": true,
+    "Prefab": {
+      "path": "Mods/Mounts/hydra-mid-fde.bundle",
+      "rcid": ""
+    },
+    "Conflictingitems": [
+      "5ae30bad5acfc400185c2dc4"
+    ],
+    "Width": 2,
+    "Slots": [
+      {
+        "_name": "mod_tactical",
+        "_id": "2051e5cd1706a56f7d2d1b05",
+        "_parent": "d3e07e32dc01693c226878dc",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "57fd23e32459772d0805bcf1",
+                "544909bb4bdc2d6f028b4577",
+                "5c06595c0db834001a66af6c",
+                "61605d88ffa6e502ac5e7eeb",
+                "5c5952732e2216398b5abda2",
+                "644a3df63b0b6f03e101e065",
+                "275def25d1abe9b101511271",
+                "d62cced77df83a0683e38fbc",
+                "d4f59f06b5099086743e3b62"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      },
+      {
+        "_name": "mod_scope",
+        "_id": "e9354a1c023bde5ba9017983",
+        "_parent": "d3e07e32dc01693c226878dc",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "558022b54bdc2dac148b458d",
+                "59f9d81586f7744c7506ee62",
+                "60a23797a37c940de7062d02"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      }
+    ],
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "Dispersion": 0,
+    "AimStability": 0,
+    "Handling": 0
+  },
+  "befd7a2bbc07793f73133f2c": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "befd7a2bbc07793f73133f2c",
+    "Name": "Unity Tactical FAST LPVO 30mm ring scope mount",
+    "ModType": "mount",
+    "Ergonomics": 1,
+    "Accuracy": 0,
+    "ConflictingItems": [
+      "5ae30bad5acfc400185c2dc4"
+    ],
+    "Weight": 0.194,
+    "LoyaltyLevel": 4,
+    "ExaminedByDefault": true,
+    "Prefab": {
+      "path": "Mods/Mounts/unity_scope_high.bundle",
+      "rcid": ""
+    },
+    "Conflictingitems": [
+      "5ae30bad5acfc400185c2dc4",
+      "275def25d1abe9b101511271"
+    ],
+    "ExtraSizeUp": 1,
+    "Slots": [
+      {
+        "_name": "mod_scope",
+        "_id": "9378f5771b31eae8a959ac98",
+        "_parent": "befd7a2bbc07793f73133f2c",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "5b2388675acfc4771e1be0be",
+                "5b3b99475acfc432ff4dcbee",
+                "5a37cb10c4a282329a73b4e7",
+                "57c5ac0824597754771e88a9",
+                "618ba27d9008e4636a67f61d",
+                "617151c1d92c473c770214ab",
+                "6567e7681265c8a131069b0f"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      }
+    ],
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "Dispersion": 0,
+    "AimStability": 0,
+    "Handling": 0
+  },
+  "e4f2fd43b5613348b6e25bb5": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "e4f2fd43b5613348b6e25bb5",
+    "Name": "Geissele 34mm Super Precision top ring cap",
+    "ModType": "mount",
+    "Ergonomics": 0,
+    "Accuracy": 0,
+    "ConflictingItems": [],
+    "Weight": 0.02,
+    "LoyaltyLevel": 4,
+    "Prefab": {
+      "path": "Mods/Mounts/g$_34mm_cap_blk.bundle",
+      "rcid": ""
+    },
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "Dispersion": 0,
+    "AimStability": 0,
+    "Handling": 0
+  },
+  "2437ee507945dfe829ddf298": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "2437ee507945dfe829ddf298",
+    "Name": "Geissele 34mm Super Precision top ring cap (DDC)",
+    "ModType": "mount",
+    "Ergonomics": 1,
+    "Accuracy": 0,
+    "ConflictingItems": [],
+    "Weight": 0.02,
+    "LoyaltyLevel": 4,
+    "Prefab": {
+      "path": "Mods/Mounts/g$_34mm_cap_ddc.bundle",
+      "rcid": ""
+    },
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "Dispersion": 0,
+    "AimStability": 0,
+    "Handling": 0
+  },
+  "b2d57758abe9bb9345c58e4a": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "b2d57758abe9bb9345c58e4a",
+    "Name": "Geissele Super Precision 34mm ring scope mount",
+    "ModType": "mount",
+    "Ergonomics": 0,
+    "Accuracy": 0,
+    "ConflictingItems": [
+      "5ae30bad5acfc400185c2dc4"
+    ],
+    "Weight": 0.194,
+    "LoyaltyLevel": 4,
+    "Prefab": {
+      "path": "Mods/Mounts/g$_sp34mm_blk.bundle",
+      "rcid": ""
+    },
+    "Conflictingitems": [
+      "55d5f46a4bdc2d1b198b4567",
+      "623166e08c43374ca1567195",
+      "56083e1b4bdc2dc8488b4572",
+      "5ae30bad5acfc400185c2dc4",
+      "275def25d1abe9b101511271"
+    ],
+    "Slots": [
+      {
+        "_name": "mod_scope",
+        "_id": "bd0f3ec666237a5bc6887e26",
+        "_parent": "b2d57758abe9bb9345c58e4a",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "56ea70acd2720b844b8b4594",
+                "5aa66be6e5b5b0214e506e97",
+                "61714eec290d254f5e6b2ffc",
+                "62850c28da09541f43158cca",
+                "85675a91454713828d6138e5",
+                "cd609524dadc768a89f99bba",
+                "750bcfb1b1f84f27a8f4f282",
+                "0afaf0c97b1d068d242df1dc"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      },
+      {
+        "_name": "mod_mount_000",
+        "_id": "bde5ff1f0e7e0ce61472fc63",
+        "_parent": "b2d57758abe9bb9345c58e4a",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "e4f2fd43b5613348b6e25bb5",
+                "2437ee507945dfe829ddf298",
+                "ee8d5029626f7ba2e1510676",
+                "959b54e7798be68a1a54ff81",
+                "d4424e8a8d6e6789adbfcde2",
+                "42aac757e1ac8161f6ec6766"
+              ]
+            }
+          ]
+        },
+        "_required": true,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      },
+      {
+        "_name": "mod_mount_001",
+        "_id": "0674a69fe80617931dedfdd1",
+        "_parent": "b2d57758abe9bb9345c58e4a",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "e4f2fd43b5613348b6e25bb5",
+                "2437ee507945dfe829ddf298",
+                "ee8d5029626f7ba2e1510676",
+                "959b54e7798be68a1a54ff81",
+                "d4424e8a8d6e6789adbfcde2",
+                "42aac757e1ac8161f6ec6766"
+              ]
+            }
+          ]
+        },
+        "_required": true,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      }
+    ],
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "Dispersion": 0,
+    "AimStability": 0,
+    "Handling": 0
+  },
+  "67ea8b32e0d7701fc6bfc5bf": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "67ea8b32e0d7701fc6bfc5bf",
+    "Name": "Geissele Super Precision 34mm ring scope mount (DDC)",
+    "ModType": "mount",
+    "Ergonomics": 1,
+    "Accuracy": 0,
+    "ConflictingItems": [
+      "5ae30bad5acfc400185c2dc4"
+    ],
+    "Weight": 0.194,
+    "LoyaltyLevel": 4,
+    "Prefab": {
+      "path": "Mods/Mounts/g$_sp34mm_ddc.bundle",
+      "rcid": ""
+    },
+    "Conflictingitems": [
+      "55d5f46a4bdc2d1b198b4567",
+      "623166e08c43374ca1567195",
+      "56083e1b4bdc2dc8488b4572",
+      "5ae30bad5acfc400185c2dc4",
+      "275def25d1abe9b101511271"
+    ],
+    "Slots": [
+      {
+        "_name": "mod_scope",
+        "_id": "cac37f92747f781c659170b0",
+        "_parent": "67ea8b32e0d7701fc6bfc5bf",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "56ea70acd2720b844b8b4594",
+                "5aa66be6e5b5b0214e506e97",
+                "61714eec290d254f5e6b2ffc",
+                "62850c28da09541f43158cca",
+                "85675a91454713828d6138e5",
+                "cd609524dadc768a89f99bba",
+                "750bcfb1b1f84f27a8f4f282",
+                "0afaf0c97b1d068d242df1dc"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      },
+      {
+        "_name": "mod_mount_000",
+        "_id": "a00b0933176ccec36050d597",
+        "_parent": "67ea8b32e0d7701fc6bfc5bf",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "e4f2fd43b5613348b6e25bb5",
+                "2437ee507945dfe829ddf298",
+                "ee8d5029626f7ba2e1510676",
+                "959b54e7798be68a1a54ff81",
+                "d4424e8a8d6e6789adbfcde2",
+                "42aac757e1ac8161f6ec6766"
+              ]
+            }
+          ]
+        },
+        "_required": true,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      },
+      {
+        "_name": "mod_mount_001",
+        "_id": "56f66e3f3a5444614da8d419",
+        "_parent": "67ea8b32e0d7701fc6bfc5bf",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "e4f2fd43b5613348b6e25bb5",
+                "2437ee507945dfe829ddf298",
+                "ee8d5029626f7ba2e1510676",
+                "959b54e7798be68a1a54ff81",
+                "d4424e8a8d6e6789adbfcde2",
+                "42aac757e1ac8161f6ec6766"
+              ]
+            }
+          ]
+        },
+        "_required": true,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      }
+    ],
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "Dispersion": 0,
+    "AimStability": 0,
+    "Handling": 0
+  },
+  "ee8d5029626f7ba2e1510676": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "ee8d5029626f7ba2e1510676",
+    "Name": "Reptilia 34mm ROF-90 RMR mount for Geissele scope mounts",
+    "ModType": "mount",
+    "Ergonomics": -1,
+    "Accuracy": 0,
+    "ConflictingItems": [],
+    "Weight": 0.02,
+    "LoyaltyLevel": 4,
+    "Prefab": {
+      "path": "Mods/Mounts/34mm_rof_90_blk.bundle",
+      "rcid": ""
+    },
+    "Conflictingitems": [
+      "959b54e7798be68a1a54ff81",
+      "d4424e8a8d6e6789adbfcde2",
+      "42aac757e1ac8161f6ec6766",
+      "ee8d5029626f7ba2e1510676"
+    ],
+    "Slots": [
+      {
+        "_name": "mod_scope_000",
+        "_id": "bb8bca6e11fe032e866567c8",
+        "_parent": "ee8d5029626f7ba2e1510676",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "5a32aa8bc4a2826c6e06d737",
+                "81ee14e532991b2b9993ae0e",
+                "ac738256c846acc25b183a80",
+                "26f02172906cbaa1ae78e57d",
+                "87690b1fadc788a959d42e46"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      }
+    ],
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "Dispersion": 0,
+    "AimStability": 0,
+    "Handling": 0
+  },
+  "959b54e7798be68a1a54ff81": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "959b54e7798be68a1a54ff81",
+    "Name": "Reptilia 34mm ROF-90 RMR mount for Geissele scope mounts (DDC)",
+    "ModType": "mount",
+    "Ergonomics": 0,
+    "Accuracy": 0,
+    "ConflictingItems": [],
+    "Weight": 0.02,
+    "LoyaltyLevel": 4,
+    "Prefab": {
+      "path": "Mods/Mounts/34mm_rof_90_ddc.bundle",
+      "rcid": ""
+    },
+    "Conflictingitems": [
+      "ee8d5029626f7ba2e1510676",
+      "d4424e8a8d6e6789adbfcde2",
+      "42aac757e1ac8161f6ec6766",
+      "959b54e7798be68a1a54ff81"
+    ],
+    "Slots": [
+      {
+        "_name": "mod_scope_000",
+        "_id": "4d78dd94b2dfe6dc412bfa91",
+        "_parent": "959b54e7798be68a1a54ff81",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "5a32aa8bc4a2826c6e06d737",
+                "81ee14e532991b2b9993ae0e",
+                "ac738256c846acc25b183a80",
+                "26f02172906cbaa1ae78e57d",
+                "87690b1fadc788a959d42e46"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      }
+    ],
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "Dispersion": 0,
+    "AimStability": 0,
+    "Handling": 0
+  },
+  "d4424e8a8d6e6789adbfcde2": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "d4424e8a8d6e6789adbfcde2",
+    "Name": "Reptilia 34mm ROF-45 RMR mount for Geissele scope mounts",
+    "ModType": "mount",
+    "Ergonomics": 0,
+    "Accuracy": 0,
+    "ConflictingItems": [],
+    "Weight": 0.02,
+    "LoyaltyLevel": 4,
+    "Prefab": {
+      "path": "Mods/Mounts/34mm_rof_45_blk.bundle",
+      "rcid": ""
+    },
+    "Conflictingitems": [
+      "42aac757e1ac8161f6ec6766",
+      "959b54e7798be68a1a54ff81",
+      "ee8d5029626f7ba2e1510676",
+      "d4424e8a8d6e6789adbfcde2"
+    ],
+    "Slots": [
+      {
+        "_name": "mod_scope_000",
+        "_id": "e92ed3749e9e957f7b174897",
+        "_parent": "d4424e8a8d6e6789adbfcde2",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "5a32aa8bc4a2826c6e06d737",
+                "81ee14e532991b2b9993ae0e",
+                "ac738256c846acc25b183a80",
+                "26f02172906cbaa1ae78e57d",
+                "87690b1fadc788a959d42e46"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      }
+    ],
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "Dispersion": 0,
+    "AimStability": 0,
+    "Handling": 0
+  },
+  "42aac757e1ac8161f6ec6766": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "42aac757e1ac8161f6ec6766",
+    "Name": "Reptilia 34mm ROF-45 RMR mount for Geissele scope mounts (DDC)",
+    "ModType": "mount",
+    "Ergonomics": 0,
+    "Accuracy": 0,
+    "ConflictingItems": [],
+    "Weight": 0.02,
+    "LoyaltyLevel": 4,
+    "Prefab": {
+      "path": "Mods/Mounts/34mm_rof_45_ddc.bundle",
+      "rcid": ""
+    },
+    "Conflictingitems": [
+      "d4424e8a8d6e6789adbfcde2",
+      "959b54e7798be68a1a54ff81",
+      "959b54e7798be68a1a54ff81",
+      "42aac757e1ac8161f6ec6766"
+    ],
+    "Slots": [
+      {
+        "_name": "mod_scope_000",
+        "_id": "96b38ff1faeb4e971e7e8171",
+        "_parent": "42aac757e1ac8161f6ec6766",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "5a32aa8bc4a2826c6e06d737",
+                "81ee14e532991b2b9993ae0e",
+                "ac738256c846acc25b183a80",
+                "26f02172906cbaa1ae78e57d",
+                "87690b1fadc788a959d42e46"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      }
+    ],
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "Dispersion": 0,
+    "AimStability": 0,
+    "Handling": 0
+  },
+  "81ee14e532991b2b9993ae0e": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "81ee14e532991b2b9993ae0e",
+    "Name": "Reptilia 2.5mm RMR Riser for Trijicon RMR",
+    "ModType": "mount",
+    "Ergonomics": 1,
+    "Accuracy": 0,
+    "ConflictingItems": [],
+    "Weight": 0.02,
+    "LoyaltyLevel": 4,
+    "Prefab": {
+      "path": "Mods/Mounts/rof2_5mm_spacer_blk.bundle",
+      "rcid": ""
+    },
+    "Slots": [
+      {
+        "_name": "mod_scope_001",
+        "_id": "a1f8108b600a09dcdaf304a1",
+        "_parent": "81ee14e532991b2b9993ae0e",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "5a32aa8bc4a2826c6e06d737"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      }
+    ],
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "Dispersion": 0,
+    "AimStability": 0,
+    "Handling": 0
+  },
+  "ac738256c846acc25b183a80": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "ac738256c846acc25b183a80",
+    "Name": "Reptilia 2.5mm RMR Riser for Trijicon RMR (DDC)",
+    "ModType": "mount",
+    "Ergonomics": 1,
+    "Accuracy": 0,
+    "ConflictingItems": [],
+    "Weight": 0.02,
+    "LoyaltyLevel": 4,
+    "Prefab": {
+      "path": "Mods/Mounts/rof2_5mm_spacer_ddc.bundle",
+      "rcid": ""
+    },
+    "Slots": [
+      {
+        "_name": "mod_scope_001",
+        "_id": "cb98a6ac3246eb1c093a1d47",
+        "_parent": "ac738256c846acc25b183a80",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "5a32aa8bc4a2826c6e06d737"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      }
+    ],
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "Dispersion": 0,
+    "AimStability": 0,
+    "Handling": 0
+  },
+  "26f02172906cbaa1ae78e57d": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "26f02172906cbaa1ae78e57d",
+    "Name": "Reptilia 10mm RMR Riser for Trijicon RMR",
+    "ModType": "mount",
+    "Ergonomics": 0,
+    "Accuracy": 0,
+    "ConflictingItems": [],
+    "Weight": 0.02,
+    "LoyaltyLevel": 4,
+    "Prefab": {
+      "path": "Mods/Mounts/rof_10mm_spacer_blk.bundle",
+      "rcid": ""
+    },
+    "Slots": [
+      {
+        "_name": "mod_scope_001",
+        "_id": "be8ce5ec4e79337b77ef7a29",
+        "_parent": "26f02172906cbaa1ae78e57d",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "5a32aa8bc4a2826c6e06d737"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      }
+    ],
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "Dispersion": 0,
+    "AimStability": 0,
+    "Handling": 0
+  },
+  "87690b1fadc788a959d42e46": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "87690b1fadc788a959d42e46",
+    "Name": "Reptilia 10mm RMR Riser for Trijicon RMR (DDC)",
+    "ModType": "mount",
+    "Ergonomics": 0,
+    "Accuracy": 0,
+    "ConflictingItems": [],
+    "Weight": 0.02,
+    "LoyaltyLevel": 4,
+    "Prefab": {
+      "path": "Mods/Mounts/rof_10mm_spacer_ddc.bundle",
+      "rcid": ""
+    },
+    "Slots": [
+      {
+        "_name": "mod_scope_001",
+        "_id": "505f7214993f9ca2fafd809e",
+        "_parent": "87690b1fadc788a959d42e46",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "5a32aa8bc4a2826c6e06d737"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      }
+    ],
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "Dispersion": 0,
+    "AimStability": 0,
+    "Handling": 0
+  },
+  "6655df2d0169bf45a18535c8": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "6655df2d0169bf45a18535c8",
+    "Name": "Trijicon MRO standard mount (short)",
+    "ModType": "mount",
+    "Ergonomics": 0,
+    "Accuracy": 0,
+    "ConflictingItems": [],
+    "Weight": 0.011,
+    "LoyaltyLevel": 2,
+    "Prefab": {
+      "path": "Mods/Mounts/mro_short.bundle",
+      "rcid": ""
+    },
+    "Conflictingitems": [
+      "5ae30bad5acfc400185c2dc4"
+    ],
+    "Slots": [
+      {
+        "_name": "mod_scope",
+        "_id": "1b31718ef089cc7533c62d1a",
+        "_parent": "6655df2d0169bf45a18535c8",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "3f18b9a4a43e2c071b08179a"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      }
+    ],
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "Dispersion": 0,
+    "AimStability": 0,
+    "Handling": 0
+  },
+  "794a8aea9ca78d01fc24a4f8": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "794a8aea9ca78d01fc24a4f8",
+    "Name": "Trijicon MRO standard mount (tall)",
+    "ModType": "mount",
+    "Ergonomics": 1,
+    "Accuracy": 0,
+    "ConflictingItems": [],
+    "Weight": 0.015,
+    "LoyaltyLevel": 2,
+    "Prefab": {
+      "path": "Mods/Mounts/mro_tall.bundle",
+      "rcid": ""
+    },
+    "Conflictingitems": [
+      "5ae30bad5acfc400185c2dc4"
+    ],
+    "Slots": [
+      {
+        "_name": "mod_scope",
+        "_id": "7ec925b570b27cffd1adcbf9",
+        "_parent": "794a8aea9ca78d01fc24a4f8",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "3f18b9a4a43e2c071b08179a"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      }
+    ],
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "Dispersion": 0,
+    "AimStability": 0,
+    "Handling": 0
+  },
+  "4330375080cfa3b0acf681c0": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "4330375080cfa3b0acf681c0",
+    "Name": "Geissele Super Precision T1 Lower 1/3 Co-Witness mount (Black)",
+    "ModType": "mount",
+    "Ergonomics": 1,
+    "Accuracy": 0,
+    "ConflictingItems": [],
+    "Weight": 0.015,
+    "LoyaltyLevel": 1,
+    "ExaminedByDefault": true,
+    "Prefab": {
+      "path": "Mods/Mounts/geissele_sp_l1_3_t1_blk.bundle",
+      "rcid": ""
+    },
+    "Conflictingitems": [
+      "5ae30bad5acfc400185c2dc4"
+    ],
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "Dispersion": 0,
+    "AimStability": 0,
+    "Handling": 0
+  },
+  "dc443bf6ab32570c69096e37": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "dc443bf6ab32570c69096e37",
+    "Name": "Geissele Super Precision T1 Lower 1/3 Co-Witness mount (FDE)",
+    "ModType": "mount",
+    "Ergonomics": 1,
+    "Accuracy": 0,
+    "ConflictingItems": [],
+    "Weight": 0.015,
+    "LoyaltyLevel": 1,
+    "ExaminedByDefault": true,
+    "Prefab": {
+      "path": "Mods/Mounts/geissele_sp_l1_3_t1_fde.bundle",
+      "rcid": ""
+    },
+    "Conflictingitems": [
+      "5ae30bad5acfc400185c2dc4"
+    ],
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "Dispersion": 0,
+    "AimStability": 0,
+    "Handling": 0
+  },
+  "66079d40016c0de3509a31e7": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "66079d40016c0de3509a31e7",
+    "Name": "Geissele Super Precision T1 Absolute Co-Witness mount (Black)",
+    "ModType": "mount",
+    "Ergonomics": -1,
+    "Accuracy": 0,
+    "ConflictingItems": [],
+    "Weight": 0.015,
+    "LoyaltyLevel": 2,
+    "ExaminedByDefault": true,
+    "Prefab": {
+      "path": "Mods/Mounts/geissele_sp_cw_t1_blk.bundle",
+      "rcid": ""
+    },
+    "Conflictingitems": [
+      "5ae30bad5acfc400185c2dc4"
+    ],
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "Dispersion": 0,
+    "AimStability": 0,
+    "Handling": 0
+  },
+  "ca9b71e00031160119ab1e58": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "ca9b71e00031160119ab1e58",
+    "Name": "Geissele Super Precision T1 Absolute Co-Witness mount (FDE)",
+    "ModType": "mount",
+    "Ergonomics": 1,
+    "Accuracy": 0,
+    "ConflictingItems": [],
+    "Weight": 0.015,
+    "LoyaltyLevel": 2,
+    "ExaminedByDefault": true,
+    "Prefab": {
+      "path": "Mods/Mounts/geissele_sp_cw_t1_fde.bundle",
+      "rcid": ""
+    },
+    "Conflictingitems": [
+      "5ae30bad5acfc400185c2dc4"
+    ],
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "Dispersion": 0,
+    "AimStability": 0,
+    "Handling": 0
+  },
+  "58c3819c7e3f0593dbb9851a": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "58c3819c7e3f0593dbb9851a",
+    "Name": "Trijicon TA44 sight mount",
+    "ModType": "mount",
+    "Ergonomics": 0,
+    "Accuracy": 0,
+    "ConflictingItems": [],
+    "Weight": 0.113,
+    "LoyaltyLevel": 2,
+    "ExaminedByDefault": true,
+    "Prefab": {
+      "path": "Mods/Mounts/ta44_mount.bundle",
+      "rcid": ""
+    },
+    "Conflictingitems": [
+      "5ae30bad5acfc400185c2dc4",
+      "55d5f46a4bdc2d1b198b4567",
+      "275def25d1abe9b101511271"
+    ],
+    "Slots": [
+      {
+        "_name": "mod_scope",
+        "_id": "baf93d911227f01eaa05af38",
+        "_parent": "58c3819c7e3f0593dbb9851a",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "f5a80c63c2845fbc7c0c00b0"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      }
+    ],
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "Dispersion": 0,
+    "AimStability": 0,
+    "Handling": 0
+  },
+  "f849f458cb4ad62c5d8b96e1": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "f849f458cb4ad62c5d8b96e1",
+    "Name": "KAC Aimpoint Micro NVG riser mount",
+    "ModType": "mount",
+    "Ergonomics": 0,
+    "Accuracy": 0,
+    "ConflictingItems": [],
+    "Weight": 0.11,
+    "LoyaltyLevel": 3,
+    "ExaminedByDefault": true,
+    "Prefab": {
+      "path": "Mods/Mounts/kac_high_forward.bundle",
+      "rcid": ""
+    },
+    "Conflictingitems": [
+      "5ae30bad5acfc400185c2dc4"
+    ],
+    "Width": 2,
+    "Slots": [
+      {
+        "_name": "mod_scope",
+        "_id": "3fc01ec5a3357590ed760b80",
+        "_parent": "f849f458cb4ad62c5d8b96e1",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "61657230d92c473c770213d7",
+                "58d399e486f77442e0016fe7",
+                "5b3116595acfc40019476364",
+                "58d39b0386f77443380bf13c"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      },
+      {
+        "_name": "mod_tactical",
+        "_id": "ea43f44dcf38d4370f43ef18",
+        "_parent": "f849f458cb4ad62c5d8b96e1",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": []
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      }
+    ],
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "Dispersion": 0,
+    "AimStability": 0,
+    "Handling": 0
+  },
+  "86f1db244188717106a25806": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "86f1db244188717106a25806",
+    "Name": "KAC Aimpoint Micro NVG riser mount (Reversed)",
+    "ModType": "mount",
+    "Ergonomics": 0,
+    "Accuracy": 0,
+    "ConflictingItems": [],
+    "Weight": 0.11,
+    "LoyaltyLevel": 3,
+    "ExaminedByDefault": true,
+    "Prefab": {
+      "path": "Mods/Mounts/kac_high_reverse.bundle",
+      "rcid": ""
+    },
+    "Conflictingitems": [
+      "5ae30bad5acfc400185c2dc4",
+      "5bb20e49d4351e3bac1212de",
+      "5ba26b17d4351e00367f9bdd",
+      "5dfa3d7ac41b2312ea33362a",
+      "5c1780312e221602b66cc189",
+      "5fb6564947ce63734e3fa1da",
+      "5bc09a18d4351e003562b68e",
+      "5c18b9192e2216398b5a8104",
+      "5fc0fa957283c4046c58147e",
+      "5894a81786f77427140b8347",
+      "55d5f46a4bdc2d1b198b4567",
+      "5ae30bad5acfc400185c2dc4",
+      "275def25d1abe9b101511271"
+    ],
+    "Width": 2,
+    "Slots": [
+      {
+        "_name": "mod_scope",
+        "_id": "3fc01ec5a3357590ed760b80",
+        "_parent": "86f1db244188717106a25806",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "61657230d92c473c770213d7",
+                "58d399e486f77442e0016fe7",
+                "5b3116595acfc40019476364",
+                "58d39b0386f77443380bf13c"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      },
+      {
+        "_name": "mod_tactical_000",
+        "_id": "ea43f44dcf38d4370f43ef18",
+        "_parent": "86f1db244188717106a25806",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "5c06595c0db834001a66af6c",
+                "544909bb4bdc2d6f028b4577"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      }
+    ],
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "Dispersion": 0,
+    "AimStability": 0,
+    "Handling": 0
+  },
+  "2e681ada9836f6e030080191": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "2e681ada9836f6e030080191",
+    "Name": "Unity FAST Optic Riser (BLK)",
+    "ModType": "mount",
+    "Ergonomics": 0,
+    "Accuracy": 0,
+    "ConflictingItems": [],
+    "Weight": 0.085,
+    "LoyaltyLevel": 3,
+    "ExaminedByDefault": true,
+    "Prefab": {
+      "path": "Mods/Mounts/unity_ftc_riser_blk.bundle",
+      "rcid": ""
+    },
+    "Conflictingitems": [],
+    "Slots": [
+      {
+        "_name": "mod_scope",
+        "_id": "006c68f92a368d4b93703de9",
+        "_parent": "2e681ada9836f6e030080191",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "558022b54bdc2dac148b458d",
+                "59f9d81586f7744c7506ee62",
+                "60a23797a37c940de7062d02",
+                "655f13e0a246670fb0373245"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      }
+    ],
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "Dispersion": 0,
+    "AimStability": 0,
+    "Handling": 0
+  },
+  "e1543def58291668bac8e2c8": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "e1543def58291668bac8e2c8",
+    "Name": "Unity FAST Optic Riser (FDE)",
+    "ModType": "mount",
+    "Ergonomics": 0,
+    "Accuracy": 0,
+    "ConflictingItems": [],
+    "Weight": 0.085,
+    "LoyaltyLevel": 3,
+    "ExaminedByDefault": true,
+    "Prefab": {
+      "path": "Mods/Mounts/unity_ftc_riser_fde.bundle",
+      "rcid": ""
+    },
+    "Conflictingitems": [],
+    "Slots": [
+      {
+        "_name": "mod_scope",
+        "_id": "5344c5b335fac8f5b2dcef2f",
+        "_parent": "e1543def58291668bac8e2c8",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "558022b54bdc2dac148b458d",
+                "59f9d81586f7744c7506ee62",
+                "60a23797a37c940de7062d02",
+                "655f13e0a246670fb0373245"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      }
+    ],
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "Dispersion": 0,
+    "AimStability": 0,
+    "Handling": 0
+  },
+  "7af1b735539670b26a3fe68b": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "7af1b735539670b26a3fe68b",
+    "Name": "Reptilia AUS 34mm ring scope mount (FDE)",
+    "ModType": "mount",
+    "Ergonomics": 1,
+    "Accuracy": 0,
+    "ConflictingItems": [
+      "5ae30bad5acfc400185c2dc4"
+    ],
+    "Weight": 0.194,
+    "LoyaltyLevel": 4,
+    "Prefab": {
+      "path": "Mods/Mounts/reptilia_34mm_mount_fde.bundle",
+      "rcid": ""
+    },
+    "Conflictingitems": [
+      "55d5f46a4bdc2d1b198b4567",
+      "623166e08c43374ca1567195",
+      "56083e1b4bdc2dc8488b4572",
+      "5ae30bad5acfc400185c2dc4",
+      "275def25d1abe9b101511271"
+    ],
+    "Slots": [
+      {
+        "_name": "mod_scope",
+        "_id": "c3a0c6726558534a52ef5b91",
+        "_parent": "7af1b735539670b26a3fe68b",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "56ea70acd2720b844b8b4594",
+                "5aa66be6e5b5b0214e506e97",
+                "61714eec290d254f5e6b2ffc",
+                "62850c28da09541f43158cca",
+                "85675a91454713828d6138e5",
+                "cd609524dadc768a89f99bba",
+                "750bcfb1b1f84f27a8f4f282",
+                "0afaf0c97b1d068d242df1dc"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      },
+      {
+        "_name": "mod_mount",
+        "_id": "0c52c2da4a9b89161febdd6b",
+        "_parent": "67ea8b32e0d7701fc6bfc5bf",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "0ce104382851509ab14fb19c",
+                "27b92c2226b1110635235c2e",
+                "04b7ab7e14e564819a6d0e22",
+                "0d914f394390e16506a949da",
+                "7b3525a6de4f4847921529c0",
+                "159023b10fa02ac28247fce3"
+              ]
+            }
+          ]
+        },
+        "_required": true,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      }
+    ],
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "Dispersion": 0,
+    "AimStability": 0,
+    "Handling": 0
+  },
+  "e3dcf75199f821636a95cb9b": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "e3dcf75199f821636a95cb9b",
+    "Name": "Reptilia AUS 34mm ring scope mount (BLK)",
+    "ModType": "mount",
+    "Ergonomics": 0,
+    "Accuracy": 0,
+    "ConflictingItems": [
+      "5ae30bad5acfc400185c2dc4"
+    ],
+    "Weight": 0.194,
+    "LoyaltyLevel": 4,
+    "Prefab": {
+      "path": "Mods/Mounts/reptilia_34mm_mount_blk.bundle",
+      "rcid": ""
+    },
+    "Conflictingitems": [
+      "55d5f46a4bdc2d1b198b4567",
+      "623166e08c43374ca1567195",
+      "56083e1b4bdc2dc8488b4572",
+      "5ae30bad5acfc400185c2dc4",
+      "275def25d1abe9b101511271"
+    ],
+    "Slots": [
+      {
+        "_name": "mod_scope",
+        "_id": "d180f87d9cac7548e5cd65c6",
+        "_parent": "e3dcf75199f821636a95cb9b",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "56ea70acd2720b844b8b4594",
+                "5aa66be6e5b5b0214e506e97",
+                "61714eec290d254f5e6b2ffc",
+                "62850c28da09541f43158cca",
+                "85675a91454713828d6138e5",
+                "cd609524dadc768a89f99bba",
+                "750bcfb1b1f84f27a8f4f282",
+                "0afaf0c97b1d068d242df1dc"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      },
+      {
+        "_name": "mod_mount",
+        "_id": "c4c5c97a0a3516d249e90d4d",
+        "_parent": "e3dcf75199f821636a95cb9b",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "0ce104382851509ab14fb19c",
+                "27b92c2226b1110635235c2e",
+                "04b7ab7e14e564819a6d0e22",
+                "0d914f394390e16506a949da",
+                "7b3525a6de4f4847921529c0",
+                "159023b10fa02ac28247fce3"
+              ]
+            }
+          ]
+        },
+        "_required": true,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      }
+    ],
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "Dispersion": 0,
+    "AimStability": 0,
+    "Handling": 0
+  },
+  "0ce104382851509ab14fb19c": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "0ce104382851509ab14fb19c",
+    "Name": "Reptilia 34mm ROF-90 RMR mount for Reptilia scope mounts (BLK)",
+    "ModType": "mount",
+    "Ergonomics": -1,
+    "Accuracy": 0,
+    "ConflictingItems": [],
+    "Weight": 0.02,
+    "LoyaltyLevel": 4,
+    "Prefab": {
+      "path": "Mods/Mounts/reptilia_34mm_rmr_blk.bundle",
+      "rcid": ""
+    },
+    "Slots": [
+      {
+        "_name": "mod_scope_001",
+        "_id": "4af17e6e372c170c6cf5111f",
+        "_parent": "0ce104382851509ab14fb19c",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "5a32aa8bc4a2826c6e06d737",
+                "81ee14e532991b2b9993ae0e",
+                "ac738256c846acc25b183a80",
+                "26f02172906cbaa1ae78e57d",
+                "87690b1fadc788a959d42e46"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      }
+    ],
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "Dispersion": 0,
+    "AimStability": 0,
+    "Handling": 0
+  },
+  "27b92c2226b1110635235c2e": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "27b92c2226b1110635235c2e",
+    "Name": "Reptilia 34mm ROF-90 RMR mount for Reptilia scope mounts (FDE)",
+    "ModType": "mount",
+    "Ergonomics": 0,
+    "Accuracy": 0,
+    "ConflictingItems": [],
+    "Weight": 0.02,
+    "LoyaltyLevel": 4,
+    "Prefab": {
+      "path": "Mods/Mounts/reptilia_34mm_rmr_fde.bundle",
+      "rcid": ""
+    },
+    "Slots": [
+      {
+        "_name": "mod_scope_001",
+        "_id": "f91cd50a4418d2ad0d3c0010",
+        "_parent": "27b92c2226b1110635235c2e",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "5a32aa8bc4a2826c6e06d737",
+                "81ee14e532991b2b9993ae0e",
+                "ac738256c846acc25b183a80",
+                "26f02172906cbaa1ae78e57d",
+                "87690b1fadc788a959d42e46"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      }
+    ],
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "Dispersion": 0,
+    "AimStability": 0,
+    "Handling": 0
+  },
+  "04b7ab7e14e564819a6d0e22": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "04b7ab7e14e564819a6d0e22",
+    "Name": "Reptilia AUS 34mm top ring cap (BLK)",
+    "ModType": "mount",
+    "Ergonomics": 0,
+    "Accuracy": 0,
+    "ConflictingItems": [],
+    "Weight": 0.02,
+    "LoyaltyLevel": 4,
+    "Prefab": {
+      "path": "Mods/Mounts/reptilia_ring_blk.bundle",
+      "rcid": ""
+    },
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "Dispersion": 0,
+    "AimStability": 0,
+    "Handling": 0
+  },
+  "0d914f394390e16506a949da": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "0d914f394390e16506a949da",
+    "Name": "Reptilia AUS 34mm top ring cap (FDE)",
+    "ModType": "mount",
+    "Ergonomics": 1,
+    "Accuracy": 0,
+    "ConflictingItems": [],
+    "Weight": 0.02,
+    "LoyaltyLevel": 4,
+    "Prefab": {
+      "path": "Mods/Mounts/reptilia_ring_fde.bundle",
+      "rcid": ""
+    },
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "Dispersion": 0,
+    "AimStability": 0,
+    "Handling": 0
+  },
+  "7b3525a6de4f4847921529c0": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "7b3525a6de4f4847921529c0",
+    "Name": "Reptilia 34mm ROF-90 ACRO mount for Reptilia scope mounts (BLK)",
+    "ModType": "mount",
+    "Ergonomics": 0,
+    "Accuracy": 0,
+    "ConflictingItems": [],
+    "Weight": 0.02,
+    "LoyaltyLevel": 4,
+    "Prefab": {
+      "path": "Mods/Mounts/reptilia_34mm_acro_blk.bundle",
+      "rcid": ""
+    },
+    "Slots": [
+      {
+        "_name": "mod_scope_002",
+        "_id": "1a4f4edf8fd029061b535969",
+        "_parent": "7b3525a6de4f4847921529c0",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "616442e4faa1272e43152193",
+                "dd7caf9bd203b146528c8da4"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      }
+    ],
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "Dispersion": 0,
+    "AimStability": 0,
+    "Handling": 0
+  },
+  "159023b10fa02ac28247fce3": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "159023b10fa02ac28247fce3",
+    "Name": "Reptilia 34mm ROF-90 ACRO mount for Reptilia scope mounts (FDE)",
+    "ModType": "mount",
+    "Ergonomics": 0,
+    "Accuracy": 0,
+    "ConflictingItems": [],
+    "Weight": 0.02,
+    "LoyaltyLevel": 4,
+    "Prefab": {
+      "path": "Mods/Mounts/reptilia_34mm_acro_fde.bundle",
+      "rcid": ""
+    },
+    "Slots": [
+      {
+        "_name": "mod_scope_002",
+        "_id": "6a1d20ed9fe6722e330e4c26",
+        "_parent": "159023b10fa02ac28247fce3",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "616442e4faa1272e43152193",
+                "dd7caf9bd203b146528c8da4"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      }
+    ],
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "Dispersion": 0,
+    "AimStability": 0,
+    "Handling": 0
+  },
+  "93efffa7844876067d81dca5": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "93efffa7844876067d81dca5",
+    "Name": "B&T QD low mount for Aimpoint ACRO",
+    "ModType": "mount",
+    "Ergonomics": -1,
+    "Accuracy": 0,
+    "ConflictingItems": [
+      "5ae30bad5acfc400185c2dc4"
+    ],
+    "Weight": 0.07,
+    "LoyaltyLevel": 1,
+    "Prefab": {
+      "path": "Mods/Mounts/acro_pic_mount_short.bundle",
+      "rcid": ""
+    },
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "Dispersion": 0,
+    "AimStability": 0,
+    "Handling": 0
+  },
+  "85a2077a2a40a73a0f95f74a": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "85a2077a2a40a73a0f95f74a",
+    "Name": "Larue LT724 Angled CQB Micro T-1 mount",
+    "ModType": "mount",
+    "Ergonomics": -1,
+    "Accuracy": 0,
+    "ConflictingItems": [],
+    "Weight": 0.04,
+    "LoyaltyLevel": 4,
+    "Prefab": {
+      "path": "Mods/Mounts/micro_offset.bundle",
+      "rcid": ""
+    },
+    "Slots": [
+      {
+        "_name": "mod_scope",
+        "_id": "5649dc074bdc2d1b2b8b458f",
+        "_parent": "85a2077a2a40a73a0f95f74a",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "61657230d92c473c770213d7",
+                "58d399e486f77442e0016fe7",
+                "5b3116595acfc40019476364",
+                "026dfdb287f69c3025f0f728",
+                "2589a5a2424122404cf3a94c"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      }
+    ],
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "Dispersion": 0,
+    "AimStability": 0,
+    "Handling": 0
+  },
+  "55dccd6302404bfc237a814e": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "55dccd6302404bfc237a814e",
+    "Name": "Reptilia 1.93\" mount for Aimpoint ACRO (Black)",
+    "ModType": "mount",
+    "Ergonomics": 0,
+    "Accuracy": 0,
+    "ConflictingItems": [
+      "5ae30bad5acfc400185c2dc4"
+    ],
+    "Weight": 0.07,
+    "LoyaltyLevel": 1,
+    "Prefab": {
+      "path": "Mods/Mounts/rep_acro_193_blk.bundle",
+      "rcid": ""
+    },
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "Dispersion": 0,
+    "AimStability": 0,
+    "Handling": 0
+  },
+  "1c852a7fd73bcde9d3ff968b": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "1c852a7fd73bcde9d3ff968b",
+    "Name": "Reptilia 1.93\" mount for Aimpoint ACRO (FDE)",
+    "ModType": "mount",
+    "Ergonomics": 0,
+    "Accuracy": 0,
+    "ConflictingItems": [
+      "5ae30bad5acfc400185c2dc4"
+    ],
+    "Weight": 0.07,
+    "LoyaltyLevel": 1,
+    "Prefab": {
+      "path": "Mods/Mounts/rep_acro_193_fde.bundle",
+      "rcid": ""
+    },
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "Dispersion": 0,
+    "AimStability": 0,
+    "Handling": 0
+  },
+  "71e6bc96b1a4cce0b4340b20": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "71e6bc96b1a4cce0b4340b20",
+    "Name": "Reptilia Lower 1/3 mount for Aimpoint ACRO (Black)",
+    "ModType": "mount",
+    "Ergonomics": 0,
+    "Accuracy": 0,
+    "ConflictingItems": [
+      "5ae30bad5acfc400185c2dc4"
+    ],
+    "Weight": 0.07,
+    "LoyaltyLevel": 1,
+    "Prefab": {
+      "path": "Mods/Mounts/rep_acro_cowitness_blk.bundle",
+      "rcid": ""
+    },
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "Dispersion": 0,
+    "AimStability": 0,
+    "Handling": 0
+  },
+  "986150a30f2c89c4555dead5": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "986150a30f2c89c4555dead5",
+    "Name": "Reptilia Lower 1/3 mount for Aimpoint ACRO (FDE)",
+    "ModType": "mount",
+    "Ergonomics": 0,
+    "Accuracy": 0,
+    "ConflictingItems": [
+      "5ae30bad5acfc400185c2dc4"
+    ],
+    "Weight": 0.07,
+    "LoyaltyLevel": 1,
+    "Prefab": {
+      "path": "Mods/Mounts/rep_acro_cowitness_fde.bundle",
+      "rcid": ""
+    },
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "Dispersion": 0,
+    "AimStability": 0,
+    "Handling": 0
+  },
+  "f07a16a89f1c954f72bbf50e": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "f07a16a89f1c954f72bbf50e",
+    "Name": "Reptilia Offset mount for Aimpoint ACRO (Black)",
+    "ModType": "mount",
+    "Ergonomics": 0,
+    "Accuracy": 0,
+    "ConflictingItems": [],
+    "Weight": 0.04,
+    "LoyaltyLevel": 4,
+    "Prefab": {
+      "path": "Mods/Mounts/rep_acro_offset_blk.bundle",
+      "rcid": ""
+    },
+    "Slots": [
+      {
+        "_id": "d1d608301ad081f6f908bf07",
+        "_mergeSlotWithChildren": false,
+        "_name": "mod_scope",
+        "_parent": "f07a16a89f1c954f72bbf50e",
+        "_props": {
+          "filters": [
+            {
+              "Filter": [
+                "616442e4faa1272e43152193",
+                "dd7caf9bd203b146528c8da4",
+                "36c4b709b7b9465d6e875d35"
+              ],
+              "Shift": 0
+            }
+          ]
+        },
+        "_proto": "55d30c4c4bdc2db4468b457e",
+        "_required": false
+      }
+    ],
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "Dispersion": 0,
+    "AimStability": 0,
+    "Handling": 0
+  },
+  "7e07f0150bb32a595e2c142b": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "7e07f0150bb32a595e2c142b",
+    "Name": "Reptilia Offset mount for Aimpoint ACRO (FDE)",
+    "ModType": "mount",
+    "Ergonomics": -1,
+    "Accuracy": 0,
+    "ConflictingItems": [],
+    "Weight": 0.04,
+    "LoyaltyLevel": 4,
+    "Prefab": {
+      "path": "Mods/Mounts/rep_acro_offset_fde.bundle",
+      "rcid": ""
+    },
+    "Slots": [
+      {
+        "_id": "b0b74a4f1b3e617292d8f852",
+        "_mergeSlotWithChildren": false,
+        "_name": "mod_scope",
+        "_parent": "7e07f0150bb32a595e2c142b",
+        "_props": {
+          "filters": [
+            {
+              "Filter": [
+                "616442e4faa1272e43152193",
+                "dd7caf9bd203b146528c8da4",
+                "36c4b709b7b9465d6e875d35"
+              ],
+              "Shift": 0
+            }
+          ]
+        },
+        "_proto": "55d30c4c4bdc2db4468b457e",
+        "_required": false
+      }
+    ],
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "Dispersion": 0,
+    "AimStability": 0,
+    "Handling": 0
+  },
+  "23878a19adddf4afbbcc0537": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "23878a19adddf4afbbcc0537",
+    "Name": "Carry Handle Tactical Picatinny Riser mount",
+    "ModType": "mount",
+    "Ergonomics": 0,
+    "Accuracy": 0,
+    "ConflictingItems": [],
+    "Weight": 0.11,
+    "LoyaltyLevel": 3,
+    "Prefab": {
+      "path": "Mods/Mounts/carry_handle_pic_mount.bundle",
+      "rcid": ""
+    },
+    "Slots": [
+      {
+        "_id": "1becd225e0ed6368cc6f871b",
+        "_mergeSlotWithChildren": false,
+        "_name": "mod_scope",
+        "_parent": "23878a19adddf4afbbcc0537",
+        "_props": {
+          "filters": [
+            {
+              "Filter": [
+                "57ac965c24597706be5f975c",
+                "57aca93d2459771f2c7e26db",
+                "544a3f024bdc2d1d388b4568",
+                "544a3a774bdc2d3a388b4567",
+                "5d2dc3e548f035404a1a4798",
+                "57adff4f24597737f373b6e6",
+                "5c0517910db83400232ffee5",
+                "591c4efa86f7741030027726",
+                "570fd79bd2720bc7458b4583",
+                "570fd6c2d2720bc6458b457f",
+                "558022b54bdc2dac148b458d",
+                "5c07dd120db834001c39092d",
+                "5c0a2cec0db834001b7ce47d",
+                "58491f3324597764bc48fa02",
+                "584924ec24597768f12ae244",
+                "5b30b0dc5acfc400153b7124",
+                "6165ac8c290d254f5e6b2f6c",
+                "60a23797a37c940de7062d02",
+                "5d2da1e948f035477b1ce2ba",
+                "5c0505e00db834001b735073",
+                "609a63b6e2ff132951242d09",
+                "584984812459776a704a82a6",
+                "59f9d81586f7744c7506ee62",
+                "570fd721d2720bc5458b4596",
+                "57ae0171245977343c27bfcf",
+                "5dfe6104585a0c3e995c7b82",
+                "5d1b5e94d7ad1a2b865a96b0",
+                "609bab8b455afd752b2e6138",
+                "58d39d3d86f77445bb794ae7",
+                "616554fe50224f204c1da2aa",
+                "5c7d55f52e221644f31bff6a",
+                "616584766ef05c2ce828ef57",
+                "5b3b6dc75acfc47a8773fb1e",
+                "615d8d878004cc50514c3233",
+                "5b2389515acfc4771e1be0c0",
+                "577d128124597739d65d0e56",
+                "618b9643526131765025ab35",
+                "618bab21526131765025ab3f",
+                "5c86592b2e2216000e69e77c",
+                "5a37ca54c4a282000d72296a",
+                "58d2664f86f7747fec5834f6",
+                "57c69dd424597774c03b7bbc",
+                "5b3b99265acfc4704b4a1afb",
+                "5aa66a9be5b5b0214e506e89",
+                "5aa66c72e5b5b00016327c93",
+                "5c1cdd302e221602b3137250",
+                "61714b2467085e45ef140b2c",
+                "6171407e50224f204c1da3c5",
+                "61713cc4d8e3106d9806c109",
+                "5b31163c5acfc400153b71cb",
+                "5a33b652c4a28232996e407c",
+                "5a33b2c9c4a282000c5a9511",
+                "59db7eed86f77461f8380365",
+                "5a1ead28fcdbcb001912fa9f",
+                "5dff77c759400025ea5150cf",
+                "626bb8532c923541184624b4",
+                "63fc449f5bd61c6cf3784a88",
+                "6477772ea8a38bb2050ed4db",
+                "6478641c19d732620e045e17",
+                "64785e7c19d732620e045e15",
+                "655f13e0a246670fb0373245",
+                "6567e751a715f85433025998",
+                "93efffa7844876067d81dca5"
+              ],
+              "Shift": 0
+            }
+          ]
+        },
+        "_proto": "55d30c4c4bdc2db4468b457e",
+        "_required": false
+      }
+    ],
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "Dispersion": 0,
+    "AimStability": 0,
+    "Handling": 0
+  },
+  "66713838ca123f9df8e7584e": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "66713838ca123f9df8e7584e",
+    "Name": "Precision Reflex Carry Handle Mount \"Gooseneck\"",
+    "ModType": "mount",
+    "Ergonomics": 1,
+    "Accuracy": 0,
+    "ConflictingItems": [],
+    "Weight": 0.11,
+    "LoyaltyLevel": 3,
+    "Prefab": {
+      "path": "Mods/Mounts/carry_handle_gooseneck.bundle",
+      "rcid": ""
+    },
+    "Width": 2,
+    "Slots": [
+      {
+        "_id": "ac529575d88d7f8390488b2c",
+        "_mergeSlotWithChildren": false,
+        "_name": "mod_scope",
+        "_parent": "66713838ca123f9df8e7584e",
+        "_props": {
+          "filters": [
+            {
+              "Filter": [
+                "591c4efa86f7741030027726",
+                "570fd79bd2720bc7458b4583",
+                "570fd6c2d2720bc6458b457f",
+                "558022b54bdc2dac148b458d",
+                "58491f3324597764bc48fa02",
+                "584924ec24597768f12ae244",
+                "5b30b0dc5acfc400153b7124",
+                "60a23797a37c940de7062d02",
+                "5d2da1e948f035477b1ce2ba",
+                "5c0505e00db834001b735073",
+                "609a63b6e2ff132951242d09",
+                "59f9d81586f7744c7506ee62",
+                "58d39d3d86f77445bb794ae7",
+                "616554fe50224f204c1da2aa",
+                "5c7d55f52e221644f31bff6a",
+                "616584766ef05c2ce828ef57",
+                "615d8d878004cc50514c3233",
+                "5b31163c5acfc400153b71cb",
+                "5a33b652c4a28232996e407c",
+                "64785e7c19d732620e045e15",
+                "655f13e0a246670fb0373245",
+                "93efffa7844876067d81dca5"
+              ],
+              "Shift": 0
+            }
+          ]
+        },
+        "_proto": "55d30c4c4bdc2db4468b457e",
+        "_required": false
+      }
+    ],
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "Dispersion": 0,
+    "AimStability": 0,
+    "Handling": 0
+  },
+  "e35149017403373f6b780e3b": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "e35149017403373f6b780e3b",
+    "Name": "Trijicon RM35 mount for TA31 scope",
+    "ModType": "mount",
+    "Ergonomics": 0,
+    "Accuracy": 0,
+    "ConflictingItems": [],
+    "Weight": 0.02,
+    "LoyaltyLevel": 3,
+    "Prefab": {
+      "path": "Mods/Mounts/ta31_rmr_mount.bundle",
+      "rcid": ""
+    },
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "Dispersion": 0,
+    "AimStability": 0,
+    "Handling": 0
+  },
+  "fd70d4ce13dd451e8753f6f7": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "fd70d4ce13dd451e8753f6f7",
+    "Name": "Tenebraex RCO-ARD killFLASH",
+    "ModType": "",
+    "VerticalRecoil": -0.5,
+    "HorizontalRecoil": -0.5,
+    "Dispersion": -0.5,
+    "AutoROF": 0,
+    "SemiROF": 0,
+    "ModMalfunctionChance": 0,
+    "AimSpeed": 0,
+    "ReloadSpeed": 0,
+    "Ergonomics": 1,
+    "Accuracy": 0,
+    "ConflictingItems": [],
+    "FixSpeed": 0,
+    "HeatFactor": 0.98,
+    "CoolFactor": 0.98,
+    "DurabilityBurnModificator": 1,
+    "Weight": 0.005,
+    "LoyaltyLevel": 2,
+    "AimStability": 2,
+    "Handling": 1,
+    "Prefab": {
+      "path": "Mods/Mounts/ta31_ard.bundle",
+      "rcid": ""
+    },
+    "Conflictingitems": [
+      "5ae30bad5acfc400185c2dc4"
+    ]
+  },
+  "df76c6ddaa6fd565159b9679": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "df76c6ddaa6fd565159b9679",
+    "Name": "Tenebraex SpecterDR 1.5-6 killFLASH",
+    "ModType": "",
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "AutoROF": 0,
+    "SemiROF": 0,
+    "ModMalfunctionChance": 0,
+    "AimSpeed": 1,
+    "ReloadSpeed": 0,
+    "Ergonomics": 1,
+    "Accuracy": 3,
+    "ConflictingItems": [],
+    "FixSpeed": 0,
+    "HeatFactor": 1,
+    "CoolFactor": 1,
+    "DurabilityBurnModificator": 1,
+    "Weight": 0.005,
+    "LoyaltyLevel": 1,
+    "Prefab": {
+      "path": "Mods/Mounts/spectre_1_5_6_killflash.bundle",
+      "rcid": ""
+    },
+    "Width": 2
+  },
+  "eeb62fba336b644c26813276": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "eeb62fba336b644c26813276",
+    "Name": "Elcan SpecterDR RMR mount",
+    "ModType": "mount",
+    "Ergonomics": 0,
+    "Accuracy": 0,
+    "ConflictingItems": [],
+    "Weight": 0.02,
+    "LoyaltyLevel": 3,
+    "Prefab": {
+      "path": "Mods/Mounts/spectre_1_5_6_rmr_mount.bundle",
+      "rcid": ""
+    },
+    "Slots": [
+      {
+        "_id": "79e1067ba725ad52047de321",
+        "_mergeSlotWithChildren": false,
+        "_name": "mod_scope",
+        "_parent": "eeb62fba336b644c26813276",
+        "_props": {
+          "filters": [
+            {
+              "Filter": [
+                "5a32aa8bc4a2826c6e06d737"
+              ],
+              "Shift": 0
+            }
+          ]
+        },
+        "_proto": "55d30c4c4bdc2db4468b457e",
+        "_required": false
+      }
+    ],
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "Dispersion": 0,
+    "AimStability": 0,
+    "Handling": 0
+  },
+  "caa063259af7ba16d12efdec": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "caa063259af7ba16d12efdec",
+    "Name": "Farrow Tech DBAL-i2 RMR mount",
+    "ModType": "mount",
+    "Ergonomics": 0,
+    "Accuracy": 0,
+    "ConflictingItems": [],
+    "Weight": 0.02,
+    "LoyaltyLevel": 3,
+    "Prefab": {
+      "path": "Mods/Mounts/dbal_i2_rmr.bundle",
+      "rcid": ""
+    },
+    "Slots": [
+      {
+        "_id": "d76672f76bdc3a94c0ae8420",
+        "_mergeSlotWithChildren": false,
+        "_name": "mod_scope",
+        "_parent": "caa063259af7ba16d12efdec",
+        "_props": {
+          "filters": [
+            {
+              "Filter": [
+                "5a32aa8bc4a2826c6e06d737"
+              ],
+              "Shift": 0
+            }
+          ]
+        },
+        "_proto": "55d30c4c4bdc2db4468b457e",
+        "_required": false
+      }
+    ],
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "Dispersion": 0,
+    "AimStability": 0,
+    "Handling": 0
+  },
+  "ebef489a3c50f53e143480f9": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "ebef489a3c50f53e143480f9",
+    "Name": "Railscales DBAL-i2 LEAF front sight",
+    "ModType": "mount",
+    "Ergonomics": 0,
+    "Accuracy": 0,
+    "ConflictingItems": [],
+    "Weight": 0.02,
+    "LoyaltyLevel": 3,
+    "Prefab": {
+      "path": "Mods/Mounts/dbal_i2_leaf.bundle",
+      "rcid": ""
+    },
+    "Slots": [],
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "Dispersion": 0,
+    "AimStability": 0,
+    "Handling": 0
+  },
+  "df8c1c5015d2342b6c6edb56": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "df8c1c5015d2342b6c6edb56",
+    "Name": "Farrow Tech DBAL-i2 ACRO mount",
+    "ModType": "mount",
+    "Ergonomics": 1,
+    "Accuracy": 0,
+    "ConflictingItems": [],
+    "Weight": 0.02,
+    "LoyaltyLevel": 3,
+    "Prefab": {
+      "path": "Mods/Mounts/dbal_i2_acro.bundle",
+      "rcid": ""
+    },
+    "Slots": [
+      {
+        "_id": "7b58558e01e24091b1cfa8d0",
+        "_mergeSlotWithChildren": false,
+        "_name": "mod_scope",
+        "_parent": "eeb62fba336b644c26813276",
+        "_props": {
+          "filters": [
+            {
+              "Filter": [
+                "616442e4faa1272e43152193"
+              ],
+              "Shift": 0
+            }
+          ]
+        },
+        "_proto": "55d30c4c4bdc2db4468b457e",
+        "_required": false
+      }
+    ],
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "Dispersion": 0,
+    "AimStability": 0,
+    "Handling": 0
+  }
+}

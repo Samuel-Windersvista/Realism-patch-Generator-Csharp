@@ -1,0 +1,317 @@
+{
+  "68324e7849e4f772900f58e8": {
+    "$type": "RealismMod.Gun, RealismMod",
+    "ItemID": "68324e7849e4f772900f58e8",
+    "Name": "雷明顿 Model 700 6.5x48 拉栓式狙击步枪",
+    "WeapType": "",
+    "OperationType": "manual",
+    "WeapAccuracy": 0,
+    "BaseTorque": 0,
+    "HasShoulderContact": false,
+    "Ergonomics": 82,
+    "VerticalRecoil": 159,
+    "HorizontalRecoil": 259,
+    "Dispersion": 2.05,
+    "CameraRecoil": 0.04,
+    "VisualMulti": 1.73,
+    "Convergence": 11,
+    "RecoilAngle": 90,
+    "BaseMalfunctionChance": 0.0008,
+    "HeatFactorGun": 1.3,
+    "HeatFactorByShot": 1,
+    "CoolFactorGun": 0.1,
+    "CoolFactorGunMods": 1,
+    "AllowOverheat": true,
+    "CenterOfImpact": 0.011,
+    "HipAccuracyRestorationDelay": 0.2,
+    "HipAccuracyRestorationSpeed": 7,
+    "HipInnaccuracyGain": 0.16,
+    "ShotgunDispersion": 0,
+    "Velocity": 0,
+    "RecoilDamping": 0.8,
+    "RecoilHandDamping": 0.41,
+    "WeaponAllowADS": false,
+    "Weight": 0.55,
+    "DurabilityBurnRatio": 0.7,
+    "AutoROF": 30,
+    "SemiROF": 450,
+    "LoyaltyLevel": 3,
+    "BaseReloadSpeedMulti": 1,
+    "BaseChamberSpeedMulti": 1.2,
+    "MinChamberSpeed": 0.7,
+    "MaxChamberSpeed": 1.5,
+    "IsManuallyOperated": true,
+    "BaseChamberCheckSpeed": 1.3,
+    "BaseFixSpeed": 1.3,
+    "OffsetRotation": 0.01,
+    "RecoilIntensity": 0.08,
+    "RecoilCenter": {
+      "x": 0,
+      "y": -0.45,
+      "z": 0
+    },
+    "ExaminedByDefault": true,
+    "Prefab": {
+      "path": "assets/content/weapons/m700/weapon_remington_model_700_762x51_container.bundle",
+      "rcid": ""
+    },
+    "defAmmo": "683246a74073e586d112af9f",
+    "RecoilForceBack": 590,
+    "RecoilForceUp": 177,
+    "Slots": [
+      {
+        "_name": "mod_magazine",
+        "_id": "5b046a53b224dee3a93d8940",
+        "_parent": "0af5f6a5aa9712e11c733fb9",
+        "_props": {
+          "filters": [
+            {
+              "AnimationIndex": 0,
+              "Filter": [
+                "5d25a6538abbc306c62e630d",
+                "5d25a4a98abbc30b917421a4",
+                "5d25a7b88abbc3054f3e60bc",
+                "5ce69cbad7f00c00b61c5098",
+                "5d25a6a48abbc306c62e6310",
+                "5d25af8f8abbc3055079fec5",
+                "5cf12a15d7f00c05464b293f",
+                "5bfeaa0f0db834001b734927",
+                "5bfea7ad0db834001c38f1ee"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c394bdc2dae468b4577"
+      },
+      {
+        "_name": "mod_stock",
+        "_id": "793eb5b414d5ce885b98fc67",
+        "_parent": "0af5f6a5aa9712e11c733fb9",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "5cde739cd7f00c0010373bd3",
+                "5d25d0ac8abbc3054f3e61f7",
+                "5bfeb32b0db834001a6694d9",
+                "5cdeac22d7f00c000f26168f",
+                "5cf13123d7f00c1085616a50",
+                "68336505ff3b852822eb0d1f",
+                "6833df274c23dc6c04c9b871",
+                "6833bdf80131ff59f7a66603",
+                "68338b87fc8103da63185201",
+                "6833e472ced13fc24fb637c7",
+                "6833ef7b6a70be570968799f",
+                "6833ef99823dfcc6cfaf86cd",
+                "6833efad6df4433edf26c14c",
+                "6833efc07461f78c2a3c8015",
+                "6837c322fc2a43f4deea2cf4"
+              ]
+            }
+          ]
+        },
+        "_required": true,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      },
+      {
+        "_name": "mod_barrel",
+        "_id": "68324e7f6af6db347bbbb9c5",
+        "_parent": "68324e7849e4f772900f58e8",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "68324f0538b6ba82bdce2bf2",
+                "68324f72e465bb18760c71d6",
+                "68324f83171416242d1a0ac1",
+                "68324f9ec1bdc884028b3490"
+              ]
+            }
+          ]
+        },
+        "_required": true,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      },
+      {
+        "_name": "mod_mount",
+        "_id": "68324e8b1e251bcdd5959baa",
+        "_parent": "68324e7849e4f772900f58e8",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "5cde7b43d7f00c000d36b93e",
+                "5bfebc5e0db834001a6694e5",
+                "5bfebc530db834001d23eb65"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      }
+    ],
+    "Chambers": [
+      {
+        "_id": "68324e8e55ef0db228310e5d",
+        "_mergeSlotWithChildren": false,
+        "_name": "patron_in_weapon",
+        "_parent": "68324e7849e4f772900f58e8",
+        "_props": {
+          "filters": [
+            {
+              "Filter": [
+                "683246a74073e586d112af9f",
+                "68325a63730b17c69ee176eb",
+                "6833baea86387d71b68abd6f",
+                "6833bae4baa31474639bea7d",
+                "6833ba38a1c9ff155c04e56f",
+                "6833b8cb54aa764b2deefdfe",
+                "6834e6f28f5570aec23ca0c2"
+              ]
+            }
+          ]
+        },
+        "_proto": "55d4af244bdc2d962f8b4571",
+        "_required": false
+      }
+    ],
+    "ammoCaliber": "Caliber6.5x48"
+  },
+  "68324f0538b6ba82bdce2bf2": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "68324f0538b6ba82bdce2bf2",
+    "Name": "M700 6.5x48毫米 20英寸不锈钢螺纹枪管",
+    "ModType": "",
+    "VerticalRecoil": -1,
+    "HorizontalRecoil": 0,
+    "AutoROF": 0,
+    "SemiROF": 0,
+    "ModMalfunctionChance": 0,
+    "Convergence": 7,
+    "Accuracy": 4,
+    "CenterOfImpact": 0.04,
+    "HeatFactor": 1.02,
+    "CoolFactor": 0.98,
+    "DurabilityBurnModificator": 1.01,
+    "Velocity": 1,
+    "ConflictingItems": [],
+    "Ergonomics": 0,
+    "Weight": 1.2,
+    "ShotgunDispersion": 1,
+    "Loudness": 0,
+    "LoyaltyLevel": 4,
+    "ExaminedByDefault": true,
+    "Prefab": {
+      "path": "assets/content/items/mods/barrels/barrel_m700_remington_heavy_5_r_stainless_threaded_508mm.bundle",
+      "rcid": ""
+    },
+    "Recoil": -6,
+    "Dispersion": 3,
+    "RecoilAngle": -2
+  },
+  "68324f72e465bb18760c71d6": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "68324f72e465bb18760c71d6",
+    "Name": "M700 6.5x48毫米 26英寸枪管",
+    "ModType": "",
+    "VerticalRecoil": -3,
+    "HorizontalRecoil": 0,
+    "AutoROF": 0,
+    "SemiROF": 0,
+    "ModMalfunctionChance": 0,
+    "Convergence": 3,
+    "Accuracy": -1,
+    "CenterOfImpact": 0.03,
+    "HeatFactor": 1.01,
+    "CoolFactor": 0.96,
+    "DurabilityBurnModificator": 0.98,
+    "Velocity": 2,
+    "ConflictingItems": [],
+    "Ergonomics": 0,
+    "Weight": 1.45,
+    "ShotgunDispersion": 1,
+    "Loudness": 0,
+    "LoyaltyLevel": 2,
+    "ExaminedByDefault": true,
+    "Prefab": {
+      "path": "assets/content/items/mods/barrels/barrel_m700_remington_heavy_660mm.bundle",
+      "rcid": ""
+    },
+    "Recoil": -11,
+    "Dispersion": 2,
+    "RecoilAngle": -2
+  },
+  "68324f83171416242d1a0ac1": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "68324f83171416242d1a0ac1",
+    "Name": "M700 6.5x48毫米 20英寸螺纹枪管",
+    "ModType": "",
+    "VerticalRecoil": -2,
+    "HorizontalRecoil": 0,
+    "AutoROF": 0,
+    "SemiROF": 0,
+    "ModMalfunctionChance": 0,
+    "Convergence": 5,
+    "Accuracy": 1,
+    "CenterOfImpact": 0.03,
+    "HeatFactor": 1.03,
+    "CoolFactor": 0.97,
+    "DurabilityBurnModificator": 0.97,
+    "Velocity": 1,
+    "ConflictingItems": [],
+    "Ergonomics": 0,
+    "Weight": 1.2,
+    "ShotgunDispersion": 1,
+    "Loudness": 0,
+    "LoyaltyLevel": 2,
+    "ExaminedByDefault": true,
+    "Prefab": {
+      "path": "assets/content/items/mods/barrels/barrel_m700_remington_heavy_threaded_508mm.bundle",
+      "rcid": ""
+    },
+    "Recoil": -6,
+    "Dispersion": 3,
+    "RecoilAngle": -2
+  },
+  "68324f9ec1bdc884028b3490": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "68324f9ec1bdc884028b3490",
+    "Name": "M700 6.5x48毫米 26英寸不锈钢枪管",
+    "ModType": "",
+    "VerticalRecoil": -1,
+    "HorizontalRecoil": -2,
+    "AutoROF": 0,
+    "SemiROF": 0,
+    "ModMalfunctionChance": 0,
+    "Convergence": 5,
+    "Accuracy": 1,
+    "CenterOfImpact": 0.02,
+    "HeatFactor": 1.06,
+    "CoolFactor": 0.99,
+    "DurabilityBurnModificator": 1.03,
+    "Velocity": 1,
+    "ConflictingItems": [],
+    "Ergonomics": 0,
+    "Weight": 1.45,
+    "ShotgunDispersion": 1,
+    "Loudness": 0,
+    "LoyaltyLevel": 3,
+    "ExaminedByDefault": true,
+    "Prefab": {
+      "path": "assets/content/items/mods/barrels/barrel_m700_shilen_stainless_660mm.bundle",
+      "rcid": ""
+    },
+    "Recoil": -11,
+    "Dispersion": 3,
+    "RecoilAngle": 1
+  }
+}

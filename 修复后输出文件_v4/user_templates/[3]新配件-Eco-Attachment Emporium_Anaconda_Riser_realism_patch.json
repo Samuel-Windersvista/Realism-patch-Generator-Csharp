@@ -1,0 +1,24 @@
+{
+  "68bd7b4d8ce7029b6409b4a2": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "68bd7b4d8ce7029b6409b4a2",
+    "Name": "Anaconda 皮卡汀尼增高座",
+    "ModType": "mount",
+    "Ergonomics": 0,
+    "Accuracy": 0,
+    "ConflictingItems": [],
+    "Weight": 0.085,
+    "LoyaltyLevel": 3
+  },
+  "68bd7b4d8ce7029b6409b4a3": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "68bd7b4d8ce7029b6409b4a3",
+    "Name": "Anaconda 皮卡汀尼增高座（土狼色）",
+    "ModType": "mount",
+    "Ergonomics": 0,
+    "Accuracy": 0,
+    "ConflictingItems": [],
+    "Weight": 0.085,
+    "LoyaltyLevel": 3
+  }
+}

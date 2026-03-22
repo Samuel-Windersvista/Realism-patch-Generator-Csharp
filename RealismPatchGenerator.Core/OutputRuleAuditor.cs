@@ -338,6 +338,28 @@ public sealed class OutputRuleAuditor
                 }
             }
 
+            var modType = patch["ModType"]?.GetValue<string?>() ?? string.Empty;
+            if (!IsFieldExempt(exceptionFields, "ModShotDispersion")
+                && string.Equals(modType, "barrel_2slot", StringComparison.OrdinalIgnoreCase)
+                && TryGetNumericValue(patch["ModShotDispersion"], out var modShotDispersion)
+                && (modShotDispersion < 0 || modShotDispersion > 0))
+            {
+                violations.Add(BuildRangeViolation("ModShotDispersion", patch["ModShotDispersion"], 0, 0, "mod_special"));
+            }
+
+            if (string.Equals(modType, "bipod", StringComparison.OrdinalIgnoreCase))
+            {
+                foreach (var fieldName in new[] { "AutoROF", "SemiROF", "ModMalfunctionChance", "ReloadSpeed", "FixSpeed" })
+                {
+                    if (!IsFieldExempt(exceptionFields, fieldName)
+                        && TryGetNumericValue(patch[fieldName], out var exactZeroValue)
+                        && (exactZeroValue < 0 || exactZeroValue > 0))
+                    {
+                        violations.Add(BuildRangeViolation(fieldName, patch[fieldName], 0, 0, "mod_special"));
+                    }
+                }
+            }
+
             if (!IsFieldExempt(exceptionFields, "CanCycleSubs")
                 && string.Equals(modProfile, "muzzle_suppressor", StringComparison.OrdinalIgnoreCase)
                 && patch.ContainsKey("CanCycleSubs")
@@ -351,6 +373,247 @@ public sealed class OutputRuleAuditor
                     Rule = "mod_special",
                     Message = "消音器规则要求 CanCycleSubs=True",
                 });
+            }
+
+            if (string.Equals(modProfile, "stock_adapter", StringComparison.OrdinalIgnoreCase))
+            {
+                CollectMissingFieldViolations(
+                    violations,
+                    patch,
+                    ["DurabilityBurnModificator", "Loudness"],
+                    "stock_adapter_structure",
+                    exceptionFields);
+            }
+
+            if (string.Equals(modProfile, "buffer_adapter", StringComparison.OrdinalIgnoreCase))
+            {
+                CollectMissingFieldViolations(
+                    violations,
+                    patch,
+                    ["Dispersion", "CameraRecoil", "HasShoulderContact", "BlocksFolding", "AutoROF", "SemiROF", "ModMalfunctionChance", "StockAllowADS"],
+                    "buffer_adapter_structure",
+                    exceptionFields);
+            }
+
+            if (string.Equals(modType, "buffer", StringComparison.OrdinalIgnoreCase))
+            {
+                CollectMissingFieldViolations(
+                    violations,
+                    patch,
+                    ["DurabilityBurnModificator"],
+                    "buffer_structure",
+                    exceptionFields);
+            }
+
+            if (string.Equals(modType, "hydraulic_buffer", StringComparison.OrdinalIgnoreCase))
+            {
+                CollectMissingFieldViolations(
+                    violations,
+                    patch,
+                    ["DurabilityBurnModificator", "Convergence"],
+                    "hydraulic_buffer_structure",
+                    exceptionFields);
+            }
+
+            if (string.Equals(modProfile, "gasblock", StringComparison.OrdinalIgnoreCase))
+            {
+                CollectMissingFieldViolations(
+                    violations,
+                    patch,
+                    ["Loudness", "Velocity"],
+                    "gasblock_structure",
+                    exceptionFields);
+            }
+
+            if (!string.IsNullOrEmpty(modProfile)
+                && modProfile.StartsWith("handguard_", StringComparison.OrdinalIgnoreCase))
+            {
+                CollectMissingFieldViolations(
+                    violations,
+                    patch,
+                    ["Accuracy", "Dispersion"],
+                    "handguard_structure",
+                    exceptionFields);
+            }
+
+            if (string.Equals(modProfile, "foregrip", StringComparison.OrdinalIgnoreCase))
+            {
+                CollectMissingFieldViolations(
+                    violations,
+                    patch,
+                    ["Accuracy"],
+                    "foregrip_structure",
+                    exceptionFields);
+            }
+
+            if (string.Equals(modProfile, "pistol_grip", StringComparison.OrdinalIgnoreCase))
+            {
+                CollectMissingFieldViolations(
+                    violations,
+                    patch,
+                    ["Dispersion"],
+                    "pistol_grip_structure",
+                    exceptionFields);
+            }
+
+            if (string.Equals(modProfile, "ubgl", StringComparison.OrdinalIgnoreCase))
+            {
+                CollectMissingFieldViolations(
+                    violations,
+                    patch,
+                    ["Accuracy", "CameraRecoil", "HasShoulderContact", "BlocksFolding", "AutoROF", "SemiROF", "ModMalfunctionChance", "StockAllowADS"],
+                    "ubgl_structure",
+                    exceptionFields);
+            }
+
+            if (string.Equals(modProfile, "receiver", StringComparison.OrdinalIgnoreCase))
+            {
+                CollectMissingFieldViolations(
+                    violations,
+                    patch,
+                    ["ChamberSpeed"],
+                    "receiver_structure",
+                    exceptionFields);
+            }
+
+            if (string.Equals(modProfile, "bayonet", StringComparison.OrdinalIgnoreCase))
+            {
+                CollectMissingFieldViolations(
+                    violations,
+                    patch,
+                    ["Accuracy", "Ergonomics", "Loudness", "MeleeDamage", "MeleePen", "Flash"],
+                    "bayonet_structure",
+                    exceptionFields);
+            }
+
+            if (string.Equals(modProfile, "trigger", StringComparison.OrdinalIgnoreCase))
+            {
+                CollectMissingFieldViolations(
+                    violations,
+                    patch,
+                    ["SemiROF", "Accuracy"],
+                    "trigger_structure",
+                    exceptionFields);
+            }
+
+            if (string.Equals(modProfile, "mount", StringComparison.OrdinalIgnoreCase))
+            {
+                CollectMissingFieldViolations(
+                    violations,
+                    patch,
+                    ["HeatFactor", "CoolFactor", "AimSpeed", "DurabilityBurnModificator"],
+                    "mount_structure",
+                    exceptionFields);
+            }
+
+            if (string.Equals(modProfile, "hammer", StringComparison.OrdinalIgnoreCase))
+            {
+                CollectMissingFieldViolations(
+                    violations,
+                    patch,
+                    ["SemiROF", "Accuracy"],
+                    "hammer_structure",
+                    exceptionFields);
+            }
+
+            if (!string.IsNullOrEmpty(modProfile) && modProfile.StartsWith("barrel_", StringComparison.OrdinalIgnoreCase))
+            {
+                CollectMissingFieldViolations(
+                    violations,
+                    patch,
+                    ["ShotgunDispersion"],
+                    "barrel_structure",
+                    exceptionFields);
+            }
+
+            if (string.Equals(modProfile, "charging_handle", StringComparison.OrdinalIgnoreCase))
+            {
+                CollectMissingFieldViolations(
+                    violations,
+                    patch,
+                    ["ReloadSpeed"],
+                    "charging_handle_structure",
+                    exceptionFields);
+            }
+
+            if (string.Equals(modProfile, "flashlight_laser", StringComparison.OrdinalIgnoreCase))
+            {
+                CollectMissingFieldViolations(
+                    violations,
+                    patch,
+                    ["VerticalRecoil", "HorizontalRecoil"],
+                    "flashlight_laser_structure",
+                    exceptionFields);
+            }
+
+            if (string.Equals(modProfile, "scope_red_dot", StringComparison.OrdinalIgnoreCase))
+            {
+                CollectMissingFieldViolations(
+                    violations,
+                    patch,
+                    ["Accuracy", "AimSpeed", "AimStability", "Ergonomics"],
+                    "scope_red_dot_structure",
+                    exceptionFields);
+            }
+
+            if (string.Equals(modProfile, "scope_magnified", StringComparison.OrdinalIgnoreCase))
+            {
+                CollectMissingFieldViolations(
+                    violations,
+                    patch,
+                    ["Accuracy", "AimSpeed", "AimStability", "Ergonomics"],
+                    "scope_magnified_structure",
+                    exceptionFields);
+            }
+
+            if (string.Equals(modProfile, "booster", StringComparison.OrdinalIgnoreCase))
+            {
+                CollectMissingFieldViolations(
+                    violations,
+                    patch,
+                    ["AutoROF", "SemiROF", "ModMalfunctionChance"],
+                    "booster_structure",
+                    exceptionFields);
+            }
+
+            if (string.Equals(modProfile, "catch", StringComparison.OrdinalIgnoreCase))
+            {
+                CollectMissingFieldViolations(
+                    violations,
+                    patch,
+                    ["ReloadSpeed", "ChamberSpeed", "Accuracy", "FixSpeed"],
+                    "catch_structure",
+                    exceptionFields);
+            }
+
+            if (string.Equals(modType, "barrel_2slot", StringComparison.OrdinalIgnoreCase))
+            {
+                CollectMissingFieldViolations(
+                    violations,
+                    patch,
+                    ["ModShotDispersion"],
+                    "barrel_2slot_structure",
+                    exceptionFields);
+            }
+
+            if (string.Equals(modType, "bipod", StringComparison.OrdinalIgnoreCase))
+            {
+                CollectMissingFieldViolations(
+                    violations,
+                    patch,
+                    ["AutoROF", "SemiROF", "ModMalfunctionChance", "ReloadSpeed", "FixSpeed"],
+                    "bipod_structure",
+                    exceptionFields);
+            }
+
+            if (string.Equals(modProfile, "iron_sight", StringComparison.OrdinalIgnoreCase))
+            {
+                CollectMissingFieldViolations(
+                    violations,
+                    patch,
+                    ["Accuracy"],
+                    "iron_sight_structure",
+                    exceptionFields);
             }
         }
         else if (itemType.Contains("RealismMod.Ammo", StringComparison.OrdinalIgnoreCase))
@@ -383,6 +646,8 @@ public sealed class OutputRuleAuditor
                 warnings.Add(detail.Message);
                 warningDetails.Add(detail);
             }
+
+            CollectStructureViolations(violations, patch, generator.GetAmmoOutputFieldSet(), "ammo_structure");
         }
         else if (itemType.Contains("RealismMod.Gear", StringComparison.OrdinalIgnoreCase))
         {
@@ -561,7 +826,9 @@ public sealed class OutputRuleAuditor
             return MakeWarningDetail("无规则类别", "unsupported_auxiliary_mod", "当前物品属于辅助小件类，尚未配置附件规则范围");
         }
 
-        if (string.Equals(templateFile, "UBGLTempaltes.json", StringComparison.OrdinalIgnoreCase))
+        if ((string.Equals(templateFile, "UBGLTempaltes.json", StringComparison.OrdinalIgnoreCase)
+                || string.Equals(templateFile, "UBGLTemplates.json", StringComparison.OrdinalIgnoreCase))
+            && string.IsNullOrWhiteSpace(modProfile))
         {
             return MakeWarningDetail("无规则类别", "unsupported_ubgl", "当前物品属于下挂榴弹发射器类，尚未配置附件规则范围");
         }
@@ -620,6 +887,59 @@ public sealed class OutputRuleAuditor
             if (current < pair.Value.Min - RangeComparisonEpsilon || current > pair.Value.Max + RangeComparisonEpsilon)
             {
                 violations.Add(BuildRangeViolation(pair.Key, patch[pair.Key], pair.Value.Min, pair.Value.Max, ruleName));
+            }
+        }
+    }
+
+    private static void CollectStructureViolations(List<AuditViolation> violations, JsonObject patch, IReadOnlySet<string> expectedFields, string ruleName)
+    {
+        foreach (var field in expectedFields)
+        {
+            if (!patch.ContainsKey(field))
+            {
+                violations.Add(new AuditViolation
+                {
+                    Field = field,
+                    Expected = JsonValue.Create("present"),
+                    Rule = ruleName,
+                    Message = $"输出缺少标准字段 {field}",
+                });
+            }
+        }
+
+        foreach (var pair in patch)
+        {
+            if (!expectedFields.Contains(pair.Key))
+            {
+                violations.Add(new AuditViolation
+                {
+                    Field = pair.Key,
+                    Value = pair.Value?.DeepClone(),
+                    Rule = ruleName,
+                    Message = $"输出包含非标准字段 {pair.Key}",
+                });
+            }
+        }
+    }
+
+    private static void CollectMissingFieldViolations(List<AuditViolation> violations, JsonObject patch, IReadOnlyList<string> expectedFields, string ruleName, IReadOnlySet<string>? exemptFields)
+    {
+        foreach (var field in expectedFields)
+        {
+            if (IsFieldExempt(exemptFields, field))
+            {
+                continue;
+            }
+
+            if (!patch.ContainsKey(field))
+            {
+                violations.Add(new AuditViolation
+                {
+                    Field = field,
+                    Expected = JsonValue.Create("present"),
+                    Rule = ruleName,
+                    Message = $"输出缺少必需字段 {field}",
+                });
             }
         }
     }

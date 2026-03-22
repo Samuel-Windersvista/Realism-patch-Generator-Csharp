@@ -37,7 +37,7 @@ This project consolidates the GUI editor, rule files, item exception management,
 - Use a logical rule system and value ranges to standardize generated patch values.
 - Allow users to adjust the value ranges themselves.
 - Generate patch values through a pseudorandom seed-based system.
-- Use rules/item_exceptions.json to customize exceptions for specific item properties, allowing flexible stat design without breaking overall balance.
+- Use RealismItemRules/item_exceptions.json to customize exceptions for specific item properties, allowing flexible stat design without breaking overall balance.
 - Provide an audit feature to automatically check whether generated patches violate the rules.
 - Support reading and generating six different item mod data structure styles used around version 3.11.4.
 
@@ -61,10 +61,10 @@ Common audit parameters:
 The program uses the repository root as its default data root.
 
 - input
-- 现实主义物品模板
+- RealismItemTemplates
+- RealismItemRules
 - output
 - audit_reports
-- rules
 
 ### Current Behavior Notes
 
@@ -76,7 +76,7 @@ The program uses the repository root as its default data root.
 
 ### Item Exceptions
 
-The Item Exceptions window supports searching generated items by Name, loading their current top-level fields, editing allowed fields, and saving per-item overrides into rules/item_exceptions.json.
+The Item Exceptions window supports searching generated items by Name, loading their current top-level fields, editing allowed fields, and saving per-item overrides into RealismItemRules/item_exceptions.json.
 
 ## 中文
 
@@ -96,7 +96,7 @@ SPT 现实主义数值范围编辑生成器 v1.22 是专门为SPT Realism Mod 1.
 - 使用一套符合逻辑的规则体系和数值范围来规范生成的补丁数值
 - 数值范围可由用户自行调整
 - 补丁的数值由随机种子系统进行伪随机生成
-- 通过 rules/item_exceptions.json，可对个别物品的属性进行例外定制。在不破坏数值平衡的情况下，可随意设计属性。
+- 通过 RealismItemRules/item_exceptions.json，可对个别物品的属性进行例外定制。在不破坏数值平衡的情况下，可随意设计属性。
 - 检修功能，可自动化检查生成的补丁是否违反规则。
 - 支持读取和生成3.11.4版本时期六种不同编写习惯的物品MOD数据结构。
 
@@ -120,10 +120,12 @@ SPT 现实主义数值范围编辑生成器 v1.22 是专门为SPT Realism Mod 1.
 程序默认以仓库根目录为数据根。
 
 - input
-- 现实主义物品模板
+- RealismItemTemplates
+- RealismItemRules
 - output
 - audit_reports
-- rules
+
+- 输出结构以 RealismItemTemplates 为结构标准；最终数值范围以 RealismItemRules 为唯一标准。
 
 ### 当前行为说明
 

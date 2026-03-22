@@ -1,0 +1,945 @@
+{
+  "6878917c7adb7e17eb1273ce": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "6878917c7adb7e17eb1273ce",
+    "Name": "AR-10 用 SureFire Warcomp 7.62x51 枪口消焰器",
+    "ModType": "muzzle_supp_adapter",
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": -7,
+    "Dispersion": -14,
+    "CameraRecoil": 0,
+    "AutoROF": 0,
+    "SemiROF": 0,
+    "ModMalfunctionChance": 0,
+    "CanCycleSubs": false,
+    "Accuracy": 2,
+    "HeatFactor": 0.99,
+    "CoolFactor": 1,
+    "DurabilityBurnModificator": 1.01,
+    "Velocity": 0.5,
+    "RecoilAngle": 0,
+    "ConflictingItems": [],
+    "Ergonomics": -1,
+    "Weight": 0.064,
+    "Loudness": 0,
+    "Convergence": 5.5,
+    "LoyaltyLevel": 3,
+    "Flash": -4,
+    "ExaminedByDefault": true,
+    "Prefab": {
+      "path": "Mods/AR10/warcomp_762.bundle",
+      "rcid": ""
+    },
+    "RaidModdable": true,
+    "Recoil": -5,
+    "Slots": [
+      {
+        "_id": "1f9bd6b9281d0de7dd0a8055",
+        "_mergeSlotWithChildren": false,
+        "_name": "mod_muzzle",
+        "_parent": "6878917c7adb7e17eb1273ce",
+        "_props": {
+          "filters": [
+            {
+              "Filter": [
+                "21cc9c10a1749109db74b288",
+                "ee43d2dd34047cbe88ccf551",
+                "10a09a7adb949d7516c96c2f",
+                "68ecc6afc9baacad535b09b5",
+                "cc4134b4c122adad37aa342a",
+                "6efbc3fc36558fb085bbc36e",
+                "3cc1a01be7839321ab030074",
+                "f07b843f00a254d10d80ea5a",
+                "9c8b54c2f8c843fe7ce6c6ca"
+              ],
+              "Shift": 0
+            }
+          ]
+        },
+        "_proto": "55d30c4c4bdc2db4468b457e",
+        "_required": false
+      }
+    ],
+    "Width": 1,
+    "muzzleModType": "brake"
+  },
+  "10c1dae2a05599e8a2b59cda": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "10c1dae2a05599e8a2b59cda",
+    "Name": "AR-10 Surefire SF3P 7.62x51 Flash Hider",
+    "ModType": "muzzle_supp_adapter",
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": -7,
+    "Dispersion": -14,
+    "CameraRecoil": 0,
+    "AutoROF": 0,
+    "SemiROF": 0,
+    "ModMalfunctionChance": 0,
+    "CanCycleSubs": false,
+    "Accuracy": 3,
+    "HeatFactor": 0.99,
+    "CoolFactor": 1,
+    "DurabilityBurnModificator": 1.03,
+    "Velocity": 0.5,
+    "RecoilAngle": 0,
+    "ConflictingItems": [],
+    "Ergonomics": 0,
+    "Weight": 0.064,
+    "Loudness": 0,
+    "Convergence": 5.5,
+    "LoyaltyLevel": 3,
+    "Flash": 2,
+    "Prefab": {
+      "path": "Mods/AR10/sf3p_762.bundle",
+      "rcid": ""
+    },
+    "Recoil": -6,
+    "Slots": [
+      {
+        "_id": "fc5501e81f8ce056bde02cad",
+        "_mergeSlotWithChildren": false,
+        "_name": "mod_muzzle",
+        "_parent": "10c1dae2a05599e8a2b59cda",
+        "_props": {
+          "filters": [
+            {
+              "Filter": [
+                "21cc9c10a1749109db74b288",
+                "ee43d2dd34047cbe88ccf551",
+                "10a09a7adb949d7516c96c2f",
+                "68ecc6afc9baacad535b09b5",
+                "cc4134b4c122adad37aa342a",
+                "6efbc3fc36558fb085bbc36e",
+                "3cc1a01be7839321ab030074",
+                "f07b843f00a254d10d80ea5a",
+                "9c8b54c2f8c843fe7ce6c6ca"
+              ],
+              "Shift": 0
+            }
+          ]
+        },
+        "_proto": "55d30c4c4bdc2db4468b457e",
+        "_required": false
+      }
+    ]
+  },
+  "ad483d8373c8ff078103aaa1": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "ad483d8373c8ff078103aaa1",
+    "Name": "AR-15 Surefire Closed Tine 5.56x45 Flash Hider",
+    "ModType": "muzzle_supp_adapter",
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": -9,
+    "Dispersion": -9,
+    "CameraRecoil": 0,
+    "AutoROF": 0,
+    "SemiROF": 0,
+    "ModMalfunctionChance": 0,
+    "CanCycleSubs": false,
+    "Accuracy": 0,
+    "HeatFactor": 1,
+    "CoolFactor": 1,
+    "DurabilityBurnModificator": 1.02,
+    "Velocity": 0,
+    "RecoilAngle": 0,
+    "ConflictingItems": [],
+    "Ergonomics": 0,
+    "Weight": 0.073,
+    "Loudness": 12,
+    "Convergence": 7,
+    "LoyaltyLevel": 2,
+    "Flash": 0,
+    "Prefab": {
+      "path": "Mods/AR15_Muzzle_Devices/sfct_556.bundle",
+      "rcid": ""
+    }
+  },
+  "80cbe6559756b8811d5542e5": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "80cbe6559756b8811d5542e5",
+    "Name": "AR-15 Surefire SFMB 5.56x45 Muzzle brake",
+    "ModType": "muzzle_supp_adapter",
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": -9,
+    "Dispersion": -9,
+    "CameraRecoil": 0,
+    "AutoROF": 0,
+    "SemiROF": 0,
+    "ModMalfunctionChance": 0,
+    "CanCycleSubs": false,
+    "Accuracy": 0,
+    "HeatFactor": 1,
+    "CoolFactor": 1,
+    "DurabilityBurnModificator": 1.03,
+    "Velocity": 0,
+    "RecoilAngle": 0,
+    "ConflictingItems": [],
+    "Ergonomics": 0,
+    "Weight": 0.11,
+    "Loudness": 10,
+    "Convergence": 7,
+    "LoyaltyLevel": 2,
+    "Flash": 4,
+    "Prefab": {
+      "path": "Mods/AR15_Muzzle_Devices/sfmb_556.bundle",
+      "rcid": ""
+    },
+    "Recoil": -8
+  },
+  "ef976a5a821bbb0200991f9a": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "ef976a5a821bbb0200991f9a",
+    "Name": "AR-10 Surefire SFMB 7.62x51 Muzzle brake",
+    "ModType": "muzzle_supp_adapter",
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": -7,
+    "Dispersion": -14,
+    "CameraRecoil": 0,
+    "AutoROF": 0,
+    "SemiROF": 0,
+    "ModMalfunctionChance": 0,
+    "CanCycleSubs": false,
+    "Accuracy": 3,
+    "HeatFactor": 0.99,
+    "CoolFactor": 1,
+    "DurabilityBurnModificator": 1.03,
+    "Velocity": 0.5,
+    "RecoilAngle": 0,
+    "ConflictingItems": [],
+    "Ergonomics": -1,
+    "Weight": 0.11,
+    "Loudness": 10,
+    "Convergence": 5.5,
+    "LoyaltyLevel": 3,
+    "Flash": -1,
+    "Prefab": {
+      "path": "Mods/AR10/sfmb_762.bundle",
+      "rcid": ""
+    },
+    "Recoil": -8,
+    "Slots": [
+      {
+        "_id": "6a7eefd41093bdf19927c9f4",
+        "_mergeSlotWithChildren": false,
+        "_name": "mod_muzzle",
+        "_parent": "ef976a5a821bbb0200991f9a",
+        "_props": {
+          "filters": [
+            {
+              "Filter": [
+                "21cc9c10a1749109db74b288",
+                "ee43d2dd34047cbe88ccf551",
+                "10a09a7adb949d7516c96c2f",
+                "68ecc6afc9baacad535b09b5",
+                "cc4134b4c122adad37aa342a",
+                "6efbc3fc36558fb085bbc36e",
+                "3cc1a01be7839321ab030074",
+                "f07b843f00a254d10d80ea5a",
+                "9c8b54c2f8c843fe7ce6c6ca"
+              ],
+              "Shift": 0
+            }
+          ]
+        },
+        "_proto": "55d30c4c4bdc2db4468b457e",
+        "_required": false
+      }
+    ]
+  },
+  "7fe5839a2d1e2eb9c6045f11": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "7fe5839a2d1e2eb9c6045f11",
+    "Name": "AR-15 Surefire Warcomp Closed Tine 5.56x45 flash Hider",
+    "ModType": "muzzle_supp_adapter",
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": -6,
+    "Dispersion": -6,
+    "CameraRecoil": 0,
+    "AutoROF": 0,
+    "SemiROF": 0,
+    "ModMalfunctionChance": 0,
+    "CanCycleSubs": false,
+    "Accuracy": 0,
+    "HeatFactor": 1,
+    "CoolFactor": 1,
+    "DurabilityBurnModificator": 1.05,
+    "Velocity": 0,
+    "RecoilAngle": 8,
+    "ConflictingItems": [],
+    "Ergonomics": 0,
+    "Weight": 0.076,
+    "Loudness": 18,
+    "Convergence": 10,
+    "LoyaltyLevel": 4,
+    "Flash": 4,
+    "Prefab": {
+      "path": "Mods/AR15_Muzzle_Devices/warct_556.bundle",
+      "rcid": ""
+    }
+  },
+  "9a4179548257f7a1f63f30b1": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "9a4179548257f7a1f63f30b1",
+    "Name": "AR-15 Surefire Eliminator 5.56x45 Flash Hider",
+    "ModType": "muzzle_supp_adapter",
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": -9,
+    "Dispersion": -9,
+    "CameraRecoil": 0,
+    "AutoROF": 0,
+    "SemiROF": 0,
+    "ModMalfunctionChance": 0,
+    "CanCycleSubs": false,
+    "Accuracy": 0,
+    "HeatFactor": 1,
+    "CoolFactor": 1,
+    "DurabilityBurnModificator": 1.02,
+    "Velocity": 0,
+    "RecoilAngle": 0,
+    "ConflictingItems": [],
+    "Ergonomics": -1,
+    "Weight": 0.109,
+    "Loudness": 12,
+    "Convergence": 7,
+    "LoyaltyLevel": 2,
+    "Flash": 0,
+    "Prefab": {
+      "path": "Mods/AR15_Muzzle_Devices/eliminator_556.bundle",
+      "rcid": ""
+    },
+    "Slots": []
+  },
+  "e94de16b0e19077ac1a4c90a": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "e94de16b0e19077ac1a4c90a",
+    "Name": "AR-10 Surefire Eliminator 7.62x51 Flash Hider",
+    "ModType": "muzzle_supp_adapter",
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": -7,
+    "Dispersion": -14,
+    "CameraRecoil": 0,
+    "AutoROF": 0,
+    "SemiROF": 0,
+    "ModMalfunctionChance": 0,
+    "CanCycleSubs": false,
+    "Accuracy": 3,
+    "HeatFactor": 0.99,
+    "CoolFactor": 1,
+    "DurabilityBurnModificator": 1.02,
+    "Velocity": 0.5,
+    "RecoilAngle": 0,
+    "ConflictingItems": [],
+    "Ergonomics": -1,
+    "Weight": 0.103,
+    "Loudness": 0,
+    "Convergence": 5.5,
+    "LoyaltyLevel": 3,
+    "Flash": 3,
+    "Prefab": {
+      "path": "Mods/AR10/eliminator_762.bundle",
+      "rcid": ""
+    },
+    "Recoil": -6,
+    "Slots": []
+  },
+  "d55014a6621462a7463f15aa": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "d55014a6621462a7463f15aa",
+    "Name": "AR-15 Surefire ProComp 5.56x45 muzzle brake",
+    "ModType": "muzzle_supp_adapter",
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": -9,
+    "Dispersion": -9,
+    "CameraRecoil": 0,
+    "AutoROF": 0,
+    "SemiROF": 0,
+    "ModMalfunctionChance": 0,
+    "CanCycleSubs": false,
+    "Accuracy": 3,
+    "HeatFactor": 1,
+    "CoolFactor": 1,
+    "DurabilityBurnModificator": 1.02,
+    "Velocity": 0,
+    "RecoilAngle": 0,
+    "ConflictingItems": [],
+    "Ergonomics": -1,
+    "Weight": 0.096,
+    "Loudness": 10,
+    "Convergence": 7,
+    "LoyaltyLevel": 2,
+    "Flash": 2,
+    "Prefab": {
+      "path": "Mods/AR15_Muzzle_Devices/procomp_223.bundle",
+      "rcid": ""
+    },
+    "Recoil": -8,
+    "Slots": []
+  },
+  "e14eccdfdd902727fe268ed1": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "e14eccdfdd902727fe268ed1",
+    "Name": "SureFire SFMB .338 LM muzzle brake",
+    "ModType": "",
+    "VerticalRecoil": -18,
+    "HorizontalRecoil": -14,
+    "Dispersion": -3,
+    "CameraRecoil": -7,
+    "AutoROF": 0,
+    "SemiROF": 0,
+    "ModMalfunctionChance": 0,
+    "CanCycleSubs": false,
+    "Accuracy": -2,
+    "HeatFactor": 1,
+    "CoolFactor": 1,
+    "DurabilityBurnModificator": 1,
+    "Velocity": 0,
+    "RecoilAngle": 0,
+    "ConflictingItems": [],
+    "Ergonomics": -3,
+    "Weight": 0.177,
+    "Loudness": 19,
+    "Convergence": 0,
+    "LoyaltyLevel": 3,
+    "Flash": 12,
+    "ExaminedByDefault": true,
+    "Prefab": {
+      "path": "Mods/Lapua/sfmb338.bundle",
+      "rcid": ""
+    },
+    "Recoil": -9,
+    "Slots": [
+      {
+        "_name": "mod_muzzle",
+        "_id": "cc44222e6e82f324c9c72b6e",
+        "_parent": "e14eccdfdd902727fe268ed1",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "ba84e1c4ee4d504cb0bdbb0d"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      }
+    ],
+    "AimSpeed": 2
+  },
+  "bf822c61ce39580e026b6801": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "bf822c61ce39580e026b6801",
+    "Name": "AR-15 Huxwrx QD 5.56x45 Flash Hider",
+    "ModType": "muzzle_supp_adapter",
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": -9,
+    "Dispersion": -9,
+    "CameraRecoil": 0,
+    "AutoROF": 0,
+    "SemiROF": 0,
+    "ModMalfunctionChance": 0,
+    "CanCycleSubs": false,
+    "Accuracy": 0,
+    "HeatFactor": 1,
+    "CoolFactor": 1,
+    "DurabilityBurnModificator": 1,
+    "Velocity": 0,
+    "RecoilAngle": 0,
+    "ConflictingItems": [],
+    "Ergonomics": 0,
+    "Weight": 0.104,
+    "Loudness": 12,
+    "Convergence": 7,
+    "LoyaltyLevel": 2,
+    "Flash": 1,
+    "Prefab": {
+      "path": "Mods/AR15_Muzzle_Devices/huxwrks_556k_fh.bundle",
+      "rcid": ""
+    },
+    "Slots": [
+      {
+        "_id": "7eb5e81ff5285e4334e10b0a",
+        "_mergeSlotWithChildren": false,
+        "_name": "mod_muzzle",
+        "_parent": "bf822c61ce39580e026b6801",
+        "_props": {
+          "filters": [
+            {
+              "Filter": [
+                "f8e4f114d51be3084526ebdd",
+                "71da7f0c9145e92bd1022c53"
+              ],
+              "Shift": 0
+            }
+          ]
+        },
+        "_proto": "55d30c4c4bdc2db4468b457e",
+        "_required": false
+      }
+    ]
+  },
+  "b2e11e2c2b506ea42e29566f": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "b2e11e2c2b506ea42e29566f",
+    "Name": "AR-15 Strike Industries Cookie Cutter 5.56x45 Muzzle Brake",
+    "ModType": "",
+    "VerticalRecoil": -18,
+    "HorizontalRecoil": -16,
+    "Dispersion": -4,
+    "CameraRecoil": -9,
+    "AutoROF": 0,
+    "SemiROF": 0,
+    "ModMalfunctionChance": 0,
+    "CanCycleSubs": false,
+    "Accuracy": -1,
+    "HeatFactor": 0.98,
+    "CoolFactor": 1,
+    "DurabilityBurnModificator": 0.96,
+    "Velocity": 0,
+    "RecoilAngle": 13,
+    "ConflictingItems": [],
+    "Ergonomics": -5,
+    "Weight": 0.229,
+    "Loudness": 16,
+    "Convergence": 12,
+    "LoyaltyLevel": 3,
+    "Flash": 11,
+    "Prefab": {
+      "path": "Mods/AR15_Muzzle_Devices/strike_cookie_cutter.bundle",
+      "rcid": ""
+    },
+    "Recoil": -12,
+    "AimSpeed": 0
+  },
+  "e519d0baabca193610169427": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "e519d0baabca193610169427",
+    "Name": "AR-10 Strike Industries Cookie Cutter 7.62x51 Muzzle Brake",
+    "ModType": "",
+    "VerticalRecoil": -17,
+    "HorizontalRecoil": -14,
+    "Dispersion": -4,
+    "CameraRecoil": -6,
+    "AutoROF": 0,
+    "SemiROF": 0,
+    "ModMalfunctionChance": 0,
+    "CanCycleSubs": false,
+    "Accuracy": -2,
+    "HeatFactor": 0.98,
+    "CoolFactor": 1,
+    "DurabilityBurnModificator": 0.96,
+    "Velocity": 0,
+    "RecoilAngle": 0,
+    "ConflictingItems": [],
+    "Ergonomics": -4,
+    "Weight": 0.229,
+    "Loudness": 17,
+    "Convergence": 7,
+    "LoyaltyLevel": 3,
+    "Flash": 12,
+    "Prefab": {
+      "path": "Mods/AR15_Muzzle_Devices/strike_cookie_cutter.bundle",
+      "rcid": ""
+    },
+    "Recoil": -12,
+    "AimSpeed": 1
+  },
+  "c9257470d63d1452d7617308": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "c9257470d63d1452d7617308",
+    "Name": "Strike Industries Cookie Cutter 9x19 Muzzle Brake",
+    "ModType": "",
+    "VerticalRecoil": -14,
+    "HorizontalRecoil": -15,
+    "Dispersion": -4,
+    "CameraRecoil": -7,
+    "AutoROF": 0,
+    "SemiROF": 0,
+    "ModMalfunctionChance": 0,
+    "CanCycleSubs": false,
+    "Accuracy": -1,
+    "HeatFactor": 0.98,
+    "CoolFactor": 1,
+    "DurabilityBurnModificator": 0.96,
+    "Velocity": 0,
+    "RecoilAngle": 0,
+    "ConflictingItems": [],
+    "Ergonomics": -5,
+    "Weight": 0.229,
+    "Loudness": 18,
+    "Convergence": 0,
+    "LoyaltyLevel": 4,
+    "Flash": 6,
+    "Prefab": {
+      "path": "Mods/AR15_Muzzle_Devices/strike_cookie_cutter.bundle",
+      "rcid": ""
+    },
+    "Conflictingitems": [
+      "5a7ad74e51dfba0015068f45"
+    ],
+    "Recoil": -10,
+    "muzzleModType": "brake",
+    "Width": 1,
+    "ExtraSizeLeft": 0,
+    "AimSpeed": 2
+  },
+  "173203ac7780e64538343f21": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "173203ac7780e64538343f21",
+    "Name": "Cadex Defense MX1 7.62x51 Muzzle Brake",
+    "ModType": "muzzle_supp_adapter",
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": -15,
+    "Dispersion": -20,
+    "CameraRecoil": -15,
+    "AutoROF": 0,
+    "SemiROF": 0,
+    "ModMalfunctionChance": 0,
+    "CanCycleSubs": false,
+    "Accuracy": 3,
+    "HeatFactor": 0.98,
+    "CoolFactor": 1,
+    "DurabilityBurnModificator": 1.07,
+    "Velocity": 0,
+    "RecoilAngle": 0,
+    "ConflictingItems": [],
+    "Ergonomics": -1,
+    "Weight": 0.281,
+    "Loudness": 10,
+    "Convergence": 0,
+    "LoyaltyLevel": 3,
+    "Flash": 4,
+    "Prefab": {
+      "path": "Mods/Lapua/cadex_mx1.bundle",
+      "rcid": ""
+    },
+    "Recoil": -11,
+    "Slots": []
+  },
+  "85ce98958d5359f66eef9b0d": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "85ce98958d5359f66eef9b0d",
+    "Name": "Cadex Defense MX1 .338 LM Muzzle Brake",
+    "ModType": "",
+    "VerticalRecoil": -14,
+    "HorizontalRecoil": -14,
+    "Dispersion": -3,
+    "CameraRecoil": -6,
+    "AutoROF": 0,
+    "SemiROF": 0,
+    "ModMalfunctionChance": 0,
+    "CanCycleSubs": false,
+    "Accuracy": -2,
+    "HeatFactor": 0.98,
+    "CoolFactor": 1,
+    "DurabilityBurnModificator": 0.96,
+    "Velocity": 0,
+    "RecoilAngle": 0,
+    "ConflictingItems": [],
+    "Ergonomics": -3,
+    "Weight": 0.281,
+    "Loudness": 18,
+    "Convergence": 0,
+    "LoyaltyLevel": 3,
+    "Flash": 13,
+    "Prefab": {
+      "path": "Mods/Lapua/cadex_mx1.bundle",
+      "rcid": ""
+    },
+    "Recoil": -14,
+    "Slots": [],
+    "AimSpeed": 2
+  },
+  "551ec269e7bb299d728da89e": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "551ec269e7bb299d728da89e",
+    "Name": "AR-10 Gemtech ETM 3 port 7.62x51 Muzzle Brake",
+    "ModType": "",
+    "VerticalRecoil": -14,
+    "HorizontalRecoil": -15,
+    "Dispersion": -4,
+    "CameraRecoil": -3,
+    "AutoROF": 0,
+    "SemiROF": 0,
+    "ModMalfunctionChance": 0,
+    "CanCycleSubs": false,
+    "Accuracy": -1,
+    "HeatFactor": 1,
+    "CoolFactor": 1,
+    "DurabilityBurnModificator": 1,
+    "Velocity": 0,
+    "RecoilAngle": 0,
+    "ConflictingItems": [],
+    "Ergonomics": -3,
+    "Weight": 0.056,
+    "Loudness": 16,
+    "Convergence": 10,
+    "LoyaltyLevel": 3,
+    "Flash": 8,
+    "Prefab": {
+      "path": "Mods/AR10/gt_etm_3p.bundle",
+      "rcid": ""
+    },
+    "Slots": [
+      {
+        "_name": "mod_muzzle",
+        "_id": "fcb16296e3d2ce86b3c670ff",
+        "_parent": "551ec269e7bb299d728da89e",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "a6a1f3e9ff8c9bddaf8ab5f3"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      }
+    ],
+    "AimSpeed": 0
+  },
+  "2775bf11211bb12aec490f56": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "2775bf11211bb12aec490f56",
+    "Name": "KAC MAMS 5.56x45 muzzle brake",
+    "ModType": "muzzle_supp_adapter",
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": -6,
+    "Dispersion": -10,
+    "CameraRecoil": 0,
+    "AutoROF": 0,
+    "SemiROF": 0,
+    "ModMalfunctionChance": 0,
+    "CanCycleSubs": false,
+    "Accuracy": 0,
+    "HeatFactor": 1,
+    "CoolFactor": 1,
+    "DurabilityBurnModificator": 1.01,
+    "Velocity": 0,
+    "RecoilAngle": 0,
+    "ConflictingItems": [],
+    "Ergonomics": 0,
+    "Weight": 0.065,
+    "Loudness": 10,
+    "Convergence": 8,
+    "LoyaltyLevel": 3,
+    "Flash": -3,
+    "Prefab": {
+      "path": "Mods/AR15_Muzzle_Devices/kac_mams.bundle",
+      "rcid": ""
+    },
+    "Recoil": -6
+  },
+  "d11567e6b00e6b18db43b036": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "d11567e6b00e6b18db43b036",
+    "Name": "Phase 5 FATman Hex Brake 7.62x51 muzzle brake",
+    "ModType": "",
+    "VerticalRecoil": -19,
+    "HorizontalRecoil": -12,
+    "Dispersion": -2,
+    "CameraRecoil": -4,
+    "AutoROF": 0,
+    "SemiROF": 0,
+    "ModMalfunctionChance": 0,
+    "CanCycleSubs": false,
+    "Accuracy": -1,
+    "HeatFactor": 1,
+    "CoolFactor": 1,
+    "DurabilityBurnModificator": 1,
+    "Velocity": 0,
+    "RecoilAngle": 0,
+    "ConflictingItems": [],
+    "Ergonomics": -5,
+    "Weight": 0.167,
+    "Loudness": 18,
+    "Convergence": 12,
+    "LoyaltyLevel": 3,
+    "Flash": 12,
+    "Prefab": {
+      "path": "Mods/AR10/fatman_hex_brake.bundle",
+      "rcid": ""
+    },
+    "Recoil": -7.5,
+    "AimSpeed": 0
+  },
+  "7df07162a928f5e9ab26404a": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "7df07162a928f5e9ab26404a",
+    "Name": "AR-15 Colt XM-177E2 5.56x45 flash hider",
+    "ModType": "",
+    "VerticalRecoil": -4,
+    "HorizontalRecoil": -3,
+    "Dispersion": 1,
+    "CameraRecoil": -1,
+    "AutoROF": 0,
+    "SemiROF": 0,
+    "ModMalfunctionChance": 0,
+    "CanCycleSubs": false,
+    "Accuracy": 0,
+    "HeatFactor": 1,
+    "CoolFactor": 1,
+    "DurabilityBurnModificator": 1,
+    "Velocity": 0,
+    "RecoilAngle": 0,
+    "ConflictingItems": [],
+    "Ergonomics": -4,
+    "Weight": 0.082,
+    "Loudness": 6,
+    "Convergence": 2.5,
+    "LoyaltyLevel": 1,
+    "Flash": -49,
+    "Prefab": {
+      "path": "Mods/AR15_Muzzle_Devices/xm177_fh.bundle",
+      "rcid": ""
+    },
+    "Recoil": -6,
+    "Slots": [],
+    "AimSpeed": 0
+  },
+  "101e593cde9a1f6fb8476d1e": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "101e593cde9a1f6fb8476d1e",
+    "Name": "AR-15 KAC Enhanced Compensator 5.56x45 Flash Suppressor Kit",
+    "ModType": "muzzle_supp_adapter",
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": -4,
+    "Dispersion": -4,
+    "CameraRecoil": 0,
+    "AutoROF": 0,
+    "SemiROF": 0,
+    "ModMalfunctionChance": 0,
+    "CanCycleSubs": false,
+    "Accuracy": 0,
+    "HeatFactor": 1,
+    "CoolFactor": 1,
+    "DurabilityBurnModificator": 1.01,
+    "Velocity": 0,
+    "RecoilAngle": 0,
+    "ConflictingItems": [],
+    "Ergonomics": -1,
+    "Weight": 0.073,
+    "Loudness": 4,
+    "Convergence": 7.5,
+    "LoyaltyLevel": 2,
+    "Flash": 0,
+    "Prefab": {
+      "path": "Mods/AR15_Muzzle_Devices/kac_triple_tap_fh.bundle",
+      "rcid": ""
+    },
+    "Recoil": -7.5
+  },
+  "32ae89929c7e53b5e412acb3": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "32ae89929c7e53b5e412acb3",
+    "Name": "AR-15 CGS SCI-SIX 5.56x45 消焰器",
+    "ModType": "muzzle_supp_adapter",
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": -4,
+    "Dispersion": -4,
+    "CameraRecoil": 0,
+    "AutoROF": 0,
+    "SemiROF": 0,
+    "ModMalfunctionChance": 0,
+    "CanCycleSubs": false,
+    "Accuracy": 0,
+    "HeatFactor": 1,
+    "CoolFactor": 1,
+    "DurabilityBurnModificator": 1.04,
+    "Velocity": 0,
+    "RecoilAngle": 0,
+    "ConflictingItems": [],
+    "Ergonomics": 0,
+    "Weight": 0.07,
+    "Loudness": 4,
+    "Convergence": 7.5,
+    "LoyaltyLevel": 2,
+    "Flash": 3,
+    "Prefab": {
+      "path": "Mods/AR15_Muzzle_Devices/cgs_sci_fh.bundle",
+      "rcid": ""
+    },
+    "Recoil": -4,
+    "Slots": [
+      {
+        "_name": "mod_muzzle",
+        "_id": "372dffe723f093f34e81fdf1",
+        "_parent": "32ae89929c7e53b5e412acb3",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "e37c8df358fdec9a8780ea8c",
+                "24a57da0bf24002c1b8b31d9",
+                "0b33e835730e05c6a996f452"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      }
+    ]
+  },
+  "ac14dc7aa887301d799e3b2b": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "ac14dc7aa887301d799e3b2b",
+    "Name": "AR-15 Allen Engineering OPS INC 5.56x45 muzzle brake",
+    "ModType": "muzzle_supp_adapter",
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": -15,
+    "Dispersion": -20,
+    "CameraRecoil": -15,
+    "AutoROF": 0,
+    "SemiROF": 0,
+    "ModMalfunctionChance": 0,
+    "CanCycleSubs": false,
+    "Accuracy": 0,
+    "HeatFactor": 1,
+    "CoolFactor": 1,
+    "DurabilityBurnModificator": 1.01,
+    "Velocity": 0,
+    "RecoilAngle": 0,
+    "ConflictingItems": [],
+    "Ergonomics": -1,
+    "Weight": 0.141,
+    "Loudness": 40,
+    "Convergence": 0,
+    "LoyaltyLevel": 2,
+    "Flash": 4,
+    "Prefab": {
+      "path": "Mods/AR15_Muzzle_Devices/aem_brake_collar.bundle",
+      "rcid": ""
+    },
+    "Recoil": -8,
+    "Slots": [
+      {
+        "_name": "mod_muzzle",
+        "_id": "6fc5de12dfb1c7b3a64d53ee",
+        "_parent": "ac14dc7aa887301d799e3b2b",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "afcb0df7801fadd95111a3d6"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      }
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+E:\云文件\GitHub\Realism-patch-Generator-Csharp\artifacts\rule-sync-check\bin\Debug\net10.0\RuleSyncCheck.exe
+E:\云文件\GitHub\Realism-patch-Generator-Csharp\artifacts\rule-sync-check\bin\Debug\net10.0\RuleSyncCheck.deps.json
+E:\云文件\GitHub\Realism-patch-Generator-Csharp\artifacts\rule-sync-check\bin\Debug\net10.0\RuleSyncCheck.runtimeconfig.json
+E:\云文件\GitHub\Realism-patch-Generator-Csharp\artifacts\rule-sync-check\bin\Debug\net10.0\RuleSyncCheck.dll
+E:\云文件\GitHub\Realism-patch-Generator-Csharp\artifacts\rule-sync-check\bin\Debug\net10.0\RuleSyncCheck.pdb
+E:\云文件\GitHub\Realism-patch-Generator-Csharp\artifacts\rule-sync-check\obj\Debug\net10.0\RuleSyncCheck.GeneratedMSBuildEditorConfig.editorconfig
+E:\云文件\GitHub\Realism-patch-Generator-Csharp\artifacts\rule-sync-check\obj\Debug\net10.0\RuleSyncCheck.AssemblyInfoInputs.cache
+E:\云文件\GitHub\Realism-patch-Generator-Csharp\artifacts\rule-sync-check\obj\Debug\net10.0\RuleSyncCheck.AssemblyInfo.cs
+E:\云文件\GitHub\Realism-patch-Generator-Csharp\artifacts\rule-sync-check\obj\Debug\net10.0\RuleSyncCheck.csproj.CoreCompileInputs.cache
+E:\云文件\GitHub\Realism-patch-Generator-Csharp\artifacts\rule-sync-check\obj\Debug\net10.0\RuleSyncCheck.sourcelink.json
+E:\云文件\GitHub\Realism-patch-Generator-Csharp\artifacts\rule-sync-check\obj\Debug\net10.0\RuleSyncCheck.dll
+E:\云文件\GitHub\Realism-patch-Generator-Csharp\artifacts\rule-sync-check\obj\Debug\net10.0\refint\RuleSyncCheck.dll
+E:\云文件\GitHub\Realism-patch-Generator-Csharp\artifacts\rule-sync-check\obj\Debug\net10.0\RuleSyncCheck.pdb
+E:\云文件\GitHub\Realism-patch-Generator-Csharp\artifacts\rule-sync-check\obj\Debug\net10.0\RuleSyncCheck.genruntimeconfig.cache
+E:\云文件\GitHub\Realism-patch-Generator-Csharp\artifacts\rule-sync-check\obj\Debug\net10.0\ref\RuleSyncCheck.dll

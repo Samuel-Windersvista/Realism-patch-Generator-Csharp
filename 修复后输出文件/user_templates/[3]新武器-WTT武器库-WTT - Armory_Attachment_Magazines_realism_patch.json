@@ -1,0 +1,822 @@
+{
+  "682b861888721c164979159f": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "682b861888721c164979159f",
+    "Name": "5.56x45 Global Ordnance 40-round magazine",
+    "ModType": "long_mag",
+    "ReloadSpeed": 0,
+    "Ergonomics": -1,
+    "MalfunctionChance": 0.18,
+    "LoadUnloadModifier": 9,
+    "CheckTimeModifier": 1,
+    "ConflictingItems": [
+      "622f02437762f55aaa68ac85"
+    ],
+    "Weight": 0.29,
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "LoyaltyLevel": 3,
+    "ExaminedByDefault": true,
+    "Prefab": {
+      "path": "Attachment_Magazines/ar15_40roundstanag.bundle",
+      "rcid": ""
+    },
+    "ModMalfunctionChance": 0.5,
+    "AimSpeed": -1,
+    "Handling": 0
+  },
+  "682b88530f05e7746693f920": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "682b88530f05e7746693f920",
+    "Name": "5.56x45 Colt AR-15 STANAG 30-round magazine (taped)",
+    "ModType": "",
+    "ReloadSpeed": -3,
+    "Ergonomics": 0,
+    "MalfunctionChance": 0.15,
+    "LoadUnloadModifier": 6,
+    "CheckTimeModifier": 1,
+    "ConflictingItems": [
+      "622f02437762f55aaa68ac85"
+    ],
+    "Weight": 0.12,
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "LoyaltyLevel": 2,
+    "ExaminedByDefault": true,
+    "Prefab": {
+      "path": "Attachment_Magazines/ar15_mag_taped.bundle",
+      "rcid": ""
+    },
+    "ModMalfunctionChance": -0.06,
+    "AimSpeed": 0,
+    "Handling": -1
+  },
+  "682b90a1bb914d953d95c7fd": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "682b90a1bb914d953d95c7fd",
+    "Name": "5.56x45 Colt AR-15 STANAG 30-round magazine (taped)",
+    "ModType": "",
+    "ReloadSpeed": 0,
+    "Ergonomics": -1,
+    "MalfunctionChance": 0.15,
+    "LoadUnloadModifier": 8,
+    "CheckTimeModifier": 2,
+    "ConflictingItems": [
+      "622f02437762f55aaa68ac85"
+    ],
+    "Weight": 0.12,
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "LoyaltyLevel": 2,
+    "ExaminedByDefault": true,
+    "Prefab": {
+      "path": "Attachment_Magazines/ar15_mag_looped.bundle",
+      "rcid": ""
+    },
+    "ModMalfunctionChance": 0.05,
+    "AimSpeed": -2,
+    "Handling": -1
+  },
+  "682b90d74ce95cc49a6e369b": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "682b90d74ce95cc49a6e369b",
+    "Name": "5.56x45 Colt AR-15 STANAG 30-round magazine (camo taped)",
+    "ModType": "",
+    "ReloadSpeed": 0,
+    "Ergonomics": -1,
+    "MalfunctionChance": 0.15,
+    "LoadUnloadModifier": 7,
+    "CheckTimeModifier": 1,
+    "ConflictingItems": [
+      "622f02437762f55aaa68ac85"
+    ],
+    "Weight": 0.12,
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "LoyaltyLevel": 2,
+    "ExaminedByDefault": true,
+    "Prefab": {
+      "path": "Attachment_Magazines/ar15_mag_ak5c_boss.bundle",
+      "rcid": ""
+    },
+    "ModMalfunctionChance": -0.58,
+    "AimSpeed": -1,
+    "Handling": -2
+  },
+  "686096ffbb9dec119f64f4b3": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "686096ffbb9dec119f64f4b3",
+    "Name": "AK-103 7.62x39 30-round magazine (plum)",
+    "ModType": "",
+    "ReloadSpeed": 0,
+    "Ergonomics": -1,
+    "MalfunctionChance": 0.05,
+    "LoadUnloadModifier": 4,
+    "CheckTimeModifier": 3,
+    "ConflictingItems": [],
+    "Weight": 0.161,
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "LoyaltyLevel": 3,
+    "ExaminedByDefault": true,
+    "Prefab": {
+      "path": "Attachment_Magazines/magazine_ak103_plum.bundle",
+      "rcid": ""
+    },
+    "ModMalfunctionChance": -0.69,
+    "AimSpeed": -1,
+    "Handling": 0
+  },
+  "064a8c271a037b0c6a1b86f5": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "064a8c271a037b0c6a1b86f5",
+    "Name": "OmniTech UMP .45 ACP 50-Round Casket Magazine",
+    "ModType": "",
+    "ReloadSpeed": -14,
+    "Ergonomics": -10,
+    "MalfunctionChance": 0.025,
+    "LoadUnloadModifier": 17,
+    "CheckTimeModifier": 7,
+    "ConflictingItems": [],
+    "Weight": 0.23,
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "LoyaltyLevel": 1,
+    "ExaminedByDefault": true,
+    "Prefab": {
+      "path": "Attachment_Magazines/ump_magazine_casket.bundle",
+      "rcid": ""
+    },
+    "Cartridges": [
+      {
+        "_id": "66875ecf64c1fb1896b2ddc1",
+        "_max_count": 50,
+        "_name": "cartridges",
+        "_parent": "064a8c271a037b0c6a1b86f5",
+        "_props": {
+          "filters": [
+            {
+              "Filter": [
+                "5e81f423763d9f754677bf2e",
+                "5efb0cabfb3e451d70735af5",
+                "5efb0fc6aeb21837e749c801",
+                "5efb0d4f4bc50b58e81710f3",
+                "5ea2a8e200685063ec28c05a"
+              ]
+            }
+          ]
+        },
+        "_proto": "5748538b2459770af276a261"
+      }
+    ],
+    "magAnimationIndex": 0,
+    "ItemSound": "mag_plastic",
+    "MagazineWithBelt": false,
+    "CheckOverride": 0,
+    "ExtraSizeDown": 1,
+    "VisibleAmmoRangesString": "1-3",
+    "Width": 1,
+    "Height": 2,
+    "ModMalfunctionChance": 5,
+    "AimSpeed": -3,
+    "Handling": -7
+  },
+  "5fa85819d2d2bfc0079e6b09": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "5fa85819d2d2bfc0079e6b09",
+    "Name": "Armaco Industries 7.62x51mm 50-Round SCAR-H Casket Magazine",
+    "ModType": "",
+    "ReloadSpeed": -8,
+    "Ergonomics": -13,
+    "MalfunctionChance": 0.027,
+    "LoadUnloadModifier": 22,
+    "CheckTimeModifier": 9,
+    "ConflictingItems": [],
+    "Weight": 0.39,
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "LoyaltyLevel": 3,
+    "ExaminedByDefault": true,
+    "Prefab": {
+      "path": "Attachment_Magazines/magazine_scar_h_coffin.bundle",
+      "rcid": ""
+    },
+    "Cartridges": [
+      {
+        "_id": "66875ec725dd3a6f9c033b07",
+        "_max_count": 50,
+        "_name": "cartridges",
+        "_parent": "5fa85819d2d2bfc0079e6b09",
+        "_props": {
+          "filters": [
+            {
+              "Filter": [
+                "5a6086ea4f39f99cd479502f",
+                "5a608bf24f39f98ffc77720e",
+                "58dd3ad986f77403051cba8f",
+                "5e023e53d4353e3302577c4c",
+                "5efb0c1bd79ff02a1f5e68d9",
+                "5e023e6e34d52a55c3304f71",
+                "5e023e88277cce2b522ff2b1",
+                "6768c25aa7b238f14a08d3f6"
+              ]
+            }
+          ]
+        },
+        "_proto": "5748538b2459770af276a261"
+      }
+    ],
+    "magAnimationIndex": 4,
+    "Width": 1,
+    "ModMalfunctionChance": 3,
+    "AimSpeed": -7,
+    "Handling": -9
+  },
+  "0672adb8be2d7d5a552ab4f2": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "0672adb8be2d7d5a552ab4f2",
+    "Name": "Glock 9x19mm 100-Round Beta C-Mag",
+    "ModType": "long_mag",
+    "ReloadSpeed": -12,
+    "Ergonomics": -11,
+    "MalfunctionChance": 0.288,
+    "LoadUnloadModifier": 17,
+    "CheckTimeModifier": 12,
+    "ConflictingItems": [],
+    "Weight": 0.68,
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "LoyaltyLevel": 4,
+    "ExaminedByDefault": true,
+    "Prefab": {
+      "path": "Attachment_Magazines/glock_magazine_cmag.bundle",
+      "rcid": ""
+    },
+    "Cartridges": [
+      {
+        "_id": "66875ec1971d0f8982f5ad70",
+        "_max_count": 100,
+        "_name": "cartridges",
+        "_parent": "0672adb8be2d7d5a552ab4f2",
+        "_props": {
+          "filters": [
+            {
+              "Filter": [
+                "5efb0da7a29a85116f6ea05f",
+                "5c3df7d588a4501f290594e5",
+                "58864a4f2459770fcc257101",
+                "56d59d3ad2720bdb418b4577",
+                "5c925fa22e221601da359b7b",
+                "5a3c16fe86f77452b62de32a",
+                "5efb0e16aeb21837e749c7ff",
+                "5c0d56a986f774449d5de529",
+                "64b7bbb74b75259c590fa897"
+              ]
+            }
+          ]
+        },
+        "_proto": "5748538b2459770af276a261"
+      }
+    ],
+    "magAnimationIndex": 2,
+    "ItemSound": "mag_plastic",
+    "MagazineWithBelt": false,
+    "CheckOverride": 0,
+    "ExtraSizeDown": 1,
+    "Width": 2,
+    "Height": 2,
+    "ModMalfunctionChance": 4,
+    "AimSpeed": -4,
+    "Handling": -9
+  },
+  "ccab703b048be433c03a671c": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "ccab703b048be433c03a671c",
+    "Name": "HK MG36 5.56x45 100-round drum magazine",
+    "ModType": "",
+    "ReloadSpeed": -15,
+    "Ergonomics": -10,
+    "MalfunctionChance": 0.45,
+    "LoadUnloadModifier": 21,
+    "CheckTimeModifier": 13,
+    "ConflictingItems": [
+      "622f039199f4ea1a4d6c9a17"
+    ],
+    "Weight": 1.02,
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "LoyaltyLevel": 1,
+    "ExaminedByDefault": true,
+    "Prefab": {
+      "path": "Attachment_Magazines/g36_magazine_mg36cmag.bundle",
+      "rcid": ""
+    },
+    "Cartridges": [
+      {
+        "_id": "66875eb6d1ca3fa44d87ad23",
+        "_max_count": 100,
+        "_name": "cartridges",
+        "_parent": "62307b7b10d2321fa8741921",
+        "_props": {
+          "filters": [
+            {
+              "Filter": [
+                "59e6920f86f77411d82aa167",
+                "59e6927d86f77411da468256",
+                "54527a984bdc2d4e668b4567",
+                "54527ac44bdc2d36668b4567",
+                "59e68f6f86f7746c9f75e846",
+                "59e6906286f7746c9f75e847",
+                "59e690b686f7746c9f75e848",
+                "59e6918f86f7746c9f75e849",
+                "60194943740c5d77f6705eea",
+                "601949593ae8f707c4608daa",
+                "5c0d5ae286f7741e46554302"
+              ]
+            }
+          ]
+        },
+        "_proto": "5748538b2459770af276a261"
+      }
+    ],
+    "magAnimationIndex": 7,
+    "ItemSound": "mag_plastic",
+    "MagazineWithBelt": false,
+    "CheckOverride": 0,
+    "ExtraSizeDown": 1,
+    "Width": 2,
+    "Height": 2,
+    "ModMalfunctionChance": 4,
+    "AimSpeed": -7,
+    "Handling": -11
+  },
+  "6687512d9e062645579695cd": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "6687512d9e062645579695cd",
+    "Name": "Heritage Ordnance 7.62x51mm 65-Round FAL Retro Drum Magazine",
+    "ModType": "",
+    "ReloadSpeed": -12,
+    "Ergonomics": -14,
+    "MalfunctionChance": 0.28,
+    "LoadUnloadModifier": 21,
+    "CheckTimeModifier": 12,
+    "ConflictingItems": [],
+    "Weight": 0.83,
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "LoyaltyLevel": 4,
+    "ExaminedByDefault": true,
+    "Prefab": {
+      "path": "Attachment_Magazines/sa58_magazine_retrodrum.bundle",
+      "rcid": ""
+    },
+    "Cartridges": [
+      {
+        "_name": "cartridges",
+        "_id": "66875e9b9668f202efaa200c",
+        "_parent": "5b7bef9c5acfc43d102852ec",
+        "_max_count": 60,
+        "_props": {
+          "filters": [
+            {
+              "Filter": [
+                "5a6086ea4f39f99cd479502f",
+                "5a608bf24f39f98ffc77720e",
+                "58dd3ad986f77403051cba8f",
+                "5e023e53d4353e3302577c4c",
+                "5efb0c1bd79ff02a1f5e68d9",
+                "5e023e6e34d52a55c3304f71",
+                "5e023e88277cce2b522ff2b1",
+                "6768c25aa7b238f14a08d3f6"
+              ]
+            }
+          ]
+        },
+        "_proto": "5748538b2459770af276a261"
+      }
+    ],
+    "Width": 2,
+    "ModMalfunctionChance": 4,
+    "AimSpeed": -6,
+    "Handling": -5
+  },
+  "e8aa1ef743f71f3e03b858f2": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "e8aa1ef743f71f3e03b858f2",
+    "Name": "Makeshift 7.62x54R 55-Round Drum Magazine",
+    "ModType": "",
+    "ReloadSpeed": -13,
+    "Ergonomics": -14,
+    "MalfunctionChance": 0.32,
+    "LoadUnloadModifier": 22,
+    "CheckTimeModifier": 12,
+    "ConflictingItems": [],
+    "Weight": 0.88,
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "LoyaltyLevel": 4,
+    "ExaminedByDefault": true,
+    "Prefab": {
+      "path": "Attachment_Magazines/svd_magazine_drum.bundle",
+      "rcid": ""
+    },
+    "Cartridges": [
+      {
+        "_id": "66875e5deaf9dce702e5ca86",
+        "_max_count": 55,
+        "_name": "cartridges",
+        "_parent": "e8aa1ef743f71f3e03b858f2",
+        "_props": {
+          "filters": [
+            {
+              "Filter": [
+                "5e023d34e8a400319a28ed44",
+                "5e023d48186a883be655e551",
+                "5e023cf8186a883be655e54f",
+                "59e77a2386f7742ee578960a",
+                "5887431f2459777e1612938f",
+                "560d61e84bdc2da74d8b4571",
+                "64b8f7968532cf95ee0a0dbf",
+                "64b8f7c241772715af0f9c3d",
+                "64b8f7b5389d7ffd620ccba2"
+              ]
+            }
+          ]
+        },
+        "_proto": "5748538b2459770af276a261"
+      }
+    ],
+    "magAnimationIndex": 1,
+    "ItemSound": "mag_plastic",
+    "MagazineWithBelt": false,
+    "CheckOverride": 0,
+    "ExtraSizeDown": 2,
+    "Width": 2,
+    "Height": 2,
+    "VisibleAmmoRangesString": "1-3",
+    "ModMalfunctionChance": 5,
+    "AimSpeed": -7,
+    "Handling": -8
+  },
+  "d4fa8040a5b69d46bf8819e3": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "d4fa8040a5b69d46bf8819e3",
+    "Name": "OmniTech Systems 5.7x28mm 55-Round P90 Magazine",
+    "ModType": "",
+    "ReloadSpeed": -8,
+    "Ergonomics": -6,
+    "MalfunctionChance": 0.075,
+    "LoadUnloadModifier": 10,
+    "CheckTimeModifier": 3,
+    "ConflictingItems": [],
+    "Weight": 0.49,
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "LoyaltyLevel": 2,
+    "ExaminedByDefault": true,
+    "Prefab": {
+      "path": "Attachment_Magazines/p90_magazine_ergo.bundle",
+      "rcid": ""
+    },
+    "Cartridges": [
+      {
+        "_id": "66875e5861e5e928ab6d5e38",
+        "_max_count": 55,
+        "_name": "cartridges",
+        "_parent": "d4fa8040a5b69d46bf8819e3",
+        "_props": {
+          "filters": [
+            {
+              "Filter": [
+                "5cc80f53e4a949000e1ea4f8",
+                "5cc86832d7f00c000d3a6e6c",
+                "5cc86840d7f00c002412c56c",
+                "5cc80f67e4a949035e43bbba",
+                "5cc80f38e4a949001152b560",
+                "5cc80f8fe4a949033b0224a2",
+                "5cc80f79e4a949033c7343b2"
+              ]
+            }
+          ]
+        },
+        "_proto": "5748538b2459770af276a261"
+      }
+    ],
+    "ItemSound": "mag_plastic",
+    "MagazineWithBelt": false,
+    "CheckOverride": 0,
+    "ModMalfunctionChance": 2,
+    "AimSpeed": -5,
+    "Handling": -5
+  },
+  "ca525c0ecc13667bd1ef357c": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "ca525c0ecc13667bd1ef357c",
+    "Name": "Heritage Ordnance HK MP5 60-Round Casket Magazine",
+    "ModType": "",
+    "ReloadSpeed": -9,
+    "Ergonomics": -9,
+    "MalfunctionChance": 0.19,
+    "LoadUnloadModifier": 23,
+    "CheckTimeModifier": 13,
+    "ConflictingItems": [],
+    "Weight": 0.67,
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "LoyaltyLevel": 2,
+    "ExaminedByDefault": true,
+    "Prefab": {
+      "path": "Attachment_Magazines/mp5_magazine_casket.bundle",
+      "rcid": ""
+    },
+    "Cartridges": [
+      {
+        "_id": "66875e5021a858c9244b1969",
+        "_max_count": 60,
+        "_name": "cartridges",
+        "_parent": "ca525c0ecc13667bd1ef357c",
+        "_props": {
+          "filters": [
+            {
+              "Filter": [
+                "5efb0da7a29a85116f6ea05f",
+                "5c3df7d588a4501f290594e5",
+                "58864a4f2459770fcc257101",
+                "56d59d3ad2720bdb418b4577",
+                "5c925fa22e221601da359b7b",
+                "5a3c16fe86f77452b62de32a",
+                "5efb0e16aeb21837e749c7ff",
+                "5c0d56a986f774449d5de529",
+                "64b7bbb74b75259c590fa897"
+              ]
+            }
+          ]
+        },
+        "_proto": "5748538b2459770af276a261"
+      }
+    ],
+    "ItemSound": "mag_plastic",
+    "MagazineWithBelt": false,
+    "CheckOverride": 0,
+    "ExtraSizeDown": 1,
+    "Width": 1,
+    "Height": 2,
+    "ModMalfunctionChance": 4,
+    "AimSpeed": -10,
+    "Handling": -6
+  },
+  "9a5e3fa7c8205cf253799070": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "9a5e3fa7c8205cf253799070",
+    "Name": "OmniTech V-50 Kriss Vector .45 ACP 50-Round Drum Magazine",
+    "ModType": "",
+    "ReloadSpeed": -11,
+    "Ergonomics": -9,
+    "MalfunctionChance": 0.21,
+    "LoadUnloadModifier": 19,
+    "CheckTimeModifier": 10,
+    "ConflictingItems": [],
+    "Weight": 0.62,
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "LoyaltyLevel": 2,
+    "ExaminedByDefault": true,
+    "Prefab": {
+      "path": "Attachment_Magazines/krissvector45_magazine_drum.bundle",
+      "rcid": ""
+    },
+    "Cartridges": [
+      {
+        "_id": "66875e49266f87a9a2318497",
+        "_max_count": 50,
+        "_name": "cartridges",
+        "_parent": "9a5e3fa7c8205cf253799070",
+        "_props": {
+          "filters": [
+            {
+              "Filter": [
+                "5e81f423763d9f754677bf2e",
+                "5efb0cabfb3e451d70735af5",
+                "5efb0fc6aeb21837e749c801",
+                "5efb0d4f4bc50b58e81710f3",
+                "5ea2a8e200685063ec28c05a"
+              ]
+            }
+          ]
+        },
+        "_proto": "5748538b2459770af276a261"
+      }
+    ],
+    "magAnimationIndex": 3,
+    "ItemSound": "mag_plastic",
+    "MagazineWithBelt": false,
+    "CheckOverride": 0,
+    "ExtraSizeDown": 1,
+    "Width": 1,
+    "Height": 2,
+    "ModMalfunctionChance": 3,
+    "AimSpeed": -8,
+    "Handling": -9
+  },
+  "a483029913455f81127fd070": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "a483029913455f81127fd070",
+    "Name": "PP-91 Kedr 9x18PM 55-Round Makeshift Drum Magazine",
+    "ModType": "",
+    "ReloadSpeed": -8,
+    "Ergonomics": -12,
+    "MalfunctionChance": 0.17,
+    "LoadUnloadModifier": 16,
+    "CheckTimeModifier": 11,
+    "ConflictingItems": [],
+    "Weight": 0.35,
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "LoyaltyLevel": 2,
+    "ExaminedByDefault": true,
+    "Prefab": {
+      "path": "Attachment_Magazines/kedr_magazine_drum.bundle",
+      "rcid": ""
+    },
+    "Cartridges": [
+      {
+        "_id": "66875e43f45860ac8bbe832f",
+        "_max_count": 55,
+        "_name": "cartridges",
+        "_parent": "a483029913455f81127fd070",
+        "_props": {
+          "filters": [
+            {
+              "Filter": [
+                "573718ba2459775a75491131",
+                "573719df2459775a626ccbc2",
+                "57371aab2459775a77142f22",
+                "57371b192459775a9f58a5e0",
+                "57371e4124597760ff7b25f1",
+                "57371eb62459776125652ac1",
+                "57371f8d24597761006c6a81",
+                "5737201124597760fc4431f1",
+                "5737207f24597760ff7b25f2",
+                "57371f2b24597761224311f1",
+                "573719762459775a626ccbc1",
+                "573720e02459776143012541",
+                "57372140245977611f70ee91",
+                "5737218f245977612125ba51"
+              ]
+            }
+          ]
+        },
+        "_proto": "5748538b2459770af276a261"
+      }
+    ],
+    "magAnimationIndex": 0,
+    "ItemSound": "mag_plastic",
+    "MagazineWithBelt": false,
+    "CheckOverride": 0,
+    "ExtraSizeDown": 1,
+    "Width": 1,
+    "Height": 2,
+    "ModMalfunctionChance": 5,
+    "AimSpeed": -6,
+    "Handling": -10
+  },
+  "a10805748f12422327de49a8": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "a10805748f12422327de49a8",
+    "Name": "PM 9x18PM 18-Round Extended Magazine",
+    "ModType": "",
+    "ReloadSpeed": -6,
+    "Ergonomics": -3,
+    "MalfunctionChance": 0.068,
+    "LoadUnloadModifier": 7,
+    "CheckTimeModifier": 7,
+    "ConflictingItems": [],
+    "Weight": 0.143,
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "LoyaltyLevel": 1,
+    "ExaminedByDefault": true,
+    "Prefab": {
+      "path": "Attachment_Magazines/pm_magazine_extended.bundle",
+      "rcid": ""
+    },
+    "Cartridges": [
+      {
+        "_id": "66875e3efc2fed97f2e3290e",
+        "_max_count": 18,
+        "_name": "cartridges",
+        "_parent": "a10805748f12422327de49a8",
+        "_props": {
+          "filters": [
+            {
+              "Filter": [
+                "573718ba2459775a75491131",
+                "573719df2459775a626ccbc2",
+                "57371aab2459775a77142f22",
+                "57371b192459775a9f58a5e0",
+                "57371e4124597760ff7b25f1",
+                "57371eb62459776125652ac1",
+                "57371f8d24597761006c6a81",
+                "5737201124597760fc4431f1",
+                "5737207f24597760ff7b25f2",
+                "57371f2b24597761224311f1",
+                "573719762459775a626ccbc1",
+                "573720e02459776143012541",
+                "57372140245977611f70ee91",
+                "5737218f245977612125ba51"
+              ]
+            }
+          ]
+        },
+        "_proto": "5748538b2459770af276a261"
+      }
+    ],
+    "magAnimationIndex": 0,
+    "ItemSound": "mag_plastic",
+    "MagazineWithBelt": false,
+    "CheckOverride": 0,
+    "ExtraSizeDown": 1,
+    "Width": 1,
+    "Height": 2,
+    "ModMalfunctionChance": 2,
+    "AimSpeed": -4,
+    "Handling": -5
+  },
+  "6862b3757fa915587fb36148": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "6862b3757fa915587fb36148",
+    "Name": "AK 7.62x39 6L50 experimental polymer 50-round magazine",
+    "ModType": "",
+    "ReloadSpeed": -4,
+    "Ergonomics": -5,
+    "MalfunctionChance": 0.299,
+    "LoadUnloadModifier": 9,
+    "CheckTimeModifier": 4,
+    "ConflictingItems": [],
+    "Weight": 0.3,
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "LoyaltyLevel": 4,
+    "ExaminedByDefault": true,
+    "Prefab": {
+      "path": "Attachment_Magazines/magazine_akm_50.bundle",
+      "rcid": ""
+    },
+    "CanSellOnRagfair": true,
+    "VisibleAmmoRangesString": "1-3",
+    "magAnimationIndex": 0,
+    "ModMalfunctionChance": 1,
+    "AimSpeed": -2,
+    "Handling": -4
+  },
+  "6862b435bfb984348be4f59b": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "6862b435bfb984348be4f59b",
+    "Name": "AK 7.62x39 Hungarian \"Tanker\" 20-round magazine",
+    "ModType": "",
+    "ReloadSpeed": 2,
+    "Ergonomics": 2,
+    "MalfunctionChance": 0.04,
+    "LoadUnloadModifier": 12,
+    "CheckTimeModifier": -3,
+    "ConflictingItems": [],
+    "Weight": 0.28,
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "LoyaltyLevel": 1,
+    "ExaminedByDefault": true,
+    "Prefab": {
+      "path": "Attachment_Magazines/magazine_akm_20.bundle",
+      "rcid": ""
+    },
+    "VisibleAmmoRangesString": "1-3",
+    "ModMalfunctionChance": -1,
+    "AimSpeed": 1,
+    "Handling": 1
+  },
+  "6862b46837dc96b767cda666": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "6862b46837dc96b767cda666",
+    "Name": "Arsenal Circle 10 7.62x39 polymer 40-round magazine",
+    "ModType": "long_mag",
+    "ReloadSpeed": -1,
+    "Ergonomics": -1,
+    "MalfunctionChance": 0.17,
+    "LoadUnloadModifier": 5,
+    "CheckTimeModifier": 1,
+    "ConflictingItems": [],
+    "Weight": 0.39,
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "LoyaltyLevel": 2,
+    "ExaminedByDefault": true,
+    "Prefab": {
+      "path": "Attachment_Magazines/magazine_akm_40_rpk.bundle",
+      "rcid": ""
+    },
+    "VisibleAmmoRangesString": "1-3",
+    "ModMalfunctionChance": -0.26,
+    "AimSpeed": -1,
+    "Handling": -1
+  }
+}

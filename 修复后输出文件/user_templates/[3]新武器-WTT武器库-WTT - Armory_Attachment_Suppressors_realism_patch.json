@@ -1,0 +1,73 @@
+{
+  "664b9a4798222d80ce536df6": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "664b9a4798222d80ce536df6",
+    "Name": "OSS Helix QD 7.62x51 sound suppressor",
+    "ModType": "",
+    "VerticalRecoil": -10,
+    "HorizontalRecoil": -8,
+    "Dispersion": -2,
+    "CameraRecoil": -7,
+    "AutoROF": 1.85,
+    "SemiROF": 2.7,
+    "ModMalfunctionChance": 13,
+    "CanCycleSubs": true,
+    "Accuracy": 2,
+    "HeatFactor": 1.21,
+    "CoolFactor": 1,
+    "DurabilityBurnModificator": 1.33,
+    "Velocity": 1,
+    "RecoilAngle": 0,
+    "ConflictingItems": [],
+    "Ergonomics": -14,
+    "Weight": 0.549,
+    "Loudness": -26,
+    "Convergence": 0,
+    "LoyaltyLevel": 4,
+    "Flash": -39,
+    "Prefab": {
+      "path": "Attachment_Suppressors/suppressor_osshxqd.bundle",
+      "rcid": ""
+    },
+    "Recoil": -9,
+    "ExaminedByDefault": true,
+    "AimSpeed": -16
+  },
+  "666102ef2d367ec85ddd2030": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "666102ef2d367ec85ddd2030",
+    "Name": "Gemtech Tundra 9x19 sound suppressor",
+    "ModType": "",
+    "VerticalRecoil": -12,
+    "HorizontalRecoil": -9,
+    "Dispersion": -4,
+    "CameraRecoil": -6,
+    "AutoROF": 0,
+    "SemiROF": 0,
+    "ModMalfunctionChance": 20,
+    "CanCycleSubs": true,
+    "Accuracy": -3,
+    "HeatFactor": 1.15,
+    "CoolFactor": 1,
+    "DurabilityBurnModificator": 1.29,
+    "Velocity": 0,
+    "RecoilAngle": 0,
+    "ConflictingItems": [
+      "5a7ad74e51dfba0015068f45",
+      "5a7b32a2e899ef00135e345a"
+    ],
+    "Ergonomics": -13,
+    "Weight": 0.241,
+    "Loudness": -32,
+    "Convergence": 0,
+    "LoyaltyLevel": 4,
+    "Flash": -40,
+    "Prefab": {
+      "path": "Attachment_Suppressors/suppressor_tundra.bundle",
+      "rcid": ""
+    },
+    "Recoil": -8,
+    "ExaminedByDefault": true,
+    "AimSpeed": -14
+  }
+}

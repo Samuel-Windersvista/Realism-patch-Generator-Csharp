@@ -1,0 +1,495 @@
+{
+  "68509710f0df4dbc5b0ff7fe": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "68509710f0df4dbc5b0ff7fe",
+    "Name": "格洛克22 MOS手枪套筒",
+    "ModType": "",
+    "ModMalfunctionChance": 3,
+    "Accuracy": 2,
+    "HeatFactor": 1.01,
+    "CoolFactor": 1.04,
+    "DurabilityBurnModificator": 1,
+    "ConflictingItems": [],
+    "Ergonomics": 4,
+    "Weight": 0.325,
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "ChamberSpeed": 24,
+    "LoyaltyLevel": 4,
+    "Prefab": {
+      "path": "Attachments/Receivers/reciever_glock_22_mos_slide.bundle",
+      "rcid": ""
+    },
+    "Slots": [
+      {
+        "_name": "mod_sight_rear",
+        "_id": "6850971720b11c54d899c04a",
+        "_parent": "68509710f0df4dbc5b0ff7fe",
+        "_props": {
+          "filters": [
+            {
+              "Filter": [
+                "5a7d9122159bd4001438dbf4",
+                "5a6f5d528dc32e00094b97d9",
+                "5a71e0fb8dc32e00094b97f2",
+                "630765cb962d0247b029dc45"
+              ],
+              "Shift": 0
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      },
+      {
+        "_name": "mod_sight_front",
+        "_id": "685097184b5e263700b2de1d",
+        "_parent": "68509710f0df4dbc5b0ff7fe",
+        "_props": {
+          "filters": [
+            {
+              "Filter": [
+                "5a7d90eb159bd400165484f1",
+                "5a6f58f68dc32e000a311390",
+                "5a71e0048dc32e000c52ecc8",
+                "630765777d50ff5e8a1ea718"
+              ],
+              "Shift": 0
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      },
+      {
+        "_name": "mod_mount",
+        "_id": "6850971aa0108c5754924dc8",
+        "_parent": "68509710f0df4dbc5b0ff7fe",
+        "_props": {
+          "filters": [
+            {
+              "Filter": [
+                "615d8da4d3a39d50044c10e8",
+                "685097dbb9aa83c9e35c5027"
+              ],
+              "Shift": 0
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      }
+    ],
+    "AutoROF": 0,
+    "SemiROF": 1,
+    "Convergence": 5
+  },
+  "6857c3a0b4fec9f18e5e5e36": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "6857c3a0b4fec9f18e5e5e36",
+    "Name": "西格绍尔 ROMEO7 1x30 反射式瞄具",
+    "ModType": "sight",
+    "AimSpeed": 3,
+    "Accuracy": 10,
+    "ConflictingItems": [],
+    "Ergonomics": 1,
+    "Weight": 0.37,
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "LoyaltyLevel": 3,
+    "Prefab": {
+      "path": "Attachments/Optics/scope_all_sig_romeo7.bundle",
+      "rcid": ""
+    },
+    "Slots": [
+      {
+        "_name": "mod_mount",
+        "_id": "6859137ffd32036daf80b0db",
+        "_parent": "6857c3a0b4fec9f18e5e5e36",
+        "_props": {
+          "filters": [
+            {
+              "Filter": [
+                "6859137715ae945161f51b1e"
+              ],
+              "Shift": 0
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      }
+    ],
+    "AimStability": 0
+  },
+  "685912a257837068f1460c7a": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "685912a257837068f1460c7a",
+    "Name": "西格绍尔 ROMEO7 1x30 反射式瞄具（FDE色）",
+    "ModType": "sight",
+    "AimSpeed": 4,
+    "Accuracy": 10,
+    "ConflictingItems": [],
+    "Ergonomics": 1,
+    "Weight": 0.37,
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "LoyaltyLevel": 3,
+    "Prefab": {
+      "path": "Attachments/Optics/scope_all_sig_romeo7_fde.bundle",
+      "rcid": ""
+    },
+    "Slots": [
+      {
+        "_name": "mod_mount",
+        "_id": "68591388ea6b1a7c61455979",
+        "_parent": "685912a257837068f1460c7a",
+        "_props": {
+          "filters": [
+            {
+              "Filter": [
+                "6859137715ae945161f51b1e"
+              ],
+              "Shift": 0
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      }
+    ],
+    "AimStability": 1
+  },
+  "6859137715ae945161f51b1e": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "6859137715ae945161f51b1e",
+    "Name": "西格绍尔 ROMEO7 防护镜盖",
+    "ModType": "",
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "Dispersion": 0,
+    "AutoROF": 0,
+    "SemiROF": 0,
+    "ModMalfunctionChance": 0,
+    "AimSpeed": 0,
+    "ReloadSpeed": 0,
+    "Ergonomics": -1,
+    "Accuracy": 0,
+    "ConflictingItems": [],
+    "FixSpeed": 0,
+    "HeatFactor": 0.98,
+    "CoolFactor": 0.98,
+    "DurabilityBurnModificator": 1,
+    "Weight": 0.021,
+    "LoyaltyLevel": 2,
+    "AimStability": 0,
+    "Handling": 0,
+    "Prefab": {
+      "path": "Attachments/Optics/scope_mount_sig_romeo7_caps.bundle",
+      "rcid": ""
+    },
+    "Slots": []
+  },
+  "6858f8db6ed3644b6c11c9a0": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "6858f8db6ed3644b6c11c9a0",
+    "Name": "Holosun HE509T X2 反射式瞄具",
+    "ModType": "sight",
+    "AimSpeed": 4,
+    "Accuracy": 0,
+    "ConflictingItems": [],
+    "Ergonomics": 1,
+    "Weight": 0.025,
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "LoyaltyLevel": 4,
+    "Prefab": {
+      "path": "Attachments/Optics/scope_base_holosun_509t_blk.bundle",
+      "rcid": ""
+    },
+    "Slots": [],
+    "CalibrationDistances": [
+      [
+        50,
+        100,
+        150,
+        200
+      ]
+    ],
+    "Zooms": [
+      [
+        1,
+        1,
+        1
+      ]
+    ],
+    "ModesCount": [
+      3
+    ],
+    "sightModType": "reflex",
+    "AimStability": 1
+  },
+  "685904bd76b06df2198b2f1b": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "685904bd76b06df2198b2f1b",
+    "Name": "Holosun HE509T X2 反射式瞄具（FDE色）",
+    "ModType": "sight",
+    "AimSpeed": 3,
+    "Accuracy": 0,
+    "ConflictingItems": [],
+    "Ergonomics": 1,
+    "Weight": 0.025,
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "LoyaltyLevel": 4,
+    "Prefab": {
+      "path": "Attachments/Optics/scope_base_holosun_509t_fde.bundle",
+      "rcid": ""
+    },
+    "Slots": [],
+    "CalibrationDistances": [
+      [
+        50,
+        100,
+        150,
+        200
+      ]
+    ],
+    "Zooms": [
+      [
+        1,
+        1,
+        1
+      ]
+    ],
+    "ModesCount": [
+      3
+    ],
+    "sightModType": "reflex",
+    "AimStability": 2
+  },
+  "6858fa27c104e3493576fd53": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "6858fa27c104e3493576fd53",
+    "Name": "Holosun HE509T low profile mount",
+    "ModType": "mount",
+    "Ergonomics": 0,
+    "Accuracy": 0,
+    "ConflictingItems": [],
+    "Weight": 0.017,
+    "LoyaltyLevel": 2,
+    "Prefab": {
+      "path": "Attachments/Mounts/mount_all_holosun_he509t.bundle",
+      "rcid": ""
+    },
+    "Slots": [
+      {
+        "_name": "mod_scope",
+        "_id": "6858fa846611295a3f9c18f5",
+        "_parent": "6858fa27c104e3493576fd53",
+        "_props": {
+          "filters": [
+            {
+              "Filter": [
+                "6858f8db6ed3644b6c11c9a0",
+                "685904bd76b06df2198b2f1b"
+              ],
+              "Shift": 0
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      }
+    ],
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "Dispersion": 0,
+    "AimStability": 0,
+    "Handling": 0
+  },
+  "6859411da7ac91f2e4088de4": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "6859411da7ac91f2e4088de4",
+    "Name": "EOTech EXPS3-1 全息瞄具",
+    "ModType": "sight",
+    "AimSpeed": 4,
+    "Accuracy": 15,
+    "ConflictingItems": [],
+    "Ergonomics": 0,
+    "Weight": 0.317,
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "LoyaltyLevel": 4,
+    "Prefab": {
+      "path": "Attachments/Optics/scope_all_eotech_exps_3_1.bundle",
+      "rcid": ""
+    },
+    "Zooms": [
+      [
+        1,
+        1
+      ]
+    ],
+    "ModesCount": [
+      2
+    ],
+    "sightModType": "holo",
+    "Slots": [
+      {
+        "_name": "mod_mount",
+        "_id": "685b413d636a57f9f770e583",
+        "_parent": "685b40db60670990eb71ca2d",
+        "_props": {
+          "filters": [
+            {
+              "Filter": [
+                "685c6c973ffb1957dcca18c6",
+                "685c6cfe99d360ee6cbc7985",
+                "685c6ce8c15fc38b32190fa9",
+                "685c6cbbaa9e444cb67c6e7b",
+                "685c6ca10bfdee0262637b4f",
+                "685c980215434eb9d07fee41"
+              ],
+              "Shift": 0
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      },
+      {
+        "_name": "mod_tactical",
+        "_id": "685b413c844db3723159d3ec",
+        "_parent": "685b40db60670990eb71ca2d",
+        "_props": {
+          "filters": [
+            {
+              "Filter": [],
+              "Shift": 0
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      }
+    ],
+    "AimStability": 1
+  },
+  "685d43c384852051ef64e4e8": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "685d43c384852051ef64e4e8",
+    "Name": "EOTech 553 全息瞄具（FDE色）",
+    "ModType": "sight",
+    "AimSpeed": 4,
+    "Accuracy": 15,
+    "ConflictingItems": [],
+    "Ergonomics": 0,
+    "Weight": 0.349,
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "LoyaltyLevel": 3,
+    "Prefab": {
+      "path": "Attachments/Optics/scope_all_eotech_553_tan.bundle",
+      "rcid": ""
+    },
+    "Zooms": [
+      [
+        1
+      ]
+    ],
+    "ModesCount": [
+      1
+    ],
+    "sightModType": "holo",
+    "Slots": [],
+    "AimStability": 2
+  },
+  "68642e0200397ba2b9e4ea9a": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "68642e0200397ba2b9e4ea9a",
+    "Name": "Tasco ProPoint 1x42 反射式瞄具",
+    "ModType": "sight",
+    "AimSpeed": 4,
+    "Accuracy": 2,
+    "ConflictingItems": [],
+    "Ergonomics": 0,
+    "Weight": 0.19,
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "LoyaltyLevel": 2,
+    "Prefab": {
+      "path": "Attachments/Optics/scope_base_tasco_propoint_1x42.bundle",
+      "rcid": ""
+    },
+    "Slots": [],
+    "Zooms": [
+      [
+        1,
+        1
+      ]
+    ],
+    "ModesCount": [
+      2
+    ],
+    "sightModType": "reflex",
+    "AimStability": 2
+  },
+  "686b15f7cf5ae78dbd7b950b": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "686b15f7cf5ae78dbd7b950b",
+    "Name": "西格绍尔 BRAVO5 5x30 瞄准镜",
+    "ModType": "sight",
+    "AimSpeed": 3,
+    "Accuracy": 0,
+    "ConflictingItems": [
+      "55d5f46a4bdc2d1b198b4567"
+    ],
+    "Ergonomics": 0,
+    "Weight": 1.23,
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "LoyaltyLevel": 3,
+    "Prefab": {
+      "path": "Attachments/Optics/scope_sig_bravo5_5x30.bundle",
+      "rcid": ""
+    },
+    "Slots": [],
+    "AimSensitivity": [
+      [
+        0.1625,
+        0.1625
+      ]
+    ],
+    "CalibrationDistances": [
+      [
+        50,
+        100,
+        150,
+        200,
+        250,
+        300
+      ]
+    ],
+    "ModesCount": [
+      2
+    ],
+    "ZoomSensitivity": 0,
+    "Zooms": [
+      [
+        5,
+        5
+      ]
+    ],
+    "sightModType": "optic",
+    "AimStability": 2
+  }
+}

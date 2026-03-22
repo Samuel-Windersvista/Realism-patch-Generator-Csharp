@@ -1,0 +1,72 @@
+{
+    "66326bfd46817c660d015122": {
+        "$type": "RealismMod.WeaponMod, RealismMod",
+        "ModType": "",
+        "Ergonomics": 0,
+        "Weight": 8,
+        "ConflictingItems": [],
+        "LoyaltyLevel": 1,
+        "VerticalRecoil": 0,
+        "HorizontalRecoil": 0,
+        "AimSpeed": 0,
+        "Accuracy": 0,
+        "ItemID": "66326bfd46817c660d015122",
+        "Name": "废弃的医疗箱（1944）"
+    },
+    "66326bfd46817c660d015123": {
+        "$type": "RealismMod.WeaponMod, RealismMod",
+        "ModType": "",
+        "Ergonomics": 0,
+        "Weight": 25,
+        "ConflictingItems": [],
+        "LoyaltyLevel": 1,
+        "VerticalRecoil": 0,
+        "HorizontalRecoil": 0,
+        "AimSpeed": 0,
+        "Accuracy": 0,
+        "ItemID": "66326bfd46817c660d015123",
+        "Name": "现代化物品展示柜"
+    },
+    "66326bfd46817c660d015150": {
+        "$type": "RealismMod.WeaponMod, RealismMod",
+        "ModType": "",
+        "Ergonomics": 0,
+        "Weight": 0.187,
+        "ConflictingItems": [],
+        "LoyaltyLevel": 1,
+        "VerticalRecoil": 0,
+        "HorizontalRecoil": 0,
+        "AimSpeed": 0,
+        "Accuracy": 0,
+        "ItemID": "66326bfd46817c660d015150",
+        "Name": "零食包-Z"
+    },
+    "6673b1ac5cae0610f1079d76": {
+        "$type": "RealismMod.WeaponMod, RealismMod",
+        "ModType": "",
+        "Ergonomics": 0,
+        "Weight": 0.6,
+        "ConflictingItems": [],
+        "LoyaltyLevel": 1,
+        "VerticalRecoil": 0,
+        "HorizontalRecoil": 0,
+        "AimSpeed": 0,
+        "Accuracy": 0,
+        "ItemID": "6673b1ac5cae0610f1079d76",
+        "Name": "丹尼斯的项圈"
+    },
+    "66326bfd46817c660d015154": {
+        "$type": "RealismMod.WeaponMod, RealismMod",
+        "ModType": "",
+        "Ergonomics": 0,
+        "Weight": 0.15,
+        "ConflictingItems": [],
+        "LoyaltyLevel": 1,
+        "VerticalRecoil": 0,
+        "HorizontalRecoil": 0,
+        "AimSpeed": 0,
+        "Accuracy": 0,
+        "ItemID": "66326bfd46817c660d015154",
+        "Name": "Groovey 的闪存盘"
+    }
+}

@@ -140,7 +140,7 @@ internal static class UiTextCatalog
         ["State.AuditDone"] = new("检查完成", "Check complete"),
         ["State.AuditDoneViolation"] = new("检查完成，发现未遵循规则物品", "Check complete, rule violations found"),
         ["State.AuditFailed"] = new("检查失败", "Check failed"),
-        ["Message.InvalidDataRoot"] = new("请选择包含 input 和 现实主义物品模板 的 C# 程序数据目录。", "Select a C# data directory containing input and 现实主义物品模板."),
+        ["Message.InvalidDataRoot"] = new("请选择包含 input 和 RealismItemTemplates 的 C# 程序数据目录。", "Select a C# data directory containing input and RealismItemTemplates."),
         ["Message.InvalidDataRootTitle"] = new("目录无效", "Invalid Directory"),
         ["Message.ReloadConfirm"] = new("当前有未保存修改，重新加载会丢失这些更改。是否继续？", "You have unsaved changes. Reloading will discard them. Continue?"),
         ["Message.ReloadConfirmTitle"] = new("确认重新加载", "Confirm Reload"),

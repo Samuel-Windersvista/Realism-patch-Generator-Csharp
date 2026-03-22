@@ -34,6 +34,8 @@ internal static class AttachmentRuleData
             ["555ef6e44bdc2de9068b457e"] = "barrel_medium",
             ["55818b084bdc2d5b648b4571"] = "flashlight_laser",
             ["55818b164bdc2ddc698b456c"] = "flashlight_laser",
+            ["55818b014bdc2ddc698b456b"] = "ubgl",
+            ["617f1ef5e8b54b0998387734"] = "ubgl",
             ["5448fe124bdc2da5018b4567"] = "flashlight_laser",
             ["550aa4cd4bdc2dd8348b456c"] = "muzzle_suppressor",
             ["550aa4bf4bdc2dd6348b456b"] = "muzzle_flashhider",
@@ -118,6 +120,12 @@ internal static class AttachmentRuleData
                 ["Flash"] = new(-5, 5, true),
                 ["DurabilityBurnModificator"] = new(1.0, 1.1),
             }),
+            ["booster"] = CreateRanges(new Dictionary<string, NumericRange>(StringComparer.OrdinalIgnoreCase)
+            {
+                ["AutoROF"] = new(1.0, 1.2),
+                ["SemiROF"] = new(1.0, 1.2),
+                ["ModMalfunctionChance"] = new(-15, -8, true),
+            }),
             ["magazine_compact"] = CreateRanges(new Dictionary<string, NumericRange>(StringComparer.OrdinalIgnoreCase)
             {
                 ["Ergonomics"] = new(0, 6, true),
@@ -177,6 +185,8 @@ internal static class AttachmentRuleData
                 ["DurabilityBurnModificator"] = new(0.95, 1.05),
                 ["HeatFactor"] = new(0.98, 1.03),
                 ["CoolFactor"] = new(0.98, 1.02),
+                ["Loudness"] = new(0, 10, true),
+                ["Velocity"] = new(0.0, 2.0),
                 ["Flash"] = new(-3, 3, true),
             }),
             ["scope_magnified"] = CreateRanges(new Dictionary<string, NumericRange>(StringComparer.OrdinalIgnoreCase)
@@ -190,12 +200,14 @@ internal static class AttachmentRuleData
             ["scope_red_dot"] = CreateRanges(new Dictionary<string, NumericRange>(StringComparer.OrdinalIgnoreCase)
             {
                 ["AimSpeed"] = new(2, 5, true),
+                ["Accuracy"] = new(-5, 5),
                 ["AimStability"] = new(0, 3, true),
                 ["Ergonomics"] = new(-2, 2, true),
             }),
             ["iron_sight"] = CreateRanges(new Dictionary<string, NumericRange>(StringComparer.OrdinalIgnoreCase)
             {
                 ["AimSpeed"] = new(0, 3, true),
+                    ["Accuracy"] = new(-15, 0, true),
                 ["Ergonomics"] = new(0, 2, true),
             }),
             ["stock_fixed"] = CreateRanges(new Dictionary<string, NumericRange>(StringComparer.OrdinalIgnoreCase)
@@ -269,16 +281,57 @@ internal static class AttachmentRuleData
                 ["AimStability"] = new(0, 0, true),
                 ["Handling"] = new(0, 0, true),
                 ["Ergonomics"] = new(0, 0, true),
+                ["DurabilityBurnModificator"] = new(1, 1, false),
+                ["Loudness"] = new(0, 0, true),
             }),
             ["pistol_grip"] = CreateRanges(new Dictionary<string, NumericRange>(StringComparer.OrdinalIgnoreCase)
             {
                 ["VerticalRecoil"] = new(-3, 1, true),
                 ["HorizontalRecoil"] = new(-2, 2, true),
+                ["Dispersion"] = new(-3, 3, true),
                 ["Ergonomics"] = new(2, 7, true),
                 ["Accuracy"] = new(0, 0, true),
                 ["AimSpeed"] = new(1, 5, true),
                 ["AimStability"] = new(1, 5, true),
                 ["Handling"] = new(2, 8, true),
+            }),
+            ["ubgl"] = CreateRanges(new Dictionary<string, NumericRange>(StringComparer.OrdinalIgnoreCase)
+            {
+                ["VerticalRecoil"] = new(0, 0, true),
+                ["HorizontalRecoil"] = new(0, 0, true),
+                ["Dispersion"] = new(0, 0, true),
+                ["CameraRecoil"] = new(0, 0, true),
+                ["AimSpeed"] = new(0, 0, true),
+                ["Ergonomics"] = new(0, 0, true),
+                ["Accuracy"] = new(-15, 0, true),
+                ["AutoROF"] = new(0, 0, true),
+                ["SemiROF"] = new(0, 0, true),
+                ["ModMalfunctionChance"] = new(0, 0, true),
+                ["HeatFactor"] = new(1, 1, true),
+                ["CoolFactor"] = new(1, 1, true),
+            }),
+            ["bayonet"] = CreateRanges(new Dictionary<string, NumericRange>(StringComparer.OrdinalIgnoreCase)
+            {
+                ["VerticalRecoil"] = new(-4, -3, true),
+                ["HorizontalRecoil"] = new(-2, -2, true),
+                ["Dispersion"] = new(-1, 0, true),
+                ["CameraRecoil"] = new(-1, -1, true),
+                ["AutoROF"] = new(0, 0, true),
+                ["SemiROF"] = new(0, 0, true),
+                ["ModMalfunctionChance"] = new(0, 0, true),
+                ["Accuracy"] = new(-15, -12, true),
+                ["HeatFactor"] = new(1, 1, true),
+                ["CoolFactor"] = new(1, 1, true),
+                ["DurabilityBurnModificator"] = new(1, 1, false),
+                ["Velocity"] = new(0, 0, true),
+                ["RecoilAngle"] = new(0, 0, true),
+                ["Ergonomics"] = new(-5, -3, true),
+                ["Convergence"] = new(0, 0, true),
+                ["MeleeDamage"] = new(65, 112, true),
+                ["MeleePen"] = new(18, 40, true),
+                ["Flash"] = new(-56, -49, true),
+                ["AimSpeed"] = new(0, 0, true),
+                ["Loudness"] = new(1, 8, true),
             }),
             ["foregrip"] = CreateRanges(new Dictionary<string, NumericRange>(StringComparer.OrdinalIgnoreCase)
             {
@@ -291,6 +344,7 @@ internal static class AttachmentRuleData
                 ["AimStability"] = new(5, 12, true),
                 ["Handling"] = new(8, 18, true),
                 ["Ergonomics"] = new(6, 16, true),
+                ["Accuracy"] = new(0, 0, true),
             }),
             ["receiver"] = CreateRanges(new Dictionary<string, NumericRange>(StringComparer.OrdinalIgnoreCase)
             {
@@ -298,6 +352,7 @@ internal static class AttachmentRuleData
                 ["SemiROF"] = new(0, 5, true),
                 ["ModMalfunctionChance"] = new(-5, 5, true),
                 ["Accuracy"] = new(-5, 5, true),
+                ["ChamberSpeed"] = new(0, 40, true),
                 ["HeatFactor"] = new(0.95, 1.05),
                 ["CoolFactor"] = new(0.95, 1.05),
                 ["Ergonomics"] = new(0, 7, true),
@@ -312,24 +367,48 @@ internal static class AttachmentRuleData
                 ["AimStability"] = new(0, 0, true),
                 ["Handling"] = new(0, 0, true),
                 ["Accuracy"] = new(0, 0, true),
+                ["HeatFactor"] = new(0.95, 1.03),
+                ["CoolFactor"] = new(0.92, 1.06),
+                ["AimSpeed"] = new(-5, 3, true),
+                ["DurabilityBurnModificator"] = new(1, 1, false),
             }),
             ["flashlight_laser"] = CreateRanges(new Dictionary<string, NumericRange>(StringComparer.OrdinalIgnoreCase)
             {
+                ["VerticalRecoil"] = new(0, 0, true),
+                ["HorizontalRecoil"] = new(0, 0, true),
                 ["Ergonomics"] = new(-2, 0, true),
                 ["Handling"] = new(-4, -2, true),
             }),
             ["catch"] = CreateRanges(new Dictionary<string, NumericRange>(StringComparer.OrdinalIgnoreCase)
             {
+                ["VerticalRecoil"] = new(0, 0, true),
+                ["HorizontalRecoil"] = new(0, 0, true),
+                ["AutoROF"] = new(0, 0, true),
+                ["SemiROF"] = new(0, 0, true),
+                ["AimSpeed"] = new(0, 0, true),
+                ["ReloadSpeed"] = new(0, 5, true),
+                ["ChamberSpeed"] = new(2.5, 8.5),
+                ["Ergonomics"] = new(0, 0, true),
+                ["Accuracy"] = new(0, 1, true),
+                ["FixSpeed"] = new(0, 0, true),
+                ["HeatFactor"] = new(1, 1, true),
+                ["CoolFactor"] = new(1, 1, true),
+                ["DurabilityBurnModificator"] = new(1, 1),
+                ["LoyaltyLevel"] = new(1, 3, true),
                 ["ModMalfunctionChance"] = new(-1, 1, true),
             }),
             ["hammer"] = CreateRanges(new Dictionary<string, NumericRange>(StringComparer.OrdinalIgnoreCase)
             {
                 ["ModMalfunctionChance"] = new(-2, 2, true),
+                ["SemiROF"] = new(0, 7.5),
+                ["Accuracy"] = new(0, 15, true),
                 ["Ergonomics"] = new(-1, 2, true),
             }),
             ["trigger"] = CreateRanges(new Dictionary<string, NumericRange>(StringComparer.OrdinalIgnoreCase)
             {
                 ["ModMalfunctionChance"] = new(-1, 2, true),
+                ["SemiROF"] = new(0, 5, true),
+                ["Accuracy"] = new(0, 15, true),
                 ["Ergonomics"] = new(-1, 2, true),
             }),
             ["charging_handle"] = CreateRanges(new Dictionary<string, NumericRange>(StringComparer.OrdinalIgnoreCase)
@@ -339,6 +418,8 @@ internal static class AttachmentRuleData
                 ["ChamberSpeed"] = new(-5, 40, true),
                 ["ModMalfunctionChance"] = new(-1, 4, true),
                 ["Ergonomics"] = new(-1, 1, true),
+                ["ReloadSpeed"] = new(0, 0, true),
+                ["FixSpeed"] = new(0, 0, true),
             }),
             ["bipod"] = CreateRanges(new Dictionary<string, NumericRange>(StringComparer.OrdinalIgnoreCase)
             {
@@ -379,6 +460,7 @@ internal static class AttachmentRuleData
                 ["Convergence"] = new(10, 25, true),
                 ["DurabilityBurnModificator"] = new(1.1, 1.3),
                 ["RecoilAngle"] = new(5, 15, true),
+                ["ShotgunDispersion"] = new(0.8, 2),
             }),
             ["barrel_medium"] = CreateRanges(new Dictionary<string, NumericRange>(StringComparer.OrdinalIgnoreCase)
             {
@@ -393,6 +475,7 @@ internal static class AttachmentRuleData
                 ["Convergence"] = new(0, 10, true),
                 ["DurabilityBurnModificator"] = new(0.95, 1.05),
                 ["RecoilAngle"] = new(-5, 5, true),
+                ["ShotgunDispersion"] = new(0.8, 2),
             }),
             ["barrel_integral_suppressed"] = CreateRanges(new Dictionary<string, NumericRange>(StringComparer.OrdinalIgnoreCase)
             {
@@ -404,6 +487,7 @@ internal static class AttachmentRuleData
                 ["HeatFactor"] = new(1.05, 1.25),
                 ["CoolFactor"] = new(1.0, 1.08),
                 ["DurabilityBurnModificator"] = new(1.15, 1.35),
+                ["ShotgunDispersion"] = new(0.8, 2),
             }),
             ["barrel_long"] = CreateRanges(new Dictionary<string, NumericRange>(StringComparer.OrdinalIgnoreCase)
             {
@@ -418,6 +502,7 @@ internal static class AttachmentRuleData
                 ["Convergence"] = new(-15, -5, true),
                 ["DurabilityBurnModificator"] = new(0.7, 0.9),
                 ["RecoilAngle"] = new(-15, -5, true),
+                ["ShotgunDispersion"] = new(0.8, 2),
             }),
             ["handguard_short"] = CreateRanges(new Dictionary<string, NumericRange>(StringComparer.OrdinalIgnoreCase)
             {
@@ -429,6 +514,8 @@ internal static class AttachmentRuleData
                 ["AimSpeed"] = new(2, 8, true),
                 ["Handling"] = new(5, 12, true),
                 ["Ergonomics"] = new(4, 10, true),
+                ["Accuracy"] = new(-8.0, 3.0, false),
+                ["Dispersion"] = new(-4.0, -1.0, false),
                 ["DurabilityBurnModificator"] = new(1.0, 1.0),
             }),
             ["handguard_medium"] = CreateRanges(new Dictionary<string, NumericRange>(StringComparer.OrdinalIgnoreCase)
@@ -436,11 +523,13 @@ internal static class AttachmentRuleData
                 ["VerticalRecoil"] = new(-7, -4, true),
                 ["HorizontalRecoil"] = new(-6, -2, true),
                 ["HeatFactor"] = new(0.95, 1.05),
-                ["CoolFactor"] = new(0.90, 1.0),
+                ["CoolFactor"] = new(0.9, 1.0),
                 ["AimStability"] = new(5, 10, true),
                 ["AimSpeed"] = new(0, 5, true),
                 ["Handling"] = new(2, 8, true),
                 ["Ergonomics"] = new(1, 6, true),
+                ["Accuracy"] = new(-2.0, 7.0, false),
+                ["Dispersion"] = new(-3.0, 1.0, false),
                 ["DurabilityBurnModificator"] = new(1.0, 1.0),
             }),
             ["handguard_long"] = CreateRanges(new Dictionary<string, NumericRange>(StringComparer.OrdinalIgnoreCase)
@@ -453,6 +542,8 @@ internal static class AttachmentRuleData
                 ["AimSpeed"] = new(-8, -2, true),
                 ["Handling"] = new(-8, -2, true),
                 ["Ergonomics"] = new(-5, 2, true),
+                ["Accuracy"] = new(-2.0, 10.0, false),
+                ["Dispersion"] = new(-3, -2, false),
                 ["DurabilityBurnModificator"] = new(0.9, 1.0),
             }),
         });

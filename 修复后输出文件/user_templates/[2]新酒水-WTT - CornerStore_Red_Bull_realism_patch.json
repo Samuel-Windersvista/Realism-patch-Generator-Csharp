@@ -1,0 +1,492 @@
+{
+  "66d3cadda5946c9b0c4d7148": {
+    "$type": "RealismMod.Consumable, RealismMod",
+    "Name": "Red Bull",
+    "TemplateType": "consumable",
+    "LoyaltyLevel": 1,
+    "BasePriceModifier": 1,
+    "ConsumableType": "other",
+    "Duration": 0,
+    "Delay": 0,
+    "EffectPeriod": 0,
+    "WaitPeriod": 0,
+    "Strength": 0,
+    "TunnelVisionStrength": 0,
+    "CanBeUsedInRaid": true,
+    "ItemID": "66d3cadda5946c9b0c4d7148",
+    "ExaminedByDefault": true,
+    "MaxResource": 1,
+    "Prefab": {
+      "path": "Food_Items/Redbull/food_redbull_loot.bundle",
+      "rcid": ""
+    },
+    "UsePrefab": {
+      "path": "Food_Items/Redbull/food_redbull.bundle",
+      "rcid": ""
+    },
+    "StimulatorBuffs": "redbull_buffs",
+    "effects_health": {
+      "Hydration": {
+        "value": 20
+      },
+      "Energy": {
+        "value": 30
+      }
+    }
+  },
+  "66d4f8b717dcce4ae2252123": {
+    "$type": "RealismMod.Consumable, RealismMod",
+    "Name": "Dragonfruit Red Bull",
+    "TemplateType": "consumable",
+    "LoyaltyLevel": 1,
+    "BasePriceModifier": 1,
+    "ConsumableType": "other",
+    "Duration": 0,
+    "Delay": 0,
+    "EffectPeriod": 0,
+    "WaitPeriod": 0,
+    "Strength": 0,
+    "TunnelVisionStrength": 0,
+    "CanBeUsedInRaid": true,
+    "ItemID": "66d4f8b717dcce4ae2252123",
+    "ExaminedByDefault": true,
+    "MaxResource": 1,
+    "Prefab": {
+      "path": "Food_Items/Redbull/food_redbull_green_loot.bundle",
+      "rcid": ""
+    },
+    "UsePrefab": {
+      "path": "Food_Items/Redbull/food_redbull_green.bundle",
+      "rcid": ""
+    },
+    "StimulatorBuffs": "redbull_dragonfruit_buffs",
+    "effects_health": {
+      "Hydration": {
+        "value": 25
+      },
+      "Energy": {
+        "value": 35
+      }
+    }
+  },
+  "66d4f9274de617daa8438ab4": {
+    "$type": "RealismMod.Consumable, RealismMod",
+    "Name": "Blueberry Red Bull",
+    "TemplateType": "consumable",
+    "LoyaltyLevel": 1,
+    "BasePriceModifier": 1,
+    "ConsumableType": "other",
+    "Duration": 0,
+    "Delay": 0,
+    "EffectPeriod": 0,
+    "WaitPeriod": 0,
+    "Strength": 0,
+    "TunnelVisionStrength": 0,
+    "CanBeUsedInRaid": true,
+    "ItemID": "66d4f9274de617daa8438ab4",
+    "ExaminedByDefault": true,
+    "MaxResource": 1,
+    "Prefab": {
+      "path": "Food_Items/Redbull/food_redbull_blue_loot.bundle",
+      "rcid": ""
+    },
+    "UsePrefab": {
+      "path": "Food_Items/Redbull/food_redbull_blue.bundle",
+      "rcid": ""
+    },
+    "StimulatorBuffs": "redbull_blueberry_buffs",
+    "effects_health": {
+      "Hydration": {
+        "value": 25
+      },
+      "Energy": {
+        "value": 35
+      }
+    }
+  },
+  "66d4f936a8631392eccf23b9": {
+    "$type": "RealismMod.Consumable, RealismMod",
+    "Name": "Strawberry Apricot Red Bull",
+    "TemplateType": "consumable",
+    "LoyaltyLevel": 1,
+    "BasePriceModifier": 1,
+    "ConsumableType": "other",
+    "Duration": 0,
+    "Delay": 0,
+    "EffectPeriod": 0,
+    "WaitPeriod": 0,
+    "Strength": 0,
+    "TunnelVisionStrength": 0,
+    "CanBeUsedInRaid": true,
+    "ItemID": "66d4f936a8631392eccf23b9",
+    "ExaminedByDefault": true,
+    "MaxResource": 1,
+    "Prefab": {
+      "path": "Food_Items/Redbull/food_redbull_orange_loot.bundle",
+      "rcid": ""
+    },
+    "UsePrefab": {
+      "path": "Food_Items/Redbull/food_redbull_orange.bundle",
+      "rcid": ""
+    },
+    "StimulatorBuffs": "redbull_orange_buffs",
+    "effects_health": {
+      "Hydration": {
+        "value": 40
+      },
+      "Energy": {
+        "value": 22
+      }
+    }
+  },
+  "66d4f93e41ef41636be3c8dc": {
+    "$type": "RealismMod.Consumable, RealismMod",
+    "Name": "Peach Nectarine Red Bull",
+    "TemplateType": "consumable",
+    "LoyaltyLevel": 1,
+    "BasePriceModifier": 1,
+    "ConsumableType": "other",
+    "Duration": 0,
+    "Delay": 0,
+    "EffectPeriod": 0,
+    "WaitPeriod": 0,
+    "Strength": 0,
+    "TunnelVisionStrength": 0,
+    "CanBeUsedInRaid": true,
+    "ItemID": "66d4f93e41ef41636be3c8dc",
+    "ExaminedByDefault": true,
+    "MaxResource": 1,
+    "Prefab": {
+      "path": "Food_Items/Redbull/food_redbull_peach_loot.bundle",
+      "rcid": ""
+    },
+    "UsePrefab": {
+      "path": "Food_Items/Redbull/food_redbull_peach.bundle",
+      "rcid": ""
+    },
+    "StimulatorBuffs": "redbull_peach_buffs",
+    "effects_health": {
+      "Hydration": {
+        "value": 50
+      },
+      "Energy": {
+        "value": 50
+      }
+    }
+  },
+  "66d4f947eb04da7c681d40db": {
+    "$type": "RealismMod.Consumable, RealismMod",
+    "Name": "Watermelon Red Bull",
+    "TemplateType": "consumable",
+    "LoyaltyLevel": 1,
+    "BasePriceModifier": 1,
+    "ConsumableType": "other",
+    "Duration": 0,
+    "Delay": 0,
+    "EffectPeriod": 0,
+    "WaitPeriod": 0,
+    "Strength": 0,
+    "TunnelVisionStrength": 0,
+    "CanBeUsedInRaid": true,
+    "ItemID": "66d4f947eb04da7c681d40db",
+    "ExaminedByDefault": true,
+    "MaxResource": 1,
+    "Prefab": {
+      "path": "Food_Items/Redbull/food_redbull_red_loot.bundle",
+      "rcid": ""
+    },
+    "UsePrefab": {
+      "path": "Food_Items/Redbull/food_redbull_red.bundle",
+      "rcid": ""
+    },
+    "StimulatorBuffs": "redbull_watermelon_buffs",
+    "effects_health": {
+      "Hydration": {
+        "value": 10
+      },
+      "Energy": {
+        "value": 45
+      }
+    }
+  },
+  "66d4f951b53df28c0cab33e5": {
+    "$type": "RealismMod.Consumable, RealismMod",
+    "Name": "Tropical Red Bull",
+    "TemplateType": "consumable",
+    "LoyaltyLevel": 1,
+    "BasePriceModifier": 1,
+    "ConsumableType": "other",
+    "Duration": 0,
+    "Delay": 0,
+    "EffectPeriod": 0,
+    "WaitPeriod": 0,
+    "Strength": 0,
+    "TunnelVisionStrength": 0,
+    "CanBeUsedInRaid": true,
+    "ItemID": "66d4f951b53df28c0cab33e5",
+    "ExaminedByDefault": true,
+    "MaxResource": 1,
+    "Prefab": {
+      "path": "Food_Items/Redbull/food_redbull_yellow_loot.bundle",
+      "rcid": ""
+    },
+    "UsePrefab": {
+      "path": "Food_Items/Redbull/food_redbull_yellow.bundle",
+      "rcid": ""
+    },
+    "StimulatorBuffs": "redbull_tropical_buffs",
+    "effects_health": {
+      "Hydration": {
+        "value": 10
+      },
+      "Energy": {
+        "value": 30
+      }
+    }
+  },
+  "681fb4d7dc58b0f8a0855fdf": {
+    "$type": "RealismMod.Consumable, RealismMod",
+    "Name": "Coconut Berry Red Bull",
+    "TemplateType": "consumable",
+    "LoyaltyLevel": 1,
+    "BasePriceModifier": 1,
+    "ConsumableType": "other",
+    "Duration": 0,
+    "Delay": 0,
+    "EffectPeriod": 0,
+    "WaitPeriod": 0,
+    "Strength": 0,
+    "TunnelVisionStrength": 0,
+    "CanBeUsedInRaid": true,
+    "ItemID": "681fb4d7dc58b0f8a0855fdf",
+    "ExaminedByDefault": true,
+    "MaxResource": 1,
+    "Prefab": {
+      "path": "Food_Items/Redbull/food_redbull_white_loot.bundle",
+      "rcid": ""
+    },
+    "UsePrefab": {
+      "path": "Food_Items/Redbull/food_redbull_white.bundle",
+      "rcid": ""
+    },
+    "StimulatorBuffs": "redbull_tropical_buffs",
+    "effects_health": {
+      "Hydration": {
+        "value": 10
+      },
+      "Energy": {
+        "value": 30
+      }
+    }
+  },
+  "681fb5f7fc78e5a2461e4072": {
+    "$type": "RealismMod.Consumable, RealismMod",
+    "Name": "Pink Edition Wild Berries Red Bull",
+    "TemplateType": "consumable",
+    "LoyaltyLevel": 1,
+    "BasePriceModifier": 1,
+    "ConsumableType": "other",
+    "Duration": 0,
+    "Delay": 0,
+    "EffectPeriod": 0,
+    "WaitPeriod": 0,
+    "Strength": 0,
+    "TunnelVisionStrength": 0,
+    "CanBeUsedInRaid": true,
+    "ItemID": "681fb5f7fc78e5a2461e4072",
+    "ExaminedByDefault": true,
+    "MaxResource": 1,
+    "Prefab": {
+      "path": "Food_Items/Redbull/food_redbull_pink_loot.bundle",
+      "rcid": ""
+    },
+    "UsePrefab": {
+      "path": "Food_Items/Redbull/food_redbull_pink.bundle",
+      "rcid": ""
+    },
+    "StimulatorBuffs": "redbull_watermelon_buffs",
+    "effects_health": {
+      "Hydration": {
+        "value": 10
+      },
+      "Energy": {
+        "value": 45
+      }
+    }
+  },
+  "681fb688c241ca5128154c90": {
+    "$type": "RealismMod.Consumable, RealismMod",
+    "Name": "Summer Edition White Peach Red Bull",
+    "TemplateType": "consumable",
+    "LoyaltyLevel": 1,
+    "BasePriceModifier": 1,
+    "ConsumableType": "other",
+    "Duration": 0,
+    "Delay": 0,
+    "EffectPeriod": 0,
+    "WaitPeriod": 0,
+    "Strength": 0,
+    "TunnelVisionStrength": 0,
+    "CanBeUsedInRaid": true,
+    "ItemID": "681fb688c241ca5128154c90",
+    "ExaminedByDefault": true,
+    "MaxResource": 1,
+    "Prefab": {
+      "path": "Food_Items/Redbull/food_redbull_wpeach_loot.bundle",
+      "rcid": ""
+    },
+    "UsePrefab": {
+      "path": "Food_Items/Redbull/food_redbull_wpeach.bundle",
+      "rcid": ""
+    },
+    "StimulatorBuffs": "redbull_peach_buffs",
+    "effects_health": {
+      "Hydration": {
+        "value": 50
+      },
+      "Energy": {
+        "value": 50
+      }
+    }
+  },
+  "681fb6ea16af88c95d79c886": {
+    "$type": "RealismMod.Consumable, RealismMod",
+    "Name": "Winter Edition Iced Vanilla Berry Red Bull",
+    "TemplateType": "consumable",
+    "LoyaltyLevel": 1,
+    "BasePriceModifier": 1,
+    "ConsumableType": "other",
+    "Duration": 0,
+    "Delay": 0,
+    "EffectPeriod": 0,
+    "WaitPeriod": 0,
+    "Strength": 0,
+    "TunnelVisionStrength": 0,
+    "CanBeUsedInRaid": true,
+    "ItemID": "681fb6ea16af88c95d79c886",
+    "ExaminedByDefault": true,
+    "MaxResource": 1,
+    "Prefab": {
+      "path": "Food_Items/Redbull/food_redbull_icedvanilla_loot.bundle",
+      "rcid": ""
+    },
+    "UsePrefab": {
+      "path": "Food_Items/Redbull/food_redbull_icedvanilla.bundle",
+      "rcid": ""
+    },
+    "StimulatorBuffs": "redbull_orange_buffs",
+    "effects_health": {
+      "Hydration": {
+        "value": 40
+      },
+      "Energy": {
+        "value": 22
+      }
+    }
+  },
+  "681fb764a0a922cd836b2796": {
+    "$type": "RealismMod.Consumable, RealismMod",
+    "Name": "Sea Blue Edition Juneberry Flavored Red Bull",
+    "TemplateType": "consumable",
+    "LoyaltyLevel": 1,
+    "BasePriceModifier": 1,
+    "ConsumableType": "other",
+    "Duration": 0,
+    "Delay": 0,
+    "EffectPeriod": 0,
+    "WaitPeriod": 0,
+    "Strength": 0,
+    "TunnelVisionStrength": 0,
+    "CanBeUsedInRaid": true,
+    "ItemID": "681fb764a0a922cd836b2796",
+    "ExaminedByDefault": true,
+    "MaxResource": 1,
+    "Prefab": {
+      "path": "Food_Items/Redbull/food_redbull_juneberry_loot.bundle",
+      "rcid": ""
+    },
+    "UsePrefab": {
+      "path": "Food_Items/Redbull/food_redbull_juneberry.bundle",
+      "rcid": ""
+    },
+    "StimulatorBuffs": "redbull_dragonfruit_buffs",
+    "effects_health": {
+      "Hydration": {
+        "value": 25
+      },
+      "Energy": {
+        "value": 35
+      }
+    }
+  },
+  "681fc32c7f015db07873dd99": {
+    "$type": "RealismMod.Consumable, RealismMod",
+    "Name": "Green Edition Caruba Elderflower Red Bull",
+    "TemplateType": "consumable",
+    "LoyaltyLevel": 1,
+    "BasePriceModifier": 1,
+    "ConsumableType": "other",
+    "Duration": 0,
+    "Delay": 0,
+    "EffectPeriod": 0,
+    "WaitPeriod": 0,
+    "Strength": 0,
+    "TunnelVisionStrength": 0,
+    "CanBeUsedInRaid": true,
+    "ItemID": "681fc32c7f015db07873dd99",
+    "ExaminedByDefault": true,
+    "MaxResource": 1,
+    "Prefab": {
+      "path": "Food_Items/Redbull/food_redbull_celderflower_loot.bundle",
+      "rcid": ""
+    },
+    "UsePrefab": {
+      "path": "Food_Items/Redbull/food_redbull_celderflower.bundle",
+      "rcid": ""
+    },
+    "StimulatorBuffs": "redbull_watermelon_buffs",
+    "effects_health": {
+      "Hydration": {
+        "value": 10
+      },
+      "Energy": {
+        "value": 45
+      }
+    }
+  },
+  "681fc39c1fcfd7b450a77665": {
+    "$type": "RealismMod.Consumable, RealismMod",
+    "Name": "Spring Edition Grapefruit Blossom Elderflower Red Bull",
+    "TemplateType": "consumable",
+    "LoyaltyLevel": 1,
+    "BasePriceModifier": 1,
+    "ConsumableType": "other",
+    "Duration": 0,
+    "Delay": 0,
+    "EffectPeriod": 0,
+    "WaitPeriod": 0,
+    "Strength": 0,
+    "TunnelVisionStrength": 0,
+    "CanBeUsedInRaid": true,
+    "ItemID": "681fc39c1fcfd7b450a77665",
+    "ExaminedByDefault": true,
+    "MaxResource": 1,
+    "Prefab": {
+      "path": "Food_Items/Redbull/food_redbull_grapefruit_loot.bundle",
+      "rcid": ""
+    },
+    "UsePrefab": {
+      "path": "Food_Items/Redbull/food_redbull_grapefruit.bundle",
+      "rcid": ""
+    },
+    "StimulatorBuffs": "redbull_watermelon_buffs",
+    "effects_health": {
+      "Hydration": {
+        "value": 10
+      },
+      "Energy": {
+        "value": 45
+      }
+    }
+  }
+}

@@ -74,7 +74,7 @@ public sealed class ItemExceptionFieldGuardServiceTests : IDisposable
         [Fact]
         public void GetKnownFieldNames_IncludesTemplateOnlyGearFields()
         {
-                var templateDirectory = Path.Combine(basePath, "现实主义物品模板", "gear");
+                var templateDirectory = Path.Combine(RuleWorkspace.GetTemplatesDirectory(basePath), "gear");
                 Directory.CreateDirectory(templateDirectory);
                 File.WriteAllText(
                         Path.Combine(templateDirectory, "armorMasksTemplates.json"),
@@ -166,7 +166,7 @@ public sealed class ItemExceptionFieldGuardServiceTests : IDisposable
 
     private void WriteGearRules(string json)
     {
-        var rulesDirectory = Path.Combine(basePath, "rules");
+        var rulesDirectory = RuleWorkspace.GetRulesDirectory(basePath);
         Directory.CreateDirectory(rulesDirectory);
         File.WriteAllText(Path.Combine(rulesDirectory, "gear_rules.json"), json);
     }

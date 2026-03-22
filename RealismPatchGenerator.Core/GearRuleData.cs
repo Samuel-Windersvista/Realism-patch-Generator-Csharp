@@ -156,11 +156,11 @@ internal static class GearRuleData
             }),
             ["cosmetic_gasmask"] = CreateRanges(new Dictionary<string, NumericRange>(StringComparer.OrdinalIgnoreCase)
             {
-                ["GasProtection"] = new(0.82, 0.90),
-                ["RadProtection"] = new(0.75, 0.82),
-                ["ReloadSpeedMulti"] = new(1.0, 1.0),
-                ["speedPenaltyPercent"] = new(-10.0, 0.0),
-                ["weaponErgonomicPenalty"] = new(-24.0, 0.0),
+                ["GasProtection"] = new(0.75, 0.96),
+                ["RadProtection"] = new(0.5, 0.92),
+                ["ReloadSpeedMulti"] = new(1.0, 1.2),
+                ["speedPenaltyPercent"] = new(-10.0, -1.0),
+                ["weaponErgonomicPenalty"] = new(-20.0, -2.0),
             }),
         });
 

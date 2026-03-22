@@ -119,7 +119,7 @@ public static class ItemExceptionFieldGuardService
             return ItemExceptionFieldCategory.Gear;
         }
 
-        if (ContainsAny(fields, "Loudness", "Flash", "AimSpeed", "AimStability", "Handling", "ModMalfunctionChance", "ReloadSpeed", "LoadUnloadModifier"))
+        if (ContainsAny(fields, "Loudness", "Flash", "AimSpeed", "AimStability", "Handling", "ModMalfunctionChance", "ReloadSpeed", "LoadUnloadModifier", "ModShotDispersion"))
         {
             return ItemExceptionFieldCategory.Attachment;
         }
@@ -400,7 +400,7 @@ public static class ItemExceptionFieldGuardService
             return;
         }
 
-        var templateRoot = Path.Combine(basePath, "现实主义物品模板");
+        var templateRoot = RuleWorkspace.GetTemplatesDirectory(basePath);
         if (!Directory.Exists(templateRoot))
         {
             return;

@@ -1,0 +1,28 @@
+{
+  "68b9ea8178d7ac07030cc218": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "68b9ea8178d7ac07030cc218",
+    "Name": "AR-15 BCM MK2 5.56x45 upper receiver (Pax Armata)",
+    "ModType": "",
+    "ModMalfunctionChance": 0,
+    "Accuracy": -3,
+    "HeatFactor": 0.98,
+    "CoolFactor": 1,
+    "DurabilityBurnModificator": 0.966,
+    "ConflictingItems": [],
+    "Ergonomics": 1,
+    "Weight": 0.44,
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "ChamberSpeed": 0,
+    "LoyaltyLevel": 1,
+    "Prefab": {
+      "path": "Mods/AR_15_Receivers/bcm_receiver_pax.bundle",
+      "rcid": ""
+    },
+    "Recoil": -4.35,
+    "AutoROF": 0,
+    "SemiROF": 1,
+    "Convergence": 7
+  }
+}

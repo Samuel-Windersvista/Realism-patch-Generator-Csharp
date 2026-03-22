@@ -1,0 +1,196 @@
+{
+  "d58286c3428cd91b964031e4": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "d58286c3428cd91b964031e4",
+    "Name": "AKS-74/AKS-74U皮卡汀尼适配器",
+    "ModType": "stock_adapter",
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "Dispersion": 0,
+    "CameraRecoil": 0,
+    "AimSpeed": 0,
+    "Ergonomics": 0,
+    "Accuracy": 0,
+    "HasShoulderContact": false,
+    "BlocksFolding": false,
+    "AutoROF": 0,
+    "SemiROF": 0,
+    "ModMalfunctionChance": 0,
+    "StockAllowADS": false,
+    "ConflictingItems": [],
+    "Weight": 0.31,
+    "LoyaltyLevel": 2,
+    "ExaminedByDefault": true,
+    "Prefab": {
+      "path": "Mods/AK/Pic_Adapter_for_AK.bundle",
+      "rcid": ""
+    },
+    "Recoil": 0,
+    "DurabilityBurnModificator": 1,
+    "HeatFactor": 1,
+    "Loudness": 0,
+    "Slots": [
+      {
+        "_id": "f46351aae8613b8db5f360e4",
+        "_mergeSlotWithChildren": false,
+        "_name": "mod_stock",
+        "_parent": "d58286c3428cd91b964031e4",
+        "_props": {
+          "filters": [
+            {
+              "Filter": [
+                "58ac1bf086f77420ed183f9f",
+                "5894a13e86f7742405482982",
+                "5fbcc429900b1d5091531dd7",
+                "5fbcc437d724d907e2077d5c",
+                "5c5db6ee2e221600113fba54",
+                "5c5db6f82e2216003a0fe914",
+                "6529348224cbe3c74a05e5c4"
+              ],
+              "Shift": 0
+            }
+          ]
+        },
+        "_proto": "55d30c4c4bdc2db4468b457e",
+        "_required": false
+      }
+    ],
+    "Convergence": 0,
+    "AimStability": 0,
+    "Handling": 0
+  },
+  "185bbb4e20e87b9aec36b1d5": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "185bbb4e20e87b9aec36b1d5",
+    "Name": "AK-74M/AK-100皮卡汀尼适配器",
+    "ModType": "stock_adapter",
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "Dispersion": 0,
+    "CameraRecoil": 0,
+    "AimSpeed": 0,
+    "Ergonomics": 0,
+    "Accuracy": 0,
+    "HasShoulderContact": false,
+    "BlocksFolding": false,
+    "AutoROF": 0,
+    "SemiROF": 0,
+    "ModMalfunctionChance": 0,
+    "StockAllowADS": false,
+    "ConflictingItems": [],
+    "Weight": 0.232,
+    "LoyaltyLevel": 2,
+    "ExaminedByDefault": true,
+    "Prefab": {
+      "path": "Mods/AK/Pic_Adapter_for_AK.bundle",
+      "rcid": ""
+    },
+    "Recoil": 0,
+    "DurabilityBurnModificator": 1,
+    "HeatFactor": 1,
+    "Loudness": 0,
+    "Slots": [
+      {
+        "_id": "7d5e2009c1d5d795bf8287ff",
+        "_mergeSlotWithChildren": false,
+        "_name": "mod_stock",
+        "_parent": "185bbb4e20e87b9aec36b1d5",
+        "_props": {
+          "filters": [
+            {
+              "Filter": [
+                "58ac1bf086f77420ed183f9f",
+                "5894a13e86f7742405482982",
+                "5fbcc429900b1d5091531dd7",
+                "5fbcc437d724d907e2077d5c",
+                "5c5db6ee2e221600113fba54",
+                "5c5db6f82e2216003a0fe914",
+                "6529348224cbe3c74a05e5c4"
+              ],
+              "Shift": 0
+            }
+          ]
+        },
+        "_proto": "55d30c4c4bdc2db4468b457e",
+        "_required": false
+      }
+    ],
+    "Convergence": 0,
+    "AimStability": 0,
+    "Handling": 0
+  },
+  "9d387502b50d1f4b0fb8b0ce": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "9d387502b50d1f4b0fb8b0ce",
+    "Name": "SAG折叠M4枪托适配器",
+    "ModType": "buffer_adapter",
+    "VerticalRecoil": -2,
+    "HorizontalRecoil": 2,
+    "Dispersion": 0,
+    "CameraRecoil": 3.25,
+    "AimSpeed": 0,
+    "Ergonomics": 2,
+    "Accuracy": 0,
+    "HasShoulderContact": false,
+    "BlocksFolding": false,
+    "AutoROF": 0,
+    "SemiROF": 0,
+    "ModMalfunctionChance": 0,
+    "StockAllowADS": false,
+    "ConflictingItems": [],
+    "Weight": 0.142,
+    "LoyaltyLevel": 3,
+    "ExaminedByDefault": true,
+    "Prefab": {
+      "path": "Mods/AK/sag_buttstock_adapter_folding.bundle",
+      "rcid": ""
+    },
+    "Slots": [
+      {
+        "_name": "mod_stock_001",
+        "_id": "d2b8a20891555a48157a44f5",
+        "_parent": "9d387502b50d1f4b0fb8b0ce",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "5fc2369685fd526b824a5713",
+                "606587d11246154cad35d635",
+                "5a9eb32da2750c00171b3f9c",
+                "5bfe86df0db834001b734685",
+                "55d4ae6c4bdc2d8b2f8b456e",
+                "5c87a07c2e2216001219d4a2",
+                "5bb20e70d4351e0035629f8f",
+                "5beec8c20db834001d2c465c",
+                "5fbbaa86f9986c4cff3fe5f6",
+                "5fce16961f152d4312622bc9",
+                "5ae30c9a5acfc408fb139a03",
+                "5d135e83d7ad1a21b83f42d8",
+                "5d135ecbd7ad1a21c176542e",
+                "56eabf3bd2720b75698b4569",
+                "58d2946386f774496974c37e",
+                "58d2946c86f7744e271174b5",
+                "58d2947686f774485c6a1ee5",
+                "58d2947e86f77447aa070d53",
+                "5d44069ca4b9361ebd26fc37",
+                "5d4406a8a4b9361e4f6eb8b7",
+                "5947c73886f7747701588af5",
+                "5c793fde2e221601da358614",
+                "5b39f8db5acfc40016387a1b",
+                "628a85ee6b1d481ff772e9d5",
+                "602e620f9b513876d4338d9a",
+                "6516e91f609aaf354b34b3e2",
+                "6516e971a3d4c6497930b450",
+                "6529370c405a5f51dd023db8"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      }
+    ]
+  }
+}

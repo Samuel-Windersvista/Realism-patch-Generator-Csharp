@@ -1,0 +1,1967 @@
+{
+  "modClampRules": {
+    "VerticalRecoil": {
+      "min": -35,
+      "max": 35,
+      "preferInt": false
+    },
+    "HorizontalRecoil": {
+      "min": -35,
+      "max": 35,
+      "preferInt": false
+    },
+    "Dispersion": {
+      "min": -55,
+      "max": 55,
+      "preferInt": false
+    },
+    "Loudness": {
+      "min": -45,
+      "max": 50,
+      "preferInt": true
+    },
+    "Accuracy": {
+      "min": -15,
+      "max": 15,
+      "preferInt": true
+    },
+    "LoyaltyLevel": {
+      "min": 1,
+      "max": 4,
+      "preferInt": true
+    }
+  },
+  "modParentBaseProfiles": {
+    "5448bc234bdc2d3c308b4569": "magazine",
+    "56ea9461d2720b67698b456f": "gasblock",
+    "55818a304bdc2db5418b457d": "receiver",
+    "55818a684bdc2ddd698b456d": "pistol_grip",
+    "55818af64bdc2d5b648b4570": "foregrip",
+    "55818a594bdc2db9688b456a": "stock",
+    "55818b224bdc2dde698b456f": "mount",
+    "55818ac54bdc2d5b648b456e": "iron_sight",
+    "55818ae44bdc2dde698b456c": "scope_magnified",
+    "55818ad54bdc2ddc698b4569": "scope_red_dot",
+    "55818add4bdc2d5b648b456f": "scope_magnified",
+    "55818acf4bdc2dde698b456b": "scope_red_dot",
+    "55818a104bdc2db9688b4569": "handguard_medium",
+    "555ef6e44bdc2de9068b457e": "barrel_medium",
+    "55818b084bdc2d5b648b4571": "flashlight_laser",
+    "55818b164bdc2ddc698b456c": "flashlight_laser",
+    "55818b014bdc2ddc698b456b": "ubgl",
+    "617f1ef5e8b54b0998387734": "ubgl",
+    "5448fe124bdc2da5018b4567": "flashlight_laser",
+    "550aa4cd4bdc2dd8348b456c": "muzzle_suppressor",
+    "550aa4bf4bdc2dd6348b456b": "muzzle_flashhider",
+    "550aa4dd4bdc2dc9348b4569": "muzzle_brake"
+  },
+  "modProfileRanges": {
+    "muzzle_suppressor": {
+      "Ergonomics": {
+        "min": -15,
+        "max": -8,
+        "preferInt": true
+      },
+      "CameraRecoil": {
+        "min": -8,
+        "max": -3,
+        "preferInt": true
+      },
+      "VerticalRecoil": {
+        "min": -15,
+        "max": -8,
+        "preferInt": true
+      },
+      "HorizontalRecoil": {
+        "min": -12,
+        "max": -6,
+        "preferInt": true
+      },
+      "Dispersion": {
+        "min": -5,
+        "max": -1,
+        "preferInt": true
+      },
+      "Accuracy": {
+        "min": -5,
+        "max": 5,
+        "preferInt": true
+      },
+      "Velocity": {
+        "min": 0,
+        "max": 3,
+        "preferInt": true
+      },
+      "Loudness": {
+        "min": -40,
+        "max": -20,
+        "preferInt": true
+      },
+      "Flash": {
+        "min": -80,
+        "max": -30,
+        "preferInt": true
+      },
+      "ModMalfunctionChance": {
+        "min": 10,
+        "max": 25,
+        "preferInt": true
+      },
+      "DurabilityBurnModificator": {
+        "min": 1.2,
+        "max": 1.5,
+        "preferInt": false
+      },
+      "AimSpeed": {
+        "min": -20,
+        "max": -8,
+        "preferInt": true
+      }
+    },
+    "muzzle_suppressor_compact": {
+      "Ergonomics": {
+        "min": -6,
+        "max": -2,
+        "preferInt": true
+      },
+      "CameraRecoil": {
+        "min": -3,
+        "max": -1,
+        "preferInt": true
+      },
+      "VerticalRecoil": {
+        "min": -8,
+        "max": -3,
+        "preferInt": true
+      },
+      "HorizontalRecoil": {
+        "min": -6,
+        "max": -1,
+        "preferInt": true
+      },
+      "Dispersion": {
+        "min": -1,
+        "max": 1,
+        "preferInt": true
+      },
+      "Accuracy": {
+        "min": -3,
+        "max": 5,
+        "preferInt": true
+      },
+      "Velocity": {
+        "min": 0,
+        "max": 2,
+        "preferInt": true
+      },
+      "Loudness": {
+        "min": -20,
+        "max": 10,
+        "preferInt": true
+      },
+      "Flash": {
+        "min": -45,
+        "max": -10,
+        "preferInt": true
+      },
+      "ModMalfunctionChance": {
+        "min": 4,
+        "max": 18,
+        "preferInt": true
+      },
+      "DurabilityBurnModificator": {
+        "min": 1,
+        "max": 1.75,
+        "preferInt": false
+      },
+      "AimSpeed": {
+        "min": -10,
+        "max": -2,
+        "preferInt": true
+      }
+    },
+    "muzzle_flashhider": {
+      "Ergonomics": {
+        "min": -5,
+        "max": -2,
+        "preferInt": true
+      },
+      "CameraRecoil": {
+        "min": -2,
+        "max": -1,
+        "preferInt": true
+      },
+      "VerticalRecoil": {
+        "min": -5,
+        "max": -2,
+        "preferInt": true
+      },
+      "HorizontalRecoil": {
+        "min": -3,
+        "max": -1,
+        "preferInt": true
+      },
+      "Dispersion": {
+        "min": -2,
+        "max": 2,
+        "preferInt": true
+      },
+      "Loudness": {
+        "min": 0,
+        "max": 10,
+        "preferInt": true
+      },
+      "Flash": {
+        "min": -70,
+        "max": -40,
+        "preferInt": true
+      },
+      "AimSpeed": {
+        "min": 0,
+        "max": 0,
+        "preferInt": true
+      }
+    },
+    "muzzle_brake": {
+      "Ergonomics": {
+        "min": -6,
+        "max": -3,
+        "preferInt": true
+      },
+      "CameraRecoil": {
+        "min": -9,
+        "max": -3,
+        "preferInt": true
+      },
+      "VerticalRecoil": {
+        "min": -20,
+        "max": -12,
+        "preferInt": true
+      },
+      "HorizontalRecoil": {
+        "min": -18,
+        "max": -10,
+        "preferInt": true
+      },
+      "Dispersion": {
+        "min": -5,
+        "max": -2,
+        "preferInt": true
+      },
+      "Accuracy": {
+        "min": -2,
+        "max": -1,
+        "preferInt": true
+      },
+      "Velocity": {
+        "min": 0,
+        "max": 0,
+        "preferInt": true
+      },
+      "Loudness": {
+        "min": 10,
+        "max": 20,
+        "preferInt": true
+      },
+      "Flash": {
+        "min": 3,
+        "max": 15,
+        "preferInt": true
+      },
+      "AimSpeed": {
+        "min": -2,
+        "max": 3,
+        "preferInt": true
+      }
+    },
+    "muzzle_thread": {
+      "Ergonomics": {
+        "min": -1,
+        "max": 1,
+        "preferInt": true
+      },
+      "CameraRecoil": {
+        "min": 0,
+        "max": 0,
+        "preferInt": true
+      },
+      "VerticalRecoil": {
+        "min": 0,
+        "max": 0,
+        "preferInt": true
+      },
+      "HorizontalRecoil": {
+        "min": 0,
+        "max": 0,
+        "preferInt": true
+      },
+      "Dispersion": {
+        "min": 0,
+        "max": 0,
+        "preferInt": true
+      },
+      "Accuracy": {
+        "min": 0,
+        "max": 0,
+        "preferInt": true
+      },
+      "Velocity": {
+        "min": 0,
+        "max": 0,
+        "preferInt": true
+      },
+      "Loudness": {
+        "min": 0,
+        "max": 0,
+        "preferInt": true
+      },
+      "Flash": {
+        "min": 0,
+        "max": 0,
+        "preferInt": true
+      },
+      "ModMalfunctionChance": {
+        "min": 0,
+        "max": 0,
+        "preferInt": true
+      },
+      "DurabilityBurnModificator": {
+        "min": 1,
+        "max": 1.05,
+        "preferInt": false
+      },
+      "AimSpeed": {
+        "min": 0,
+        "max": 0,
+        "preferInt": true
+      }
+    },
+    "muzzle_adapter": {
+      "Ergonomics": {
+        "min": -2,
+        "max": 0,
+        "preferInt": true
+      },
+      "Flash": {
+        "min": -5,
+        "max": 5,
+        "preferInt": true
+      },
+      "DurabilityBurnModificator": {
+        "min": 1,
+        "max": 1.1,
+        "preferInt": false
+      }
+    },
+    "booster": {
+      "AutoROF": {
+        "min": 1.2,
+        "max": 1.5,
+        "preferInt": false
+      },
+      "SemiROF": {
+        "min": 1.2,
+        "max": 1.5,
+        "preferInt": false
+      },
+      "ModMalfunctionChance": {
+        "min": -25,
+        "max": -8,
+        "preferInt": true
+      }
+    },
+    "magazine_compact": {
+      "Ergonomics": {
+        "min": 0,
+        "max": 6,
+        "preferInt": true
+      },
+      "ReloadSpeed": {
+        "min": 0,
+        "max": 8,
+        "preferInt": true
+      },
+      "LoadUnloadModifier": {
+        "min": 5,
+        "max": 15,
+        "preferInt": true
+      },
+      "CheckTimeModifier": {
+        "min": -3,
+        "max": 1,
+        "preferInt": true
+      },
+      "ModMalfunctionChance": {
+        "min": -3,
+        "max": 1,
+        "preferInt": true
+      },
+      "AimSpeed": {
+        "min": 0,
+        "max": 4,
+        "preferInt": true
+      },
+      "Handling": {
+        "min": 0,
+        "max": 5,
+        "preferInt": true
+      }
+    },
+    "magazine_standard": {
+      "Ergonomics": {
+        "min": -3,
+        "max": 1,
+        "preferInt": true
+      },
+      "ReloadSpeed": {
+        "min": -4,
+        "max": 3,
+        "preferInt": true
+      },
+      "LoadUnloadModifier": {
+        "min": 3,
+        "max": 10,
+        "preferInt": true
+      },
+      "CheckTimeModifier": {
+        "min": 0,
+        "max": 4,
+        "preferInt": true
+      },
+      "ModMalfunctionChance": {
+        "min": -1.5,
+        "max": 1.5,
+        "preferInt": false
+      },
+      "AimSpeed": {
+        "min": -3,
+        "max": 1,
+        "preferInt": true
+      },
+      "Handling": {
+        "min": -3,
+        "max": 1,
+        "preferInt": true
+      }
+    },
+    "magazine_extended": {
+      "Ergonomics": {
+        "min": -8,
+        "max": -3,
+        "preferInt": true
+      },
+      "ReloadSpeed": {
+        "min": -10,
+        "max": -1,
+        "preferInt": true
+      },
+      "LoadUnloadModifier": {
+        "min": 6,
+        "max": 15,
+        "preferInt": true
+      },
+      "CheckTimeModifier": {
+        "min": 2,
+        "max": 8,
+        "preferInt": true
+      },
+      "ModMalfunctionChance": {
+        "min": 1,
+        "max": 2,
+        "preferInt": true
+      },
+      "AimSpeed": {
+        "min": -6,
+        "max": -1,
+        "preferInt": true
+      },
+      "Handling": {
+        "min": -6,
+        "max": -2,
+        "preferInt": true
+      }
+    },
+    "magazine_drum": {
+      "Ergonomics": {
+        "min": -15,
+        "max": -8,
+        "preferInt": true
+      },
+      "ReloadSpeed": {
+        "min": -20,
+        "max": -5,
+        "preferInt": true
+      },
+      "LoadUnloadModifier": {
+        "min": 12,
+        "max": 25,
+        "preferInt": true
+      },
+      "CheckTimeModifier": {
+        "min": 6,
+        "max": 14,
+        "preferInt": true
+      },
+      "ModMalfunctionChance": {
+        "min": 3,
+        "max": 5,
+        "preferInt": true
+      },
+      "AimSpeed": {
+        "min": -10,
+        "max": -3,
+        "preferInt": true
+      },
+      "Handling": {
+        "min": -12,
+        "max": -4,
+        "preferInt": true
+      }
+    },
+    "magazine": {
+      "Ergonomics": {
+        "min": -3,
+        "max": 1,
+        "preferInt": true
+      },
+      "ReloadSpeed": {
+        "min": -4,
+        "max": 3,
+        "preferInt": true
+      },
+      "LoadUnloadModifier": {
+        "min": 3,
+        "max": 10,
+        "preferInt": true
+      },
+      "CheckTimeModifier": {
+        "min": 0,
+        "max": 4,
+        "preferInt": true
+      },
+      "ModMalfunctionChance": {
+        "min": -1.2,
+        "max": 1.2,
+        "preferInt": false
+      },
+      "AimSpeed": {
+        "min": -3,
+        "max": 1,
+        "preferInt": true
+      },
+      "Handling": {
+        "min": -3,
+        "max": 1,
+        "preferInt": true
+      }
+    },
+    "gasblock": {
+      "Ergonomics": {
+        "min": 0,
+        "max": 2,
+        "preferInt": true
+      },
+      "VerticalRecoil": {
+        "min": -2,
+        "max": 0,
+        "preferInt": true
+      },
+      "HorizontalRecoil": {
+        "min": -1,
+        "max": 0,
+        "preferInt": true
+      },
+      "ModMalfunctionChance": {
+        "min": -2,
+        "max": 5,
+        "preferInt": true
+      },
+      "DurabilityBurnModificator": {
+        "min": 0.95,
+        "max": 1.05,
+        "preferInt": false
+      },
+      "HeatFactor": {
+        "min": 0.98,
+        "max": 1.03,
+        "preferInt": false
+      },
+      "CoolFactor": {
+        "min": 0.98,
+        "max": 1.02,
+        "preferInt": false
+      },
+      "Loudness": {
+        "min": 0,
+        "max": 10,
+        "preferInt": true
+      },
+      "Velocity": {
+        "min": 0,
+        "max": 2,
+        "preferInt": false
+      },
+      "Flash": {
+        "min": -3,
+        "max": 3,
+        "preferInt": true
+      }
+    },
+    "scope_magnified": {
+      "AimSpeed": {
+        "min": -8,
+        "max": -4,
+        "preferInt": true
+      },
+      "Accuracy": {
+        "min": 3,
+        "max": 8,
+        "preferInt": true
+      },
+      "AimStability": {
+        "min": 5,
+        "max": 10,
+        "preferInt": true
+      },
+      "Ergonomics": {
+        "min": -8,
+        "max": -5,
+        "preferInt": true
+      },
+      "Handling": {
+        "min": -7,
+        "max": -2,
+        "preferInt": true
+      }
+    },
+    "scope_red_dot": {
+      "AimSpeed": {
+        "min": 2,
+        "max": 5,
+        "preferInt": true
+      },
+      "Accuracy": {
+        "min": -15,
+        "max": 15,
+        "preferInt": false
+      },
+      "AimStability": {
+        "min": 0,
+        "max": 3,
+        "preferInt": true
+      },
+      "Ergonomics": {
+        "min": -2,
+        "max": 2,
+        "preferInt": true
+      }
+    },
+    "iron_sight": {
+      "AimSpeed": {
+        "min": 0,
+        "max": 3,
+        "preferInt": true
+      },
+        "Accuracy": {
+          "min": -15,
+          "max": 0,
+          "preferInt": true
+        },
+      "Ergonomics": {
+        "min": 0,
+        "max": 2,
+        "preferInt": true
+      }
+    },
+    "stock_fixed": {
+      "VerticalRecoil": {
+        "min": -13,
+        "max": -8,
+        "preferInt": true
+      },
+      "HorizontalRecoil": {
+        "min": -10,
+        "max": -6,
+        "preferInt": true
+      },
+      "CameraRecoil": {
+        "min": -20,
+        "max": -12,
+        "preferInt": true
+      },
+      "Convergence": {
+        "min": 12,
+        "max": 20,
+        "preferInt": true
+      },
+      "AimSpeed": {
+        "min": -10,
+        "max": -3,
+        "preferInt": true
+      },
+      "AimStability": {
+        "min": 10,
+        "max": 15,
+        "preferInt": true
+      },
+      "Handling": {
+        "min": -10,
+        "max": -5,
+        "preferInt": true
+      },
+      "Ergonomics": {
+        "min": 8,
+        "max": 15,
+        "preferInt": true
+      }
+    },
+    "stock_folding": {
+      "VerticalRecoil": {
+        "min": -10,
+        "max": -5,
+        "preferInt": true
+      },
+      "HorizontalRecoil": {
+        "min": -6,
+        "max": -2,
+        "preferInt": true
+      },
+      "CameraRecoil": {
+        "min": -12,
+        "max": -5,
+        "preferInt": true
+      },
+      "Convergence": {
+        "min": 5,
+        "max": 12,
+        "preferInt": true
+      },
+      "AimSpeed": {
+        "min": -6,
+        "max": -2,
+        "preferInt": true
+      },
+      "AimStability": {
+        "min": 5,
+        "max": 10,
+        "preferInt": true
+      },
+      "Handling": {
+        "min": -3,
+        "max": 2,
+        "preferInt": true
+      },
+      "Ergonomics": {
+        "min": 4,
+        "max": 10,
+        "preferInt": true
+      }
+    },
+    "stock_ads_support": {
+      "VerticalRecoil": {
+        "min": -8,
+        "max": -4,
+        "preferInt": true
+      },
+      "HorizontalRecoil": {
+        "min": -5,
+        "max": -2,
+        "preferInt": true
+      },
+      "CameraRecoil": {
+        "min": -8,
+        "max": -4,
+        "preferInt": true
+      },
+      "Convergence": {
+        "min": 6,
+        "max": 14,
+        "preferInt": true
+      },
+      "AimSpeed": {
+        "min": -4,
+        "max": 0,
+        "preferInt": true
+      },
+      "AimStability": {
+        "min": 8,
+        "max": 15,
+        "preferInt": true
+      },
+      "Handling": {
+        "min": -2,
+        "max": 5,
+        "preferInt": true
+      },
+      "Ergonomics": {
+        "min": 3,
+        "max": 8,
+        "preferInt": true
+      }
+    },
+    "stock_buttpad": {
+      "VerticalRecoil": {
+        "min": -7,
+        "max": -2,
+        "preferInt": true
+      },
+      "HorizontalRecoil": {
+        "min": -4,
+        "max": 0,
+        "preferInt": true
+      },
+      "CameraRecoil": {
+        "min": -5,
+        "max": -1,
+        "preferInt": true
+      },
+      "Convergence": {
+        "min": 0,
+        "max": 0,
+        "preferInt": true
+      },
+      "AimSpeed": {
+        "min": 2,
+        "max": 8,
+        "preferInt": true
+      },
+      "AimStability": {
+        "min": 1,
+        "max": 8,
+        "preferInt": true
+      },
+      "Handling": {
+        "min": 2,
+        "max": 5,
+        "preferInt": true
+      },
+      "Ergonomics": {
+        "min": 4,
+        "max": 11,
+        "preferInt": true
+      }
+    },
+    "stock": {
+      "VerticalRecoil": {
+        "min": -12,
+        "max": -7,
+        "preferInt": true
+      },
+      "HorizontalRecoil": {
+        "min": -8,
+        "max": -4,
+        "preferInt": true
+      },
+      "CameraRecoil": {
+        "min": -8,
+        "max": -5,
+        "preferInt": true
+      },
+      "Convergence": {
+        "min": 5,
+        "max": 18,
+        "preferInt": true
+      },
+      "AimSpeed": {
+        "min": -5,
+        "max": 5,
+        "preferInt": true
+      },
+      "AimStability": {
+        "min": 7,
+        "max": 12,
+        "preferInt": true
+      },
+      "Handling": {
+        "min": -2,
+        "max": 6,
+        "preferInt": true
+      },
+      "Ergonomics": {
+        "min": 8,
+        "max": 15,
+        "preferInt": true
+      }
+    },
+    "buffer_adapter": {
+      "VerticalRecoil": {
+        "min": -2,
+        "max": 3,
+        "preferInt": true
+      },
+      "HorizontalRecoil": {
+        "min": -1,
+        "max": 3,
+        "preferInt": true
+      },
+      "Ergonomics": {
+        "min": -1,
+        "max": 5,
+        "preferInt": true
+      }
+    },
+    "stock_adapter": {
+      "VerticalRecoil": {
+        "min": 0,
+        "max": 0,
+        "preferInt": true
+      },
+      "HorizontalRecoil": {
+        "min": 0,
+        "max": 0,
+        "preferInt": true
+      },
+      "CameraRecoil": {
+        "min": 0,
+        "max": 0,
+        "preferInt": true
+      },
+      "Convergence": {
+        "min": 0,
+        "max": 0,
+        "preferInt": true
+      },
+      "AimSpeed": {
+        "min": 0,
+        "max": 0,
+        "preferInt": true
+      },
+      "AimStability": {
+        "min": 0,
+        "max": 0,
+        "preferInt": true
+      },
+      "Handling": {
+        "min": 0,
+        "max": 0,
+        "preferInt": true
+      },
+      "Ergonomics": {
+        "min": 0,
+        "max": 0,
+        "preferInt": true
+      },
+      "DurabilityBurnModificator": {
+        "min": 1,
+        "max": 1,
+        "preferInt": false
+      },
+      "Loudness": {
+        "min": 0,
+        "max": 0,
+        "preferInt": true
+      }
+    },
+    "pistol_grip": {
+      "VerticalRecoil": {
+        "min": -3,
+        "max": 1,
+        "preferInt": true
+      },
+      "HorizontalRecoil": {
+        "min": -2,
+        "max": 2,
+        "preferInt": true
+      },
+      "Dispersion": {
+        "min": -3,
+        "max": 3,
+        "preferInt": true
+      },
+      "Ergonomics": {
+        "min": 2,
+        "max": 7,
+        "preferInt": true
+      },
+      "Accuracy": {
+        "min": 0,
+        "max": 0,
+        "preferInt": true
+      },
+      "AimSpeed": {
+        "min": 1,
+        "max": 5,
+        "preferInt": true
+      },
+      "AimStability": {
+        "min": 1,
+        "max": 5,
+        "preferInt": true
+      },
+      "Handling": {
+        "min": 2,
+        "max": 8,
+        "preferInt": true
+      }
+    },
+    "ubgl": {
+      "VerticalRecoil": {
+        "min": 0,
+        "max": 0,
+        "preferInt": true
+      },
+      "HorizontalRecoil": {
+        "min": 0,
+        "max": 0,
+        "preferInt": true
+      },
+      "Dispersion": {
+        "min": 0,
+        "max": 0,
+        "preferInt": true
+      },
+      "CameraRecoil": {
+        "min": 0,
+        "max": 0,
+        "preferInt": true
+      },
+      "AimSpeed": {
+        "min": 0,
+        "max": 0,
+        "preferInt": true
+      },
+      "Ergonomics": {
+        "min": 0,
+        "max": 0,
+        "preferInt": true
+      },
+      "Accuracy": {
+        "min": -15,
+        "max": 0,
+        "preferInt": true
+      },
+      "AutoROF": {
+        "min": 0,
+        "max": 0,
+        "preferInt": true
+      },
+      "SemiROF": {
+        "min": 0,
+        "max": 0,
+        "preferInt": true
+      },
+      "ModMalfunctionChance": {
+        "min": 0,
+        "max": 0,
+        "preferInt": true
+      },
+      "HeatFactor": {
+        "min": 1,
+        "max": 1,
+        "preferInt": true
+      },
+      "CoolFactor": {
+        "min": 1,
+        "max": 1,
+        "preferInt": true
+      }
+    },
+    "bayonet": {
+      "VerticalRecoil": {
+        "min": -4,
+        "max": -3,
+        "preferInt": true
+      },
+      "HorizontalRecoil": {
+        "min": -2,
+        "max": -2,
+        "preferInt": true
+      },
+      "Dispersion": {
+        "min": -1,
+        "max": 0,
+        "preferInt": true
+      },
+      "CameraRecoil": {
+        "min": -1,
+        "max": -1,
+        "preferInt": true
+      },
+      "AutoROF": {
+        "min": 0,
+        "max": 0,
+        "preferInt": true
+      },
+      "SemiROF": {
+        "min": 0,
+        "max": 0,
+        "preferInt": true
+      },
+      "ModMalfunctionChance": {
+        "min": 0,
+        "max": 0,
+        "preferInt": true
+      },
+      "Accuracy": {
+        "min": -15,
+        "max": -12,
+        "preferInt": true
+      },
+      "HeatFactor": {
+        "min": 1,
+        "max": 1,
+        "preferInt": true
+      },
+      "CoolFactor": {
+        "min": 1,
+        "max": 1,
+        "preferInt": true
+      },
+      "DurabilityBurnModificator": {
+        "min": 1,
+        "max": 1,
+        "preferInt": false
+      },
+      "Velocity": {
+        "min": 0,
+        "max": 0,
+        "preferInt": true
+      },
+      "RecoilAngle": {
+        "min": 0,
+        "max": 0,
+        "preferInt": true
+      },
+      "Ergonomics": {
+        "min": -5,
+        "max": -3,
+        "preferInt": true
+      },
+      "Convergence": {
+        "min": 0,
+        "max": 0,
+        "preferInt": true
+      },
+      "MeleeDamage": {
+        "min": 65,
+        "max": 112,
+        "preferInt": true
+      },
+      "MeleePen": {
+        "min": 18,
+        "max": 40,
+        "preferInt": true
+      },
+      "Flash": {
+        "min": -56,
+        "max": -49,
+        "preferInt": true
+      },
+      "AimSpeed": {
+        "min": 0,
+        "max": 0,
+        "preferInt": true
+      },
+      "Loudness": {
+        "min": 1,
+        "max": 8,
+        "preferInt": true
+      }
+    },
+    "foregrip": {
+      "VerticalRecoil": {
+        "min": -8,
+        "max": -3,
+        "preferInt": true
+      },
+      "HorizontalRecoil": {
+        "min": -5,
+        "max": -2,
+        "preferInt": true
+      },
+      "CameraRecoil": {
+        "min": -7,
+        "max": -1,
+        "preferInt": true
+      },
+      "Dispersion": {
+        "min": 0,
+        "max": 0,
+        "preferInt": true
+      },
+      "Convergence": {
+        "min": -5,
+        "max": 2,
+        "preferInt": true
+      },
+      "AimSpeed": {
+        "min": 3,
+        "max": 10,
+        "preferInt": true
+      },
+      "AimStability": {
+        "min": 5,
+        "max": 12,
+        "preferInt": true
+      },
+      "Handling": {
+        "min": 8,
+        "max": 18,
+        "preferInt": true
+      },
+      "Ergonomics": {
+        "min": 6,
+        "max": 16,
+        "preferInt": true
+      },
+      "Accuracy": {
+        "min": 0,
+        "max": 0,
+        "preferInt": true
+      }
+    },
+    "receiver": {
+      "AutoROF": {
+        "min": 0,
+        "max": 2,
+        "preferInt": true
+      },
+      "SemiROF": {
+        "min": 0,
+        "max": 5,
+        "preferInt": true
+      },
+      "ModMalfunctionChance": {
+        "min": -5,
+        "max": 5,
+        "preferInt": true
+      },
+      "Accuracy": {
+        "min": -5,
+        "max": 5,
+        "preferInt": true
+      },
+      "ChamberSpeed": {
+        "min": 0,
+        "max": 40,
+        "preferInt": true
+      },
+      "HeatFactor": {
+        "min": 0.95,
+        "max": 1.05,
+        "preferInt": false
+      },
+      "CoolFactor": {
+        "min": 0.95,
+        "max": 1.05,
+        "preferInt": false
+      },
+      "Ergonomics": {
+        "min": 0,
+        "max": 7,
+        "preferInt": true
+      },
+      "Convergence": {
+        "min": 0,
+        "max": 10,
+        "preferInt": true
+      }
+    },
+    "mount": {
+      "VerticalRecoil": {
+        "min": 0,
+        "max": 0,
+        "preferInt": true
+      },
+      "HorizontalRecoil": {
+        "min": 0,
+        "max": 0,
+        "preferInt": true
+      },
+      "Dispersion": {
+        "min": 0,
+        "max": 0,
+        "preferInt": true
+      },
+      "Ergonomics": {
+        "min": -1,
+        "max": 1,
+        "preferInt": true
+      },
+      "AimStability": {
+        "min": 0,
+        "max": 0,
+        "preferInt": true
+      },
+      "Handling": {
+        "min": 0,
+        "max": 0,
+        "preferInt": true
+      },
+      "Accuracy": {
+        "min": 0,
+        "max": 0,
+        "preferInt": true
+      },
+      "HeatFactor": {
+        "min": 0.95,
+        "max": 1.03,
+        "preferInt": false
+      },
+      "CoolFactor": {
+        "min": 0.92,
+        "max": 1.06,
+        "preferInt": false
+      },
+      "AimSpeed": {
+        "min": -5,
+        "max": 3,
+        "preferInt": true
+      },
+      "DurabilityBurnModificator": {
+        "min": 1,
+        "max": 1,
+        "preferInt": false
+      }
+    },
+    "flashlight_laser": {
+      "VerticalRecoil": {
+        "min": 0,
+        "max": 0,
+        "preferInt": true
+      },
+      "HorizontalRecoil": {
+        "min": 0,
+        "max": 0,
+        "preferInt": true
+      },
+      "Ergonomics": {
+        "min": -2,
+        "max": 0,
+        "preferInt": true
+      },
+      "Handling": {
+        "min": -4,
+        "max": -2,
+        "preferInt": true
+      }
+    },
+    "catch": {
+      "VerticalRecoil": {
+        "min": 0,
+        "max": 0,
+        "preferInt": true
+      },
+      "HorizontalRecoil": {
+        "min": 0,
+        "max": 0,
+        "preferInt": true
+      },
+      "AutoROF": {
+        "min": 0,
+        "max": 0,
+        "preferInt": true
+      },
+      "SemiROF": {
+        "min": 0,
+        "max": 0,
+        "preferInt": true
+      },
+      "AimSpeed": {
+        "min": 0,
+        "max": 0,
+        "preferInt": true
+      },
+      "ReloadSpeed": {
+        "min": 0,
+        "max": 5,
+        "preferInt": true
+      },
+      "ChamberSpeed": {
+        "min": 2.5,
+        "max": 8.5,
+        "preferInt": false
+      },
+      "Ergonomics": {
+        "min": 0,
+        "max": 0,
+        "preferInt": true
+      },
+      "Accuracy": {
+        "min": 0,
+        "max": 1,
+        "preferInt": true
+      },
+      "FixSpeed": {
+        "min": 0,
+        "max": 0,
+        "preferInt": true
+      },
+      "HeatFactor": {
+        "min": 1,
+        "max": 1,
+        "preferInt": true
+      },
+      "CoolFactor": {
+        "min": 1,
+        "max": 1,
+        "preferInt": true
+      },
+      "DurabilityBurnModificator": {
+        "min": 1,
+        "max": 1,
+        "preferInt": false
+      },
+      "LoyaltyLevel": {
+        "min": 1,
+        "max": 3,
+        "preferInt": true
+      },
+      "ModMalfunctionChance": {
+        "min": -1,
+        "max": 1,
+        "preferInt": true
+      }
+    },
+    "hammer": {
+      "ModMalfunctionChance": {
+        "min": -2,
+        "max": 2,
+        "preferInt": true
+      },
+      "SemiROF": {
+        "min": 0,
+        "max": 7.5,
+        "preferInt": false
+      },
+      "Accuracy": {
+        "min": 0,
+        "max": 15,
+        "preferInt": true
+      },
+      "Ergonomics": {
+        "min": -1,
+        "max": 2,
+        "preferInt": true
+      }
+    },
+    "trigger": {
+      "ModMalfunctionChance": {
+        "min": -1,
+        "max": 2,
+        "preferInt": true
+      },
+      "SemiROF": {
+        "min": 0,
+        "max": 5,
+        "preferInt": true
+      },
+      "Accuracy": {
+        "min": 0,
+        "max": 15,
+        "preferInt": true
+      },
+      "Ergonomics": {
+        "min": -1,
+        "max": 2,
+        "preferInt": true
+      }
+    },
+    "charging_handle": {
+      "VerticalRecoil": {
+        "min": -1,
+        "max": 0,
+        "preferInt": true
+      },
+      "HorizontalRecoil": {
+        "min": -1,
+        "max": 0,
+        "preferInt": true
+      },
+      "ChamberSpeed": {
+        "min": -5,
+        "max": 40,
+        "preferInt": true
+      },
+      "ModMalfunctionChance": {
+        "min": -1,
+        "max": 4,
+        "preferInt": true
+      },
+      "Ergonomics": {
+        "min": -1,
+        "max": 1,
+        "preferInt": true
+      },
+      "ReloadSpeed": {
+        "min": 0,
+        "max": 0,
+        "preferInt": true
+      },
+      "FixSpeed": {
+        "min": 0,
+        "max": 0,
+        "preferInt": true
+      }
+    },
+    "bipod": {
+      "VerticalRecoil": {
+        "min": -3,
+        "max": 0,
+        "preferInt": true
+      },
+      "HorizontalRecoil": {
+        "min": -2,
+        "max": 0,
+        "preferInt": true
+      },
+      "Accuracy": {
+        "min": 0,
+        "max": 3,
+        "preferInt": true
+      },
+      "AimStability": {
+        "min": 0,
+        "max": 3,
+        "preferInt": true
+      },
+      "Ergonomics": {
+        "min": -3,
+        "max": -1,
+        "preferInt": true
+      },
+      "Handling": {
+        "min": -5,
+        "max": -2,
+        "preferInt": true
+      }
+    },
+    "stock_rear_hook": {
+      "Ergonomics": {
+        "min": 2,
+        "max": 2,
+        "preferInt": true
+      }
+    },
+    "optic_eyecup": {
+      "Ergonomics": {
+        "min": -1,
+        "max": 1,
+        "preferInt": true
+      }
+    },
+    "optic_killflash": {
+      "Ergonomics": {
+        "min": 1,
+        "max": 1,
+        "preferInt": true
+      }
+    },
+    "rail_panel": {
+      "Ergonomics": {
+        "min": 1,
+        "max": 2,
+        "preferInt": true
+      },
+      "CoolFactor": {
+        "min": 1.02,
+        "max": 1.02,
+        "preferInt": false
+      }
+    },
+    "barrel_short": {
+      "VerticalRecoil": {
+        "min": -2,
+        "max": 2,
+        "preferInt": true
+      },
+      "HorizontalRecoil": {
+        "min": 0,
+        "max": 2,
+        "preferInt": true
+      },
+      "Dispersion": {
+        "min": 5,
+        "max": 12,
+        "preferInt": true
+      },
+      "CenterOfImpact": {
+        "min": 0.05,
+        "max": 0.15,
+        "preferInt": false
+      },
+      "Velocity": {
+        "min": -6,
+        "max": -2,
+        "preferInt": true
+      },
+      "Accuracy": {
+        "min": -20,
+        "max": -5,
+        "preferInt": true
+      },
+      "HeatFactor": {
+        "min": 1.1,
+        "max": 1.3,
+        "preferInt": false
+      },
+      "CoolFactor": {
+        "min": 0.9,
+        "max": 0.95,
+        "preferInt": false
+      },
+      "Convergence": {
+        "min": 10,
+        "max": 25,
+        "preferInt": true
+      },
+      "DurabilityBurnModificator": {
+        "min": 1.1,
+        "max": 1.3,
+        "preferInt": false
+      },
+      "RecoilAngle": {
+        "min": 5,
+        "max": 15,
+        "preferInt": true
+      },
+      "ShotgunDispersion": {
+        "min": 0.8,
+        "max": 2,
+        "preferInt": false
+      }
+    },
+    "barrel_medium": {
+      "VerticalRecoil": {
+        "min": -4,
+        "max": -1,
+        "preferInt": true
+      },
+      "HorizontalRecoil": {
+        "min": -3,
+        "max": 1,
+        "preferInt": true
+      },
+      "Dispersion": {
+        "min": -1,
+        "max": 7,
+        "preferInt": true
+      },
+      "CenterOfImpact": {
+        "min": 0.02,
+        "max": 0.05,
+        "preferInt": false
+      },
+      "Velocity": {
+        "min": -1,
+        "max": 3,
+        "preferInt": true
+      },
+      "Accuracy": {
+        "min": -2,
+        "max": 5,
+        "preferInt": true
+      },
+      "HeatFactor": {
+        "min": 1,
+        "max": 1.15,
+        "preferInt": false
+      },
+      "CoolFactor": {
+        "min": 0.95,
+        "max": 1.05,
+        "preferInt": false
+      },
+      "Convergence": {
+        "min": 0,
+        "max": 10,
+        "preferInt": true
+      },
+      "DurabilityBurnModificator": {
+        "min": 0.95,
+        "max": 1.05,
+        "preferInt": false
+      },
+      "RecoilAngle": {
+        "min": -5,
+        "max": 5,
+        "preferInt": true
+      },
+      "ShotgunDispersion": {
+        "min": 0.8,
+        "max": 2,
+        "preferInt": false
+      }
+    },
+    "barrel_integral_suppressed": {
+      "VerticalRecoil": {
+        "min": -14,
+        "max": -8,
+        "preferInt": true
+      },
+      "HorizontalRecoil": {
+        "min": -8,
+        "max": -5,
+        "preferInt": true
+      },
+      "Dispersion": {
+        "min": -5,
+        "max": 0,
+        "preferInt": true
+      },
+      "Velocity": {
+        "min": -3,
+        "max": 3,
+        "preferInt": true
+      },
+      "Accuracy": {
+        "min": -5,
+        "max": 5,
+        "preferInt": true
+      },
+      "HeatFactor": {
+        "min": 1.05,
+        "max": 1.25,
+        "preferInt": false
+      },
+      "CoolFactor": {
+        "min": 1,
+        "max": 1.08,
+        "preferInt": false
+      },
+      "DurabilityBurnModificator": {
+        "min": 1.15,
+        "max": 1.35,
+        "preferInt": false
+      },
+      "ShotgunDispersion": {
+        "min": 0.8,
+        "max": 2,
+        "preferInt": false
+      }
+    },
+    "barrel_long": {
+      "VerticalRecoil": {
+        "min": -6,
+        "max": -3,
+        "preferInt": true
+      },
+      "HorizontalRecoil": {
+        "min": -5,
+        "max": -3,
+        "preferInt": true
+      },
+      "Dispersion": {
+        "min": -8,
+        "max": -2,
+        "preferInt": true
+      },
+      "CenterOfImpact": {
+        "min": 0.005,
+        "max": 0.02,
+        "preferInt": false
+      },
+      "Velocity": {
+        "min": 4,
+        "max": 15,
+        "preferInt": true
+      },
+      "Accuracy": {
+        "min": 10,
+        "max": 15,
+        "preferInt": true
+      },
+      "HeatFactor": {
+        "min": 0.9,
+        "max": 1.1,
+        "preferInt": false
+      },
+      "CoolFactor": {
+        "min": 1,
+        "max": 1.15,
+        "preferInt": false
+      },
+      "Convergence": {
+        "min": -15,
+        "max": -5,
+        "preferInt": true
+      },
+      "DurabilityBurnModificator": {
+        "min": 0.7,
+        "max": 0.9,
+        "preferInt": false
+      },
+      "RecoilAngle": {
+        "min": -15,
+        "max": -5,
+        "preferInt": true
+      },
+      "ShotgunDispersion": {
+        "min": 0.8,
+        "max": 2,
+        "preferInt": false
+      }
+    },
+    "handguard_short": {
+      "VerticalRecoil": {
+        "min": -3,
+        "max": -1,
+        "preferInt": true
+      },
+      "HorizontalRecoil": {
+        "min": -2,
+        "max": -1,
+        "preferInt": true
+      },
+      "HeatFactor": {
+        "min": 1.05,
+        "max": 1.1,
+        "preferInt": false
+      },
+      "CoolFactor": {
+        "min": 0.8,
+        "max": 0.95,
+        "preferInt": false
+      },
+      "AimStability": {
+        "min": 1,
+        "max": 5,
+        "preferInt": true
+      },
+      "AimSpeed": {
+        "min": 2,
+        "max": 8,
+        "preferInt": true
+      },
+      "Handling": {
+        "min": 5,
+        "max": 12,
+        "preferInt": true
+      },
+      "Ergonomics": {
+        "min": 4,
+        "max": 10,
+        "preferInt": true
+      },
+      "Accuracy": {
+        "min": -8,
+        "max": 3,
+        "preferInt": false
+      },
+      "Dispersion": {
+        "min": -4,
+        "max": -1,
+        "preferInt": false
+      },
+      "DurabilityBurnModificator": {
+        "min": 1,
+        "max": 1,
+        "preferInt": false
+      }
+    },
+    "handguard_medium": {
+      "VerticalRecoil": {
+        "min": -7,
+        "max": -4,
+        "preferInt": true
+      },
+      "HorizontalRecoil": {
+        "min": -6,
+        "max": -2,
+        "preferInt": true
+      },
+      "HeatFactor": {
+        "min": 0.95,
+        "max": 1.05,
+        "preferInt": false
+      },
+      "CoolFactor": {
+        "min": 0.9,
+        "max": 1,
+        "preferInt": false
+      },
+      "AimStability": {
+        "min": 5,
+        "max": 10,
+        "preferInt": true
+      },
+      "AimSpeed": {
+        "min": 0,
+        "max": 5,
+        "preferInt": true
+      },
+      "Handling": {
+        "min": 2,
+        "max": 8,
+        "preferInt": true
+      },
+      "Ergonomics": {
+        "min": 1,
+        "max": 6,
+        "preferInt": true
+      },
+      "Accuracy": {
+        "min": -2,
+        "max": 7,
+        "preferInt": false
+      },
+      "Dispersion": {
+        "min": -3,
+        "max": 1,
+        "preferInt": false
+      },
+      "DurabilityBurnModificator": {
+        "min": 1,
+        "max": 1,
+        "preferInt": false
+      }
+    },
+    "handguard_long": {
+      "VerticalRecoil": {
+        "min": -10,
+        "max": -6,
+        "preferInt": true
+      },
+      "HorizontalRecoil": {
+        "min": -7,
+        "max": -3,
+        "preferInt": true
+      },
+      "HeatFactor": {
+        "min": 0.88,
+        "max": 0.95,
+        "preferInt": false
+      },
+      "CoolFactor": {
+        "min": 0.85,
+        "max": 1.05,
+        "preferInt": false
+      },
+      "AimStability": {
+        "min": 10,
+        "max": 20,
+        "preferInt": true
+      },
+      "AimSpeed": {
+        "min": -8,
+        "max": -2,
+        "preferInt": true
+      },
+      "Handling": {
+        "min": -8,
+        "max": -2,
+        "preferInt": true
+      },
+      "Ergonomics": {
+        "min": -5,
+        "max": 2,
+        "preferInt": true
+      },
+      "Accuracy": {
+        "min": -2,
+        "max": 10,
+        "preferInt": false
+      },
+      "Dispersion": {
+        "min": -3,
+        "max": -2,
+        "preferInt": false
+      },
+      "DurabilityBurnModificator": {
+        "min": 0.9,
+        "max": 1,
+        "preferInt": false
+      }
+    }
+  }
+}

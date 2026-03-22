@@ -126,7 +126,7 @@ public static class WorkspaceLocator
 
         var fullPath = Path.GetFullPath(path);
         var inputDir = Path.Combine(fullPath, "input");
-        var templateDir = Path.Combine(fullPath, "现实主义物品模板");
+        var templateDir = RuleWorkspace.GetTemplatesDirectory(fullPath);
         return Directory.Exists(inputDir) && Directory.Exists(templateDir);
     }
 

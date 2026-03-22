@@ -1,0 +1,112 @@
+{
+  "68bd7b4d8ce7029b6409b4a2": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "68bd7b4d8ce7029b6409b4a2",
+    "Name": "Anaconda 皮卡汀尼增高座",
+    "ModType": "mount",
+    "Ergonomics": 0,
+    "Accuracy": 0,
+    "ConflictingItems": [],
+    "Weight": 0.085,
+    "LoyaltyLevel": 3,
+    "ExaminedByDefault": true,
+    "Prefab": {
+      "path": "Mods/Anaconda_Riser/anaconda_picatinny_riser.bundle",
+      "rcid": ""
+    },
+    "Conflictingitems": [],
+    "Slots": [
+      {
+        "_name": "mod_scope",
+        "_id": "006c68f92a368d4b93703de9",
+        "_parent": "2e681ada9836f6e030080191",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "6165ac8c290d254f5e6b2f6c",
+                "584984812459776a704a82a6",
+                "570fd721d2720bc5458b4596",
+                "57ae0171245977343c27bfcf",
+                "609bab8b455afd752b2e6138",
+                "58d39d3d86f77445bb794ae7",
+                "616554fe50224f204c1da2aa",
+                "615d8d878004cc50514c3233",
+                "577d128124597739d65d0e56",
+                "58d2664f86f7747fec5834f6",
+                "61714b2467085e45ef140b2c",
+                "5b31163c5acfc400153b71cb",
+                "5a33b652c4a28232996e407c",
+                "5a33b2c9c4a282000c5a9511"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      }
+    ],
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "Dispersion": 0,
+    "AimStability": 0,
+    "Handling": 0
+  },
+  "68bd7b4d8ce7029b6409b4a3": {
+    "$type": "RealismMod.WeaponMod, RealismMod",
+    "ItemID": "68bd7b4d8ce7029b6409b4a3",
+    "Name": "Anaconda 皮卡汀尼增高座（土狼色）",
+    "ModType": "mount",
+    "Ergonomics": 0,
+    "Accuracy": 0,
+    "ConflictingItems": [],
+    "Weight": 0.085,
+    "LoyaltyLevel": 3,
+    "ExaminedByDefault": true,
+    "Prefab": {
+      "path": "Mods/Anaconda_Riser/anaconda_picatinny_riser_fde.bundle",
+      "rcid": ""
+    },
+    "Conflictingitems": [],
+    "Slots": [
+      {
+        "_name": "mod_scope",
+        "_id": "006c68f92a368d4b93703de9",
+        "_parent": "2e681ada9836f6e030080191",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "6165ac8c290d254f5e6b2f6c",
+                "584984812459776a704a82a6",
+                "570fd721d2720bc5458b4596",
+                "57ae0171245977343c27bfcf",
+                "609bab8b455afd752b2e6138",
+                "58d39d3d86f77445bb794ae7",
+                "616554fe50224f204c1da2aa",
+                "615d8d878004cc50514c3233",
+                "577d128124597739d65d0e56",
+                "58d2664f86f7747fec5834f6",
+                "61714b2467085e45ef140b2c",
+                "5b31163c5acfc400153b71cb",
+                "5a33b652c4a28232996e407c",
+                "5a33b2c9c4a282000c5a9511"
+              ]
+            }
+          ]
+        },
+        "_required": false,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      }
+    ],
+    "VerticalRecoil": 0,
+    "HorizontalRecoil": 0,
+    "Dispersion": 0,
+    "AimStability": 0,
+    "Handling": 0
+  }
+}

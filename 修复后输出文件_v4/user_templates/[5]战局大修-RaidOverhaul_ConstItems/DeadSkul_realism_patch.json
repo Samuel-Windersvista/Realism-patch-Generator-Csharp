@@ -1,0 +1,19 @@
+{
+  "6621b0dcbcfe66cdbbab48c7": {
+    "$type": "RealismMod.Gear, RealismMod",
+    "ItemID": "6621b0dcbcfe66cdbbab48c7",
+    "Name": "定制版 Deadskul 携行 pouch",
+    "AllowADS": true,
+    "LoyaltyLevel": 5,
+    "ArmorClass": "GOST 6A",
+    "CanSpall": false,
+    "SpallReduction": 0.57,
+    "ReloadSpeedMulti": 0.99,
+    "Comfort": 1.06,
+    "speedPenaltyPercent": -3.64,
+    "mousePenalty": 0,
+    "weaponErgonomicPenalty": -4.72,
+    "TemplateType": "gear",
+    "Price": 30000
+  }
+}

@@ -59,7 +59,7 @@ internal static class RuleSetLoader
 
     public static RuleSet Load(string basePath, Action<string> log)
     {
-        var rulesDirectory = Path.Combine(basePath, "rules");
+        var rulesDirectory = RuleWorkspace.GetRulesDirectory(basePath);
         Directory.CreateDirectory(rulesDirectory);
 
         var weaponPath = Path.Combine(rulesDirectory, "weapon_rules.json");

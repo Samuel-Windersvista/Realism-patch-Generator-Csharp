@@ -1,0 +1,729 @@
+{
+  "66d29d8cd997df0d9a319605": {
+    "$type": "RealismMod.Consumable, RealismMod",
+    "Name": "Orange Water Bottle",
+    "TemplateType": "consumable",
+    "LoyaltyLevel": 1,
+    "BasePriceModifier": 1,
+    "ConsumableType": "other",
+    "Duration": 0,
+    "Delay": 0,
+    "EffectPeriod": 0,
+    "WaitPeriod": 0,
+    "Strength": 0,
+    "TunnelVisionStrength": 0,
+    "CanBeUsedInRaid": true,
+    "ItemID": "66d29d8cd997df0d9a319605",
+    "ExaminedByDefault": true,
+    "Weight": 0.90,
+    "MaxResource": 75,
+    "Prefab": {
+      "path": "Food_Items/Drinks/food_water_bottle_orange_loot.bundle",
+      "rcid": ""
+    },
+    "UsePrefab": {
+      "path": "Food_Items/Drinks/food_water_bottle_orange.bundle",
+      "rcid": ""
+    },
+    "effects_health": {
+      "Hydration": {
+        "value": 85
+      },
+      "Energy": {
+        "value": 5
+      }
+    }
+  },
+  "66d2a7278cc9ae87397e140b": {
+    "$type": "RealismMod.Consumable, RealismMod",
+    "Name": "Welcome to Tarkov Water Bottle",
+    "TemplateType": "consumable",
+    "LoyaltyLevel": 1,
+    "BasePriceModifier": 1,
+    "ConsumableType": "other",
+    "Duration": 0,
+    "Delay": 0,
+    "EffectPeriod": 0,
+    "WaitPeriod": 0,
+    "Strength": 0,
+    "TunnelVisionStrength": 0,
+    "CanBeUsedInRaid": true,
+    "ItemID": "66d2a7278cc9ae87397e140b",
+    "ExaminedByDefault": true,
+    "Weight": 0.90,
+    "MaxResource": 75,
+    "Prefab": {
+      "path": "Food_Items/Drinks/food_wtt_water_bottle_loot.bundle",
+      "rcid": ""
+    },
+    "UsePrefab": {
+      "path": "Food_Items/Drinks/food_wtt_water_bottle.bundle",
+      "rcid": ""
+    },
+    "effects_health": {
+      "Hydration": {
+        "value": 100
+      },
+      "Energy": {
+        "value": 5
+      }
+    }
+  },
+  "66d35068ca6da85c198eca7d": {
+    "$type": "RealismMod.Consumable, RealismMod",
+    "Name": "GrooveyPenguin's Space Gummies",
+    "TemplateType": "consumable",
+    "LoyaltyLevel": 1,
+    "BasePriceModifier": 1,
+    "ConsumableType": "other",
+    "Duration": 0,
+    "Delay": 0,
+    "EffectPeriod": 0,
+    "WaitPeriod": 0,
+    "Strength": 0,
+    "TunnelVisionStrength": 0,
+    "CanBeUsedInRaid": true,
+    "ItemID": "66d35068ca6da85c198eca7d",
+    "ExaminedByDefault": true,
+    "Weight": 0.02,
+    "StimulatorBuffs": "thc_gummy_buffs",
+    "Prefab": {
+      "path": "Food_Items/food_thc_gummies_loot.bundle",
+      "rcid": ""
+    },
+    "UsePrefab": {
+      "path": "Food_Items/food_thc_gummies.bundle",
+      "rcid": ""
+    },
+    "MaxResource": 3,
+    "effects_health": {
+      "Hydration": {
+        "value": -20
+      },
+      "Energy": {
+        "value": -40
+      }
+    },
+    "effects_damage": {
+      "Pain": {
+        "delay": 0,
+        "duration": 120,
+        "fadeOut": 40
+      },
+      "Fracture": {
+        "delay": 60,
+        "duration": 0,
+        "fadeout": 0
+      }
+    }
+  },
+  "66cfbfcb3e1b447f67b97be8": {
+    "$type": "RealismMod.Consumable, RealismMod",
+    "Name": "1.5 of Coca Cola ",
+    "TemplateType": "consumable",
+    "LoyaltyLevel": 1,
+    "BasePriceModifier": 1,
+    "ConsumableType": "other",
+    "Duration": 0,
+    "Delay": 0,
+    "EffectPeriod": 0,
+    "WaitPeriod": 0,
+    "Strength": 0,
+    "TunnelVisionStrength": 0,
+    "CanBeUsedInRaid": true,
+    "ItemID": "66cfbfcb3e1b447f67b97be8",
+    "ExaminedByDefault": true,
+    "MaxResource": 1,
+    "Prefab": {
+      "path": "Food_Items/Drinks/food_coke_loot.bundle",
+      "rcid": ""
+    },
+    "UsePrefab": {
+      "path": "Food_Items/Drinks/food_coke.bundle",
+      "rcid": ""
+    },
+    "effects_health": {
+      "Hydration": {
+        "value": 30
+      },
+      "Energy": {
+        "value": 10
+      }
+    }
+  },
+  "682be75830c1b5e48546d006": {
+    "$type": "RealismMod.Consumable, RealismMod",
+    "Name": "1.5 of Dr. Pepper ",
+    "TemplateType": "consumable",
+    "LoyaltyLevel": 1,
+    "BasePriceModifier": 1,
+    "ConsumableType": "other",
+    "Duration": 0,
+    "Delay": 0,
+    "EffectPeriod": 0,
+    "WaitPeriod": 0,
+    "Strength": 0,
+    "TunnelVisionStrength": 0,
+    "CanBeUsedInRaid": true,
+    "ItemID": "682be75830c1b5e48546d006",
+    "ExaminedByDefault": true,
+    "MaxResource": 1,
+    "Prefab": {
+      "path": "Food_Items/Drinks/food_drpepper_loot.bundle",
+      "rcid": ""
+    },
+    "UsePrefab": {
+      "path": "Food_Items/Drinks/food_drpepper.bundle",
+      "rcid": ""
+    },
+    "effects_health": {
+      "Hydration": {
+        "value": 30
+      },
+      "Energy": {
+        "value": 10
+      }
+    }
+  },
+  "682c4f331fd3bb39df5b6935": {
+    "$type": "RealismMod.Consumable, RealismMod",
+    "Name": "1.5 of Sprite ",
+    "TemplateType": "consumable",
+    "LoyaltyLevel": 1,
+    "BasePriceModifier": 1,
+    "ConsumableType": "other",
+    "Duration": 0,
+    "Delay": 0,
+    "EffectPeriod": 0,
+    "WaitPeriod": 0,
+    "Strength": 0,
+    "TunnelVisionStrength": 0,
+    "CanBeUsedInRaid": true,
+    "ItemID": "682c4f331fd3bb39df5b6935",
+    "ExaminedByDefault": true,
+    "MaxResource": 1,
+    "Prefab": {
+      "path": "Food_Items/Drinks/food_sprite_loot.bundle",
+      "rcid": ""
+    },
+    "UsePrefab": {
+      "path": "Food_Items/Drinks/food_sprite.bundle",
+      "rcid": ""
+    },
+    "effects_health": {
+      "Hydration": {
+        "value": 30
+      },
+      "Energy": {
+        "value": 10
+      }
+    }
+  },
+  "66d551b91de343551f5d23d5": {
+    "$type": "RealismMod.Consumable, RealismMod",
+    "Name": "Bud Light",
+    "TemplateType": "consumable",
+    "LoyaltyLevel": 1,
+    "BasePriceModifier": 1,
+    "ConsumableType": "other",
+    "Duration": 0,
+    "Delay": 0,
+    "EffectPeriod": 0,
+    "WaitPeriod": 0,
+    "Strength": 0,
+    "TunnelVisionStrength": 0,
+    "CanBeUsedInRaid": true,
+    "ItemID": "66d551b91de343551f5d23d5",
+    "ExaminedByDefault": true,
+    "MaxResource": 1,
+    "StimulatorBuffs": "Buffs_food_beer",
+    "Prefab": {
+      "path": "Food_Items/Booz/food_bitch_beer_loot.bundle",
+      "rcid": ""
+    },
+    "UsePrefab": {
+      "path": "Food_Items/Booz/food_bitch_beer.bundle",
+      "rcid": ""
+    },
+    "effects_health": {
+      "Hydration": {
+        "value": -35
+      },
+      "Energy": {
+        "value": 30
+      }
+    }
+  },
+  "66d5523e8b93a75dc9d66f4a": {
+    "$type": "RealismMod.Consumable, RealismMod",
+    "Name": "Heineken",
+    "TemplateType": "consumable",
+    "LoyaltyLevel": 1,
+    "BasePriceModifier": 1,
+    "ConsumableType": "other",
+    "Duration": 0,
+    "Delay": 0,
+    "EffectPeriod": 0,
+    "WaitPeriod": 0,
+    "Strength": 0,
+    "TunnelVisionStrength": 0,
+    "CanBeUsedInRaid": true,
+    "ItemID": "66d5523e8b93a75dc9d66f4a",
+    "ExaminedByDefault": true,
+    "MaxResource": 1,
+    "StimulatorBuffs": "Buffs_food_beer",
+    "Prefab": {
+      "path": "Food_Items/Booz/food_deusch_bitch_beer_loot.bundle",
+      "rcid": ""
+    },
+    "UsePrefab": {
+      "path": "Food_Items/Booz/food_duesch_bitch_beer.bundle",
+      "rcid": ""
+    },
+    "effects_health": {
+      "Hydration": {
+        "value": -35
+      },
+      "Energy": {
+        "value": 30
+      }
+    }
+  },
+  "66d552942441cb47e882c4b9": {
+    "$type": "RealismMod.Consumable, RealismMod",
+    "Name": "Stella Artois",
+    "TemplateType": "consumable",
+    "LoyaltyLevel": 1,
+    "BasePriceModifier": 1,
+    "ConsumableType": "other",
+    "Duration": 0,
+    "Delay": 0,
+    "EffectPeriod": 0,
+    "WaitPeriod": 0,
+    "Strength": 0,
+    "TunnelVisionStrength": 0,
+    "CanBeUsedInRaid": true,
+    "ItemID": "66d552942441cb47e882c4b9",
+    "ExaminedByDefault": true,
+    "MaxResource": 1,
+    "StimulatorBuffs": "Buffs_food_beer",
+    "Prefab": {
+      "path": "Food_Items/Booz/food_other_gross_beer_loot.bundle",
+      "rcid": ""
+    },
+    "UsePrefab": {
+      "path": "Food_Items/Booz/food_other_gross_beer.bundle",
+      "rcid": ""
+    },
+    "effects_health": {
+      "Hydration": {
+        "value": -35
+      },
+      "Energy": {
+        "value": 30
+      }
+    }
+  },
+  "66d6144f0c7d69830cc85344": {
+    "$type": "RealismMod.Consumable, RealismMod",
+    "Name": "RockaHorse Brewery's LSD Energy Beer",
+    "TemplateType": "consumable",
+    "LoyaltyLevel": 1,
+    "BasePriceModifier": 1,
+    "ConsumableType": "other",
+    "Duration": 0,
+    "Delay": 0,
+    "EffectPeriod": 0,
+    "WaitPeriod": 0,
+    "Strength": 0,
+    "TunnelVisionStrength": 0,
+    "CanBeUsedInRaid": true,
+    "ItemID": "66d6144f0c7d69830cc85344",
+    "ExaminedByDefault": true,
+    "MaxResource": 1,
+    "StimulatorBuffs": "rocka_lsd_buffs",
+    "Prefab": {
+      "path": "Food_Items/Booz/food_rocka_drink_loot.bundle",
+      "rcid": ""
+    },
+    "UsePrefab": {
+      "path": "Food_Items/Booz/food_rocka_drink.bundle",
+      "rcid": ""
+    },
+    "effects_health": {
+      "Hydration": {
+        "value": -50
+      },
+      "Energy": {
+        "value": 50
+      }
+    },
+    "effects_damage": {
+      "Pain": {
+        "delay": 30,
+        "duration": 200,
+        "fadeOut": 100
+      },
+      "Contusion": {
+        "delay": 0,
+        "duration": 0,
+        "fadeOut": 0
+      },
+      "RadExposure": {
+        "delay": 0,
+        "duration": 0
+      },
+      "DestroyedPart": {
+        "delay": 0,
+        "duration": 0,
+        "fadeOut": 0,
+        "healthPenaltyMin": 27,
+        "healthPenaltyMax": 35
+      }
+    }
+  },
+  "6761b213607f9a6f79017b37": {
+    "$type": "RealismMod.Consumable, RealismMod",
+    "Name": "Doritos Tortilla Chips: Nacho Cheese Flavored",
+    "TemplateType": "consumable",
+    "LoyaltyLevel": 1,
+    "BasePriceModifier": 1,
+    "ConsumableType": "other",
+    "Duration": 0,
+    "Delay": 0,
+    "EffectPeriod": 0,
+    "WaitPeriod": 0,
+    "Strength": 0,
+    "TunnelVisionStrength": 0,
+    "CanBeUsedInRaid": true,
+    "ItemID": "6761b213607f9a6f79017b37",
+    "ExaminedByDefault": true,
+    "foodUseTime": 8,
+    "Prefab": {
+      "path": "Food_Items/Chips/doritositemprefab.bundle",
+      "rcid": ""
+    },
+    "UsePrefab": {
+      "path": "Food_Items/Chips/food_doritos.bundle",
+      "rcid": ""
+    },
+    "Weight": 0.8,
+    "Height": 1,
+    "effects_health": {
+      "Hydration": {
+        "value": -5
+      },
+      "Energy": {
+        "value": 16
+      }
+    }
+  },
+  "682a818a542cd1c701793865": {
+    "$type": "RealismMod.Consumable, RealismMod",
+    "Name": "Doritos Tortilla Chips: Cool Ranch Flavored",
+    "TemplateType": "consumable",
+    "LoyaltyLevel": 1,
+    "BasePriceModifier": 1,
+    "ConsumableType": "other",
+    "Duration": 0,
+    "Delay": 0,
+    "EffectPeriod": 0,
+    "WaitPeriod": 0,
+    "Strength": 0,
+    "TunnelVisionStrength": 0,
+    "CanBeUsedInRaid": true,
+    "ItemID": "682a818a542cd1c701793865",
+    "ExaminedByDefault": true,
+    "foodUseTime": 8,
+    "Prefab": {
+      "path": "Food_Items/Chips/food_coolranch_doritos_loot.bundle",
+      "rcid": ""
+    },
+    "UsePrefab": {
+      "path": "Food_Items/Chips/food_coolranch_doritos.bundle",
+      "rcid": ""
+    },
+    "Weight": 0.8,
+    "Height": 1,
+    "effects_health": {
+      "Hydration": {
+        "value": -5
+      },
+      "Energy": {
+        "value": 16
+      }
+    }
+  },
+  "68242abf2136da7425ccd556": {
+    "$type": "RealismMod.Consumable, RealismMod",
+    "Name": "Crunchy Cheetos ",
+    "TemplateType": "consumable",
+    "LoyaltyLevel": 1,
+    "BasePriceModifier": 1,
+    "ConsumableType": "other",
+    "Duration": 0,
+    "Delay": 0,
+    "EffectPeriod": 0,
+    "WaitPeriod": 0,
+    "Strength": 0,
+    "TunnelVisionStrength": 0,
+    "CanBeUsedInRaid": true,
+    "ItemID": "68242abf2136da7425ccd556",
+    "ExaminedByDefault": true,
+    "foodUseTime": 8,
+    "Prefab": {
+      "path": "Food_Items/Chips/food_cheetos_loot.bundle",
+      "rcid": ""
+    },
+    "UsePrefab": {
+      "path": "Food_Items/Chips/food_cheetos.bundle",
+      "rcid": ""
+    },
+    "Weight": 0.8,
+    "Height": 1,
+    "effects_health": {
+      "Hydration": {
+        "value": -5
+      },
+      "Energy": {
+        "value": 16
+      }
+    }
+  },
+  "6829e3ab689244db62f531e7": {
+    "$type": "RealismMod.Consumable, RealismMod",
+    "Name": "Crunchy Flamin Hot Cheetos ",
+    "TemplateType": "consumable",
+    "LoyaltyLevel": 1,
+    "BasePriceModifier": 1,
+    "ConsumableType": "other",
+    "Duration": 0,
+    "Delay": 0,
+    "EffectPeriod": 0,
+    "WaitPeriod": 0,
+    "Strength": 0,
+    "TunnelVisionStrength": 0,
+    "CanBeUsedInRaid": true,
+    "ItemID": "6829e3ab689244db62f531e7",
+    "ExaminedByDefault": true,
+    "foodUseTime": 8,
+    "Prefab": {
+      "path": "Food_Items/Chips/food_flaminhot_cheetos_loot.bundle",
+      "rcid": ""
+    },
+    "UsePrefab": {
+      "path": "Food_Items/Chips/food_flaminhot_cheetos.bundle",
+      "rcid": ""
+    },
+    "Weight": 0.8,
+    "Height": 1,
+    "effects_health": {
+      "Hydration": {
+        "value": -10
+      },
+      "Energy": {
+        "value": 16
+      }
+    }
+  },
+  "682a81d3a9bd9fdb7848ddad": {
+    "$type": "RealismMod.Consumable, RealismMod",
+    "Name": "Puffed Flamin Hot Cheetos ",
+    "TemplateType": "consumable",
+    "LoyaltyLevel": 1,
+    "BasePriceModifier": 1,
+    "ConsumableType": "other",
+    "Duration": 0,
+    "Delay": 0,
+    "EffectPeriod": 0,
+    "WaitPeriod": 0,
+    "Strength": 0,
+    "TunnelVisionStrength": 0,
+    "CanBeUsedInRaid": true,
+    "ItemID": "682a81d3a9bd9fdb7848ddad",
+    "ExaminedByDefault": true,
+    "foodUseTime": 8,
+    "Prefab": {
+      "path": "Food_Items/Chips/food_flaminhot_cheetos_puffs_loot.bundle",
+      "rcid": ""
+    },
+    "UsePrefab": {
+      "path": "Food_Items/Chips/food_flaminhot_cheetos_puffs.bundle",
+      "rcid": ""
+    },
+    "Weight": 0.8,
+    "Height": 1,
+    "effects_health": {
+      "Hydration": {
+        "value": -10
+      },
+      "Energy": {
+        "value": 16
+      }
+    }
+  },
+  "682a81f5b23ee6fa5c29000a": {
+    "$type": "RealismMod.Consumable, RealismMod",
+    "Name": "Cheeto Puffs ",
+    "TemplateType": "consumable",
+    "LoyaltyLevel": 1,
+    "BasePriceModifier": 1,
+    "ConsumableType": "other",
+    "Duration": 0,
+    "Delay": 0,
+    "EffectPeriod": 0,
+    "WaitPeriod": 0,
+    "Strength": 0,
+    "TunnelVisionStrength": 0,
+    "CanBeUsedInRaid": true,
+    "ItemID": "682a81f5b23ee6fa5c29000a",
+    "ExaminedByDefault": true,
+    "foodUseTime": 8,
+    "Prefab": {
+      "path": "Food_Items/Chips/food_cheetos_puffs_loot.bundle",
+      "rcid": ""
+    },
+    "UsePrefab": {
+      "path": "Food_Items/Chips/food_cheetos_puffs.bundle",
+      "rcid": ""
+    },
+    "Weight": 0.8,
+    "Height": 1,
+    "effects_health": {
+      "Hydration": {
+        "value": -10
+      },
+      "Energy": {
+        "value": 16
+      }
+    }
+  },
+  "682a820d30a50a46da4ad63e": {
+    "$type": "RealismMod.Consumable, RealismMod",
+    "Name": "Funyuns",
+    "TemplateType": "consumable",
+    "LoyaltyLevel": 1,
+    "BasePriceModifier": 1,
+    "ConsumableType": "other",
+    "Duration": 0,
+    "Delay": 0,
+    "EffectPeriod": 0,
+    "WaitPeriod": 0,
+    "Strength": 0,
+    "TunnelVisionStrength": 0,
+    "CanBeUsedInRaid": true,
+    "ItemID": "682a820d30a50a46da4ad63e",
+    "ExaminedByDefault": true,
+    "foodUseTime": 8,
+    "Prefab": {
+      "path": "Food_Items/Chips/food_funyuns_loot.bundle",
+      "rcid": ""
+    },
+    "UsePrefab": {
+      "path": "Food_Items/Chips/food_funyuns.bundle",
+      "rcid": ""
+    },
+    "Weight": 0.8,
+    "Height": 1,
+    "effects_health": {
+      "Hydration": {
+        "value": -10
+      },
+      "Energy": {
+        "value": 16
+      }
+    }
+  },
+  "681da51bd75946e84fae7998": {
+    "$type": "RealismMod.Consumable, RealismMod",
+    "Name": "Hiram Walker's Ten High Bourbon Whiskey",
+    "TemplateType": "consumable",
+    "LoyaltyLevel": 1,
+    "BasePriceModifier": 1,
+    "ConsumableType": "other",
+    "Duration": 0,
+    "Delay": 0,
+    "EffectPeriod": 0,
+    "WaitPeriod": 0,
+    "Strength": 0,
+    "TunnelVisionStrength": 0,
+    "CanBeUsedInRaid": true,
+    "ItemID": "681da51bd75946e84fae7998",
+    "ExaminedByDefault": true,
+    "MaxResource": 1,
+    "foodUseTime": 4,
+    "Prefab": {
+      "path": "Food_Items/Booz/food_forty_loot.bundle",
+      "rcid": ""
+    },
+    "UsePrefab": {
+      "path": "Food_Items/Booz/food_fohty_oz_to_freedom.bundle",
+      "rcid": ""
+    },
+    "StimulatorBuffs": "Buffs_drink_jack",
+    "effects_health": {
+      "Hydration": {
+        "value": 10
+      },
+      "Energy": {
+        "value": 30
+      }
+    },
+    "effects_damage": {
+      "Pain": {
+        "delay": 0,
+        "duration": 210
+      },
+      "RadExposure": {
+        "delay": 0,
+        "duration": 0
+      }
+    }
+  },
+  "681dabc4b28be6e1b43e5982": {
+    "$type": "RealismMod.Consumable, RealismMod",
+    "Name": "Jägermeister",
+    "TemplateType": "consumable",
+    "LoyaltyLevel": 1,
+    "BasePriceModifier": 1,
+    "ConsumableType": "other",
+    "Duration": 0,
+    "Delay": 0,
+    "EffectPeriod": 0,
+    "WaitPeriod": 0,
+    "Strength": 0,
+    "TunnelVisionStrength": 0,
+    "CanBeUsedInRaid": true,
+    "ItemID": "681dabc4b28be6e1b43e5982",
+    "ExaminedByDefault": true,
+    "MaxResource": 1,
+    "Prefab": {
+      "path": "Food_Items/Booz/food_jager_loot.bundle",
+      "rcid": ""
+    },
+    "UsePrefab": {
+      "path": "Food_Items/Booz/food_jagermeister.bundle",
+      "rcid": ""
+    },
+    "StimulatorBuffs": "Buffs_drink_jack",
+    "foodUseTime": 4,
+    "effects_health": {
+      "Hydration": {
+        "value": 10
+      },
+      "Energy": {
+        "value": 30
+      }
+    },
+    "effects_damage": {
+      "Pain": {
+        "delay": 0,
+        "duration": 210
+      },
+      "RadExposure": {
+        "delay": 0,
+        "duration": 0
+      }
+    }
+  }
+}

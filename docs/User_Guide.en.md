@@ -13,14 +13,14 @@ This document reflects the current state of the C# project and covers the GUI, r
 By default, the program uses the repository root as its data root and depends on these directories:
 
 - input
-- 现实主义物品模板
+- RealismItemTemplates
+- RealismItemRules
 - output
 - audit_reports
-- rules
 
 In practice:
 
-- rules stores the four main rule files plus rules/item_exceptions.json
+- RealismItemRules stores the four main rule files plus RealismItemRules/item_exceptions.json
 - output stores generated patch results
 - audit_reports stores audit reports
 
@@ -45,7 +45,7 @@ Typical usage order:
 
 1. Reload rules to confirm the current disk state.
 2. Select a category on the left and adjust value ranges in the center.
-3. Click Save All to write rules back into the rules directory.
+3. Click Save All to write rules back into the RealismItemRules directory.
 4. Click Generate Patch to write results into output.
 5. Click Check Items That Do Not Follow Rules to generate an audit report and review flagged items.
 6. If a small number of items must deviate from the general rules, open the Item Exceptions window and add targeted overrides.
@@ -60,14 +60,14 @@ Current window flow:
 2. After loading a search result, the right side automatically displays the current top-level fields of that item.
 3. In the same editor area, choose a field, edit its value, or add a new field that is allowed for the item's major category.
 4. Click Add/Update Field to write the current field and value back into the field list.
-5. Click Save Item to write the exception config for that ItemID into rules/item_exceptions.json.
+5. Click Save Item to write the exception config for that ItemID into RealismItemRules/item_exceptions.json.
 
 Current behavior constraints:
 
 - New fields may only come from the field pool allowed for the item's category
 - Suggested value ranges come from the latest rule data, not hardcoded constants
 - Numeric values are normalized and safely clamped on save to avoid extreme out-of-range values
-- Output structure is kept as close as possible to the corresponding category format in 现实主义物品模板
+- Output structure uses the corresponding category templates in RealismItemTemplates as the structural standard, while RealismItemRules remains the single numeric range standard
 
 ## 5. Output and Audit
 

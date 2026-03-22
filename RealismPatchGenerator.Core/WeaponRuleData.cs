@@ -105,13 +105,13 @@ internal static class WeaponRuleData
             }),
             ["machinegun"] = CreateRanges(new Dictionary<string, NumericRange>(StringComparer.OrdinalIgnoreCase)
             {
-                ["VerticalRecoil"] = new(135, 245, true),
+                ["VerticalRecoil"] = new(150, 245, true),
                 ["HorizontalRecoil"] = new(200, 360, true),
-                ["Convergence"] = new(4, 14, true),
+                ["Convergence"] = new(6, 14, true),
                 ["Dispersion"] = new(6, 14, true),
-                ["VisualMulti"] = new(1.1, 1.6),
+                ["VisualMulti"] = new(1.3, 1.7),
                 ["Ergonomics"] = new(70, 90, true),
-                ["RecoilIntensity"] = new(0.2, 0.35),
+                ["RecoilIntensity"] = new(0.3, 0.5),
             }),
             ["launcher"] = CreateRanges(new Dictionary<string, NumericRange>(StringComparer.OrdinalIgnoreCase)
             {

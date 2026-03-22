@@ -2,6 +2,9 @@ namespace RealismPatchGenerator.Core;
 
 public static class RuleWorkspace
 {
+    public const string TemplateRootDirectoryName = "RealismItemTemplates";
+    public const string RuleRootDirectoryName = "RealismItemRules";
+
     private static readonly string[] DefaultRuleFiles =
     [
         "weapon_rules.json",
@@ -14,7 +17,12 @@ public static class RuleWorkspace
 
     public static string GetRulesDirectory(string basePath)
     {
-        return Path.Combine(Path.GetFullPath(basePath), "rules");
+        return Path.Combine(Path.GetFullPath(basePath), RuleRootDirectoryName);
+    }
+
+    public static string GetTemplatesDirectory(string basePath)
+    {
+        return Path.Combine(Path.GetFullPath(basePath), TemplateRootDirectoryName);
     }
 
     public static string GetRuleFilePath(string basePath, string ruleFileName)
