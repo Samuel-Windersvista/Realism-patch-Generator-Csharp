@@ -79,7 +79,6 @@ public partial class Form1 : Form
         reloadButton.Text = T("Button.Reload");
         exceptionsButton.Text = T("Button.Exceptions");
         generateButton.Text = T("Button.Generate");
-        auditButton.Text = T("Button.Audit");
         modifiedOnlyCheckBox.Text = T("Label.ModifiedOnly");
         languageLabel.Text = T("Label.Language");
         searchLabel.Text = T("Label.Search");
@@ -199,56 +198,6 @@ public partial class Form1 : Form
             AppendLog(ex.Message);
             SetState("State.GenerateFailed");
             MessageBox.Show(this, ex.Message, T("Message.GenerateFailedTitle"), MessageBoxButtons.OK, MessageBoxIcon.Error);
-        }
-        finally
-        {
-            ToggleBusy(false);
-        }
-    }
-
-    private async void auditButton_Click(object sender, EventArgs e)
-    {
-        var repositoryRoot = ResolveDataRoot();
-        if (repositoryRoot is null)
-        {
-            ShowInvalidDataRootMessage();
-            return;
-        }
-
-        if (!await ConfirmSaveBeforeRunAsync())
-        {
-            return;
-        }
-
-        ToggleBusy(true, "State.Auditing");
-        logTextBox.Clear();
-        detailTabControl.SelectedTab = logTabPage;
-        var outputPath = ResolveOutputPath();
-        AppendLog(Tf("Log.StartAudit", outputPath));
-
-        try
-        {
-            var report = await Task.Run(() => new OutputRuleAuditor(
-                repositoryRoot,
-                new OutputAuditOptions { OutputDirectory = outputPath }).Audit());
-            var summary = OutputRuleAuditor.BuildConsoleSummary(report, 30);
-            foreach (var line in summary.Split(Environment.NewLine))
-            {
-                AppendLog(line);
-            }
-
-            var reportsPath = Path.Combine(repositoryRoot, "audit_reports");
-            Directory.CreateDirectory(reportsPath);
-            var reportPath = Path.Combine(reportsPath, "output_rule_audit.json");
-            File.WriteAllText(reportPath, JsonSerializer.Serialize(report, RuleJsonOptions));
-            AppendLog($"report: {reportPath}");
-            SetState(report.ViolationCount > 0 ? "State.AuditDoneViolation" : "State.AuditDone");
-        }
-        catch (Exception ex)
-        {
-            AppendLog(ex.Message);
-            SetState("State.AuditFailed");
-            MessageBox.Show(this, ex.Message, T("Message.AuditFailedTitle"), MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
         finally
         {
@@ -1015,7 +964,6 @@ public partial class Form1 : Form
         reloadButton.Enabled = !busy;
         exceptionsButton.Enabled = !busy;
         generateButton.Enabled = !busy && ResolveDataRoot() is not null;
-        auditButton.Enabled = !busy && ResolveDataRoot() is not null;
         useLastSeedButton.Enabled = !busy && lastGeneratedSeed.HasValue;
         clearSeedButton.Enabled = !busy;
         searchTextBox.Enabled = !busy;

@@ -1,138 +1,162 @@
-# SPT Realism Value Range Generator v1.30.0
+# SPT Realism Patch Generator v2.0
 
-SPT Realism Value Range Generator v1.30.0 is a toolset designed specifically for SPT Realism Mod 1.6.4.
+这是当前 C# 版 SPT Realism 补丁生成器仓库。
 
-Current version: v1.30.0
+项目当前聚焦 3 件事：
 
-When the Realism mod is updated to SPT4, this program will be updated accordingly.
+- 基于模板和规则生成 Realism 补丁
+- 在 GUI 中编辑规则范围
+- 通过 item_exceptions.json 管理个别物品的最终例外覆盖
 
-## compatible mods / 兼容的MOD all for 3.11.4
+## 当前状态
 
-- [WTT - Pack 'n' Strap](https://forge.sp-tarkov.com/mod/1278/wtt-pack-n-strap)
-- [Tactical Gear Component](https://forge.sp-tarkov.com/mod/1125/tactical-gear-component)
-- [SPT Battlepass](https://forge.sp-tarkov.com/mod/2098/spt-battlepass)
-- [WTT- Armory 1.2.1](https://forge.sp-tarkov.com/mod/2246/wtt-armory)
-- [Sig Sauer MCX VIRTUS multi carlibre rifle](https://forge.sp-tarkov.com/mod/1373/sig-sauer-mcx-virtus-multi-carlibre-rifle)
-- [Eukyre's AK-50 backport](https://forge.sp-tarkov.com/mod/2215/eukyres-ak-50-backport)
-- [50 BMG Expansion and Remaster](https://forge.sp-tarkov.com/mod/2224/50-bmg-expansion-and-remaster)
-- [Resonant AK from COD:MW2019 - ReUpload](https://forge.sp-tarkov.com/mod/2170/resonant-ak-from-codmw2019-reupload)
-- [Mag Tape](https://forge.sp-tarkov.com/mod/1018/mag-tape)
-- [BlackCore](https://forge.sp-tarkov.com/mod/985/blackcore)
-- [Epic's All in One 3.1.4](https://forge.sp-tarkov.com/mod/1263/epics-all-in-one)
-- [Eco's Attachment Emporium 1.2.1](https://forge.sp-tarkov.com/mod/2288/ecos-attachment-emporium)
-- [ECOT - Eukyre's Consortium of Things 1.1.0](https://forge.sp-tarkov.com/mod/2195/ecot-eukyres-consortium-of-things#versions)
-- [WTT- Artem 2.1.2](https://forge.sp-tarkov.com/mod/1023/wtt-artem)
-- Echoes of Tarkov - Requisitions (outdate)
-- Raid Overhaul (outdate)
+- 当前版本：v2.0
+- 当前主要入口：GUI、CLI
+- 核心生成入口：RealismPatchGenerator.Core/RealismPatchGenerator.cs
+- 当前有效生成大类：武器、附件、弹药、装备
+- consumable 不在当前有效生成链路内
 
-## English
+## 当前支持的输入情况
 
-### Overview
+当前核心生成器直接支持以下输入物品格式：
 
-This project consolidates the GUI editor, rule files, item exception management, and output auditing into one .NET solution.
+1. RealismStandardTemplate
+2. Moxo_Template
+3. Mixed_templates
 
-### Main Features
+其中 Moxo_Template 的识别特征为：
 
-- Generate Realism patches quickly.
-- Use a logical structure rule system based on RealismItemTemplates and numeric ranges based on RealismItemRules to standardize generated patch values.
-- Allow users to adjust the value ranges themselves.
-- Generate patch values through a pseudorandom seed-based system.
-- Use item_exceptions.json to customize exceptions for specific item properties, allowing flexible stat design without breaking overall balance.
-- Provide an audit feature to automatically check whether generated patches violate the rules.
-- Support reading and generating six common item-mod data structure styles used in SPT 3.11.4, with fallback handling to remain as compatible as possible when the input style cannot be fully recognized.
+- 条目包含 clone
+- 同时包含 item 或 items
+- 输出 Name 优先使用 locales.Name
 
-### Quick Start
+Mixed_templates 的识别特征为：
 
-1. Put your source JSON files under input.
-1. Launch the GUI.
-1. Review generated files under output.
-1. Run the built-in GUI audit if you want a rule-violation report.
+- 同一个文件内部同时存在 clone + item/items 条目
+- 同时也可能存在不带 clone 的 direct item/items 条目
+- 无 clone 条目会按 item._parent 或 handbook 信息推断 Realism 基底补丁
 
-Release package notes:
+仓库内的 input/user_templates 已统计出 4 类第三方输入源结构族：
 
-- Full package: no preinstalled .NET runtime required, but the package is larger. Recommended for most users.
-- Lightweight package: much smaller, but the target machine must already have the matching .NET Desktop Runtime installed. Recommended only if you already know the target machine has the required runtime.
-- Current release output provides both package types side by side: `RealismPatchGenerator-v<version>-win-x64.zip` and `RealismPatchGenerator-v<version>-win-x64-fd.zip`.
+1. WTT_templates
+2. RaidOverhaul_templates
+3. Mixed_templates
+4. Moxo_Template
 
-### Directory Layout
+这 4 类结构族的统计结果见：
 
-The program uses the repository root as its default data root.
+- docs/MOD物品数据结构统计报告.md
 
-- input
-- RealismItemTemplates
-- RealismItemRules
-- output
-- audit_reports
+需要注意的是，“已统计识别到 4 类第三方源结构”不等于“当前核心生成器对 4 类都已实现完整直出支持”。README 这里描述的是当前程序实际行为，不再保留过时的兼容列表宣传口径。
 
-### Current Behavior Notes
+## 当前生成规则
 
-- output is not cleared as a whole directory before each run; only current target files are overwritten.
-- each generation samples fresh values within the configured ranges, so repeated runs can produce different numeric results for the same item.
-- output preserves input source order so generated files follow the source file item order for easier manual review.
-- audit now checks both numeric rule ranges and template-driven output structure for weapons, attachments, ammo, and gear.
-- consumable and ordinary cosmetic items are outside the generation scope.
-- Item exceptions are exempted per field during audit instead of skipping whole items.
+生成器当前遵循以下固定约束：
 
-### Item Exceptions
+1. 输出条目顺序必须与输入源文件中的物品顺序一致
+2. 只有 RealismStandardTemplate 且来源于 input/attatchments、input/gear、input/weapons 的输出文件保持原文件名
+3. 其他当前支持的输出文件名继续在源文件名后追加 _realism_patch
+4. output 不会在每次运行前整目录清空，只覆盖本次需要写出的目标文件
+5. item_exceptions 会在自动规则处理完成后作为最终覆盖层应用
 
-The Item Exceptions window supports searching generated items by Name, loading their current top-level fields, editing allowed fields, and saving per-item overrides into RealismItemRules/item_exceptions.json.
+对 Moxo_Template，当前还额外遵循以下行为：
 
-## 中文
+- 支持 clone 到模板库物品
+- 支持同一源文件内 clone 到前面已生成的物品
+- 只会保留克隆基底中存在的有效字段，不会把 Prefab 这类非 Realism 标准字段直接泄漏到输出补丁中
 
-SPT 现实主义数值范围编辑生成器 v1.30.0 是专门为SPT Realism Mod 1.6.4设计的工具集。
+对 Mixed_templates，当前还额外遵循以下行为：
 
-当前版本: v1.30.0
+- 同文件中的 clone 条目优先复用 Moxo 路径处理
+- clone 基底不可用时，会退回到 direct item/items 路径构造 Realism 基底补丁
+- direct item/items 条目同样会过滤掉 Prefab 这类非 Realism 标准字段
 
-当现实主义MOD更新到SPT4后，本程序将同步更新。
+## 目录说明
 
-### 简介
+程序默认以仓库根目录作为数据根。当前运行时关键目录：
 
-本项目将 GUI 编辑器、规则文件、例外物品管理和输出检修统一收拢到同一个 .NET 解决方案中。
+- input：输入源文件
+- RealismItemTemplates：结构模板目录
+- RealismItemRules：规则目录
+- output：生成结果目录
+- docs：说明文档
 
-### 主要功能
+仓库里还保留了一些用于整理、备份、比对或调查的目录，例如中文模板目录、rules、artifacts、input备份、可用的已输出结果。这些目录可能对维护有帮助，但不代表都是当前核心生成流程的直接读取入口。
 
-- 可快捷地生成现实主义补丁
-- 使用一套符合逻辑的规则体系（RealismItemTemplates）和数值范围（RealismItemRules）来规范生成的补丁数值
-- 数值范围可由用户自行调整
-- 补丁的数值由随机种子系统进行伪随机生成
-- 通过 item_exceptions.json，可对个别物品的属性进行例外定制。在不破坏数值平衡的情况下，可随意设计属性。
-- 检修功能，可自动化检查生成的补丁是否违反规则。
-- 支持读取和生成SPT3.11.4版本的六种不同编写习惯的物品MOD数据结构，并用兜底机制尽可能兼容未能识别的编写规范。
+## 推荐使用方式
 
-### 快速开始
+开发环境下启动 GUI：
 
-1. 将待处理 JSON 放入 input。
-1. 启动 GUI。
-1. 在 output 中检查生成结果。
-1. 如果需要规则检查报告，再通过 GUI 执行检修。
+```powershell
+dotnet run --project RealismPatchGenerator.Gui
+```
 
-发布包说明:
+开发环境下直接用 CLI 生成：
 
-- 完整包: 体积较大，但目标机器不需要预装 .NET 运行时。一般用户优先选这个。
-- 轻量包: 体积更小，但目标机器需要预装匹配的 .NET Desktop Runtime。只有在你明确知道目标机器已经装好运行时的情况下才建议选这个。
-- 当前发布会同时提供两种压缩包: `RealismPatchGenerator-v<版本>-win-x64.zip` 和 `RealismPatchGenerator-v<版本>-win-x64-fd.zip`。
+```powershell
+dotnet run --project .\RealismPatchGenerator.Cli\RealismPatchGenerator.Cli.csproj -- . .\output
+```
 
-### 目录约定
+CLI 额外支持：
 
-程序默认以仓库根目录为数据根。
+- `--seed <uint>`：指定随机种子
+- `--logs`：在终端打印完整生成日志
+- `--input-file <path>`：只处理指定输入文件，可重复传入
+- `--input-dir <path>`：只处理指定输入目录，可重复传入
 
-- input
-- RealismItemTemplates
-- RealismItemRules
-- output
-- audit_reports
+CLI 示例：
 
-- 输出结构以 RealismItemTemplates 为结构标准；最终数值范围以 RealismItemRules 为唯一标准。
+```powershell
+dotnet run --project .\RealismPatchGenerator.Cli\RealismPatchGenerator.Cli.csproj -- . .\output --seed 123456 --logs
+dotnet run --project .\RealismPatchGenerator.Cli\RealismPatchGenerator.Cli.csproj -- . .\output --input-file attatchments/HandguardTemplates.json
+dotnet run --project .\RealismPatchGenerator.Cli\RealismPatchGenerator.Cli.csproj -- . .\output --input-dir user_templates
+```
 
-### 当前行为说明
+`--input-file` 和 `--input-dir` 既可以写成相对 `input` 根目录的路径，也可以写成带 `input/` 前缀的路径。
 
-- output 不会在每次运行前整目录清空，只覆盖当前目标文件。
-- 每次生成都会在配置范围内重新采样，因此同一物品在重复生成时可能出现不同数值结果。
-- output 会保留输入源顺序，生成结果按源文件中的条目顺序写出，便于人工核对。
-- 检修现在会同时检查数值范围和模板结构，武器、附件、弹药、装备四类都按 RealismItemTemplates 做结构校验。
-- consumable 和普通 cosmetic 不在物品生成范围内。
-- item_exceptions 在检修时按字段豁免，而不是整件物品跳过。
+常规工作流：
 
-### 例外物品
+1. 将输入 JSON 放入 input
+2. 启动 GUI
+3. 调整规则并保存到 RealismItemRules
+4. 生成补丁到 output
+5. 检查生成结果
+6. 如有必要，再用例外物品功能写入 item_exceptions.json 做最终覆盖
 
-例外物品窗口支持按 Name 搜索已生成物品、读取当前顶层字段、编辑允许字段，并将每个物品的覆盖规则保存到 rules/item_exceptions.json。
+## 规则与例外物品
+
+主规则文件位于 RealismItemRules：
+
+- weapon_rules.json
+- attachment_rules.json
+- ammo_rules.json
+- gear_rules.json
+- item_exceptions.json
+
+其中：
+
+- 前四个文件定义各大类的范围与修正规则
+- item_exceptions.json 用于对具体 ItemID 做最终字段覆盖
+
+例外物品的设计目标不是替代整类规则，而是处理少量确实需要单独落地的对象。
+
+## 文档索引
+
+如果要了解当前实现，请优先看这些文档：
+
+- docs/使用说明.md
+- docs/规则说明.md
+- docs/补丁生成流程说明.md
+- docs/MOD物品数据结构统计报告.md
+- docs/规则文件与文档同步对照清单.md
+
+## 发布说明
+
+当前发布仍区分两种包：
+
+- 完整包：自带运行时，适合普通用户直接使用
+- 轻量包：不带运行时，要求目标机器预装匹配的 .NET Desktop Runtime
+
+打包脚本位于：
+
+- scripts/build-release.ps1

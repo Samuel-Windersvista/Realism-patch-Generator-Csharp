@@ -14,12 +14,6 @@ public sealed class ItemExceptionImportCandidate
 
 public static class ItemExceptionImportService
 {
-    private static readonly HashSet<string> CurrentPatchIgnoredKeys = new(StringComparer.OrdinalIgnoreCase)
-    {
-        "$type", "ItemID", "TemplateID", "parentId", "itemTplToClone", "clone", "ItemToClone",
-        "enable", "locales", "LocalePush", "OverrideProperties", "overrideProperties", "item", "items", "handbook",
-    };
-
     public static IReadOnlyList<ItemExceptionImportCandidate> SearchFromOutputByName(string outputDirectory, string nameQuery, int maxResults = 200)
     {
         if (string.IsNullOrWhiteSpace(outputDirectory) || !Directory.Exists(outputDirectory) || string.IsNullOrWhiteSpace(nameQuery))
@@ -291,7 +285,7 @@ public static class ItemExceptionImportService
         var fields = new JsonObject();
         foreach (var pair in itemObject)
         {
-            if (!CurrentPatchIgnoredKeys.Contains(pair.Key) && pair.Value is not null)
+            if (!ItemJsonSchema.RealismStandardTemplateIgnoredKeys.Contains(pair.Key) && pair.Value is not null)
             {
                 fields[pair.Key] = pair.Value.DeepClone();
             }
@@ -302,6 +296,15 @@ public static class ItemExceptionImportService
 
     private static string ExtractName(JsonObject itemObject)
     {
+        if (IsMoxoTemplateInput(itemObject))
+        {
+            return ExtractLocalizedName(itemObject["locales"])
+                ?? ExtractLocalizedName(itemObject["LocalePush"])
+                ?? itemObject["Name"]?.GetValue<string?>()
+                ?? itemObject["item"]?["_name"]?.GetValue<string?>()
+                ?? string.Empty;
+        }
+
         if (!string.IsNullOrWhiteSpace(itemObject["Name"]?.GetValue<string?>()))
         {
             return itemObject["Name"]!.GetValue<string>();
@@ -315,6 +318,12 @@ public static class ItemExceptionImportService
         return ExtractLocalizedName(itemObject["locales"])
             ?? ExtractLocalizedName(itemObject["LocalePush"])
             ?? string.Empty;
+    }
+
+    private static bool IsMoxoTemplateInput(JsonObject itemObject)
+    {
+        return itemObject.ContainsKey("clone")
+            && (itemObject["item"] is JsonObject || itemObject["items"] is JsonObject);
     }
 
     private static string? ExtractLocalizedName(JsonNode? node)

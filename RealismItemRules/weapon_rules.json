@@ -418,8 +418,8 @@
     },
     "subsonic_heavy_9x39": {
       "VerticalRecoil": {
-        "min": -45,
-        "max": -60,
+        "min": -50,
+        "max": -30,
         "preferInt": true
       },
       "HorizontalRecoil": {

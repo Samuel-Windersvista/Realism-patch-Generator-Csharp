@@ -215,9 +215,9 @@ internal static class StaticData
     public static JsonObject CreateDefaultWeaponTemplate() => new()
     {
         ["$type"] = "RealismMod.Gun, RealismMod",
+        ["ConflictingItems"] = new JsonArray(),
         ["WeapType"] = "rifle",
         ["OperationType"] = string.Empty,
-            ["weapFireType"] = new JsonArray("single"),
         ["WeapAccuracy"] = 0,
         ["BaseTorque"] = 4.5,
         ["HasShoulderContact"] = true,
@@ -259,17 +259,10 @@ internal static class StaticData
         ["IsManuallyOperated"] = false,
         ["BaseChamberCheckSpeed"] = 1,
         ["BaseFixSpeed"] = 1,
-        ["DoubleActionAccuracyPenalty"] = 0,
         ["OffsetRotation"] = 0.011,
         ["RecoilIntensity"] = 0.19,
         ["EnableBSGVisRecoil"] = false,
         ["ReduceBSGVisRecoil"] = false,
-        ["RecoilCenter"] = new JsonObject
-        {
-            ["x"] = 0,
-            ["y"] = -0.35,
-            ["z"] = 0,
-        },
     };
 
     public static JsonObject CreateDefaultAmmoTemplate() => new()

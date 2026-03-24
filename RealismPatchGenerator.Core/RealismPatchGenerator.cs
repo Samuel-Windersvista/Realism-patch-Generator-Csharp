@@ -25,6 +25,7 @@ public sealed class RealismPatchGenerator
     private readonly string inputPath;
     private readonly string templatesBasePath;
     private readonly Dictionary<string, JsonObject> templateById = new(StringComparer.OrdinalIgnoreCase);
+    private readonly Dictionary<string, string> templateFileByItemId = new(StringComparer.OrdinalIgnoreCase);
     private readonly Dictionary<string, JsonObject> weaponPatches = new(StringComparer.OrdinalIgnoreCase);
     private readonly Dictionary<string, JsonObject> attachmentPatches = new(StringComparer.OrdinalIgnoreCase);
     private readonly Dictionary<string, JsonObject> ammoPatches = new(StringComparer.OrdinalIgnoreCase);
@@ -32,7 +33,8 @@ public sealed class RealismPatchGenerator
     private readonly Dictionary<string, JsonObject> consumablePatches = new(StringComparer.OrdinalIgnoreCase);
     private readonly Dictionary<string, OrderedPatchGroup> fileBasedPatches = new(StringComparer.OrdinalIgnoreCase);
     private readonly List<string> fileBasedPatchOrder = [];
-    private readonly Dictionary<string, string> fileOutputModes = new(StringComparer.OrdinalIgnoreCase);
+    private readonly Dictionary<string, bool> fileUsesSuffixOutput = new(StringComparer.OrdinalIgnoreCase);
+    private readonly Dictionary<string, ItemInfo> generatedItemInfoById = new(StringComparer.OrdinalIgnoreCase);
     private readonly Dictionary<string, List<string>> templateParentIndex = new(StringComparer.OrdinalIgnoreCase);
     private readonly Dictionary<string, SortedDictionary<string, JsonObject>> templates = new(StringComparer.OrdinalIgnoreCase);
     private readonly List<string> logs = [];
@@ -40,6 +42,14 @@ public sealed class RealismPatchGenerator
     private readonly CompatibleRandom random;
     private readonly RuleSet rules;
     private readonly ItemExceptionDocument itemExceptions;
+
+    private enum SupportedInputFileFormat
+    {
+        Unsupported,
+        RealismStandardTemplate,
+        MoxoTemplate,
+        MixedTemplate,
+    }
 
     public RealismPatchGenerator(string basePath, uint? seed = null)
     {
@@ -52,7 +62,7 @@ public sealed class RealismPatchGenerator
         itemExceptions = ItemExceptionStore.Load(this.basePath);
     }
 
-    public GenerationResult Generate(string? outputDirectory = null)
+    public GenerationResult Generate(string? outputDirectory = null, Func<string, bool>? inputPathFilter = null)
     {
         EnsureRequiredDirectories();
         LoadAllTemplates();
@@ -60,6 +70,7 @@ public sealed class RealismPatchGenerator
         Log($"开始生成现实主义补丁，工作目录: {basePath}");
         Log($"本次生成随机种子: {generationSeed}");
         var jsonFiles = Directory.EnumerateFiles(inputPath, "*.json", SearchOption.AllDirectories)
+            .Where(path => inputPathFilter is null || inputPathFilter(Path.GetRelativePath(inputPath, path).Replace('\\', '/')))
             .OrderBy(path => Path.GetRelativePath(inputPath, path), StringComparer.OrdinalIgnoreCase)
             .ToList();
 
@@ -92,88 +103,6 @@ public sealed class RealismPatchGenerator
         };
     }
 
-    internal ItemInfo BuildAuditItemInfo(string itemId, JsonObject patch, string sourceFile, JsonObject? sourceItem)
-    {
-        EnsureAuditContextLoaded();
-
-        var itemInfo = new ItemInfo
-        {
-            ItemId = itemId,
-            ParentId = null,
-            CloneId = null,
-            TemplateId = null,
-            TemplateFile = null,
-            Name = patch["Name"]?.GetValue<string?>() ?? string.Empty,
-            IsWeapon = false,
-            IsGear = false,
-            IsConsumable = false,
-            ItemType = patch["$type"]?.GetValue<string?>() ?? string.Empty,
-            Properties = (JsonObject)patch.DeepClone(),
-            SourceProperties = (JsonObject)patch.DeepClone(),
-            SourceFile = sourceFile,
-            Format = ItemFormat.CurrentPatch,
-        };
-
-        if (sourceItem is not null)
-        {
-            var format = DetectItemFormat(sourceItem);
-            var sourceInfo = ExtractItemInfo(itemId, sourceItem, format, sourceFile);
-            if (format == ItemFormat.ItemToClone && !string.IsNullOrWhiteSpace(sourceInfo.CloneId))
-            {
-                var parentId = ResolveItemToCloneParentId(sourceItem, sourceInfo.CloneId!);
-                if (!string.IsNullOrWhiteSpace(parentId))
-                {
-                    sourceInfo.ParentId = parentId;
-                    sourceInfo.TemplateFile = GetTemplateForParentId(parentId);
-                    sourceInfo.IsWeapon = IsWeapon(parentId);
-                    sourceInfo.IsGear = IsGear(parentId);
-                    sourceInfo.IsConsumable = IsConsumable(parentId);
-                }
-            }
-
-            var sourceProperties = (JsonObject)sourceInfo.Properties.DeepClone();
-            sourceInfo.SourceProperties = (JsonObject)sourceProperties.DeepClone();
-            foreach (var pair in patch)
-            {
-                if (pair.Value is not null)
-                {
-                    sourceProperties[pair.Key] = pair.Value.DeepClone();
-                }
-            }
-
-            sourceInfo.Properties = sourceProperties;
-            if (!string.IsNullOrWhiteSpace(patch["Name"]?.GetValue<string?>()))
-            {
-                sourceInfo.Name = patch["Name"]?.GetValue<string?>();
-            }
-
-            sourceInfo.ItemType = patch["$type"]?.GetValue<string?>() ?? sourceInfo.ItemType;
-            return sourceInfo;
-        }
-
-        EnrichItemInfoWithSourceContext(itemInfo, patch);
-        itemInfo.SourceProperties = (JsonObject)itemInfo.Properties.DeepClone();
-        return itemInfo;
-    }
-
-    internal IReadOnlyDictionary<string, NumericRange> GetWeaponClampRules() => rules.Weapon.GunClampRules;
-
-    internal IReadOnlyDictionary<string, NumericRange> GetAttachmentClampRules() => rules.Attachment.ModClampRules;
-
-    internal IReadOnlyDictionary<string, NumericRange> GetGearClampRules() => rules.Gear.GearClampRules;
-
-    internal string? AuditInferWeaponProfile(JsonObject patch, ItemInfo itemInfo) => InferWeaponProfile(patch, itemInfo);
-
-    internal string? AuditInferModProfile(JsonObject patch, ItemInfo itemInfo) => InferModProfile(patch, itemInfo);
-
-    internal string AuditInferAmmoProfile(JsonObject patch, ItemInfo itemInfo) => InferAmmoProfile(patch, itemInfo);
-
-    internal string? AuditInferAmmoSpecialProfile(JsonObject patch, ItemInfo itemInfo) => InferAmmoSpecialProfile(patch, itemInfo);
-
-    internal string AuditInferAmmoPenetrationTier(JsonObject patch, ItemInfo itemInfo) => InferAmmoPenetrationTier(patch, itemInfo);
-
-    internal string? AuditInferGearProfile(JsonObject patch, ItemInfo itemInfo) => InferGearProfile(patch, itemInfo);
-
     internal bool TryGetAttachmentProfileRanges(string modProfile, out IReadOnlyDictionary<string, NumericRange> ranges)
     {
         if (rules.Attachment.ModProfileRanges.TryGetValue(modProfile, out var resolvedRanges))
@@ -196,26 +125,6 @@ public sealed class RealismPatchGenerator
 
 		ranges = new Dictionary<string, NumericRange>(StringComparer.OrdinalIgnoreCase);
         return false;
-    }
-
-    internal IReadOnlySet<string> GetAmmoOutputFieldSet()
-    {
-        return new HashSet<string>(GetAmmoOutputFieldOrder(), StringComparer.OrdinalIgnoreCase);
-    }
-
-    internal bool TryGetTemplateFieldSetForAudit(ItemInfo itemInfo, out IReadOnlySet<string> fieldSet)
-    {
-        EnsureAuditContextLoaded();
-
-        var template = ResolveAuditTemplate(itemInfo);
-        if (template is null)
-        {
-            fieldSet = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
-            return false;
-        }
-
-        fieldSet = new HashSet<string>(template.Select(pair => pair.Key), StringComparer.OrdinalIgnoreCase);
-        return true;
     }
 
     internal bool TryGetGearProfileRanges(string gearProfile, out IReadOnlyDictionary<string, NumericRange> ranges)
@@ -384,6 +293,7 @@ public sealed class RealismPatchGenerator
     {
         templates.Clear();
         templateById.Clear();
+        templateFileByItemId.Clear();
         templateParentIndex.Clear();
 
         foreach (var relativeDir in new[] { "weapons", "attatchments", "ammo", "gear", "consumables" })
@@ -412,6 +322,7 @@ public sealed class RealismPatchGenerator
                     {
                         byId[pair.Key] = (JsonObject)value.DeepClone();
                         templateById[pair.Key] = (JsonObject)value.DeepClone();
+                        templateFileByItemId[pair.Key] = fileName;
                     }
                 }
 
@@ -460,10 +371,17 @@ public sealed class RealismPatchGenerator
             return;
         }
 
+        var inputFormat = DetectSupportedFileFormat(itemsData);
+        if (inputFormat == SupportedInputFileFormat.Unsupported)
+        {
+            Log($"跳过暂不支持的输入结构文件: {relativeDisplay}");
+            return;
+        }
+
         var processed = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
         var processedCount = 0;
-        var currentPatchCount = 0;
         var sourceKey = Path.ChangeExtension(Path.GetRelativePath(inputPath, itemFile), null) ?? Path.GetFileNameWithoutExtension(itemFile);
+        fileUsesSuffixOutput[sourceKey] = ShouldUseSuffixOutput(sourceKey, inputFormat);
 
         foreach (var pair in itemsData)
         {
@@ -472,29 +390,37 @@ public sealed class RealismPatchGenerator
                 continue;
             }
 
-            var format = DetectItemFormat(itemData);
-            if (ProcessSingleItem(pair.Key, itemData, itemsData, processed, sourceKey, format))
+            if (ProcessSingleItem(pair.Key, itemData, processed, sourceKey, inputFormat))
             {
                 processedCount += 1;
-                if (format == ItemFormat.CurrentPatch)
-                {
-                    currentPatchCount += 1;
-                }
             }
         }
 
-        var ratio = processedCount == 0 ? 0 : (double)currentPatchCount / processedCount;
-        fileOutputModes[sourceKey] = ratio > 0.5 ? "plain" : "suffix";
         Log($"处理完成: {relativeDisplay} - {processedCount} 项");
+    }
+
+    private static bool ShouldUseSuffixOutput(string sourceFile, SupportedInputFileFormat inputFormat)
+    {
+        if (inputFormat != SupportedInputFileFormat.RealismStandardTemplate)
+        {
+            return true;
+        }
+
+        var normalized = sourceFile.Replace('\\', '/');
+        var separatorIndex = normalized.IndexOf('/');
+        var topLevelDirectory = separatorIndex >= 0 ? normalized[..separatorIndex] : normalized;
+
+        return !topLevelDirectory.Equals("attatchments", StringComparison.OrdinalIgnoreCase)
+            && !topLevelDirectory.Equals("gear", StringComparison.OrdinalIgnoreCase)
+            && !topLevelDirectory.Equals("weapons", StringComparison.OrdinalIgnoreCase);
     }
 
     private bool ProcessSingleItem(
         string itemId,
         JsonObject itemData,
-        JsonObject itemsData,
         HashSet<string> processedItems,
         string sourceFile,
-        ItemFormat format)
+        SupportedInputFileFormat inputFormat)
     {
         if (processedItems.Contains(itemId))
         {
@@ -506,147 +432,407 @@ public sealed class RealismPatchGenerator
             return false;
         }
 
-        if (format == ItemFormat.Unknown)
+        if (!TryBuildPatchForSupportedFormat(itemId, itemData, sourceFile, inputFormat, out var patch, out var itemInfo))
         {
             return false;
         }
 
-        var itemInfo = ExtractItemInfo(itemId, itemData, format, sourceFile);
-
-        return format switch
-        {
-            ItemFormat.TemplateId => HandleTemplateIdItem(itemId, itemInfo, processedItems, sourceFile),
-            ItemFormat.CurrentPatch => HandleCurrentPatchItem(itemId, itemData, itemInfo, processedItems, sourceFile),
-            ItemFormat.Clone => HandleCloneItem(itemId, itemInfo, itemsData, processedItems, sourceFile),
-            _ => HandleGenericItem(itemId, itemData, itemInfo, processedItems, sourceFile),
-        };
+        SyncItemInfoCategoryFromPatch(patch, itemInfo);
+        FinalizePatch(itemId, patch, itemInfo, processedItems, sourceFile);
+        StorePatchByPatchType(itemId, patch);
+        generatedItemInfoById[itemId] = itemInfo;
+        return true;
     }
 
-    public ItemFormat DetectItemFormat(JsonObject itemData)
+    private static SupportedInputFileFormat DetectSupportedFileFormat(JsonObject itemsData)
     {
-        if (itemData.ContainsKey("$type") && itemData.ContainsKey("ItemID") && !itemData.ContainsKey("TemplateID"))
+        var hasEntries = false;
+        var allStandard = true;
+        var allMoxo = true;
+        var allMixed = true;
+
+        foreach (var pair in itemsData)
         {
-            return ItemFormat.CurrentPatch;
+            if (pair.Value is not JsonObject itemData)
+            {
+                continue;
+            }
+
+            hasEntries = true;
+            allStandard &= IsRealismStandardTemplateFormat(itemData);
+            allMoxo &= IsMoxoTemplateFormat(itemData);
+            allMixed &= IsMixedTemplateFormat(itemData);
         }
 
-        if (itemData.ContainsKey("TemplateID") && itemData.ContainsKey("$type"))
+        if (!hasEntries)
         {
-            return ItemFormat.TemplateId;
+            return SupportedInputFileFormat.Unsupported;
         }
 
-        if (itemData["item"] is JsonObject itemObject && itemObject.ContainsKey("_id") && itemObject.ContainsKey("_parent"))
+        if (allStandard)
         {
-            return ItemFormat.Vir;
+            return SupportedInputFileFormat.RealismStandardTemplate;
         }
 
-        if (itemData.ContainsKey("ItemToClone"))
+        if (allMoxo)
         {
-            return ItemFormat.ItemToClone;
+            return SupportedInputFileFormat.MoxoTemplate;
         }
 
-        if (itemData.ContainsKey("clone"))
+        if (allMixed)
         {
-            return ItemFormat.Clone;
+            return SupportedInputFileFormat.MixedTemplate;
         }
 
-        if (itemData.ContainsKey("parentId") || itemData.ContainsKey("itemTplToClone"))
-        {
-            return ItemFormat.Standard;
-        }
-
-        return ItemFormat.Unknown;
+        return SupportedInputFileFormat.Unsupported;
     }
 
-    private ItemInfo ExtractItemInfo(string itemId, JsonObject itemData, ItemFormat format, string? sourceFile)
+    private bool TryBuildPatchForSupportedFormat(
+        string itemId,
+        JsonObject itemData,
+        string sourceFile,
+        SupportedInputFileFormat inputFormat,
+        out JsonObject patch,
+        out ItemInfo itemInfo)
+    {
+        switch (inputFormat)
+        {
+            case SupportedInputFileFormat.RealismStandardTemplate:
+                itemInfo = ExtractItemInfo(itemId, itemData, sourceFile);
+                patch = (JsonObject)itemData.DeepClone();
+                patch["ItemID"] = itemId;
+                if (patch["Name"] is null && !string.IsNullOrWhiteSpace(itemInfo.Name))
+                {
+                    patch["Name"] = itemInfo.Name;
+                }
+
+                return true;
+
+            case SupportedInputFileFormat.MoxoTemplate:
+                return TryBuildMoxoTemplatePatch(itemId, itemData, sourceFile, out patch, out itemInfo);
+
+            case SupportedInputFileFormat.MixedTemplate:
+                return TryBuildMixedTemplatePatch(itemId, itemData, sourceFile, out patch, out itemInfo);
+
+            default:
+                patch = new JsonObject();
+                itemInfo = new ItemInfo();
+                return false;
+        }
+    }
+
+    private static bool IsRealismStandardTemplateFormat(JsonObject itemData)
+    {
+        return itemData.ContainsKey("$type")
+            && itemData.ContainsKey("ItemID")
+            && !ItemJsonSchema.HasLegacyFormatMarkers(itemData);
+    }
+
+    private static bool IsMoxoTemplateFormat(JsonObject itemData)
+    {
+        return !itemData.ContainsKey("$type")
+            && itemData.ContainsKey("clone")
+            && (itemData["item"] is JsonObject || itemData["items"] is JsonObject);
+    }
+
+    private static bool IsMixedTemplateFormat(JsonObject itemData)
+    {
+        return !itemData.ContainsKey("$type")
+            && !itemData.ContainsKey("itemTplToClone")
+            && !itemData.ContainsKey("ItemToClone")
+            && (itemData["item"] is JsonObject || itemData["items"] is JsonObject);
+    }
+
+    private bool TryBuildMixedTemplatePatch(
+        string itemId,
+        JsonObject itemData,
+        string sourceFile,
+        out JsonObject patch,
+        out ItemInfo itemInfo)
+    {
+        if (itemData.ContainsKey("clone")
+            && TryBuildMoxoTemplatePatch(itemId, itemData, sourceFile, out patch, out itemInfo))
+        {
+            return true;
+        }
+
+        return TryBuildMixedDirectPatch(itemId, itemData, sourceFile, out patch, out itemInfo);
+    }
+
+    private bool TryBuildMoxoTemplatePatch(
+        string itemId,
+        JsonObject itemData,
+        string sourceFile,
+        out JsonObject patch,
+        out ItemInfo itemInfo)
+    {
+        var cloneId = itemData["clone"]?.GetValue<string?>();
+        if (string.IsNullOrWhiteSpace(cloneId))
+        {
+            patch = new JsonObject();
+            itemInfo = new ItemInfo();
+            Log($"Moxo_Template 缺少可用 clone 模板: {itemId} -> <null>");
+            return false;
+        }
+
+        if (templateById.TryGetValue(cloneId, out var cloneTemplate))
+        {
+            patch = (JsonObject)cloneTemplate.DeepClone();
+            patch["ItemID"] = itemId;
+
+            itemInfo = ExtractMoxoItemInfo(itemId, itemData, sourceFile, cloneId, patch);
+            if (!string.IsNullOrWhiteSpace(itemInfo.Name))
+            {
+                patch["Name"] = itemInfo.Name;
+            }
+
+            return true;
+        }
+
+        if (TryGetStoredPatchById(cloneId, out var generatedClonePatch)
+            && generatedItemInfoById.TryGetValue(cloneId, out var generatedCloneInfo))
+        {
+            patch = (JsonObject)generatedClonePatch.DeepClone();
+            patch["ItemID"] = itemId;
+
+            itemInfo = ExtractMoxoItemInfo(itemId, itemData, sourceFile, generatedCloneInfo, patch);
+            if (!string.IsNullOrWhiteSpace(itemInfo.Name))
+            {
+                patch["Name"] = itemInfo.Name;
+            }
+
+            return true;
+        }
+
+        patch = new JsonObject();
+        itemInfo = new ItemInfo();
+        Log($"Moxo_Template 缺少可用 clone 模板: {itemId} -> {cloneId}");
+        return false;
+    }
+
+    private bool TryBuildMixedDirectPatch(
+        string itemId,
+        JsonObject itemData,
+        string sourceFile,
+        out JsonObject patch,
+        out ItemInfo itemInfo)
+    {
+        var parentId = ResolveMixedDirectParentId(itemData);
+        var templateFile = GetTemplateForParentId(parentId);
+
+        patch = CreateMixedBasePatch(itemId, itemData, sourceFile, parentId, templateFile);
+        if (patch.Count == 0)
+        {
+            itemInfo = new ItemInfo();
+            Log($"Mixed_templates 无法创建基底补丁: {itemId} -> parent={parentId ?? "<null>"}, template={templateFile ?? "<null>"}");
+            return false;
+        }
+
+        patch["ItemID"] = itemId;
+        itemInfo = ExtractMixedDirectItemInfo(itemId, itemData, sourceFile, parentId, templateFile, patch);
+        if (!string.IsNullOrWhiteSpace(itemInfo.Name))
+        {
+            patch["Name"] = itemInfo.Name;
+        }
+
+        return true;
+    }
+
+    private JsonObject CreateMixedBasePatch(
+        string itemId,
+        JsonObject itemData,
+        string sourceFile,
+        string? parentId,
+        string? templateFile)
+    {
+        if (!string.IsNullOrWhiteSpace(templateFile))
+        {
+            var templatePatch = SelectTemplateData(templateFile, itemId);
+            if (templatePatch is not null)
+            {
+                return templatePatch;
+            }
+        }
+
+        var bootstrapInfo = CreateMixedBootstrapItemInfo(itemId, itemData, sourceFile, parentId, templateFile);
+        return CreateDefaultLegacyPatch(itemId, bootstrapInfo, templateFile);
+    }
+
+    private bool TryGetStoredPatchById(string itemId, out JsonObject patch)
+    {
+        if (weaponPatches.TryGetValue(itemId, out patch)
+            || attachmentPatches.TryGetValue(itemId, out patch)
+            || ammoPatches.TryGetValue(itemId, out patch)
+            || gearPatches.TryGetValue(itemId, out patch)
+            || consumablePatches.TryGetValue(itemId, out patch))
+        {
+            return true;
+        }
+
+        patch = new JsonObject();
+        return false;
+    }
+
+    private ItemInfo ExtractItemInfo(string itemId, JsonObject itemData, string? sourceFile)
     {
         var info = new ItemInfo
         {
             ItemId = itemId,
             SourceFile = sourceFile,
-            Format = format,
+            Format = ItemFormat.RealismStandardTemplate,
         };
 
-        switch (format)
+        info.ItemType = itemData["$type"]?.GetValue<string?>();
+        info.Name = itemData["Name"]?.GetValue<string?>() ?? ExtractLocalizedName(itemData["locales"]) ?? ExtractLocalizedName(itemData["LocalePush"]);
+        info.ParentId = NormalizeParentId(itemData["parentId"]?.GetValue<string?>());
+        if (!string.IsNullOrWhiteSpace(info.ParentId))
         {
-            case ItemFormat.TemplateId:
-                info.TemplateId = itemData["TemplateID"]?.GetValue<string?>();
-                info.Name = itemData["Name"]?.GetValue<string?>();
-                info.ItemType = itemData["$type"]?.GetValue<string?>();
-                if (!string.IsNullOrWhiteSpace(info.TemplateId))
-                {
-                    info.TemplateFile = FindTemplateFileByTemplateId(info.TemplateId!);
-                }
-                break;
-            case ItemFormat.CurrentPatch:
-                info.ItemType = itemData["$type"]?.GetValue<string?>();
-                info.Name = itemData["Name"]?.GetValue<string?>() ?? ExtractLocalizedName(itemData["locales"]) ?? ExtractLocalizedName(itemData["LocalePush"]);
-                info.ParentId = NormalizeParentId(itemData["parentId"]?.GetValue<string?>());
-                if (!string.IsNullOrWhiteSpace(info.ParentId))
-                {
-                    info.TemplateFile = GetTemplateForParentId(info.ParentId);
-                }
-                info.Properties = ExtractProperties(itemData, new HashSet<string>(StringComparer.OrdinalIgnoreCase)
-                {
-                    "$type", "ItemID", "TemplateID", "parentId", "itemTplToClone", "clone", "ItemToClone",
-                    "enable", "locales", "LocalePush", "OverrideProperties", "overrideProperties", "item", "items", "handbook",
-                });
-                break;
-            case ItemFormat.Vir:
-                if (itemData["item"] is JsonObject virItem)
-                {
-                    info.ParentId = NormalizeParentId(virItem["_parent"]?.GetValue<string?>());
-                    info.Name = virItem["_name"]?.GetValue<string?>() ?? ExtractLocalizedName(itemData["locales"]);
-                    info.Properties = virItem["_props"] as JsonObject is { } props ? (JsonObject)props.DeepClone() : [];
-                    if (!string.IsNullOrWhiteSpace(info.ParentId))
-                    {
-                        info.TemplateFile = GetTemplateForParentId(info.ParentId);
-                    }
-                }
-                break;
-            case ItemFormat.Standard:
-                info.ParentId = NormalizeParentId(itemData["parentId"]?.GetValue<string?>());
-                info.CloneId = itemData["itemTplToClone"]?.GetValue<string?>();
-                info.Name = ExtractLocalizedName(itemData["locales"]);
-                info.Properties = itemData["overrideProperties"] as JsonObject is { } standardProps ? (JsonObject)standardProps.DeepClone() : [];
-                if (!string.IsNullOrWhiteSpace(info.ParentId))
-                {
-                    info.TemplateFile = GetTemplateForParentId(info.ParentId);
-                }
-                break;
-            case ItemFormat.ItemToClone:
-                info.CloneId = itemData["ItemToClone"]?.GetValue<string?>();
-                info.Name = ExtractLocalizedName(itemData["LocalePush"]) ?? ExtractLocalizedName(itemData["locales"]);
-                info.Properties = itemData["OverrideProperties"] as JsonObject is { } overrideProps ? (JsonObject)overrideProps.DeepClone() : [];
-                break;
-            case ItemFormat.Clone:
-                info.CloneId = itemData["clone"]?.GetValue<string?>();
-                info.Name = ExtractLocalizedName(itemData["locales"]);
-                if (itemData["handbook"] is JsonObject handbook)
-                {
-                    info.ParentId = NormalizeParentId(handbook["ParentId"]?.GetValue<string?>() ?? handbook["parentId"]?.GetValue<string?>());
-                }
-
-                if (itemData["items"] is JsonObject cloneItems && cloneItems["_props"] is JsonObject itemProps)
-                {
-                    info.Properties = (JsonObject)itemProps.DeepClone();
-                    info.ParentId ??= NormalizeParentId(cloneItems["_parent"]?.GetValue<string?>());
-                }
-                else if (itemData["item"] is JsonObject cloneItem && cloneItem["_props"] is JsonObject singleProps)
-                {
-                    info.Properties = (JsonObject)singleProps.DeepClone();
-                    info.ParentId ??= NormalizeParentId(cloneItem["_parent"]?.GetValue<string?>());
-                }
-
-                if (!string.IsNullOrWhiteSpace(info.ParentId))
-                {
-                    info.TemplateFile = GetTemplateForParentId(info.ParentId);
-                }
-                break;
+            info.TemplateFile = GetTemplateForParentId(info.ParentId);
         }
+
+        info.Properties = ExtractProperties(itemData, ItemJsonSchema.RealismStandardTemplateIgnoredKeys);
 
         EnrichItemInfoWithSourceContext(info, itemData);
         info.SourceProperties = (JsonObject)info.Properties.DeepClone();
+        info.AllowedPatchFields = CreateAllowedPatchFieldSet(info.Properties, info.ItemType, info.SourceProperties["ModType"]?.GetValue<string?>());
         return info;
+    }
+
+    private ItemInfo ExtractMoxoItemInfo(string itemId, JsonObject itemData, string sourceFile, ItemInfo cloneInfo, JsonObject clonePatch)
+    {
+        var properties = ExtractEffectiveInputFields(itemData, clonePatch);
+        var localizedName = ExtractLocalizedName(itemData["locales"]) ?? ExtractLocalizedName(itemData["LocalePush"]);
+
+        var info = new ItemInfo
+        {
+            ItemId = itemId,
+            SourceFile = sourceFile,
+            Format = ItemFormat.MoxoTemplate,
+            TemplateFile = cloneInfo.TemplateFile,
+            ParentId = cloneInfo.ParentId,
+            ItemType = cloneInfo.ItemType ?? clonePatch["$type"]?.GetValue<string?>(),
+            Name = FirstNonEmpty(localizedName, itemData["Name"]?.GetValue<string?>(), clonePatch["Name"]?.GetValue<string?>()),
+            Properties = properties,
+            SourceProperties = (JsonObject)properties.DeepClone(),
+            IsWeapon = cloneInfo.IsWeapon,
+            IsGear = cloneInfo.IsGear,
+            IsConsumable = cloneInfo.IsConsumable,
+        };
+
+        EnrichItemInfoWithSourceContext(info, clonePatch);
+        info.AllowedPatchFields = CreateAllowedPatchFieldSet(clonePatch, info.ItemType, clonePatch["ModType"]?.GetValue<string?>());
+        return info;
+    }
+
+    private ItemInfo ExtractMoxoItemInfo(string itemId, JsonObject itemData, string sourceFile, string cloneId, JsonObject cloneTemplate)
+    {
+        var templateFile = templateFileByItemId.GetValueOrDefault(cloneId);
+        var properties = ExtractEffectiveInputFields(itemData, cloneTemplate);
+        var localizedName = ExtractLocalizedName(itemData["locales"]) ?? ExtractLocalizedName(itemData["LocalePush"]);
+
+        var info = new ItemInfo
+        {
+            ItemId = itemId,
+            SourceFile = sourceFile,
+            Format = ItemFormat.MoxoTemplate,
+            TemplateFile = templateFile,
+            ParentId = InferParentIdFromTemplateFile(templateFile ?? string.Empty),
+            ItemType = cloneTemplate["$type"]?.GetValue<string?>(),
+            Name = FirstNonEmpty(localizedName, itemData["Name"]?.GetValue<string?>(), cloneTemplate["Name"]?.GetValue<string?>()),
+            Properties = properties,
+            SourceProperties = (JsonObject)properties.DeepClone(),
+        };
+
+        EnrichItemInfoWithSourceContext(info, cloneTemplate);
+        info.AllowedPatchFields = CreateAllowedPatchFieldSet(cloneTemplate, info.ItemType, cloneTemplate["ModType"]?.GetValue<string?>());
+        return info;
+    }
+
+    private ItemInfo ExtractMixedDirectItemInfo(
+        string itemId,
+        JsonObject itemData,
+        string sourceFile,
+        string? parentId,
+        string? templateFile,
+        JsonObject basePatch)
+    {
+        var itemNode = GetLegacyItemNode(itemData);
+        var itemProps = itemNode?["_props"] as JsonObject;
+        var localizedName = ExtractLocalizedName(itemData["locales"]) ?? ExtractLocalizedName(itemData["LocalePush"]);
+        var properties = ExtractEffectiveInputFields(itemData, basePatch);
+
+        var info = new ItemInfo
+        {
+            ItemId = itemId,
+            SourceFile = sourceFile,
+            Format = ItemFormat.MixedTemplate,
+            TemplateFile = templateFile,
+            ParentId = parentId,
+            ItemType = basePatch["$type"]?.GetValue<string?>(),
+            Name = SelectBestDisplayName(
+                localizedName,
+                itemProps?["Name"]?.GetValue<string?>(),
+                itemData["Name"]?.GetValue<string?>(),
+                itemNode?["_name"]?.GetValue<string?>()),
+            Properties = properties,
+            SourceProperties = (JsonObject)properties.DeepClone(),
+        };
+
+        EnrichItemInfoWithSourceContext(info, basePatch);
+        info.AllowedPatchFields = CreateAllowedPatchFieldSet(basePatch, info.ItemType, basePatch["ModType"]?.GetValue<string?>());
+        return info;
+    }
+
+    private ItemInfo CreateMixedBootstrapItemInfo(
+        string itemId,
+        JsonObject itemData,
+        string sourceFile,
+        string? parentId,
+        string? templateFile)
+    {
+        var itemNode = GetLegacyItemNode(itemData);
+        var itemProps = itemNode?["_props"] as JsonObject;
+        var localizedName = ExtractLocalizedName(itemData["locales"]) ?? ExtractLocalizedName(itemData["LocalePush"]);
+
+        var info = new ItemInfo
+        {
+            ItemId = itemId,
+            SourceFile = sourceFile,
+            Format = ItemFormat.MixedTemplate,
+            TemplateFile = templateFile,
+            ParentId = parentId,
+            Name = SelectBestDisplayName(
+                localizedName,
+                itemProps?["Name"]?.GetValue<string?>(),
+                itemData["Name"]?.GetValue<string?>(),
+                itemNode?["_name"]?.GetValue<string?>()),
+            Properties = ExtractEffectiveInputFields(itemData, null),
+        };
+
+        info.SourceProperties = (JsonObject)info.Properties.DeepClone();
+        EnrichItemInfoWithSourceContext(info, new JsonObject());
+        info.AllowedPatchFields = CreateAllowedPatchFieldSet(info.Properties, info.ItemType, info.SourceProperties["ModType"]?.GetValue<string?>());
+        return info;
+    }
+
+    private JsonObject CreateDefaultLegacyPatch(string itemId, ItemInfo itemInfo, string? templateFile)
+    {
+        if (IsAmmo(itemInfo.ParentId))
+        {
+            return CreateDefaultAmmoPatch(itemId, itemInfo);
+        }
+
+        if (itemInfo.IsWeapon || IsWeapon(itemInfo.ParentId))
+        {
+            return CreateDefaultWeaponPatch(itemId, itemInfo);
+        }
+
+        if (itemInfo.IsConsumable || IsConsumable(itemInfo.ParentId))
+        {
+            return CreateDefaultConsumablePatch(itemId, itemInfo);
+        }
+
+        return CreateDefaultModPatch(itemId, itemInfo, templateFile ?? string.Empty);
     }
 
     private static JsonObject ExtractProperties(JsonObject source, HashSet<string> ignoredKeys)
@@ -661,6 +847,199 @@ public sealed class RealismPatchGenerator
         }
 
         return result;
+    }
+
+    private static JsonObject ExtractEffectiveInputFields(JsonObject itemData, JsonObject? cloneTemplate)
+    {
+        JsonObject fields;
+        if (itemData["items"] is JsonObject itemsObject && itemsObject["_props"] is JsonObject multiProps)
+        {
+            fields = (JsonObject)multiProps.DeepClone();
+        }
+        else if (itemData["item"] is JsonObject itemObject && itemObject["_props"] is JsonObject singleProps)
+        {
+            fields = (JsonObject)singleProps.DeepClone();
+        }
+        else
+        {
+            fields = new JsonObject();
+            foreach (var pair in itemData)
+            {
+                if (!ItemJsonSchema.RealismStandardTemplateIgnoredKeys.Contains(pair.Key) && pair.Value is not null)
+                {
+                    fields[pair.Key] = pair.Value.DeepClone();
+                }
+            }
+        }
+
+        if (cloneTemplate is null)
+        {
+            return fields;
+        }
+
+        var allowedFields = GetAllowedLegacySourceFields(cloneTemplate);
+        var filteredFields = new JsonObject();
+        foreach (var pair in fields)
+        {
+            if ((cloneTemplate.ContainsKey(pair.Key)
+                    || allowedFields.Contains(pair.Key)
+                    || ShouldPreserveLegacyFilteredField(pair.Key))
+                && pair.Value is not null)
+            {
+                filteredFields[pair.Key] = pair.Value.DeepClone();
+            }
+        }
+
+        return filteredFields;
+    }
+
+    private static HashSet<string> GetAllowedLegacySourceFields(JsonObject cloneTemplate)
+    {
+        var allowedFields = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+        AddAllowedLegacySourceFields(allowedFields, cloneTemplate);
+
+        var itemType = cloneTemplate["$type"]?.GetValue<string?>() ?? string.Empty;
+        if (itemType.Contains("RealismMod.Gun", StringComparison.OrdinalIgnoreCase))
+        {
+            AddAllowedLegacySourceFields(allowedFields, StaticData.CreateDefaultWeaponTemplate());
+            return allowedFields;
+        }
+
+        if (itemType.Contains("RealismMod.WeaponMod", StringComparison.OrdinalIgnoreCase))
+        {
+            AddAllowedLegacySourceFields(allowedFields, StaticData.CreateDefaultModTemplate());
+
+            var modType = cloneTemplate["ModType"]?.GetValue<string?>();
+            if (!string.IsNullOrWhiteSpace(modType)
+                && StaticData.ModTypeSpecificAttributes.TryGetValue(modType, out var modTypeAttributes))
+            {
+                AddAllowedLegacySourceFields(allowedFields, modTypeAttributes);
+            }
+
+            return allowedFields;
+        }
+
+        if (itemType.Contains("RealismMod.Ammo", StringComparison.OrdinalIgnoreCase))
+        {
+            AddAllowedLegacySourceFields(allowedFields, StaticData.CreateDefaultAmmoTemplate());
+            return allowedFields;
+        }
+
+        if (itemType.Contains("RealismMod.Consumable", StringComparison.OrdinalIgnoreCase))
+        {
+            AddAllowedLegacySourceFields(allowedFields, StaticData.CreateDefaultConsumableTemplate());
+        }
+
+        return allowedFields;
+    }
+
+    private static void AddAllowedLegacySourceFields(HashSet<string> allowedFields, JsonObject fieldSource)
+    {
+        foreach (var pair in fieldSource)
+        {
+            allowedFields.Add(pair.Key);
+        }
+    }
+
+    private static bool ShouldPreserveLegacyFilteredField(string fieldName)
+    {
+        return string.Equals(fieldName, "ConflictingItems", StringComparison.OrdinalIgnoreCase);
+    }
+
+    private string? ResolveMixedDirectParentId(JsonObject itemData)
+    {
+        var itemNode = GetLegacyItemNode(itemData);
+        var itemParentId = NormalizeParentId(itemNode?["_parent"]?.GetValue<string?>());
+        if (!string.IsNullOrWhiteSpace(itemParentId))
+        {
+            return itemParentId;
+        }
+
+        var handbookParent = itemData["handbook"]?["ParentId"]?.GetValue<string?>();
+        if (string.IsNullOrWhiteSpace(handbookParent))
+        {
+            return null;
+        }
+
+        handbookParent = StaticData.HandbookParentToId.GetValueOrDefault(handbookParent, handbookParent);
+        return NormalizeParentId(handbookParent);
+    }
+
+    private static JsonObject? GetLegacyItemNode(JsonObject itemData)
+    {
+        return itemData["item"] as JsonObject ?? itemData["items"] as JsonObject;
+    }
+
+    private static string? FirstNonEmpty(params string?[] values)
+    {
+        foreach (var value in values)
+        {
+            if (!string.IsNullOrWhiteSpace(value))
+            {
+                return value;
+            }
+        }
+
+        return null;
+    }
+
+    private static string? SelectBestDisplayName(string? localizedName, params string?[] values)
+    {
+        foreach (var value in values)
+        {
+            if (!string.IsNullOrWhiteSpace(value) && !LooksLikeInternalItemName(value))
+            {
+                return value;
+            }
+        }
+
+        if (!string.IsNullOrWhiteSpace(localizedName))
+        {
+            return localizedName;
+        }
+
+        return FirstNonEmpty(values);
+    }
+
+    private static bool LooksLikeInternalItemName(string? value)
+    {
+        if (string.IsNullOrWhiteSpace(value))
+        {
+            return false;
+        }
+
+        var trimmed = value.Trim();
+        if (trimmed.Length < 6)
+        {
+            return false;
+        }
+
+        if (trimmed.StartsWith("mod_", StringComparison.OrdinalIgnoreCase)
+            || trimmed.StartsWith("weapon_", StringComparison.OrdinalIgnoreCase)
+            || trimmed.StartsWith("ammo_", StringComparison.OrdinalIgnoreCase)
+            || trimmed.StartsWith("stock_", StringComparison.OrdinalIgnoreCase)
+            || trimmed.StartsWith("handguard_", StringComparison.OrdinalIgnoreCase)
+            || trimmed.StartsWith("pistolgrip_", StringComparison.OrdinalIgnoreCase)
+            || trimmed.StartsWith("reciever_", StringComparison.OrdinalIgnoreCase)
+            || trimmed.StartsWith("receiver_", StringComparison.OrdinalIgnoreCase)
+            || trimmed.StartsWith("sight_", StringComparison.OrdinalIgnoreCase)
+            || trimmed.StartsWith("mag_", StringComparison.OrdinalIgnoreCase)
+            || trimmed.StartsWith("barrel_", StringComparison.OrdinalIgnoreCase))
+        {
+            return true;
+        }
+
+        if (trimmed.Length == 24 && trimmed.All(Uri.IsHexDigit))
+        {
+            return true;
+        }
+
+        var hasSeparator = trimmed.Contains('_') || trimmed.Contains('/');
+        var allAsciiTokenChars = trimmed.All(ch => char.IsLetterOrDigit(ch) || ch is '_' or '-' or '.' or '"');
+        var hasLowercase = trimmed.Any(char.IsLower);
+        var hasWhitespace = trimmed.Any(char.IsWhiteSpace);
+
+        return hasSeparator && allAsciiTokenChars && hasLowercase && !hasWhitespace;
     }
 
     private void EnrichItemInfoWithSourceContext(ItemInfo info, JsonObject itemData)
@@ -712,181 +1091,13 @@ public sealed class RealismPatchGenerator
         }
     }
 
-    private bool HandleTemplateIdItem(string itemId, ItemInfo itemInfo, HashSet<string> processedItems, string sourceFile)
-    {
-        if (string.IsNullOrWhiteSpace(itemInfo.TemplateId))
-        {
-            return false;
-        }
-
-        var template = FindTemplateById(itemInfo.TemplateId!);
-        if (template is null)
-        {
-            Log($"跳过 {itemId}: 未找到 TemplateID={itemInfo.TemplateId}");
-            return false;
-        }
-
-        template["ItemID"] = itemId;
-        FinalizePatch(itemId, template, itemInfo, processedItems, sourceFile);
-        StorePatchByItemInfo(itemId, template, itemInfo);
-        return true;
-    }
-
-    private bool HandleCurrentPatchItem(string itemId, JsonObject itemData, ItemInfo itemInfo, HashSet<string> processedItems, string sourceFile)
-    {
-        var patch = (JsonObject)itemData.DeepClone();
-        patch["ItemID"] = itemId;
-        if (patch["Name"] is null && !string.IsNullOrWhiteSpace(itemInfo.Name))
-        {
-            patch["Name"] = itemInfo.Name;
-        }
-
-        FinalizePatch(itemId, patch, itemInfo, processedItems, sourceFile);
-        StorePatchByPatchType(itemId, patch);
-        return true;
-    }
-
-    private bool HandleCloneItem(string itemId, ItemInfo itemInfo, JsonObject itemsData, HashSet<string> processedItems, string sourceFile)
-    {
-        if (string.IsNullOrWhiteSpace(itemInfo.CloneId))
-        {
-            return false;
-        }
-
-        var template = FindTemplateById(itemInfo.CloneId!);
-        if (template is null && itemsData[itemInfo.CloneId!] is JsonObject nestedItem)
-        {
-            if (ProcessSingleItem(itemInfo.CloneId!, nestedItem, itemsData, processedItems, sourceFile, DetectItemFormat(nestedItem)))
-            {
-                template = weaponPatches.GetValueOrDefault(itemInfo.CloneId!)
-                    ?? attachmentPatches.GetValueOrDefault(itemInfo.CloneId!)
-                    ?? ammoPatches.GetValueOrDefault(itemInfo.CloneId!)
-                    ?? gearPatches.GetValueOrDefault(itemInfo.CloneId!)
-                    ?? consumablePatches.GetValueOrDefault(itemInfo.CloneId!);
-
-                template = template is null ? null : (JsonObject)template.DeepClone();
-            }
-        }
-
-        if (template is null)
-        {
-            Log($"跳过 {itemId}: 未找到 clone={itemInfo.CloneId}");
-            return false;
-        }
-
-        template["ItemID"] = itemId;
-        FinalizePatch(itemId, template, itemInfo, processedItems, sourceFile);
-        StorePatchByPatchType(itemId, template);
-        return true;
-    }
-
-    private bool HandleGenericItem(string itemId, JsonObject itemData, ItemInfo itemInfo, HashSet<string> processedItems, string sourceFile)
-    {
-        var parentId = itemInfo.ParentId;
-        if (itemInfo.Format == ItemFormat.ItemToClone && !string.IsNullOrWhiteSpace(itemInfo.CloneId))
-        {
-            parentId = ResolveItemToCloneParentId(itemData, itemInfo.CloneId!);
-            itemInfo.ParentId = parentId;
-            if (!string.IsNullOrWhiteSpace(parentId))
-            {
-                itemInfo.TemplateFile = GetTemplateForParentId(parentId);
-                itemInfo.IsWeapon = IsWeapon(parentId);
-                itemInfo.IsGear = IsGear(parentId);
-                itemInfo.IsConsumable = IsConsumable(parentId);
-            }
-        }
-
-        if (string.IsNullOrWhiteSpace(parentId))
-        {
-            Log($"跳过 {itemId}: 无法确定 parentId");
-            return false;
-        }
-
-        var patch = BuildPatchForParentType(itemId, itemInfo, parentId, itemInfo.CloneId);
-        if (patch is null)
-        {
-            Log($"跳过 {itemId}: 无法构建基础补丁");
-            return false;
-        }
-
-        FinalizePatch(itemId, patch, itemInfo, processedItems, sourceFile);
-        StorePrimaryPatch(itemId, patch, parentId, itemInfo);
-        return true;
-    }
-
-    private JsonObject? BuildPatchForParentType(string itemId, ItemInfo itemInfo, string parentId, string? cloneId)
-    {
-        if (IsAmmo(parentId))
-        {
-            var templateFile = GetTemplateForParentId(parentId);
-            if (!string.IsNullOrWhiteSpace(templateFile))
-            {
-                var template = SelectTemplateData(templateFile!, itemId, cloneId);
-                if (template is not null)
-                {
-                    NormalizeAmmoOutputStructure(template);
-                    return template;
-                }
-            }
-
-            return CreateDefaultAmmoPatch(itemId, itemInfo);
-        }
-
-        if (IsConsumable(parentId))
-        {
-            var templateFile = GetTemplateForParentId(parentId);
-            if (!string.IsNullOrWhiteSpace(templateFile))
-            {
-                var template = SelectTemplateData(templateFile!, itemId, cloneId);
-                if (template is not null)
-                {
-                    return template;
-                }
-            }
-
-            return CreateDefaultConsumablePatch(itemId, itemInfo);
-        }
-
-        var resolvedTemplateFile = GetTemplateForParentId(parentId);
-        if (string.IsNullOrWhiteSpace(resolvedTemplateFile))
-        {
-            return null;
-        }
-
-        var matchedTemplate = SelectTemplateData(resolvedTemplateFile!, itemId, cloneId);
-        if (matchedTemplate is not null)
-        {
-            ApplyAttachmentTemplateStandards(matchedTemplate, resolvedTemplateFile!, itemInfo);
-            return matchedTemplate;
-        }
-
-        return itemInfo.IsWeapon ? CreateDefaultWeaponPatch(itemId, itemInfo) : CreateDefaultModPatch(itemId, itemInfo, resolvedTemplateFile!);
-    }
-
-    private static void ApplyAttachmentTemplateStandards(JsonObject patch, string templateFile, ItemInfo itemInfo)
-    {
-        if (!IsGasblockTemplate(templateFile, itemInfo.ParentId))
-        {
-            return;
-        }
-
-        patch["Loudness"] ??= JsonValue.Create(0);
-        patch["Velocity"] ??= JsonValue.Create(0.0);
-    }
-
-    private static bool IsGasblockTemplate(string? templateFile, string? parentId)
-    {
-        return string.Equals(Path.GetFileName(templateFile), "GasblockTemplates.json", StringComparison.OrdinalIgnoreCase)
-            || string.Equals(parentId, "GAS_BLOCK", StringComparison.OrdinalIgnoreCase)
-            || string.Equals(parentId, "56ea9461d2720b67698b456f", StringComparison.OrdinalIgnoreCase);
-    }
-
     private void FinalizePatch(string itemId, JsonObject patch, ItemInfo itemInfo, HashSet<string> processedItems, string sourceFile)
     {
         MergeInputProperties(patch, itemInfo);
         EnsureBasicFields(itemId, patch, itemInfo);
         ApplyRealismSanityCheck(patch, itemInfo);
         ApplyItemException(itemId, patch);
+        PruneDisallowedOutputFields(patch, itemInfo);
         NormalizeStructuredOutput(patch, itemInfo);
         AddToFilePatches(itemId, patch, sourceFile);
         processedItems.Add(itemId);
@@ -941,6 +1152,33 @@ public sealed class RealismPatchGenerator
                 patch["$type"] = "RealismMod.WeaponMod, RealismMod";
             }
         }
+
+        if (ShouldEnsureConflictingItems(patch, itemInfo) && patch["ConflictingItems"] is null)
+        {
+            patch["ConflictingItems"] = new JsonArray();
+        }
+    }
+
+    private static bool ShouldEnsureConflictingItems(JsonObject patch, ItemInfo itemInfo)
+    {
+        if (itemInfo.IsConsumable || itemInfo.IsGear)
+        {
+            return false;
+        }
+
+        if (itemInfo.IsWeapon)
+        {
+            return true;
+        }
+
+        var patchType = patch["$type"]?.GetValue<string?>();
+        if (patchType is null)
+        {
+            return true;
+        }
+
+        return patchType.Contains("RealismMod.WeaponMod", StringComparison.OrdinalIgnoreCase)
+            || patchType.Contains("RealismMod.Gun", StringComparison.OrdinalIgnoreCase);
     }
 
     private string InferFallbackName(ItemInfo itemInfo)
@@ -979,14 +1217,225 @@ public sealed class RealismPatchGenerator
         }
     }
 
+    private static void SyncItemInfoCategoryFromPatch(JsonObject patch, ItemInfo itemInfo)
+    {
+        var patchType = patch["$type"]?.GetValue<string?>() ?? string.Empty;
+        if (string.IsNullOrWhiteSpace(patchType))
+        {
+            return;
+        }
+
+        itemInfo.IsWeapon = patchType.Contains("RealismMod.Gun", StringComparison.OrdinalIgnoreCase);
+        itemInfo.IsGear = patchType.Contains("RealismMod.Gear", StringComparison.OrdinalIgnoreCase);
+        itemInfo.IsConsumable = patchType.Contains("RealismMod.Consumable", StringComparison.OrdinalIgnoreCase);
+    }
+
     private static bool ShouldMergeSourceProperty(JsonObject patch, ItemInfo itemInfo, string fieldName)
     {
-        if (itemInfo.Format == ItemFormat.CurrentPatch)
+        if (string.Equals(fieldName, "Name", StringComparison.OrdinalIgnoreCase)
+            && !string.IsNullOrWhiteSpace(itemInfo.Name))
+        {
+            return false;
+        }
+
+        if (itemInfo.Format == ItemFormat.RealismStandardTemplate)
         {
             return true;
         }
 
-        return patch.ContainsKey(fieldName);
+        return true;
+    }
+
+    private void PruneDisallowedOutputFields(JsonObject patch, ItemInfo itemInfo)
+    {
+        var allowedFields = GetAllowedOutputFieldMap(itemInfo, patch);
+        var keys = patch.Select(pair => pair.Key).ToArray();
+        foreach (var key in keys)
+        {
+            if (!allowedFields.TryGetValue(key, out var canonicalKey))
+            {
+                patch.Remove(key);
+                continue;
+            }
+
+            if (string.Equals(key, canonicalKey, StringComparison.Ordinal))
+            {
+                continue;
+            }
+
+            if (patch[canonicalKey] is null && patch[key] is not null)
+            {
+                patch[canonicalKey] = patch[key]!.DeepClone();
+            }
+
+            patch.Remove(key);
+        }
+    }
+
+    private Dictionary<string, string> GetAllowedOutputFieldMap(ItemInfo itemInfo, JsonObject patch)
+    {
+        var allowedFields = CreateAllowedFieldMap();
+
+        foreach (var fieldName in itemInfo.AllowedPatchFields)
+        {
+            TryAddCanonicalField(allowedFields, fieldName);
+        }
+
+        if (!string.IsNullOrWhiteSpace(itemInfo.TemplateFile)
+            && templates.TryGetValue(Path.GetFileName(itemInfo.TemplateFile), out var templateData))
+        {
+            foreach (var template in templateData.Values)
+            {
+                foreach (var pair in template)
+                {
+                    TryAddCanonicalField(allowedFields, pair.Key);
+                }
+            }
+        }
+
+        var itemType = patch["$type"]?.GetValue<string?>() ?? itemInfo.ItemType ?? string.Empty;
+        var modType = patch["ModType"]?.GetValue<string?>() ?? itemInfo.SourceProperties["ModType"]?.GetValue<string?>();
+        AddRuleAllowedFields(allowedFields, itemType, modType);
+        AddRequiredAllowedFields(allowedFields, itemType);
+        return allowedFields;
+    }
+
+    private HashSet<string> CreateAllowedPatchFieldSet(JsonObject templateSource, string? itemType, string? modType)
+    {
+        var allowedFields = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+        foreach (var pair in templateSource)
+        {
+            allowedFields.Add(pair.Key);
+        }
+
+        AddRuleAllowedFieldsToSet(allowedFields, itemType, modType);
+        AddRequiredAllowedFieldsToSet(allowedFields, itemType ?? string.Empty);
+        return allowedFields;
+    }
+
+    private void AddRuleAllowedFieldsToSet(HashSet<string> allowedFields, string? itemType, string? modType)
+    {
+        var fieldMap = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+        AddRuleAllowedFields(fieldMap, itemType, modType);
+        foreach (var fieldName in fieldMap.Values)
+        {
+            allowedFields.Add(fieldName);
+        }
+    }
+
+    private void AddRuleAllowedFields(IDictionary<string, string> allowedFields, string? itemType, string? modType)
+    {
+        var resolvedItemType = itemType ?? string.Empty;
+        if (resolvedItemType.Contains("RealismMod.Gun", StringComparison.OrdinalIgnoreCase))
+        {
+            AddFieldNames(allowedFields, rules.Weapon.GunClampRules.Keys);
+            AddFieldNames(allowedFields, ["HasShoulderContact", "WeapType", "RecoilAngle", "CameraRecoil"]);
+            AddRangeFieldNames(allowedFields, rules.Weapon.WeaponProfileRanges.Values);
+            AddRangeFieldNames(allowedFields, rules.Weapon.WeaponCaliberRuleModifiers.Values);
+            AddRangeFieldNames(allowedFields, rules.Weapon.WeaponStockRuleModifiers.Values);
+            return;
+        }
+
+        if (resolvedItemType.Contains("RealismMod.WeaponMod", StringComparison.OrdinalIgnoreCase))
+        {
+            AddFieldNames(allowedFields, rules.Attachment.ModClampRules.Keys);
+            AddFieldNames(allowedFields, ["CameraRecoil", "AimStability", "Flash", "HeatFactor", "CoolFactor", "AimSpeed", "Handling", "ReloadSpeed", "LoadUnloadModifier", "CheckTimeModifier", "ModMalfunctionChance", "DurabilityBurnModificator"]);
+            AddRangeFieldNames(allowedFields, rules.Attachment.ModProfileRanges.Values);
+
+            if (!string.IsNullOrWhiteSpace(modType)
+                && StaticData.ModTypeSpecificAttributes.TryGetValue(modType, out var modTypeAttributes))
+            {
+                AddFieldNames(allowedFields, modTypeAttributes.Select(pair => pair.Key));
+            }
+
+            return;
+        }
+
+        if (resolvedItemType.Contains("RealismMod.Gear", StringComparison.OrdinalIgnoreCase))
+        {
+            AddFieldNames(allowedFields, rules.Gear.GearClampRules.Keys);
+            AddFieldNames(allowedFields, ["SpallReduction", "ReloadSpeedMulti", "Comfort", "speedPenaltyPercent", "weaponErgonomicPenalty", "GasProtection", "RadProtection", "dB"]);
+            AddRangeFieldNames(allowedFields, rules.Gear.GearProfileRanges.Values);
+            return;
+        }
+
+        if (resolvedItemType.Contains("RealismMod.Ammo", StringComparison.OrdinalIgnoreCase))
+        {
+            AddFieldNames(allowedFields, ["InitialSpeed", "BulletMassGram", "Damage", "PenetrationPower", "ammoRec", "ammoAccr", "ArmorDamage", "HeatFactor", "HeavyBleedingDelta", "LightBleedingDelta", "DurabilityBurnModificator", "BallisticCoeficient", "MalfMisfireChance", "MisfireChance", "MalfFeedChance"]);
+            AddRangeFieldNames(allowedFields, rules.Ammo.AmmoProfileRanges.Values);
+            AddRangeFieldNames(allowedFields, rules.Ammo.AmmoSpecialModifiers.Values);
+            AddRangeFieldNames(allowedFields, rules.Ammo.AmmoPenetrationModifiers.Values);
+        }
+    }
+
+    private static void AddRequiredAllowedFields(IDictionary<string, string> allowedFields, string itemType)
+    {
+        if (itemType.Contains("RealismMod.Gun", StringComparison.OrdinalIgnoreCase))
+        {
+            AddFieldNames(allowedFields, ["Weight", "LoyaltyLevel"]);
+            return;
+        }
+
+        if (itemType.Contains("RealismMod.WeaponMod", StringComparison.OrdinalIgnoreCase))
+        {
+            AddFieldNames(allowedFields, ["Weight", "LoyaltyLevel", "ModType"]);
+            return;
+        }
+
+        if (itemType.Contains("RealismMod.Ammo", StringComparison.OrdinalIgnoreCase))
+        {
+            AddFieldNames(allowedFields, ["LoyaltyLevel", "BasePriceModifier"]);
+            return;
+        }
+
+        if (itemType.Contains("RealismMod.Gear", StringComparison.OrdinalIgnoreCase))
+        {
+            AddFieldNames(allowedFields, ["LoyaltyLevel"]);
+        }
+    }
+
+    private static void AddRequiredAllowedFieldsToSet(HashSet<string> allowedFields, string itemType)
+    {
+        var fieldMap = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+        AddRequiredAllowedFields(fieldMap, itemType);
+        foreach (var fieldName in fieldMap.Values)
+        {
+            allowedFields.Add(fieldName);
+        }
+    }
+
+    private static void AddRangeFieldNames(IDictionary<string, string> allowedFields, IEnumerable<IReadOnlyDictionary<string, NumericRange>> rangeMaps)
+    {
+        foreach (var rangeMap in rangeMaps)
+        {
+            AddFieldNames(allowedFields, rangeMap.Keys);
+        }
+    }
+
+    private static void AddFieldNames(IDictionary<string, string> allowedFields, IEnumerable<string> fieldNames)
+    {
+        foreach (var fieldName in fieldNames)
+        {
+            TryAddCanonicalField(allowedFields, fieldName);
+        }
+    }
+
+    private static Dictionary<string, string> CreateAllowedFieldMap()
+    {
+        var allowedFields = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+        TryAddCanonicalField(allowedFields, "$type");
+        TryAddCanonicalField(allowedFields, "ItemID");
+        TryAddCanonicalField(allowedFields, "Name");
+        TryAddCanonicalField(allowedFields, "ConflictingItems");
+        return allowedFields;
+    }
+
+    private static void TryAddCanonicalField(IDictionary<string, string> allowedFields, string fieldName)
+    {
+        if (!allowedFields.ContainsKey(fieldName))
+        {
+            allowedFields[fieldName] = fieldName;
+        }
     }
 
     private void NormalizeStructuredOutput(JsonObject patch, ItemInfo itemInfo)
@@ -1044,59 +1493,6 @@ public sealed class RealismPatchGenerator
         group.AddOrUpdate(itemId, patch);
     }
 
-    private void StorePrimaryPatch(string itemId, JsonObject patch, string parentId, ItemInfo itemInfo)
-    {
-        if (IsAmmo(parentId))
-        {
-            ammoPatches[itemId] = patch;
-            return;
-        }
-
-        if (IsConsumable(parentId))
-        {
-            consumablePatches[itemId] = patch;
-            return;
-        }
-
-        if (itemInfo.IsWeapon)
-        {
-            weaponPatches[itemId] = patch;
-            return;
-        }
-
-        if (itemInfo.IsGear)
-        {
-            gearPatches[itemId] = patch;
-            return;
-        }
-
-        attachmentPatches[itemId] = patch;
-    }
-
-    private void StorePatchByItemInfo(string itemId, JsonObject patch, ItemInfo itemInfo)
-    {
-        if (itemInfo.IsWeapon)
-        {
-            weaponPatches[itemId] = patch;
-        }
-        else if (IsAmmo(itemInfo.ParentId) || (patch["$type"]?.GetValue<string?>()?.Contains("RealismMod.Ammo", StringComparison.OrdinalIgnoreCase) ?? false))
-        {
-            ammoPatches[itemId] = patch;
-        }
-        else if (itemInfo.IsGear)
-        {
-            gearPatches[itemId] = patch;
-        }
-        else if (itemInfo.IsConsumable)
-        {
-            consumablePatches[itemId] = patch;
-        }
-        else
-        {
-            attachmentPatches[itemId] = patch;
-        }
-    }
-
     private void StorePatchByPatchType(string itemId, JsonObject patch)
     {
         var patchType = patch["$type"]?.GetValue<string?>() ?? string.Empty;
@@ -1137,12 +1533,17 @@ public sealed class RealismPatchGenerator
             var sourceRelative = sourceFile.Replace('\\', '/');
             var sourceDir = Path.GetDirectoryName(sourceRelative) ?? string.Empty;
             var sourceName = Path.GetFileName(sourceRelative);
-            var outputMode = fileOutputModes.GetValueOrDefault(sourceFile, "suffix");
-            var outputFileName = string.Equals(outputMode, "plain", StringComparison.OrdinalIgnoreCase)
-                ? $"{sourceName}.json"
-                : $"{sourceName}_realism_patch.json";
+            var useSuffixOutput = fileUsesSuffixOutput.GetValueOrDefault(sourceFile, true);
+            var outputFileName = useSuffixOutput ? $"{sourceName}_realism_patch.json" : $"{sourceName}.json";
             var outputFile = Path.Combine(outputPath, sourceDir, outputFileName);
+            var alternateOutputFile = Path.Combine(outputPath, sourceDir, useSuffixOutput ? $"{sourceName}.json" : $"{sourceName}_realism_patch.json");
             Directory.CreateDirectory(Path.GetDirectoryName(outputFile)!);
+
+            if (!string.Equals(alternateOutputFile, outputFile, StringComparison.OrdinalIgnoreCase)
+                && File.Exists(alternateOutputFile))
+            {
+                File.Delete(alternateOutputFile);
+            }
 
             var json = new JsonObject();
             foreach (var item in group.Entries)
@@ -1155,59 +1556,7 @@ public sealed class RealismPatchGenerator
         }
     }
 
-    private JsonObject? FindTemplateById(string templateId)
-    {
-        return templateById.TryGetValue(templateId, out var template) ? (JsonObject)template.DeepClone() : null;
-    }
-
-    private JsonObject? ResolveAuditTemplate(ItemInfo itemInfo)
-    {
-        if (!string.IsNullOrWhiteSpace(itemInfo.CloneId))
-        {
-            var cloneTemplate = FindTemplateById(itemInfo.CloneId!);
-            if (cloneTemplate is not null)
-            {
-                cloneTemplate["ItemID"] = itemInfo.ItemId;
-                return cloneTemplate;
-            }
-        }
-
-        if (!string.IsNullOrWhiteSpace(itemInfo.TemplateId))
-        {
-            var templateByTemplateId = FindTemplateById(itemInfo.TemplateId!);
-            if (templateByTemplateId is not null)
-            {
-                templateByTemplateId["ItemID"] = itemInfo.ItemId;
-                return templateByTemplateId;
-            }
-        }
-
-        if (!string.IsNullOrWhiteSpace(itemInfo.TemplateFile))
-        {
-            var selectedTemplate = SelectTemplateData(itemInfo.TemplateFile!, itemInfo.ItemId, itemInfo.CloneId);
-            if (selectedTemplate is not null)
-            {
-                return selectedTemplate;
-            }
-        }
-
-        return null;
-    }
-
-    private string? FindTemplateFileByTemplateId(string templateId)
-    {
-        foreach (var pair in templates)
-        {
-            if (pair.Value.ContainsKey(templateId))
-            {
-                return pair.Key;
-            }
-        }
-
-        return null;
-    }
-
-    private JsonObject? SelectTemplateData(string templateFile, string itemId, string? cloneId)
+    private JsonObject? SelectTemplateData(string templateFile, string itemId, bool allowFallback = true)
     {
         if (!templates.TryGetValue(Path.GetFileName(templateFile), out var templateData) || templateData.Count == 0)
         {
@@ -1221,21 +1570,9 @@ public sealed class RealismPatchGenerator
             return exact;
         }
 
-        if (!string.IsNullOrWhiteSpace(cloneId) && templateData.TryGetValue(cloneId!, out var byCloneId))
+        if (!allowFallback)
         {
-            var cloneMatch = (JsonObject)byCloneId.DeepClone();
-            cloneMatch["ItemID"] = itemId;
-            return cloneMatch;
-        }
-
-        if (!string.IsNullOrWhiteSpace(cloneId))
-        {
-            var anyTemplate = FindTemplateById(cloneId!);
-            if (anyTemplate is not null)
-            {
-                anyTemplate["ItemID"] = itemId;
-                return anyTemplate;
-            }
+            return null;
         }
 
         var standard = templateData.FirstOrDefault(pair =>
@@ -1331,69 +1668,6 @@ public sealed class RealismPatchGenerator
         return patch;
     }
 
-    private string? ResolveItemToCloneParentId(JsonObject itemData, string cloneId)
-    {
-        var handbookParent = itemData["HandbookParent"]?.GetValue<string?>();
-        if (string.IsNullOrWhiteSpace(handbookParent) && itemData["Handbook"] is JsonObject handbook)
-        {
-            handbookParent = handbook["HandbookParent"]?.GetValue<string?>() ?? handbook["ParentId"]?.GetValue<string?>() ?? handbook["parentId"]?.GetValue<string?>();
-        }
-
-        if (!string.IsNullOrWhiteSpace(handbookParent))
-        {
-            if (handbookParent!.Length == 24)
-            {
-                return handbookParent;
-            }
-
-            if (StaticData.HandbookParentToId.TryGetValue(handbookParent, out var resolved))
-            {
-                return resolved;
-            }
-        }
-
-        return InferParentIdFromItemToClone(cloneId);
-    }
-
-    private static string? InferParentIdFromItemToClone(string cloneId)
-    {
-        if (cloneId.Contains("AMMO_", StringComparison.OrdinalIgnoreCase))
-        {
-            return "5485a8684bdc2da71d8b4567";
-        }
-
-        if (cloneId.Contains("ASSAULTRIFLE_", StringComparison.OrdinalIgnoreCase)) return "5447b5f14bdc2d61278b4567";
-        if (cloneId.Contains("RIFLE_", StringComparison.OrdinalIgnoreCase) || cloneId.Contains("MARKSMANRIFLE_", StringComparison.OrdinalIgnoreCase)) return "5447b6194bdc2d67278b4567";
-        if (cloneId.Contains("SNIPER", StringComparison.OrdinalIgnoreCase)) return "5447b6254bdc2dc3278b4568";
-        if (cloneId.Contains("SHOTGUN_", StringComparison.OrdinalIgnoreCase)) return "5447b6094bdc2dc3278b4567";
-        if (cloneId.Contains("SMG_", StringComparison.OrdinalIgnoreCase)) return "5447b5e04bdc2d62278b4567";
-        if (cloneId.Contains("PISTOL_", StringComparison.OrdinalIgnoreCase) || cloneId.Contains("HANDGUN_", StringComparison.OrdinalIgnoreCase)) return "5447b5cf4bdc2d65278b4567";
-        if (cloneId.Contains("MACHINEGUN_", StringComparison.OrdinalIgnoreCase)) return "5447bed64bdc2d97278b4568";
-        if (cloneId.Contains("GRENADELAUNCHER_", StringComparison.OrdinalIgnoreCase)) return "5447bedf4bdc2d87278b4568";
-        if (cloneId.Contains("MAGAZINE_", StringComparison.OrdinalIgnoreCase) || cloneId.Contains("MAG_", StringComparison.OrdinalIgnoreCase)) return "5448bc234bdc2d3c308b4569";
-        if (cloneId.Contains("ARMOR_", StringComparison.OrdinalIgnoreCase) || cloneId.Contains("VEST_", StringComparison.OrdinalIgnoreCase)) return "5448e54d4bdc2dcc718b4568";
-        if (cloneId.Contains("CONTAINER_", StringComparison.OrdinalIgnoreCase) || cloneId.Contains("SECURE_", StringComparison.OrdinalIgnoreCase)) return "5795f317245977243854e041";
-        if (cloneId.Contains("KEYCARD_", StringComparison.OrdinalIgnoreCase)) return "5c164d2286f774194c5e69fa";
-        if (cloneId.Contains("KEY_", StringComparison.OrdinalIgnoreCase)) return "5c99f98d86f7745c314214b3";
-        if (cloneId.Contains("INFO_", StringComparison.OrdinalIgnoreCase) || cloneId.Contains("DIARY_", StringComparison.OrdinalIgnoreCase)) return "5448ecbe4bdc2d60728b4568";
-        if (cloneId.Contains("HEADWEAR_", StringComparison.OrdinalIgnoreCase) || cloneId.Contains("HELMET_", StringComparison.OrdinalIgnoreCase)) return "5a341c4086f77401f2541505";
-        if (cloneId.Contains("HEADPHONES_", StringComparison.OrdinalIgnoreCase)) return "5645bcb74bdc2ded0b8b4578";
-        if (cloneId.Contains("FACECOVER_", StringComparison.OrdinalIgnoreCase)) return "5a341c4686f77469e155819e";
-        if (cloneId.Contains("RECEIVER_", StringComparison.OrdinalIgnoreCase)) return "55818a304bdc2db5418b457d";
-        if (cloneId.Contains("BARREL_", StringComparison.OrdinalIgnoreCase)) return "555ef6e44bdc2de9068b457e";
-        if (cloneId.Contains("STOCK_", StringComparison.OrdinalIgnoreCase)) return "55818a594bdc2db9688b456a";
-        if (cloneId.Contains("HANDGUARD_", StringComparison.OrdinalIgnoreCase)) return "55818a104bdc2db9688b4569";
-        if (cloneId.Contains("GRIP_", StringComparison.OrdinalIgnoreCase) || cloneId.Contains("FOREGRIP_", StringComparison.OrdinalIgnoreCase)) return "55818af64bdc2d5b648b4570";
-        if (cloneId.Contains("PISTOLGRIP_", StringComparison.OrdinalIgnoreCase)) return "55818a684bdc2ddd698b456d";
-        if (cloneId.Contains("SCOPE_", StringComparison.OrdinalIgnoreCase)) return "55818ae44bdc2dde698b456c";
-        if (cloneId.Contains("SIGHT_", StringComparison.OrdinalIgnoreCase)) return "55818ad54bdc2ddc698b4569";
-        if (cloneId.Contains("SILENCER_", StringComparison.OrdinalIgnoreCase) || cloneId.Contains("SUPPRESSOR_", StringComparison.OrdinalIgnoreCase)) return "550aa4cd4bdc2dd8348b456c";
-        if (cloneId.Contains("FLASHHIDER_", StringComparison.OrdinalIgnoreCase) || cloneId.Contains("MUZZLE_", StringComparison.OrdinalIgnoreCase)) return "550aa4bf4bdc2dd6348b456b";
-        if (cloneId.Contains("MOUNT_", StringComparison.OrdinalIgnoreCase)) return "55818b224bdc2dde698b456f";
-
-        return null;
-    }
-
     private static string? ExtractLocalizedName(JsonNode? localeNode)
     {
         if (localeNode is not JsonObject localeObject)
@@ -1426,7 +1700,15 @@ public sealed class RealismPatchGenerator
             return null;
         }
 
-        return Path.GetFileName(normalized) + ".json";
+        var fileName = Path.GetFileName(normalized);
+        if (string.IsNullOrWhiteSpace(fileName))
+        {
+            return null;
+        }
+
+        return fileName.EndsWith(".json", StringComparison.OrdinalIgnoreCase)
+            ? fileName
+            : fileName + ".json";
     }
 
     private string? InferParentIdFromTemplateFile(string templateFile)
@@ -1680,11 +1962,12 @@ public sealed class RealismPatchGenerator
         }
 
         var weaponProfile = InferWeaponProfile(patch, itemInfo);
+        var preserveExistingValues = true;
         if (!string.IsNullOrWhiteSpace(weaponProfile) && rules.Weapon.WeaponProfileRanges.TryGetValue(weaponProfile, out var ranges))
         {
             patch["WeapType"] ??= GetDefaultWeaponTypeForProfile(weaponProfile!);
-            ApplyNumericRanges(patch, ranges, ensureFields: true);
-            ApplyWeaponRefinementRanges(patch, weaponProfile!, itemInfo);
+            ApplyNumericRanges(patch, ranges, ensureFields: true, preserveExistingValues);
+            ApplyWeaponRefinementRanges(patch, weaponProfile!, itemInfo, preserveExistingValues);
             ApplyFieldClamps(patch, rules.Weapon.GunClampRules);
         }
 
@@ -1736,12 +2019,14 @@ public sealed class RealismPatchGenerator
         var modProfile = InferModProfile(patch, itemInfo);
         if (string.IsNullOrWhiteSpace(modProfile) || !rules.Attachment.ModProfileRanges.TryGetValue(modProfile, out var ranges))
         {
+            RemoveAttachmentFieldsByProfile(patch, modProfile);
             ApplyGlobalSafetyClamps(patch);
             return;
         }
 
         ApplyNumericRanges(patch, ranges, ensureFields: true);
         ApplyAttachmentPreservedSourceFields(patch, itemInfo, modProfile!, ranges);
+        RemoveAttachmentFieldsByProfile(patch, modProfile);
         ApplyFieldClamps(patch, rules.Attachment.ModClampRules);
         if (modProfile.StartsWith("muzzle_suppressor", StringComparison.OrdinalIgnoreCase))
         {
@@ -1749,6 +2034,19 @@ public sealed class RealismPatchGenerator
         }
 
         ApplyGlobalSafetyClamps(patch);
+    }
+
+    private static void RemoveAttachmentFieldsByProfile(JsonObject patch, string? modProfile)
+    {
+        if (string.IsNullOrWhiteSpace(modProfile))
+        {
+            return;
+        }
+
+        if (modProfile.StartsWith("handguard", StringComparison.OrdinalIgnoreCase))
+        {
+            patch.Remove("ChamberSpeed");
+        }
     }
 
     private static void ApplyAttachmentPreservedSourceFields(JsonObject patch, ItemInfo itemInfo, string modProfile, IReadOnlyDictionary<string, NumericRange> ranges)
@@ -1844,7 +2142,7 @@ public sealed class RealismPatchGenerator
         }
     }
 
-    private void ApplyNumericRanges(JsonObject patch, IReadOnlyDictionary<string, NumericRange> ranges, bool ensureFields)
+    private void ApplyNumericRanges(JsonObject patch, IReadOnlyDictionary<string, NumericRange> ranges, bool ensureFields, bool preserveExistingValues = false)
     {
         foreach (var pair in ranges)
         {
@@ -1858,11 +2156,13 @@ public sealed class RealismPatchGenerator
                 patch[pair.Key] = CreateNumericNode(GetRangeSeedValue(pair.Value.Min, pair.Value.Max, pair.Value.PreferInt), pair.Value.PreferInt);
             }
 
-            patch[pair.Key] = SampleRangeValue(patch[pair.Key], pair.Value.Min, pair.Value.Max, pair.Value.PreferInt);
+            patch[pair.Key] = preserveExistingValues
+                ? ClampRangeValue(patch[pair.Key], pair.Value.Min, pair.Value.Max, pair.Value.PreferInt)
+                : SampleRangeValue(patch[pair.Key], pair.Value.Min, pair.Value.Max, pair.Value.PreferInt);
         }
     }
 
-    private void ApplyWeaponRefinementRanges(JsonObject patch, string weaponProfile, ItemInfo itemInfo)
+    private void ApplyWeaponRefinementRanges(JsonObject patch, string weaponProfile, ItemInfo itemInfo, bool preserveExistingValues)
     {
         if (!rules.Weapon.WeaponProfileRanges.TryGetValue(weaponProfile, out var baseRanges))
         {
@@ -1906,7 +2206,9 @@ public sealed class RealismPatchGenerator
 
             var min = pair.Value.Min + deltaMin;
             var max = pair.Value.Max + deltaMax;
-            patch[pair.Key] = SampleRangeValue(patch[pair.Key], min, max, pair.Value.PreferInt);
+            patch[pair.Key] = preserveExistingValues
+                ? ClampRangeValue(patch[pair.Key], min, max, pair.Value.PreferInt)
+                : SampleRangeValue(patch[pair.Key], min, max, pair.Value.PreferInt);
         }
 
         var supplementalKeys = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
@@ -1957,7 +2259,9 @@ public sealed class RealismPatchGenerator
                 patch[key] = CreateNumericNode(GetRangeSeedValue(min, max, preferInt), preferInt);
             }
 
-            patch[key] = SampleRangeValue(patch[key], min, max, preferInt);
+            patch[key] = preserveExistingValues
+                ? ClampRangeValue(patch[key], min, max, preferInt)
+                : SampleRangeValue(patch[key], min, max, preferInt);
         }
     }
 
@@ -1978,6 +2282,12 @@ public sealed class RealismPatchGenerator
         if (!string.IsNullOrWhiteSpace(itemInfo.TemplateFile) && rules.Weapon.TemplateFileToWeaponProfile.TryGetValue(Path.GetFileName(itemInfo.TemplateFile), out var templateProfile))
         {
             return templateProfile;
+        }
+
+        if (!string.IsNullOrWhiteSpace(itemInfo.SourceFile)
+            && rules.Weapon.TemplateFileToWeaponProfile.TryGetValue(Path.GetFileName(itemInfo.SourceFile), out var sourceFileProfile))
+        {
+            return sourceFileProfile;
         }
 
         var name = GetLowerText(patch["Name"]);
@@ -3318,6 +3628,26 @@ public sealed class RealismPatchGenerator
         var mode = clampedOriginal * 0.7 + center * 0.3;
         var sampled = SampleTriangular(min, max, mode);
         return CreateNumericNode(Clamp(sampled, min, max), preferInt, min, max);
+    }
+
+    private static JsonNode? ClampRangeValue(JsonNode? originalNode, double min, double max, bool preferInt)
+    {
+        if (!TryGetNumericValue(originalNode, out var originalValue))
+        {
+            return originalNode?.DeepClone();
+        }
+
+        if (min > max)
+        {
+            (min, max) = (max, min);
+        }
+
+        if (Math.Abs(max - min) < double.Epsilon)
+        {
+            return CreateNumericNode(min, preferInt);
+        }
+
+        return CreateNumericNode(Clamp(originalValue, min, max), preferInt, min, max);
     }
 
     private double SampleTriangular(double min, double max, double mode)

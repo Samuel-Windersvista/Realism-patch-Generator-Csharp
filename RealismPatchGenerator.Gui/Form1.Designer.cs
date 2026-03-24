@@ -18,7 +18,6 @@ partial class Form1
     private Button reloadButton;
     private Button exceptionsButton;
     private Button generateButton;
-    private Button auditButton;
     private CheckBox modifiedOnlyCheckBox;
     private Label languageLabel;
     private ComboBox languageComboBox;
@@ -98,7 +97,6 @@ partial class Form1
         reloadButton = new Button();
         exceptionsButton = new Button();
         generateButton = new Button();
-        auditButton = new Button();
         modifiedOnlyCheckBox = new CheckBox();
         languageLabel = new Label();
         languageComboBox = new ComboBox();
@@ -283,10 +281,9 @@ partial class Form1
         runActionGroupBox.Padding = new Padding(8, 4, 8, 6);
         runActionGroupBox.Size = new Size(342, 60);
         runActionGroupBox.TabStop = false;
-        runActionGroupBox.Text = "生成检查";
+        runActionGroupBox.Text = "生成";
 
         runActionPanel.Controls.Add(generateButton);
-        runActionPanel.Controls.Add(auditButton);
         runActionPanel.Dock = DockStyle.Fill;
         runActionPanel.Location = new Point(8, 20);
         runActionPanel.Margin = new Padding(0);
@@ -460,15 +457,6 @@ partial class Form1
         generateButton.Text = "生成补丁";
         generateButton.UseVisualStyleBackColor = true;
         generateButton.Click += generateButton_Click;
-
-        auditButton.Location = new Point(312, 3);
-        auditButton.Margin = new Padding(0, 1, 8, 1);
-        auditButton.Name = "auditButton";
-        auditButton.Size = new Size(180, 25);
-        auditButton.TabIndex = 7;
-        auditButton.Text = "检查未遵循规则物品";
-        auditButton.UseVisualStyleBackColor = true;
-        auditButton.Click += auditButton_Click;
 
         modifiedOnlyCheckBox.AutoSize = true;
         modifiedOnlyCheckBox.Location = new Point(3, 4);

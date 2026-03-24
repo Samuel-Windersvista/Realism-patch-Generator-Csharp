@@ -4,21 +4,15 @@ namespace RealismPatchGenerator.Core;
 
 public enum ItemFormat
 {
-    Unknown,
-    CurrentPatch,
-    Standard,
-    Clone,
-    ItemToClone,
-    Vir,
-    TemplateId,
+    RealismStandardTemplate,
+    MoxoTemplate,
+    MixedTemplate,
 }
 
 public sealed class ItemInfo
 {
     public string ItemId { get; init; } = string.Empty;
     public string? ParentId { get; set; }
-    public string? CloneId { get; set; }
-    public string? TemplateId { get; set; }
     public string? TemplateFile { get; set; }
     public string? Name { get; set; }
     public bool IsWeapon { get; set; }
@@ -27,6 +21,7 @@ public sealed class ItemInfo
     public string? ItemType { get; set; }
     public JsonObject Properties { get; set; } = [];
     public JsonObject SourceProperties { get; set; } = [];
+    public HashSet<string> AllowedPatchFields { get; set; } = new(StringComparer.OrdinalIgnoreCase);
     public string? SourceFile { get; set; }
     public ItemFormat Format { get; set; }
 }
@@ -48,6 +43,53 @@ public sealed class GenerationResult
     public required uint UsedSeed { get; init; }
     public required GenerationStatistics Statistics { get; init; }
     public IReadOnlyList<string> Logs { get; init; } = [];
+}
+
+internal static class ItemJsonSchema
+{
+    public static readonly HashSet<string> LegacyFormatKeys = new(StringComparer.OrdinalIgnoreCase)
+    {
+        "TemplateID",
+        "itemTplToClone",
+        "clone",
+        "ItemToClone",
+        "OverrideProperties",
+        "overrideProperties",
+        "item",
+        "items",
+    };
+
+    public static readonly HashSet<string> RealismStandardTemplateIgnoredKeys = new(StringComparer.OrdinalIgnoreCase)
+    {
+        "$type",
+        "ItemID",
+        "parentId",
+        "enable",
+        "locales",
+        "LocalePush",
+        "handbook",
+        "TemplateID",
+        "itemTplToClone",
+        "clone",
+        "ItemToClone",
+        "OverrideProperties",
+        "overrideProperties",
+        "item",
+        "items",
+    };
+
+    public static bool HasLegacyFormatMarkers(JsonObject itemData)
+    {
+        foreach (var key in LegacyFormatKeys)
+        {
+            if (itemData.ContainsKey(key))
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
 }
 
 public static class WorkspaceLocator

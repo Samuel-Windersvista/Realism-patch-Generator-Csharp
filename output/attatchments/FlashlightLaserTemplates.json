@@ -10,7 +10,7 @@
     "VerticalRecoil": 0,
     "HorizontalRecoil": 0,
     "LoyaltyLevel": 4,
-    "Handling": -3
+    "Handling": -4
   },
   "59d790f486f77403cb06aec6": {
     "$type": "RealismMod.WeaponMod, RealismMod",
@@ -31,12 +31,12 @@
     "Name": "flashlight_ultrafire_WF-501B",
     "ModType": "",
     "ConflictingItems": [],
-    "Ergonomics": -1,
+    "Ergonomics": 0,
     "Weight": 0.112,
     "VerticalRecoil": 0,
     "HorizontalRecoil": 0,
     "LoyaltyLevel": 2,
-    "Handling": -4
+    "Handling": -3
   },
   "5a800961159bd4315e3a1657": {
     "$type": "RealismMod.WeaponMod, RealismMod",
@@ -44,7 +44,7 @@
     "Name": "tactical_all_glock_gl_21_vis_lam",
     "ModType": "",
     "ConflictingItems": [],
-    "Ergonomics": 0,
+    "Ergonomics": -1,
     "Weight": 0.124,
     "VerticalRecoil": 0,
     "HorizontalRecoil": 0,
@@ -57,12 +57,12 @@
     "Name": "tactical_all_holosun_ls321",
     "ModType": "",
     "ConflictingItems": [],
-    "Ergonomics": 0,
+    "Ergonomics": -2,
     "Weight": 0.244,
     "VerticalRecoil": 0,
     "HorizontalRecoil": 0,
     "LoyaltyLevel": 3,
-    "Handling": -3
+    "Handling": -4
   },
   "544909bb4bdc2d6f028b4577": {
     "$type": "RealismMod.WeaponMod, RealismMod",
@@ -70,7 +70,7 @@
     "Name": "tactical_all_insight_anpeq15",
     "ModType": "",
     "ConflictingItems": [],
-    "Ergonomics": -1,
+    "Ergonomics": 0,
     "Weight": 0.23,
     "VerticalRecoil": 0,
     "HorizontalRecoil": 0,
@@ -83,12 +83,12 @@
     "Name": "tactical_all_insight_anpeq2",
     "ModType": "",
     "ConflictingItems": [],
-    "Ergonomics": 0,
+    "Ergonomics": -1,
     "Weight": 0.258,
     "VerticalRecoil": 0,
     "HorizontalRecoil": 0,
     "LoyaltyLevel": 2,
-    "Handling": -3
+    "Handling": -4
   },
   "5c06595c0db834001a66af6c": {
     "$type": "RealismMod.WeaponMod, RealismMod",
@@ -122,12 +122,12 @@
     "Name": "tactical_all_ncstar_tactical_blue_laser",
     "ModType": "",
     "ConflictingItems": [],
-    "Ergonomics": -1,
+    "Ergonomics": 0,
     "Weight": 0.05,
     "VerticalRecoil": 0,
     "HorizontalRecoil": 0,
     "LoyaltyLevel": 2,
-    "Handling": -3
+    "Handling": -4
   },
   "6272370ee4013c5d7e31f418": {
     "$type": "RealismMod.WeaponMod, RealismMod",
@@ -140,7 +140,7 @@
     "VerticalRecoil": 0,
     "HorizontalRecoil": 0,
     "LoyaltyLevel": 3,
-    "Handling": -2
+    "Handling": -3
   },
   "6272379924e29f06af4d5ecb": {
     "$type": "RealismMod.WeaponMod, RealismMod",
@@ -148,7 +148,7 @@
     "Name": "tactical_all_olight_baldr_pro_tan",
     "ModType": "",
     "ConflictingItems": [],
-    "Ergonomics": 0,
+    "Ergonomics": -1,
     "Weight": 0.129,
     "VerticalRecoil": 0,
     "HorizontalRecoil": 0,
@@ -166,7 +166,7 @@
     "VerticalRecoil": 0,
     "HorizontalRecoil": 0,
     "LoyaltyLevel": 4,
-    "Handling": -4
+    "Handling": -3
   },
   "5b07dd285acfc4001754240d": {
     "$type": "RealismMod.WeaponMod, RealismMod",
@@ -187,7 +187,7 @@
     "Name": "tactical_all_surefire_x400_vis_laser",
     "ModType": "",
     "ConflictingItems": [],
-    "Ergonomics": -1,
+    "Ergonomics": 0,
     "Weight": 0.139,
     "VerticalRecoil": 0,
     "HorizontalRecoil": 0,
@@ -200,7 +200,7 @@
     "Name": "tactical_all_surefire_xc1",
     "ModType": "",
     "ConflictingItems": [],
-    "Ergonomics": 0,
+    "Ergonomics": -1,
     "Weight": 0.045,
     "VerticalRecoil": 0,
     "HorizontalRecoil": 0,
@@ -226,7 +226,7 @@
     "Name": "tactical_all_zenit_2irs_kleh_lam",
     "ModType": "",
     "ConflictingItems": [],
-    "Ergonomics": 0,
+    "Ergonomics": -1,
     "Weight": 0.164,
     "VerticalRecoil": 0,
     "HorizontalRecoil": 0,
@@ -239,7 +239,7 @@
     "Name": "tactical_all_zenit_2p_kleh_vis_laser",
     "ModType": "",
     "ConflictingItems": [],
-    "Ergonomics": 0,
+    "Ergonomics": -1,
     "Weight": 0.164,
     "VerticalRecoil": 0,
     "HorizontalRecoil": 0,
@@ -252,7 +252,7 @@
     "Name": "tactical_all_zenit_2u_kleh",
     "ModType": "",
     "ConflictingItems": [],
-    "Ergonomics": -1,
+    "Ergonomics": 0,
     "Weight": 0.284,
     "VerticalRecoil": 0,
     "HorizontalRecoil": 0,
@@ -265,12 +265,12 @@
     "Name": "tactical_all_zenit_perst_3",
     "ModType": "",
     "ConflictingItems": [],
-    "Ergonomics": 0,
+    "Ergonomics": -1,
     "Weight": 0.267,
     "VerticalRecoil": 0,
     "HorizontalRecoil": 0,
     "LoyaltyLevel": 3,
-    "Handling": -4
+    "Handling": -3
   },
   "5c079ed60db834001a66b372": {
     "$type": "RealismMod.WeaponMod, RealismMod",
@@ -278,7 +278,7 @@
     "Name": "tactical_tt_dlp_tactical_precision_laser_sight",
     "ModType": "",
     "ConflictingItems": [],
-    "Ergonomics": -1,
+    "Ergonomics": 0,
     "Weight": 0.086,
     "VerticalRecoil": 0,
     "HorizontalRecoil": 0,
@@ -291,11 +291,11 @@
     "Name": "flashlight_base_zenit_2ds",
     "ModType": "",
     "ConflictingItems": [],
-    "Ergonomics": 0,
+    "Ergonomics": -1,
     "VerticalRecoil": 0,
     "HorizontalRecoil": 0,
     "Weight": 0.25,
     "LoyaltyLevel": 1,
-    "Handling": -2
+    "Handling": -3
   }
 }

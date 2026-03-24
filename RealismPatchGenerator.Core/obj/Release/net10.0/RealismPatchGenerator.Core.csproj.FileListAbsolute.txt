@@ -1,9 +1,0 @@
-E:\云文件\GitHub\Realism-patch-Generator-Csharp\RealismPatchGenerator.Core\bin\Release\net10.0\RealismPatchGenerator.Core.deps.json
-E:\云文件\GitHub\Realism-patch-Generator-Csharp\RealismPatchGenerator.Core\bin\Release\net10.0\RealismPatchGenerator.Core.dll
-E:\云文件\GitHub\Realism-patch-Generator-Csharp\RealismPatchGenerator.Core\obj\Release\net10.0\RealismPatchGenerator.Core.GeneratedMSBuildEditorConfig.editorconfig
-E:\云文件\GitHub\Realism-patch-Generator-Csharp\RealismPatchGenerator.Core\obj\Release\net10.0\RealismPatchGenerator.Core.AssemblyInfoInputs.cache
-E:\云文件\GitHub\Realism-patch-Generator-Csharp\RealismPatchGenerator.Core\obj\Release\net10.0\RealismPatchGenerator.Core.AssemblyInfo.cs
-E:\云文件\GitHub\Realism-patch-Generator-Csharp\RealismPatchGenerator.Core\obj\Release\net10.0\RealismPatchGenerator.Core.csproj.CoreCompileInputs.cache
-E:\云文件\GitHub\Realism-patch-Generator-Csharp\RealismPatchGenerator.Core\obj\Release\net10.0\RealismPatchGenerator.Core.dll
-E:\云文件\GitHub\Realism-patch-Generator-Csharp\RealismPatchGenerator.Core\obj\Release\net10.0\refint\RealismPatchGenerator.Core.dll
-E:\云文件\GitHub\Realism-patch-Generator-Csharp\RealismPatchGenerator.Core\obj\Release\net10.0\ref\RealismPatchGenerator.Core.dll

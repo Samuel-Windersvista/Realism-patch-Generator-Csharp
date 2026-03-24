@@ -1,0 +1,36 @@
+{
+    "66ba253030ea88abba95c7ed": {
+        "$type": "RealismMod.WeaponMod, RealismMod",
+        "ItemID": "66ba253030ea88abba95c7ed",
+        "Name": "B5 Systems P-Grip 23 AR-15 pistol grip",
+        "ModType": "",
+        "VerticalRecoil": -1,
+        "HorizontalRecoil": 0,
+        "Dispersion": 0,
+        "AimSpeed": 3,
+        "Ergonomics": 3,
+        "Accuracy": 0,
+        "ConflictingItems": [],
+        "Weight": 0.07,
+        "LoyaltyLevel": 1,
+        "AimStability": 2,
+        "Handling": 3
+    },
+    "66ba25755bd539b9238365b0": {
+        "$type": "RealismMod.WeaponMod, RealismMod",
+        "ItemID": "66ba25755bd539b9238365b0",
+        "Name": "B5 Systems P-Grip 23 AR-15 pistol grip (FDE)",
+        "ModType": "",
+        "VerticalRecoil": 0,
+        "HorizontalRecoil": 1,
+        "Dispersion": 0,
+        "AimSpeed": 1,
+        "Ergonomics": 5,
+        "Accuracy": 0,
+        "ConflictingItems": [],
+        "Weight": 0.07,
+        "LoyaltyLevel": 1,
+        "AimStability": 2,
+        "Handling": 6
+    }
+}

@@ -5,7 +5,7 @@
     "Name": "headphones",
     "AllowADS": true,
     "LoyaltyLevel": 3,
-    "dB": 22,
+    "dB": 21,
     "speedPenaltyPercent": 0,
     "mousePenalty": 0,
     "weaponErgonomicPenalty": 0
@@ -16,7 +16,7 @@
     "Name": "item_equipment_headset_liberator",
     "AllowADS": true,
     "LoyaltyLevel": 3,
-    "dB": 24,
+    "dB": 23,
     "speedPenaltyPercent": 0,
     "mousePenalty": 0,
     "weaponErgonomicPenalty": 0
@@ -27,7 +27,7 @@
     "Name": "headphones_MSA",
     "AllowADS": true,
     "LoyaltyLevel": 2,
-    "dB": 25,
+    "dB": 24,
     "speedPenaltyPercent": 0,
     "mousePenalty": 0,
     "weaponErgonomicPenalty": 0
@@ -38,7 +38,7 @@
     "Name": "helmet_ops_core_rac_headset",
     "AllowADS": true,
     "LoyaltyLevel": 4,
-    "dB": 22,
+    "dB": 21,
     "speedPenaltyPercent": 0,
     "mousePenalty": 0,
     "weaponErgonomicPenalty": 0
@@ -49,7 +49,7 @@
     "Name": "helmet_team_wendy_comtac_v_headset",
     "AllowADS": true,
     "LoyaltyLevel": 4,
-    "dB": 25,
+    "dB": 21,
     "speedPenaltyPercent": 0,
     "mousePenalty": 0,
     "weaponErgonomicPenalty": 0
@@ -71,7 +71,7 @@
     "Name": "item_equipment_headset_comtac_vi",
     "AllowADS": true,
     "LoyaltyLevel": 4,
-    "dB": 23,
+    "dB": 22,
     "speedPenaltyPercent": 0,
     "mousePenalty": 0,
     "weaponErgonomicPenalty": 0
@@ -82,7 +82,7 @@
     "Name": "helmet_team_wendy_comtac_vi_headset",
     "AllowADS": true,
     "LoyaltyLevel": 4,
-    "dB": 21,
+    "dB": 23,
     "speedPenaltyPercent": 0,
     "mousePenalty": 0,
     "weaponErgonomicPenalty": 0
@@ -93,7 +93,7 @@
     "Name": "item_equipment_headset_comtacIV",
     "AllowADS": true,
     "LoyaltyLevel": 4,
-    "dB": 23,
+    "dB": 24,
     "speedPenaltyPercent": 0,
     "mousePenalty": 0,
     "weaponErgonomicPenalty": 0
@@ -104,7 +104,7 @@
     "Name": "item_equipment_headset_gsh01",
     "AllowADS": true,
     "LoyaltyLevel": 1,
-    "dB": 21,
+    "dB": 22,
     "speedPenaltyPercent": 0,
     "mousePenalty": 0,
     "weaponErgonomicPenalty": 0
@@ -115,7 +115,7 @@
     "Name": "item_equipment_headset_m32",
     "AllowADS": true,
     "LoyaltyLevel": 3,
-    "dB": 25,
+    "dB": 23,
     "speedPenaltyPercent": 0,
     "mousePenalty": 0,
     "weaponErgonomicPenalty": 0
@@ -126,7 +126,7 @@
     "Name": "item_equipment_headset_tactical_sport",
     "AllowADS": true,
     "LoyaltyLevel": 1,
-    "dB": 24,
+    "dB": 22,
     "speedPenaltyPercent": 0,
     "mousePenalty": 0,
     "weaponErgonomicPenalty": 0
@@ -137,7 +137,7 @@
     "Name": "item_equipment_headset_walkers_razor",
     "AllowADS": true,
     "LoyaltyLevel": 4,
-    "dB": 23,
+    "dB": 24,
     "speedPenaltyPercent": 0,
     "mousePenalty": 0,
     "weaponErgonomicPenalty": 0
@@ -148,7 +148,7 @@
     "Name": "item_equipment_headset_xcel",
     "AllowADS": true,
     "LoyaltyLevel": 4,
-    "dB": 25,
+    "dB": 20,
     "speedPenaltyPercent": 0,
     "mousePenalty": 0,
     "weaponErgonomicPenalty": 0

@@ -9,7 +9,7 @@
     "CanSpall": false,
     "SpallReduction": 1,
     "ReloadSpeedMulti": 1,
-    "Comfort": 0.99,
+    "Comfort": 1.11,
     "TemplateType": "gear",
     "Price": 13000
   },
@@ -23,7 +23,7 @@
     "CanSpall": false,
     "SpallReduction": 1,
     "ReloadSpeedMulti": 1,
-    "Comfort": 0.9,
+    "Comfort": 0.89,
     "TemplateType": "gear",
     "Price": 22000
   },
@@ -37,7 +37,7 @@
     "CanSpall": false,
     "SpallReduction": 1,
     "ReloadSpeedMulti": 1,
-    "Comfort": 0.99,
+    "Comfort": 1,
     "TemplateType": "gear",
     "Price": 34000
   },
@@ -51,7 +51,7 @@
     "CanSpall": false,
     "SpallReduction": 1,
     "ReloadSpeedMulti": 1,
-    "Comfort": 1.07,
+    "Comfort": 1.02,
     "TemplateType": "gear",
     "Price": 29000
   },
@@ -65,7 +65,7 @@
     "CanSpall": false,
     "SpallReduction": 1,
     "ReloadSpeedMulti": 1,
-    "Comfort": 0.87,
+    "Comfort": 0.89,
     "TemplateType": "gear",
     "Price": 0
   },
@@ -79,7 +79,7 @@
     "CanSpall": false,
     "SpallReduction": 1,
     "ReloadSpeedMulti": 1,
-    "Comfort": 0.93,
+    "Comfort": 0.95,
     "TemplateType": "gear",
     "Price": 17000
   },
@@ -93,7 +93,7 @@
     "CanSpall": false,
     "SpallReduction": 1,
     "ReloadSpeedMulti": 1,
-    "Comfort": 0.91,
+    "Comfort": 0.96,
     "TemplateType": "gear",
     "Price": 666
   },
@@ -107,7 +107,7 @@
     "CanSpall": false,
     "SpallReduction": 1,
     "ReloadSpeedMulti": 1,
-    "Comfort": 1.01,
+    "Comfort": 0.98,
     "TemplateType": "gear",
     "Price": 29000
   },
@@ -121,7 +121,7 @@
     "CanSpall": false,
     "SpallReduction": 1,
     "ReloadSpeedMulti": 1,
-    "Comfort": 1.09,
+    "Comfort": 1.1,
     "TemplateType": "gear",
     "Price": 11000
   },
@@ -135,7 +135,7 @@
     "CanSpall": false,
     "SpallReduction": 1,
     "ReloadSpeedMulti": 1,
-    "Comfort": 0.96,
+    "Comfort": 0.93,
     "TemplateType": "gear",
     "Price": 23000
   },
@@ -149,7 +149,7 @@
     "CanSpall": false,
     "SpallReduction": 1,
     "ReloadSpeedMulti": 1,
-    "Comfort": 1.02,
+    "Comfort": 0.92,
     "TemplateType": "gear",
     "Price": 6500
   },
@@ -163,7 +163,7 @@
     "CanSpall": false,
     "SpallReduction": 1,
     "ReloadSpeedMulti": 1,
-    "Comfort": 0.99,
+    "Comfort": 1.02,
     "TemplateType": "gear",
     "Price": 28000
   },
@@ -177,7 +177,7 @@
     "CanSpall": false,
     "SpallReduction": 1,
     "ReloadSpeedMulti": 1,
-    "Comfort": 1.11,
+    "Comfort": 1,
     "TemplateType": "gear",
     "Price": 27000
   },
@@ -191,7 +191,7 @@
     "CanSpall": false,
     "SpallReduction": 1,
     "ReloadSpeedMulti": 1,
-    "Comfort": 1.02,
+    "Comfort": 1.1,
     "TemplateType": "gear",
     "Price": 27000
   },
@@ -219,7 +219,7 @@
     "CanSpall": false,
     "SpallReduction": 1,
     "ReloadSpeedMulti": 1,
-    "Comfort": 0.92,
+    "Comfort": 1.04,
     "TemplateType": "gear",
     "Price": 15050
   },
@@ -233,7 +233,7 @@
     "CanSpall": false,
     "SpallReduction": 1,
     "ReloadSpeedMulti": 1,
-    "Comfort": 0.98,
+    "Comfort": 1.07,
     "MaskToUse": "ronin",
     "TemplateType": "gear",
     "Price": 30000
@@ -248,7 +248,7 @@
     "CanSpall": false,
     "SpallReduction": 1,
     "ReloadSpeedMulti": 1,
-    "Comfort": 1.09,
+    "Comfort": 0.97,
     "MaskToUse": "ronin",
     "TemplateType": "gear",
     "Price": 34000
@@ -263,7 +263,7 @@
     "CanSpall": false,
     "SpallReduction": 1,
     "ReloadSpeedMulti": 1,
-    "Comfort": 0.92,
+    "Comfort": 1.01,
     "TemplateType": "gear",
     "Price": 28000
   },
@@ -277,7 +277,7 @@
     "CanSpall": false,
     "SpallReduction": 1,
     "ReloadSpeedMulti": 1,
-    "Comfort": 0.87,
+    "Comfort": 0.99,
     "TemplateType": "gear",
     "Price": 15000
   },
@@ -291,7 +291,7 @@
     "CanSpall": false,
     "SpallReduction": 1,
     "ReloadSpeedMulti": 1,
-    "Comfort": 1.09,
+    "Comfort": 1,
     "TemplateType": "gear",
     "Price": 13000
   },
@@ -305,7 +305,7 @@
     "CanSpall": false,
     "SpallReduction": 1,
     "ReloadSpeedMulti": 1,
-    "Comfort": 0.94,
+    "Comfort": 0.97,
     "TemplateType": "gear",
     "Price": 12000
   },
@@ -319,7 +319,7 @@
     "CanSpall": false,
     "SpallReduction": 1,
     "ReloadSpeedMulti": 1,
-    "Comfort": 0.99,
+    "Comfort": 0.88,
     "TemplateType": "gear",
     "Price": 13000
   },
@@ -333,7 +333,7 @@
     "CanSpall": false,
     "SpallReduction": 1,
     "ReloadSpeedMulti": 1,
-    "Comfort": 1.05,
+    "Comfort": 1,
     "TemplateType": "gear",
     "Price": 27000
   },
@@ -347,7 +347,7 @@
     "CanSpall": false,
     "SpallReduction": 1,
     "ReloadSpeedMulti": 1,
-    "Comfort": 1.11,
+    "Comfort": 1.02,
     "TemplateType": "gear",
     "Price": 19000
   },
@@ -361,7 +361,7 @@
     "CanSpall": false,
     "SpallReduction": 1,
     "ReloadSpeedMulti": 1,
-    "Comfort": 1.12,
+    "Comfort": 1.1,
     "TemplateType": "gear",
     "Price": 6000
   },
@@ -375,7 +375,7 @@
     "CanSpall": false,
     "SpallReduction": 1,
     "ReloadSpeedMulti": 1,
-    "Comfort": 1.09,
+    "Comfort": 1.04,
     "TemplateType": "gear",
     "Price": 40000
   },
@@ -389,7 +389,7 @@
     "CanSpall": false,
     "SpallReduction": 1,
     "ReloadSpeedMulti": 1,
-    "Comfort": 0.98,
+    "Comfort": 0.9,
     "TemplateType": "gear",
     "Price": 30000
   },
@@ -403,7 +403,7 @@
     "CanSpall": false,
     "SpallReduction": 1,
     "ReloadSpeedMulti": 1,
-    "Comfort": 0.93,
+    "Comfort": 0.91,
     "TemplateType": "gear",
     "Price": 30000
   },
@@ -417,7 +417,7 @@
     "CanSpall": false,
     "SpallReduction": 1,
     "ReloadSpeedMulti": 1,
-    "Comfort": 0.98,
+    "Comfort": 0.94,
     "TemplateType": "gear",
     "Price": 33000
   },
@@ -431,7 +431,7 @@
     "CanSpall": false,
     "SpallReduction": 1,
     "ReloadSpeedMulti": 1,
-    "Comfort": 0.9,
+    "Comfort": 0.91,
     "TemplateType": "gear",
     "Price": 33000
   },
@@ -445,7 +445,7 @@
     "CanSpall": false,
     "SpallReduction": 1,
     "ReloadSpeedMulti": 1,
-    "Comfort": 0.84,
+    "Comfort": 0.92,
     "TemplateType": "gear",
     "Price": 28000
   },
@@ -459,7 +459,7 @@
     "CanSpall": false,
     "SpallReduction": 1,
     "ReloadSpeedMulti": 1,
-    "Comfort": 0.95,
+    "Comfort": 0.88,
     "TemplateType": "gear",
     "Price": 35000
   },
@@ -473,7 +473,7 @@
     "CanSpall": false,
     "SpallReduction": 1,
     "ReloadSpeedMulti": 1,
-    "Comfort": 0.97,
+    "Comfort": 0.9,
     "TemplateType": "gear",
     "Price": 35000
   },
@@ -487,7 +487,7 @@
     "CanSpall": false,
     "SpallReduction": 1,
     "ReloadSpeedMulti": 1,
-    "Comfort": 0.92,
+    "Comfort": 0.93,
     "TemplateType": "gear",
     "Price": 35000
   },
@@ -501,7 +501,7 @@
     "CanSpall": false,
     "SpallReduction": 1,
     "ReloadSpeedMulti": 1,
-    "Comfort": 0.89,
+    "Comfort": 0.96,
     "TemplateType": "gear",
     "Price": 33000
   },
@@ -515,7 +515,7 @@
     "CanSpall": false,
     "SpallReduction": 1,
     "ReloadSpeedMulti": 1,
-    "Comfort": 0.85,
+    "Comfort": 0.92,
     "TemplateType": "gear",
     "Price": 28000
   },
@@ -529,7 +529,7 @@
     "CanSpall": false,
     "SpallReduction": 1,
     "ReloadSpeedMulti": 1,
-    "Comfort": 1.03,
+    "Comfort": 1.01,
     "TemplateType": "gear",
     "Price": 8000
   },
@@ -543,7 +543,7 @@
     "CanSpall": false,
     "SpallReduction": 1,
     "ReloadSpeedMulti": 1,
-    "Comfort": 1.04,
+    "Comfort": 1.01,
     "TemplateType": "gear",
     "Price": 19000
   },
@@ -557,7 +557,7 @@
     "CanSpall": false,
     "SpallReduction": 1,
     "ReloadSpeedMulti": 1,
-    "Comfort": 0.86,
+    "Comfort": 0.91,
     "TemplateType": "gear",
     "Price": 32500
   },
@@ -571,7 +571,7 @@
     "CanSpall": false,
     "SpallReduction": 1,
     "ReloadSpeedMulti": 1,
-    "Comfort": 0.87,
+    "Comfort": 0.85,
     "TemplateType": "gear",
     "Price": 32500
   },
@@ -585,7 +585,7 @@
     "CanSpall": false,
     "SpallReduction": 1,
     "ReloadSpeedMulti": 1,
-    "Comfort": 0.95,
+    "Comfort": 0.93,
     "TemplateType": "gear",
     "Price": 32000
   },
@@ -599,7 +599,7 @@
     "CanSpall": false,
     "SpallReduction": 1,
     "ReloadSpeedMulti": 1,
-    "Comfort": 0.94,
+    "Comfort": 0.89,
     "TemplateType": "gear",
     "Price": 32000
   },
@@ -613,7 +613,7 @@
     "CanSpall": false,
     "SpallReduction": 1,
     "ReloadSpeedMulti": 1,
-    "Comfort": 0.84,
+    "Comfort": 1,
     "TemplateType": "gear",
     "Price": 34000
   },
@@ -627,7 +627,7 @@
     "CanSpall": false,
     "SpallReduction": 1,
     "ReloadSpeedMulti": 1,
-    "Comfort": 0.86,
+    "Comfort": 0.89,
     "TemplateType": "gear",
     "Price": 34000
   },
@@ -641,7 +641,7 @@
     "CanSpall": false,
     "SpallReduction": 1,
     "ReloadSpeedMulti": 1,
-    "Comfort": 1.1,
+    "Comfort": 1,
     "TemplateType": "gear",
     "Price": 6000
   },
@@ -655,7 +655,7 @@
     "CanSpall": false,
     "SpallReduction": 1,
     "ReloadSpeedMulti": 1,
-    "Comfort": 1.09,
+    "Comfort": 1.08,
     "TemplateType": "gear",
     "Price": 6000
   },
@@ -666,7 +666,7 @@
     "AllowADS": true,
     "LoyaltyLevel": 3,
     "ArmorClass": "PM 3",
-    "Comfort": 1.03,
+    "Comfort": 1.05,
     "TemplateType": "gear",
     "Price": 34000,
     "SpallReduction": 1,
@@ -679,7 +679,7 @@
     "AllowADS": true,
     "LoyaltyLevel": 3,
     "ArmorClass": "GOST 2A",
-    "Comfort": 1.04,
+    "Comfort": 1.09,
     "ReloadSpeedMulti": 1,
     "TemplateType": "gear",
     "Price": 33000,
