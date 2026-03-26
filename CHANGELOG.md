@@ -1,53 +1,11 @@
 # 更新日志
 
-
 ## v2.1
-
-- WTT_templates 识别与输出逻辑彻底子类化：删除原有“整个WTT统一处理”分型，改为仅支持特定子类。
-- 已正式接回 WttArmory_templates（Armory子类）、Epic_templates（EpicRangeTime子类）、ConsortiumOfThings_templates（Consortium Of Things 子类）、Requisitions_templates（Echoes of Tarkov 子类）、EcoAttachment_templates（Eco Attachment Emporium 子类）、Artem_templates（Artem 子类）、WttStandalone_templates（AK50/AKResonant/.50BMG 等独立来源子类）与 SptBattlepass_templates（SPT Battlepass 子类）；其余 itemTplToClone 来源暂未进入生成链。
-- Armory/Epic 子类分别实现独立 parentId/template 解析优先级，支持 fallback。
-- ConsortiumOfThings/Requisitions/EcoAttachment/Artem/WttStandalone/SptBattlepass 子类补齐独立识别与输出支持，沿用 WTT 子类共用构建链并各自接入专属文件名识别。
-- Artem 子类从 WttStandalone 归类中独立拆分，按 Artem_ 文件名进入专属识别与输出链。
-- CornerStore 相关输入不再纳入项目目标范围，已从当前结构分类口径中移除。
-- Epic 文件名识别前缀从 EpicRangeTime-Weapons_ 放宽为 EpicRangeTime-，补接 WeaponsAK 系列输入源。
-- 所有相关测试、文档、命名统一为 WttArmory_templates/Epic_templates。
-- README、docs/MOD物品数据结构统计报告.md、docs/补丁生成流程说明.md 等文档同步更新为当前支持矩阵。
-- GUI 标题与多语言 App.Title 版本标识统一更新为 v2.1，避免界面显示旧版本号。
-- CLI 入口收敛为一键生成补丁，仅保留 basePath/outputPath/seed 最小参数；规则编辑与例外管理统一归属 GUI。
-- 发布脚本 scripts/build-release.ps1 默认打包版本更新为 2.1。
-- 清理 CLI 目录内历史“副本”源码与项目文件，减少发布包和仓库噪音。
-- 清理 RealismPatchGenerator.Core 代码中 WTT 相关的冗余分支与专用方法，收敛为更易扩展的结构。
-- 重新验证所有回归测试，RuleDataSynchronizationTests 16/16 通过。
-- 全量生成产物统计：4251 项。
-
----
-
-## v2.0
 
 ### 项目重构
 
 - 重构整个项目，重新梳理生成器、规则加载、模板识别与输出落盘流程。
-- 补齐并稳定支持 RealismStandardTemplate、Moxo_Template、Mixed_templates 等多种 MOD 输入结构。
-- 新增独立 CLI 入口，支持按目录、按文件筛选生成，并保留 seed 与日志参数，方便批量验证与定向排查。
-- 统一输出命名和条目顺序规则，标准模板维持原名，其余兼容输出统一使用 _realism_patch 后缀。
-- 调整 clone 基底与输入源冲突时的合并优先级，改为合法源字段优先，避免官方基底覆盖用户输入。
-- 新增最终输出字段裁剪逻辑，严格限制最终字段只能来自规则或模板允许集合，阻止规则外字段泄漏到补丁结果。
-- 清理默认模板中的越权字段注入，修复脏源字段大小写不一致导致的重复或非法字段问题。
-- 完整重写 README 与 docs 文档集，使说明与当前 GUI/CLI、规则校验和输出行为保持一致。
-
-### 本轮修复
-
-- 修复部分 clone 链物品在输出时丢失源字段、命名异常或来源顺序错乱的问题。
-- 修复 SIG MCX 等物品的 ConflictingItems 被错误清空的问题。
-- 修复护木类附件错误带出 ChamberSpeed 字段的问题。
-- 修复个别 Moxo 输入输出时 Name 取值不正确、Prefab 泄漏到最终补丁的问题。
-- 修复 SIG MCX 输出中出现 weapFireType、shotgunDispersion、RecoilCenter、BurstShotsCount、DoubleActionAccuracyPenalty 等规则外字段的问题。
-
-### 本轮验证
-
-- 完成多种输入结构的定向输出验证，逐步核对 Moxo、Mixed 与标准模板物品的生成结果。
-- 新增并验证 CLI 单文件、单目录和全量生成路径，确认统计结果与正式 output 一致。
-- 对正式 output 重新全量生成并复核关键样本，确认规则外字段已被清除，合法字段与 ConflictingItems 仍被保留。
+- 删除功能不完善的审计功能。
 
 ## v1.30.0
 
