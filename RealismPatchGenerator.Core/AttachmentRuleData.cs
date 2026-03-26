@@ -12,7 +12,59 @@ internal static class AttachmentRuleData
             ["Dispersion"] = new(-55, 55),
             ["Loudness"] = new(-45, 50, true),
             ["Accuracy"] = new(-15, 15, true),
+            ["Price"] = new(300, 120000, true),
             ["LoyaltyLevel"] = new(1, 4, true),
+        });
+
+    public static readonly IReadOnlyDictionary<string, NumericRange> ModPriceRanges =
+        new ReadOnlyDictionary<string, NumericRange>(new Dictionary<string, NumericRange>(StringComparer.OrdinalIgnoreCase)
+        {
+            ["muzzle_suppressor"] = new(18000, 65000, true),
+            ["muzzle_suppressor_compact"] = new(12000, 42000, true),
+            ["muzzle_flashhider"] = new(4000, 16000, true),
+            ["muzzle_brake"] = new(5000, 18000, true),
+            ["muzzle_thread"] = new(800, 3500, true),
+            ["muzzle_adapter"] = new(1500, 6000, true),
+            ["booster"] = new(6000, 18000, true),
+            ["magazine_compact"] = new(2500, 8000, true),
+            ["magazine_standard"] = new(3000, 12000, true),
+            ["magazine_extended"] = new(7000, 22000, true),
+            ["magazine_drum"] = new(18000, 65000, true),
+            ["magazine"] = new(3000, 12000, true),
+            ["gasblock"] = new(2500, 9000, true),
+            ["scope_magnified"] = new(15000, 90000, true),
+            ["scope_red_dot"] = new(7000, 35000, true),
+            ["iron_sight"] = new(500, 4000, true),
+            ["stock_fixed"] = new(6000, 25000, true),
+            ["stock_folding"] = new(7000, 30000, true),
+            ["stock_ads_support"] = new(9000, 36000, true),
+            ["stock_buttpad"] = new(2000, 9000, true),
+            ["stock"] = new(6000, 28000, true),
+            ["buffer_adapter"] = new(1200, 5000, true),
+            ["stock_adapter"] = new(1500, 6000, true),
+            ["pistol_grip"] = new(2000, 10000, true),
+            ["ubgl"] = new(40000, 120000, true),
+            ["bayonet"] = new(2500, 12000, true),
+            ["foregrip"] = new(3000, 16000, true),
+            ["receiver"] = new(10000, 45000, true),
+            ["mount"] = new(2500, 18000, true),
+            ["flashlight_laser"] = new(5000, 30000, true),
+            ["catch"] = new(1000, 4500, true),
+            ["hammer"] = new(1500, 8000, true),
+            ["trigger"] = new(1500, 9000, true),
+            ["charging_handle"] = new(2000, 9000, true),
+            ["bipod"] = new(6000, 22000, true),
+            ["stock_rear_hook"] = new(1500, 7000, true),
+            ["optic_eyecup"] = new(500, 2500, true),
+            ["optic_killflash"] = new(800, 3500, true),
+            ["rail_panel"] = new(500, 2500, true),
+            ["barrel_short"] = new(9000, 38000, true),
+            ["barrel_medium"] = new(12000, 50000, true),
+            ["barrel_integral_suppressed"] = new(30000, 85000, true),
+            ["barrel_long"] = new(15000, 65000, true),
+            ["handguard_short"] = new(5000, 20000, true),
+            ["handguard_medium"] = new(7000, 28000, true),
+            ["handguard_long"] = new(9000, 36000, true),
         });
 
     public static readonly IReadOnlyDictionary<string, string> ModParentBaseProfiles =
@@ -558,6 +610,7 @@ internal static class AttachmentRuleData
         return new AttachmentRules
         {
             ModClampRules = ModClampRules,
+            ModPriceRanges = ModPriceRanges,
             ModParentBaseProfiles = ModParentBaseProfiles,
             ModProfileRanges = ModProfileRanges,
         };

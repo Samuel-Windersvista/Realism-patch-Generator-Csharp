@@ -1,6 +1,6 @@
 # input/user_templates 数据结构统计
 
-统计范围：input/user_templates 下全部 JSON 文件，共 176 个。
+统计范围：input/user_templates 下全部 JSON 文件，共 172 个。
 
 统计口径分为两层：
 
@@ -13,13 +13,24 @@
 
 识别特征：条目对象包含 itemTplToClone。
 
-文件数：153
+当前状态：已清除原先对整个 WTT_templates 的统一识别输出逻辑，当前代码目前已支持 WttArmory_templates、Epic_templates、ConsortiumOfThings_templates、Requisitions_templates、EcoAttachment_templates、Artem_templates、WttStandalone_templates 与 SptBattlepass_templates 八个子类。
+
+当前 WTT_templates 仍按来源 mod 做统计分组；但在代码实现上，目前只有 WttArmory_templates、Epic_templates、ConsortiumOfThings_templates、Requisitions_templates、EcoAttachment_templates、Artem_templates、WttStandalone_templates 与 SptBattlepass_templates 已进入正式识别链。当前分组如下：
+
+- WttArmory_templates：文件名包含 WTT - Armory_
+- ConsortiumOfThings_templates：文件名包含 ConsortiumOfThings_
+- Requisitions_templates：文件名包含 Echoes.of.Tarkov.-.Requisitions_
+- EcoAttachment_templates：文件名包含 Eco-Attachment Emporium_
+- Epic_templates：文件名包含 EpicRangeTime-
+- Artem_templates：文件名包含 Artem_
+- WttStandalone_templates：文件名包含 AK50、AKResonant、50 BMG 或 .50BMG，用于 AK50/AKResonant/.50BMG Remaster 等独立 WTT 来源
+- SptBattlepass_templates：文件名包含 SPT Battlepass
+
+当前这一步主要用于后续分批重建各子类专属逻辑。现阶段 WttArmory_templates、Epic_templates、ConsortiumOfThings_templates、Requisitions_templates、EcoAttachment_templates、Artem_templates、WttStandalone_templates 与 SptBattlepass_templates 都会驱动各自的 parentId / 模板提示与实际输出。
+
+文件数：149（其中 WttStandalone_templates 占 4 个，SptBattlepass_templates 占 1 个）
 
 - input/user_templates/[2]新物品-竞技场赛季奖励-SPT Battlepass.json
-- input/user_templates/[2]新酒水-WTT - CornerStore_Food_Items.json
-- input/user_templates/[2]新酒水-WTT - CornerStore_Four_Loko.json
-- input/user_templates/[2]新酒水-WTT - CornerStore_Red_Bull.json
-- input/user_templates/[2]新酒水-WTT - CornerStore_WTT_Posters.json
 - input/user_templates/[3].50BMG重制-Epics 50 BMG Remaster-Expansion.json
 - input/user_templates/[3]新武器-AK50_items.json
 - input/user_templates/[3]新武器-AK50_Weapon.json
@@ -172,6 +183,8 @@
 ## 2. RaidOverhaul_templates
 
 识别特征：条目对象包含 ItemToClone。
+
+当前状态：已完成识别与输出支持。
 
 文件数：16
 

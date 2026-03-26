@@ -25,9 +25,246 @@
       "max": 15,
       "preferInt": true
     },
+    "Price": {
+      "min": 300,
+      "max": 120000,
+      "preferInt": true
+    },
     "LoyaltyLevel": {
       "min": 1,
       "max": 4,
+      "preferInt": true
+    }
+  },
+  "modPriceRanges": {
+    "muzzle_suppressor": {
+      "min": 18000,
+      "max": 65000,
+      "preferInt": true
+    },
+    "muzzle_suppressor_compact": {
+      "min": 12000,
+      "max": 42000,
+      "preferInt": true
+    },
+    "muzzle_flashhider": {
+      "min": 4000,
+      "max": 16000,
+      "preferInt": true
+    },
+    "muzzle_brake": {
+      "min": 5000,
+      "max": 18000,
+      "preferInt": true
+    },
+    "muzzle_thread": {
+      "min": 800,
+      "max": 3500,
+      "preferInt": true
+    },
+    "muzzle_adapter": {
+      "min": 1500,
+      "max": 6000,
+      "preferInt": true
+    },
+    "booster": {
+      "min": 6000,
+      "max": 18000,
+      "preferInt": true
+    },
+    "magazine_compact": {
+      "min": 2500,
+      "max": 8000,
+      "preferInt": true
+    },
+    "magazine_standard": {
+      "min": 3000,
+      "max": 12000,
+      "preferInt": true
+    },
+    "magazine_extended": {
+      "min": 7000,
+      "max": 22000,
+      "preferInt": true
+    },
+    "magazine_drum": {
+      "min": 18000,
+      "max": 65000,
+      "preferInt": true
+    },
+    "magazine": {
+      "min": 3000,
+      "max": 12000,
+      "preferInt": true
+    },
+    "gasblock": {
+      "min": 2500,
+      "max": 9000,
+      "preferInt": true
+    },
+    "scope_magnified": {
+      "min": 15000,
+      "max": 90000,
+      "preferInt": true
+    },
+    "scope_red_dot": {
+      "min": 7000,
+      "max": 35000,
+      "preferInt": true
+    },
+    "iron_sight": {
+      "min": 500,
+      "max": 4000,
+      "preferInt": true
+    },
+    "stock_fixed": {
+      "min": 6000,
+      "max": 25000,
+      "preferInt": true
+    },
+    "stock_folding": {
+      "min": 7000,
+      "max": 30000,
+      "preferInt": true
+    },
+    "stock_ads_support": {
+      "min": 9000,
+      "max": 36000,
+      "preferInt": true
+    },
+    "stock_buttpad": {
+      "min": 2000,
+      "max": 9000,
+      "preferInt": true
+    },
+    "stock": {
+      "min": 6000,
+      "max": 28000,
+      "preferInt": true
+    },
+    "buffer_adapter": {
+      "min": 1200,
+      "max": 5000,
+      "preferInt": true
+    },
+    "stock_adapter": {
+      "min": 1500,
+      "max": 6000,
+      "preferInt": true
+    },
+    "pistol_grip": {
+      "min": 2000,
+      "max": 10000,
+      "preferInt": true
+    },
+    "ubgl": {
+      "min": 40000,
+      "max": 120000,
+      "preferInt": true
+    },
+    "bayonet": {
+      "min": 2500,
+      "max": 12000,
+      "preferInt": true
+    },
+    "foregrip": {
+      "min": 3000,
+      "max": 16000,
+      "preferInt": true
+    },
+    "receiver": {
+      "min": 10000,
+      "max": 45000,
+      "preferInt": true
+    },
+    "mount": {
+      "min": 2500,
+      "max": 18000,
+      "preferInt": true
+    },
+    "flashlight_laser": {
+      "min": 5000,
+      "max": 30000,
+      "preferInt": true
+    },
+    "catch": {
+      "min": 1000,
+      "max": 4500,
+      "preferInt": true
+    },
+    "hammer": {
+      "min": 1500,
+      "max": 8000,
+      "preferInt": true
+    },
+    "trigger": {
+      "min": 1500,
+      "max": 9000,
+      "preferInt": true
+    },
+    "charging_handle": {
+      "min": 2000,
+      "max": 9000,
+      "preferInt": true
+    },
+    "bipod": {
+      "min": 6000,
+      "max": 22000,
+      "preferInt": true
+    },
+    "stock_rear_hook": {
+      "min": 1500,
+      "max": 7000,
+      "preferInt": true
+    },
+    "optic_eyecup": {
+      "min": 500,
+      "max": 2500,
+      "preferInt": true
+    },
+    "optic_killflash": {
+      "min": 800,
+      "max": 3500,
+      "preferInt": true
+    },
+    "rail_panel": {
+      "min": 500,
+      "max": 2500,
+      "preferInt": true
+    },
+    "barrel_short": {
+      "min": 9000,
+      "max": 38000,
+      "preferInt": true
+    },
+    "barrel_medium": {
+      "min": 12000,
+      "max": 50000,
+      "preferInt": true
+    },
+    "barrel_integral_suppressed": {
+      "min": 30000,
+      "max": 85000,
+      "preferInt": true
+    },
+    "barrel_long": {
+      "min": 15000,
+      "max": 65000,
+      "preferInt": true
+    },
+    "handguard_short": {
+      "min": 5000,
+      "max": 20000,
+      "preferInt": true
+    },
+    "handguard_medium": {
+      "min": 7000,
+      "max": 28000,
+      "preferInt": true
+    },
+    "handguard_long": {
+      "min": 9000,
+      "max": 36000,
       "preferInt": true
     }
   },

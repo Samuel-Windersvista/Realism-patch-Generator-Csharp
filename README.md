@@ -1,4 +1,4 @@
-# SPT Realism Patch Generator v2.0
+# SPT Realism Patch Generator v2.1
 
 这是当前 C# 版 SPT Realism 补丁生成器仓库。
 
@@ -10,7 +10,7 @@
 
 ## 当前状态
 
-- 当前版本：v2.0
+- 当前版本：v2.1
 - 当前主要入口：GUI、CLI
 - 核心生成入口：RealismPatchGenerator.Core/RealismPatchGenerator.cs
 - 当前有效生成大类：武器、附件、弹药、装备
@@ -18,36 +18,31 @@
 
 ## 当前支持的输入情况
 
+
 当前核心生成器直接支持以下输入物品格式：
 
 1. RealismStandardTemplate
-2. Moxo_Template
-3. Mixed_templates
+2. WttArmory_templates（仅 Armory 子类，itemTplToClone 来源为 Armory 专属文件）
+3. Epic_templates（仅 EpicRangeTime 子类，itemTplToClone 来源为 Epic 专属文件）
+4. ConsortiumOfThings_templates（ConsortiumOfThings_ 子类）
+5. Requisitions_templates（Echoes.of.Tarkov.-.Requisitions_ 子类）
+6. EcoAttachment_templates（Eco-Attachment Emporium_ 子类）
+7. Artem_templates（Artem_ 子类）
+8. WttStandalone_templates（AK50、AKResonant、.50BMG 等独立 WTT 来源）
+9. SptBattlepass_templates（SPT Battlepass 来源）
+10. RaidOverhaul_templates
+11. Moxo_Template
+12. Mixed_templates
 
-其中 Moxo_Template 的识别特征为：
+其中 WTT family 目前正式支持 Armory、Epic、ConsortiumOfThings、Requisitions、EcoAttachment、Artem、WttStandalone 与 SptBattlepass 八个子类。
 
-- 条目包含 clone
-- 同时包含 item 或 items
-- 输出 Name 优先使用 locales.Name
-
-Mixed_templates 的识别特征为：
-
-- 同一个文件内部同时存在 clone + item/items 条目
-- 同时也可能存在不带 clone 的 direct item/items 条目
-- 无 clone 条目会按 item._parent 或 handbook 信息推断 Realism 基底补丁
-
-仓库内的 input/user_templates 已统计出 4 类第三方输入源结构族：
-
-1. WTT_templates
-2. RaidOverhaul_templates
-3. Mixed_templates
-4. Moxo_Template
-
-这 4 类结构族的统计结果见：
-
+详细结构分组与支持状态见：
 - docs/MOD物品数据结构统计报告.md
 
-需要注意的是，“已统计识别到 4 类第三方源结构”不等于“当前核心生成器对 4 类都已实现完整直出支持”。README 这里描述的是当前程序实际行为，不再保留过时的兼容列表宣传口径。
+其余输入格式说明与识别特征见文档。
+
+
+当前实现对“标准字段边界”采用硬规则：输入阶段允许读取 TemplateID、itemTplToClone、overrideProperties、SingleFireRate、Cartridges 等源字段用于识别、克隆和推断，但最终 output 只允许写出 Realism 标准补丁字段；源 mod 输入字段不会直接进入最终补丁。
 
 ## 当前生成规则
 
@@ -70,6 +65,18 @@ Mixed_templates 的识别特征为：
 - 同文件中的 clone 条目优先复用 Moxo 路径处理
 - clone 基底不可用时，会退回到 direct item/items 路径构造 Realism 基底补丁
 - direct item/items 条目同样会过滤掉 Prefab 这类非 Realism 标准字段
+
+对 RaidOverhaul_templates，当前还额外遵循以下行为：
+
+- 优先使用 ItemToClone 对应的模板库基底
+- 若 ItemToClone 不是模板真实 ItemID，会尝试按模板 Name 做别名匹配
+- 若仍无法解析 clone 基底，会退回到 Handbook 和 cloneId 类别提示来构造可输出的 Realism 基底补丁
+
+对所有第三方输入结构，当前统一遵循以下输出边界：
+
+- `ConflictingItems` 是少数允许从源输入合并进最终补丁的结构字段
+- `SingleFireRate`、`Cartridges`、`Slots`、`Prefab`、`traderItems`、`barterScheme` 等仅属于源输入语义，不属于 Realism 标准输出字段
+- 是否允许输出某个字段，以 Realism 默认模板、规则字段白名单和 modType 专属字段表为准，而不是以输入里“出现过该字段”为准
 
 ## 目录说明
 
@@ -94,25 +101,25 @@ dotnet run --project RealismPatchGenerator.Gui
 开发环境下直接用 CLI 生成：
 
 ```powershell
-dotnet run --project .\RealismPatchGenerator.Cli\RealismPatchGenerator.Cli.csproj -- . .\output
+dotnet run --project .\RealismPatchGenerator.Cli\RealismPatchGenerator.Cli.csproj
 ```
 
-CLI 额外支持：
+CLI 当前定位：仅提供“一键生成补丁”入口。
 
+CLI 支持参数：
+
+- 位置参数 `[basePath] [outputPath]`：可选，默认使用当前目录和默认 output
 - `--seed <uint>`：指定随机种子
-- `--logs`：在终端打印完整生成日志
-- `--input-file <path>`：只处理指定输入文件，可重复传入
-- `--input-dir <path>`：只处理指定输入目录，可重复传入
 
 CLI 示例：
 
 ```powershell
-dotnet run --project .\RealismPatchGenerator.Cli\RealismPatchGenerator.Cli.csproj -- . .\output --seed 123456 --logs
-dotnet run --project .\RealismPatchGenerator.Cli\RealismPatchGenerator.Cli.csproj -- . .\output --input-file attatchments/HandguardTemplates.json
-dotnet run --project .\RealismPatchGenerator.Cli\RealismPatchGenerator.Cli.csproj -- . .\output --input-dir user_templates
+dotnet run --project .\RealismPatchGenerator.Cli\RealismPatchGenerator.Cli.csproj
+dotnet run --project .\RealismPatchGenerator.Cli\RealismPatchGenerator.Cli.csproj -- . .\output
+dotnet run --project .\RealismPatchGenerator.Cli\RealismPatchGenerator.Cli.csproj -- . .\output --seed 123456
 ```
 
-`--input-file` 和 `--input-dir` 既可以写成相对 `input` 根目录的路径，也可以写成带 `input/` 前缀的路径。
+规则编辑、例外物品管理、结构检查与交互式操作统一归属 GUI。
 
 常规工作流：
 

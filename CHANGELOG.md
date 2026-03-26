@@ -1,8 +1,26 @@
 # 更新日志
 
-## 未发布
 
--
+## v2.1
+
+- WTT_templates 识别与输出逻辑彻底子类化：删除原有“整个WTT统一处理”分型，改为仅支持特定子类。
+- 已正式接回 WttArmory_templates（Armory子类）、Epic_templates（EpicRangeTime子类）、ConsortiumOfThings_templates（Consortium Of Things 子类）、Requisitions_templates（Echoes of Tarkov 子类）、EcoAttachment_templates（Eco Attachment Emporium 子类）、Artem_templates（Artem 子类）、WttStandalone_templates（AK50/AKResonant/.50BMG 等独立来源子类）与 SptBattlepass_templates（SPT Battlepass 子类）；其余 itemTplToClone 来源暂未进入生成链。
+- Armory/Epic 子类分别实现独立 parentId/template 解析优先级，支持 fallback。
+- ConsortiumOfThings/Requisitions/EcoAttachment/Artem/WttStandalone/SptBattlepass 子类补齐独立识别与输出支持，沿用 WTT 子类共用构建链并各自接入专属文件名识别。
+- Artem 子类从 WttStandalone 归类中独立拆分，按 Artem_ 文件名进入专属识别与输出链。
+- CornerStore 相关输入不再纳入项目目标范围，已从当前结构分类口径中移除。
+- Epic 文件名识别前缀从 EpicRangeTime-Weapons_ 放宽为 EpicRangeTime-，补接 WeaponsAK 系列输入源。
+- 所有相关测试、文档、命名统一为 WttArmory_templates/Epic_templates。
+- README、docs/MOD物品数据结构统计报告.md、docs/补丁生成流程说明.md 等文档同步更新为当前支持矩阵。
+- GUI 标题与多语言 App.Title 版本标识统一更新为 v2.1，避免界面显示旧版本号。
+- CLI 入口收敛为一键生成补丁，仅保留 basePath/outputPath/seed 最小参数；规则编辑与例外管理统一归属 GUI。
+- 发布脚本 scripts/build-release.ps1 默认打包版本更新为 2.1。
+- 清理 CLI 目录内历史“副本”源码与项目文件，减少发布包和仓库噪音。
+- 清理 RealismPatchGenerator.Core 代码中 WTT 相关的冗余分支与专用方法，收敛为更易扩展的结构。
+- 重新验证所有回归测试，RuleDataSynchronizationTests 16/16 通过。
+- 全量生成产物统计：4251 项。
+
+---
 
 ## v2.0
 

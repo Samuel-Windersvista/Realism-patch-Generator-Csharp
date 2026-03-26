@@ -45,9 +45,51 @@
       "max": 40,
       "preferInt": true
     },
+    "Price": {
+      "min": 5000,
+      "max": 250000,
+      "preferInt": true
+    },
     "LoyaltyLevel": {
       "min": 1,
       "max": 5,
+      "preferInt": true
+    }
+  },
+  "gunPriceRanges": {
+    "assault": {
+      "min": 35000,
+      "max": 90000,
+      "preferInt": true
+    },
+    "pistol": {
+      "min": 12000,
+      "max": 45000,
+      "preferInt": true
+    },
+    "smg": {
+      "min": 22000,
+      "max": 65000,
+      "preferInt": true
+    },
+    "sniper": {
+      "min": 50000,
+      "max": 150000,
+      "preferInt": true
+    },
+    "shotgun": {
+      "min": 25000,
+      "max": 80000,
+      "preferInt": true
+    },
+    "machinegun": {
+      "min": 70000,
+      "max": 180000,
+      "preferInt": true
+    },
+    "launcher": {
+      "min": 90000,
+      "max": 250000,
       "preferInt": true
     }
   },
@@ -423,8 +465,8 @@
         "preferInt": true
       },
       "HorizontalRecoil": {
-        "min": -20,
-        "max": -35,
+        "min": -35,
+        "max": -20,
         "preferInt": true
       },
       "Convergence": {

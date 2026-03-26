@@ -5,8 +5,10 @@ namespace RealismPatchGenerator.Core;
 public enum ItemFormat
 {
     RealismStandardTemplate,
+    WTTTemplate,
     MoxoTemplate,
     MixedTemplate,
+    RaidOverhaulTemplate,
 }
 
 public sealed class ItemInfo
@@ -49,7 +51,6 @@ internal static class ItemJsonSchema
 {
     public static readonly HashSet<string> LegacyFormatKeys = new(StringComparer.OrdinalIgnoreCase)
     {
-        "TemplateID",
         "itemTplToClone",
         "clone",
         "ItemToClone",

@@ -10,6 +10,7 @@ internal static class GearRuleData
             ["ReloadSpeedMulti"] = new(0.85, 1.25),
             ["Comfort"] = new(0.6, 1.4),
             ["speedPenaltyPercent"] = new(-40, 10),
+            ["Price"] = new(500, 150000, true),
         });
 
     public static readonly IReadOnlyDictionary<string, IReadOnlyDictionary<string, NumericRange>> GearProfileRanges =
@@ -164,6 +165,35 @@ internal static class GearRuleData
             }),
         });
 
+    public static readonly IReadOnlyDictionary<string, NumericRange> GearPriceRanges =
+        new ReadOnlyDictionary<string, NumericRange>(new Dictionary<string, NumericRange>(StringComparer.OrdinalIgnoreCase)
+        {
+            ["armor_vest_light"] = new(12000, 25000, true),
+            ["armor_vest_heavy"] = new(22000, 35000, true),
+            ["armor_chest_rig_light"] = new(18000, 28000, true),
+            ["armor_chest_rig_heavy"] = new(26000, 38000, true),
+            ["chest_rig_light"] = new(8000, 15000, true),
+            ["chest_rig_heavy"] = new(12000, 20000, true),
+            ["helmet_light"] = new(6000, 15000, true),
+            ["helmet_heavy"] = new(18000, 30000, true),
+            ["armor_component_accessory"] = new(2000, 6000, true),
+            ["armor_component_faceshield"] = new(2000, 5000, true),
+            ["armor_mask_decorative"] = new(500, 2000, true),
+            ["armor_mask_ballistic"] = new(2000, 5000, true),
+            ["armor_plate_hard"] = new(8000, 18000, true),
+            ["armor_plate_helmet"] = new(5000, 12000, true),
+            ["armor_plate_soft"] = new(1000, 6000, true),
+            ["backpack_compact"] = new(12000, 18000, true),
+            ["backpack_full"] = new(18000, 26000, true),
+            ["back_panel"] = new(5000, 10000, true),
+            ["belt_harness"] = new(3000, 8000, true),
+            ["headset"] = new(3000, 8000, true),
+            ["cosmetic_headwear"] = new(500, 2000, true),
+            ["protective_eyewear_standard"] = new(1000, 4000, true),
+            ["protective_eyewear_ballistic"] = new(2000, 6000, true),
+            ["cosmetic_gasmask"] = new(5000, 12000, true),
+        });
+
     private static IReadOnlyDictionary<string, NumericRange> CreateRanges(Dictionary<string, NumericRange> ranges)
     {
         return new ReadOnlyDictionary<string, NumericRange>(ranges);
@@ -175,6 +205,7 @@ internal static class GearRuleData
         {
             GearClampRules = GearClampRules,
             GearProfileRanges = GearProfileRanges,
+            GearPriceRanges = GearPriceRanges,
         };
     }
 }

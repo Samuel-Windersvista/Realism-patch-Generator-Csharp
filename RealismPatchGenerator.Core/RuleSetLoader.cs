@@ -17,6 +17,7 @@ internal sealed class WeaponRules
 {
     public required IReadOnlyDictionary<string, IReadOnlySet<string>> WeaponParentGroups { get; init; }
     public required IReadOnlyDictionary<string, NumericRange> GunClampRules { get; init; }
+    public required IReadOnlyDictionary<string, NumericRange> GunPriceRanges { get; init; }
     public required IReadOnlyDictionary<string, IReadOnlyDictionary<string, NumericRange>> WeaponProfileRanges { get; init; }
     public required IReadOnlyDictionary<string, IReadOnlyDictionary<string, NumericRange>> WeaponCaliberRuleModifiers { get; init; }
     public required IReadOnlyDictionary<string, IReadOnlyDictionary<string, NumericRange>> WeaponStockRuleModifiers { get; init; }
@@ -27,6 +28,7 @@ internal sealed class WeaponRules
 internal sealed class AttachmentRules
 {
     public required IReadOnlyDictionary<string, NumericRange> ModClampRules { get; init; }
+    public required IReadOnlyDictionary<string, NumericRange> ModPriceRanges { get; init; }
     public required IReadOnlyDictionary<string, string> ModParentBaseProfiles { get; init; }
     public required IReadOnlyDictionary<string, IReadOnlyDictionary<string, NumericRange>> ModProfileRanges { get; init; }
 }
@@ -45,6 +47,7 @@ internal sealed class GearRules
 {
     public required IReadOnlyDictionary<string, NumericRange> GearClampRules { get; init; }
     public required IReadOnlyDictionary<string, IReadOnlyDictionary<string, NumericRange>> GearProfileRanges { get; init; }
+    public required IReadOnlyDictionary<string, NumericRange> GearPriceRanges { get; init; }
 }
 
 internal readonly record struct KeywordProfile(string Profile, IReadOnlyList<string> Keywords);
@@ -97,6 +100,7 @@ internal static class RuleSetLoader
                 {
                     WeaponParentGroups = ParseStringSetMap(root["weaponParentGroups"], "weaponParentGroups"),
                     GunClampRules = ParseRangeMap(root["gunClampRules"], "gunClampRules"),
+                    GunPriceRanges = ParseRangeMap(root["gunPriceRanges"], "gunPriceRanges"),
                     WeaponProfileRanges = ParseNestedRangeMap(root["weaponProfileRanges"], "weaponProfileRanges"),
                     WeaponCaliberRuleModifiers = ParseNestedRangeMap(root["weaponCaliberRuleModifiers"], "weaponCaliberRuleModifiers"),
                     WeaponStockRuleModifiers = ParseNestedRangeMap(root["weaponStockRuleModifiers"], "weaponStockRuleModifiers"),
@@ -106,6 +110,7 @@ internal static class RuleSetLoader
                 "attachment_rules.json" => BuildAttachmentRulesJson(new AttachmentRules
                 {
                     ModClampRules = ParseRangeMap(root["modClampRules"], "modClampRules"),
+                    ModPriceRanges = ParseRangeMap(root["modPriceRanges"], "modPriceRanges"),
                     ModParentBaseProfiles = ParseStringMap(root["modParentBaseProfiles"], "modParentBaseProfiles"),
                     ModProfileRanges = ParseNestedRangeMap(root["modProfileRanges"], "modProfileRanges"),
                 }),
@@ -122,6 +127,7 @@ internal static class RuleSetLoader
                 {
                     GearClampRules = ParseRangeMap(root["gearClampRules"], "gearClampRules"),
                     GearProfileRanges = ParseNestedRangeMap(root["gearProfileRanges"], "gearProfileRanges"),
+                    GearPriceRanges = ParseRangeMap(root["gearPriceRanges"], "gearPriceRanges"),
                 }),
                 _ => throw new InvalidOperationException($"不支持的规则文件: {ruleFileName}"),
             };
@@ -156,6 +162,7 @@ internal static class RuleSetLoader
             {
                 WeaponParentGroups = ParseStringSetMap(root["weaponParentGroups"], "weaponParentGroups"),
                 GunClampRules = ParseRangeMap(root["gunClampRules"], "gunClampRules"),
+                GunPriceRanges = ParseRangeMap(root["gunPriceRanges"], "gunPriceRanges"),
                 WeaponProfileRanges = ParseNestedRangeMap(root["weaponProfileRanges"], "weaponProfileRanges"),
                 WeaponCaliberRuleModifiers = ParseNestedRangeMap(root["weaponCaliberRuleModifiers"], "weaponCaliberRuleModifiers"),
                 WeaponStockRuleModifiers = ParseNestedRangeMap(root["weaponStockRuleModifiers"], "weaponStockRuleModifiers"),
@@ -178,6 +185,7 @@ internal static class RuleSetLoader
             return new AttachmentRules
             {
                 ModClampRules = ParseRangeMap(root["modClampRules"], "modClampRules"),
+                ModPriceRanges = ParseRangeMap(root["modPriceRanges"], "modPriceRanges"),
                 ModParentBaseProfiles = ParseStringMap(root["modParentBaseProfiles"], "modParentBaseProfiles"),
                 ModProfileRanges = ParseNestedRangeMap(root["modProfileRanges"], "modProfileRanges"),
             };
@@ -220,6 +228,7 @@ internal static class RuleSetLoader
             {
                 GearClampRules = ParseRangeMap(root["gearClampRules"], "gearClampRules"),
                 GearProfileRanges = ParseNestedRangeMap(root["gearProfileRanges"], "gearProfileRanges"),
+                GearPriceRanges = ParseRangeMap(root["gearPriceRanges"], "gearPriceRanges"),
             };
         }
         catch (Exception ex)
@@ -325,6 +334,7 @@ internal static class RuleSetLoader
         {
             ["weaponParentGroups"] = BuildStringSetMap(rules.WeaponParentGroups),
             ["gunClampRules"] = BuildRangeMap(rules.GunClampRules),
+            ["gunPriceRanges"] = BuildRangeMap(rules.GunPriceRanges),
             ["weaponProfileRanges"] = BuildNestedRangeMap(rules.WeaponProfileRanges),
             ["weaponCaliberRuleModifiers"] = BuildNestedRangeMap(rules.WeaponCaliberRuleModifiers),
             ["weaponStockRuleModifiers"] = BuildNestedRangeMap(rules.WeaponStockRuleModifiers),
@@ -338,6 +348,7 @@ internal static class RuleSetLoader
         return new JsonObject
         {
             ["modClampRules"] = BuildRangeMap(rules.ModClampRules),
+            ["modPriceRanges"] = BuildRangeMap(rules.ModPriceRanges),
             ["modParentBaseProfiles"] = BuildStringMap(rules.ModParentBaseProfiles),
             ["modProfileRanges"] = BuildNestedRangeMap(rules.ModProfileRanges),
         };
@@ -362,6 +373,7 @@ internal static class RuleSetLoader
         {
             ["gearClampRules"] = BuildRangeMap(rules.GearClampRules),
             ["gearProfileRanges"] = BuildNestedRangeMap(rules.GearProfileRanges),
+            ["gearPriceRanges"] = BuildRangeMap(rules.GearPriceRanges),
         };
     }
 

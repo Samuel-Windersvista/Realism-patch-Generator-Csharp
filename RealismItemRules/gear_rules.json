@@ -14,6 +14,11 @@
       "min": -40,
       "max": 10,
       "preferInt": false
+    },
+    "Price": {
+      "min": 500,
+      "max": 150000,
+      "preferInt": true
     }
   },
   "gearProfileRanges": {
@@ -439,6 +444,128 @@
         "max": -2,
         "preferInt": false
       }
+    }
+  },
+  "gearPriceRanges": {
+    "armor_vest_light": {
+      "min": 12000,
+      "max": 25000,
+      "preferInt": true
+    },
+    "armor_vest_heavy": {
+      "min": 22000,
+      "max": 35000,
+      "preferInt": true
+    },
+    "armor_chest_rig_light": {
+      "min": 18000,
+      "max": 28000,
+      "preferInt": true
+    },
+    "armor_chest_rig_heavy": {
+      "min": 26000,
+      "max": 38000,
+      "preferInt": true
+    },
+    "chest_rig_light": {
+      "min": 8000,
+      "max": 15000,
+      "preferInt": true
+    },
+    "chest_rig_heavy": {
+      "min": 12000,
+      "max": 20000,
+      "preferInt": true
+    },
+    "helmet_light": {
+      "min": 6000,
+      "max": 15000,
+      "preferInt": true
+    },
+    "helmet_heavy": {
+      "min": 18000,
+      "max": 30000,
+      "preferInt": true
+    },
+    "armor_component_accessory": {
+      "min": 2000,
+      "max": 6000,
+      "preferInt": true
+    },
+    "armor_component_faceshield": {
+      "min": 2000,
+      "max": 5000,
+      "preferInt": true
+    },
+    "armor_mask_decorative": {
+      "min": 500,
+      "max": 2000,
+      "preferInt": true
+    },
+    "armor_mask_ballistic": {
+      "min": 2000,
+      "max": 5000,
+      "preferInt": true
+    },
+    "armor_plate_hard": {
+      "min": 8000,
+      "max": 18000,
+      "preferInt": true
+    },
+    "armor_plate_helmet": {
+      "min": 5000,
+      "max": 12000,
+      "preferInt": true
+    },
+    "armor_plate_soft": {
+      "min": 1000,
+      "max": 6000,
+      "preferInt": true
+    },
+    "backpack_compact": {
+      "min": 12000,
+      "max": 18000,
+      "preferInt": true
+    },
+    "backpack_full": {
+      "min": 18000,
+      "max": 26000,
+      "preferInt": true
+    },
+    "back_panel": {
+      "min": 5000,
+      "max": 10000,
+      "preferInt": true
+    },
+    "belt_harness": {
+      "min": 3000,
+      "max": 8000,
+      "preferInt": true
+    },
+    "headset": {
+      "min": 3000,
+      "max": 8000,
+      "preferInt": true
+    },
+    "cosmetic_headwear": {
+      "min": 500,
+      "max": 2000,
+      "preferInt": true
+    },
+    "protective_eyewear_standard": {
+      "min": 1000,
+      "max": 4000,
+      "preferInt": true
+    },
+    "protective_eyewear_ballistic": {
+      "min": 2000,
+      "max": 6000,
+      "preferInt": true
+    },
+    "cosmetic_gasmask": {
+      "min": 5000,
+      "max": 12000,
+      "preferInt": true
     }
   }
 }

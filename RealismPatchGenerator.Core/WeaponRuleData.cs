@@ -48,7 +48,20 @@ internal static class WeaponRuleData
             ["VerticalRecoil"] = new(10, 700, true),
             ["HorizontalRecoil"] = new(20, 700, true),
             ["Convergence"] = new(1, 40, true),
+            ["Price"] = new(5000, 250000, true),
             ["LoyaltyLevel"] = new(1, 5, true),
+        });
+
+    public static readonly IReadOnlyDictionary<string, NumericRange> GunPriceRanges =
+        new ReadOnlyDictionary<string, NumericRange>(new Dictionary<string, NumericRange>(StringComparer.OrdinalIgnoreCase)
+        {
+            ["assault"] = new(35000, 90000, true),
+            ["pistol"] = new(12000, 45000, true),
+            ["smg"] = new(22000, 65000, true),
+            ["sniper"] = new(50000, 150000, true),
+            ["shotgun"] = new(25000, 80000, true),
+            ["machinegun"] = new(70000, 180000, true),
+            ["launcher"] = new(90000, 250000, true),
         });
 
     public static readonly IReadOnlyDictionary<string, IReadOnlyDictionary<string, NumericRange>> WeaponProfileRanges =
@@ -162,8 +175,8 @@ internal static class WeaponRuleData
             }),
             ["subsonic_heavy_9x39"] = CreateRanges(new Dictionary<string, NumericRange>(StringComparer.OrdinalIgnoreCase)
             {
-                ["VerticalRecoil"] = new(-45, -60, true),
-                ["HorizontalRecoil"] = new(-20, -35, true),
+                ["VerticalRecoil"] = new(-50, -30, true),
+                ["HorizontalRecoil"] = new(-35, -20, true),
                 ["Convergence"] = new(-4, 2, true),
                 ["Velocity"] = new(-8, -6, true),
                 ["RecoilIntensity"] = new(0.03, 0.09),
@@ -322,6 +335,7 @@ internal static class WeaponRuleData
         {
             WeaponParentGroups = WeaponParentGroups,
             GunClampRules = GunClampRules,
+            GunPriceRanges = GunPriceRanges,
             WeaponProfileRanges = WeaponProfileRanges,
             WeaponCaliberRuleModifiers = WeaponCaliberRuleModifiers,
             WeaponStockRuleModifiers = WeaponStockRuleModifiers,

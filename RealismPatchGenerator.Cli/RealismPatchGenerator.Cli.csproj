@@ -2,6 +2,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\RealismPatchGenerator.Core\RealismPatchGenerator.Core.csproj" />
+    <Compile Remove="**\*-副本*.cs" />
+    <Compile Remove="**\*副本*.cs" />
   </ItemGroup>
 
   <PropertyGroup>
