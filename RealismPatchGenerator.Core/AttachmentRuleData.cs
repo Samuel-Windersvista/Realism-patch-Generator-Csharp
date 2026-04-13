@@ -174,8 +174,8 @@ internal static class AttachmentRuleData
             }),
             ["booster"] = CreateRanges(new Dictionary<string, NumericRange>(StringComparer.OrdinalIgnoreCase)
             {
-                ["AutoROF"] = new(1.2, 1.5),
-                ["SemiROF"] = new(1.2, 1.5),
+                ["AutoROF"] = new(1.03, 1.1),
+                ["SemiROF"] = new(1.0, 1.04),
                 ["ModMalfunctionChance"] = new(-25, -8, true),
             }),
             ["magazine_compact"] = CreateRanges(new Dictionary<string, NumericRange>(StringComparer.OrdinalIgnoreCase)

@@ -1,0 +1,402 @@
+{
+  "6691ed44913081ff28935fd2": {
+    "clone": "55d4887d4bdc2d962f8b4570",
+    "enable": true,
+    "items": {
+      "_props": {
+        "Prefab": {
+          "path": "5_56/mag_stanag_colt_ar15_std_556x45_30_green_tape.bundle"
+        }
+      }
+    },
+    "handbook": {
+      "ParentId": "5b5f754a86f774094242f19b",
+      "Price": 3200
+    },
+    "locales": {
+      "Name": "5.56x45 柯尔特 AR-15 STANAG 30 发弹匣（绿色胶带）",
+      "Shortname": "STANAG 绿胶",
+      "Description": "一款符合 STANAG 4179 标准的 30 发金属柯尔特 AR-15 弹匣，适用于 5.56x45 子弹。STANAG 4179 标准于 1980 年由北约成员国批准，旨在统一盟军人员使用的弹药和弹匣。已改装绿色胶带。"
+    }
+  },
+  "6691edb87c8beb7c11c2536e": {
+    "clone": "6691ed44913081ff28935fd2",
+    "enable": true,
+    "items": {
+      "_props": {
+        "Prefab": {
+          "path": "5_56/mag_stanag_colt_ar15_std_556x45_30_red_tape.bundle"
+        }
+      }
+    },
+    "handbook": {
+      "ParentId": "5b5f754a86f774094242f19b",
+      "Price": 3200
+    },
+    "locales": {
+      "Name": "5.56x45 柯尔特 AR-15 STANAG 30 发弹匣（红色胶带）",
+      "Shortname": "STANAG 红胶",
+      "Description": "一款符合 STANAG 4179 标准的 30 发金属柯尔特 AR-15 弹匣，适用于 5.56x45 子弹。STANAG 4179 标准于 1980 年由北约成员国批准，旨在统一盟军人员使用的弹药和弹匣。已改装红色胶带。"
+    }
+  },
+  "6691edbb208057046ad24677": {
+    "clone": "6691ed44913081ff28935fd2",
+    "enable": true,
+    "items": {
+      "_props": {
+        "Prefab": {
+          "path": "5_56/mag_stanag_colt_ar15_std_556x45_30_blue_tape.bundle"
+        }
+      }
+    },
+    "handbook": {
+      "ParentId": "5b5f754a86f774094242f19b",
+      "Price": 3200
+    },
+    "locales": {
+      "Name": "5.56x45 柯尔特 AR-15 STANAG 30 发弹匣（蓝色胶带）",
+      "Shortname": "STANAG 蓝胶",
+      "Description": "一款符合 STANAG 4179 标准的 30 发金属柯尔特 AR-15 弹匣，适用于 5.56x45 子弹。STANAG 4179 标准于 1980 年由北约成员国批准，旨在统一盟军人员使用的弹药和弹匣。已改装蓝色胶带。"
+    }
+  },
+  "6691edbfd29194092a289b8f": {
+    "clone": "6691ed44913081ff28935fd2",
+    "enable": true,
+    "items": {
+      "_props": {
+        "Prefab": {
+          "path": "5_56/mag_stanag_colt_ar15_std_556x45_30_fde_tape.bundle"
+        }
+      }
+    },
+    "handbook": {
+      "ParentId": "5b5f754a86f774094242f19b",
+      "Price": 3200
+    },
+    "locales": {
+      "Name": "5.56x45 柯尔特 AR-15 STANAG 30 发弹匣（FDE 胶带）",
+      "Shortname": "STANAG FDE胶",
+      "Description": "一款符合 STANAG 4179 标准的 30 发金属柯尔特 AR-15 弹匣，适用于 5.56x45 子弹。STANAG 4179 标准于 1980 年由北约成员国批准，旨在统一盟军人员使用的弹药和弹匣。已改装 FDE 色胶带。"
+    }
+  },
+  "6691edc4aae8a6c96948f34d": {
+    "clone": "6691ed44913081ff28935fd2",
+    "enable": true,
+    "items": {
+      "_props": {
+        "Prefab": {
+          "path": "5_56/mag_stanag_colt_ar15_std_556x45_30_black_tape.bundle"
+        }
+      }
+    },
+    "handbook": {
+      "ParentId": "5b5f754a86f774094242f19b",
+      "Price": 3200
+    },
+    "locales": {
+      "Name": "5.56x45 柯尔特 AR-15 STANAG 30 发弹匣（白色胶带）",
+      "Shortname": "STANAG 白胶",
+      "Description": "一款符合 STANAG 4179 标准的 30 发金属柯尔特 AR-15 弹匣，适用于 5.56x45 子弹。STANAG 4179 标准于 1980 年由北约成员国批准，旨在统一盟军人员使用的弹药和弹匣。已改装白色胶带。"
+    }
+  },
+  "6691edc90bed2b1da07112bf": {
+    "clone": "6691ed44913081ff28935fd2",
+    "enable": true,
+    "items": {
+      "_props": {
+        "Prefab": {
+          "path": "5_56/mag_stanag_colt_ar15_std_556x45_30_yellow_tape.bundle"
+        }
+      }
+    },
+    "handbook": {
+      "ParentId": "5b5f754a86f774094242f19b",
+      "Price": 3200
+    },
+    "locales": {
+      "Name": "5.56x45 柯尔特 AR-15 STANAG 30 发弹匣（黄色胶带）",
+      "Shortname": "STANAG 黄胶",
+      "Description": "一款符合 STANAG 4179 标准的 30 发金属柯尔特 AR-15 弹匣，适用于 5.56x45 子弹。STANAG 4179 标准于 1980 年由北约成员国批准，旨在统一盟军人员使用的弹药和弹匣。已改装黄色胶带。"
+    }
+  },
+  "6691edd7d7dfa2ba5f59a9c5": {
+    "clone": "5aaa5dfee5b5b000140293d3",
+    "enable": true,
+    "items": {
+      "_props": {
+        "Prefab": {
+          "path": "5_56/mag_stanag_magpul_pmag_gen_m3_556x45_30_blk_blue_tape.bundle"
+        }
+      }
+    },
+    "handbook": {
+      "ParentId": "5b5f754a86f774094242f19b",
+      "Price": 3200
+    },
+    "locales": {
+      "Name": "5.56x45 Magpul PMAG 30 GEN M3 STANAG 30 发弹匣（蓝色胶带）",
+      "Shortname": "M3 蓝胶",
+      "Description": "一款 30 发聚合物 Magpul PMAG GEN M3 弹匣，适用于 5.56x45 子弹。已改装蓝色胶带。"
+    }
+  },
+  "6691edebbf4404edcf6031cd": {
+    "clone": "6691edd7d7dfa2ba5f59a9c5",
+    "enable": true,
+    "items": {
+      "_props": {
+        "Prefab": {
+          "path": "5_56/mag_stanag_magpul_pmag_gen_m3_556x45_30_blk_red_tape.bundle"
+        }
+      }
+    },
+    "handbook": {
+      "ParentId": "5b5f754a86f774094242f19b",
+      "Price": 3200
+    },
+    "locales": {
+      "Name": "5.56x45 Magpul PMAG 30 GEN M3 STANAG 30 发弹匣（红色胶带）",
+      "Shortname": "M3 红胶",
+      "Description": "一款 30 发聚合物 Magpul PMAG GEN M3 弹匣，适用于 5.56x45 子弹。已改装红色胶带。"
+    }
+  },
+  "6691edeffec97c21ff4504ad": {
+    "clone": "6691edd7d7dfa2ba5f59a9c5",
+    "enable": true,
+    "items": {
+      "_props": {
+        "Prefab": {
+          "path": "5_56/mag_stanag_magpul_pmag_gen_m3_556x45_30_blk_yellow_tape.bundle"
+        }
+      }
+    },
+    "handbook": {
+      "ParentId": "5b5f754a86f774094242f19b",
+      "Price": 3200
+    },
+    "locales": {
+      "Name": "5.56x45 Magpul PMAG 30 GEN M3 STANAG 30 发弹匣（黄色胶带）",
+      "Shortname": "M3 黄胶",
+      "Description": "一款 30 发聚合物 Magpul PMAG GEN M3 弹匣，适用于 5.56x45 子弹。已改装黄色胶带。"
+    }
+  },
+  "6691edf890b4e16f3bee032f": {
+    "clone": "6691edd7d7dfa2ba5f59a9c5",
+    "enable": true,
+    "items": {
+      "_props": {
+        "Prefab": {
+          "path": "5_56/mag_stanag_magpul_pmag_gen_m3_556x45_30_blk_white_tape.bundle"
+        }
+      }
+    },
+    "handbook": {
+      "ParentId": "5b5f754a86f774094242f19b",
+      "Price": 3200
+    },
+    "locales": {
+      "Name": "5.56x45 Magpul PMAG 30 GEN M3 STANAG 30 发弹匣（白色胶带）",
+      "Shortname": "M3 白胶",
+      "Description": "一款 30 发聚合物 Magpul PMAG GEN M3 弹匣，适用于 5.56x45 子弹。已改装白色胶带。"
+    }
+  },
+  "6691ee133970c61dbea20bde": {
+    "clone": "59d6272486f77466146386ff",
+    "enable": true,
+    "items": {
+      "_props": {
+        "Prefab": {
+          "path": "7_62/mag_ak_magpul_pmag_30_ak_akm_gen_m3_762x39_30_blue.bundle"
+        }
+      }
+    },
+    "handbook": {
+      "ParentId": "5b5f754a86f774094242f19b",
+      "Price": 3200
+    },
+    "locales": {
+      "Name": "AK 7.62x39 Magpul PMAG 30 GEN M3 30 发弹匣（蓝色胶带）",
+      "Shortname": "M3 蓝胶",
+      "Description": "一款 30 发聚合物 Magpul PMAG 30 AK/AKM GEN M3 弹匣，适用于 7.62x39 AK 及兼容武器。也可装填 .366 TKM 子弹用于相应口径的 AK 兼容武器。已改装蓝色胶带。"
+    }
+  },
+  "6691ee28a879ea3e3d023cef": {
+    "clone": "6691ee133970c61dbea20bde",
+    "enable": true,
+    "items": {
+      "_props": {
+        "Prefab": {
+          "path": "7_62/mag_ak_magpul_pmag_30_ak_akm_gen_m3_762x39_30_red.bundle"
+        }
+      }
+    },
+    "handbook": {
+      "ParentId": "5b5f754a86f774094242f19b",
+      "Price": 3200
+    },
+    "locales": {
+      "Name": "AK 7.62x39 Magpul PMAG 30 GEN M3 30 发弹匣（红色胶带）",
+      "Shortname": "M3 红胶",
+      "Description": "一款 30 发聚合物 Magpul PMAG 30 AK/AKM GEN M3 弹匣，适用于 7.62x39 AK 及兼容武器。也可装填 .366 TKM 子弹用于相应口径的 AK 兼容武器。已改装红色胶带。"
+    }
+  },
+  "6691ee2debe1943e3d1462b6": {
+    "clone": "6691ee133970c61dbea20bde",
+    "enable": true,
+    "items": {
+      "_props": {
+        "Prefab": {
+          "path": "7_62/mag_ak_magpul_pmag_30_ak_akm_gen_m3_762x39_30_green.bundle"
+        }
+      }
+    },
+    "handbook": {
+      "ParentId": "5b5f754a86f774094242f19b",
+      "Price": 3200
+    },
+    "locales": {
+      "Name": "AK 7.62x39 Magpul PMAG 30 GEN M3 30 发弹匣（绿色胶带）",
+      "Shortname": "M3 绿胶",
+      "Description": "一款 30 发聚合物 Magpul PMAG 30 AK/AKM GEN M3 弹匣，适用于 7.62x39 AK 及兼容武器。也可装填 .366 TKM 子弹用于相应口径的 AK 兼容武器。已改装绿色胶带。"
+    }
+  },
+  "6691ee358ea32fbe243097d6": {
+    "clone": "6691ee133970c61dbea20bde",
+    "enable": true,
+    "items": {
+      "_props": {
+        "Prefab": {
+          "path": "7_62/mag_ak_magpul_pmag_30_ak_akm_gen_m3_762x39_30_yellow.bundle"
+        }
+      }
+    },
+    "handbook": {
+      "ParentId": "5b5f754a86f774094242f19b",
+      "Price": 3200
+    },
+    "locales": {
+      "Name": "AK 7.62x39 Magpul PMAG 30 GEN M3 30 发弹匣（黄色胶带）",
+      "Shortname": "M3 黄胶",
+      "Description": "一款 30 发聚合物 Magpul PMAG 30 AK/AKM GEN M3 弹匣，适用于 7.62x39 AK 及兼容武器。也可装填 .366 TKM 子弹用于相应口径的 AK 兼容武器。已改装黄色胶带。"
+    }
+  },
+  "6691ee3cd52a93614667ab10": {
+    "clone": "6691ee133970c61dbea20bde",
+    "enable": true,
+    "items": {
+      "_props": {
+        "Prefab": {
+          "path": "7_62/mag_ak_magpul_pmag_30_ak_akm_gen_m3_762x39_30_white.bundle"
+        }
+      }
+    },
+    "handbook": {
+      "ParentId": "5b5f754a86f774094242f19b",
+      "Price": 3200
+    },
+    "locales": {
+      "Name": "AK 7.62x39 Magpul PMAG 30 GEN M3 30 发弹匣（白色胶带）",
+      "Shortname": "M3 白胶",
+      "Description": "一款 30 发聚合物 Magpul PMAG 30 AK/AKM GEN M3 弹匣，适用于 7.62x39 AK 及兼容武器。也可装填 .366 TKM 子弹用于相应口径的 AK 兼容武器。已改装白色胶带。"
+    }
+  },
+  "6691ee45c74887b557a203b3": {
+    "clone": "55d482194bdc2d1d4e8b456b",
+    "enable": true,
+    "items": {
+      "_props": {
+        "Prefab": {
+          "path": "5_45/mag_ak74_izhmash_6l31_545x39_60_blue.bundle"
+        }
+      }
+    },
+    "handbook": {
+      "ParentId": "5b5f754a86f774094242f19b",
+      "Price": 18319
+    },
+    "locales": {
+      "Name": "AK-74 5.45x39 6L31 60 发弹匣（蓝色胶带）",
+      "Shortname": "6L31 蓝胶",
+      "Description": "一款 60 发 5.45x39 四排聚合物伊热夫斯克 6L31 弹匣，适用于 AK-74 及兼容系统。小批量生产，无序列号。已改装蓝色胶带。"
+    }
+  },
+  "6691ee535a1f37eeea19f80f": {
+    "clone": "6691ee45c74887b557a203b3",
+    "enable": true,
+    "items": {
+      "_props": {
+        "Prefab": {
+          "path": "5_45/mag_ak74_izhmash_6l31_545x39_60_red.bundle"
+        }
+      }
+    },
+    "handbook": {
+      "ParentId": "5b5f754a86f774094242f19b",
+      "Price": 18319
+    },
+    "locales": {
+      "Name": "AK-74 5.45x39 6L31 60 发弹匣（红色胶带）",
+      "Shortname": "6L31 红胶",
+      "Description": "一款 60 发 5.45x39 四排聚合物伊热夫斯克 6L31 弹匣，适用于 AK-74 及兼容系统。小批量生产，无序列号。已改装红色胶带。"
+    }
+  },
+  "6691ee5f23d28ef7e95bed41": {
+    "clone": "6691ee45c74887b557a203b3",
+    "enable": true,
+    "items": {
+      "_props": {
+        "Prefab": {
+          "path": "5_45/mag_ak74_izhmash_6l31_545x39_60_green.bundle"
+        }
+      }
+    },
+    "handbook": {
+      "ParentId": "5b5f754a86f774094242f19b",
+      "Price": 18319
+    },
+    "locales": {
+      "Name": "AK-74 5.45x39 6L31 60 发弹匣（绿色胶带）",
+      "Shortname": "6L31 绿胶",
+      "Description": "一款 60 发 5.45x39 四排聚合物伊热夫斯克 6L31 弹匣，适用于 AK-74 及兼容系统。小批量生产，无序列号。已改装绿色胶带。"
+    }
+  },
+  "6691ee62a3d283f8b2c075d4": {
+    "clone": "6691ee45c74887b557a203b3",
+    "enable": true,
+    "items": {
+      "_props": {
+        "Prefab": {
+          "path": "5_45/mag_ak74_izhmash_6l31_545x39_60_yellow.bundle"
+        }
+      }
+    },
+    "handbook": {
+      "ParentId": "5b5f754a86f774094242f19b",
+      "Price": 18319
+    },
+    "locales": {
+      "Name": "AK-74 5.45x39 6L31 60 发弹匣（黄色胶带）",
+      "Shortname": "6L31 黄胶",
+      "Description": "一款 60 发 5.45x39 四排聚合物伊热夫斯克 6L31 弹匣，适用于 AK-74 及兼容系统。小批量生产，无序列号。已改装黄色胶带。"
+    }
+  },
+  "6691ee6725fbee27e156917d": {
+    "clone": "6691ee45c74887b557a203b3",
+    "enable": true,
+    "items": {
+      "_props": {
+        "Prefab": {
+          "path": "5_45/mag_ak74_izhmash_6l31_545x39_60_white.bundle"
+        }
+      }
+    },
+    "handbook": {
+      "ParentId": "5b5f754a86f774094242f19b",
+      "Price": 18319
+    },
+    "locales": {
+      "Name": "AK-74 5.45x39 6L31 60 发弹匣（白色胶带）",
+      "Shortname": "6L31 白胶",
+      "Description": "一款 60 发 5.45x39 四排聚合物伊热夫斯克 6L31 弹匣，适用于 AK-74 及兼容系统。小批量生产，无序列号。已改装白色胶带。"
+    }
+  }
+}

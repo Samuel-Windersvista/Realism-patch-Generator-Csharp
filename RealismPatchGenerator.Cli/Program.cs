@@ -19,17 +19,38 @@ if (!parseResult)
 try
 {
     var generator = new PatchGenerator(options.BasePath, options.Seed);
-    var result = generator.Generate(options.OutputPath);
+    var result = generator.Generate(options.OutputPath, CreateInputPathFilter(options.IncludePatterns));
 
     Console.WriteLine($"BasePath: {result.BasePath}");
     Console.WriteLine($"OutputPath: {result.OutputPath}");
     Console.WriteLine($"Seed: {result.UsedSeed}");
+    if (options.IncludePatterns.Count > 0)
+    {
+        Console.WriteLine($"Includes: {string.Join(", ", options.IncludePatterns)}");
+    }
     Console.WriteLine($"Weapons: {result.Statistics.WeaponCount}");
     Console.WriteLine($"Attachments: {result.Statistics.AttachmentCount}");
     Console.WriteLine($"Ammo: {result.Statistics.AmmoCount}");
     Console.WriteLine($"Gear: {result.Statistics.GearCount}");
     Console.WriteLine($"Consumables: {result.Statistics.ConsumableCount}");
     Console.WriteLine($"Total: {result.Statistics.TotalCount}");
+    Console.WriteLine($"InputFiles: {result.Performance.InputFileCount}");
+    Console.WriteLine($"ProcessedFiles: {result.Performance.ProcessedFileCount}");
+    Console.WriteLine($"TotalMs: {result.Performance.TotalDuration.TotalMilliseconds:F2}");
+    Console.WriteLine($"TemplateLoadMs: {result.Performance.TemplateLoadDuration.TotalMilliseconds:F2}");
+    Console.WriteLine($"InputDiscoveryMs: {result.Performance.InputDiscoveryDuration.TotalMilliseconds:F2}");
+    Console.WriteLine($"FileProcessingMs: {result.Performance.FileProcessingDuration.TotalMilliseconds:F2}");
+    Console.WriteLine($"RuleApplicationMs: {result.Performance.RuleApplicationDuration.TotalMilliseconds:F2}");
+    Console.WriteLine($"OutputWriteMs: {result.Performance.OutputWriteDuration.TotalMilliseconds:F2}");
+    Console.WriteLine($"AllocatedMB: {result.Performance.AllocatedBytes / 1024d / 1024d:F2}");
+    Console.WriteLine($"Gen0Collections: {result.Performance.Gen0Collections}");
+    Console.WriteLine($"Gen1Collections: {result.Performance.Gen1Collections}");
+    Console.WriteLine($"Gen2Collections: {result.Performance.Gen2Collections}");
+    if (!string.IsNullOrWhiteSpace(result.Performance.SlowestInputFile))
+    {
+        Console.WriteLine($"SlowestInputFile: {result.Performance.SlowestInputFile}");
+        Console.WriteLine($"SlowestInputFileMs: {result.Performance.SlowestInputFileDuration.TotalMilliseconds:F2}");
+    }
 
     return 0;
 }
@@ -69,6 +90,17 @@ static bool TryParseArguments(string[] arguments, out CliOptions options, out st
                 }
 
                 options.Seed = seed;
+                break;
+
+            case "--include":
+            case "-i":
+                if (!TryReadValue(arguments, ref index, out var includeValue))
+                {
+                    errorMessage = "--include 缺少路径片段。";
+                    return false;
+                }
+
+                options.IncludePatterns.Add(NormalizeIncludePattern(includeValue));
                 break;
 
             default:
@@ -122,16 +154,37 @@ static bool IsHelpArgument(string argument)
         || argument.Equals("/?", StringComparison.OrdinalIgnoreCase);
 }
 
+static Func<string, bool>? CreateInputPathFilter(IReadOnlyList<string> includePatterns)
+{
+    if (includePatterns.Count == 0)
+    {
+        return null;
+    }
+
+    return path =>
+    {
+        var normalized = NormalizeIncludePattern(path);
+        return includePatterns.Any(pattern => normalized.Equals(pattern, StringComparison.OrdinalIgnoreCase)
+            || normalized.StartsWith(pattern + "/", StringComparison.OrdinalIgnoreCase));
+    };
+}
+
+static string NormalizeIncludePattern(string value)
+{
+    return value.Replace('\\', '/').Trim().TrimStart('.', '/');
+}
+
 static void PrintUsage()
 {
     Console.WriteLine("用法:");
     Console.WriteLine("  dotnet run --project .\\RealismPatchGenerator.Cli");
-    Console.WriteLine("  dotnet run --project .\\RealismPatchGenerator.Cli -- [basePath] [outputPath] [--seed <uint>]");
+    Console.WriteLine("  dotnet run --project .\\RealismPatchGenerator.Cli -- [basePath] [outputPath] [--seed <uint>] [--include <path>]");
     Console.WriteLine();
     Console.WriteLine("示例:");
     Console.WriteLine("  dotnet run --project .\\RealismPatchGenerator.Cli");
     Console.WriteLine("  dotnet run --project .\\RealismPatchGenerator.Cli -- . .\\output");
     Console.WriteLine("  dotnet run --project .\\RealismPatchGenerator.Cli -- . .\\output --seed 123456");
+    Console.WriteLine("  dotnet run --project .\\RealismPatchGenerator.Cli -- . .\\artifacts\\perf-small --seed 123456 --include user_templates/file.json");
 }
 
 file sealed class CliOptions
@@ -139,4 +192,5 @@ file sealed class CliOptions
     public string BasePath { get; set; } = ".";
     public string? OutputPath { get; set; }
     public uint? Seed { get; set; }
+    public List<string> IncludePatterns { get; } = [];
 }

@@ -58,33 +58,12 @@ Generator logic identifies profile first, then combines ergonomics, recoil, disp
 
 weaponProfileRanges currently includes:
 
-- assault
-- pistol
-- smg
-- sniper
-- shotgun
-- machinegun
-- launcher
 
 Major controlled fields:
 
-- VerticalRecoil
-- HorizontalRecoil
-- Convergence
-- Dispersion
-- VisualMulti
-- Ergonomics
-- RecoilIntensity
 
 Representative examples:
 
-- assault: VerticalRecoil 80 to 110, HorizontalRecoil 140 to 185, Ergonomics 85 to 95
-- pistol: VerticalRecoil 325 to 525, HorizontalRecoil 250 to 380, Ergonomics 92 to 100
-- smg: VerticalRecoil 37 to 64, HorizontalRecoil 70 to 120, Ergonomics 88 to 98
-- sniper: VerticalRecoil 115 to 185, HorizontalRecoil 150 to 300, Ergonomics 68 to 83
-- shotgun: VerticalRecoil 245 to 425, HorizontalRecoil 240 to 460, ShotgunDispersion fixed at 1
-- machinegun: VerticalRecoil 150 to 245, HorizontalRecoil 200 to 360, Ergonomics 70 to 90
-- launcher: VerticalRecoil 185 to 365, HorizontalRecoil 240 to 500, Ergonomics 45 to 68
 
 ## 6. Caliber and Ammo-Type Modifiers
 
@@ -133,6 +112,11 @@ Main affected fields:
 - BaseReloadSpeedMulti
 - BaseChamberCheckSpeed
 - RecoilIntensity
+
+Practical direction after the latest recoil retune:
+
+- bullpup now keeps only a mild recoil advantage and still pays the reload-speed tradeoff
+- stockless setups now explicitly increase recoil, visual kick, and instability instead of receiving hidden recoil discounts
 
 ## 8. Practical Tuning Recommendations
 

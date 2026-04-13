@@ -1,0 +1,131 @@
+{
+    "6628f96fd59ab54dedb55801": {
+        "ItemToClone": "SNIPERRIFLE_M700",
+        "OverrideProperties": {
+            "Chambers": [
+                {
+                    "_name": "patron_in_weapon",
+                    "_id": "668b43e7816c8c3884ac4955",
+                    "_parent": "6628f96fd59ab54dedb55801",
+                    "_props": {
+                        "filters": [
+                            {
+                                "Filter": ["66281ab7fca966e5021f81b5", "66281ac038f9aebf6f914138"]
+                            }
+                        ]
+                    },
+                    "_required": false,
+                    "_mergeSlotWithChildren": false,
+                    "_proto": "55d4af244bdc2d962f8b4571"
+                }
+            ],
+            "defMagType": "6628f973b21453a8afc0db68",
+            "defAmmo": "66281ab7fca966e5021f81b5",
+            "ammoCaliber": "Caliber762x51"
+        },
+        "LocalePush": {
+            "name": "处刑者",
+"shortName": "Executioner",
+"description": "“处刑者”——许多拾荒者和PMC的终点。它的确名副其实。"
+        },
+        "HandbookParent": "BoltActionRifles",
+        "HandbookPrice": 91999,
+        "PushMastery": true,
+        "CloneToFilters": true,
+        "LootPush": {
+            "LootContainersToAdd": [
+                "5909d89086f77472591234a0",
+                "5909d7cf86f77470ee57d75a",
+                "5909d76c86f77471e53d2adf",
+                "5909d5ef86f77467974efbd8",
+                "578f87ad245977356274f2cc"
+            ],
+            "StaticLootProbability": 5
+        },
+        "PushToFleaBlacklist": true
+    },
+    "6628f973b21453a8afc0db68": {
+        "ItemToClone": "MAGAZINE_762X51_WYATT_5RND",
+        "OverrideProperties": {
+            "Cartridges": [
+                {
+                    "_name": "cartridges",
+                    "_id": "668b43d16e92046cb8a95be5",
+                    "_max_count": 5,
+                    "_parent": "6628f973b21453a8afc0db68",
+                    "_props": {
+                        "filters": [
+                            {
+                                "Filter": ["66281ab7fca966e5021f81b5", "66281ac038f9aebf6f914138"]
+                            }
+                        ]
+                    },
+                    "_proto": "5748538b2459770af276a261"
+                }
+            ]
+        },
+        "LocalePush": {
+            "name": "Executioner Wyatt Magazine",
+            "shortName": "Executioner Mag",
+            "description": "A custom Wyatt outdoor magazine for the Executioner sniper rifle. With the stopping power loaded inside, you probably only need one of these."
+        },
+        "HandbookParent": "Magazines",
+        "HandbookPrice": 14999
+    },
+    "6628f977030da8d4c028f5c7": {
+        "ItemToClone": "MAGAZINE_762X51_AICS_5RND",
+        "OverrideProperties": {
+            "Cartridges": [
+                {
+                    "_name": "cartridges",
+                    "_id": "668b43cefa9406f36c712a75",
+                    "_max_count": 5,
+                    "_parent": "6628f977030da8d4c028f5c7",
+                    "_props": {
+                        "filters": [
+                            {
+                                "Filter": ["66281ab7fca966e5021f81b5", "66281ac038f9aebf6f914138"]
+                            }
+                        ]
+                    },
+                    "_proto": "5748538b2459770af276a261"
+                }
+            ]
+        },
+        "LocalePush": {
+            "name": "Executioner AICS Magazine",
+            "shortName": "Executioner AICS",
+            "description": "A custom AICS magazine for the Executioner sniper rifle. With the stopping power loaded inside, you probably only need one of these."
+        },
+        "HandbookParent": "Magazines",
+        "HandbookPrice": 14999
+    },
+    "6628f979c3da61a625d97d69": {
+        "ItemToClone": "MAGAZINE_762X51_PMAG_AC_5RND",
+        "OverrideProperties": {
+            "Cartridges": [
+                {
+                    "_name": "cartridges",
+                    "_id": "668b43c7bda26560c016f0a1",
+                    "_max_count": 5,
+                    "_parent": "6628f979c3da61a625d97d69",
+                    "_props": {
+                        "filters": [
+                            {
+                                "Filter": ["66281ab7fca966e5021f81b5", "66281ac038f9aebf6f914138"]
+                            }
+                        ]
+                    },
+                    "_proto": "5748538b2459770af276a261"
+                }
+            ]
+        },
+        "LocalePush": {
+            "name": "Executioner PMAG",
+            "shortName": "Executioner PMAG",
+            "description": "A custom PMAG for the Executioner sniper rifle. With the stopping power loaded inside, you probably only need one of these."
+        },
+        "HandbookParent": "Magazines",
+        "HandbookPrice": 14999
+    }
+}

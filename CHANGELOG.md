@@ -1,5 +1,10 @@
 # 更新日志
 
+## v2.5
+
+这次版本的重点不是增加新功能，而是把补丁生成链彻底分拆后，对主流程进行性能优化。现在生成器已经补上了基线计时、规则上下文缓存、alias 预索引、流式 JSON 读取和流式输出写出，在固定 seed 的小中大三档样本里都确认输出不变，同时整体耗时和内存分配都明显下降。
+简单说，v2.5 是一个以性能优化为核心的发布版，重点是让生成更快、更省内存，而且结果仍然稳定可复现。
+
 ## v2.1
 
 ### 项目重构
@@ -144,7 +149,11 @@
 
 ## Unreleased
 
-- None
+- Started the staged RealismPatchGenerator split.
+- Added TemplateCatalog to isolate template loading and template index construction from the main generator.
+- Kept LoadAllTemplates behavior-compatible by loading a catalog snapshot first and then repopulating the existing in-memory dictionaries.
+- Added phase-one and phase-two split planning documents to the docs folder as the execution baseline for the next refactor steps.
+- Re-ran RuleDataSynchronizationTests and confirmed the current 16-test suite still passes after the first split step.
 
 ## v2.0
 

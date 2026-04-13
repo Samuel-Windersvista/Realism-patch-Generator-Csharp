@@ -1,4 +1,4 @@
-# SPT Realism Patch Generator v2.1
+# SPT Realism Patch Generator v2.5
 
 这是当前 C# 版 SPT Realism 补丁生成器仓库。
 
@@ -10,7 +10,7 @@
 
 ## 当前状态
 
-- 当前版本：v2.1
+- 当前版本：v2.5
 - 当前主要入口：GUI、CLI
 - 核心生成入口：RealismPatchGenerator.Core/RealismPatchGenerator.cs
 - 当前有效生成大类：武器、附件、弹药、装备

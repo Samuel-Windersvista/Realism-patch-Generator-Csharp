@@ -44,7 +44,26 @@ public sealed class GenerationResult
     public required string OutputPath { get; init; }
     public required uint UsedSeed { get; init; }
     public required GenerationStatistics Statistics { get; init; }
+    public GenerationPerformanceMetrics Performance { get; init; } = new();
     public IReadOnlyList<string> Logs { get; init; } = [];
+}
+
+public sealed class GenerationPerformanceMetrics
+{
+    public int InputFileCount { get; init; }
+    public int ProcessedFileCount { get; init; }
+    public TimeSpan TotalDuration { get; init; }
+    public TimeSpan TemplateLoadDuration { get; init; }
+    public TimeSpan InputDiscoveryDuration { get; init; }
+    public TimeSpan FileProcessingDuration { get; init; }
+    public TimeSpan RuleApplicationDuration { get; init; }
+    public TimeSpan OutputWriteDuration { get; init; }
+    public string? SlowestInputFile { get; init; }
+    public TimeSpan SlowestInputFileDuration { get; init; }
+    public long AllocatedBytes { get; init; }
+    public int Gen0Collections { get; init; }
+    public int Gen1Collections { get; init; }
+    public int Gen2Collections { get; init; }
 }
 
 internal static class ItemJsonSchema

@@ -1,0 +1,27 @@
+{
+    "6621b200cb248c192d90e324": {
+        "ItemToClone": "FACECOVER_DEATH_KNIGHT",
+        "OverrideProperties": {
+            "Prefab": {
+                "path": "FaceCover/legion_facemask.bundle",
+                "rcid": ""
+            },
+            "BlocksEarpiece": false,
+            "BlocksEyewear": false,
+            "BlocksHeadwear": false,
+            "BlocksFaceCover": false,
+            "ConflictingItems": [],
+            "armorClass": 6
+        },
+        "LocalePush": {
+            "name": "军团面具（暴怒）",
+"shortName": "暴怒",
+"description": "军团成员在塔科夫游荡时佩戴的骇人面具。如果你近到能看清这张面具，那就已经太迟了。"
+        },
+        "Handbook": {
+            "HandbookParent": "Facecovers",
+            "HandbookPrice": 159999
+        },
+        "CloneToFilters": true
+    }
+}

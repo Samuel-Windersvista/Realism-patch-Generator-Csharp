@@ -69,13 +69,13 @@ internal static class WeaponRuleData
         {
             ["assault"] = CreateRanges(new Dictionary<string, NumericRange>(StringComparer.OrdinalIgnoreCase)
             {
-                ["VerticalRecoil"] = new(80, 110, true),
-                ["HorizontalRecoil"] = new(140, 185, true),
+                ["VerticalRecoil"] = new(95, 130, true),
+                ["HorizontalRecoil"] = new(155, 210, true),
                 ["Convergence"] = new(2, 25, true),
                 ["Dispersion"] = new(4, 8, true),
                 ["VisualMulti"] = new(1.05, 1.25),
                 ["Ergonomics"] = new(85, 95, true),
-                ["RecoilIntensity"] = new(0.12, 0.22),
+                ["RecoilIntensity"] = new(0.14, 0.26),
             }),
             ["pistol"] = CreateRanges(new Dictionary<string, NumericRange>(StringComparer.OrdinalIgnoreCase)
             {
@@ -89,13 +89,13 @@ internal static class WeaponRuleData
             }),
             ["smg"] = CreateRanges(new Dictionary<string, NumericRange>(StringComparer.OrdinalIgnoreCase)
             {
-                ["VerticalRecoil"] = new(37, 64, true),
-                ["HorizontalRecoil"] = new(70, 120, true),
+                ["VerticalRecoil"] = new(55, 82, true),
+                ["HorizontalRecoil"] = new(95, 145, true),
                 ["Convergence"] = new(16, 22, true),
                 ["Dispersion"] = new(6, 12, true),
                 ["VisualMulti"] = new(0.85, 1.15),
                 ["Ergonomics"] = new(88, 98, true),
-                ["RecoilIntensity"] = new(0.08, 0.16),
+                ["RecoilIntensity"] = new(0.10, 0.19),
             }),
             ["sniper"] = CreateRanges(new Dictionary<string, NumericRange>(StringComparer.OrdinalIgnoreCase)
             {
@@ -231,11 +231,11 @@ internal static class WeaponRuleData
             }),
             ["pdw_high_pen_small"] = CreateRanges(new Dictionary<string, NumericRange>(StringComparer.OrdinalIgnoreCase)
             {
-                ["VerticalRecoil"] = new(-15, 10, true),
-                ["HorizontalRecoil"] = new(-20, 10, true),
+                ["VerticalRecoil"] = new(-6, 8, true),
+                ["HorizontalRecoil"] = new(-8, 8, true),
                 ["Convergence"] = new(2, 6, true),
                 ["Velocity"] = new(5, 12, true),
-                ["RecoilIntensity"] = new(-0.05, 0.02),
+                ["RecoilIntensity"] = new(-0.02, 0.03),
             }),
         });
 
@@ -273,9 +273,9 @@ internal static class WeaponRuleData
             }),
             ["bullpup"] = CreateRanges(new Dictionary<string, NumericRange>(StringComparer.OrdinalIgnoreCase)
             {
-                ["VerticalRecoil"] = new(-12, 2, true),
-                ["HorizontalRecoil"] = new(-14, -5, true),
-                ["Convergence"] = new(3, 8, true),
+                ["VerticalRecoil"] = new(-4, 6, true),
+                ["HorizontalRecoil"] = new(-6, 0, true),
+                ["Convergence"] = new(1, 6, true),
                 ["CameraRecoil"] = new(0.004, 0.02),
                 ["VisualMulti"] = new(0.03, 0.12),
                 ["Ergonomics"] = new(-6, 2, true),
@@ -284,9 +284,9 @@ internal static class WeaponRuleData
             }),
             ["stockless"] = CreateRanges(new Dictionary<string, NumericRange>(StringComparer.OrdinalIgnoreCase)
             {
-                ["VerticalRecoil"] = new(-10, 4, true),
-                ["HorizontalRecoil"] = new(-12, -4, true),
-                ["Convergence"] = new(1, 6, true),
+                ["VerticalRecoil"] = new(6, 18, true),
+                ["HorizontalRecoil"] = new(4, 16, true),
+                ["Convergence"] = new(-3, 2, true),
                 ["CameraRecoil"] = new(0.02, 0.07),
                 ["VisualMulti"] = new(0.15, 0.55),
                 ["RecoilIntensity"] = new(0.02, 0.1),

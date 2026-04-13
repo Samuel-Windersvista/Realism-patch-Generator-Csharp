@@ -79,6 +79,7 @@ Examples:
 
 - muzzle_suppressor: Loudness -40 to -20, Flash -80 to -30, AimSpeed -20 to -8, DurabilityBurnModificator 1.2 to 1.5
 - muzzle_brake: VerticalRecoil -20 to -12, HorizontalRecoil -18 to -10, but Loudness rises to 10 to 20
+- booster: AutoROF 1.03 to 1.10 and SemiROF 1.00 to 1.04, keeping only a limited gas-boost effect instead of a dramatic fire-rate jump
 - magazine_compact: Ergonomics 0 to 6, ReloadSpeed 0 to 8, Handling 0 to 5
 - magazine_drum: Ergonomics -15 to -8, ReloadSpeed -20 to -5, Handling -12 to -4
 - scope_red_dot / scope_magnified mainly trade off Ergonomics, Accuracy, AimSpeed, and AimStability

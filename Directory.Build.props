@@ -1,9 +1,9 @@
 <Project>
   <PropertyGroup Condition="'$(MSBuildProjectName)' != 'RealismPatchGenerator.Tests'">
-    <Version>2.1</Version>
-    <AssemblyVersion>2.1.0.0</AssemblyVersion>
-    <FileVersion>2.1.0.0</FileVersion>
-    <InformationalVersion>2.1</InformationalVersion>
+    <Version>2.5</Version>
+    <AssemblyVersion>2.5.0.0</AssemblyVersion>
+    <FileVersion>2.5.0.0</FileVersion>
+    <InformationalVersion>2.5</InformationalVersion>
     <Product>SPT现实主义数值范围编辑生成器</Product>
     <Authors>Project Contributors</Authors>
   </PropertyGroup>

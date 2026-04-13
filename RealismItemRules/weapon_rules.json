@@ -96,13 +96,13 @@
   "weaponProfileRanges": {
     "assault": {
       "VerticalRecoil": {
-        "min": 80,
-        "max": 110,
+        "min": 95,
+        "max": 130,
         "preferInt": true
       },
       "HorizontalRecoil": {
-        "min": 140,
-        "max": 185,
+        "min": 155,
+        "max": 210,
         "preferInt": true
       },
       "Convergence": {
@@ -126,8 +126,8 @@
         "preferInt": true
       },
       "RecoilIntensity": {
-        "min": 0.12,
-        "max": 0.22,
+        "min": 0.14,
+        "max": 0.26,
         "preferInt": false
       }
     },
@@ -170,13 +170,13 @@
     },
     "smg": {
       "VerticalRecoil": {
-        "min": 37,
-        "max": 64,
+        "min": 55,
+        "max": 82,
         "preferInt": true
       },
       "HorizontalRecoil": {
-        "min": 70,
-        "max": 120,
+        "min": 95,
+        "max": 145,
         "preferInt": true
       },
       "Convergence": {
@@ -200,8 +200,8 @@
         "preferInt": true
       },
       "RecoilIntensity": {
-        "min": 0.08,
-        "max": 0.16,
+        "min": 0.10,
+        "max": 0.19,
         "preferInt": false
       }
     },
@@ -649,13 +649,13 @@
     },
     "pdw_high_pen_small": {
       "VerticalRecoil": {
-        "min": -15,
-        "max": 10,
+        "min": -6,
+        "max": 8,
         "preferInt": true
       },
       "HorizontalRecoil": {
-        "min": -20,
-        "max": 10,
+        "min": -8,
+        "max": 8,
         "preferInt": true
       },
       "Convergence": {
@@ -669,8 +669,8 @@
         "preferInt": true
       },
       "RecoilIntensity": {
-        "min": -0.05,
-        "max": 0.02,
+        "min": -0.02,
+        "max": 0.03,
         "preferInt": false
       }
     }
@@ -784,18 +784,18 @@
     },
     "bullpup": {
       "VerticalRecoil": {
-        "min": -12,
-        "max": 2,
+        "min": -4,
+        "max": 6,
         "preferInt": true
       },
       "HorizontalRecoil": {
-        "min": -14,
-        "max": -5,
+        "min": -6,
+        "max": 0,
         "preferInt": true
       },
       "Convergence": {
-        "min": 3,
-        "max": 8,
+        "min": 1,
+        "max": 6,
         "preferInt": true
       },
       "CameraRecoil": {
@@ -826,18 +826,18 @@
     },
     "stockless": {
       "VerticalRecoil": {
-        "min": -10,
-        "max": 4,
+        "min": 6,
+        "max": 18,
         "preferInt": true
       },
       "HorizontalRecoil": {
-        "min": -12,
-        "max": -4,
+        "min": 4,
+        "max": 16,
         "preferInt": true
       },
       "Convergence": {
-        "min": 1,
-        "max": 6,
+        "min": -3,
+        "max": 2,
         "preferInt": true
       },
       "CameraRecoil": {

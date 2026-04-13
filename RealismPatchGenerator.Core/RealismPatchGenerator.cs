@@ -1,6 +1,6 @@
+using System.Diagnostics;
 using System.Globalization;
 using System.Security.Cryptography;
-using System.Text.Encodings.Web;
 using System.Text.Json;
 using System.Text.Json.Nodes;
 using System.Text.RegularExpressions;
@@ -9,12 +9,6 @@ namespace RealismPatchGenerator.Core;
 
 public sealed class RealismPatchGenerator
 {
-    private static readonly JsonSerializerOptions OutputJsonOptions = new()
-    {
-        WriteIndented = true,
-        Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
-    };
-
     private static readonly Regex AlphaNumericTokenRegex = new("[a-z0-9]+", RegexOptions.Compiled | RegexOptions.IgnoreCase);
     private static readonly Regex MagCapacityNameRegex = new(@"\b(\d{1,3})(?:\s*|-)?(?:round|rnd|rds)\b", RegexOptions.Compiled | RegexOptions.IgnoreCase);
     private static readonly Regex MagCapacityCnRegex = new(@"(?<!\d)(\d{1,3})\s*发", RegexOptions.Compiled);
@@ -31,11 +25,11 @@ public sealed class RealismPatchGenerator
     private readonly Dictionary<string, JsonObject> ammoPatches = new(StringComparer.OrdinalIgnoreCase);
     private readonly Dictionary<string, JsonObject> gearPatches = new(StringComparer.OrdinalIgnoreCase);
     private readonly Dictionary<string, JsonObject> consumablePatches = new(StringComparer.OrdinalIgnoreCase);
-    private readonly Dictionary<string, OrderedPatchGroup> fileBasedPatches = new(StringComparer.OrdinalIgnoreCase);
-    private readonly List<string> fileBasedPatchOrder = [];
-    private readonly Dictionary<string, bool> fileUsesSuffixOutput = new(StringComparer.OrdinalIgnoreCase);
+    private readonly PatchOutputBuffer patchOutputBuffer = new();
     private readonly Dictionary<string, ItemInfo> generatedItemInfoById = new(StringComparer.OrdinalIgnoreCase);
     private readonly Dictionary<string, string> templateAliasCache = new(StringComparer.OrdinalIgnoreCase);
+    private readonly HashSet<string> unresolvedTemplateAliases = new(StringComparer.OrdinalIgnoreCase);
+    private readonly Dictionary<string, List<TemplateAliasCandidate>> templateAliasCandidatesByToken = new(StringComparer.OrdinalIgnoreCase);
     private readonly Dictionary<string, List<string>> templateParentIndex = new(StringComparer.OrdinalIgnoreCase);
     private readonly Dictionary<string, SortedDictionary<string, JsonObject>> templates = new(StringComparer.OrdinalIgnoreCase);
     private readonly List<string> logs = [];
@@ -43,23 +37,13 @@ public sealed class RealismPatchGenerator
     private readonly CompatibleRandom random;
     private readonly RuleSet rules;
     private readonly ItemExceptionDocument itemExceptions;
+    private long totalFileProcessingTicks;
+    private long totalRuleApplicationTicks;
+    private long slowestFileProcessingTicks;
+    private int processedFileCount;
+    private string? slowestProcessedFile;
 
-    private enum SupportedInputFileFormat
-    {
-        Unsupported,
-        RealismStandardTemplate,
-        WttArmory_templates,
-        Epic_templates,
-        ConsortiumOfThings_templates,
-        Requisitions_templates,
-        EcoAttachment_templates,
-        Artem_templates,
-        WttStandalone_templates,
-        SptBattlepass_templates,
-        MoxoTemplate,
-        MixedTemplate,
-        RaidOverhaulTemplate,
-    }
+    internal IReadOnlyDictionary<string, string> TemplateFileByItemId => templateFileByItemId;
 
     public RealismPatchGenerator(string basePath, uint? seed = null)
     {
@@ -74,24 +58,59 @@ public sealed class RealismPatchGenerator
 
     public GenerationResult Generate(string? outputDirectory = null, Func<string, bool>? inputPathFilter = null)
     {
+        ResetPerformanceCounters();
+        var allocatedBytesBefore = GC.GetTotalAllocatedBytes(false);
+        var gen0Before = GC.CollectionCount(0);
+        var gen1Before = GC.CollectionCount(1);
+        var gen2Before = GC.CollectionCount(2);
+        var totalStopwatch = Stopwatch.StartNew();
+
         EnsureRequiredDirectories();
+
+        var templateLoadStopwatch = Stopwatch.StartNew();
         LoadAllTemplates();
+        templateLoadStopwatch.Stop();
 
         Log($"开始生成现实主义补丁，工作目录: {basePath}");
         Log($"本次生成随机种子: {generationSeed}");
+        var inputDiscoveryStopwatch = Stopwatch.StartNew();
         var jsonFiles = Directory.EnumerateFiles(inputPath, "*.json", SearchOption.AllDirectories)
             .Where(path => inputPathFilter is null || inputPathFilter(Path.GetRelativePath(inputPath, path).Replace('\\', '/')))
             .OrderBy(path => Path.GetRelativePath(inputPath, path), StringComparer.OrdinalIgnoreCase)
             .ToList();
+        inputDiscoveryStopwatch.Stop();
 
         Log($"找到 {jsonFiles.Count} 个输入 JSON 文件");
+        var fileProcessingStopwatch = Stopwatch.StartNew();
         foreach (var filePath in jsonFiles)
         {
             ProcessItemFile(filePath);
         }
+        fileProcessingStopwatch.Stop();
 
         var outputPath = Path.GetFullPath(outputDirectory ?? Path.Combine(basePath, "output"));
+        var outputWriteStopwatch = Stopwatch.StartNew();
         SavePatches(outputPath);
+        outputWriteStopwatch.Stop();
+        totalStopwatch.Stop();
+
+        var performance = new GenerationPerformanceMetrics
+        {
+            InputFileCount = jsonFiles.Count,
+            ProcessedFileCount = processedFileCount,
+            TotalDuration = totalStopwatch.Elapsed,
+            TemplateLoadDuration = templateLoadStopwatch.Elapsed,
+            InputDiscoveryDuration = inputDiscoveryStopwatch.Elapsed,
+            FileProcessingDuration = fileProcessingStopwatch.Elapsed,
+            RuleApplicationDuration = TimeSpan.FromTicks(totalRuleApplicationTicks),
+            OutputWriteDuration = outputWriteStopwatch.Elapsed,
+            SlowestInputFile = slowestProcessedFile,
+            SlowestInputFileDuration = TimeSpan.FromTicks(slowestFileProcessingTicks),
+            AllocatedBytes = GC.GetTotalAllocatedBytes(false) - allocatedBytesBefore,
+            Gen0Collections = GC.CollectionCount(0) - gen0Before,
+            Gen1Collections = GC.CollectionCount(1) - gen1Before,
+            Gen2Collections = GC.CollectionCount(2) - gen2Before,
+        };
 
         var statistics = new GenerationStatistics
         {
@@ -103,14 +122,25 @@ public sealed class RealismPatchGenerator
         };
 
         Log($"生成完成，总计 {statistics.TotalCount} 个补丁");
+        Log($"性能统计: 总耗时 {performance.TotalDuration.TotalMilliseconds:F1} ms, 模板加载 {performance.TemplateLoadDuration.TotalMilliseconds:F1} ms, 文件处理 {performance.FileProcessingDuration.TotalMilliseconds:F1} ms, 规则执行 {performance.RuleApplicationDuration.TotalMilliseconds:F1} ms, 输出写出 {performance.OutputWriteDuration.TotalMilliseconds:F1} ms, 分配 {performance.AllocatedBytes / 1024d / 1024d:F2} MB");
         return new GenerationResult
         {
             BasePath = basePath,
             OutputPath = outputPath,
             UsedSeed = generationSeed,
             Statistics = statistics,
+            Performance = performance,
             Logs = logs.ToArray(),
         };
+    }
+
+    private void ResetPerformanceCounters()
+    {
+        totalFileProcessingTicks = 0;
+        totalRuleApplicationTicks = 0;
+        slowestFileProcessingTicks = 0;
+        processedFileCount = 0;
+        slowestProcessedFile = null;
     }
 
     internal bool TryGetAttachmentProfileRanges(string modProfile, out IReadOnlyDictionary<string, NumericRange> ranges)
@@ -301,73 +331,80 @@ public sealed class RealismPatchGenerator
 
     private void LoadAllTemplates()
     {
+        var snapshot = TemplateCatalog.Load(templatesBasePath, Log);
+
         templates.Clear();
         templateById.Clear();
         templateFileByItemId.Clear();
+        templateAliasCache.Clear();
+        unresolvedTemplateAliases.Clear();
+        templateAliasCandidatesByToken.Clear();
         templateParentIndex.Clear();
 
-        foreach (var relativeDir in new[] { "weapons", "attatchments", "ammo", "gear", "consumables" })
+        foreach (var pair in snapshot.Templates)
         {
-            var directoryPath = Path.Combine(templatesBasePath, relativeDir);
-            if (!Directory.Exists(directoryPath))
-            {
-                continue;
-            }
-
-            foreach (var filePath in Directory.EnumerateFiles(directoryPath, "*.json", SearchOption.TopDirectoryOnly)
-                .OrderBy(Path.GetFileName, StringComparer.OrdinalIgnoreCase))
-            {
-                var fileName = Path.GetFileName(filePath);
-                var text = File.ReadAllText(filePath);
-                var root = JsonNode.Parse(text)?.AsObject();
-                if (root is null)
-                {
-                    continue;
-                }
-
-                var byId = new SortedDictionary<string, JsonObject>(StringComparer.OrdinalIgnoreCase);
-                foreach (var pair in root)
-                {
-                    if (pair.Value is JsonObject value)
-                    {
-                        byId[pair.Key] = (JsonObject)value.DeepClone();
-                        templateById[pair.Key] = (JsonObject)value.DeepClone();
-                        templateFileByItemId[pair.Key] = fileName;
-                    }
-                }
-
-                templates[fileName] = byId;
-                Log($"已加载模板: {fileName} ({byId.Count} 项)");
-            }
+            templates[pair.Key] = pair.Value;
         }
 
-        foreach (var pair in StaticData.ParentIdToTemplate)
+        foreach (var pair in snapshot.TemplateById)
         {
-            if (string.Equals(pair.Value, "AMMO", StringComparison.OrdinalIgnoreCase))
+            templateById[pair.Key] = pair.Value;
+        }
+
+        foreach (var pair in snapshot.TemplateFileByItemId)
+        {
+            templateFileByItemId[pair.Key] = pair.Value;
+        }
+
+        foreach (var pair in snapshot.TemplateParentIndex)
+        {
+            templateParentIndex[pair.Key] = pair.Value;
+        }
+
+        BuildTemplateAliasIndex();
+    }
+
+    private void BuildTemplateAliasIndex()
+    {
+        foreach (var pair in templateById)
+        {
+            var candidateTokens = TokenizeCloneReference(pair.Key);
+            var candidateName = pair.Value["Name"]?.GetValue<string?>();
+            if (!string.IsNullOrWhiteSpace(candidateName))
+            {
+                candidateTokens.UnionWith(TokenizeCloneReference(candidateName));
+            }
+
+            if (candidateTokens.Count == 0)
             {
                 continue;
             }
 
-            var templateFile = Path.GetFileName(pair.Value);
-            if (!templateParentIndex.TryGetValue(templateFile, out var parents))
+            var candidate = new TemplateAliasCandidate(pair.Key, candidateTokens);
+            foreach (var token in candidateTokens)
             {
-                parents = [];
-                templateParentIndex[templateFile] = parents;
-            }
+                if (!templateAliasCandidatesByToken.TryGetValue(token, out var candidates))
+                {
+                    candidates = [];
+                    templateAliasCandidatesByToken[token] = candidates;
+                }
 
-            parents.Add(pair.Key);
+                candidates.Add(candidate);
+            }
         }
     }
 
     private void ProcessItemFile(string itemFile)
     {
         var relativeDisplay = Path.GetRelativePath(inputPath, itemFile);
+        var stopwatch = Stopwatch.StartNew();
         Log($"处理文件: {relativeDisplay}");
 
         JsonObject? itemsData;
         try
         {
-            itemsData = JsonNode.Parse(File.ReadAllText(itemFile))?.AsObject();
+            using var stream = File.OpenRead(itemFile);
+            itemsData = JsonNode.Parse(stream)?.AsObject();
         }
         catch (Exception ex)
         {
@@ -381,7 +418,7 @@ public sealed class RealismPatchGenerator
             return;
         }
 
-        var inputFormat = DetectSupportedFileFormat(itemsData, relativeDisplay);
+        var inputFormat = InputFormatRouter.DetectSupportedFileFormat(itemsData, relativeDisplay);
         if (inputFormat == SupportedInputFileFormat.Unsupported)
         {
             Log($"跳过暂不支持的输入结构文件: {relativeDisplay}");
@@ -391,7 +428,7 @@ public sealed class RealismPatchGenerator
         var processed = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
         var processedCount = 0;
         var sourceKey = Path.ChangeExtension(Path.GetRelativePath(inputPath, itemFile), null) ?? Path.GetFileNameWithoutExtension(itemFile);
-        fileUsesSuffixOutput[sourceKey] = ShouldUseSuffixOutput(sourceKey, inputFormat);
+        patchOutputBuffer.RegisterSource(sourceKey, InputFormatRouter.ShouldUseSuffixOutput(sourceKey, inputFormat));
 
         foreach (var pair in itemsData)
         {
@@ -407,22 +444,14 @@ public sealed class RealismPatchGenerator
         }
 
         Log($"处理完成: {relativeDisplay} - {processedCount} 项");
-    }
-
-    private static bool ShouldUseSuffixOutput(string sourceFile, SupportedInputFileFormat inputFormat)
-    {
-        if (inputFormat != SupportedInputFileFormat.RealismStandardTemplate)
+        stopwatch.Stop();
+        totalFileProcessingTicks += stopwatch.ElapsedTicks;
+        processedFileCount += 1;
+        if (stopwatch.ElapsedTicks > slowestFileProcessingTicks)
         {
-            return true;
+            slowestFileProcessingTicks = stopwatch.ElapsedTicks;
+            slowestProcessedFile = relativeDisplay.Replace('\\', '/');
         }
-
-        var normalized = sourceFile.Replace('\\', '/');
-        var separatorIndex = normalized.IndexOf('/');
-        var topLevelDirectory = separatorIndex >= 0 ? normalized[..separatorIndex] : normalized;
-
-        return !topLevelDirectory.Equals("attatchments", StringComparison.OrdinalIgnoreCase)
-            && !topLevelDirectory.Equals("gear", StringComparison.OrdinalIgnoreCase)
-            && !topLevelDirectory.Equals("weapons", StringComparison.OrdinalIgnoreCase);
     }
 
     private bool ProcessSingleItem(
@@ -442,7 +471,7 @@ public sealed class RealismPatchGenerator
             return false;
         }
 
-        if (!TryBuildPatchForSupportedFormat(itemId, itemData, sourceFile, inputFormat, out var patch, out var itemInfo))
+        if (!PatchBuildRouter.TryBuildPatchForSupportedFormat(this, itemId, itemData, sourceFile, inputFormat, out var patch, out var itemInfo))
         {
             return false;
         }
@@ -454,99 +483,7 @@ public sealed class RealismPatchGenerator
         return true;
     }
 
-    private static SupportedInputFileFormat DetectSupportedFileFormat(JsonObject itemsData, string sourceFile)
-    {
-        var hasEntries = false;
-        var allStandard = true;
-        var allWtt = true;
-        var allMoxo = true;
-        var allMixed = true;
-        var allRaidOverhaul = true;
-
-        foreach (var pair in itemsData)
-        {
-            if (pair.Value is not JsonObject itemData)
-            {
-                continue;
-            }
-
-            hasEntries = true;
-            allStandard &= IsRealismStandardTemplateFormat(itemData);
-            allWtt &= IsWTTTemplateFormat(itemData);
-            allMoxo &= IsMoxoTemplateFormat(itemData);
-            allMixed &= IsMixedTemplateFormat(itemData);
-            allRaidOverhaul &= IsRaidOverhaulTemplateFormat(itemData);
-        }
-
-        if (!hasEntries)
-        {
-            return SupportedInputFileFormat.Unsupported;
-        }
-
-        if (allStandard)
-        {
-            return SupportedInputFileFormat.RealismStandardTemplate;
-        }
-
-        if (allWtt && IsWttArmoryTemplatesSourceFile(sourceFile))
-        {
-            return SupportedInputFileFormat.WttArmory_templates;
-        }
-
-        if (allWtt && IsEpicTemplatesSourceFile(sourceFile))
-        {
-            return SupportedInputFileFormat.Epic_templates;
-        }
-
-        if (allWtt && IsConsortiumOfThingsTemplatesSourceFile(sourceFile))
-        {
-            return SupportedInputFileFormat.ConsortiumOfThings_templates;
-        }
-
-        if (allWtt && IsRequisitionsTemplatesSourceFile(sourceFile))
-        {
-            return SupportedInputFileFormat.Requisitions_templates;
-        }
-
-        if (allWtt && IsEcoAttachmentTemplatesSourceFile(sourceFile))
-        {
-            return SupportedInputFileFormat.EcoAttachment_templates;
-        }
-
-        if (allWtt && IsArtemTemplatesSourceFile(sourceFile))
-        {
-            return SupportedInputFileFormat.Artem_templates;
-        }
-
-        if (allWtt && IsWttStandaloneTemplatesSourceFile(sourceFile))
-        {
-            return SupportedInputFileFormat.WttStandalone_templates;
-        }
-
-        if (allWtt && IsSptBattlepassTemplatesSourceFile(sourceFile))
-        {
-            return SupportedInputFileFormat.SptBattlepass_templates;
-        }
-
-        if (allMoxo)
-        {
-            return SupportedInputFileFormat.MoxoTemplate;
-        }
-
-        if (allMixed)
-        {
-            return SupportedInputFileFormat.MixedTemplate;
-        }
-
-        if (allRaidOverhaul)
-        {
-            return SupportedInputFileFormat.RaidOverhaulTemplate;
-        }
-
-        return SupportedInputFileFormat.Unsupported;
-    }
-
-    private bool TryBuildPatchForSupportedFormat(
+    internal bool TryBuildPatchForSupportedFormat(
         string itemId,
         JsonObject itemData,
         string sourceFile,
@@ -612,96 +549,7 @@ public sealed class RealismPatchGenerator
         }
     }
 
-    private static bool IsRealismStandardTemplateFormat(JsonObject itemData)
-    {
-        return itemData.ContainsKey("$type")
-            && itemData.ContainsKey("ItemID")
-            && !ItemJsonSchema.HasLegacyFormatMarkers(itemData);
-    }
-
-    private static bool IsMoxoTemplateFormat(JsonObject itemData)
-    {
-        return !itemData.ContainsKey("$type")
-            && itemData.ContainsKey("clone")
-            && (itemData["item"] is JsonObject || itemData["items"] is JsonObject);
-    }
-
-    private static bool IsWTTTemplateFormat(JsonObject itemData)
-    {
-        return !itemData.ContainsKey("$type")
-            && itemData.ContainsKey("itemTplToClone")
-            && !itemData.ContainsKey("ItemToClone")
-            && !itemData.ContainsKey("clone");
-    }
-
-    private static bool IsWttArmoryTemplatesSourceFile(string sourceFile)
-    {
-        var fileName = Path.GetFileName(sourceFile ?? string.Empty);
-        return fileName.Contains("WTT - Armory_", StringComparison.OrdinalIgnoreCase);
-    }
-
-    private static bool IsEpicTemplatesSourceFile(string sourceFile)
-    {
-        var fileName = Path.GetFileName(sourceFile ?? string.Empty);
-        return fileName.Contains("EpicRangeTime-", StringComparison.OrdinalIgnoreCase);
-    }
-
-    private static bool IsConsortiumOfThingsTemplatesSourceFile(string sourceFile)
-    {
-        var fileName = Path.GetFileName(sourceFile ?? string.Empty);
-        return fileName.Contains("ConsortiumOfThings_", StringComparison.OrdinalIgnoreCase);
-    }
-
-    private static bool IsRequisitionsTemplatesSourceFile(string sourceFile)
-    {
-        var fileName = Path.GetFileName(sourceFile ?? string.Empty);
-        return fileName.Contains("Echoes.of.Tarkov.-.Requisitions_", StringComparison.OrdinalIgnoreCase);
-    }
-
-    private static bool IsEcoAttachmentTemplatesSourceFile(string sourceFile)
-    {
-        var fileName = Path.GetFileName(sourceFile ?? string.Empty);
-        return fileName.Contains("Eco-Attachment Emporium_", StringComparison.OrdinalIgnoreCase);
-    }
-
-    private static bool IsArtemTemplatesSourceFile(string sourceFile)
-    {
-        var fileName = Path.GetFileName(sourceFile ?? string.Empty);
-        return fileName.Contains("Artem_", StringComparison.OrdinalIgnoreCase);
-    }
-
-    private static bool IsWttStandaloneTemplatesSourceFile(string sourceFile)
-    {
-        var fileName = Path.GetFileName(sourceFile ?? string.Empty);
-        return fileName.Contains("AK50", StringComparison.OrdinalIgnoreCase)
-            || fileName.Contains("AKResonant", StringComparison.OrdinalIgnoreCase)
-            || fileName.Contains("50 BMG", StringComparison.OrdinalIgnoreCase)
-            || fileName.Contains(".50BMG", StringComparison.OrdinalIgnoreCase)
-            || fileName.Contains(".50bmg", StringComparison.OrdinalIgnoreCase);
-    }
-
-    private static bool IsSptBattlepassTemplatesSourceFile(string sourceFile)
-    {
-        var fileName = Path.GetFileName(sourceFile ?? string.Empty);
-        return fileName.Contains("SPT Battlepass", StringComparison.OrdinalIgnoreCase);
-    }
-
-    private static bool IsMixedTemplateFormat(JsonObject itemData)
-    {
-        return !itemData.ContainsKey("$type")
-            && !itemData.ContainsKey("itemTplToClone")
-            && !itemData.ContainsKey("ItemToClone")
-            && (itemData["item"] is JsonObject || itemData["items"] is JsonObject);
-    }
-
-    private static bool IsRaidOverhaulTemplateFormat(JsonObject itemData)
-    {
-        return !itemData.ContainsKey("$type")
-            && itemData.ContainsKey("ItemToClone")
-            && !itemData.ContainsKey("clone");
-    }
-
-    private bool TryBuildMixedTemplatePatch(
+    internal bool TryBuildMixedTemplatePatch(
         string itemId,
         JsonObject itemData,
         string sourceFile,
@@ -717,7 +565,7 @@ public sealed class RealismPatchGenerator
         return TryBuildMixedDirectPatch(itemId, itemData, sourceFile, out patch, out itemInfo);
     }
 
-    private bool TryBuildRaidOverhaulTemplatePatch(
+    internal bool TryBuildRaidOverhaulTemplatePatch(
         string itemId,
         JsonObject itemData,
         string sourceFile,
@@ -765,7 +613,7 @@ public sealed class RealismPatchGenerator
         return TryBuildRaidOverhaulFallbackPatch(itemId, itemData, sourceFile, cloneId, out patch, out itemInfo);
     }
 
-    private bool TryBuildWttArmoryTemplatesPatch(
+    internal bool TryBuildWttArmoryTemplatesPatch(
         string itemId,
         JsonObject itemData,
         string sourceFile,
@@ -781,7 +629,7 @@ public sealed class RealismPatchGenerator
             out patch,
             out itemInfo);
 
-    private bool TryBuildEpicTemplatesPatch(
+    internal bool TryBuildEpicTemplatesPatch(
         string itemId,
         JsonObject itemData,
         string sourceFile,
@@ -797,7 +645,7 @@ public sealed class RealismPatchGenerator
             out patch,
             out itemInfo);
 
-    private bool TryBuildRequisitionsTemplatesPatch(
+    internal bool TryBuildRequisitionsTemplatesPatch(
         string itemId,
         JsonObject itemData,
         string sourceFile,
@@ -813,7 +661,7 @@ public sealed class RealismPatchGenerator
             out patch,
             out itemInfo);
 
-    private bool TryBuildConsortiumOfThingsTemplatesPatch(
+    internal bool TryBuildConsortiumOfThingsTemplatesPatch(
         string itemId,
         JsonObject itemData,
         string sourceFile,
@@ -829,7 +677,7 @@ public sealed class RealismPatchGenerator
             out patch,
             out itemInfo);
 
-    private bool TryBuildEcoAttachmentTemplatesPatch(
+    internal bool TryBuildEcoAttachmentTemplatesPatch(
         string itemId,
         JsonObject itemData,
         string sourceFile,
@@ -845,7 +693,7 @@ public sealed class RealismPatchGenerator
             out patch,
             out itemInfo);
 
-    private bool TryBuildArtemTemplatesPatch(
+    internal bool TryBuildArtemTemplatesPatch(
         string itemId,
         JsonObject itemData,
         string sourceFile,
@@ -861,7 +709,7 @@ public sealed class RealismPatchGenerator
             out patch,
             out itemInfo);
 
-    private bool TryBuildWttStandaloneTemplatesPatch(
+    internal bool TryBuildWttStandaloneTemplatesPatch(
         string itemId,
         JsonObject itemData,
         string sourceFile,
@@ -877,7 +725,7 @@ public sealed class RealismPatchGenerator
             out patch,
             out itemInfo);
 
-    private bool TryBuildSptBattlepassTemplatesPatch(
+    internal bool TryBuildSptBattlepassTemplatesPatch(
         string itemId,
         JsonObject itemData,
         string sourceFile,
@@ -944,7 +792,7 @@ public sealed class RealismPatchGenerator
         return TryBuildSupportedWttSubclassFallbackPatch(subclassName, itemId, itemData, sourceFile, cloneId, resolveParentId, resolveTemplateFile, out patch, out itemInfo);
     }
 
-    private bool TryBuildMoxoTemplatePatch(
+    internal bool TryBuildMoxoTemplatePatch(
         string itemId,
         JsonObject itemData,
         string sourceFile,
@@ -1072,6 +920,13 @@ public sealed class RealismPatchGenerator
             return true;
         }
 
+        if (unresolvedTemplateAliases.Contains(cloneId))
+        {
+            resolvedCloneId = string.Empty;
+            cloneTemplate = new JsonObject();
+            return false;
+        }
+
         if (TryResolveTemplateAlias(cloneId, out resolvedCloneId)
             && templateById.TryGetValue(resolvedCloneId, out cloneTemplate))
         {
@@ -1093,20 +948,42 @@ public sealed class RealismPatchGenerator
             return false;
         }
 
+        var candidates = new HashSet<TemplateAliasCandidate>();
+        foreach (var token in aliasTokens)
+        {
+            if (!templateAliasCandidatesByToken.TryGetValue(token, out var tokenCandidates))
+            {
+                continue;
+            }
+
+            foreach (var candidate in tokenCandidates)
+            {
+                candidates.Add(candidate);
+            }
+        }
+
+        if (candidates.Count == 0)
+        {
+            unresolvedTemplateAliases.Add(cloneId);
+            resolvedCloneId = string.Empty;
+            return false;
+        }
+
         string? bestId = null;
         var bestScore = int.MinValue;
-        foreach (var pair in templateById)
+        foreach (var candidate in candidates)
         {
-            var score = ScoreCloneAliasMatch(aliasTokens, pair.Key, pair.Value);
+            var score = ScoreCloneAliasMatch(aliasTokens, candidate.Tokens);
             if (score > bestScore)
             {
                 bestScore = score;
-                bestId = pair.Key;
+                bestId = candidate.TemplateId;
             }
         }
 
         if (bestId is null || bestScore < 10)
         {
+            unresolvedTemplateAliases.Add(cloneId);
             resolvedCloneId = string.Empty;
             return false;
         }
@@ -1115,15 +992,8 @@ public sealed class RealismPatchGenerator
         return true;
     }
 
-    private static int ScoreCloneAliasMatch(HashSet<string> aliasTokens, string candidateId, JsonObject candidateTemplate)
+    private static int ScoreCloneAliasMatch(HashSet<string> aliasTokens, HashSet<string> candidateTokens)
     {
-        var candidateTokens = TokenizeCloneReference(candidateId);
-        var candidateName = candidateTemplate["Name"]?.GetValue<string?>();
-        if (!string.IsNullOrWhiteSpace(candidateName))
-        {
-            candidateTokens.UnionWith(TokenizeCloneReference(candidateName));
-        }
-
         var overlapCount = aliasTokens.Count(token => candidateTokens.Contains(token));
         if (overlapCount == 0)
         {
@@ -1154,6 +1024,20 @@ public sealed class RealismPatchGenerator
             if (!string.IsNullOrWhiteSpace(normalized))
             {
                 tokens.Add(normalized);
+            }
+        }
+
+        return tokens;
+    }
+
+    internal static HashSet<string> ExtractAlphaNumericTokens(string value)
+    {
+        var tokens = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+        foreach (Match match in AlphaNumericTokenRegex.Matches(value))
+        {
+            if (!string.IsNullOrWhiteSpace(match.Value))
+            {
+                tokens.Add(match.Value);
             }
         }
 
@@ -1200,7 +1084,7 @@ public sealed class RealismPatchGenerator
         return normalized;
     }
 
-    private bool TryBuildStandardTemplateClonePatch(
+    internal bool TryBuildStandardTemplateClonePatch(
         string itemId,
         JsonObject itemData,
         string sourceFile,
@@ -1254,180 +1138,28 @@ public sealed class RealismPatchGenerator
         return token.Any(char.IsDigit);
     }
 
-    private ItemInfo ExtractItemInfo(string itemId, JsonObject itemData, string? sourceFile)
-    {
-        var info = new ItemInfo
-        {
-            ItemId = itemId,
-            SourceFile = sourceFile,
-            Format = ItemFormat.RealismStandardTemplate,
-        };
+    private sealed record TemplateAliasCandidate(string TemplateId, HashSet<string> Tokens);
 
-        info.ItemType = itemData["$type"]?.GetValue<string?>();
-        info.Name = itemData["Name"]?.GetValue<string?>() ?? ExtractLocalizedName(itemData["locales"]) ?? ExtractLocalizedName(itemData["LocalePush"]);
-        info.ParentId = NormalizeParentId(itemData["parentId"]?.GetValue<string?>());
-        if (!string.IsNullOrWhiteSpace(info.ParentId))
-        {
-            info.TemplateFile = GetTemplateForParentId(info.ParentId);
-        }
-
-        info.Properties = ExtractProperties(itemData, ItemJsonSchema.RealismStandardTemplateIgnoredKeys);
-
-        EnrichItemInfoWithSourceContext(info, itemData);
-        info.SourceProperties = (JsonObject)info.Properties.DeepClone();
-        info.AllowedPatchFields = CreateAllowedPatchFieldSet(info.Properties, info.ItemType, info.SourceProperties["ModType"]?.GetValue<string?>());
-        return info;
-    }
+    internal ItemInfo ExtractItemInfo(string itemId, JsonObject itemData, string? sourceFile)
+        => ItemInfoFactory.CreateStandardTemplateItemInfo(this, itemId, itemData, sourceFile);
 
     private ItemInfo ExtractStandardTemplateCloneItemInfo(string itemId, JsonObject itemData, string sourceFile, ItemInfo cloneInfo, JsonObject clonePatch)
-    {
-        var properties = ExtractProperties(itemData, ItemJsonSchema.RealismStandardTemplateIgnoredKeys);
-        var localizedName = ExtractLocalizedName(itemData["locales"]) ?? ExtractLocalizedName(itemData["LocalePush"]);
-
-        var info = new ItemInfo
-        {
-            ItemId = itemId,
-            SourceFile = sourceFile,
-            Format = ItemFormat.RealismStandardTemplate,
-            TemplateFile = cloneInfo.TemplateFile,
-            ParentId = cloneInfo.ParentId,
-            ItemType = cloneInfo.ItemType ?? clonePatch["$type"]?.GetValue<string?>(),
-            Name = FirstNonEmpty(localizedName, itemData["Name"]?.GetValue<string?>(), clonePatch["Name"]?.GetValue<string?>()),
-            Properties = properties,
-            SourceProperties = (JsonObject)properties.DeepClone(),
-            IsWeapon = cloneInfo.IsWeapon,
-            IsGear = cloneInfo.IsGear,
-            IsConsumable = cloneInfo.IsConsumable,
-        };
-
-        EnrichItemInfoWithSourceContext(info, clonePatch);
-        info.AllowedPatchFields = CreateAllowedPatchFieldSet(clonePatch, info.ItemType, clonePatch["ModType"]?.GetValue<string?>());
-        return info;
-    }
+        => ItemInfoFactory.CreateStandardTemplateCloneItemInfo(this, itemId, itemData, sourceFile, cloneInfo, clonePatch);
 
     private ItemInfo ExtractStandardTemplateCloneItemInfo(string itemId, JsonObject itemData, string sourceFile, string cloneId, JsonObject cloneTemplate)
-    {
-        var templateFile = templateFileByItemId.GetValueOrDefault(cloneId);
-        var properties = ExtractProperties(itemData, ItemJsonSchema.RealismStandardTemplateIgnoredKeys);
-        var localizedName = ExtractLocalizedName(itemData["locales"]) ?? ExtractLocalizedName(itemData["LocalePush"]);
-
-        var info = new ItemInfo
-        {
-            ItemId = itemId,
-            SourceFile = sourceFile,
-            Format = ItemFormat.RealismStandardTemplate,
-            TemplateFile = templateFile,
-            ParentId = InferParentIdFromTemplateFile(templateFile ?? string.Empty),
-            ItemType = cloneTemplate["$type"]?.GetValue<string?>(),
-            Name = FirstNonEmpty(localizedName, itemData["Name"]?.GetValue<string?>(), cloneTemplate["Name"]?.GetValue<string?>()),
-            Properties = properties,
-            SourceProperties = (JsonObject)properties.DeepClone(),
-        };
-
-        EnrichItemInfoWithSourceContext(info, cloneTemplate);
-        info.AllowedPatchFields = CreateAllowedPatchFieldSet(cloneTemplate, info.ItemType, cloneTemplate["ModType"]?.GetValue<string?>());
-        return info;
-    }
+        => ItemInfoFactory.CreateStandardTemplateCloneItemInfo(this, itemId, itemData, sourceFile, cloneId, cloneTemplate);
 
     private ItemInfo ExtractMoxoItemInfo(string itemId, JsonObject itemData, string sourceFile, ItemInfo cloneInfo, JsonObject clonePatch)
-    {
-        var properties = ExtractEffectiveInputFields(itemData, clonePatch);
-        var localizedName = ExtractLocalizedName(itemData["locales"]) ?? ExtractLocalizedName(itemData["LocalePush"]);
-
-        var info = new ItemInfo
-        {
-            ItemId = itemId,
-            SourceFile = sourceFile,
-            Format = ItemFormat.MoxoTemplate,
-            TemplateFile = cloneInfo.TemplateFile,
-            ParentId = cloneInfo.ParentId,
-            ItemType = cloneInfo.ItemType ?? clonePatch["$type"]?.GetValue<string?>(),
-            Name = FirstNonEmpty(localizedName, itemData["Name"]?.GetValue<string?>(), clonePatch["Name"]?.GetValue<string?>()),
-            Properties = properties,
-            SourceProperties = (JsonObject)properties.DeepClone(),
-            IsWeapon = cloneInfo.IsWeapon,
-            IsGear = cloneInfo.IsGear,
-            IsConsumable = cloneInfo.IsConsumable,
-        };
-
-        EnrichItemInfoWithSourceContext(info, clonePatch);
-        info.AllowedPatchFields = CreateAllowedPatchFieldSet(clonePatch, info.ItemType, clonePatch["ModType"]?.GetValue<string?>());
-        return info;
-    }
+        => ItemInfoFactory.CreateMoxoItemInfo(this, itemId, itemData, sourceFile, cloneInfo, clonePatch);
 
     private ItemInfo ExtractMoxoItemInfo(string itemId, JsonObject itemData, string sourceFile, string cloneId, JsonObject cloneTemplate)
-    {
-        var templateFile = templateFileByItemId.GetValueOrDefault(cloneId);
-        var properties = ExtractEffectiveInputFields(itemData, cloneTemplate);
-        var localizedName = ExtractLocalizedName(itemData["locales"]) ?? ExtractLocalizedName(itemData["LocalePush"]);
-
-        var info = new ItemInfo
-        {
-            ItemId = itemId,
-            SourceFile = sourceFile,
-            Format = ItemFormat.MoxoTemplate,
-            TemplateFile = templateFile,
-            ParentId = InferParentIdFromTemplateFile(templateFile ?? string.Empty),
-            ItemType = cloneTemplate["$type"]?.GetValue<string?>(),
-            Name = FirstNonEmpty(localizedName, itemData["Name"]?.GetValue<string?>(), cloneTemplate["Name"]?.GetValue<string?>()),
-            Properties = properties,
-            SourceProperties = (JsonObject)properties.DeepClone(),
-        };
-
-        EnrichItemInfoWithSourceContext(info, cloneTemplate);
-        info.AllowedPatchFields = CreateAllowedPatchFieldSet(cloneTemplate, info.ItemType, cloneTemplate["ModType"]?.GetValue<string?>());
-        return info;
-    }
+        => ItemInfoFactory.CreateMoxoItemInfo(this, itemId, itemData, sourceFile, cloneId, cloneTemplate);
 
     private ItemInfo ExtractRaidOverhaulItemInfo(string itemId, JsonObject itemData, string sourceFile, ItemInfo cloneInfo, JsonObject clonePatch)
-    {
-        var properties = ExtractEffectiveInputFields(itemData, clonePatch);
-        var localizedName = ExtractLocalizedName(itemData["locales"]) ?? ExtractLocalizedName(itemData["LocalePush"]);
-
-        var info = new ItemInfo
-        {
-            ItemId = itemId,
-            SourceFile = sourceFile,
-            Format = ItemFormat.RaidOverhaulTemplate,
-            TemplateFile = cloneInfo.TemplateFile,
-            ParentId = cloneInfo.ParentId,
-            ItemType = cloneInfo.ItemType ?? clonePatch["$type"]?.GetValue<string?>(),
-            Name = FirstNonEmpty(localizedName, itemData["Name"]?.GetValue<string?>(), clonePatch["Name"]?.GetValue<string?>()),
-            Properties = properties,
-            SourceProperties = (JsonObject)properties.DeepClone(),
-            IsWeapon = cloneInfo.IsWeapon,
-            IsGear = cloneInfo.IsGear,
-            IsConsumable = cloneInfo.IsConsumable,
-        };
-
-        EnrichItemInfoWithSourceContext(info, clonePatch);
-        info.AllowedPatchFields = CreateAllowedPatchFieldSet(clonePatch, info.ItemType, clonePatch["ModType"]?.GetValue<string?>());
-        return info;
-    }
+        => ItemInfoFactory.CreateRaidOverhaulItemInfo(this, itemId, itemData, sourceFile, cloneInfo, clonePatch);
 
     private ItemInfo ExtractRaidOverhaulItemInfo(string itemId, JsonObject itemData, string sourceFile, string cloneId, JsonObject cloneTemplate)
-    {
-        var templateFile = templateFileByItemId.GetValueOrDefault(cloneId);
-        var properties = ExtractEffectiveInputFields(itemData, cloneTemplate);
-        var localizedName = ExtractLocalizedName(itemData["locales"]) ?? ExtractLocalizedName(itemData["LocalePush"]);
-
-        var info = new ItemInfo
-        {
-            ItemId = itemId,
-            SourceFile = sourceFile,
-            Format = ItemFormat.RaidOverhaulTemplate,
-            TemplateFile = templateFile,
-            ParentId = InferParentIdFromTemplateFile(templateFile ?? string.Empty),
-            ItemType = cloneTemplate["$type"]?.GetValue<string?>(),
-            Name = FirstNonEmpty(localizedName, itemData["Name"]?.GetValue<string?>(), cloneTemplate["Name"]?.GetValue<string?>()),
-            Properties = properties,
-            SourceProperties = (JsonObject)properties.DeepClone(),
-        };
-
-        EnrichItemInfoWithSourceContext(info, cloneTemplate);
-        info.AllowedPatchFields = CreateAllowedPatchFieldSet(cloneTemplate, info.ItemType, cloneTemplate["ModType"]?.GetValue<string?>());
-        return info;
-    }
+        => ItemInfoFactory.CreateRaidOverhaulItemInfo(this, itemId, itemData, sourceFile, cloneId, cloneTemplate);
 
     private ItemInfo ExtractSupportedWttSubclassItemInfo(
         string itemId,
@@ -1437,37 +1169,7 @@ public sealed class RealismPatchGenerator
         JsonObject clonePatch,
         Func<JsonObject, string?> resolveParentId,
         Func<string, JsonObject, string?, string?, string?> resolveTemplateFile)
-    {
-        var properties = ExtractEffectiveInputFields(itemData, clonePatch);
-        var localizedName = ExtractLocalizedName(itemData["locales"]) ?? ExtractLocalizedName(itemData["LocalePush"]);
-        var resolvedParentId = resolveParentId(itemData) ?? cloneInfo.ParentId;
-        var templateFile = resolveTemplateFile(sourceFile, itemData, resolvedParentId, cloneInfo.TemplateFile);
-        var effectiveModType = ResolveEffectiveModType(properties, clonePatch, templateFile);
-        if (!string.IsNullOrWhiteSpace(effectiveModType))
-        {
-            properties["ModType"] = effectiveModType;
-        }
-
-        var info = new ItemInfo
-        {
-            ItemId = itemId,
-            SourceFile = sourceFile,
-            Format = ItemFormat.WTTTemplate,
-            TemplateFile = templateFile,
-            ParentId = resolvedParentId,
-            ItemType = cloneInfo.ItemType ?? clonePatch["$type"]?.GetValue<string?>(),
-            Name = FirstNonEmpty(localizedName, itemData["Name"]?.GetValue<string?>(), clonePatch["Name"]?.GetValue<string?>()),
-            Properties = properties,
-            SourceProperties = (JsonObject)properties.DeepClone(),
-            IsWeapon = cloneInfo.IsWeapon,
-            IsGear = cloneInfo.IsGear,
-            IsConsumable = cloneInfo.IsConsumable,
-        };
-
-        EnrichItemInfoWithSourceContext(info, clonePatch);
-        info.AllowedPatchFields = CreateAllowedPatchFieldSet(clonePatch, info.ItemType, effectiveModType);
-        return info;
-    }
+        => ItemInfoFactory.CreateSupportedWttSubclassItemInfo(this, itemId, itemData, sourceFile, cloneInfo, clonePatch, resolveParentId, resolveTemplateFile);
 
     private ItemInfo ExtractSupportedWttSubclassItemInfo(
         string itemId,
@@ -1477,34 +1179,7 @@ public sealed class RealismPatchGenerator
         JsonObject cloneTemplate,
         Func<JsonObject, string?> resolveParentId,
         Func<string, JsonObject, string?, string?, string?> resolveTemplateFile)
-    {
-        var resolvedParentId = resolveParentId(itemData);
-        var templateFile = resolveTemplateFile(sourceFile, itemData, resolvedParentId, templateFileByItemId.GetValueOrDefault(cloneId));
-        var properties = ExtractEffectiveInputFields(itemData, cloneTemplate);
-        var localizedName = ExtractLocalizedName(itemData["locales"]) ?? ExtractLocalizedName(itemData["LocalePush"]);
-        var effectiveModType = ResolveEffectiveModType(properties, cloneTemplate, templateFile);
-        if (!string.IsNullOrWhiteSpace(effectiveModType))
-        {
-            properties["ModType"] = effectiveModType;
-        }
-
-        var info = new ItemInfo
-        {
-            ItemId = itemId,
-            SourceFile = sourceFile,
-            Format = ItemFormat.WTTTemplate,
-            TemplateFile = templateFile,
-            ParentId = resolvedParentId ?? InferParentIdFromTemplateFile(templateFile ?? string.Empty),
-            ItemType = cloneTemplate["$type"]?.GetValue<string?>(),
-            Name = FirstNonEmpty(localizedName, itemData["Name"]?.GetValue<string?>(), cloneTemplate["Name"]?.GetValue<string?>()),
-            Properties = properties,
-            SourceProperties = (JsonObject)properties.DeepClone(),
-        };
-
-        EnrichItemInfoWithSourceContext(info, cloneTemplate);
-        info.AllowedPatchFields = CreateAllowedPatchFieldSet(cloneTemplate, info.ItemType, effectiveModType);
-        return info;
-    }
+        => ItemInfoFactory.CreateSupportedWttSubclassItemInfo(this, itemId, itemData, sourceFile, cloneId, cloneTemplate, resolveParentId, resolveTemplateFile);
 
     private ItemInfo ExtractMixedDirectItemInfo(
         string itemId,
@@ -1513,33 +1188,7 @@ public sealed class RealismPatchGenerator
         string? parentId,
         string? templateFile,
         JsonObject basePatch)
-    {
-        var itemNode = GetLegacyItemNode(itemData);
-        var itemProps = itemNode?["_props"] as JsonObject;
-        var localizedName = ExtractLocalizedName(itemData["locales"]) ?? ExtractLocalizedName(itemData["LocalePush"]);
-        var properties = ExtractEffectiveInputFields(itemData, basePatch);
-
-        var info = new ItemInfo
-        {
-            ItemId = itemId,
-            SourceFile = sourceFile,
-            Format = ItemFormat.MixedTemplate,
-            TemplateFile = templateFile,
-            ParentId = parentId,
-            ItemType = basePatch["$type"]?.GetValue<string?>(),
-            Name = SelectBestDisplayName(
-                localizedName,
-                itemProps?["Name"]?.GetValue<string?>(),
-                itemData["Name"]?.GetValue<string?>(),
-                itemNode?["_name"]?.GetValue<string?>()),
-            Properties = properties,
-            SourceProperties = (JsonObject)properties.DeepClone(),
-        };
-
-        EnrichItemInfoWithSourceContext(info, basePatch);
-        info.AllowedPatchFields = CreateAllowedPatchFieldSet(basePatch, info.ItemType, basePatch["ModType"]?.GetValue<string?>());
-        return info;
-    }
+        => ItemInfoFactory.CreateMixedDirectItemInfo(this, itemId, itemData, sourceFile, parentId, templateFile, basePatch);
 
     private bool TryBuildRaidOverhaulFallbackPatch(
         string itemId,
@@ -1637,26 +1286,7 @@ public sealed class RealismPatchGenerator
         string? parentId,
         string? templateFile,
         string cloneId)
-    {
-        var localizedName = ExtractLocalizedName(itemData["locales"]) ?? ExtractLocalizedName(itemData["LocalePush"]);
-
-        var info = new ItemInfo
-        {
-            ItemId = itemId,
-            SourceFile = sourceFile,
-            Format = ItemFormat.RaidOverhaulTemplate,
-            TemplateFile = templateFile,
-            ParentId = parentId,
-            Name = SelectBestDisplayName(localizedName, itemData["Name"]?.GetValue<string?>()),
-            Properties = ExtractEffectiveInputFields(itemData, null),
-        };
-
-        ApplyRaidOverhaulCategoryHints(info, cloneId);
-        info.SourceProperties = (JsonObject)info.Properties.DeepClone();
-        EnrichItemInfoWithSourceContext(info, new JsonObject());
-        info.AllowedPatchFields = CreateAllowedPatchFieldSet(info.Properties, info.ItemType, info.SourceProperties["ModType"]?.GetValue<string?>());
-        return info;
-    }
+        => ItemInfoFactory.CreateRaidOverhaulBootstrapItemInfo(this, itemId, itemData, sourceFile, parentId, templateFile, cloneId);
 
     private ItemInfo CreateWTTBootstrapItemInfo(
         string itemId,
@@ -1664,50 +1294,7 @@ public sealed class RealismPatchGenerator
         string sourceFile,
         string? parentId,
         string? templateFile)
-    {
-        var localizedName = ExtractLocalizedName(itemData["locales"]) ?? ExtractLocalizedName(itemData["LocalePush"]);
-
-        var info = new ItemInfo
-        {
-            ItemId = itemId,
-            SourceFile = sourceFile,
-            Format = ItemFormat.WTTTemplate,
-            TemplateFile = templateFile,
-            ParentId = parentId,
-            Name = SelectBestDisplayName(localizedName, itemData["Name"]?.GetValue<string?>()),
-            Properties = ExtractEffectiveInputFields(itemData, null),
-        };
-
-        info.SourceProperties = (JsonObject)info.Properties.DeepClone();
-        EnrichItemInfoWithSourceContext(info, new JsonObject());
-        info.AllowedPatchFields = CreateAllowedPatchFieldSet(info.Properties, info.ItemType, info.SourceProperties["ModType"]?.GetValue<string?>());
-        return info;
-    }
-
-    private static void ApplyRaidOverhaulCategoryHints(ItemInfo info, string cloneId)
-    {
-        var normalizedCloneId = cloneId.ToUpperInvariant();
-        if (normalizedCloneId.StartsWith("ASSAULTRIFLE_", StringComparison.Ordinal)
-            || normalizedCloneId.StartsWith("SNIPERRIFLE_", StringComparison.Ordinal)
-            || normalizedCloneId.StartsWith("PISTOL_", StringComparison.Ordinal)
-            || normalizedCloneId.StartsWith("SMG_", StringComparison.Ordinal)
-            || normalizedCloneId.StartsWith("GRENADELAUNCHER_", StringComparison.Ordinal))
-        {
-            info.IsWeapon = true;
-            info.ItemType = "RealismMod.Gun, RealismMod";
-            return;
-        }
-
-        if (normalizedCloneId.StartsWith("VEST_", StringComparison.Ordinal)
-            || normalizedCloneId.StartsWith("ARMOR_", StringComparison.Ordinal)
-            || normalizedCloneId.StartsWith("BACKPACK_", StringComparison.Ordinal)
-            || normalizedCloneId.StartsWith("SECURE_", StringComparison.Ordinal)
-            || normalizedCloneId.StartsWith("FACECOVER_", StringComparison.Ordinal))
-        {
-            info.IsGear = true;
-            info.ItemType = "RealismMod.Gear, RealismMod";
-        }
-    }
+        => ItemInfoFactory.CreateWttBootstrapItemInfo(this, itemId, itemData, sourceFile, parentId, templateFile);
 
     private ItemInfo ExtractRaidOverhaulFallbackItemInfo(
         string itemId,
@@ -1716,27 +1303,7 @@ public sealed class RealismPatchGenerator
         string? parentId,
         string? templateFile,
         JsonObject basePatch)
-    {
-        var localizedName = ExtractLocalizedName(itemData["locales"]) ?? ExtractLocalizedName(itemData["LocalePush"]);
-        var properties = ExtractEffectiveInputFields(itemData, basePatch);
-
-        var info = new ItemInfo
-        {
-            ItemId = itemId,
-            SourceFile = sourceFile,
-            Format = ItemFormat.RaidOverhaulTemplate,
-            TemplateFile = templateFile,
-            ParentId = parentId,
-            ItemType = basePatch["$type"]?.GetValue<string?>(),
-            Name = SelectBestDisplayName(localizedName, itemData["Name"]?.GetValue<string?>()),
-            Properties = properties,
-            SourceProperties = (JsonObject)properties.DeepClone(),
-        };
-
-        EnrichItemInfoWithSourceContext(info, basePatch);
-        info.AllowedPatchFields = CreateAllowedPatchFieldSet(basePatch, info.ItemType, basePatch["ModType"]?.GetValue<string?>());
-        return info;
-    }
+        => ItemInfoFactory.CreateRaidOverhaulFallbackItemInfo(this, itemId, itemData, sourceFile, parentId, templateFile, basePatch);
 
     private ItemInfo ExtractWttSubclassFallbackItemInfo(
         string itemId,
@@ -1745,27 +1312,7 @@ public sealed class RealismPatchGenerator
         string? parentId,
         string? templateFile,
         JsonObject basePatch)
-    {
-        var localizedName = ExtractLocalizedName(itemData["locales"]) ?? ExtractLocalizedName(itemData["LocalePush"]);
-        var properties = ExtractEffectiveInputFields(itemData, basePatch);
-
-        var info = new ItemInfo
-        {
-            ItemId = itemId,
-            SourceFile = sourceFile,
-            Format = ItemFormat.WTTTemplate,
-            TemplateFile = templateFile,
-            ParentId = parentId,
-            ItemType = basePatch["$type"]?.GetValue<string?>(),
-            Name = SelectBestDisplayName(localizedName, itemData["Name"]?.GetValue<string?>()),
-            Properties = properties,
-            SourceProperties = (JsonObject)properties.DeepClone(),
-        };
-
-        EnrichItemInfoWithSourceContext(info, basePatch);
-        info.AllowedPatchFields = CreateAllowedPatchFieldSet(basePatch, info.ItemType, basePatch["ModType"]?.GetValue<string?>());
-        return info;
-    }
+        => ItemInfoFactory.CreateWttSubclassFallbackItemInfo(this, itemId, itemData, sourceFile, parentId, templateFile, basePatch);
 
     private ItemInfo CreateMixedBootstrapItemInfo(
         string itemId,
@@ -1773,31 +1320,7 @@ public sealed class RealismPatchGenerator
         string sourceFile,
         string? parentId,
         string? templateFile)
-    {
-        var itemNode = GetLegacyItemNode(itemData);
-        var itemProps = itemNode?["_props"] as JsonObject;
-        var localizedName = ExtractLocalizedName(itemData["locales"]) ?? ExtractLocalizedName(itemData["LocalePush"]);
-
-        var info = new ItemInfo
-        {
-            ItemId = itemId,
-            SourceFile = sourceFile,
-            Format = ItemFormat.MixedTemplate,
-            TemplateFile = templateFile,
-            ParentId = parentId,
-            Name = SelectBestDisplayName(
-                localizedName,
-                itemProps?["Name"]?.GetValue<string?>(),
-                itemData["Name"]?.GetValue<string?>(),
-                itemNode?["_name"]?.GetValue<string?>()),
-            Properties = ExtractEffectiveInputFields(itemData, null),
-        };
-
-        info.SourceProperties = (JsonObject)info.Properties.DeepClone();
-        EnrichItemInfoWithSourceContext(info, new JsonObject());
-        info.AllowedPatchFields = CreateAllowedPatchFieldSet(info.Properties, info.ItemType, info.SourceProperties["ModType"]?.GetValue<string?>());
-        return info;
-    }
+        => ItemInfoFactory.CreateMixedBootstrapItemInfo(this, itemId, itemData, sourceFile, parentId, templateFile);
 
     private JsonObject CreateDefaultLegacyPatch(string itemId, ItemInfo itemInfo, string? templateFile)
     {
@@ -1824,7 +1347,7 @@ public sealed class RealismPatchGenerator
         return CreateDefaultModPatch(itemId, itemInfo, templateFile ?? string.Empty);
     }
 
-    private static JsonObject ExtractProperties(JsonObject source, HashSet<string> ignoredKeys)
+    internal static JsonObject ExtractProperties(JsonObject source, HashSet<string> ignoredKeys)
     {
         var result = new JsonObject();
         foreach (var pair in source)
@@ -1838,7 +1361,7 @@ public sealed class RealismPatchGenerator
         return result;
     }
 
-    private static JsonObject ExtractEffectiveInputFields(JsonObject itemData, JsonObject? cloneTemplate)
+    internal static JsonObject ExtractEffectiveInputFields(JsonObject itemData, JsonObject? cloneTemplate)
     {
         JsonObject fields;
         if (itemData["items"] is JsonObject itemsObject && itemsObject["_props"] is JsonObject multiProps)
@@ -1958,7 +1481,7 @@ public sealed class RealismPatchGenerator
               || string.Equals(fieldName, "SingleFireRate", StringComparison.OrdinalIgnoreCase);
     }
 
-    private static string? ResolveEffectiveModType(JsonObject properties, JsonObject referenceData, string? templateFile)
+    internal static string? ResolveEffectiveModType(JsonObject properties, JsonObject referenceData, string? templateFile)
     {
         var sourceModType = properties["ModType"]?.GetValue<string?>();
         if (!string.IsNullOrWhiteSpace(sourceModType))
@@ -2300,12 +1823,12 @@ public sealed class RealismPatchGenerator
         return NormalizeParentId(handbookParent);
     }
 
-    private static JsonObject? GetLegacyItemNode(JsonObject itemData)
+    internal static JsonObject? GetLegacyItemNode(JsonObject itemData)
     {
         return itemData["item"] as JsonObject ?? itemData["items"] as JsonObject;
     }
 
-    private static string? FirstNonEmpty(params string?[] values)
+    internal static string? FirstNonEmpty(params string?[] values)
     {
         foreach (var value in values)
         {
@@ -2318,7 +1841,7 @@ public sealed class RealismPatchGenerator
         return null;
     }
 
-    private static string? SelectBestDisplayName(string? localizedName, params string?[] values)
+    internal static string? SelectBestDisplayName(string? localizedName, params string?[] values)
     {
         foreach (var value in values)
         {
@@ -2377,7 +1900,7 @@ public sealed class RealismPatchGenerator
         return hasSeparator && allAsciiTokenChars && hasLowercase && !hasWhitespace;
     }
 
-    private void EnrichItemInfoWithSourceContext(ItemInfo info, JsonObject itemData)
+    internal void EnrichItemInfoWithSourceContext(ItemInfo info, JsonObject itemData)
     {
         if (string.IsNullOrWhiteSpace(info.TemplateFile) && !string.IsNullOrWhiteSpace(info.SourceFile))
         {
@@ -2430,7 +1953,10 @@ public sealed class RealismPatchGenerator
     {
         MergeInputProperties(patch, itemInfo);
         EnsureBasicFields(itemId, patch, itemInfo);
+        var ruleStopwatch = Stopwatch.StartNew();
         ApplyRealismSanityCheck(patch, itemInfo);
+        ruleStopwatch.Stop();
+        totalRuleApplicationTicks += ruleStopwatch.ElapsedTicks;
         ApplyItemException(itemId, patch);
         PruneDisallowedOutputFields(patch, itemInfo);
         NormalizeStructuredOutput(patch, itemInfo);
@@ -2635,7 +2161,7 @@ public sealed class RealismPatchGenerator
         return allowedFields;
     }
 
-    private HashSet<string> CreateAllowedPatchFieldSet(JsonObject templateSource, string? itemType, string? modType)
+    internal HashSet<string> CreateAllowedPatchFieldSet(JsonObject templateSource, string? itemType, string? modType)
     {
         var allowedFields = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
         foreach (var pair in templateSource)
@@ -2818,16 +2344,7 @@ public sealed class RealismPatchGenerator
     }
 
     private void AddToFilePatches(string itemId, JsonObject patch, string sourceFile)
-    {
-        if (!fileBasedPatches.TryGetValue(sourceFile, out var group))
-        {
-            group = new OrderedPatchGroup();
-            fileBasedPatches[sourceFile] = group;
-            fileBasedPatchOrder.Add(sourceFile);
-        }
-
-        group.AddOrUpdate(itemId, patch);
-    }
+        => patchOutputBuffer.AddOrUpdate(sourceFile, itemId, patch);
 
     private void StorePatchByPatchType(string itemId, JsonObject patch)
     {
@@ -2855,42 +2372,7 @@ public sealed class RealismPatchGenerator
     }
 
     private void SavePatches(string outputPath)
-    {
-        Directory.CreateDirectory(outputPath);
-
-        foreach (var sourceFile in fileBasedPatchOrder)
-        {
-            var group = fileBasedPatches[sourceFile];
-            if (group.Count == 0)
-            {
-                continue;
-            }
-
-            var sourceRelative = sourceFile.Replace('\\', '/');
-            var sourceDir = Path.GetDirectoryName(sourceRelative) ?? string.Empty;
-            var sourceName = Path.GetFileName(sourceRelative);
-            var useSuffixOutput = fileUsesSuffixOutput.GetValueOrDefault(sourceFile, true);
-            var outputFileName = useSuffixOutput ? $"{sourceName}_realism_patch.json" : $"{sourceName}.json";
-            var outputFile = Path.Combine(outputPath, sourceDir, outputFileName);
-            var alternateOutputFile = Path.Combine(outputPath, sourceDir, useSuffixOutput ? $"{sourceName}.json" : $"{sourceName}_realism_patch.json");
-            Directory.CreateDirectory(Path.GetDirectoryName(outputFile)!);
-
-            if (!string.Equals(alternateOutputFile, outputFile, StringComparison.OrdinalIgnoreCase)
-                && File.Exists(alternateOutputFile))
-            {
-                File.Delete(alternateOutputFile);
-            }
-
-            var json = new JsonObject();
-            foreach (var item in group.Entries)
-            {
-                json[item.Key] = item.Value.DeepClone();
-            }
-
-            File.WriteAllText(outputFile, json.ToJsonString(OutputJsonOptions));
-            Log($"已导出: {Path.GetRelativePath(outputPath, outputFile)}");
-        }
-    }
+        => PatchOutputPipeline.Save(outputPath, patchOutputBuffer.CreateOutputs(), Log);
 
     private JsonObject? SelectTemplateData(string templateFile, string itemId, bool allowFallback = true)
     {
@@ -3021,7 +2503,7 @@ public sealed class RealismPatchGenerator
         return patch;
     }
 
-    private static string? ExtractLocalizedName(JsonNode? localeNode)
+    internal static string? ExtractLocalizedName(JsonNode? localeNode)
     {
         if (localeNode is not JsonObject localeObject)
         {
@@ -3064,7 +2546,7 @@ public sealed class RealismPatchGenerator
             : fileName + ".json";
     }
 
-    private string? InferParentIdFromTemplateFile(string templateFile)
+    internal string? InferParentIdFromTemplateFile(string templateFile)
     {
         if (!templateParentIndex.TryGetValue(Path.GetFileName(templateFile), out var parentIds) || parentIds.Count == 0)
         {
@@ -3095,7 +2577,7 @@ public sealed class RealismPatchGenerator
         };
     }
 
-    private string? NormalizeParentId(string? parentId)
+    internal string? NormalizeParentId(string? parentId)
     {
         if (string.IsNullOrWhiteSpace(parentId))
         {
@@ -3107,7 +2589,7 @@ public sealed class RealismPatchGenerator
             : parentId;
     }
 
-    private string? GetTemplateForParentId(string? parentId)
+    internal string? GetTemplateForParentId(string? parentId)
     {
         if (string.IsNullOrWhiteSpace(parentId))
         {
@@ -3156,923 +2638,10 @@ public sealed class RealismPatchGenerator
         return parentId is "5448e54d4bdc2dcc718b4568" or "644120aa86ffbe10ee032b6f" or "5b5f704686f77447ec5d76d7" or "5448e53e4bdc2d60728b4567" or "5448e5284bdc2dcb718b4567" or "57bef4c42459772e8d35a53b" or "5a341c4086f77401f2541505" or "5a341c4686f77469e155819e" or "5645bcb74bdc2ded0b8b4578" or "5b3f15d486f77432d0509248";
     }
 
-    private static void EnsureRequiredFields(JsonObject patch, ItemInfo itemInfo)
-    {
-        var itemType = patch["$type"]?.GetValue<string?>() ?? string.Empty;
-        var itemId = patch["ItemID"]?.GetValue<string?>() ?? itemInfo.ItemId ?? "unknown";
-        var itemName = itemInfo.Name ?? string.Empty;
-
-        if (itemType.Contains("RealismMod.Gun", StringComparison.OrdinalIgnoreCase))
-        {
-            patch["$type"] ??= "RealismMod.Gun, RealismMod";
-            if (string.IsNullOrWhiteSpace(GetText(patch["Name"])))
-            {
-                patch["Name"] = !string.IsNullOrWhiteSpace(itemName) ? itemName : $"weapon_{itemId}";
-            }
-
-            patch["Weight"] ??= 1.5;
-            patch["LoyaltyLevel"] ??= 1;
-        }
-        else if (itemType.Contains("RealismMod.WeaponMod", StringComparison.OrdinalIgnoreCase))
-        {
-            patch["$type"] ??= "RealismMod.WeaponMod, RealismMod";
-            if (string.IsNullOrWhiteSpace(GetText(patch["Name"])))
-            {
-                patch["Name"] = !string.IsNullOrWhiteSpace(itemName) ? itemName : $"mod_{itemId}";
-            }
-
-            patch["Weight"] ??= 0.1;
-            patch["LoyaltyLevel"] ??= 1;
-            patch["ModType"] ??= string.Empty;
-        }
-        else if (itemType.Contains("RealismMod.Ammo", StringComparison.OrdinalIgnoreCase))
-        {
-            patch["$type"] ??= "RealismMod.Ammo, RealismMod";
-            if (string.IsNullOrWhiteSpace(GetText(patch["Name"])))
-            {
-                patch["Name"] = !string.IsNullOrWhiteSpace(itemName) ? itemName : $"ammo_{itemId}";
-            }
-
-            patch["LoyaltyLevel"] ??= 1;
-            patch["BasePriceModifier"] ??= 1;
-        }
-        else if (itemType.Contains("RealismMod.Gear", StringComparison.OrdinalIgnoreCase))
-        {
-            patch["$type"] ??= "RealismMod.Gear, RealismMod";
-            if (string.IsNullOrWhiteSpace(GetText(patch["Name"])))
-            {
-                patch["Name"] = !string.IsNullOrWhiteSpace(itemName) ? itemName : $"gear_{itemId}";
-            }
-
-            patch["LoyaltyLevel"] ??= 1;
-        }
-    }
-
-    private static void TransformNumericField(JsonObject patch, string key, Func<double, double> transform, bool? preferInt = null)
-    {
-        if (patch[key] is null || !TryGetNumericValue(patch[key], out var value))
-        {
-            return;
-        }
-
-        patch[key] = CreateNumericNode(transform(value), preferInt ?? IsIntegerNode(patch[key]));
-    }
-
-    private static void ApplyMaterialHeuristics(JsonObject patch, string itemName)
-    {
-        if (ContainsAnyKeyword(itemName, ["titanium", "ti-", "carbon"]))
-        {
-            TransformNumericField(patch, "Weight", value => Math.Round(value * 0.8, 3), false);
-            TransformNumericField(patch, "CoolFactor", value => Math.Round(value * 1.15, 2), false);
-            TransformNumericField(patch, "Ergonomics", value => Math.Round(value * 1.05, 1), false);
-            return;
-        }
-
-        if (itemName.Contains("steel", StringComparison.OrdinalIgnoreCase))
-        {
-            TransformNumericField(patch, "Weight", value => Math.Round(value * 1.25, 3), false);
-            TransformNumericField(patch, "DurabilityBurnModificator", value => Math.Round(value * 0.9, 2), false);
-        }
-    }
-
-    private static void ApplySizeHeuristics(JsonObject patch, string itemName)
-    {
-        if (ContainsAnyKeyword(itemName, ["compact", "mini", "short", "k-", "kurz"]))
-        {
-            TransformNumericField(patch, "Weight", value => Math.Round(value * 0.75, 3), false);
-            TransformNumericField(patch, "Loudness", value => value < 0 ? Math.Round(value * 0.7, 1) : value, false);
-            TransformNumericField(patch, "VerticalRecoil", value => value < 0 ? Math.Round(value * 0.7, 2) : value, false);
-            return;
-        }
-
-        if (ContainsAnyKeyword(itemName, ["long", "extended", "heavy", "full"]))
-        {
-            TransformNumericField(patch, "Weight", value => Math.Round(value * 1.3, 3), false);
-            TransformNumericField(patch, "Accuracy", value => Math.Round(value * 1.1 + 1, 1), false);
-        }
-    }
-
-    private void ApplyBarrelVelocityHeuristic(JsonObject patch, string itemName)
-    {
-        var barrelLengthMm = ExtractBarrelLengthMm(itemName);
-        if (barrelLengthMm is null || !itemName.Contains("barrel", StringComparison.OrdinalIgnoreCase))
-        {
-            return;
-        }
-
-        var inferredVelocity = (barrelLengthMm.Value - 370) / 25.4 * 1.5;
-        if (patch["Velocity"] is null || (TryGetNumericValue(patch["Velocity"], out var currentVelocity) && currentVelocity == 0))
-        {
-            patch["Velocity"] = Math.Round(Clamp(inferredVelocity, -18, 18), 2);
-        }
-    }
-
-    private void ApplyPreRuleHeuristics(JsonObject patch)
-    {
-        var itemName = GetLowerText(patch["Name"]);
-        ApplyMaterialHeuristics(patch, itemName);
-        ApplySizeHeuristics(patch, itemName);
-        ApplyBarrelVelocityHeuristic(patch, itemName);
-    }
-
     private void ApplyRealismSanityCheck(JsonObject patch, ItemInfo itemInfo)
-    {
-        EnsureRequiredFields(patch, itemInfo);
-        ApplyPreRuleHeuristics(patch);
+        => PatchRuleApplier.ApplyRealismSanityCheck(this, rules, patch, itemInfo);
 
-        var itemType = patch["$type"]?.GetValue<string?>() ?? string.Empty;
-        if (itemType.Contains("RealismMod.Gun", StringComparison.OrdinalIgnoreCase))
-        {
-            ApplyWeaponSanityCheck(patch, itemInfo);
-            return;
-        }
-
-        if (itemType.Contains("RealismMod.WeaponMod", StringComparison.OrdinalIgnoreCase))
-        {
-            ApplyAttachmentSanityCheck(patch, itemInfo);
-            return;
-        }
-
-        if (itemType.Contains("RealismMod.Gear", StringComparison.OrdinalIgnoreCase))
-        {
-            ApplyGearSanityCheck(patch, itemInfo);
-            return;
-        }
-
-        if (itemType.Contains("RealismMod.Ammo", StringComparison.OrdinalIgnoreCase))
-        {
-            ApplyAmmoProfileRanges(patch, itemInfo);
-            ApplyGlobalSafetyClamps(patch);
-        }
-    }
-
-    private void ApplyWeaponSanityCheck(JsonObject patch, ItemInfo itemInfo)
-    {
-        ApplyFieldClamps(patch, rules.Weapon.GunClampRules);
-        if (TryGetNumericValue(patch["RecoilAngle"], out var recoilAngle) && (recoilAngle < 30 || recoilAngle > 150))
-        {
-            patch["RecoilAngle"] = 90;
-        }
-
-        var weaponProfile = InferWeaponProfile(patch, itemInfo);
-        var preserveExistingValues = true;
-        if (!string.IsNullOrWhiteSpace(weaponProfile) && rules.Weapon.WeaponProfileRanges.TryGetValue(weaponProfile, out var ranges))
-        {
-            if (string.IsNullOrWhiteSpace(GetText(patch["WeapType"])))
-            {
-                patch["WeapType"] = GetDefaultWeaponTypeForProfile(weaponProfile!);
-            }
-
-            ApplyNumericRanges(patch, ranges, ensureFields: true, preserveExistingValues);
-            ApplyWeaponRefinementRanges(patch, weaponProfile!, itemInfo, preserveExistingValues);
-            ApplyFieldClamps(patch, rules.Weapon.GunClampRules);
-        }
-
-        ApplyWeaponPriceRule(patch, itemInfo, weaponProfile);
-
-        if (string.Equals(weaponProfile, "pistol", StringComparison.OrdinalIgnoreCase))
-        {
-            patch["HasShoulderContact"] = false;
-        }
-
-        ApplyGlobalSafetyClamps(patch);
-    }
-
-    private void ApplyAttachmentSanityCheck(JsonObject patch, ItemInfo itemInfo)
-    {
-        ApplyFieldClamps(patch, rules.Attachment.ModClampRules);
-
-        if (string.IsNullOrWhiteSpace(GetText(patch["ModType"])))
-        {
-            var resolvedModType = ResolveEffectiveModType(itemInfo.SourceProperties, patch, itemInfo.TemplateFile);
-            if (!string.IsNullOrWhiteSpace(resolvedModType))
-            {
-                patch["ModType"] = resolvedModType;
-            }
-        }
-
-        if ((patch["ModType"]?.GetValue<string?>() ?? string.Empty).Equals("barrel_2slot", StringComparison.OrdinalIgnoreCase))
-        {
-            if (TryGetNumericValue(patch["ModShotDispersion"], out var modShotDispersion))
-            {
-                patch["ModShotDispersion"] = CreateNumericNode(Clamp(modShotDispersion, 0, 0), IsIntegerNode(patch["ModShotDispersion"]));
-            }
-            else
-            {
-                patch["ModShotDispersion"] = 0;
-            }
-        }
-
-        if ((patch["ModType"]?.GetValue<string?>() ?? string.Empty).Equals("bipod", StringComparison.OrdinalIgnoreCase))
-        {
-            foreach (var fieldName in new[] { "AutoROF", "SemiROF", "ModMalfunctionChance", "ReloadSpeed", "FixSpeed" })
-            {
-                if (TryGetNumericValue(patch[fieldName], out var numericValue))
-                {
-                    patch[fieldName] = CreateNumericNode(Clamp(numericValue, 0, 0), IsIntegerNode(patch[fieldName]));
-                }
-                else
-                {
-                    patch[fieldName] = 0;
-                }
-            }
-        }
-
-        if (TryGetNumericValue(patch["Velocity"], out var velocity))
-        {
-            var maxVelocity = GetLowerText(patch["Name"]).Contains("barrel", StringComparison.OrdinalIgnoreCase) ? 15.0 : 5.0;
-            patch["Velocity"] = CreateNumericNode(Clamp(velocity, -maxVelocity, maxVelocity), IsIntegerNode(patch["Velocity"]));
-        }
-
-        var modProfile = InferModProfile(patch, itemInfo);
-        if (string.IsNullOrWhiteSpace(modProfile) || !rules.Attachment.ModProfileRanges.TryGetValue(modProfile, out var ranges))
-        {
-            RemoveAttachmentFieldsByProfile(patch, modProfile);
-            ApplyAttachmentPriceRule(patch, itemInfo, modProfile);
-            ApplyGlobalSafetyClamps(patch);
-            return;
-        }
-
-        ApplyNumericRanges(patch, ranges, ensureFields: true);
-        ApplyAttachmentPreservedSourceFields(patch, itemInfo, modProfile!, ranges);
-        RemoveAttachmentFieldsByProfile(patch, modProfile);
-        ApplyFieldClamps(patch, rules.Attachment.ModClampRules);
-        ApplyAttachmentPriceRule(patch, itemInfo, modProfile);
-        if (modProfile.StartsWith("muzzle_suppressor", StringComparison.OrdinalIgnoreCase))
-        {
-            patch["CanCycleSubs"] = true;
-        }
-
-        ApplyGlobalSafetyClamps(patch);
-    }
-
-    private void ApplyWeaponPriceRule(JsonObject patch, ItemInfo itemInfo, string? weaponProfile)
-    {
-        var priceRange = ResolveWeaponPriceRange(weaponProfile);
-        var priceScore = CalculateWeaponPriceScore(patch, itemInfo, weaponProfile);
-        var resolvedPrice = priceRange.Min + ((priceRange.Max - priceRange.Min) * priceScore);
-        patch["Price"] = CreateNumericNode(Clamp(resolvedPrice, priceRange.Min, priceRange.Max), true, priceRange.Min, priceRange.Max);
-    }
-
-    private NumericRange ResolveWeaponPriceRange(string? weaponProfile)
-    {
-        if (!string.IsNullOrWhiteSpace(weaponProfile) && rules.Weapon.GunPriceRanges.TryGetValue(weaponProfile, out var range))
-        {
-            return range;
-        }
-
-        return new NumericRange(15000, 70000, true);
-    }
-
-    private double CalculateWeaponPriceScore(JsonObject patch, ItemInfo itemInfo, string? weaponProfile)
-    {
-        var recoilScore = CalculateWeaponRecoilScore(patch);
-        var handlingScore = CalculateWeaponHandlingScore(patch);
-        var accuracyScore = CalculateWeaponAccuracyScore(patch);
-        var rateScore = CalculateWeaponRateScore(patch);
-        var caliberScore = CalculateWeaponCaliberPremium(InferWeaponCaliberProfile(patch, itemInfo));
-        var stockScore = CalculateWeaponStockPremium(InferWeaponStockProfile(patch));
-        var weightScore = CalculateWeaponWeightScore(patch, itemInfo);
-
-        var score = 0.22;
-        score += recoilScore * 0.24;
-        score += handlingScore * 0.17;
-        score += accuracyScore * 0.16;
-        score += rateScore * 0.08;
-        score += caliberScore * 0.13;
-        score += stockScore * 0.08;
-        score += weightScore * 0.07;
-
-        if (TryGetNumericValue(patch["Price"], out var currentPrice))
-        {
-            score += Normalize(currentPrice, 5000, 250000) * 0.07;
-        }
-
-        if (string.Equals(weaponProfile, "launcher", StringComparison.OrdinalIgnoreCase))
-        {
-            score += 0.08;
-        }
-
-        return Clamp(score, 0.08, 0.96);
-    }
-
-    private static double CalculateWeaponRecoilScore(JsonObject patch)
-    {
-        var contributions = new List<double>();
-
-        if (TryGetNumericValue(patch["VerticalRecoil"], out var verticalRecoil))
-        {
-            contributions.Add(1.0 - Normalize(verticalRecoil, 70, 420));
-        }
-
-        if (TryGetNumericValue(patch["HorizontalRecoil"], out var horizontalRecoil))
-        {
-            contributions.Add(1.0 - Normalize(horizontalRecoil, 90, 420));
-        }
-
-        if (TryGetNumericValue(patch["RecoilIntensity"], out var recoilIntensity))
-        {
-            contributions.Add(1.0 - Normalize(recoilIntensity, 0.08, 0.55));
-        }
-
-        return contributions.Count == 0 ? 0.4 : Clamp(contributions.Average(), 0.0, 1.0);
-    }
-
-    private static double CalculateWeaponHandlingScore(JsonObject patch)
-    {
-        var contributions = new List<double>();
-
-        if (TryGetNumericValue(patch["Ergonomics"], out var ergonomics))
-        {
-            contributions.Add(Normalize(ergonomics, 45, 100));
-        }
-
-        if (TryGetNumericValue(patch["VisualMulti"], out var visualMulti))
-        {
-            contributions.Add(1.0 - Normalize(visualMulti, 0.8, 2.8));
-        }
-
-        if (TryGetNumericValue(patch["BaseReloadSpeedMulti"], out var reloadSpeed))
-        {
-            contributions.Add(Normalize(reloadSpeed, 0.84, 1.08));
-        }
-
-        return contributions.Count == 0 ? 0.35 : Clamp(contributions.Average(), 0.0, 1.0);
-    }
-
-    private static double CalculateWeaponAccuracyScore(JsonObject patch)
-    {
-        var contributions = new List<double>();
-
-        if (TryGetNumericValue(patch["Dispersion"], out var dispersion))
-        {
-            contributions.Add(1.0 - Normalize(dispersion, 0.5, 18.0));
-        }
-
-        if (TryGetNumericValue(patch["Convergence"], out var convergence))
-        {
-            contributions.Add(1.0 - Normalize(convergence, 1.0, 25.0));
-        }
-
-        if (TryGetNumericValue(patch["CenterOfImpact"], out var centerOfImpact))
-        {
-            contributions.Add(1.0 - Normalize(Math.Abs(centerOfImpact), 0.0, 0.2));
-        }
-
-        return contributions.Count == 0 ? 0.35 : Clamp(contributions.Average(), 0.0, 1.0);
-    }
-
-    private static double CalculateWeaponRateScore(JsonObject patch)
-    {
-        var contributions = new List<double>();
-
-        if (TryGetNumericValue(patch["AutoROF"], out var autoRof))
-        {
-            contributions.Add(Normalize(autoRof, 200, 950));
-        }
-
-        if (TryGetNumericValue(patch["SemiROF"], out var semiRof))
-        {
-            contributions.Add(Normalize(semiRof, 120, 450));
-        }
-
-        return contributions.Count == 0 ? 0.25 : Clamp(contributions.Average(), 0.0, 1.0);
-    }
-
-    private static double CalculateWeaponCaliberPremium(string? caliberProfile)
-    {
-        return caliberProfile?.ToLowerInvariant() switch
-        {
-            "magnum_heavy" => 1.0,
-            "full_power_rifle_rimmed" => 0.88,
-            "full_power_rifle" => 0.82,
-            "subsonic_heavy_9x39" => 0.68,
-            "pdw_high_pen_small" => 0.64,
-            "intermediate_rifle_762x39" => 0.58,
-            "intermediate_rifle_58x42" => 0.55,
-            "small_high_velocity" => 0.52,
-            "shotgun_shell_23x75" => 0.5,
-            "shotgun_shell_12g" => 0.42,
-            "shotgun_shell_20g" => 0.34,
-            "pistol_caliber" => 0.24,
-            _ => 0.35,
-        };
-    }
-
-    private static double CalculateWeaponStockPremium(string stockProfile)
-    {
-        return stockProfile.ToLowerInvariant() switch
-        {
-            "fixed_stock" => 0.55,
-            "bullpup" => 0.52,
-            "folding_stock_extended" => 0.42,
-            "folding_stock_collapsed" => 0.26,
-            "stockless" => 0.18,
-            _ => 0.35,
-        };
-    }
-
-    private static double CalculateWeaponWeightScore(JsonObject patch, ItemInfo itemInfo)
-    {
-        var weight = TryGetNumericValue(patch["Weight"], out var patchWeight)
-            ? patchWeight
-            : TryGetNumericValue(itemInfo.Properties["Weight"], out var sourceWeight)
-                ? sourceWeight
-                : 0.0;
-        if (weight <= 0)
-        {
-            return 0.3;
-        }
-
-        return Normalize(weight, 0.7, 9.5);
-    }
-
-    private void ApplyAttachmentPriceRule(JsonObject patch, ItemInfo itemInfo, string? modProfile)
-    {
-        var priceRange = ResolveAttachmentPriceRange(modProfile);
-        var priceScore = CalculateAttachmentPriceScore(patch, itemInfo, modProfile);
-        var resolvedPrice = priceRange.Min + ((priceRange.Max - priceRange.Min) * priceScore);
-        patch["Price"] = CreateNumericNode(Clamp(resolvedPrice, priceRange.Min, priceRange.Max), true, priceRange.Min, priceRange.Max);
-    }
-
-    private NumericRange ResolveAttachmentPriceRange(string? modProfile)
-    {
-        if (!string.IsNullOrWhiteSpace(modProfile))
-        {
-            if (rules.Attachment.ModPriceRanges.TryGetValue(modProfile, out var exactRange))
-            {
-                return exactRange;
-            }
-
-            var fallbackKeys = new[]
-            {
-                modProfile.Split('_')[0],
-                modProfile.StartsWith("muzzle_", StringComparison.OrdinalIgnoreCase) ? "muzzle_adapter" : null,
-                modProfile.StartsWith("magazine_", StringComparison.OrdinalIgnoreCase) ? "magazine" : null,
-                modProfile.StartsWith("stock_", StringComparison.OrdinalIgnoreCase) ? "stock" : null,
-                modProfile.StartsWith("handguard_", StringComparison.OrdinalIgnoreCase) ? "handguard_medium" : null,
-                modProfile.StartsWith("barrel_", StringComparison.OrdinalIgnoreCase) ? "barrel_medium" : null,
-            };
-
-            foreach (var fallbackKey in fallbackKeys)
-            {
-                if (!string.IsNullOrWhiteSpace(fallbackKey) && rules.Attachment.ModPriceRanges.TryGetValue(fallbackKey, out var fallbackRange))
-                {
-                    return fallbackRange;
-                }
-            }
-        }
-
-        return new NumericRange(1500, 12000, true);
-    }
-
-    private double CalculateAttachmentPriceScore(JsonObject patch, ItemInfo itemInfo, string? modProfile)
-    {
-        var recoilScore = CalculateAttachmentRecoilBenefitScore(patch);
-        var handlingScore = CalculateAttachmentHandlingScore(patch);
-        var utilityScore = CalculateAttachmentUtilityScore(patch, itemInfo, modProfile);
-        var profilePremium = CalculateAttachmentProfilePremium(modProfile);
-
-        var score = 0.18;
-        score += recoilScore * 0.24;
-        score += handlingScore * 0.20;
-        score += utilityScore * 0.22;
-        score += profilePremium * 0.16;
-
-        if (TryGetNumericValue(patch["Price"], out var currentPrice))
-        {
-            score += Normalize(currentPrice, 300, 120000) * 0.08;
-        }
-
-        if (TryGetNumericValue(patch["Weight"], out var weight))
-        {
-            score += Normalize(weight, 0.02, 2.0) * 0.06;
-        }
-
-        return Clamp(score, 0.05, 0.97);
-    }
-
-    private static double CalculateAttachmentRecoilBenefitScore(JsonObject patch)
-    {
-        var contributions = new List<double>();
-
-        if (TryGetNumericValue(patch["VerticalRecoil"], out var verticalRecoil))
-        {
-            contributions.Add(Normalize(-verticalRecoil, 0, 20));
-        }
-
-        if (TryGetNumericValue(patch["HorizontalRecoil"], out var horizontalRecoil))
-        {
-            contributions.Add(Normalize(-horizontalRecoil, 0, 18));
-        }
-
-        if (TryGetNumericValue(patch["CameraRecoil"], out var cameraRecoil))
-        {
-            contributions.Add(Normalize(-cameraRecoil, 0, 20));
-        }
-
-        return contributions.Count == 0 ? 0.12 : Clamp(contributions.Average(), 0.0, 1.0);
-    }
-
-    private static double CalculateAttachmentHandlingScore(JsonObject patch)
-    {
-        var contributions = new List<double>();
-
-        if (TryGetNumericValue(patch["Ergonomics"], out var ergonomics))
-        {
-            contributions.Add(Normalize(ergonomics, -15, 18));
-        }
-
-        if (TryGetNumericValue(patch["AimSpeed"], out var aimSpeed))
-        {
-            contributions.Add(Normalize(aimSpeed, -20, 12));
-        }
-
-        if (TryGetNumericValue(patch["Handling"], out var handling))
-        {
-            contributions.Add(Normalize(handling, -12, 20));
-        }
-
-        if (TryGetNumericValue(patch["AimStability"], out var aimStability))
-        {
-            contributions.Add(Normalize(aimStability, 0, 20));
-        }
-
-        return contributions.Count == 0 ? 0.18 : Clamp(contributions.Average(), 0.0, 1.0);
-    }
-
-    private static double CalculateAttachmentUtilityScore(JsonObject patch, ItemInfo itemInfo, string? modProfile)
-    {
-        var contributions = new List<double>();
-
-        if (TryGetNumericValue(patch["Accuracy"], out var accuracy))
-        {
-            contributions.Add(Normalize(accuracy, -15, 15));
-        }
-
-        if (TryGetNumericValue(patch["Loudness"], out var loudness) && modProfile?.StartsWith("muzzle_", StringComparison.OrdinalIgnoreCase) == true)
-        {
-            contributions.Add(Normalize(-loudness, 0, 40));
-        }
-
-        if (TryGetNumericValue(patch["Flash"], out var flash) && modProfile?.StartsWith("muzzle_", StringComparison.OrdinalIgnoreCase) == true)
-        {
-            contributions.Add(Normalize(-flash, 0, 80));
-        }
-
-        if (TryGetNumericValue(patch["ReloadSpeed"], out var reloadSpeed))
-        {
-            contributions.Add(Normalize(reloadSpeed, -20, 12));
-        }
-
-        if (TryGetNumericValue(patch["LoadUnloadModifier"], out var loadUnload))
-        {
-            contributions.Add(Normalize(loadUnload, 0, 25));
-        }
-
-        if (TryGetNumericValue(patch["ChamberSpeed"], out var chamberSpeed))
-        {
-            contributions.Add(Normalize(chamberSpeed, -5, 40));
-        }
-
-        if (modProfile?.StartsWith("magazine", StringComparison.OrdinalIgnoreCase) == true)
-        {
-            var capacity = ExtractMagCapacity(itemInfo, GetLowerText(patch["Name"]));
-            if (capacity is not null)
-            {
-                contributions.Add(Normalize(capacity.Value, 5, 95));
-            }
-        }
-
-        if (modProfile?.StartsWith("barrel_", StringComparison.OrdinalIgnoreCase) == true)
-        {
-            var length = ExtractBarrelLengthMm(GetLowerText(patch["Name"]));
-            if (length is not null)
-            {
-                contributions.Add(Normalize(length.Value, 100, 650));
-            }
-        }
-
-        return contributions.Count == 0 ? 0.15 : Clamp(contributions.Average(), 0.0, 1.0);
-    }
-
-    private static double CalculateAttachmentProfilePremium(string? modProfile)
-    {
-        if (string.IsNullOrWhiteSpace(modProfile))
-        {
-            return 0.12;
-        }
-
-        return modProfile.ToLowerInvariant() switch
-        {
-            "ubgl" => 1.0,
-            "barrel_integral_suppressed" => 0.88,
-            "scope_magnified" => 0.78,
-            "muzzle_suppressor" => 0.76,
-            "muzzle_suppressor_compact" => 0.68,
-            "receiver" => 0.56,
-            "barrel_long" => 0.55,
-            "barrel_medium" => 0.48,
-            "barrel_short" => 0.42,
-            "stock_ads_support" => 0.46,
-            "stock_fixed" => 0.42,
-            "stock_folding" => 0.38,
-            "scope_red_dot" => 0.4,
-            "magazine_drum" => 0.52,
-            "magazine_extended" => 0.38,
-            "magazine_standard" => 0.24,
-            "magazine_compact" => 0.18,
-            "foregrip" => 0.32,
-            "flashlight_laser" => 0.3,
-            "mount" => 0.18,
-            "gasblock" => 0.14,
-            "pistol_grip" => 0.22,
-            "bipod" => 0.34,
-            _ when modProfile.StartsWith("handguard_", StringComparison.OrdinalIgnoreCase) => 0.3,
-            _ when modProfile.StartsWith("muzzle_", StringComparison.OrdinalIgnoreCase) => 0.26,
-            _ when modProfile.StartsWith("stock_", StringComparison.OrdinalIgnoreCase) => 0.24,
-            _ => 0.16,
-        };
-    }
-
-    private static void RemoveAttachmentFieldsByProfile(JsonObject patch, string? modProfile)
-    {
-        if (string.IsNullOrWhiteSpace(modProfile))
-        {
-            return;
-        }
-
-        if (modProfile.StartsWith("handguard", StringComparison.OrdinalIgnoreCase))
-        {
-            patch.Remove("ChamberSpeed");
-        }
-    }
-
-    private static void ApplyAttachmentPreservedSourceFields(JsonObject patch, ItemInfo itemInfo, string modProfile, IReadOnlyDictionary<string, NumericRange> ranges)
-    {
-        if (string.Equals(modProfile, "gasblock", StringComparison.OrdinalIgnoreCase))
-        {
-            PreserveSourceFieldWithinRange(patch, itemInfo.SourceProperties, "Loudness", ranges);
-            PreserveSourceFieldWithinRange(patch, itemInfo.SourceProperties, "Velocity", ranges);
-            return;
-        }
-
-        if (string.Equals(modProfile, "iron_sight", StringComparison.OrdinalIgnoreCase))
-        {
-            PreserveSourceFieldWithinRange(patch, itemInfo.SourceProperties, "Accuracy", ranges);
-            return;
-        }
-
-        if (!modProfile.StartsWith("handguard_", StringComparison.OrdinalIgnoreCase))
-        {
-            return;
-        }
-
-        PreserveSourceFieldWithinRange(patch, itemInfo.SourceProperties, "Accuracy", ranges);
-        PreserveSourceFieldWithinRange(patch, itemInfo.SourceProperties, "Dispersion", ranges);
-    }
-
-    private static void PreserveSourceFieldWithinRange(JsonObject patch, JsonObject sourceProperties, string fieldName, IReadOnlyDictionary<string, NumericRange> ranges)
-    {
-        if (!ranges.TryGetValue(fieldName, out var range)
-            || sourceProperties[fieldName] is null
-            || !TryGetNumericValue(sourceProperties[fieldName], out var sourceValue))
-        {
-            return;
-        }
-
-        patch[fieldName] = CreateNumericNode(Clamp(sourceValue, range.Min, range.Max), range.PreferInt);
-    }
-
-    private void ApplyGearSanityCheck(JsonObject patch, ItemInfo itemInfo)
-    {
-        ApplyFieldClamps(patch, rules.Gear.GearClampRules);
-
-        var gearProfile = InferGearProfile(patch, itemInfo);
-        if (string.IsNullOrWhiteSpace(gearProfile) || !rules.Gear.GearProfileRanges.TryGetValue(gearProfile, out var ranges))
-        {
-            ApplyGearPriceRule(patch, itemInfo, gearProfile);
-            ApplyGlobalSafetyClamps(patch);
-            return;
-        }
-
-        ApplyNumericRanges(patch, ranges, ensureFields: true);
-        ApplyFieldClamps(patch, rules.Gear.GearClampRules);
-        ApplyGearPriceRule(patch, itemInfo, gearProfile);
-        ApplyGlobalSafetyClamps(patch);
-    }
-
-    private void ApplyGearPriceRule(JsonObject patch, ItemInfo itemInfo, string? gearProfile)
-    {
-        var priceRange = ResolveGearPriceRange(gearProfile);
-        var priceScore = CalculateGearPriceScore(patch, itemInfo, gearProfile);
-        var resolvedPrice = priceRange.Min + ((priceRange.Max - priceRange.Min) * priceScore);
-        patch["Price"] = CreateNumericNode(Clamp(resolvedPrice, priceRange.Min, priceRange.Max), true, priceRange.Min, priceRange.Max);
-    }
-
-    private NumericRange ResolveGearPriceRange(string? gearProfile)
-    {
-        if (!string.IsNullOrWhiteSpace(gearProfile) && rules.Gear.GearPriceRanges.TryGetValue(gearProfile, out var range))
-        {
-            return range;
-        }
-
-        return new NumericRange(4000, 18000, true);
-    }
-
-    private double CalculateGearPriceScore(JsonObject patch, ItemInfo itemInfo, string? gearProfile)
-    {
-        var armorScore = CalculateArmorProtectionScore(patch, itemInfo);
-        var carryScore = CalculateCarryCapacityScore(itemInfo);
-        var utilityScore = CalculateGearUtilityScore(patch, itemInfo);
-        var mobilityBurdenScore = CalculateMobilityBurdenScore(patch);
-
-        var score = 0.32;
-        score += armorScore * 0.38;
-        score += carryScore * 0.22;
-        score += utilityScore * 0.18;
-
-        if (gearProfile is not null && (gearProfile.Contains("armor", StringComparison.OrdinalIgnoreCase) || gearProfile.Contains("helmet", StringComparison.OrdinalIgnoreCase)))
-        {
-            score += mobilityBurdenScore * 0.10;
-        }
-        else if (gearProfile is not null && (gearProfile.Contains("backpack", StringComparison.OrdinalIgnoreCase) || gearProfile.Contains("rig", StringComparison.OrdinalIgnoreCase) || gearProfile.Contains("panel", StringComparison.OrdinalIgnoreCase) || gearProfile.Contains("belt", StringComparison.OrdinalIgnoreCase)))
-        {
-            score += carryScore * 0.10;
-        }
-
-        if (TryGetNumericValue(patch["Price"], out var currentPrice))
-        {
-            score += Normalize(currentPrice, 500, 150000) * 0.06;
-        }
-
-        return Clamp(score, 0.08, 0.95);
-    }
-
-    private double CalculateArmorProtectionScore(JsonObject patch, ItemInfo itemInfo)
-    {
-        var armorClassScore = GetArmorClassScore(ExtractGearArmorClassText(patch, itemInfo));
-        var spallScore = TryGetNumericValue(patch["SpallReduction"], out var spallReduction)
-            ? Normalize(spallReduction, 0.0, 1.0)
-            : 0.0;
-        var canSpallBonus = ToOptionalBool(patch["CanSpall"]) == true ? 0.05 : 0.0;
-        return Clamp((armorClassScore * 0.75) + (spallScore * 0.20) + canSpallBonus, 0.0, 1.0);
-    }
-
-    private double CalculateCarryCapacityScore(ItemInfo itemInfo)
-    {
-        var cells = GetGridCellCapacity(itemInfo.Properties);
-        if (cells <= 0)
-        {
-            cells = GetGridCellCapacity(itemInfo.SourceProperties);
-        }
-
-        var slots = GetSlotCount(itemInfo.Properties);
-        if (slots <= 0)
-        {
-            slots = GetSlotCount(itemInfo.SourceProperties);
-        }
-
-        return Clamp((cells / 42.0) + (slots / 10.0), 0.0, 1.0);
-    }
-
-    private double CalculateGearUtilityScore(JsonObject patch, ItemInfo itemInfo)
-    {
-        var contributions = new List<double>();
-
-        if (TryGetNumericValue(patch["Comfort"], out var comfort))
-        {
-            contributions.Add(Normalize(comfort, 0.6, 1.4));
-        }
-
-        if (TryGetNumericValue(patch["ReloadSpeedMulti"], out var reloadSpeed))
-        {
-            contributions.Add(Normalize(reloadSpeed, 0.85, 1.25));
-        }
-
-        if (TryGetNumericValue(patch["GasProtection"], out var gasProtection))
-        {
-            contributions.Add(Normalize(gasProtection, 0.0, 1.0));
-        }
-
-        if (TryGetNumericValue(patch["RadProtection"], out var radProtection))
-        {
-            contributions.Add(Normalize(radProtection, 0.0, 1.0));
-        }
-
-        if (TryGetNumericValue(patch["dB"], out var dbValue))
-        {
-            contributions.Add(Normalize(dbValue, 15, 30));
-        }
-
-        var weightSource = TryGetNumericValue(patch["Weight"], out var patchWeight)
-            ? patchWeight
-            : TryGetNumericValue(itemInfo.Properties["Weight"], out var sourceWeight)
-                ? sourceWeight
-                : 0.0;
-        if (weightSource > 0)
-        {
-            contributions.Add(Normalize(weightSource, 0.1, 12.0) * 0.35);
-        }
-
-        if (contributions.Count == 0)
-        {
-            return 0.0;
-        }
-
-        return Clamp(contributions.Average(), 0.0, 1.0);
-    }
-
-    private static double CalculateMobilityBurdenScore(JsonObject patch)
-    {
-        var contributions = new List<double>();
-
-        if (TryGetNumericValue(patch["speedPenaltyPercent"], out var speedPenalty))
-        {
-            contributions.Add(Normalize(Math.Abs(Math.Min(speedPenalty, 0.0)), 0.0, 20.0));
-        }
-
-        if (TryGetNumericValue(patch["weaponErgonomicPenalty"], out var ergoPenalty))
-        {
-            contributions.Add(Normalize(Math.Abs(Math.Min(ergoPenalty, 0.0)), 0.0, 20.0));
-        }
-
-        if (contributions.Count == 0)
-        {
-            return 0.0;
-        }
-
-        return Clamp(contributions.Average(), 0.0, 1.0);
-    }
-
-    private static double GetArmorClassScore(string armorText)
-    {
-        if (string.IsNullOrWhiteSpace(armorText))
-        {
-            return 0.0;
-        }
-
-        if (ContainsAnyKeyword(armorText, ["gost 6a", "nij iv", "rf3", "xsapi", "esapi", "pm 10", "pm 8"]))
-        {
-            return 1.0;
-        }
-
-        if (ContainsAnyKeyword(armorText, ["gost 6", "gost 5a", "nij iii+", "rf2", "rev. j", "rev. g", "pm 5"]))
-        {
-            return 0.85;
-        }
-
-        if (ContainsAnyKeyword(armorText, ["gost 5", "gost 4", "nij iii", "rf1", "mk4a"]))
-        {
-            return 0.70;
-        }
-
-        if (ContainsAnyKeyword(armorText, ["gost 3a", "gost 3", "nij ii", "nij iia", "iiia", "3a", "pm 3", "pm 2"]))
-        {
-            return 0.45;
-        }
-
-        if (ContainsAnyKeyword(armorText, ["gost 2a", "gost 2", "ballistic", "ansi", "z87", "v50", "anti-shatter"]))
-        {
-            return 0.25;
-        }
-
-        return 0.10;
-    }
-
-    private static int GetGridCellCapacity(JsonObject properties)
-    {
-        if (properties["Grids"] is not JsonArray grids)
-        {
-            return 0;
-        }
-
-        var totalCells = 0;
-        foreach (var grid in grids.OfType<JsonObject>())
-        {
-            var props = grid["_props"] as JsonObject ?? grid["props"] as JsonObject ?? grid;
-            if (!TryGetNumericValue(props["cellsH"], out var cellsH) || !TryGetNumericValue(props["cellsV"], out var cellsV))
-            {
-                continue;
-            }
-
-            totalCells += Math.Max(0, (int)Math.Round(cellsH)) * Math.Max(0, (int)Math.Round(cellsV));
-        }
-
-        return totalCells;
-    }
-
-    private static int GetSlotCount(JsonObject properties)
-    {
-        if (properties["Slots"] is not JsonArray slots)
-        {
-            return 0;
-        }
-
-        return slots.Count;
-    }
-
-    private static double Normalize(double value, double min, double max)
+    internal static double Normalize(double value, double min, double max)
     {
         if (min > max)
         {
@@ -4087,7 +2656,7 @@ public sealed class RealismPatchGenerator
         return Clamp((value - min) / (max - min), 0.0, 1.0);
     }
 
-    private static void ApplyFieldClamps(JsonObject patch, IReadOnlyDictionary<string, NumericRange> clampRules)
+    internal static void ApplyFieldClamps(JsonObject patch, IReadOnlyDictionary<string, NumericRange> clampRules)
     {
         foreach (var pair in clampRules)
         {
@@ -4100,7 +2669,7 @@ public sealed class RealismPatchGenerator
         }
     }
 
-    private static void ApplyGlobalSafetyClamps(JsonObject patch)
+    internal static void ApplyGlobalSafetyClamps(JsonObject patch)
     {
         foreach (var pair in patch.ToList())
         {
@@ -4128,7 +2697,7 @@ public sealed class RealismPatchGenerator
         }
     }
 
-    private void ApplyNumericRanges(JsonObject patch, IReadOnlyDictionary<string, NumericRange> ranges, bool ensureFields, bool preserveExistingValues = false)
+    internal void ApplyNumericRanges(JsonObject patch, IReadOnlyDictionary<string, NumericRange> ranges, bool ensureFields, bool preserveExistingValues = false)
     {
         foreach (var pair in ranges)
         {
@@ -4148,203 +2717,11 @@ public sealed class RealismPatchGenerator
         }
     }
 
-    private void ApplyWeaponRefinementRanges(JsonObject patch, string weaponProfile, ItemInfo itemInfo, bool preserveExistingValues)
-    {
-        if (!rules.Weapon.WeaponProfileRanges.TryGetValue(weaponProfile, out var baseRanges))
-        {
-            return;
-        }
-
-        var caliberProfile = InferWeaponCaliberProfile(patch, itemInfo);
-        var stockProfile = InferWeaponStockProfile(patch);
-        var caliberMods = !string.IsNullOrWhiteSpace(caliberProfile) && rules.Weapon.WeaponCaliberRuleModifiers.TryGetValue(caliberProfile, out var resolvedCaliberMods)
-            ? resolvedCaliberMods
-            : null;
-        var stockMods = rules.Weapon.WeaponStockRuleModifiers.TryGetValue(stockProfile, out var resolvedStockMods)
-            ? resolvedStockMods
-            : null;
-
-        foreach (var pair in baseRanges)
-        {
-            if (patch[pair.Key] is null)
-            {
-                patch[pair.Key] = CreateNumericNode(GetRangeSeedValue(pair.Value.Min, pair.Value.Max, pair.Value.PreferInt), pair.Value.PreferInt);
-            }
-
-            var deltaMin = 0.0;
-            var deltaMax = 0.0;
-            if (caliberMods is not null && caliberMods.TryGetValue(pair.Key, out var caliberRange))
-            {
-                deltaMin += caliberRange.Min;
-                deltaMax += caliberRange.Max;
-            }
-
-            if (stockMods is not null && stockMods.TryGetValue(pair.Key, out var stockRange))
-            {
-                deltaMin += stockRange.Min;
-                deltaMax += stockRange.Max;
-            }
-
-            if (deltaMin == 0 && deltaMax == 0)
-            {
-                continue;
-            }
-
-            var min = pair.Value.Min + deltaMin;
-            var max = pair.Value.Max + deltaMax;
-            patch[pair.Key] = preserveExistingValues
-                ? ClampRangeValue(patch[pair.Key], min, max, pair.Value.PreferInt)
-                : SampleRangeValue(patch[pair.Key], min, max, pair.Value.PreferInt);
-        }
-
-        var supplementalKeys = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
-        if (caliberMods is not null)
-        {
-            foreach (var key in caliberMods.Keys)
-            {
-                supplementalKeys.Add(key);
-            }
-        }
-
-        if (stockMods is not null)
-        {
-            foreach (var key in stockMods.Keys)
-            {
-                supplementalKeys.Add(key);
-            }
-        }
-
-        foreach (var key in supplementalKeys)
-        {
-            if (baseRanges.ContainsKey(key))
-            {
-                continue;
-            }
-
-            var ranges = new List<NumericRange>();
-            if (caliberMods is not null && caliberMods.TryGetValue(key, out var caliberRange))
-            {
-                ranges.Add(caliberRange);
-            }
-
-            if (stockMods is not null && stockMods.TryGetValue(key, out var stockRange))
-            {
-                ranges.Add(stockRange);
-            }
-
-            if (ranges.Count == 0)
-            {
-                continue;
-            }
-
-            var min = ranges.Sum(range => range.Min);
-            var max = ranges.Sum(range => range.Max);
-            var preferInt = ranges.All(range => range.PreferInt);
-            if (patch[key] is null)
-            {
-                patch[key] = CreateNumericNode(GetRangeSeedValue(min, max, preferInt), preferInt);
-            }
-
-            patch[key] = preserveExistingValues
-                ? ClampRangeValue(patch[key], min, max, preferInt)
-                : SampleRangeValue(patch[key], min, max, preferInt);
-        }
-    }
-
     private string? InferWeaponProfile(JsonObject patch, ItemInfo itemInfo)
-    {
-        var parentId = NormalizeParentId(itemInfo.ParentId);
-        if (!string.IsNullOrWhiteSpace(parentId))
-        {
-            foreach (var pair in rules.Weapon.WeaponParentGroups)
-            {
-                if (pair.Value.Contains(parentId!))
-                {
-                    return pair.Key;
-                }
-            }
-        }
-
-        if (!string.IsNullOrWhiteSpace(itemInfo.TemplateFile) && rules.Weapon.TemplateFileToWeaponProfile.TryGetValue(Path.GetFileName(itemInfo.TemplateFile), out var templateProfile))
-        {
-            return templateProfile;
-        }
-
-        if (!string.IsNullOrWhiteSpace(itemInfo.SourceFile)
-            && rules.Weapon.TemplateFileToWeaponProfile.TryGetValue(Path.GetFileName(itemInfo.SourceFile), out var sourceFileProfile))
-        {
-            return sourceFileProfile;
-        }
-
-        var name = GetLowerText(patch["Name"]);
-        var weapType = GetLowerText(patch["WeapType"]);
-        var tokens = AlphaNumericTokenRegex.Matches(name).Select(match => match.Value).ToHashSet(StringComparer.OrdinalIgnoreCase);
-
-        if (name.Contains("pistol", StringComparison.OrdinalIgnoreCase) || name.Contains("handgun", StringComparison.OrdinalIgnoreCase) || weapType.Contains("pistol", StringComparison.OrdinalIgnoreCase))
-        {
-            return "pistol";
-        }
-
-        if (name.Contains("smg", StringComparison.OrdinalIgnoreCase) || weapType.Contains("smg", StringComparison.OrdinalIgnoreCase))
-        {
-            return "smg";
-        }
-
-        if (name.Contains("launcher", StringComparison.OrdinalIgnoreCase)
-            || name.Contains("grenade launcher", StringComparison.OrdinalIgnoreCase)
-            || name.Contains("m203", StringComparison.OrdinalIgnoreCase)
-            || name.Contains("gp25", StringComparison.OrdinalIgnoreCase)
-            || name.Contains("ubgl", StringComparison.OrdinalIgnoreCase)
-            || weapType.Contains("launcher", StringComparison.OrdinalIgnoreCase))
-        {
-            return "launcher";
-        }
-
-        if (name.Contains("sniper", StringComparison.OrdinalIgnoreCase)
-            || name.Contains("marksman", StringComparison.OrdinalIgnoreCase)
-            || name.Contains("dmr", StringComparison.OrdinalIgnoreCase)
-            || name.Contains("anti-materiel", StringComparison.OrdinalIgnoreCase)
-            || name.Contains("anti materiel", StringComparison.OrdinalIgnoreCase)
-            || name.Contains("狙击", StringComparison.OrdinalIgnoreCase))
-        {
-            return "sniper";
-        }
-
-        if (tokens.Contains("lmg") || tokens.Contains("mg") || name.Contains("machinegun", StringComparison.OrdinalIgnoreCase) || weapType.Contains("machinegun", StringComparison.OrdinalIgnoreCase))
-        {
-            return "machinegun";
-        }
-
-        if (name.Contains("shotgun", StringComparison.OrdinalIgnoreCase) || weapType.Contains("shotgun", StringComparison.OrdinalIgnoreCase))
-        {
-            return "shotgun";
-        }
-
-        if (name.Contains("carbine", StringComparison.OrdinalIgnoreCase)
-            || name.Contains("assault", StringComparison.OrdinalIgnoreCase)
-            || name.Contains("rifle", StringComparison.OrdinalIgnoreCase))
-        {
-            return "assault";
-        }
-
-        return null;
-    }
+        => ProfileInferenceService.InferWeaponProfile(rules, PatchAnalysisContextFactory.Create(this, patch, itemInfo));
 
     private string ExtractGearArmorClassText(JsonObject patch, ItemInfo itemInfo)
-    {
-        var candidates = new List<string?>
-        {
-            GetText(patch["ArmorClass"]),
-            GetText(patch["Name"]),
-        };
-
-        foreach (var key in new[] { "ArmorClass", "armorClass", "Name", "name" })
-        {
-            candidates.Add(GetText(itemInfo.Properties[key]));
-        }
-
-        return string.Join(' ', candidates.Where(value => !string.IsNullOrWhiteSpace(value))).ToLowerInvariant();
-    }
+        => PatchAnalysisContextFactory.Create(this, patch, itemInfo).GearArmorClassText;
 
     private string InferArmorPlateProfile(JsonObject patch, ItemInfo itemInfo)
     {
@@ -4461,587 +2838,13 @@ public sealed class RealismPatchGenerator
     }
 
     private string? InferGearProfile(JsonObject patch, ItemInfo itemInfo)
-    {
-        var parentId = NormalizeParentId(itemInfo.ParentId);
-        var templateFile = Path.GetFileName(itemInfo.TemplateFile ?? string.Empty);
-        var name = GetLowerText(patch["Name"]);
-        var armorClass = GetLowerText(patch["ArmorClass"]).Trim();
-        var hasArmorClass = !string.IsNullOrWhiteSpace(armorClass) && armorClass is not "unclassified" and not "none" and not "null";
-
-        if (parentId is "644120aa86ffbe10ee032b6f" or "5b5f704686f77447ec5d76d7")
-        {
-            return InferArmorPlateProfile(patch, itemInfo);
-        }
-
-        var parentProfileMap = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
-        {
-            ["5448e54d4bdc2dcc718b4568"] = "armor_vest",
-            ["57bef4c42459772e8d35a53b"] = "armor_chest_rig",
-            ["5448e5284bdc2dcb718b4567"] = "chest_rig",
-            ["5a341c4086f77401f2541505"] = "helmet",
-            ["5a341c4686f77469e155819e"] = "armor_mask",
-            ["55d7217a4bdc2d86028b456d"] = "armor_component",
-            ["5448e53e4bdc2d60728b4567"] = "backpack",
-            ["5645bcb74bdc2ded0b8b4578"] = "headset",
-            ["5b3f15d486f77432d0509248"] = "cosmetic_gasmask",
-        };
-
-        if (!string.IsNullOrWhiteSpace(parentId) && parentProfileMap.TryGetValue(parentId!, out var profile))
-        {
-            return profile switch
-            {
-                "helmet" => InferHelmetProfile(patch),
-                "armor_vest" or "armor_chest_rig" => InferBodyArmorProfile(profile, patch, itemInfo),
-                "chest_rig" => InferChestRigProfile(patch),
-                "backpack" => InferBackpackProfile(patch),
-                "armor_component" or "armor_mask" => InferFaceProtectionProfile(profile, patch, itemInfo),
-                "cosmetic_gasmask" => InferCosmeticGearProfile(patch, itemInfo),
-                _ => profile,
-            };
-        }
-
-        if (templateFile == "armorPlateTemplates.json")
-        {
-            return InferArmorPlateProfile(patch, itemInfo);
-        }
-
-        if (templateFile == "cosmeticsTemplates.json")
-        {
-            return InferCosmeticGearProfile(patch, itemInfo);
-        }
-
-        if (templateFile == "helmetTemplates.json")
-        {
-            return InferHelmetProfile(patch);
-        }
-
-        if (templateFile == "armorVestsTemplates.json")
-        {
-            return InferBodyArmorProfile("armor_vest", patch, itemInfo);
-        }
-
-        if (templateFile == "armorChestrigTemplates.json")
-        {
-            return InferBodyArmorProfile("armor_chest_rig", patch, itemInfo);
-        }
-
-        if (templateFile == "chestrigTemplates.json")
-        {
-            return InferChestRigProfile(patch);
-        }
-
-        if (templateFile == "bagTemplates.json")
-        {
-            return InferBackpackProfile(patch);
-        }
-
-        if (templateFile == "armorMasksTemplates.json" && ContainsAnyKeyword(name, ["glasses", "goggles", "eyewear", "射击眼镜", "护目镜", "眼镜", "condor"]))
-        {
-            return InferEyewearProfile(patch, itemInfo);
-        }
-
-        if (templateFile == "armorMasksTemplates.json")
-        {
-            return InferFaceProtectionProfile("armor_mask", patch, itemInfo);
-        }
-
-        if (templateFile == "armorComponentsTemplates.json")
-        {
-            return InferFaceProtectionProfile("armor_component", patch, itemInfo);
-        }
-
-        if (templateFile == "headsetTemplates.json")
-        {
-            return "headset";
-        }
-
-        if (ContainsAnyKeyword(name, ["headset", "headphones", "耳机", "耳麦"]))
-        {
-            return "headset";
-        }
-
-        if (ContainsAnyKeyword(name, ["beret", "贝雷帽", "boonie", "watch cap"]))
-        {
-            return "cosmetic_headwear";
-        }
-
-        if (ContainsAnyKeyword(name, ["back panel", "背部面板"]))
-        {
-            return "back_panel";
-        }
-
-        if (ContainsAnyKeyword(name, ["腰带", "belt", "warbelt", "battle belt", "警用腰带", "mule"]))
-        {
-            return "belt_harness";
-        }
-
-        if (ContainsAnyKeyword(name, ["backpack", "ruck", "pack", "bag", "背包", "背负系统", "bvs", "nice comm"]))
-        {
-            return InferBackpackProfile(patch);
-        }
-
-        if (ContainsAnyKeyword(name, ["soft armor", "armor plate", "plate", "插板", "软甲", "防弹插板"]))
-        {
-            return InferArmorPlateProfile(patch, itemInfo);
-        }
-
-        if (ContainsAnyKeyword(name, ["helmet", "头盔", "helm", "ops-core", "ops core", "fast mt", "tc2000", "mich", "ronin"]))
-        {
-            return InferHelmetProfile(patch);
-        }
-
-        if (ContainsAnyKeyword(name, ["glasses", "goggles", "eyewear", "射击眼镜", "护目镜", "眼镜", "condor"]))
-        {
-            return InferEyewearProfile(patch, itemInfo);
-        }
-
-        if (ContainsAnyKeyword(name, ["visor", "face shield", "mandible", "aventail", "side armor", "applique", "护颈", "面甲"]))
-        {
-            return InferFaceProtectionProfile("armor_component", patch, itemInfo);
-        }
-
-        if (ContainsAnyKeyword(name, ["gas mask", "respirator", "mask", "面罩", "防毒"]))
-        {
-            return InferFaceProtectionProfile("armor_mask", patch, itemInfo);
-        }
-
-        if (ContainsAnyKeyword(name, ["plate carrier", "armor rig", "armored rig", "carrier", "jpc", "apc", "sohpc", "cgpc", "avs", "tqs", "战术背心", "携行背心", "板携行", "板携行背心", "护甲胸挂", "防弹胸挂"]))
-        {
-            return InferBodyArmorProfile("armor_chest_rig", patch, itemInfo);
-        }
-
-        if (hasArmorClass && ContainsAnyKeyword(name, ["rig", "胸挂", "背心", "vest"]))
-        {
-            return InferBodyArmorProfile("armor_chest_rig", patch, itemInfo);
-        }
-
-        if (ContainsAnyKeyword(name, ["rig", "胸挂"]))
-        {
-            return InferChestRigProfile(patch);
-        }
-
-        if (hasArmorClass && ContainsAnyKeyword(name, ["背心", "vest"]))
-        {
-            return InferBodyArmorProfile("armor_vest", patch, itemInfo);
-        }
-
-        if (ContainsAnyKeyword(name, ["armor", "vest", "body armor", "护甲", "防弹衣"]))
-        {
-            return InferBodyArmorProfile("armor_vest", patch, itemInfo);
-        }
-
-        return null;
-    }
-
-    private string ExtractAmmoCaliberText(JsonObject patch, ItemInfo itemInfo)
-    {
-        var candidates = new List<string?>
-        {
-            GetText(patch["Caliber"]),
-            GetText(patch["AmmoCaliber"]),
-            GetText(patch["caliber"]),
-            GetText(patch["ammoCaliber"]),
-            GetText(patch["Name"]),
-        };
-
-        foreach (var key in new[] { "Caliber", "ammoCaliber", "AmmoCaliber" })
-        {
-            candidates.Add(GetText(itemInfo.Properties[key]));
-        }
-
-        return string.Join(' ', candidates.Where(value => !string.IsNullOrWhiteSpace(value))).ToLowerInvariant();
-    }
-
-    private string InferAmmoProfile(JsonObject patch, ItemInfo itemInfo)
-    {
-        var caliberText = ExtractAmmoCaliberText(patch, itemInfo);
-        foreach (var keywordProfile in rules.Ammo.AmmoProfileKeywords)
-        {
-            if (keywordProfile.Keywords.Any(keyword => caliberText.Contains(keyword, StringComparison.OrdinalIgnoreCase)))
-            {
-                return keywordProfile.Profile;
-            }
-        }
-
-        return "intermediate_rifle";
-    }
-
-    private string ExtractAmmoVariantText(JsonObject patch, ItemInfo itemInfo)
-    {
-        var candidates = new List<string?>
-        {
-            GetText(patch["Name"]),
-            GetText(patch["ShortName"]),
-            GetText(patch["Description"]),
-            GetText(patch["AmmoTooltipClass"]),
-        };
-
-        foreach (var key in new[] { "Name", "ShortName", "Description", "AmmoTooltipClass", "Caliber" })
-        {
-            candidates.Add(GetText(itemInfo.Properties[key]));
-        }
-
-        return string.Join(' ', candidates.Where(value => !string.IsNullOrWhiteSpace(value))).ToLowerInvariant();
-    }
-
-    private string? InferAmmoSpecialProfile(JsonObject patch, ItemInfo itemInfo)
-    {
-        var variantText = ExtractAmmoVariantText(patch, itemInfo);
-        var variantTokens = AlphaNumericTokenRegex.Matches(variantText).Select(match => match.Value).ToHashSet(StringComparer.OrdinalIgnoreCase);
-
-        foreach (var keywordProfile in rules.Ammo.AmmoSpecialKeywords)
-        {
-            foreach (var keyword in keywordProfile.Keywords)
-            {
-                var normalized = keyword.Trim().ToLowerInvariant().Replace("-", " ").Replace("_", " ");
-                if (string.IsNullOrWhiteSpace(normalized))
-                {
-                    continue;
-                }
-
-                if (normalized.Contains(' '))
-                {
-                    if (variantText.Contains(normalized, StringComparison.OrdinalIgnoreCase))
-                    {
-                        return keywordProfile.Profile;
-                    }
-
-                    var parts = normalized.Split(' ', StringSplitOptions.RemoveEmptyEntries);
-                    if (parts.Length > 0 && parts.All(variantTokens.Contains))
-                    {
-                        return keywordProfile.Profile;
-                    }
-
-                    continue;
-                }
-
-                if (variantTokens.Contains(normalized))
-                {
-                    return keywordProfile.Profile;
-                }
-            }
-        }
-
-        return null;
-    }
-
-    private double? ExtractPenetrationValue(JsonObject patch, ItemInfo itemInfo)
-    {
-        if (TryGetNumericValue(patch["PenetrationPower"], out var patchValue))
-        {
-            return patchValue;
-        }
-
-        foreach (var key in new[] { "PenetrationPower", "Penetration", "penPower" })
-        {
-            if (TryGetNumericValue(itemInfo.Properties[key], out var propertyValue))
-            {
-                return propertyValue;
-            }
-        }
-
-        return null;
-    }
-
-    private string InferAmmoPenetrationTier(JsonObject patch, ItemInfo itemInfo)
-    {
-        var penetration = ExtractPenetrationValue(patch, itemInfo);
-        if (penetration is null)
-        {
-            return "pen_lvl_5";
-        }
-
-        foreach (var pair in rules.Ammo.AmmoPenetrationTiers)
-        {
-            if (penetration >= pair.Value.Min && penetration <= pair.Value.Max)
-            {
-                return pair.Key;
-            }
-        }
-
-        return penetration > 130 ? "pen_lvl_11" : "pen_lvl_1";
-    }
+        => ProfileInferenceService.InferGearProfile(PatchAnalysisContextFactory.Create(this, patch, itemInfo));
 
     private void ApplyAmmoProfileRanges(JsonObject patch, ItemInfo itemInfo)
-    {
-        var ammoProfile = InferAmmoProfile(patch, itemInfo);
-        if (!rules.Ammo.AmmoProfileRanges.TryGetValue(ammoProfile, out var baseRanges))
-        {
-            return;
-        }
-
-        var penetrationTier = InferAmmoPenetrationTier(patch, itemInfo);
-        var specialProfile = InferAmmoSpecialProfile(patch, itemInfo);
-        var penetrationMods = rules.Ammo.AmmoPenetrationModifiers.GetValueOrDefault(penetrationTier);
-        var specialMods = !string.IsNullOrWhiteSpace(specialProfile) ? rules.Ammo.AmmoSpecialModifiers.GetValueOrDefault(specialProfile!) : null;
-        var malfunctionKeys = new HashSet<string>(StringComparer.OrdinalIgnoreCase) { "MalfMisfireChance", "MisfireChance", "MalfFeedChance" };
-
-        foreach (var pair in baseRanges)
-        {
-            var min = pair.Value.Min;
-            var max = pair.Value.Max;
-            if (penetrationMods is not null && penetrationMods.TryGetValue(pair.Key, out var tierRange))
-            {
-                min += tierRange.Min;
-                max += tierRange.Max;
-            }
-
-            if (specialMods is not null && specialMods.TryGetValue(pair.Key, out var specialRange))
-            {
-                min += specialRange.Min;
-                max += specialRange.Max;
-            }
-
-            if (min > max)
-            {
-                (min, max) = (max, min);
-            }
-
-            if (malfunctionKeys.Contains(pair.Key))
-            {
-                min = Clamp(min, 0.001, 0.015);
-                max = Clamp(max, 0.001, 0.015);
-                if (min > max)
-                {
-                    (min, max) = (max, min);
-                }
-            }
-
-            if (string.Equals(pair.Key, "ArmorDamage", StringComparison.OrdinalIgnoreCase))
-            {
-                min = Clamp(min, 1.0, 1.2);
-                max = Clamp(max, 1.0, 1.2);
-                if (min > max)
-                {
-                    (min, max) = (max, min);
-                }
-            }
-
-            if (patch[pair.Key] is null)
-            {
-                patch[pair.Key] = CreateNumericNode(GetRangeSeedValue(min, max, pair.Value.PreferInt), pair.Value.PreferInt);
-            }
-
-            patch[pair.Key] = SampleRangeValue(patch[pair.Key], min, max, pair.Value.PreferInt);
-        }
-    }
+        => AmmoRuleEngine.ApplyAmmoProfileRanges(this, rules, patch, itemInfo);
 
     private string? InferModProfile(JsonObject patch, ItemInfo itemInfo)
-    {
-        var name = GetLowerText(patch["Name"]);
-        var modType = GetLowerText(patch["ModType"]);
-        var parentId = NormalizeParentId(itemInfo.ParentId);
-        var baseProfile = parentId is not null && rules.Attachment.ModParentBaseProfiles.TryGetValue(parentId, out var mappedProfile)
-            ? mappedProfile
-            : null;
-
-        if (string.Equals(modType, "bayonet", StringComparison.OrdinalIgnoreCase)
-            || name.Contains("bayonet", StringComparison.OrdinalIgnoreCase))
-        {
-            return "bayonet";
-        }
-
-        if (string.Equals(modType, "booster", StringComparison.OrdinalIgnoreCase)
-            || name.Contains("booster", StringComparison.OrdinalIgnoreCase))
-        {
-            return "booster";
-        }
-
-        if (modType.Contains("muzzle", StringComparison.OrdinalIgnoreCase) || (baseProfile?.StartsWith("muzzle", StringComparison.OrdinalIgnoreCase) ?? false))
-        {
-            if (modType is "muzzle_supp_adapter" or "sig_taper_brake" || modType.Contains("adapter", StringComparison.OrdinalIgnoreCase))
-            {
-                return "muzzle_adapter";
-            }
-
-            if (name.Contains("adapter", StringComparison.OrdinalIgnoreCase) && ContainsAnyKeyword(name, ["muzzle", "suppressor", "silencer", "taper", "qd"]))
-            {
-                return "muzzle_adapter";
-            }
-
-            if (ContainsAnyKeyword(name, ["silencer", "suppressor", "qd", "pbs", "消音器", "抑制器", "消声器", "глушитель"]))
-            {
-                return InferSuppressorProfileFromName(name);
-            }
-
-            if (ContainsAnyKeyword(name, ["brake", "comp", "compensator", "制退器"]))
-            {
-                return "muzzle_brake";
-            }
-
-            if (ContainsAnyKeyword(name, ["thread", "protector", "螺纹保护", "保护帽"]))
-            {
-                return "muzzle_thread";
-            }
-
-            if (ContainsAnyKeyword(name, ["消焰器", "消焰", "火帽", "flash hider"]))
-            {
-                return "muzzle_flashhider";
-            }
-
-            return "muzzle_flashhider";
-        }
-
-        if (modType.Contains("barrel", StringComparison.OrdinalIgnoreCase) || modType.Contains("short_barrel", StringComparison.OrdinalIgnoreCase) || (baseProfile?.StartsWith("barrel", StringComparison.OrdinalIgnoreCase) ?? false))
-        {
-            return InferBarrelProfileFromName(name);
-        }
-
-        if (modType.Contains("handguard", StringComparison.OrdinalIgnoreCase) || (baseProfile?.StartsWith("handguard", StringComparison.OrdinalIgnoreCase) ?? false) || IsHandguardLikeName(name))
-        {
-            return InferHandguardProfileFromName(name);
-        }
-
-        if (modType == "magazine" || string.Equals(baseProfile, "magazine", StringComparison.OrdinalIgnoreCase) || (modType.Contains("mag", StringComparison.OrdinalIgnoreCase) && !modType.Contains("malf", StringComparison.OrdinalIgnoreCase)))
-        {
-            return InferMagazineProfile(ExtractMagCapacity(itemInfo, name), name);
-        }
-
-        if (modType == "foregrip_adapter")
-        {
-            return "mount";
-        }
-
-        if (modType is "grip" or "foregrip" or "verticalgrip" or "handstop" || modType.Contains("foregrip", StringComparison.OrdinalIgnoreCase))
-        {
-            return "foregrip";
-        }
-
-        if (modType == "bipod")
-        {
-            return "bipod";
-        }
-
-        if (modType is "gas" or "gasblock" or "gas_block")
-        {
-            return "gasblock";
-        }
-
-        if (modType is "stock_adapter" or "grip_stock_adapter")
-        {
-            return "stock_adapter";
-        }
-
-        if (modType is "buffer_adapter" or "buffer_tube" || modType.StartsWith("buffer", StringComparison.OrdinalIgnoreCase))
-        {
-            return "buffer_adapter";
-        }
-
-        if (modType.Contains("buttpad", StringComparison.OrdinalIgnoreCase))
-        {
-            return "stock_buttpad";
-        }
-
-        if (modType == "stock" || modType.StartsWith("stock", StringComparison.OrdinalIgnoreCase) || modType.EndsWith("_stock", StringComparison.OrdinalIgnoreCase))
-        {
-            return InferModStockProfile(name, patch, itemInfo);
-        }
-
-        if (modType is "pistolgrip" or "pistol_grip" || (modType.Contains("pistol", StringComparison.OrdinalIgnoreCase) && modType.Contains("grip", StringComparison.OrdinalIgnoreCase)))
-        {
-            return "pistol_grip";
-        }
-
-        if (string.Equals(modType, "UBGL", StringComparison.OrdinalIgnoreCase)
-            || modType.Contains("grenade_launcher", StringComparison.OrdinalIgnoreCase)
-            || modType.Contains("grenade launcher", StringComparison.OrdinalIgnoreCase))
-        {
-            return "ubgl";
-        }
-
-        if (modType == "receiver" || modType.Contains("receiver", StringComparison.OrdinalIgnoreCase) || modType.Contains("reciever", StringComparison.OrdinalIgnoreCase))
-        {
-            return "receiver";
-        }
-
-        if (modType == "mount" || modType.Contains("mount", StringComparison.OrdinalIgnoreCase) || modType.Contains("rail", StringComparison.OrdinalIgnoreCase))
-        {
-            if (ContainsAnyKeyword(name, ["silencer_", "suppressor", "消音器", "抑制器", "消声器", "глушитель"]))
-            {
-                return InferSuppressorProfileFromName(name);
-            }
-
-            if (ContainsAnyKeyword(name, ["barrel and rail system", "rail system", "front-end assembly", "front end assembly"]) && ContainsAnyKeyword(name, ["m-lok", "mlok", "handguard", "forend", "barrel"]))
-            {
-                return InferHandguardProfileFromName(name);
-            }
-
-            return "mount";
-        }
-
-        if (modType == "iron_sight")
-        {
-            return "iron_sight";
-        }
-
-        if (modType == "trigger")
-        {
-            return "trigger";
-        }
-
-        if (modType == "catch")
-        {
-            return "catch";
-        }
-
-        if (modType == "hammer")
-        {
-            return "hammer";
-        }
-
-        if (modType is "reflex_sight" or "compact_reflex_sight")
-        {
-            return "scope_red_dot";
-        }
-
-        if (modType is "scope" or "assault_scope")
-        {
-            return "scope_magnified";
-        }
-
-        if (modType.Contains("laser", StringComparison.OrdinalIgnoreCase) || modType.Contains("flashlight", StringComparison.OrdinalIgnoreCase) || modType.Contains("tactical", StringComparison.OrdinalIgnoreCase))
-        {
-            return "flashlight_laser";
-        }
-
-        if (modType == "sight")
-        {
-            var sightProfile = InferSightProfileFromName(name);
-            if (!string.IsNullOrWhiteSpace(sightProfile))
-            {
-                return sightProfile;
-            }
-
-            if (string.Equals(Path.GetFileName(itemInfo.TemplateFile), "ScopeTemplates.json", StringComparison.OrdinalIgnoreCase))
-            {
-                return "scope_red_dot";
-            }
-
-            if (baseProfile is "iron_sight" or "scope_red_dot" or "scope_magnified")
-            {
-                return baseProfile;
-            }
-
-            return "scope_red_dot";
-        }
-
-        var fallbackProfile = InferModProfileFromNameFallback(name, patch, itemInfo);
-        if (!string.IsNullOrWhiteSpace(fallbackProfile))
-        {
-            return fallbackProfile;
-        }
-
-        if (!string.IsNullOrWhiteSpace(itemInfo.TemplateFile))
-        {
-            var templateProfile = InferModProfileFromTemplateFile(Path.GetFileName(itemInfo.TemplateFile), patch, itemInfo);
-            if (!string.IsNullOrWhiteSpace(templateProfile))
-            {
-                return templateProfile;
-            }
-        }
-
-        return baseProfile;
-    }
+        => ProfileInferenceService.InferModProfile(rules, PatchAnalysisContextFactory.Create(this, patch, itemInfo), patch, itemInfo);
 
     private string? InferModProfileFromTemplateFile(string? templateFile, JsonObject patch, ItemInfo itemInfo)
     {
@@ -5248,7 +3051,7 @@ public sealed class RealismPatchGenerator
         return null;
     }
 
-    private static string InferMagazineProfile(int? capacity, string itemName)
+    internal static string InferMagazineProfile(int? capacity, string itemName)
     {
         if (ContainsAnyKeyword(itemName, ["drum", "casket", "quad", "coupled", "twin", "beta", "helical", "snail"]))
         {
@@ -5288,7 +3091,7 @@ public sealed class RealismPatchGenerator
         return "magazine_drum";
     }
 
-    private static int? ExtractMagCapacity(ItemInfo itemInfo, string itemName)
+    internal static int? ExtractMagCapacity(ItemInfo itemInfo, string itemName)
     {
         foreach (var key in new[] { "Capacity", "capacity", "MaxCount", "max_count", "CartridgeMaxCount", "cartridgeMaxCount" })
         {
@@ -5349,7 +3152,7 @@ public sealed class RealismPatchGenerator
         return false;
     }
 
-    private static string InferBarrelProfileFromName(string itemName)
+    internal static string InferBarrelProfileFromName(string itemName)
     {
         if (ContainsAnyKeyword(itemName, ["integral barrel-suppressor", "integral suppressor", "integrally suppressed", "barrel-suppressor", "一体消音枪管", "整体消音枪管"]))
         {
@@ -5375,7 +3178,7 @@ public sealed class RealismPatchGenerator
         return "barrel_medium";
     }
 
-    private static double? ExtractBarrelLengthMm(string itemName)
+    internal static double? ExtractBarrelLengthMm(string itemName)
     {
         var matches = BarrelLengthRegex.Matches(itemName);
         if (matches.Count == 0)
@@ -5393,42 +3196,13 @@ public sealed class RealismPatchGenerator
         return unit is "inch" or "in" or "\"" ? value * 25.4 : value;
     }
 
-    private static bool IsHandguardLikeName(string itemName)
+    internal static bool IsHandguardLikeName(string itemName)
     {
         return itemName.StartsWith("handguard_", StringComparison.OrdinalIgnoreCase)
             || ContainsAnyKeyword(itemName, ["护木", "forend", "handguard", "front-end assembly", "front end assembly", "цевье"]);
     }
 
-    private sealed class OrderedPatchGroup
-    {
-        private readonly Dictionary<string, JsonObject> items = new(StringComparer.OrdinalIgnoreCase);
-        private readonly List<string> itemOrder = [];
-
-        public int Count => items.Count;
-
-        public IEnumerable<KeyValuePair<string, JsonObject>> Entries
-        {
-            get
-            {
-                foreach (var itemId in itemOrder)
-                {
-                    yield return new KeyValuePair<string, JsonObject>(itemId, items[itemId]);
-                }
-            }
-        }
-
-        public void AddOrUpdate(string itemId, JsonObject patch)
-        {
-            if (!items.ContainsKey(itemId))
-            {
-                itemOrder.Add(itemId);
-            }
-
-            items[itemId] = (JsonObject)patch.DeepClone();
-        }
-    }
-
-    private static string InferHandguardProfileFromName(string itemName)
+    internal static string InferHandguardProfileFromName(string itemName)
     {
         if (ContainsAnyKeyword(itemName, ["short", "carbine", "pdw", "compact"]))
         {
@@ -5443,14 +3217,14 @@ public sealed class RealismPatchGenerator
         return "handguard_medium";
     }
 
-    private static string InferSuppressorProfileFromName(string itemName)
+    internal static string InferSuppressorProfileFromName(string itemName)
     {
         return ContainsAnyKeyword(itemName, ["mini", "mini2", "compact", "short", "45s", "rbs", "k-can", "mini monster"])
             ? "muzzle_suppressor_compact"
             : "muzzle_suppressor";
     }
 
-    private static string? InferSightProfileFromName(string itemName)
+    internal static string? InferSightProfileFromName(string itemName)
     {
         var normalized = itemName.Replace(',', '.');
         if (ContainsAnyKeyword(normalized, ["sight_front", "sight_rear", "front sight", "rear sight", "sight post", "front post", "iron", "mbus", "flip", "backup", "drum rear sight", "tritium rear sight", "tritium front sight"]))
@@ -5482,7 +3256,7 @@ public sealed class RealismPatchGenerator
         return null;
     }
 
-    private static string InferModStockProfile(string itemName, JsonObject patch, ItemInfo itemInfo)
+    internal static string InferModStockProfile(string itemName, JsonObject patch, ItemInfo itemInfo)
     {
         if (ContainsAnyKeyword(itemName, ["buttpad", "recoil pad", "butt pad", "shoulder pad", "托腮", "后托垫", "枪托垫", "缓冲垫"]))
         {
@@ -5510,89 +3284,12 @@ public sealed class RealismPatchGenerator
     }
 
     private string? InferWeaponCaliberProfile(JsonObject patch, ItemInfo itemInfo)
-    {
-        var caliberText = ExtractWeaponCaliberText(patch, itemInfo);
-        var weapType = GetLowerText(patch["WeapType"]);
-        var name = GetLowerText(patch["Name"]);
+        => ProfileInferenceService.InferWeaponCaliberProfile(rules, PatchAnalysisContextFactory.Create(this, patch, itemInfo));
 
-        foreach (var pair in rules.Weapon.CaliberProfileKeywords)
-        {
-            if (pair.Keywords.Any(keyword => caliberText.Contains(keyword, StringComparison.OrdinalIgnoreCase)))
-            {
-                return pair.Profile;
-            }
-        }
+    private string InferWeaponStockProfile(JsonObject patch)
+        => ProfileInferenceService.InferWeaponStockProfile(PatchAnalysisContextFactory.Create(this, patch, new ItemInfo()));
 
-        if (weapType.Contains("pistol", StringComparison.OrdinalIgnoreCase)
-            || name.Contains("pistol", StringComparison.OrdinalIgnoreCase)
-            || name.Contains("handgun", StringComparison.OrdinalIgnoreCase))
-        {
-            return "pistol_caliber";
-        }
-
-        return null;
-    }
-
-    private static string InferWeaponStockProfile(JsonObject patch)
-    {
-        var name = GetLowerText(patch["Name"]);
-        var weapType = GetLowerText(patch["WeapType"]);
-        var hasShoulder = ToOptionalBool(patch["HasShoulderContact"]);
-
-        if (name.Contains("bullpup", StringComparison.OrdinalIgnoreCase) || weapType.Contains("bullpup", StringComparison.OrdinalIgnoreCase))
-        {
-            return "bullpup";
-        }
-
-        if (weapType.Contains("pistol", StringComparison.OrdinalIgnoreCase)
-            || name.Contains("pistol", StringComparison.OrdinalIgnoreCase)
-            || name.Contains("machine pistol", StringComparison.OrdinalIgnoreCase)
-            || name.Contains("stockless", StringComparison.OrdinalIgnoreCase))
-        {
-            return "stockless";
-        }
-
-        if (name.Contains("folded", StringComparison.OrdinalIgnoreCase)
-            || name.Contains("stock folded", StringComparison.OrdinalIgnoreCase)
-            || name.Contains("no stock", StringComparison.OrdinalIgnoreCase))
-        {
-            return "folding_stock_collapsed";
-        }
-
-        if (name.Contains("fold", StringComparison.OrdinalIgnoreCase) || name.Contains("folding", StringComparison.OrdinalIgnoreCase))
-        {
-            return hasShoulder != false ? "folding_stock_extended" : "folding_stock_collapsed";
-        }
-
-        if (hasShoulder == false)
-        {
-            return "stockless";
-        }
-
-        return "fixed_stock";
-    }
-
-    private string ExtractWeaponCaliberText(JsonObject patch, ItemInfo itemInfo)
-    {
-        var candidates = new List<string?>
-        {
-            GetText(patch["Caliber"]),
-            GetText(patch["AmmoCaliber"]),
-            GetText(patch["caliber"]),
-            GetText(patch["ammoCaliber"]),
-            GetText(patch["Name"]),
-            itemInfo.Name,
-        };
-
-        foreach (var key in new[] { "Caliber", "ammoCaliber", "AmmoCaliber" })
-        {
-            candidates.Add(GetText(itemInfo.Properties[key]));
-        }
-
-        return string.Join(" ", candidates.Where(value => !string.IsNullOrWhiteSpace(value))).ToLowerInvariant();
-    }
-
-    private JsonNode? SampleRangeValue(JsonNode? originalNode, double min, double max, bool preferInt)
+    internal JsonNode? SampleRangeValue(JsonNode? originalNode, double min, double max, bool preferInt)
     {
         if (!TryGetNumericValue(originalNode, out var originalValue))
         {
@@ -5616,7 +3313,7 @@ public sealed class RealismPatchGenerator
         return CreateNumericNode(Clamp(sampled, min, max), preferInt, min, max);
     }
 
-    private static JsonNode? ClampRangeValue(JsonNode? originalNode, double min, double max, bool preferInt)
+    internal static JsonNode? ClampRangeValue(JsonNode? originalNode, double min, double max, bool preferInt)
     {
         if (!TryGetNumericValue(originalNode, out var originalValue))
         {
@@ -5652,7 +3349,7 @@ public sealed class RealismPatchGenerator
         return random.Triangular(min, max, mode);
     }
 
-    private static double GetRangeSeedValue(double min, double max, bool preferInt)
+    internal static double GetRangeSeedValue(double min, double max, bool preferInt)
     {
         if (min > max)
         {
@@ -5670,7 +3367,7 @@ public sealed class RealismPatchGenerator
         return BitConverter.ToUInt32(bytes);
     }
 
-    private static JsonNode CreateNumericNode(double value, bool preferInt, params double[] precisionHints)
+    internal static JsonNode CreateNumericNode(double value, bool preferInt, params double[] precisionHints)
     {
         if (preferInt)
         {
@@ -5699,7 +3396,7 @@ public sealed class RealismPatchGenerator
         return Math.Clamp(precision, 2, 4);
     }
 
-    private static double Clamp(double value, double min, double max)
+    internal static double Clamp(double value, double min, double max)
     {
         if (min > max)
         {
@@ -5709,7 +3406,7 @@ public sealed class RealismPatchGenerator
         return Math.Max(min, Math.Min(max, value));
     }
 
-    private static bool TryGetNumericValue(JsonNode? node, out double value)
+    internal static bool TryGetNumericValue(JsonNode? node, out double value)
     {
         value = 0;
         if (node is null)
@@ -5759,13 +3456,13 @@ public sealed class RealismPatchGenerator
         return false;
     }
 
-    private static bool IsIntegerNode(JsonNode? node)
+    internal static bool IsIntegerNode(JsonNode? node)
     {
         return node is JsonValue jsonValue
             && (jsonValue.TryGetValue<int>(out _) || jsonValue.TryGetValue<long>(out _));
     }
 
-    private static bool? ToOptionalBool(JsonNode? node)
+    internal static bool? ToOptionalBool(JsonNode? node)
     {
         if (node is null)
         {
@@ -5788,12 +3485,12 @@ public sealed class RealismPatchGenerator
         return null;
     }
 
-    private static string GetLowerText(JsonNode? node)
+    internal static string GetLowerText(JsonNode? node)
     {
         return GetText(node)?.ToLowerInvariant() ?? string.Empty;
     }
 
-    private static string? GetText(JsonNode? node)
+    internal static string? GetText(JsonNode? node)
     {
         if (node is null)
         {
@@ -5829,20 +3526,6 @@ public sealed class RealismPatchGenerator
         }
 
         return node.ToJsonString();
-    }
-
-    private static string GetDefaultWeaponTypeForProfile(string profile)
-    {
-        return profile.ToLowerInvariant() switch
-        {
-            "pistol" => "pistol",
-            "smg" => "smg",
-            "sniper" => "sniper",
-            "shotgun" => "shotgun",
-            "machinegun" => "machinegun",
-            "launcher" => "launcher",
-            _ => "rifle",
-        };
     }
 
     private void Log(string message)
