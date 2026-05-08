@@ -1,0 +1,171 @@
+{
+    "6628f2e31084cf4d62b2b40b": {
+        "ItemToClone": "ASSAULTRIFLE_AUG_A3_556X45",
+        "OverrideProperties": {
+            "Chambers": [
+                {
+                    "_name": "patron_in_weapon",
+                    "_id": "668b4013a52bbebe5ea69e91",
+                    "_parent": "6628f2e31084cf4d62b2b40b",
+                    "_props": {
+                        "filters": [
+                            {
+                                "Filter": [
+                                    "59e0d99486f7744a32234762",
+                                    "59e4d3d286f774176a36250a",
+                                    "5656d7c34bdc2d9d198b4587",
+                                    "59e4cf5286f7741778269d8a",
+                                    "59e4d24686f7741776641ac7",
+                                    "601aa3d2b2bcb34913271e6d",
+                                    "64b7af5a8532cf95ee0a0dbd",
+                                    "64b7af434b75259c590fa893",
+                                    "64b7af734b75259c590fa895"
+                                ]
+                            }
+                        ]
+                    },
+                    "_required": false,
+                    "_mergeSlotWithChildren": false,
+                    "_proto": "55d4af244bdc2d962f8b4571"
+                }
+            ],
+            "ConflictingItems": [
+                "59e6920f86f77411d82aa167",
+                "59e6927d86f77411da468256",
+                "54527a984bdc2d4e668b4567",
+                "54527ac44bdc2d36668b4567",
+                "59e68f6f86f7746c9f75e846",
+                "59e6906286f7746c9f75e847",
+                "59e690b686f7746c9f75e848",
+                "59e6918f86f7746c9f75e849",
+                "60194943740c5d77f6705eea",
+                "601949593ae8f707c4608daa",
+                "5c0d5ae286f7741e46554302",
+                "5fbe3ffdf8b6a877a729ea82",
+                "5fd20ff893a8961fc660a954",
+                "619636be6db0f2477964e710",
+                "6196364158ef8c428c287d9f",
+                "6196365d58ef8c428c287da1",
+                "64b8725c4b75259c590fa899"
+            ],
+            "ammoCaliber": "Caliber762x39",
+            "defAmmo": "64b7af5a8532cf95ee0a0dbd",
+            "defMagType": "6628f31d2e4dbf64427b378d"
+        },
+        "LocalePush": {
+            "name": "改装型 AUG A3 7.62x39 突击步枪",
+"shortName": "AUG 762",
+"description": "斯太尔 AUG A3 是一款由奥地利公司斯太尔-戴姆勒-普赫（Steyr-Daimler-Puch）研发的 5.56x45 毫米无托式突击步枪。AUG 以其出色的人机工效、良好的精度、低后坐力和可靠的性能而著称，其未来感十足的外观也极具辨识度。A3 型号新增了空仓挂机按钮。此枪已改装为兼容 7.62x39 毫米弹药，同时保留了其标志性特性。"},
+        "HandbookParent": "MarksmanRifles",
+        "HandbookPrice": 61999,
+        "PushMastery": true,
+        "CloneToFilters": true,
+        "LootPush": {
+            "AddToStaticLoot": true,
+            "LootContainersToAdd": [
+                "5909d89086f77472591234a0",
+                "5909d7cf86f77470ee57d75a",
+                "5909d76c86f77471e53d2adf",
+                "5909d5ef86f77467974efbd8",
+                "578f87ad245977356274f2cc"
+            ],
+            "StaticLootProbability": 5
+        }
+    },
+    "6628f31d2e4dbf64427b378d": {
+        "ItemToClone": "MAGAZINE_556X45_AUG_30RND",
+        "OverrideProperties": {
+            "Cartridges": [
+                {
+                    "_name": "cartridges",
+                    "_id": "668b400bb6d6df54202fad11",
+                    "_max_count": 30,
+                    "_parent": "6628f31d2e4dbf64427b378d",
+                    "_props": {
+                        "filters": [
+                            {
+                                "Filter": [
+                                    "59e0d99486f7744a32234762",
+                                    "59e4d3d286f774176a36250a",
+                                    "5656d7c34bdc2d9d198b4587",
+                                    "59e4cf5286f7741778269d8a",
+                                    "59e4d24686f7741776641ac7",
+                                    "601aa3d2b2bcb34913271e6d",
+                                    "64b7af5a8532cf95ee0a0dbd",
+                                    "64b7af434b75259c590fa893",
+                                    "64b7af734b75259c590fa895"
+                                ]
+                            }
+                        ]
+                    },
+                    "_proto": "5748538b2459770af276a261"
+                }
+            ]
+        },
+        "LocalePush": {
+            "name": "斯太尔 AUG 7.62x39 毫米 30 发弹匣",
+"shortName": "AUG",
+"description": "一款 30 发容量的聚合物制斯太尔 AUG 弹匣，适用于 7.62x39 毫米弹药。"
+        },
+        "HandbookParent": "Magazines",
+        "HandbookPrice": 11999,
+        "LootPush": {
+            "LootContainersToAdd": [
+                "5909d89086f77472591234a0",
+                "5909d7cf86f77470ee57d75a",
+                "5909d76c86f77471e53d2adf",
+                "5909d5ef86f77467974efbd8",
+                "578f87ad245977356274f2cc"
+            ],
+            "StaticLootProbability": 5
+        }
+    },
+    "6628f33d585102d8bc5d75db": {
+        "ItemToClone": "MAGAZINE_556X45_AUG_42RND",
+        "OverrideProperties": {
+            "Cartridges": [
+                {
+                    "_name": "cartridges",
+                    "_id": "668b40050053d4cc5be99f00",
+                    "_max_count": 42,
+                    "_parent": "6628f33d585102d8bc5d75db",
+                    "_props": {
+                        "filters": [
+                            {
+                                "Filter": [
+                                    "59e0d99486f7744a32234762",
+                                    "59e4d3d286f774176a36250a",
+                                    "5656d7c34bdc2d9d198b4587",
+                                    "59e4cf5286f7741778269d8a",
+                                    "59e4d24686f7741776641ac7",
+                                    "601aa3d2b2bcb34913271e6d",
+                                    "64b7af5a8532cf95ee0a0dbd",
+                                    "64b7af434b75259c590fa893",
+                                    "64b7af734b75259c590fa895"
+                                ]
+                            }
+                        ]
+                    },
+                    "_proto": "5748538b2459770af276a261"
+                }
+            ]
+        },
+        "LocalePush": {
+            "name": "斯太尔 AUG 7.62x39 毫米 42 发弹匣",
+"shortName": "AUG",
+"description": "一款 42 发容量的聚合物制斯太尔 AUG 弹匣，适用于 7.62x39 毫米弹药。"
+        },
+        "HandbookParent": "Magazines",
+        "HandbookPrice": 19999,
+        "LootPush": {
+            "LootContainersToAdd": [
+                "5909d89086f77472591234a0",
+                "5909d7cf86f77470ee57d75a",
+                "5909d76c86f77471e53d2adf",
+                "5909d5ef86f77467974efbd8",
+                "578f87ad245977356274f2cc"
+            ],
+            "StaticLootProbability": 5
+        }
+    }
+}

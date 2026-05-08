@@ -1,0 +1,16 @@
+{
+    "67cde31eea2d15e888fa7dee": {
+        "ItemToClone": "GRENADELAUNCHER_FLARE",
+        "OverrideProperties": {},
+        "LocalePush": {
+            "name": "列车召唤信号弹（后勤处）",
+"shortName": "TCF",
+"description": "一种用于在灯塔（Lighthouse）和储备站（Rezerve）区域召唤列车的特种白色信号弹。一旦发射，列车将开始驶向车站。"
+        },
+        "Handbook": {
+            "HandbookParent": "SpecialWeapons",
+            "HandbookPrice": 99999
+        },
+        "CloneToFilters": true
+    }
+}

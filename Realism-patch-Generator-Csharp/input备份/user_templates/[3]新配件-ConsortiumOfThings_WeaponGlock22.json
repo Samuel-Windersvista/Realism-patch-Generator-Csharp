@@ -1,0 +1,475 @@
+	{
+		"6850956dcf12c18a4d8ed9ab": {
+			"itemTplToClone": "5a7ae0c351dfba0017554310",
+			"parentId": "HANDGUN",
+			"handbookParentId": "WEAPONS_PISTOLS",
+			"overrideProperties": {
+				"Prefab": {
+					"path": "assets/content/weapons/glock17/weapon_glock_glock_17_gen3_9x19_container.bundle",
+					"rcid": ""
+				},
+				"SingleFireRate": 550,
+				"ConflictingItems": [
+					"5a7ad74e51dfba0015068f45"
+				],
+				"Slots": [
+					{
+						"_name": "mod_barrel",
+						"_id": "685095d15b9b30bd0b9daa01",
+						"_parent": "6850956dcf12c18a4d8ed9ab",
+						"_props": {
+							"filters": [
+								{
+									"Shift": 0,
+									"Filter": [
+										"685782ebcb63ccdc073e6c5b",
+										"685783eaa05975b2c91ca071"
+									]
+								}
+							]
+						},
+						"_required": true,
+						"_mergeSlotWithChildren": false,
+						"_proto": "55d30c4c4bdc2db4468b457e"
+					},
+					{
+						"_name": "mod_pistol_grip",
+						"_id": "6828f65e0fbb8c4f7ca75c4e",
+						"_parent": "6850956dcf12c18a4d8ed9ab",
+						"_props": {
+							"filters": [
+								{
+									"Shift": 0,
+									"Filter": [
+										"5a7b4960e899ef197b331a2d"
+									]
+								}
+							]
+						},
+						"_required": false,
+						"_mergeSlotWithChildren": false,
+						"_proto": "55d30c4c4bdc2db4468b457e"
+					},
+					{
+						"_name": "mod_reciever",
+						"_id": "6828f6604ee74a06a0633467",
+						"_parent": "6850956dcf12c18a4d8ed9ab",
+						"_props": {
+							"filters": [
+								{
+									"Shift": 0,
+									"Filter": [
+										"68509710f0df4dbc5b0ff7fe"
+									]
+								}
+							]
+						},
+						"_required": true,
+						"_mergeSlotWithChildren": false,
+						"_proto": "55d30c4c4bdc2db4468b457e"
+					},
+					{
+						"_name": "mod_magazine",
+						"_id": "6828f661c1d08b19d52fa1fa",
+						"_parent": "6850956dcf12c18a4d8ed9ab",
+						"_props": {
+							"filters": [
+								{
+									"Shift": 0,
+									"Filter": [
+										"6851b17ddcbd0df4a2b4c65f",
+										"68578ef2a309a2ba960103d9"
+									]
+								}
+							]
+						},
+						"_required": false,
+						"_mergeSlotWithChildren": false,
+						"_proto": "55d30c4c4bdc2db4468b457e"
+					},
+					{
+						"_name": "mod_tactical",
+						"_id": "6828f66352cab8d1407fd9f9",
+						"_parent": "6850956dcf12c18a4d8ed9ab",
+						"_props": {
+							"filters": [
+								{
+									"Shift": 0,
+									"Filter": [
+										"5a7ad74e51dfba0015068f45",
+										"5a800961159bd4315e3a1657",
+										"5cc9c20cd7f00c001336c65d",
+										"5d2369418abbc306c62e0c80",
+										"5b07dd285acfc4001754240d",
+										"56def37dd2720bec348b456a",
+										"5a7b483fe899ef0016170d15",
+										"5a5f1ce64f39f90b401987bc",
+										"560d657b4bdc2da74d8b4572",
+										"5a7ad4af51dfba0013379717",
+										"5a7b4900e899ef197b331a2a",
+										"6272370ee4013c5d7e31f418",
+										"6272379924e29f06af4d5ecb"
+									]
+								}
+							]
+						},
+						"_required": false,
+						"_mergeSlotWithChildren": false,
+						"_proto": "55d30c4c4bdc2db4468b457e"
+					},
+					{
+						"_name": "mod_mount",
+						"_id": "6828f6671f9e10d9d3a90bef",
+						"_parent": "6850956dcf12c18a4d8ed9ab",
+						"_props": {
+							"filters": [
+								{
+									"Shift": 0,
+									"Filter": [
+										"5a7ad55551dfba0015068f42"
+									]
+								}
+							]
+						},
+						"_required": false,
+						"_mergeSlotWithChildren": false,
+						"_proto": "55d30c4c4bdc2db4468b457e"
+					},
+					{
+						"_name": "mod_stock",
+						"_id": "6828f8fead9a71a05b37611a",
+						"_parent": "6850956dcf12c18a4d8ed9ab",
+						"_props": {
+							"filters": [
+								{
+									"AnimationIndex": -1,
+									"Filter": [
+										"5d1c702ad7ad1a632267f429"
+									]
+								}
+							]
+						},
+						"_required": false,
+						"_mergeSlotWithChildren": false,
+						"_proto": "55d30c394bdc2dae468b4577"
+					}
+				],
+				"ammoCaliber": "Caliber102x22",
+				"defMagType": "5fb651b52b1b027b1f50bcff",
+				"Chambers": [
+					{
+						"_name": "patron_in_weapon",
+						"_id": "9efa2df053e734a66c8da122",
+						"_parent": "6850956dcf12c18a4d8ed9ab",
+						"_props": {
+							"filters": [
+								{
+									"Filter": [
+										"6851add2caf8415c3bb32142",
+										"6851ab968c52422fbf785f59",
+										"6851a9c7efa6d303c471beb2",
+										"6851a7436b5a01959e6f54f9"
+									]
+								}
+							]
+						},
+						"_required": false,
+						"_mergeSlotWithChildren": false,
+						"_proto": "55d4af244bdc2d962f8b4571"
+					}
+				]
+			},
+			"locales": {
+				"en": {
+					"name": "格洛克22 .40 S&W 手枪",
+"shortName": "Glock 22",
+"description": "格洛克22是由奥地利格洛克公司为美国联邦调查局（FBI）设计的手枪。凭借其出色的战斗特性和可靠性，它作为警用、射击运动以及民用自卫武器获得了广泛的认可和流行。"
+				}
+			},
+			"clearClonedProps": false,
+			"addtoInventorySlots": [],
+			"addtoModSlots": false,
+			"modSlot": [],
+			"ModdableItemWhitelist": [],
+			"ModdableItemBlacklist": [
+				"5a7ad74e51dfba0015068f45"
+			],
+			"fleaPriceRoubles": 21245,
+			"handbookPriceRoubles": 8573,
+			"addtoTraders": true,
+			"traderId": "MECHANIC",
+			"traderItems": [
+				{
+					"unlimitedCount": true,
+					"stackObjectsCount": 99
+				}
+			],
+			"barterScheme": [
+				{
+					"count": 8573,
+					"_tpl": "ROUBLES"
+				}
+			],
+			"loyallevelitems": 2,
+			"addtoBots": false,
+			"addtostaticlootcontainer": true,
+			"StaticLootContainers": [
+				{
+					"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+					"Probability": 25
+				},
+				{
+					"ContainerName": "LOOTCONTAINER_DEAD_SCAV",
+					"Probability": 15
+				}
+			],
+			"masteries": true,
+			"masterySections": [
+				{
+					"Name": "G17",
+					"Templates": [
+						"68578a5778fb6540e9741f0d"
+					]
+				}
+			],
+			"addweaponpreset": true,
+			"weaponpresets": [
+				{
+					"_changeWeaponName": false,
+					"_encyclopedia": "6850956dcf12c18a4d8ed9ab",
+					"_id": "68578a5778fb6540e9741f0d",
+					"_items": [
+						{
+							"_id": "68578a08373b227778520d41",
+							"_tpl": "6850956dcf12c18a4d8ed9ab",
+							"upd": {
+								"StackObjectsCount": 99,
+								"Repairable": {
+									"MaxDurability": 100,
+									"Durability": 100
+								},
+								"FireMode": {
+									"FireMode": "single"
+								}
+							}
+						},
+						{
+							"_id": "68578a1fbc4926718241d6c2",
+							"_tpl": "685782ebcb63ccdc073e6c5b",
+							"slotId": "mod_barrel",
+							"parentId": "68578a08373b227778520d41"
+						},
+						{
+							"_id": "68578a116e2acf6640b278f8",
+							"_tpl": "68509710f0df4dbc5b0ff7fe",
+							"slotId": "mod_reciever",
+							"parentId": "68578a08373b227778520d41"
+						},
+						{
+							"_id": "68578a1d453ed8b1071a8a41",
+							"_tpl": "6851b17ddcbd0df4a2b4c65f",
+							"slotId": "mod_magazine",
+							"parentId": "68578a08373b227778520d41"
+						},
+						{
+							"_id": "68578a1c75013f9b2e8da22a",
+							"_tpl": "5a6f5d528dc32e00094b97d9",
+							"slotId": "mod_sight_rear",
+							"parentId": "68578a116e2acf6640b278f8"
+						},
+						{
+							"_id": "68578a1ac3edf65504f45cb1",
+							"_tpl": "5a6f58f68dc32e000a311390",
+							"slotId": "mod_sight_front",
+							"parentId": "68578a116e2acf6640b278f8"
+						},
+						{
+							"_id": "68578a172c124271e5a4b790",
+							"_tpl": "615d8da4d3a39d50044c10e8",
+							"slotId": "mod_mount",
+							"parentId": "68578a116e2acf6640b278f8"
+						},
+						{
+							"_id": "68578a1984e83d1c1b4b7b82",
+							"_tpl": "616442e4faa1272e43152193",
+							"slotId": "mod_scope",
+							"parentId": "68578a172c124271e5a4b790"
+						}
+					],
+					"_name": "Glock22 preset",
+					"_parent": "68578a08373b227778520d41",
+					"_type": "Preset"
+				}
+			]
+		},
+		"6851b17ddcbd0df4a2b4c65f": {
+			"itemTplToClone": "5fb651b52b1b027b1f50bcff",
+			"parentId": "MAGAZINE",
+			"handbookParentId": "MOD_MAGAZINE",
+			"overrideProperties": {
+				"Prefab": {
+					"path": "assets/content/items/mods/magazines/mag_glock_glock_21_std_1143x23_13.bundle",
+					"rcid": ""
+				},
+				"Cartridges": [
+					{
+						"_name": "cartridges",
+						"_id": "6851b18023c5427793b98c08",
+						"_parent": "6851b17ddcbd0df4a2b4c65f",
+						"_max_count": 15,
+						"_props": {
+							"filters": [
+								{
+									"Filter": [
+										"6851add2caf8415c3bb32142",
+										"6851ab968c52422fbf785f59",
+										"6851a9c7efa6d303c471beb2",
+										"6851a7436b5a01959e6f54f9"
+									]
+								}
+							]
+						},
+						"_proto": "5748538b2459770af276a261"
+					}
+				]
+			},
+			"locales": {
+				"en": {
+					"name": "Glock .40 S&W 15-round magazine",
+					"shortName": "Glock .40",
+					"description": "A standard-issue 15-round magazine for the Glock 22, chambered in .40 S&W."
+				}
+			},
+			"clearClonedProps": false,
+			"addtoInventorySlots": [],
+			"addtoModSlots": false,
+			"modSlot": [
+				"mod_magazine"
+			],
+			"ModdableItemWhitelist": [],
+			"ModdableItemBlacklist": [],
+			"addtoTraders": true,
+			"traderId": "PEACEKEEPER",
+			"traderItems": [
+				{
+					"unlimitedCount": true,
+					"stackObjectsCount": 99
+				}
+			],
+			"barterScheme": [
+				{
+					"count": 29,
+					"_tpl": "DOLLARS"
+				}
+			],
+			"loyallevelitems": 1,
+			"fleaPriceRoubles": 17894,
+			"handbookPriceRoubles": 3770,
+			"addtoStaticLootContainers": true,
+			"addtoragfair": true,
+			"StaticLootContainers": [
+				{
+					"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+					"Probability": 7
+				},
+				{
+					"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+					"Probability": 6
+				},
+				{
+					"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+					"Probability": 5
+				},
+				{
+					"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+					"Probability": 1
+				}
+			]
+		},
+		"68578ef2a309a2ba960103d9": {
+			"itemTplToClone": "5fb651dc85f90547f674b6f4",
+			"parentId": "MAGAZINE",
+			"handbookParentId": "MOD_MAGAZINE",
+			"overrideProperties": {
+				"Prefab": {
+					"path": "assets/content/items/mods/magazines/mag_glock_kriss_magex_g30_1143x23_30.bundle",
+					"rcid": ""
+				},
+				"Cartridges": [
+					{
+						"_name": "cartridges",
+						"_id": "68578f4b819b8b101fa450d1",
+						"_parent": "68578ef2a309a2ba960103d9",
+						"_max_count": 31,
+						"_props": {
+							"filters": [
+								{
+									"Filter": [
+										"6851add2caf8415c3bb32142",
+										"6851ab968c52422fbf785f59",
+										"6851a9c7efa6d303c471beb2",
+										"6851a7436b5a01959e6f54f9"
+									]
+								}
+							]
+						},
+						"_proto": "5748538b2459770af276a261"
+					}
+				],
+				"Height": 2,
+				"ExtraSizeDown": 1
+			},
+			"locales": {
+				"en": {
+					"name": "Glock .40 S&W KRISS G22 MagEx 31-round magazine",
+					"shortName": "G22 MagEx",
+					"description": "A G22 MagEx 31-round magazine for .40 S&W rounds, made to fit Glock pistols and other weapons of the same caliber. Manufactured by KRISS."
+				}
+			},
+			"clearClonedProps": false,
+			"addtoInventorySlots": [],
+			"addtoModSlots": false,
+			"modSlot": [
+				"mod_magazine"
+			],
+			"ModdableItemWhitelist": [],
+			"ModdableItemBlacklist": [],
+			"addtoTraders": true,
+			"traderId": "PEACEKEEPER",
+			"traderItems": [
+				{
+					"unlimitedCount": true,
+					"stackObjectsCount": 99
+				}
+			],
+			"barterScheme": [
+				{
+					"count": 29,
+					"_tpl": "DOLLARS"
+				}
+			],
+			"loyallevelitems": 1,
+			"fleaPriceRoubles": 17894,
+			"handbookPriceRoubles": 3770,
+			"addtoStaticLootContainers": true,
+			"addtoragfair": true,
+			"StaticLootContainers": [
+				{
+					"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+					"Probability": 7
+				},
+				{
+					"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+					"Probability": 6
+				},
+				{
+					"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+					"Probability": 5
+				},
+				{
+					"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+					"Probability": 1
+				}
+			]
+		}
+	}

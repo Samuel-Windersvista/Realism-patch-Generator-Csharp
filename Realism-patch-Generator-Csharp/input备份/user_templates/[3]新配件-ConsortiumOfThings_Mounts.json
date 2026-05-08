@@ -1,0 +1,2587 @@
+{
+    "685c980215434eb9d07fee41": {
+        "itemTplToClone": "5cf639aad7f00c065703d455",
+        "parentId": "5a74651486f7744e73386dd1",
+        "handbookParentId": "5b5f74cc86f77447ec5d770a",
+        "overrideProperties": {
+            "ExaminedByDefault": true,
+            "Prefab": {
+                "path": "Attachments/Mounts/exps_mount_ecot.bundle",
+                "rcid": ""
+            },
+            "Weight": 0.007,
+            "BackgroundColor": "violet"
+        },
+        "locales": {
+            "en": {
+                "name": "EOTech EXPS3 holographic sight cover (ECOT Splinter)",
+                "shortName": "EXPS3 Cover",
+                "description": "A Rubberized Cover for the EXPS3 series of holographic sights, this specific one painted with a unique Orange and Blue splinter camo."
+            }
+        },
+        "clearClonedProps": false,
+        "addtoInventorySlots": [],
+        "addtoModSlots": false,
+        "modSlot": [],
+        "ModdableItemWhitelist": [],
+        "ModdableItemBlacklist": [],
+        "fleaPriceRoubles": 12000,
+        "handbookPriceRoubles": 12000,
+        "addtoTraders": true,
+        "traderId": "PEACEKEEPER",
+        "traderItems": [
+            {
+                "unlimitedCount": true,
+                "stackObjectsCount": 99
+            }
+        ],
+        "barterScheme": [
+            {
+                "count": 30,
+                "_tpl": "DOLLARS"
+            }
+        ],
+        "loyallevelitems": 3,
+        "addtoBots": false,
+        "addtostaticlootcontainer": true,
+        "StaticLootContainers": [
+            {
+                "ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+                "Probability": 3
+            },
+            {
+                "ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+                "Probability": 3
+            },
+            {
+                "ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+                "Probability": 3
+            },
+            {
+                "ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X5",
+                "Probability": 3
+            },
+            {
+                "ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+                "Probability": 3
+            },
+            {
+                "ContainerName": "LOOTCONTAINER_WOODEN_CRATE",
+                "Probability": 3
+            }
+        ],
+        "masteries": false,
+        "masterySections": [
+            {
+                "Name": "M4",
+                "Templates": [
+                    "4b81488c78c8a8ac7d37f9b9"
+                ]
+            }
+        ],
+        "addweaponpreset": false,
+        "weaponpresets": []
+    },
+    "685760329044ae9bac9012c3": {
+		"itemTplToClone": "59db7eed86f77461f8380365",
+		"parentId": "MOUNT",
+		"handbookParentId": "MOD_MOUNT",
+		"overrideProperties": {
+			"Prefab": {
+				"path": "Attachments/Mounts/mount_unity_cog_blk.bundle",
+				"rcid": ""
+			},
+			"Slots": [
+				{
+					"_name": "mod_scope",
+					"_id": "68576039a242fc7bc247300b",
+					"_parent": "685760329044ae9bac9012c3",
+					"_props": {
+						"filters": [
+							{
+								"Filter": [
+									"5c05293e0db83400232fff80",
+									"5c052a900db834001a66acbd",
+									"59db7e1086f77448be30ddf3",
+									"e9341af94ccbdf828aac2ed4",
+									"1e3c5a570c1c628376877232",
+									"530c92166b34a8f2c2c96732",
+									"5518037d5b8964f16bd7fa0b",
+									"765efc3218305b91ce279f7c",
+									"86509ab9a719ec35d68335ec",
+									"427426766389fca83151e49a",
+									"8e91893cd97979e31dc69ff4",
+									"ee7de8251099e046b66a27a8",
+									"98faf3e813c71c69fdc058a6",
+									"5114ba0ec07b64d2027476c3",
+									"028cf9570b14453d61753a76",
+									"0433f01e906bc793e94272dd",
+									"f4792fb5785c3cbfcd5e8e42",
+									"6d875b085e791a94448f6373",
+									"ed3ce625f8d5660361ffaf30",
+									"96cff8d59fab622a65e41136",
+									"a9567853f9fc33f38c4180ac",
+									"51054b0249f56482df575434",
+									"a1552040390284f58de50a7a"
+								],
+								"Shift": 0
+							}
+						]
+					},
+					"_required": false,
+					"_mergeSlotWithChildren": false,
+					"_proto": "55d30c4c4bdc2db4468b457e"
+				},
+				{
+					"_name": "mod_scope_000",
+					"_id": "68576037bce3d11776316ff3",
+					"_parent": "685760329044ae9bac9012c3",
+					"_props": {
+						"filters": [
+							{
+								"Filter": [
+									"5a32aa8bc4a2826c6e06d737",
+									"685097dbb9aa83c9e35c5027",
+									"5a1539825682a7fa06dc4243",
+									"2f5f355a48a470aeb12452b1",
+									"684ca7ab1a059f229b96e1a3",
+									"684ca7a7dd567362e6a2d719"
+								],
+								"Shift": 0
+							}
+						]
+					},
+					"_required": false,
+					"_mergeSlotWithChildren": false,
+					"_proto": "55d30c4c4bdc2db4468b457e"
+				}
+			]
+		},
+		"locales": {
+			"en": {
+				"name": "Unity Tactical FAST COG sight mount",
+				"shortName": "COG",
+				"description": "The FAST COG Series Mount was developed to universally accept the Trijicon Combat Optical Gunsight double and triple screw interfaces.  It covers both ACOG and VCOG series scopes, placing the optical centerline at 2.05″ above the rail. Manufactured by Unity Tactical."
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": true,
+		"modSlot": [
+			"mod_scope",
+			"mod_scope_000",
+			"mod_scope_001"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [
+			"5a33bab6c4a28200741e22f8"
+		],
+		"addtoTraders": true,
+		"traderId": "MECHANIC",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 6483,
+				"_tpl": "ROUBLES"
+			}
+		],
+		"loyallevelitems": 3,
+		"fleaPriceRoubles": 9473,
+		"handbookPriceRoubles": 6483,
+		"addtoStaticLootContainers": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 7
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 6
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 5
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 1
+			}
+		]
+	},
+	"6857624d565daea78886d0c2": {
+		"itemTplToClone": "59db7eed86f77461f8380365",
+		"parentId": "MOUNT",
+		"handbookParentId": "MOD_MOUNT",
+		"overrideProperties": {
+			"Prefab": {
+				"path": "Attachments/Mounts/mount_unity_cog_fde.bundle",
+				"rcid": ""
+			},
+			"Slots": [
+				{
+					"_name": "mod_scope",
+					"_id": "68576253c0aa1088fdea39b4",
+					"_parent": "6857624d565daea78886d0c2",
+					"_props": {
+						"filters": [
+							{
+								"Filter": [
+									"5c05293e0db83400232fff80",
+									"5c052a900db834001a66acbd",
+									"59db7e1086f77448be30ddf3",
+									"e9341af94ccbdf828aac2ed4",
+									"1e3c5a570c1c628376877232",
+									"530c92166b34a8f2c2c96732",
+									"5518037d5b8964f16bd7fa0b",
+									"765efc3218305b91ce279f7c",
+									"86509ab9a719ec35d68335ec",
+									"427426766389fca83151e49a",
+									"8e91893cd97979e31dc69ff4",
+									"ee7de8251099e046b66a27a8",
+									"98faf3e813c71c69fdc058a6",
+									"5114ba0ec07b64d2027476c3",
+									"028cf9570b14453d61753a76",
+									"0433f01e906bc793e94272dd",
+									"f4792fb5785c3cbfcd5e8e42",
+									"6d875b085e791a94448f6373",
+									"ed3ce625f8d5660361ffaf30",
+									"96cff8d59fab622a65e41136",
+									"a9567853f9fc33f38c4180ac",
+									"51054b0249f56482df575434",
+									"a1552040390284f58de50a7a"
+								],
+								"Shift": 0
+							}
+						]
+					},
+					"_required": false,
+					"_mergeSlotWithChildren": false,
+					"_proto": "55d30c4c4bdc2db4468b457e"
+				},
+				{
+					"_name": "mod_scope_000",
+					"_id": "68576252810a4a0c6bc47be2",
+					"_parent": "6857624d565daea78886d0c2",
+					"_props": {
+						"filters": [
+							{
+								"Filter": [
+									"5a32aa8bc4a2826c6e06d737",
+									"685097dbb9aa83c9e35c5027",
+									"5a1539825682a7fa06dc4243",
+									"2f5f355a48a470aeb12452b1",
+									"684ca7ab1a059f229b96e1a3",
+									"684ca7a7dd567362e6a2d719"
+								],
+								"Shift": 0
+							}
+						]
+					},
+					"_required": false,
+					"_mergeSlotWithChildren": false,
+					"_proto": "55d30c4c4bdc2db4468b457e"
+				}
+			]
+		},
+		"locales": {
+			"en": {
+				"name": "Unity Tactical FAST COG sight mount (FDE)",
+				"shortName": "COG",
+				"description": "The FAST COG Series Mount was developed to universally accept the Trijicon Combat Optical Gunsight double and triple screw interfaces.  It covers both ACOG and VCOG series scopes, placing the optical centerline at 2.05″ above the rail. Manufactured by Unity Tactical. <color=#9c8638><b>Flat Dark Earth version.</b></color>"
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": true,
+		"modSlot": [
+			"mod_scope",
+			"mod_scope_000",
+			"mod_scope_001"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [
+			"5a33bab6c4a28200741e22f8"
+		],
+		"addtoTraders": true,
+		"traderId": "MECHANIC",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 6483,
+				"_tpl": "ROUBLES"
+			}
+		],
+		"loyallevelitems": 3,
+		"fleaPriceRoubles": 9473,
+		"handbookPriceRoubles": 6483,
+		"addtoStaticLootContainers": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 7
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 6
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 5
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 1
+			}
+		]
+	},
+    "68599b6ad4d99d0c051b5964": {
+		"itemTplToClone": "58d39d3d86f77445bb794ae7",
+		"parentId": "REFLEX_SIGHT",
+		"handbookParentId": "MOD_MOUNT",
+		"overrideProperties": {
+			"ExaminedByDefault": true,
+			"Prefab": {
+				"path": "Attachments/Mounts/mount_unity_fast_micro.bundle",
+				"rcid": ""
+			},
+			"Conflictingitems": [
+				"5ae30bad5acfc400185c2dc4"
+			],
+			"Ergonomics": 2,
+			"Width": 1,
+			"Slots": [
+				{
+					"_name": "mod_scope",
+					"_id": "68599b6d0257d5330971fdcf",
+					"_parent": "68599b6ad4d99d0c051b5964",
+					"_props": {
+						"filters": [
+							{
+								"Shift": 0,
+								"Filter": [
+									"61657230d92c473c770213d7",
+									"58d399e486f77442e0016fe7",
+									"5b3116595acfc40019476364"
+								]
+							}
+						]
+					},
+					"_required": false,
+					"_mergeSlotWithChildren": false,
+					"_proto": "55d30c4c4bdc2db4468b457e"
+				}
+			],
+			"SightingRange": 100,
+			"DoubleActionAccuracyPenaltyMult": 1,
+			"UniqueAnimationModID": 0,
+			"CustomAimPlane": "",
+			"sightModType": "iron",
+			"ScopesCount": 1,
+			"AimSensitivity": [
+				[
+					0.7
+				]
+			],
+			"ModesCount": [
+				1
+			],
+			"Zooms": [
+				[
+					1
+				]
+			],
+			"CalibrationDistances": [
+				[
+					100
+				]
+			]
+		},
+		"locales": {
+			"en": {
+				"name": "Unity Tactical FAST Micro sight mount (Bronze)",
+				"shortName": "FAST Micro",
+				"description": "The FAST™ Micro mount features built-in standard height back up iron sights that keep weapons uncluttered, without reducing capability. Designed for Aimpoint Micro (H1, H2, T1, T2, CompM5) and other optics with Aimpoint Micro footprint, such as those found on many Sig Sauer, Holosun, and Vortex Optics platforms. "
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": true,
+		"modSlot": [
+			"mod_scope",
+			"mod_scope_000",
+			"mod_scope_001"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+		"fleaPriceRoubles": 16250,
+		"handbookPriceRoubles": 2420,
+		"addtoTraders": true,
+		"traderId": "MECHANIC",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 7240,
+				"_tpl": "ROUBLES"
+			}
+		],
+		"loyallevelitems": 3,
+		"addtoBots": false,
+		"addtostaticlootcontainer": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 16
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 16
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 16
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X5",
+				"Probability": 16
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 16
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WOODEN_CRATE",
+				"Probability": 16
+			}
+		],
+		"masteries": false,
+		"masterySections": [
+			{
+				"Name": "M870",
+				"Templates": [
+					"SerbuShotgun"
+				]
+			}
+		],
+		"addweaponpreset": false,
+		"weaponpresets": []
+	},
+	"68599c5272359bd6b568656c": {
+		"itemTplToClone": "58d39d3d86f77445bb794ae7",
+		"parentId": "REFLEX_SIGHT",
+		"handbookParentId": "MOD_MOUNT",
+		"overrideProperties": {
+			"ExaminedByDefault": true,
+			"Prefab": {
+				"path": "Attachments/Mounts/mount_unity_fast_micro_green.bundle",
+				"rcid": ""
+			},
+			"Conflictingitems": [
+				"5ae30bad5acfc400185c2dc4"
+			],
+			"Ergonomics": 2,
+			"Width": 1,
+			"Slots": [
+				{
+					"_name": "mod_scope",
+					"_id": "68599c54373375dd6c8bda3a",
+					"_parent": "68599c5272359bd6b568656c",
+					"_props": {
+						"filters": [
+							{
+								"Shift": 0,
+								"Filter": [
+									"61657230d92c473c770213d7",
+									"58d399e486f77442e0016fe7",
+									"5b3116595acfc40019476364"
+								]
+							}
+						]
+					},
+					"_required": false,
+					"_mergeSlotWithChildren": false,
+					"_proto": "55d30c4c4bdc2db4468b457e"
+				}
+			],
+			"SightingRange": 100,
+			"DoubleActionAccuracyPenaltyMult": 1,
+			"UniqueAnimationModID": 0,
+			"CustomAimPlane": "",
+			"sightModType": "iron",
+			"ScopesCount": 1,
+			"AimSensitivity": [
+				[
+					0.7
+				]
+			],
+			"ModesCount": [
+				1
+			],
+			"Zooms": [
+				[
+					1
+				]
+			],
+			"CalibrationDistances": [
+				[
+					100
+				]
+			]
+		},
+		"locales": {
+			"en": {
+				"name": "Unity Tactical FAST Micro sight mount (Green)",
+				"shortName": "FAST Micro",
+				"description": "The FAST™ Micro mount features built-in standard height back up iron sights that keep weapons uncluttered, without reducing capability. Designed for Aimpoint Micro (H1, H2, T1, T2, CompM5) and other optics with Aimpoint Micro footprint, such as those found on many Sig Sauer, Holosun, and Vortex Optics platforms. "
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": true,
+		"modSlot": [
+			"mod_scope",
+			"mod_scope_000",
+			"mod_scope_001"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+		"fleaPriceRoubles": 16250,
+		"handbookPriceRoubles": 2420,
+		"addtoTraders": true,
+		"traderId": "MECHANIC",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 7240,
+				"_tpl": "ROUBLES"
+			}
+		],
+		"loyallevelitems": 3,
+		"addtoBots": false,
+		"addtostaticlootcontainer": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 16
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 16
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 16
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X5",
+				"Probability": 16
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 16
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WOODEN_CRATE",
+				"Probability": 16
+			}
+		],
+		"masteries": false,
+		"masterySections": [
+			{
+				"Name": "M870",
+				"Templates": [
+					"SerbuShotgun"
+				]
+			}
+		],
+		"addweaponpreset": false,
+		"weaponpresets": []
+	},
+	"68599c64f0a918bcd731198f": {
+		"itemTplToClone": "58d39d3d86f77445bb794ae7",
+		"parentId": "REFLEX_SIGHT",
+		"handbookParentId": "MOD_MOUNT",
+		"overrideProperties": {
+			"ExaminedByDefault": true,
+			"Prefab": {
+				"path": "Attachments/Mounts/mount_unity_fast_micro_white.bundle",
+				"rcid": ""
+			},
+			"Conflictingitems": [
+				"5ae30bad5acfc400185c2dc4"
+			],
+			"Ergonomics": 2,
+			"Width": 1,
+			"Slots": [
+				{
+					"_name": "mod_scope",
+					"_id": "68599c67c97a4be6abfd565d",
+					"_parent": "68599c64f0a918bcd731198f",
+					"_props": {
+						"filters": [
+							{
+								"Shift": 0,
+								"Filter": [
+									"61657230d92c473c770213d7",
+									"58d399e486f77442e0016fe7",
+									"5b3116595acfc40019476364"
+								]
+							}
+						]
+					},
+					"_required": false,
+					"_mergeSlotWithChildren": false,
+					"_proto": "55d30c4c4bdc2db4468b457e"
+				}
+			],
+			"SightingRange": 100,
+			"DoubleActionAccuracyPenaltyMult": 1,
+			"UniqueAnimationModID": 0,
+			"CustomAimPlane": "",
+			"sightModType": "iron",
+			"ScopesCount": 1,
+			"AimSensitivity": [
+				[
+					0.7
+				]
+			],
+			"ModesCount": [
+				1
+			],
+			"Zooms": [
+				[
+					1
+				]
+			],
+			"CalibrationDistances": [
+				[
+					100
+				]
+			]
+		},
+		"locales": {
+			"en": {
+				"name": "Unity Tactical FAST Micro sight mount (White)",
+				"shortName": "FAST Micro",
+				"description": "The FAST™ Micro mount features built-in standard height back up iron sights that keep weapons uncluttered, without reducing capability. Designed for Aimpoint Micro (H1, H2, T1, T2, CompM5) and other optics with Aimpoint Micro footprint, such as those found on many Sig Sauer, Holosun, and Vortex Optics platforms. "
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": true,
+		"modSlot": [
+			"mod_scope",
+			"mod_scope_000",
+			"mod_scope_001"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+		"fleaPriceRoubles": 16250,
+		"handbookPriceRoubles": 2420,
+		"addtoTraders": true,
+		"traderId": "MECHANIC",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 7240,
+				"_tpl": "ROUBLES"
+			}
+		],
+		"loyallevelitems": 3,
+		"addtoBots": false,
+		"addtostaticlootcontainer": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 16
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 16
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 16
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X5",
+				"Probability": 16
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 16
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WOODEN_CRATE",
+				"Probability": 16
+			}
+		],
+		"masteries": false,
+		"masterySections": [
+			{
+				"Name": "M870",
+				"Templates": [
+					"SerbuShotgun"
+				]
+			}
+		],
+		"addweaponpreset": false,
+		"weaponpresets": []
+	},
+    "685ac95d7bde7c5e19ba8d89": {
+		"itemTplToClone": "5a33b652c4a28232996e407c",
+		"parentId": "MOUNT",
+		"handbookParentId": "MOD_MOUNT",
+		"overrideProperties": {
+			"Prefab": {
+				"path": "Attachments/Mounts/MRDS/mount_base_unity_mrds_blk.bundle",
+				"rcid": ""
+			},
+			"Slots": [
+				{
+					"_name": "mod_mount",
+					"_id": "685acb6b7a9c3d8de490a108",
+					"_parent": "685ac95d7bde7c5e19ba8d89",
+					"_props": {
+						"filters": [
+							{
+								"Filter": [
+									"685aca4843d2be6cbdb61499",
+									"685aca6e995b4ebe27611124",
+									"685aca8b8281c25f7215539a",
+									"685acac1d26e2f22bbe47797"
+								],
+								"Shift": 0
+							}
+						]
+					},
+					"_required": false,
+					"_mergeSlotWithChildren": false,
+					"_proto": "55d30c4c4bdc2db4468b457e"
+				}
+			]
+		},
+		"locales": {
+			"en": {
+				"name": "Unity Tactical FAST MRDS sight mount",
+				"shortName": "MRDS",
+				"description": "TThe FAST™ MRDS mount, in conjunction with the Optic Adapter Plates brings compatible micro red dot sights to the established FAST height of 2.26″ to optical centerline. Fits plates that allow the use of RMR, DeltaPoint, ACRO and 509T footprint optics. Manufactured by Unity Tactical."
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": true,
+		"modSlot": [
+			"mod_scope",
+			"mod_scope_000",
+			"mod_scope_001"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [
+			"5a33bab6c4a28200741e22f8"
+		],
+		"addtoTraders": true,
+		"traderId": "PEACEKEEPER",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 11,
+				"_tpl": "DOLLARS"
+			}
+		],
+		"loyallevelitems": 2,
+		"fleaPriceRoubles": 4582,
+		"handbookPriceRoubles": 1195,
+		"addtoStaticLootContainers": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 7
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 6
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 5
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 1
+			}
+		]
+	},
+	"685acb7cdabf1c595fd9b3b7": {
+		"itemTplToClone": "5a33b652c4a28232996e407c",
+		"parentId": "MOUNT",
+		"handbookParentId": "MOD_MOUNT",
+		"overrideProperties": {
+			"Prefab": {
+				"path": "Attachments/Mounts/MRDS/mount_base_unity_mrds_fde.bundle",
+				"rcid": ""
+			},
+			"Slots": [
+				{
+					"_name": "mod_mount",
+					"_id": "685acb7fe715a136b0305bc9",
+					"_parent": "685acb7cdabf1c595fd9b3b7",
+					"_props": {
+						"filters": [
+							{
+								"Filter": [
+									"685aca4843d2be6cbdb61499",
+									"685aca6e995b4ebe27611124",
+									"685aca8b8281c25f7215539a",
+									"685acac1d26e2f22bbe47797"
+								],
+								"Shift": 0
+							}
+						]
+					},
+					"_required": false,
+					"_mergeSlotWithChildren": false,
+					"_proto": "55d30c4c4bdc2db4468b457e"
+				}
+			]
+		},
+		"locales": {
+			"en": {
+				"name": "Unity Tactical FAST MRDS sight mount (FDE)",
+				"shortName": "MRDS",
+				"description": "TThe FAST™ MRDS mount, in conjunction with the Optic Adapter Plates brings compatible micro red dot sights to the established FAST height of 2.26″ to optical centerline. Fits plates that allow the use of RMR, DeltaPoint, ACRO and 509T footprint optics. Manufactured by Unity Tactical. <color=#9c8638><b>Flat Dark Earth version.</b></color>"
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": true,
+		"modSlot": [
+			"mod_scope",
+			"mod_scope_000",
+			"mod_scope_001"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [
+			"5a33bab6c4a28200741e22f8"
+		],
+		"addtoTraders": true,
+		"traderId": "PEACEKEEPER",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 11,
+				"_tpl": "DOLLARS"
+			}
+		],
+		"loyallevelitems": 2,
+		"fleaPriceRoubles": 4582,
+		"handbookPriceRoubles": 1195,
+		"addtoStaticLootContainers": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 7
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 6
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 5
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 1
+			}
+		]
+	},
+	"685aca4843d2be6cbdb61499": {
+		"itemTplToClone": "5a33b652c4a28232996e407c",
+		"parentId": "MOUNT",
+		"handbookParentId": "MOD_MOUNT",
+		"overrideProperties": {
+			"Prefab": {
+				"path": "Attachments/Mounts/MRDS/mount_mrds_acro.bundle",
+				"rcid": ""
+			},
+			"Slots": [
+				{
+					"_name": "mod_scope",
+					"_id": "685aca45c014e39576159e30",
+					"_parent": "685aca4843d2be6cbdb61499",
+					"_props": {
+						"filters": [
+							{
+								"Filter": [
+									"616442e4faa1272e43152193",
+									"dd7caf9bd203b146528c8da4",
+									"36c4b709b7b9465d6e875d35"
+								],
+								"Shift": 0
+							}
+						]
+					},
+					"_required": false,
+					"_mergeSlotWithChildren": false,
+					"_proto": "55d30c4c4bdc2db4468b457e"
+				}
+			]
+		},
+		"locales": {
+			"en": {
+				"name": "Unity Tactical FAST MRDS ACRO baseplate",
+				"shortName": "MRDS ACRO",
+				"description": "A custom baseplate designed for use with the Unity FAST MRDS optic riser, fits any ACRO footprint optics. Manufactured by Unity Tactical."
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": false,
+		"modSlot": [
+			"mod_scope",
+			"mod_scope_000",
+			"mod_scope_001"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [
+			"5a33bab6c4a28200741e22f8"
+		],
+		"addtoTraders": true,
+		"traderId": "PEACEKEEPER",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 2,
+				"_tpl": "DOLLARS"
+			}
+		],
+		"loyallevelitems": 2,
+		"fleaPriceRoubles": 4582,
+		"handbookPriceRoubles": 1195,
+		"addtoStaticLootContainers": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 7
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 6
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 5
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 1
+			}
+		]
+	},
+	"685aca6e995b4ebe27611124": {
+		"itemTplToClone": "5a33b652c4a28232996e407c",
+		"parentId": "MOUNT",
+		"handbookParentId": "MOD_MOUNT",
+		"overrideProperties": {
+			"Prefab": {
+				"path": "Attachments/Mounts/MRDS/mount_mrds_deltapoint.bundle",
+				"rcid": ""
+			},
+			"Slots": [
+				{
+					"_name": "mod_scope",
+					"_id": "685aca70dbe19895a31b6bd3",
+					"_parent": "685aca6e995b4ebe27611124",
+					"_props": {
+						"filters": [
+							{
+								"Filter": [
+									"58d268fc86f774111273f8c2"
+								],
+								"Shift": 0
+							}
+						]
+					},
+					"_required": false,
+					"_mergeSlotWithChildren": false,
+					"_proto": "55d30c4c4bdc2db4468b457e"
+				}
+			]
+		},
+		"locales": {
+			"en": {
+				"name": "Unity Tactical FAST MRDS DeltaPoint baseplate",
+				"shortName": "MRDS DP",
+				"description": "A custom baseplate designed for use with the Unity FAST MRDS optic riser, fits any DeltaPoint footprint optics. Manufactured by Unity Tactical."
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": false,
+		"modSlot": [
+			"mod_scope",
+			"mod_scope_000",
+			"mod_scope_001"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [
+			"5a33bab6c4a28200741e22f8"
+		],
+		"addtoTraders": true,
+		"traderId": "PEACEKEEPER",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 2,
+				"_tpl": "DOLLARS"
+			}
+		],
+		"loyallevelitems": 2,
+		"fleaPriceRoubles": 4582,
+		"handbookPriceRoubles": 1195,
+		"addtoStaticLootContainers": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 7
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 6
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 5
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 1
+			}
+		]
+	},
+	"685aca8b8281c25f7215539a": {
+		"itemTplToClone": "5a33b652c4a28232996e407c",
+		"parentId": "MOUNT",
+		"handbookParentId": "MOD_MOUNT",
+		"overrideProperties": {
+			"Prefab": {
+				"path": "Attachments/Mounts/MRDS/mount_mrds_he509t.bundle",
+				"rcid": ""
+			},
+			"Slots": [
+				{
+					"_name": "mod_scope",
+					"_id": "685aca70dbe19895a31b6bd3",
+					"_parent": "685aca6e995b4ebe27611124",
+					"_props": {
+						"filters": [
+							{
+								"Filter": [
+									"6858f8db6ed3644b6c11c9a0",
+									"685904bd76b06df2198b2f1b"
+								],
+								"Shift": 0
+							}
+						]
+					},
+					"_required": false,
+					"_mergeSlotWithChildren": false,
+					"_proto": "55d30c4c4bdc2db4468b457e"
+				}
+			]
+		},
+		"locales": {
+			"en": {
+				"name": "Unity Tactical FAST MRDS 509T baseplate",
+				"shortName": "MRDS 509T",
+				"description": "A custom baseplate designed for use with the Unity FAST MRDS optic riser, fits any Holosun 509T footprint optics. Manufactured by Unity Tactical."
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": false,
+		"modSlot": [
+			"mod_scope",
+			"mod_scope_000",
+			"mod_scope_001"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [
+			"5a33bab6c4a28200741e22f8"
+		],
+		"addtoTraders": true,
+		"traderId": "PEACEKEEPER",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 2,
+				"_tpl": "DOLLARS"
+			}
+		],
+		"loyallevelitems": 2,
+		"fleaPriceRoubles": 4582,
+		"handbookPriceRoubles": 1195,
+		"addtoStaticLootContainers": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 7
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 6
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 5
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 1
+			}
+		]
+	},
+	"685acac1d26e2f22bbe47797": {
+		"itemTplToClone": "5a33b652c4a28232996e407c",
+		"parentId": "MOUNT",
+		"handbookParentId": "MOD_MOUNT",
+		"overrideProperties": {
+			"Prefab": {
+				"path": "Attachments/Mounts/MRDS/mount_mrds_rmr.bundle",
+				"rcid": ""
+			},
+			"Slots": [
+				{
+					"_name": "mod_scope",
+					"_id": "685acac4d6863880c9fe92d8",
+					"_parent": "685acac1d26e2f22bbe47797",
+					"_props": {
+						"filters": [
+							{
+								"Filter": [
+									"5a32aa8bc4a2826c6e06d737",
+									"5a1539825682a7fa06dc4243",
+									"2f5f355a48a470aeb12452b1",
+									"684ca7ab1a059f229b96e1a3",
+									"684ca7a7dd567362e6a2d719"
+								],
+								"Shift": 0
+							}
+						]
+					},
+					"_required": false,
+					"_mergeSlotWithChildren": false,
+					"_proto": "55d30c4c4bdc2db4468b457e"
+				}
+			]
+		},
+		"locales": {
+			"en": {
+				"name": "Unity Tactical FAST MRDS RMR baseplate",
+				"shortName": "MRDS RMR",
+				"description": "A custom baseplate designed for use with the Unity FAST MRDS optic riser, fits any Trijicon RMR footprint optics. Manufactured by Unity Tactical."
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": false,
+		"modSlot": [
+			"mod_scope",
+			"mod_scope_000",
+			"mod_scope_001"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [
+			"5a33bab6c4a28200741e22f8"
+		],
+		"addtoTraders": true,
+		"traderId": "PEACEKEEPER",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 2,
+				"_tpl": "DOLLARS"
+			}
+		],
+		"loyallevelitems": 2,
+		"fleaPriceRoubles": 4582,
+		"handbookPriceRoubles": 1195,
+		"addtoStaticLootContainers": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 7
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 6
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 5
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 1
+			}
+		]
+	},
+    "685e519eacaed4c4e66980a7": {
+		"itemTplToClone": "5c7d55f52e221644f31bff6a",
+		"parentId": "MOUNT",
+		"handbookParentId": "MOD_MOUNT",
+		"overrideProperties": {
+			"Prefab": {
+				"path": "Attachments/Mounts/Comp/mount_unity_fast_comp_blk.bundle",
+				"rcid": ""
+			},
+			"Slots": [
+				{
+					"_name": "mod_scope",
+					"_id": "685e51a206c965cf71dc5809",
+					"_parent": "685e519eacaed4c4e66980a7",
+					"_props": {
+						"filters": [
+							{
+                                "Filter": [
+                                    "61659f79d92c473c770213ee",
+                                    "5c7d55de2e221644f31bff68",
+                                    "5c7d560b2e22160bc12c6139",
+									"6857c3a0b4fec9f18e5e5e36",
+									"685912a257837068f1460c7a"
+								],
+								"Shift": 0
+							}
+						]
+					},
+					"_required": false,
+					"_mergeSlotWithChildren": false,
+					"_proto": "55d30c4c4bdc2db4468b457e"
+				}
+			]
+		},
+		"locales": {
+			"en": {
+				"name": "Unity Tactical FAST COMP-series scope mount",
+				"shortName": "COMP",
+				"description": "The Unity FAST Comp mount was developed as a solution for the DOD's standard issue M68 CCO"
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": true,
+		"modSlot": [
+			"mod_scope",
+			"mod_scope_000",
+			"mod_scope_001"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [
+		],
+		"addtoTraders": true,
+		"traderId": "MECHANIC",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 5037,
+				"_tpl": "ROUBLES"
+			}
+		],
+		"loyallevelitems": 3,
+		"fleaPriceRoubles": 8573,
+		"handbookPriceRoubles": 3592,
+		"addtoStaticLootContainers": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 7
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 6
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 5
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 1
+			}
+		]
+	},
+    "685e52a030452e0aa23b53b6": {
+		"itemTplToClone": "5c7d55f52e221644f31bff6a",
+		"parentId": "MOUNT",
+		"handbookParentId": "MOD_MOUNT",
+		"overrideProperties": {
+			"Prefab": {
+				"path": "Attachments/Mounts/Comp/mount_unity_fast_comp_fde.bundle",
+				"rcid": ""
+			},
+			"Slots": [
+				{
+					"_name": "mod_scope",
+					"_id": "685e52a385f14f2ca00a34e2",
+					"_parent": "685e52a030452e0aa23b53b6",
+					"_props": {
+						"filters": [
+							{
+                                "Filter": [
+                                    "61659f79d92c473c770213ee",
+                                    "5c7d55de2e221644f31bff68",
+                                    "5c7d560b2e22160bc12c6139",
+									"6857c3a0b4fec9f18e5e5e36",
+									"685912a257837068f1460c7a"
+								],
+								"Shift": 0
+							}
+						]
+					},
+					"_required": false,
+					"_mergeSlotWithChildren": false,
+					"_proto": "55d30c4c4bdc2db4468b457e"
+				}
+			]
+		},
+		"locales": {
+			"en": {
+				"name": "Unity Tactical FAST COMP-series scope mount (FDE)",
+				"shortName": "COMP",
+				"description": "The Unity FAST Comp mount was developed as a solution for the DOD's standard issue M68 CCO. <color=#9c8638><b>Flat Dark Earth version.</b></color>"
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": true,
+		"modSlot": [
+			"mod_scope",
+			"mod_scope_000",
+			"mod_scope_001"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [
+		],
+		"addtoTraders": true,
+		"traderId": "MECHANIC",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 5037,
+				"_tpl": "ROUBLES"
+			}
+		],
+		"loyallevelitems": 3,
+		"fleaPriceRoubles": 8573,
+		"handbookPriceRoubles": 3592,
+		"addtoStaticLootContainers": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 7
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 6
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 5
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 1
+			}
+		]
+	},
+    "685e52e7038ea03a82a7a2c1": {
+		"itemTplToClone": "5c7d55f52e221644f31bff6a",
+		"parentId": "MOUNT",
+		"handbookParentId": "MOD_MOUNT",
+		"overrideProperties": {
+			"Prefab": {
+				"path": "Attachments/Mounts/Comp/mount_unity_fast_comp_brn.bundle",
+				"rcid": ""
+			},
+			"Slots": [
+				{
+					"_name": "mod_scope",
+					"_id": "685e52e974d5f281986c3e5d",
+					"_parent": "685e52e7038ea03a82a7a2c1",
+					"_props": {
+						"filters": [
+							{
+                                "Filter": [
+                                    "61659f79d92c473c770213ee",
+                                    "5c7d55de2e221644f31bff68",
+                                    "5c7d560b2e22160bc12c6139",
+									"6857c3a0b4fec9f18e5e5e36",
+									"685912a257837068f1460c7a"
+								],
+								"Shift": 0
+							}
+						]
+					},
+					"_required": false,
+					"_mergeSlotWithChildren": false,
+					"_proto": "55d30c4c4bdc2db4468b457e"
+				}
+			]
+		},
+		"locales": {
+			"en": {
+				"name": "Unity Tactical FAST COMP-series scope mount (Bronze)",
+				"shortName": "COMP",
+				"description": "The Unity FAST Comp mount was developed as a solution for the DOD's standard issue M68 CCO. <color=#c98645><b>Bronze version.</b></color>"
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": true,
+		"modSlot": [
+			"mod_scope",
+			"mod_scope_000",
+			"mod_scope_001"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [
+		],
+		"addtoTraders": true,
+		"traderId": "MECHANIC",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 5037,
+				"_tpl": "ROUBLES"
+			}
+		],
+		"loyallevelitems": 3,
+		"fleaPriceRoubles": 8573,
+		"handbookPriceRoubles": 3592,
+		"addtoStaticLootContainers": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 7
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 6
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 5
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 1
+			}
+		]
+	},
+    "685e5326a119194a7cbaa34e": {
+		"itemTplToClone": "5c7d55f52e221644f31bff6a",
+		"parentId": "MOUNT",
+		"handbookParentId": "MOD_MOUNT",
+		"overrideProperties": {
+			"Prefab": {
+				"path": "Attachments/Mounts/Comp/mount_unity_fast_comp_grn.bundle",
+				"rcid": ""
+			},
+			"Slots": [
+				{
+					"_name": "mod_scope",
+					"_id": "685e533f448e9be7dfed7417",
+					"_parent": "685e5326a119194a7cbaa34e",
+					"_props": {
+						"filters": [
+							{
+                                "Filter": [
+                                    "61659f79d92c473c770213ee",
+                                    "5c7d55de2e221644f31bff68",
+                                    "5c7d560b2e22160bc12c6139",
+									"6857c3a0b4fec9f18e5e5e36",
+									"685912a257837068f1460c7a"
+								],
+								"Shift": 0
+							}
+						]
+					},
+					"_required": false,
+					"_mergeSlotWithChildren": false,
+					"_proto": "55d30c4c4bdc2db4468b457e"
+				}
+			]
+		},
+		"locales": {
+			"en": {
+				"name": "Unity Tactical FAST COMP-series scope mount (Green)",
+				"shortName": "COMP",
+				"description": "The Unity FAST Comp mount was developed as a solution for the DOD's standard issue M68 CCO. <color=#358f4d><b>Green version.</b></color>"
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": true,
+		"modSlot": [
+			"mod_scope",
+			"mod_scope_000",
+			"mod_scope_001"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [
+		],
+		"addtoTraders": true,
+		"traderId": "MECHANIC",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 5037,
+				"_tpl": "ROUBLES"
+			}
+		],
+		"loyallevelitems": 3,
+		"fleaPriceRoubles": 8573,
+		"handbookPriceRoubles": 3592,
+		"addtoStaticLootContainers": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 7
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 6
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 5
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 1
+			}
+		]
+	},
+    "685e5339826695a4b438120c": {
+		"itemTplToClone": "5c7d55f52e221644f31bff6a",
+		"parentId": "MOUNT",
+		"handbookParentId": "MOD_MOUNT",
+		"overrideProperties": {
+			"Prefab": {
+				"path": "Attachments/Mounts/Comp/mount_unity_fast_comp_wht.bundle",
+				"rcid": ""
+			},
+			"Slots": [
+				{
+					"_name": "mod_scope",
+					"_id": "685e533c54d19f34a723b1be",
+					"_parent": "685e5339826695a4b438120c",
+					"_props": {
+						"filters": [
+							{
+                                "Filter": [
+                                    "61659f79d92c473c770213ee",
+                                    "5c7d55de2e221644f31bff68",
+                                    "5c7d560b2e22160bc12c6139",
+									"6857c3a0b4fec9f18e5e5e36",
+									"685912a257837068f1460c7a"
+								],
+								"Shift": 0
+							}
+						]
+					},
+					"_required": false,
+					"_mergeSlotWithChildren": false,
+					"_proto": "55d30c4c4bdc2db4468b457e"
+				}
+			]
+		},
+		"locales": {
+			"en": {
+				"name": "Unity Tactical FAST COMP-series scope mount (White)",
+				"shortName": "COMP",
+				"description": "The Unity FAST Comp mount was developed as a solution for the DOD's standard issue M68 CCO. <b>White version.</b>"
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": true,
+		"modSlot": [
+			"mod_scope",
+			"mod_scope_000",
+			"mod_scope_001"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [
+		],
+		"addtoTraders": true,
+		"traderId": "MECHANIC",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 5037,
+				"_tpl": "ROUBLES"
+			}
+		],
+		"loyallevelitems": 3,
+		"fleaPriceRoubles": 8573,
+		"handbookPriceRoubles": 3592,
+		"addtoStaticLootContainers": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 7
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 6
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 5
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 1
+			}
+		]
+	},
+	"68611c8d57834d1471676982": {
+		"itemTplToClone": "58d39d3d86f77445bb794ae7",
+		"parentId": "MOUNT",
+		"handbookParentId": "MOD_MOUNT",
+		"overrideProperties": {
+			"Prefab": {
+				"path": "Attachments/Mounts/FRT/mount_frt_226_blk.bundle",
+				"rcid": ""
+			},
+			"Slots": [
+				{
+					"_name": "mod_scope",
+					"_id": "68611c8fa1648af6830564a1",
+					"_parent": "68611c8d57834d1471676982",
+					"_props": {
+						"filters": [
+							{
+                                "Filter": [
+                                    "61657230d92c473c770213d7",
+                                    "58d399e486f77442e0016fe7",
+                                    "2589a5a2424122404cf3a94c",
+									"026dfdb287f69c3025f0f728"
+								],
+								"Shift": 0
+							}
+						]
+					},
+					"_required": false,
+					"_mergeSlotWithChildren": false,
+					"_proto": "55d30c4c4bdc2db4468b457e"
+				}
+			]
+		},
+		"locales": {
+			"en": {
+				"name": "Kastle Group FRT 226 scope mount",
+				"shortName": "FRT",
+				"description": "Precision-machined scope mount designed for secure optic placement on rifles with standard Picatinny rails. Manufactured by Kastle Group, the FRT 226 offers a low-profile, rock-solid lockup with dual clamping bolts and integrated recoil lugs."
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": true,
+		"modSlot": [
+			"mod_scope",
+			"mod_scope_000",
+			"mod_scope_001"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [
+		],
+		"addtoTraders": true,
+		"traderId": "SKIER",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 8673,
+				"_tpl": "ROUBLES"
+			}
+		],
+		"loyallevelitems": 2,
+		"fleaPriceRoubles": 8573,
+		"handbookPriceRoubles": 3592,
+		"addtoStaticLootContainers": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 7
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 6
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 5
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 1
+			}
+		]
+	},
+	"68611d271b5181217dee6c31": {
+		"itemTplToClone": "58d39d3d86f77445bb794ae7",
+		"parentId": "MOUNT",
+		"handbookParentId": "MOD_MOUNT",
+		"overrideProperties": {
+			"Prefab": {
+				"path": "Attachments/Mounts/FRT/mount_frt_226_fde.bundle",
+				"rcid": ""
+			},
+			"Slots": [
+				{
+					"_name": "mod_scope",
+					"_id": "68611d2aefdae8c4be38837a",
+					"_parent": "68611d271b5181217dee6c31",
+					"_props": {
+						"filters": [
+							{
+                                "Filter": [
+                                    "61657230d92c473c770213d7",
+                                    "58d399e486f77442e0016fe7",
+                                    "2589a5a2424122404cf3a94c",
+									"026dfdb287f69c3025f0f728"
+								],
+								"Shift": 0
+							}
+						]
+					},
+					"_required": false,
+					"_mergeSlotWithChildren": false,
+					"_proto": "55d30c4c4bdc2db4468b457e"
+				}
+			]
+		},
+		"locales": {
+			"en": {
+				"name": "Kastle Group FRT 226 scope mount (FDE)",
+				"shortName": "FRT",
+				"description": "Precision-machined scope mount designed for secure optic placement on rifles with standard Picatinny rails. Manufactured by Kastle Group, the FRT 226 offers a low-profile, rock-solid lockup with dual clamping bolts and integrated recoil lugs. <color=#9c8638><b>Flat Dark Earth version.</b></color>"
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": true,
+		"modSlot": [
+			"mod_scope",
+			"mod_scope_000",
+			"mod_scope_001"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [
+		],
+		"addtoTraders": true,
+		"traderId": "SKIER",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 8673,
+				"_tpl": "ROUBLES"
+			}
+		],
+		"loyallevelitems": 2,
+		"fleaPriceRoubles": 8573,
+		"handbookPriceRoubles": 3592,
+		"addtoStaticLootContainers": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 7
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 6
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 5
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 1
+			}
+		]
+	},
+	"68611d79d2f8c2caf35ddd39": {
+		"itemTplToClone": "58d39d3d86f77445bb794ae7",
+		"parentId": "MOUNT",
+		"handbookParentId": "MOD_MOUNT",
+		"overrideProperties": {
+			"Prefab": {
+				"path": "Attachments/Mounts/FRT/mount_frt_226_sand.bundle",
+				"rcid": ""
+			},
+			"Slots": [
+				{
+					"_name": "mod_scope",
+					"_id": "68611d7bf7c8777fab67f36a",
+					"_parent": "68611d79d2f8c2caf35ddd39",
+					"_props": {
+						"filters": [
+							{
+                                "Filter": [
+                                    "61657230d92c473c770213d7",
+                                    "58d399e486f77442e0016fe7",
+                                    "2589a5a2424122404cf3a94c",
+									"026dfdb287f69c3025f0f728"
+								],
+								"Shift": 0
+							}
+						]
+					},
+					"_required": false,
+					"_mergeSlotWithChildren": false,
+					"_proto": "55d30c4c4bdc2db4468b457e"
+				}
+			]
+		},
+		"locales": {
+			"en": {
+				"name": "Kastle Group FRT 226 scope mount (Sand)",
+				"shortName": "FRT",
+				"description": "Precision-machined scope mount designed for secure optic placement on rifles with standard Picatinny rails. Manufactured by Kastle Group, the FRT 226 offers a low-profile, rock-solid lockup with dual clamping bolts and integrated recoil lugs. <color=#9c8638><b>Sand version.</b></color>"
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": true,
+		"modSlot": [
+			"mod_scope",
+			"mod_scope_000",
+			"mod_scope_001"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [
+		],
+		"addtoTraders": true,
+		"traderId": "SKIER",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 8673,
+				"_tpl": "ROUBLES"
+			}
+		],
+		"loyallevelitems": 2,
+		"fleaPriceRoubles": 8573,
+		"handbookPriceRoubles": 3592,
+		"addtoStaticLootContainers": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 7
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 6
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 5
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 1
+			}
+		]
+	},
+	"686a950f332bd39442d996c7": {
+		"itemTplToClone": "618b9643526131765025ab35",
+		"parentId": "MOUNT",
+		"handbookParentId": "MOD_MOUNT",
+		"overrideProperties": {
+			"Prefab": {
+				"path": "Attachments/Mounts/unity_fast_lpvo_blk.bundle",
+				"rcid": ""
+			},
+			"Ergonomics": 2,
+			"ExtraSizeUp": 1,
+			"Slots": [
+				{
+					"_name": "mod_scope",
+					"_id": "686a9513f5640d8916a9c727",
+					"_parent": "686a950f332bd39442d996c7",
+					"_props": {
+						"filters": [
+							{
+                                "Filter": [
+                                    "5b2388675acfc4771e1be0be",
+									"5b3b99475acfc432ff4dcbee",
+									"5a37cb10c4a282329a73b4e7",
+									"57c5ac0824597754771e88a9",
+									"618ba27d9008e4636a67f61d",
+									"617151c1d92c473c770214ab",
+									"6567e7681265c8a131069b0f"
+								],
+								"Shift": 0
+							}
+						]
+					},
+					"_required": false,
+					"_mergeSlotWithChildren": false,
+					"_proto": "55d30c4c4bdc2db4468b457e"
+				},
+				{
+					"_name": "mod_mount",
+					"_id": "686a9551be3248e221780a8c",
+					"_parent": "686a950f332bd39442d996c7",
+					"_props": {
+						"filters": [
+							{
+                                "Filter": [
+                                    "686a95919c10df31081c9e2b"
+								],
+								"Shift": 0
+							}
+						]
+					},
+					"_required": false,
+					"_mergeSlotWithChildren": false,
+					"_proto": "55d30c4c4bdc2db4468b457e"
+				}
+			]
+		},
+		"locales": {
+			"en": {
+				"name": "Unity Tactical FAST LPVO 30mm ring scope mount",
+				"shortName": "FAST LPVO",
+				"description": "A high-rise scope mount engineered by Unity Tactical for 30mm Low Power Variable Optics. Designed to elevate the optic to a faster, heads-up shooting posture, improving target transitions and situational awareness in dynamic engagements. Built from hard-anodized aluminum with reinforced clamping hardware."
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": true,
+		"modSlot": [
+			"mod_scope",
+			"mod_scope_000",
+			"mod_scope_001"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [
+		],
+		"addtoTraders": true,
+		"traderId": "SKIER",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 13500,
+				"_tpl": "ROUBLES"
+			}
+		],
+		"loyallevelitems": 3,
+		"fleaPriceRoubles": 25784,
+		"handbookPriceRoubles": 11502,
+		"addtoStaticLootContainers": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 7
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 6
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 5
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 1
+			}
+		]
+	},
+	"686a959fea53389283823a5e": {
+		"itemTplToClone": "618b9643526131765025ab35",
+		"parentId": "MOUNT",
+		"handbookParentId": "MOD_MOUNT",
+		"overrideProperties": {
+			"Prefab": {
+				"path": "Attachments/Mounts/unity_fast_lpvo_fde.bundle",
+				"rcid": ""
+			},
+			"Ergonomics": 2,
+			"ExtraSizeUp": 1,
+			"Slots": [
+				{
+					"_name": "mod_scope",
+					"_id": "686a95a5b5af57a4af48d048",
+					"_parent": "686a959fea53389283823a5e",
+					"_props": {
+						"filters": [
+							{
+                                "Filter": [
+                                    "5b2388675acfc4771e1be0be",
+									"5b3b99475acfc432ff4dcbee",
+									"5a37cb10c4a282329a73b4e7",
+									"57c5ac0824597754771e88a9",
+									"618ba27d9008e4636a67f61d",
+									"617151c1d92c473c770214ab",
+									"6567e7681265c8a131069b0f"
+								],
+								"Shift": 0
+							}
+						]
+					},
+					"_required": false,
+					"_mergeSlotWithChildren": false,
+					"_proto": "55d30c4c4bdc2db4468b457e"
+				},
+				{
+					"_name": "mod_mount",
+					"_id": "686a95a30c8d1628794a7ce6",
+					"_parent": "686a959fea53389283823a5e",
+					"_props": {
+						"filters": [
+							{
+                                "Filter": [
+                                    "686a95919c10df31081c9e2b"
+								],
+								"Shift": 0
+							}
+						]
+					},
+					"_required": false,
+					"_mergeSlotWithChildren": false,
+					"_proto": "55d30c4c4bdc2db4468b457e"
+				}
+			]
+		},
+		"locales": {
+			"en": {
+				"name": "Unity Tactical FAST LPVO 30mm ring scope mount (FDE)",
+				"shortName": "FAST LPVO",
+				"description": "A high-rise scope mount engineered by Unity Tactical for 30mm Low Power Variable Optics. Designed to elevate the optic to a faster, heads-up shooting posture, improving target transitions and situational awareness in dynamic engagements. Built from hard-anodized aluminum with reinforced clamping hardware. <color=#9c8638><b>Flat Dark Earth version.</b></color>"
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": true,
+		"modSlot": [
+			"mod_scope",
+			"mod_scope_000",
+			"mod_scope_001"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [
+		],
+		"addtoTraders": true,
+		"traderId": "SKIER",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 13500,
+				"_tpl": "ROUBLES"
+			}
+		],
+		"loyallevelitems": 3,
+		"fleaPriceRoubles": 25784,
+		"handbookPriceRoubles": 11502,
+		"addtoStaticLootContainers": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 7
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 6
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 5
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 1
+			}
+		]
+	},
+	"686a95d3d23099a58e981e27": {
+		"itemTplToClone": "618b9643526131765025ab35",
+		"parentId": "MOUNT",
+		"handbookParentId": "MOD_MOUNT",
+		"overrideProperties": {
+			"Prefab": {
+				"path": "Attachments/Mounts/unity_fast_lpvo_odg.bundle",
+				"rcid": ""
+			},
+			"Ergonomics": 2,
+			"ExtraSizeUp": 1,
+			"Slots": [
+				{
+					"_name": "mod_scope",
+					"_id": "686a95d789aace93c4496ca2",
+					"_parent": "686a95d3d23099a58e981e27",
+					"_props": {
+						"filters": [
+							{
+                                "Filter": [
+                                    "5b2388675acfc4771e1be0be",
+									"5b3b99475acfc432ff4dcbee",
+									"5a37cb10c4a282329a73b4e7",
+									"57c5ac0824597754771e88a9",
+									"618ba27d9008e4636a67f61d",
+									"617151c1d92c473c770214ab",
+									"6567e7681265c8a131069b0f"
+								],
+								"Shift": 0
+							}
+						]
+					},
+					"_required": false,
+					"_mergeSlotWithChildren": false,
+					"_proto": "55d30c4c4bdc2db4468b457e"
+				},
+				{
+					"_name": "mod_mount",
+					"_id": "686a95d65780028ff241b19c",
+					"_parent": "686a95d3d23099a58e981e27",
+					"_props": {
+						"filters": [
+							{
+                                "Filter": [
+                                    "686a95919c10df31081c9e2b"
+								],
+								"Shift": 0
+							}
+						]
+					},
+					"_required": false,
+					"_mergeSlotWithChildren": false,
+					"_proto": "55d30c4c4bdc2db4468b457e"
+				}
+			]
+		},
+		"locales": {
+			"en": {
+				"name": "Unity Tactical FAST LPVO 30mm ring scope mount (Olive Drab)",
+				"shortName": "FAST LPVO",
+				"description": "A high-rise scope mount engineered by Unity Tactical for 30mm Low Power Variable Optics. Designed to elevate the optic to a faster, heads-up shooting posture, improving target transitions and situational awareness in dynamic engagements. Built from hard-anodized aluminum with reinforced clamping hardware. <color=#60682e><b>Olive Drab Green version.</b></color>"
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": true,
+		"modSlot": [
+			"mod_scope",
+			"mod_scope_000",
+			"mod_scope_001"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [
+		],
+		"addtoTraders": true,
+		"traderId": "SKIER",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 13500,
+				"_tpl": "ROUBLES"
+			}
+		],
+		"loyallevelitems": 3,
+		"fleaPriceRoubles": 25784,
+		"handbookPriceRoubles": 11502,
+		"addtoStaticLootContainers": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 7
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 6
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 5
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 1
+			}
+		]
+	},
+	"686a95919c10df31081c9e2b": {
+		"itemTplToClone": "618b9643526131765025ab35",
+		"parentId": "MOUNT",
+		"handbookParentId": "MOD_MOUNT",
+		"overrideProperties": {
+			"Prefab": {
+				"path": "Attachments/Mounts/unity_fast_canted.bundle",
+				"rcid": ""
+			},
+			"Ergonomics": -1,
+			"Width": 1,
+			"Height": 1,
+			"Weight": 0.015,
+			"Slots": [
+				{
+					"_name": "mod_scope_000",
+					"_id": "686a95d789aace93c4496ca2",
+					"_parent": "686a95d3d23099a58e981e27",
+					"_props": {
+						"filters": [
+							{
+                                "Filter": [
+                                    "58d399e486f77442e0016fe7",
+									"61657230d92c473c770213d7",
+									"2589a5a2424122404cf3a94c"
+								],
+								"Shift": 0
+							}
+						]
+					},
+					"_required": false,
+					"_mergeSlotWithChildren": false,
+					"_proto": "55d30c4c4bdc2db4468b457e"
+				}
+			]
+		},
+		"locales": {
+			"en": {
+				"name": "Unity Tactical FAST LPVO canted optic mount",
+				"shortName": "FAST LPVO",
+				"description": "A mount for the Unity Tactical FAST LPVO mount that allows for the installation of a canted optic as a backup sight."
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": false,
+		"modSlot": [
+			"mod_scope",
+			"mod_scope_000",
+			"mod_scope_001"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [
+		],
+		"addtoTraders": true,
+		"traderId": "SKIER",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 5439,
+				"_tpl": "ROUBLES"
+			}
+		],
+		"loyallevelitems": 3,
+		"fleaPriceRoubles": 7626,
+		"handbookPriceRoubles": 2532,
+		"addtoStaticLootContainers": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 7
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 6
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 5
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 1
+			}
+		]
+	},
+	"686a990e217f312ed3fe65bf": {
+		"itemTplToClone": "58d39d3d86f77445bb794ae7",
+		"parentId": "MOUNT",
+		"handbookParentId": "MOD_MOUNT",
+		"overrideProperties": {
+			"Prefab": {
+				"path": "Attachments/Mounts/mount_unity_fast_mro_blk.bundle",
+				"rcid": ""
+			},
+			"Slots": [
+				{
+					"_name": "mod_scope",
+					"_id": "686a99a2c5b16943fc1042ba",
+					"_parent": "686a990e217f312ed3fe65bf",
+					"_props": {
+						"filters": [
+							{
+                                "Filter": [
+                                    "3f18b9a4a43e2c071b08179a"
+								],
+								"Shift": 0
+							}
+						]
+					},
+					"_required": false,
+					"_mergeSlotWithChildren": false,
+					"_proto": "55d30c4c4bdc2db4468b457e"
+				}
+			]
+		},
+		"locales": {
+			"en": {
+				"name": "Unity Tactical FAST MRO sight mount",
+				"shortName": "MRO",
+				"description": "A mount designed by Unity Tactical to accept the Trijicon MRO anda similar footprint optics with a riser of around 2.05\" of height over the muzzle."
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": true,
+		"modSlot": [
+			"mod_scope",
+			"mod_scope_000",
+			"mod_scope_001"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [
+		],
+		"addtoTraders": true,
+		"traderId": "MECHANIC",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 8673,
+				"_tpl": "ROUBLES"
+			}
+		],
+		"loyallevelitems": 3,
+		"fleaPriceRoubles": 8573,
+		"handbookPriceRoubles": 3592,
+		"addtoStaticLootContainers": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 7
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 6
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 5
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 1
+			}
+		]
+	},
+	"686a99b24e95c2b6c57ef026": {
+		"itemTplToClone": "58d39d3d86f77445bb794ae7",
+		"parentId": "MOUNT",
+		"handbookParentId": "MOD_MOUNT",
+		"overrideProperties": {
+			"Prefab": {
+				"path": "Attachments/Mounts/mount_unity_fast_mro_fde.bundle",
+				"rcid": ""
+			},
+			"Slots": [
+				{
+					"_name": "mod_scope",
+					"_id": "686a99b5bd11eb0471139ce3",
+					"_parent": "686a99b24e95c2b6c57ef026",
+					"_props": {
+						"filters": [
+							{
+                                "Filter": [
+                                    "3f18b9a4a43e2c071b08179a"
+								],
+								"Shift": 0
+							}
+						]
+					},
+					"_required": false,
+					"_mergeSlotWithChildren": false,
+					"_proto": "55d30c4c4bdc2db4468b457e"
+				}
+			]
+		},
+		"locales": {
+			"en": {
+				"name": "Unity Tactical FAST MRO sight mount (FDE)",
+				"shortName": "MRO",
+				"description": "A mount designed by Unity Tactical to accept the Trijicon MRO anda similar footprint optics with a riser of around 2.05\" of height over the muzzle. <color=#9c8638><b>Flat Dark Earth version.</b></color>"
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": true,
+		"modSlot": [
+			"mod_scope",
+			"mod_scope_000",
+			"mod_scope_001"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [
+		],
+		"addtoTraders": true,
+		"traderId": "MECHANIC",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 8673,
+				"_tpl": "ROUBLES"
+			}
+		],
+		"loyallevelitems": 3,
+		"fleaPriceRoubles": 8573,
+		"handbookPriceRoubles": 3592,
+		"addtoStaticLootContainers": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 7
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 6
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 5
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 1
+			}
+		]
+	}
+}

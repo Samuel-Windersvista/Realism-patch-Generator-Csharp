@@ -1,0 +1,727 @@
+{
+    "6868377c7bb1c07772467ee7": {
+        "itemTplToClone": "5cadc190ae921500103bb3b6",
+        "parentId": "HANDGUN",
+        "handbookParentId": "WEAPONS_PISTOLS",
+        "overrideProperties": {
+            "Prefab": {
+                "path": "WeaponFNX/weapon_fn_fnx45_container.bundle",
+                "rcid": ""
+            },
+            "SingleFireRate": 500,
+            "ConflictingItems": [],
+            "bHearDist": 80,
+            "RecoilForceBack": 295,
+            "RecoilForceUp": 410,
+            "RecoilDampingHandRotation": 0.8,
+            "RecoilCamera": 0.02,
+            "DurabilityBurnRatio": 1.15,
+            "Slots": [
+                {
+                    "_name": "mod_barrel",
+                    "_id": "686839179274506a826ff9b6",
+                    "_parent": "6868377c7bb1c07772467ee7",
+                    "_props": {
+                        "filters": [
+                            {
+                                "Shift": 0,
+                                "Filter": [
+                                    "68683cf77880574d9637afc6"
+                                ]
+                            }
+                        ]
+                    },
+                    "_required": true,
+                    "_mergeSlotWithChildren": false,
+                    "_proto": "55d30c4c4bdc2db4468b457e"
+                },
+                {
+                    "_name": "mod_reciever",
+                    "_id": "68683912a65f45c3e8cdc332",
+                    "_parent": "6868377c7bb1c07772467ee7",
+                    "_props": {
+                        "filters": [
+                            {
+                                "Shift": 0,
+                                "Filter": [
+                                    "68683d4d23f083775c62f84e"
+                                ]
+                            }
+                        ]
+                    },
+                    "_required": true,
+                    "_mergeSlotWithChildren": false,
+                    "_proto": "55d30c4c4bdc2db4468b457e"
+                },
+                {
+                    "_name": "mod_magazine",
+                    "_id": "686839109ff2eb642434b081",
+                    "_parent": "6868377c7bb1c07772467ee7",
+                    "_props": {
+                        "filters": [
+                            {
+                                "Shift": 0,
+                                "Filter": [
+                                    "686838eb0859ea2bd8e18c5f"
+                                ]
+                            }
+                        ]
+                    },
+                    "_required": false,
+                    "_mergeSlotWithChildren": false,
+                    "_proto": "55d30c4c4bdc2db4468b457e"
+                },
+                {
+                    "_name": "mod_tactical_000",
+                    "_id": "6868391347151b30734c1758",
+                    "_parent": "6868377c7bb1c07772467ee7",
+                    "_props": {
+                        "filters": [
+                            {
+                                "Shift": 0,
+                                "Filter": [
+                                    "5a800961159bd4315e3a1657",
+                                    "5cc9c20cd7f00c001336c65d",
+                                    "5d2369418abbc306c62e0c80",
+                                    "5b07dd285acfc4001754240d",
+                                    "56def37dd2720bec348b456a",
+                                    "5a7b483fe899ef0016170d15",
+                                    "5a5f1ce64f39f90b401987bc",
+                                    "560d657b4bdc2da74d8b4572",
+                                    "5a7ad4af51dfba0013379717",
+                                    "5a7b4900e899ef197b331a2a",
+                                    "6272370ee4013c5d7e31f418",
+                                    "6272379924e29f06af4d5ecb"
+                                ]
+                            }
+                        ]
+                    },
+                    "_required": false,
+                    "_mergeSlotWithChildren": false,
+                    "_proto": "55d30c4c4bdc2db4468b457e"
+                }
+            ],
+            "ammoCaliber": "Caliber1143x23ACP",
+            "defMagType": "5fb651b52b1b027b1f50bcff",
+            "Chambers": [
+                {
+                    "_name": "patron_in_weapon",
+                    "_id": "68683915074e554fd4b7fe3b",
+                    "_parent": "6868377c7bb1c07772467ee7",
+                    "_props": {
+                        "filters": [
+                            {
+                                "Filter": [
+                                    "5e81f423763d9f754677bf2e",
+                                    "5efb0cabfb3e451d70735af5",
+                                    "5efb0fc6aeb21837e749c801",
+                                    "5efb0d4f4bc50b58e81710f3",
+                                    "5ea2a8e200685063ec28c05a"
+                                ]
+                            }
+                        ]
+                    },
+                    "_required": false,
+                    "_mergeSlotWithChildren": false,
+                    "_proto": "55d4af244bdc2d962f8b4571"
+                }
+            ]
+        },
+        "locales": {
+            "en": {
+                "name": "FN FNX-45 战术型 .45 ACP 手枪",
+"shortName": "FNX-45",
+"description": "FN赫斯塔尔 FNX-45 是一款现代化聚合物底把手枪，发射.45 ACP弹药，由FN赫斯塔尔公司专为军用和执法用途开发。配备双侧操作控制、可安装消音器的螺纹枪管，以及15发弹匣容量。"
+            }
+        },
+        "clearClonedProps": false,
+        "addtoInventorySlots": [],
+        "addtoModSlots": false,
+        "modSlot": [],
+        "ModdableItemWhitelist": [],
+        "ModdableItemBlacklist": [],
+        "fleaPriceRoubles": 31528,
+        "handbookPriceRoubles": 8573,
+        "addtoTraders": true,
+        "traderId": "PEACEKEEPER",
+        "traderItems": [
+            {
+                "unlimitedCount": true,
+                "stackObjectsCount": 2
+            }
+        ],
+        "barterScheme": [
+            {
+                "count": 173,
+                "_tpl": "DOLLARS"
+            }
+        ],
+        "loyallevelitems": 2,
+        "addtoBots": false,
+        "addtostaticlootcontainer": true,
+        "StaticLootContainers": [
+            {
+                "ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+                "Probability": 25
+            },
+            {
+                "ContainerName": "LOOTCONTAINER_DEAD_SCAV",
+                "Probability": 15
+            }
+        ],
+        "masteries": true,
+        "masterySections": [
+            {
+                "Name": "FN FNX",
+                "Level2": 150,
+                "Level3": 250,
+                "Templates": [
+                    "6868377c7bb1c07772467ee7"
+                ]
+            }
+        ],
+        "addweaponpreset": true,
+        "weaponpresets": [
+            {
+                "_changeWeaponName": false,
+                "_encyclopedia": "6868377c7bb1c07772467ee7",
+                "_id": "686b248bb6d0562578bfab4f",
+                "_items": [
+                    {
+                        "_id": "686b2456c6bf97ce3928ea83",
+                        "_tpl": "6868377c7bb1c07772467ee7",
+                        "upd": {
+                            "Repairable": {
+                                "MaxDurability": 100,
+                                "Durability": 100
+                            },
+                            "FireMode": {
+                                "FireMode": "single"
+                            }
+                        }
+                    },
+                    {
+                        "_id": "686b24634b456997be7e7ef3",
+                        "_tpl": "68683cf77880574d9637afc6",
+                        "slotId": "mod_barrel",
+                        "parentId": "686b2456c6bf97ce3928ea83"
+                    },
+                    {
+                        "_id": "686b24654127b8ab068a8f48",
+                        "_tpl": "68683d4d23f083775c62f84e",
+                        "slotId": "mod_reciever",
+                        "parentId": "686b2456c6bf97ce3928ea83"
+                    },
+                    {
+                        "_id": "686b246d1d464d0347f21f79",
+                        "_tpl": "686838eb0859ea2bd8e18c5f",
+                        "slotId": "mod_magazine",
+                        "parentId": "686b2456c6bf97ce3928ea83"
+                    },
+                    {
+                        "_id": "686b24711da35d2a4a13df7d",
+                        "_tpl": "68696009c522f6881c46481b",
+                        "slotId": "mod_scope",
+                        "parentId": "686b24654127b8ab068a8f48"
+                    },
+                    {
+                        "_id": "686b2474f3ce3b7bca9f57e9",
+                        "_tpl": "686860759bcdfbaef057bfc3",
+                        "slotId": "mod_sight_front",
+                        "parentId": "686b24654127b8ab068a8f48"
+                    },
+                    {
+                        "_id": "686b247874ace85e5d2316c2",
+                        "_tpl": "686860901db0bec621ef9e35",
+                        "slotId": "mod_sight_rear",
+                        "parentId": "686b24654127b8ab068a8f48"
+                    }
+                ],
+                "_name": "FNX-45 Stock Preset",
+                "_parent": "686b2456c6bf97ce3928ea83",
+                "_type": "Preset"
+            }
+        ]
+    },
+    "686838eb0859ea2bd8e18c5f": {
+        "itemTplToClone": "5fb651b52b1b027b1f50bcff",
+        "parentId": "MAGAZINE",
+        "handbookParentId": "MOD_MAGAZINE",
+        "overrideProperties": {
+            "Prefab": {
+                "path": "WeaponFNX/fnx_mag.bundle",
+                "rcid": ""
+            },
+            "Cartridges": [
+                {
+                    "_name": "cartridges",
+                    "_id": "68683cd8642520dc2dbd49c5",
+                    "_parent": "686838eb0859ea2bd8e18c5f",
+                    "_max_count": 15,
+                    "_props": {
+                        "filters": [
+                            {
+                                "Filter": [
+                                    "5e81f423763d9f754677bf2e",
+                                    "5efb0cabfb3e451d70735af5",
+                                    "5efb0fc6aeb21837e749c801",
+                                    "5efb0d4f4bc50b58e81710f3",
+                                    "5ea2a8e200685063ec28c05a"
+                                ]
+                            }
+                        ]
+                    },
+                    "_proto": "5748538b2459770af276a261"
+                }
+            ]
+        },
+        "locales": {
+            "en": {
+                "name": "FN FNX/FNP .45 ACP 15-round magazine",
+                "shortName": "FNX .45",
+                "description": "A standard-issue 15-round magazine for the FN FNX-45, chambered in .45 ACP."
+            }
+        },
+        "clearClonedProps": false,
+        "addtoInventorySlots": [],
+        "addtoModSlots": false,
+        "modSlot": [
+            "mod_magazine"
+        ],
+        "ModdableItemWhitelist": [],
+        "ModdableItemBlacklist": [],
+        "addtoTraders": true,
+        "traderId": "PEACEKEEPER",
+        "traderItems": [
+            {
+                "unlimitedCount": true,
+                "stackObjectsCount": 4
+            }
+        ],
+        "barterScheme": [
+            {
+                "count": 11,
+                "_tpl": "DOLLARS"
+            }
+        ],
+        "loyallevelitems": 2,
+        "fleaPriceRoubles": 5382,
+        "handbookPriceRoubles": 683,
+        "addtoStaticLootContainers": true,
+        "addtoragfair": true,
+        "StaticLootContainers": [
+            {
+                "ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+                "Probability": 7
+            },
+            {
+                "ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+                "Probability": 6
+            },
+            {
+                "ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+                "Probability": 5
+            },
+            {
+                "ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+                "Probability": 1
+            }
+        ]
+    },
+    "68683cf77880574d9637afc6": {
+        "itemTplToClone": "5fb651b52b1b027b1f50bcff",
+        "parentId": "555ef6e44bdc2de9068b457e",
+        "handbookParentId": "5b5f75c686f774094242f19f",
+        "overrideProperties": {
+            "Prefab": {
+                "path": "WeaponFNX/fnx_barrel.bundle",
+                "rcid": ""
+            },
+            "Slots": [
+                {
+                    "_name": "mod_muzzle",
+                    "_id": "686839179274506a826ff9b6",
+                    "_parent": "6868377c7bb1c07772467ee7",
+                    "_props": {
+                        "filters": [
+                            {
+                                "Shift": 0,
+                                "Filter": [
+                                    "5fc4b97bab884124df0cd5e3",
+                                    "5fc4b992187fea44d52edaa9",
+                                    "686ad2e1cb1cd4ac811bfe81",
+                                    "686ad244771ad06c4fd8c970"
+                                ]
+                            }
+                        ]
+                    },
+                    "_required": false,
+                    "_mergeSlotWithChildren": false,
+                    "_proto": "55d30c4c4bdc2db4468b457e"
+                }
+            ]
+        },
+        "locales": {
+            "en": {
+                "name": "FN FNX-45 .45 ACP 5.1 inch threaded barrel",
+                "shortName": "FNX 5.1\"",
+                "description": "A standard-issue 5.1 inch barrel for the FNX-45 Tactical."
+            }
+        },
+        "clearClonedProps": false,
+        "addtoInventorySlots": [],
+        "addtoModSlots": false,
+        "modSlot": [
+            "mod_magazine"
+        ],
+        "ModdableItemWhitelist": [],
+        "ModdableItemBlacklist": [],
+        "addtoTraders": true,
+        "traderId": "PEACEKEEPER",
+        "traderItems": [
+            {
+                "unlimitedCount": true,
+                "stackObjectsCount": 99
+            }
+        ],
+        "barterScheme": [
+            {
+                "count": 11,
+                "_tpl": "DOLLARS"
+            }
+        ],
+        "loyallevelitems": 2,
+        "fleaPriceRoubles": 5382,
+        "handbookPriceRoubles": 683,
+        "addtoStaticLootContainers": true,
+        "addtoragfair": true,
+        "StaticLootContainers": [
+            {
+                "ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+                "Probability": 7
+            },
+            {
+                "ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+                "Probability": 6
+            },
+            {
+                "ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+                "Probability": 5
+            },
+            {
+                "ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+                "Probability": 1
+            }
+        ]
+    },
+    "68683d4d23f083775c62f84e": {
+        "itemTplToClone": "5cadc55cae921500103bb3be",
+        "parentId": "55818a304bdc2db5418b457d",
+        "handbookParentId": "5b5f764186f77447ec5d7714",
+        "overrideProperties": {
+            "Prefab": {
+                "path": "WeaponFNX/fnx_slide.bundle",
+                "rcid": ""
+            },
+            "Slots": [
+                {
+                    "_name": "mod_scope",
+                    "_id": "686839179274506a826ff9b6",
+                    "_parent": "6868377c7bb1c07772467ee7",
+                    "_props": {
+                        "filters": [
+                            {
+                                "Shift": 0,
+                                "Filter": [
+                                    "5a32aa8bc4a2826c6e06d737",
+                                    "68696009c522f6881c46481b"
+                                ]
+                            }
+                        ]
+                    },
+                    "_required": false,
+                    "_mergeSlotWithChildren": false,
+                    "_proto": "55d30c4c4bdc2db4468b457e"
+                },
+                {
+                    "_name": "mod_sight_front",
+                    "_id": "6868606ec3c151b9b3d28e77",
+                    "_parent": "6868377c7bb1c07772467ee7",
+                    "_props": {
+                        "filters": [
+                            {
+                                "Shift": 0,
+                                "Filter": [
+                                    "686860759bcdfbaef057bfc3"
+                                ]
+                            }
+                        ]
+                    },
+                    "_required": false,
+                    "_mergeSlotWithChildren": false,
+                    "_proto": "55d30c4c4bdc2db4468b457e"
+                },
+                {
+                    "_name": "mod_sight_rear",
+                    "_id": "6868606e21c1c23f0fed0a30",
+                    "_parent": "6868377c7bb1c07772467ee7",
+                    "_props": {
+                        "filters": [
+                            {
+                                "Shift": 0,
+                                "Filter": [
+                                    "686860901db0bec621ef9e35"
+                                ]
+                            }
+                        ]
+                    },
+                    "_required": false,
+                    "_mergeSlotWithChildren": false,
+                    "_proto": "55d30c4c4bdc2db4468b457e"
+                }
+            ]
+        },
+        "locales": {
+            "en": {
+                "name": "FN FNX-45 pistol slide",
+                "shortName": "FNX-45",
+                "description": "A standard-issue pistol slide for the FN FNX-45 Tactical .45 ACP pistol."
+            }
+        },
+        "clearClonedProps": false,
+        "addtoInventorySlots": [],
+        "addtoModSlots": false,
+        "modSlot": [
+            "mod_magazine"
+        ],
+        "ModdableItemWhitelist": [],
+        "ModdableItemBlacklist": [],
+        "addtoTraders": true,
+        "traderId": "PEACEKEEPER",
+        "traderItems": [
+            {
+                "unlimitedCount": true,
+                "stackObjectsCount": 99
+            }
+        ],
+        "barterScheme": [
+            {
+                "count": 15,
+                "_tpl": "DOLLARS"
+            }
+        ],
+        "loyallevelitems": 2,
+        "fleaPriceRoubles": 5382,
+        "handbookPriceRoubles": 683,
+        "addtoStaticLootContainers": true,
+        "addtoragfair": true,
+        "StaticLootContainers": [
+            {
+                "ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+                "Probability": 7
+            },
+            {
+                "ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+                "Probability": 6
+            },
+            {
+                "ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+                "Probability": 5
+            },
+            {
+                "ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+                "Probability": 1
+            }
+        ]
+    },
+    "686860759bcdfbaef057bfc3": {
+        "itemTplToClone": "5cadd919ae921500126a77f3",
+        "parentId": "55818ac54bdc2d5b648b456e",
+        "handbookParentId": "5b5f746686f77447ec5d7708",
+        "overrideProperties": {
+            "Prefab": {
+                "path": "WeaponFNX/fnx_fs.bundle",
+                "rcid": ""
+            }
+        },
+        "locales": {
+            "en": {
+                "name": "FN FNX-45 tritium front sight",
+                "shortName": "FNX FS",
+                "description": "A standard-issue front pistol sight for the FN FNX line of pistols."
+            }
+        },
+        "clearClonedProps": false,
+        "addtoInventorySlots": [],
+        "addtoModSlots": false,
+        "modSlot": [
+            "mod_magazine"
+        ],
+        "ModdableItemWhitelist": [],
+        "ModdableItemBlacklist": [],
+        "addtoTraders": true,
+        "traderId": "PEACEKEEPER",
+        "traderItems": [
+            {
+                "unlimitedCount": true,
+                "stackObjectsCount": 99
+            }
+        ],
+        "barterScheme": [
+            {
+                "count": 2,
+                "_tpl": "DOLLARS"
+            }
+        ],
+        "loyallevelitems": 2,
+        "fleaPriceRoubles": 753,
+        "handbookPriceRoubles": 460,
+        "addtoStaticLootContainers": true,
+        "addtoragfair": true,
+        "StaticLootContainers": [
+            {
+                "ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+                "Probability": 7
+            },
+            {
+                "ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+                "Probability": 6
+            },
+            {
+                "ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+                "Probability": 5
+            },
+            {
+                "ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+                "Probability": 1
+            }
+        ]
+    },
+    "686860901db0bec621ef9e35": {
+        "itemTplToClone": "5cadd919ae921500126a77f3",
+        "parentId": "55818ac54bdc2d5b648b456e",
+        "handbookParentId": "5b5f746686f77447ec5d7708",
+        "overrideProperties": {
+            "Prefab": {
+                "path": "WeaponFNX/fnx_rs.bundle",
+                "rcid": ""
+            }
+        },
+        "locales": {
+            "en": {
+                "name": "FN FNX-45 tritium rear sight",
+                "shortName": "FNX RS",
+                "description": "A standard-issue rear pistol sight for the FN FNX line of pistols."
+            }
+        },
+        "clearClonedProps": false,
+        "addtoInventorySlots": [],
+        "addtoModSlots": false,
+        "modSlot": [
+            "mod_magazine"
+        ],
+        "ModdableItemWhitelist": [],
+        "ModdableItemBlacklist": [],
+        "addtoTraders": true,
+        "traderId": "PEACEKEEPER",
+        "traderItems": [
+            {
+                "unlimitedCount": true,
+                "stackObjectsCount": 99
+            }
+        ],
+        "barterScheme": [
+            {
+                "count": 2,
+                "_tpl": "DOLLARS"
+            }
+        ],
+        "loyallevelitems": 2,
+        "fleaPriceRoubles": 753,
+        "handbookPriceRoubles": 460,
+        "addtoStaticLootContainers": true,
+        "addtoragfair": true,
+        "StaticLootContainers": [
+            {
+                "ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+                "Probability": 7
+            },
+            {
+                "ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+                "Probability": 6
+            },
+            {
+                "ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+                "Probability": 5
+            },
+            {
+                "ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+                "Probability": 1
+            }
+        ]
+    },
+    "68696009c522f6881c46481b": {
+        "itemTplToClone": "615d8da4d3a39d50044c10e8",
+        "parentId": "55818b224bdc2dde698b456f",
+        "handbookParentId": "5b5f755f86f77447ec5d770e",
+        "overrideProperties": {
+            "Prefab": {
+                "path": "WeaponFNX/fnx_cap.bundle",
+                "rcid": ""
+            },
+            "Slots": []
+        },
+        "locales": {
+            "en": {
+                "name": "FN FNX slide cover (FDE)",
+                "shortName": "FNX SC",
+                "description": "A standard-issue slide cap for the FN FNX line of pistols."
+            }
+        },
+        "clearClonedProps": false,
+        "addtoInventorySlots": [],
+        "addtoModSlots": false,
+        "modSlot": [
+            "mod_magazine"
+        ],
+        "ModdableItemWhitelist": [],
+        "ModdableItemBlacklist": [],
+        "addtoTraders": true,
+        "traderId": "PEACEKEEPER",
+        "traderItems": [
+            {
+                "unlimitedCount": true,
+                "stackObjectsCount": 99
+            }
+        ],
+        "barterScheme": [
+            {
+                "count": 1,
+                "_tpl": "DOLLARS"
+            }
+        ],
+        "loyallevelitems": 2,
+        "fleaPriceRoubles": 650,
+        "handbookPriceRoubles": 120,
+        "addtoStaticLootContainers": true,
+        "addtoragfair": true,
+        "StaticLootContainers": [
+            {
+                "ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+                "Probability": 7
+            },
+            {
+                "ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+                "Probability": 6
+            },
+            {
+                "ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+                "Probability": 5
+            },
+            {
+                "ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+                "Probability": 1
+            }
+        ]
+    }
+}

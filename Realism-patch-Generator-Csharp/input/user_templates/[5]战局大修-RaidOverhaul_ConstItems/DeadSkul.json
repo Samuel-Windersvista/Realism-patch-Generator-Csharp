@@ -1,0 +1,131 @@
+{
+    "6621b0dcbcfe66cdbbab48c7": {
+        "ItemToClone": "VEST_SCAV_VEST",
+        "OverrideProperties": {
+            "Prefab": {
+                "path": "assets/content/items/equipment/armband/item_equipment_armband_dead.bundle",
+                "rcid": ""
+            },
+            "Height": 1,
+            "Width": 1,
+            "Weight": -10,
+            "Grids": [
+                {
+                    "_id": "7cf6637936909f0d9e3903e9",
+                    "_name": "GridView (1)",
+                    "_parent": "rodeadarmband",
+                    "_props": {
+                        "cellsH": 1,
+                        "cellsV": 1,
+                        "filters": [
+                            {
+                                "ExcludedFilter": ["5448bf274bdc2dfc2f8b456a"],
+                                "Filter": ["54009119af1c881c07000029"]
+                            }
+                        ],
+                        "isSortingTable": false,
+                        "maxCount": 0,
+                        "maxWeight": 0,
+                        "minCount": 0
+                    },
+                    "_proto": "55d329c24bdc2d892f8b4567"
+                },
+                {
+                    "_id": "21ac9c1e506186eeb4119de4",
+                    "_name": "GridView (2)",
+                    "_parent": "rodeadarmband",
+                    "_props": {
+                        "cellsH": 2,
+                        "cellsV": 2,
+                        "filters": [
+                            {
+                                "ExcludedFilter": ["5448bf274bdc2dfc2f8b456a"],
+                                "Filter": ["54009119af1c881c07000029"]
+                            }
+                        ],
+                        "isSortingTable": false,
+                        "maxCount": 0,
+                        "maxWeight": 0,
+                        "minCount": 0
+                    },
+                    "_proto": "55d329c24bdc2d892f8b4567"
+                },
+                {
+                    "_id": "3438e04b9f8142a9aef4a34b",
+                    "_name": "GridView (3)",
+                    "_parent": "rodeadarmband",
+                    "_props": {
+                        "cellsH": 1,
+                        "cellsV": 1,
+                        "filters": [
+                            {
+                                "ExcludedFilter": ["5448bf274bdc2dfc2f8b456a"],
+                                "Filter": ["54009119af1c881c07000029"]
+                            }
+                        ],
+                        "isSortingTable": false,
+                        "maxCount": 0,
+                        "maxWeight": 0,
+                        "minCount": 0
+                    },
+                    "_proto": "55d329c24bdc2d892f8b4567"
+                },
+                {
+                    "_id": "3d510188ca90cff286882a0d",
+                    "_name": "GridView (4)",
+                    "_parent": "rodeadarmband",
+                    "_props": {
+                        "cellsH": 1,
+                        "cellsV": 3,
+                        "filters": [
+                            {
+                                "ExcludedFilter": ["5448bf274bdc2dfc2f8b456a"],
+                                "Filter": ["54009119af1c881c07000029"]
+                            }
+                        ],
+                        "isSortingTable": false,
+                        "maxCount": 0,
+                        "maxWeight": 0,
+                        "minCount": 0
+                    },
+                    "_proto": "55d329c24bdc2d892f8b4567"
+                },
+                {
+                    "_id": "eb3431a9487dde2cfc88ec82",
+                    "_name": "GridView (5)",
+                    "_parent": "rodeadarmband",
+                    "_props": {
+                        "cellsH": 1,
+                        "cellsV": 1,
+                        "filters": [
+                            {
+                                "ExcludedFilter": ["5448bf274bdc2dfc2f8b456a"],
+                                "Filter": ["54009119af1c881c07000029"]
+                            }
+                        ],
+                        "isSortingTable": false,
+                        "maxCount": 0,
+                        "maxWeight": 0,
+                        "minCount": 0
+                    },
+                    "_proto": "55d329c24bdc2d892f8b4567"
+                }
+            ],
+            "RigLayoutName": "rodeadarmband"
+        },
+        "LocalePush": {
+            "name": "定制版 Deadskul 携行 pouch",
+"shortName": "Dead",
+"description": "一款经过改装的 Deadskul 护臂，缝制了额外的储物袋。现在你可以确保每次进入战场时都携带充足的补给。后勤处的军官们在这件装备上可谓用心良苦。仅限真正的收藏家。"
+        },
+        "Handbook": {
+            "HandbookParent": "GearComponents",
+            "HandbookPrice": 99999999
+        },
+        "CloneToFilters": true,
+        "PushToFleaBlacklist": true,
+        "SlotPush": {
+            "Slot": 14
+        }
+    }
+}

@@ -1,0 +1,975 @@
+{ 
+    "68509710f0df4dbc5b0ff7fe": {
+		"itemTplToClone": "615d8dbd290d254f5e6b2ed6",
+		"parentId": "RECEIVER",
+		"handbookParentId": "MOD_RECEIVER",
+		"overrideProperties": {
+			"Prefab": {
+				"path": "Attachments/Receivers/reciever_glock_22_mos_slide.bundle",
+				"rcid": ""
+			},
+			"Slots": [
+				{
+					"_name": "mod_sight_rear",
+					"_id": "6850971720b11c54d899c04a",
+					"_parent": "68509710f0df4dbc5b0ff7fe",
+					"_props": {
+						"filters": [
+							{
+								"Filter": [
+									"5a7d9122159bd4001438dbf4",
+									"5a6f5d528dc32e00094b97d9",
+									"5a71e0fb8dc32e00094b97f2",
+									"630765cb962d0247b029dc45"
+								],
+								"Shift": 0
+							}
+						]
+					},
+					"_required": false,
+					"_mergeSlotWithChildren": false,
+					"_proto": "55d30c4c4bdc2db4468b457e"
+				},
+				{
+					"_name": "mod_sight_front",
+					"_id": "685097184b5e263700b2de1d",
+					"_parent": "68509710f0df4dbc5b0ff7fe",
+					"_props": {
+						"filters": [
+							{
+								"Filter": [
+									"5a7d90eb159bd400165484f1",
+									"5a6f58f68dc32e000a311390",
+									"5a71e0048dc32e000c52ecc8",
+									"630765777d50ff5e8a1ea718"
+								],
+								"Shift": 0
+							}
+						]
+					},
+					"_required": false,
+					"_mergeSlotWithChildren": false,
+					"_proto": "55d30c4c4bdc2db4468b457e"
+				},
+				{
+					"_name": "mod_mount",
+					"_id": "6850971aa0108c5754924dc8",
+					"_parent": "68509710f0df4dbc5b0ff7fe",
+					"_props": {
+						"filters": [
+							{
+								"Filter": [
+									"615d8da4d3a39d50044c10e8",
+									"685097dbb9aa83c9e35c5027"
+								],
+								"Shift": 0
+							}
+						]
+					},
+					"_required": false,
+					"_mergeSlotWithChildren": false,
+					"_proto": "55d30c4c4bdc2db4468b457e"
+				}
+			]
+		},
+		"locales": {
+			"en": {
+				"name": "格洛克22 MOS手枪套筒",
+"shortName": "G MOS",
+"description": "专为格洛克.40 S&W手枪设计的MOS（模块化光学系统）套筒。由格洛克公司制造。"
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": false,
+		"modSlot": [
+			"mod_reciever"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [
+			"5a7ae0c351dfba0017554310"
+		],
+		"addtoTraders": true,
+		"traderId": "MECHANIC",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 4700,
+				"_tpl": "ROUBLES"
+			}
+		],
+		"loyallevelitems": 2,
+		"fleaPriceRoubles": 4929,
+		"handbookPriceRoubles": 4700,
+		"addtoStaticLootContainers": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 7
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 6
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 5
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 1
+			}
+		]
+	},
+	"6857c3a0b4fec9f18e5e5e36": {
+		"itemTplToClone": "5c7d55de2e221644f31bff68",
+		"parentId": "REFLEX_SIGHT",
+		"handbookParentId": "MOD_REFLEXSIGHT",
+		"overrideProperties": {
+			"Prefab": {
+				"path": "Attachments/Optics/scope_all_sig_romeo7.bundle",
+				"rcid": ""
+			},
+			"Slots": [
+				{
+					"_name": "mod_mount",
+					"_id": "6859137ffd32036daf80b0db",
+					"_parent": "6857c3a0b4fec9f18e5e5e36",
+					"_props": {
+						"filters": [
+							{
+								"Filter": [
+									"6859137715ae945161f51b1e"
+								],
+								"Shift": 0
+							}
+						]
+					},
+					"_required": false,
+					"_mergeSlotWithChildren": false,
+					"_proto": "55d30c4c4bdc2db4468b457e"
+				}
+			]
+		},
+		"locales": {
+			"en": {
+				"name": "西格绍尔 ROMEO7 1x30 反射式瞄具",
+"shortName": "ROMEO7",
+"description": "一款坚固耐用的全尺寸1倍红点瞄具，专为在恶劣环境下长时间使用而设计。配备清晰的2 MOA红点，电池寿命长达50,000小时，非常适合中距离交战。采用密封防雾外壳，亮度可调，是突击步枪和精确射手配置的可靠选择。"
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": false,
+		"modSlot": [
+			"mod_scope",
+			"mod_scope_000",
+			"mod_scope_001"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+		"addtoTraders": true,
+		"traderId": "SKIER",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 19519,
+				"_tpl": "ROUBLES"
+			}
+		],
+		"loyallevelitems": 2,
+		"fleaPriceRoubles": 19319,
+		"handbookPriceRoubles": 19519,
+		"addtoStaticLootContainers": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 7
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 6
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 5
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 1
+			}
+		]
+	},
+	"685912a257837068f1460c7a": {
+		"itemTplToClone": "5c7d55de2e221644f31bff68",
+		"parentId": "REFLEX_SIGHT",
+		"handbookParentId": "MOD_REFLEXSIGHT",
+		"overrideProperties": {
+			"Prefab": {
+				"path": "Attachments/Optics/scope_all_sig_romeo7_fde.bundle",
+				"rcid": ""
+			},
+			"Slots": [
+				{
+					"_name": "mod_mount",
+					"_id": "68591388ea6b1a7c61455979",
+					"_parent": "685912a257837068f1460c7a",
+					"_props": {
+						"filters": [
+							{
+								"Filter": [
+									"6859137715ae945161f51b1e"
+								],
+								"Shift": 0
+							}
+						]
+					},
+					"_required": false,
+					"_mergeSlotWithChildren": false,
+					"_proto": "55d30c4c4bdc2db4468b457e"
+				}
+			]
+		},
+		"locales": {
+			"en": {
+				"name": "西格绍尔 ROMEO7 1x30 反射式瞄具（FDE色）",
+"shortName": "ROMEO7",
+"description": "一款坚固耐用的全尺寸1倍红点瞄具，专为在恶劣环境下长时间使用而设计。配备清晰的2 MOA红点，电池寿命长达50,000小时，非常适合中距离交战。采用密封防雾外壳，亮度可调，是突击步枪和精确射手配置的可靠选择。<color=#9c8638><b>扁平深土色（Flat Dark Earth）版本。</b></color>"
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": false,
+		"modSlot": [
+			"mod_scope",
+			"mod_scope_000",
+			"mod_scope_001"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+		"addtoTraders": true,
+		"traderId": "SKIER",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 19519,
+				"_tpl": "ROUBLES"
+			}
+		],
+		"loyallevelitems": 2,
+		"fleaPriceRoubles": 19319,
+		"handbookPriceRoubles": 19519,
+		"addtoStaticLootContainers": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 7
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 6
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 5
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 1
+			}
+		]
+	},
+	"6859137715ae945161f51b1e": {
+		"itemTplToClone": "5d123a3cd7ad1a004e476058",
+		"parentId": "MOUNT",
+		"handbookParentId": "MOD_MOUNT",
+		"overrideProperties": {
+			"Prefab": {
+				"path": "Attachments/Optics/scope_mount_sig_romeo7_caps.bundle",
+				"rcid": ""
+			},
+			"Slots": [],
+			"Ergonomics": 1,
+			"Weight": 0.021
+		},
+		"locales": {
+			"en": {
+				"name": "西格绍尔 ROMEO7 防护镜盖",
+"shortName": "ROMEO7 cap.",
+"description": "一套橡胶防护盖，专为保护西格绍尔 ROMEO7 光学瞄具的易损镜片而设计。"
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": false,
+		"modSlot": [],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+		"addtoTraders": true,
+		"traderId": "SKIER",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 1240,
+				"_tpl": "ROUBLES"
+			}
+		],
+		"loyallevelitems": 2,
+		"fleaPriceRoubles": 4361,
+		"handbookPriceRoubles": 2419,
+		"addtoStaticLootContainers": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 7
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 6
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 5
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 1
+			}
+		]
+	},
+	"6858f8db6ed3644b6c11c9a0": {
+		"itemTplToClone": "5a32aa8bc4a2826c6e06d737",
+		"parentId": "REFLEX_SIGHT",
+		"handbookParentId": "MOD_REFLEXSIGHT",
+		"overrideProperties": {
+			"Prefab": {
+				"path": "Attachments/Optics/scope_base_holosun_509t_blk.bundle",
+				"rcid": ""
+			},
+			"Slots": [],
+			"CalibrationDistances": [
+				[
+					50,
+					100,
+					150,
+					200
+				]
+			],
+			"Zooms": [
+				[
+					1,
+					1,
+					1
+				]
+			],
+			"ModesCount": [
+				3
+			],
+			"sightModType": "reflex"
+		},
+		"locales": {
+			"en": {
+				"name": "Holosun HE509T X2 反射式瞄具",
+"shortName": "HE509T",
+"description": "一款紧凑型全封闭反射式瞄具，以其坚固耐用和高度适应性著称。采用钛合金制造并配备密封外壳，HE509T具备出色的环境防护能力。搭载Holosun多分划系统，使用者可在2 MOA红点、32 MOA圆环或两者组合之间切换，非常适合应对不同交战距离的需求。"
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": false,
+		"modSlot": [
+			"mod_scope",
+			"mod_scope_000",
+			"mod_scope_001"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+		"addtoTraders": true,
+		"traderId": "SKIER",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 26482,
+				"_tpl": "ROUBLES"
+			}
+		],
+		"loyallevelitems": 1,
+		"fleaPriceRoubles": 25310,
+		"handbookPriceRoubles": 26482,
+		"addtoStaticLootContainers": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 7
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 6
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 5
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 1
+			}
+		]
+	},
+	"685904bd76b06df2198b2f1b": {
+		"itemTplToClone": "5a32aa8bc4a2826c6e06d737",
+		"parentId": "REFLEX_SIGHT",
+		"handbookParentId": "MOD_REFLEXSIGHT",
+		"overrideProperties": {
+			"Prefab": {
+				"path": "Attachments/Optics/scope_base_holosun_509t_fde.bundle",
+				"rcid": ""
+			},
+			"Slots": [],
+			"CalibrationDistances": [
+				[
+					50,
+					100,
+					150,
+					200
+				]
+			],
+			"Zooms": [
+				[
+					1,
+					1,
+					1
+				]
+			],
+			"ModesCount": [
+				3
+			],
+			"sightModType": "reflex"
+		},
+		"locales": {
+			"en": {
+				"name": "Holosun HE509T X2 反射式瞄具（FDE色）",
+"shortName": "HE509T",
+"description": "一款紧凑型全封闭反射式瞄具，以其坚固耐用和高度适应性著称。采用钛合金制造并配备密封外壳，HE509T具备出色的环境防护能力。搭载Holosun多分划系统，使用者可在2 MOA红点、32 MOA圆环或两者组合之间切换，非常适合应对不同交战距离的需求。"
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": false,
+		"modSlot": [
+			"mod_scope",
+			"mod_scope_000",
+			"mod_scope_001"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+		"addtoTraders": true,
+		"traderId": "SKIER",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 26482,
+				"_tpl": "ROUBLES"
+			}
+		],
+		"loyallevelitems": 1,
+		"fleaPriceRoubles": 25310,
+		"handbookPriceRoubles": 26482,
+		"addtoStaticLootContainers": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 7
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 6
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 5
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 1
+			}
+		]
+	},
+	"6858fa27c104e3493576fd53": {
+		"itemTplToClone": "5a33b2c9c4a282000c5a9511",
+		"parentId": "MOUNT",
+		"handbookParentId": "MOD_MOUNT",
+		"overrideProperties": {
+			"Prefab": {
+				"path": "Attachments/Mounts/mount_all_holosun_he509t.bundle",
+				"rcid": ""
+			},
+			"Slots": [
+				{
+					"_name": "mod_scope",
+					"_id": "6858fa846611295a3f9c18f5",
+					"_parent": "6858fa27c104e3493576fd53",
+					"_props": {
+						"filters": [
+							{
+								"Filter": [
+									"6858f8db6ed3644b6c11c9a0",
+									"685904bd76b06df2198b2f1b"
+								],
+								"Shift": 0
+							}
+						]
+					},
+					"_required": false,
+					"_mergeSlotWithChildren": false,
+					"_proto": "55d30c4c4bdc2db4468b457e"
+				}
+			]
+		},
+		"locales": {
+			"en": {
+				"name": "Holosun HE509T low profile mount",
+				"shortName": "HE509T",
+				"description": "A low-profile mount for installation of the Holosun HE509T series reflex sights on Picatinny and Weaver rails."
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": true,
+		"modSlot": [
+			"mod_scope",
+			"mod_scope_000",
+			"mod_scope_001"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+		"addtoTraders": true,
+		"traderId": "SKIER",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 1852,
+				"_tpl": "ROUBLES"
+			}
+		],
+		"loyallevelitems": 1,
+		"fleaPriceRoubles": 3291,
+		"handbookPriceRoubles": 1852,
+		"addtoStaticLootContainers": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 7
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 6
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 5
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 1
+			}
+		]
+	},
+	"6859411da7ac91f2e4088de4": {
+		"itemTplToClone": "558022b54bdc2dac148b458d",
+		"parentId": "REFLEX_SIGHT",
+		"handbookParentId": "MOD_REFLEXSIGHT",
+		"overrideProperties": {
+			"Prefab": {
+				"path": "Attachments/Optics/scope_all_eotech_exps_3_1.bundle",
+				"rcid": ""
+			},
+			"Zooms": [
+				[
+					1,
+					1
+				]
+			],
+			"ModesCount": [
+				2
+			],
+			"sightModType": "holo",
+			"Slots": [
+				{
+					"_name": "mod_mount",
+					"_id": "685b413d636a57f9f770e583",
+					"_parent": "685b40db60670990eb71ca2d",
+					"_props": {
+						"filters": [
+							{
+								"Filter": [
+									"685c6c973ffb1957dcca18c6",
+									"685c6cfe99d360ee6cbc7985",
+									"685c6ce8c15fc38b32190fa9",
+									"685c6cbbaa9e444cb67c6e7b",
+									"685c6ca10bfdee0262637b4f",
+									"685c980215434eb9d07fee41"
+								],
+								"Shift": 0
+							}
+						]
+					},
+					"_required": false,
+					"_mergeSlotWithChildren": false,
+					"_proto": "55d30c4c4bdc2db4468b457e"
+				},
+				{
+					"_name": "mod_tactical",
+					"_id": "685b413c844db3723159d3ec",
+					"_parent": "685b40db60670990eb71ca2d",
+					"_props": {
+						"filters": [
+							{
+								"Filter": [],
+								"Shift": 0
+							}
+						]
+					},
+					"_required": false,
+					"_mergeSlotWithChildren": false,
+					"_proto": "55d30c4c4bdc2db4468b457e"
+				}
+			]
+		},
+		"locales": {
+			"en": {
+				"name": "EOTech EXPS3-1 全息瞄具",
+"shortName": "EXPS3-1",
+"description": "EOTech EXPS3-1全息瞄具凭借其设计特点，可适配多种武器，即使搭配不可折叠的机械瞄具也能正常使用。具备夜视兼容模式（NV分划），可与夜视设备配合使用。与EXPS3-0的主要区别在于，它采用单个1 MOA红色点状分划，而非传统的点环复合分划。"
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": true,
+		"modSlot": [
+			"mod_scope",
+			"mod_scope_000",
+			"mod_scope_001"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+		"addtoTraders": true,
+		"traderId": "PEACEKEEPER",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 297,
+				"_tpl": "DOLLARS"
+			}
+		],
+		"loyallevelitems": 2,
+		"fleaPriceRoubles": 37503,
+		"handbookPriceRoubles": 38610,
+		"addtoStaticLootContainers": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 7
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 6
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 5
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 1
+			}
+		]
+	},
+	"685d43c384852051ef64e4e8": {
+		"itemTplToClone": "570fd6c2d2720bc6458b457f",
+		"parentId": "REFLEX_SIGHT",
+		"handbookParentId": "MOD_REFLEXSIGHT",
+		"overrideProperties": {
+			"Prefab": {
+				"path": "Attachments/Optics/scope_all_eotech_553_tan.bundle",
+				"rcid": ""
+			},
+			"Zooms": [
+				[
+					1
+				]
+			],
+			"ModesCount": [
+				1
+			],
+			"sightModType": "holo",
+			"Slots": []
+		},
+		"locales": {
+			"en": {
+				"name": "EOTech 553 全息瞄具（FDE色）",
+"shortName": "553",
+"description": "EOTech 553全息瞄具凭借其设计特点，可适配多种武器，即使搭配不可折叠的机械瞄具也能正常使用。具备夜视兼容模式（NV分划），可与夜视设备配合使用。曾被美国特种作战司令部（US SOCOM）用作密闭空间作战的主瞄具。<color=#9c8638><b>扁平深土色（Flat Dark Earth）版本。</b></color>"
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": true,
+		"modSlot": [
+			"mod_scope",
+			"mod_scope_000",
+			"mod_scope_001"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+		"addtoTraders": true,
+		"traderId": "PEACEKEEPER",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 2
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 325,
+				"_tpl": "DOLLARS"
+			}
+		],
+		"loyallevelitems": 3,
+		"fleaPriceRoubles": 29169,
+		"handbookPriceRoubles": 10000,
+		"addtoStaticLootContainers": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 7
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 6
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 5
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 1
+			}
+		]
+	},
+	"68642e0200397ba2b9e4ea9a": {
+		"itemTplToClone": "5b30b0dc5acfc400153b7124",
+		"parentId": "REFLEX_SIGHT",
+		"handbookParentId": "MOD_REFLEXSIGHT",
+		"overrideProperties": {
+			"Prefab": {
+				"path": "Attachments/Optics/scope_base_tasco_propoint_1x42.bundle",
+				"rcid": ""
+			},
+			"Slots": [],
+			"Weight": 0.19,
+			"Ergonomics": -3,
+			"Zooms": [
+				[
+					1,
+					1
+				]
+			],
+			"ModesCount": [
+				2
+			],
+			"sightModType": "reflex"
+		},
+		"locales": {
+			"en": {
+				"name": "Tasco ProPoint 1x42 反射式瞄具",
+"shortName": "ProPoint",
+"description": "一款经济实惠、大视窗的1倍反射式瞄具，专为近距离至中距离快速瞄准而设计。配备明亮的5 MOA红色点状分划和多档亮度调节，外壳采用坚固的铝合金结构。虽然体积比紧凑型瞄具稍大，但ProPoint提供清晰的瞄准视野和可靠的性能。"
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": true,
+		"modSlot": [
+			"mod_scope",
+			"mod_scope_000",
+			"mod_scope_001"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+		"addtoTraders": true,
+		"traderId": "PEACEKEEPER",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 163,
+				"_tpl": "DOLLARS"
+			}
+		],
+		"loyallevelitems": 2,
+		"fleaPriceRoubles": 11598,
+		"handbookPriceRoubles": 8572,
+		"addtoStaticLootContainers": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 7
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 6
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 5
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 1
+			}
+		]
+	},
+	"686b15f7cf5ae78dbd7b950b": {
+		"itemTplToClone": "57adff4f24597737f373b6e6",
+		"parentId": "55818add4bdc2d5b648b456f",
+		"handbookParentId": "5b5f740a86f77447ec5d7706",
+		"overrideProperties": {
+			"Prefab": {
+				"path": "Attachments/Optics/scope_sig_bravo5_5x30.bundle",
+				"rcid": ""
+			},
+			"ConflictingItems": [
+				"55d5f46a4bdc2d1b198b4567"
+			],
+			"Slots": [],
+			"Weight": 1.23,
+			"AimSensitivity": [
+				[
+					0.1625,
+					0.1625
+				]
+			],
+			"CalibrationDistances": [
+				[
+					50,
+					100,
+					150,
+					200,
+					250,
+					300
+				]
+			],
+			"ModesCount": [
+				2
+			],
+			"ZoomSensitivity": 0,
+			"Zooms": [
+				[
+					5,
+					5
+				]
+			],
+			"sightModType": "optic"
+		},
+		"locales": {
+			"en": {
+				"name": "西格绍尔 BRAVO5 5x30 瞄准镜",
+"shortName": "BRAVO5",
+"description": "由西格绍尔设计的BRAVO5 5x30瞄准镜是一款坚固耐用的固定倍率棱镜瞄准镜，提供5倍放大倍率和宽大的30毫米物镜。专为中距离快速瞄准目标而设计，配备带照明功能的马蹄形-点状分划板，并能在强后坐力下保持归零稳定。"
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": true,
+		"modSlot": [
+			"mod_scope",
+			"mod_scope_000",
+			"mod_scope_001"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+		"addtoTraders": true,
+		"traderId": "PEACEKEEPER",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 499,
+				"_tpl": "DOLLARS"
+			}
+		],
+		"loyallevelitems": 3,
+		"fleaPriceRoubles": 61432,
+		"handbookPriceRoubles": 35822,
+		"addtoStaticLootContainers": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 7
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 6
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 5
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 1
+			}
+		]
+	}
+}

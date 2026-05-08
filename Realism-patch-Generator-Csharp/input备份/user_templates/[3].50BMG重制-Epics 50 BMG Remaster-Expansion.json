@@ -1,0 +1,649 @@
+{
+  "687daf1f7353335188000001": {
+    "itemTplToClone": "5fc382c1016cce60e8341b20",
+    "parentId": "5485a8684bdc2da71d8b4567",
+    "handbookParentId": "5b47574386f77428ca22b33b",
+    "overrideProperties": {
+      "ExaminedByDefault": true,
+      "Prefab": {
+        "path": "new_ammo/50_bmg_m1_incendiary.bundle",
+        "rcid": ""
+      },
+      "Caliber": "Caliber127x99",
+      "CanSellOnRagfair": false,
+      "Weight": 0.107,
+      "InitialSpeed": 906,
+      "BulletMassGram": 40,
+      "BulletDiameterMilimeters": 12.7,
+      "StaminaBurnPerDamage": 0.2304,
+      "BallisticCoeficient": 0.622,
+      "Damage": 205,
+      "ammoRec": 20,
+      "ammoAccr": -8,
+      "PenetrationPower": 51,
+      "PenetrationPowerDiviation": 0.03,
+      "ArmorDamage": 1.5,
+      "StackMaxSize": 10,
+      "DurabilityBurnModificator": 1.52,
+      "HeatFactor": 1.05,
+      "RicochetChance": 0.19,
+      "HeavyBleedingDelta": 0.20,
+      "LightBleedingDelta": 0.40,
+      "ExplosionStrength": 1,
+      "HasGrenaderComponent": true,
+      "FragmentType": "66ec2aa6daf127599c0c31f1",
+      "FragmentationChance": 0.70,
+      "FragmentsCount": 2,
+      "MaxExplosionDistance": 0.5,
+      "MinExplosionDistance": 0.1,
+      "MinFragmentsCount": 1
+    },
+    "locales": {
+      "en": {
+        "name": ".50 BMG M1 燃烧弹",
+        "shortName": "M1",
+        "description": "M1 .50 BMG 燃烧弹是早期美军使用的弹药，主要用于引燃易燃目标，特别是飞机油箱。"
+      }
+    },
+    "clearClonedProps": false,
+    "addtoInventorySlots": [],
+    "addtoModSlots": false,
+    "modSlot": [],
+    "ModdableItemWhitelist": [],
+    "ModdableItemBlacklist": [],
+    "fleaPriceRoubles": 1,
+    "handbookPriceRoubles": 2400,
+    "addtoTraders": true,
+    "traderId": "PEACEKEEPER",
+    "traderItems": [
+      {
+        "unlimitedCount": true,
+        "stackObjectsCount": 20
+      }
+    ],
+    "barterScheme": [
+      {
+        "count": 22,
+        "_tpl": "DOLLARS"
+      }
+    ],
+    "loyallevelitems": 3,
+    "addtoBots": false,
+    "addtostaticlootcontainer": false,
+    "StaticLootContainers": [
+      {
+        "ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+        "Probability": 3000
+      },
+      {
+        "ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+        "Probability": 3000
+      },
+      {
+        "ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+        "Probability": 3000
+      },
+      {
+        "ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X5",
+        "Probability": 3000
+      },
+      {
+        "ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+        "Probability": 3000
+      },
+      {
+        "ContainerName": "LOOTCONTAINER_WOODEN_CRATE",
+        "Probability": 3000
+      }
+    ],
+    "masteries": false,
+    "masterySections": [
+      {
+        "Name": "M4",
+        "Templates": [
+          "4b81488c78c8a8ac7d37f9b9"
+        ]
+      }
+    ],
+    "addweaponpreset": false,
+    "weaponpresets": []
+  },
+  "687daf1f7353335188000002": {
+    "itemTplToClone": "5fc382c1016cce60e8341b20",
+    "parentId": "5485a8684bdc2da71d8b4567",
+    "handbookParentId": "5b47574386f77428ca22b33b",
+    "overrideProperties": {
+      "ExaminedByDefault": true,
+      "Prefab": {
+        "path": "new_ammo/50_bmg_m2_ap.bundle",
+        "rcid": ""
+      },
+      "Caliber": "Caliber127x99",
+      "CanSellOnRagfair": false,
+      "Weight": 0.107,
+      "InitialSpeed": 884,
+      "BulletMassGram": 45,
+      "BulletDiameterMilimeters": 12.7,
+      "StaminaBurnPerDamage": 0.2304,
+      "BallisticCoeficient": 0.622,
+      "Damage": 176,
+      "ammoRec": 22,
+      "ammoAccr": -5,
+      "PenetrationPower": 82,
+      "PenetrationPowerDiviation": 0.03,
+      "ArmorDamage": 1.05,
+      "StackMaxSize": 10,
+      "DurabilityBurnModificator": 1.45,
+      "HeatFactor": 1.2,
+      "RicochetChance": 0.16,
+      "HeavyBleedingDelta": 0.10,
+      "LightBleedingDelta": 0.25,
+      "HasGrenaderComponent": false,
+      "FragmentType": "5996f6d686f77467977ba6cc",
+      "FragmentationChance": 0.70,
+      "FragmentsCount": 2
+    },
+    "locales": {
+      "en": {
+        "name": ".50 BMG M2 穿甲弹",
+        "shortName": "M2",
+        "description": "一种钢芯穿甲 .50 口径弹药，专为击穿轻型载具和加固目标而设计。"
+      }
+    },
+    "clearClonedProps": false,
+    "addtoInventorySlots": [],
+    "addtoModSlots": false,
+    "modSlot": [],
+    "ModdableItemWhitelist": [],
+    "ModdableItemBlacklist": [],
+    "fleaPriceRoubles": 1,
+    "handbookPriceRoubles": 4400,
+    "addtoTraders": true,
+    "traderId": "PEACEKEEPER",
+    "traderItems": [
+      {
+        "unlimitedCount": true,
+        "stackObjectsCount": 10
+      }
+    ],
+    "barterScheme": [
+      {
+        "count": 39,
+        "_tpl": "DOLLARS"
+      }
+    ],
+    "loyallevelitems": 4,
+    "addtoBots": false,
+    "addtostaticlootcontainer": false,
+    "StaticLootContainers": [
+      {
+        "ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+        "Probability": 3000
+      },
+      {
+        "ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+        "Probability": 3000
+      },
+      {
+        "ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+        "Probability": 3000
+      },
+      {
+        "ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X5",
+        "Probability": 3000
+      },
+      {
+        "ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+        "Probability": 3000
+      },
+      {
+        "ContainerName": "LOOTCONTAINER_WOODEN_CRATE",
+        "Probability": 3000
+      }
+    ],
+    "masteries": false,
+    "masterySections": [
+      {
+        "Name": "M4",
+        "Templates": [
+          "4b81488c78c8a8ac7d37f9b9"
+        ]
+      }
+    ],
+    "addweaponpreset": false,
+    "weaponpresets": []
+  },
+  "687daf1f7353335188000003": {
+    "itemTplToClone": "5fc382c1016cce60e8341b20",
+    "parentId": "5485a8684bdc2da71d8b4567",
+    "handbookParentId": "5b47574386f77428ca22b33b",
+    "overrideProperties": {
+      "ExaminedByDefault": true,
+      "Prefab": {
+        "path": "new_ammo/50_bmg_m8_api.bundle",
+        "rcid": ""
+      },
+      "Caliber": "Caliber127x99",
+      "CanSellOnRagfair": false,
+      "Weight": 0.107,
+      "InitialSpeed": 906,
+      "BulletMassGram": 43,
+      "BulletDiameterMilimeters": 12.7,
+      "StaminaBurnPerDamage": 0.2304,
+      "BallisticCoeficient": 0.622,
+      "Damage": 181,
+      "ammoRec": 10,
+      "ammoAccr": -18,
+      "PenetrationPower": 82,
+      "PenetrationPowerDiviation": 0.03,
+      "ArmorDamage": 1.5,
+      "StackMaxSize": 10,
+      "DurabilityBurnModificator": 1.52,
+      "HeatFactor": 1.05,
+      "RicochetChance": 0.19,
+      "HeavyBleedingDelta": 0.20,
+      "LightBleedingDelta": 0.40,
+      "ExplosionStrength": 1,
+      "HasGrenaderComponent": true,
+      "FragmentType": "66ec2aa6daf127599c0c31f1",
+      "FragmentationChance": 0.70,
+      "FragmentsCount": 2,
+      "MaxExplosionDistance": 0.5,
+      "MinExplosionDistance": 0.1,
+      "MinFragmentsCount": 1
+    },
+    "locales": {
+      "en": {
+        "name": ".50 BMG M8 穿甲燃烧弹",
+        "shortName": "M8",
+        "description": "一种硬质钢芯燃烧 .50 口径弹药，可在100米距离穿透约25毫米轻型装甲，并在命中时引燃目标。"
+      }
+    },
+    "clearClonedProps": false,
+    "addtoInventorySlots": [],
+    "addtoModSlots": false,
+    "modSlot": [],
+    "ModdableItemWhitelist": [],
+    "ModdableItemBlacklist": [],
+    "fleaPriceRoubles": 1,
+    "handbookPriceRoubles": 3800,
+    "addtoTraders": true,
+    "traderId": "PEACEKEEPER",
+    "traderItems": [
+      {
+        "unlimitedCount": true,
+        "stackObjectsCount": 20
+      }
+    ],
+    "barterScheme": [
+      {
+        "count": 55,
+        "_tpl": "DOLLARS"
+      }
+    ],
+    "loyallevelitems": 4,
+    "addtoBots": false,
+    "addtostaticlootcontainer": false,
+    "StaticLootContainers": [
+      {
+        "ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+        "Probability": 3000
+      },
+      {
+        "ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+        "Probability": 3000
+      },
+      {
+        "ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+        "Probability": 3000
+      },
+      {
+        "ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X5",
+        "Probability": 3000
+      },
+      {
+        "ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+        "Probability": 3000
+      },
+      {
+        "ContainerName": "LOOTCONTAINER_WOODEN_CRATE",
+        "Probability": 3000
+      }
+    ],
+    "masteries": false,
+    "masterySections": [
+      {
+        "Name": "M4",
+        "Templates": [
+          "4b81488c78c8a8ac7d37f9b9"
+        ]
+      }
+    ],
+    "addweaponpreset": false,
+    "weaponpresets": []
+  },
+  "687daf1f7353335188000004": {
+    "itemTplToClone": "5fc382c1016cce60e8341b20",
+    "parentId": "5485a8684bdc2da71d8b4567",
+    "handbookParentId": "5b47574386f77428ca22b33b",
+    "overrideProperties": {
+      "ExaminedByDefault": true,
+      "Prefab": {
+        "path": "new_ammo/50_bmg_m20_apit.bundle",
+        "rcid": ""
+      },
+      "Caliber": "Caliber127x99",
+      "CanSellOnRagfair": false,
+      "Weight": 0.107,
+      "InitialSpeed": 906,
+      "BulletMassGram": 40,
+      "BulletDiameterMilimeters": 12.7,
+      "StaminaBurnPerDamage": 0.2304,
+      "BallisticCoeficient": 0.622,
+      "Damage": 179,
+      "ammoRec": 20,
+      "ammoAccr": -5,
+      "PenetrationPower": 68,
+      "PenetrationPowerDiviation": 0.03,
+      "ArmorDamage": 1.5,
+      "StackMaxSize": 10,
+      "DurabilityBurnModificator": 1.52,
+      "HeatFactor": 1.05,
+      "RicochetChance": 0.19,
+      "HeavyBleedingDelta": 0.20,
+      "LightBleedingDelta": 0.40,
+      "ExplosionStrength": 1,
+      "HasGrenaderComponent": true,
+      "FragmentType": "66ec2aa6daf127599c0c31f1",
+      "FragmentationChance": 0.70,
+      "FragmentsCount": 2,
+      "MaxExplosionDistance": 0.5,
+      "MinExplosionDistance": 0.1,
+      "MinFragmentsCount": 1,
+      "Tracer": true,
+      "TracerColor": "orange"
+    },
+    "locales": {
+      "en": {
+        "name": ".50 BMG M20 穿甲燃烧曳光弹",
+        "shortName": "M20",
+        "description": "一种带燃烧尖端的穿甲曳光弹，可穿透轻型装甲并引燃目标，同时留下明亮的橙红色曳光轨迹便于追踪。"
+      }
+    },
+    "clearClonedProps": false,
+    "addtoInventorySlots": [],
+    "addtoModSlots": false,
+    "modSlot": [],
+    "ModdableItemWhitelist": [],
+    "ModdableItemBlacklist": [],
+    "fleaPriceRoubles": 1,
+    "handbookPriceRoubles": 2800,
+    "addtoTraders": true,
+    "traderId": "PEACEKEEPER",
+    "traderItems": [
+      {
+        "unlimitedCount": true,
+        "stackObjectsCount": 5
+      }
+    ],
+    "barterScheme": [
+      {
+        "count": 33,
+        "_tpl": "DOLLARS"
+      }
+    ],
+    "loyallevelitems": 4,
+    "addtoBots": false,
+    "addtostaticlootcontainer": false,
+    "StaticLootContainers": [
+      {
+        "ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+        "Probability": 3000
+      },
+      {
+        "ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+        "Probability": 3000
+      },
+      {
+        "ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+        "Probability": 3000
+      },
+      {
+        "ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X5",
+        "Probability": 3000
+      },
+      {
+        "ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+        "Probability": 3000
+      },
+      {
+        "ContainerName": "LOOTCONTAINER_WOODEN_CRATE",
+        "Probability": 3000
+      }
+    ],
+    "masteries": false,
+    "masterySections": [
+      {
+        "Name": "M4",
+        "Templates": [
+          "4b81488c78c8a8ac7d37f9b9"
+        ]
+      }
+    ],
+    "addweaponpreset": false,
+    "weaponpresets": []
+  },
+  "687daf1f7353335188000005": {
+    "itemTplToClone": "5fc382c1016cce60e8341b20",
+    "parentId": "5485a8684bdc2da71d8b4567",
+    "handbookParentId": "5b47574386f77428ca22b33b",
+    "overrideProperties": {
+      "ExaminedByDefault": true,
+      "Prefab": {
+        "path": "new_ammo/50_bmg_m48_tracer.bundle",
+        "rcid": ""
+      },
+      "Caliber": "Caliber127x99",
+      "CanSellOnRagfair": false,
+      "Weight": 0.107,
+      "InitialSpeed": 887,
+      "BulletMassGram": 53,
+      "BulletDiameterMilimeters": 12.7,
+      "StaminaBurnPerDamage": 0.2304,
+      "BallisticCoeficient": 0.622,
+      "Damage": 187,
+      "ammoRec": 25,
+      "ammoAccr": -5,
+      "PenetrationPower": 57,
+      "PenetrationPowerDiviation": 0.03,
+      "ArmorDamage": 1,
+      "StackMaxSize": 10,
+      "DurabilityBurnModificator": 1.52,
+      "HeatFactor": 1.05,
+      "RicochetChance": 0.22,
+      "HeavyBleedingDelta": 0.20,
+      "LightBleedingDelta": 0.40,
+      "FragmentationChance": 0.05,
+      "Tracer": true,
+      "TracerColor": "green"
+    },
+    "locales": {
+      "en": {
+        "name": ".50 BMG M48 曳光弹",
+        "shortName": "M48",
+        "description": "带有亮绿色条纹的曳光弹，可轻松目视追踪子弹飞行轨迹。穿透力与标准弹头相当。"
+      }
+    },
+    "clearClonedProps": false,
+    "addtoInventorySlots": [],
+    "addtoModSlots": false,
+    "modSlot": [],
+    "ModdableItemWhitelist": [],
+    "ModdableItemBlacklist": [],
+    "fleaPriceRoubles": 1,
+    "handbookPriceRoubles": 1400,
+    "addtoTraders": true,
+    "traderId": "PEACEKEEPER",
+    "traderItems": [
+      {
+        "unlimitedCount": true,
+        "stackObjectsCount": 120
+      }
+    ],
+    "barterScheme": [
+      {
+        "count": 14,
+        "_tpl": "DOLLARS"
+      }
+    ],
+    "loyallevelitems": 3,
+    "addtoBots": false,
+    "addtostaticlootcontainer": false,
+    "StaticLootContainers": [
+      {
+        "ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+        "Probability": 3000
+      },
+      {
+        "ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+        "Probability": 3000
+      },
+      {
+        "ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+        "Probability": 3000
+      },
+      {
+        "ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X5",
+        "Probability": 3000
+      },
+      {
+        "ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+        "Probability": 3000
+      },
+      {
+        "ContainerName": "LOOTCONTAINER_WOODEN_CRATE",
+        "Probability": 3000
+      }
+    ],
+    "masteries": false,
+    "masterySections": [
+      {
+        "Name": "M4",
+        "Templates": [
+          "4b81488c78c8a8ac7d37f9b9"
+        ]
+      }
+    ],
+    "addweaponpreset": false,
+    "weaponpresets": []
+  },
+  "687daf1f7353335188000006": {
+    "itemTplToClone": "5fc382c1016cce60e8341b20",
+    "parentId": "5485a8684bdc2da71d8b4567",
+    "handbookParentId": "5b47574386f77428ca22b33b",
+    "overrideProperties": {
+      "ExaminedByDefault": true,
+      "Prefab": {
+        "path": "new_ammo/50_bmg_mk211_raufoss.bundle",
+        "rcid": ""
+      },
+      "Caliber": "Caliber127x99",
+      "CanSellOnRagfair": false,
+      "Weight": 0.107,
+      "InitialSpeed": 905,
+      "BulletMassGram": 44,
+      "BulletDiameterMilimeters": 12.7,
+      "StaminaBurnPerDamage": 0.2304,
+      "BallisticCoeficient": 0.622,
+      "Damage": 195,
+      "ammoRec": 15,
+      "ammoAccr": -2,
+      "PenetrationPower": 88,
+      "PenetrationPowerDiviation": 0.03,
+      "ArmorDamage": 3,
+      "StackMaxSize": 10,
+      "DurabilityBurnModificator": 1.61,
+      "HeatFactor": 1.25,
+      "RicochetChance": 0.05,
+      "HeavyBleedingDelta": 0.50,
+      "LightBleedingDelta": 0.70,
+      "ExplosionStrength": 10,
+      "HasGrenaderComponent": true,
+      "FragmentType": "66ec2aa6daf127599c0c31f1",
+      "FragmentationChance": 0.70,
+      "FragmentsCount": 2,
+      "MaxExplosionDistance": 1.2,
+      "MinExplosionDistance": 0.1,
+      "MinFragmentsCount": 4
+    },
+    "locales": {
+      "en": {
+        "name": ".50 BMG Mk211 多用途弹（Raufoss）",
+        "shortName": "Mk211",
+        "description": "一种多功能 .50 口径弹药，集穿甲、爆炸和燃烧效果于一体，旨在穿透轻型装甲并在命中时引爆以造成最大伤害。"
+      }
+    },
+    "clearClonedProps": false,
+    "addtoInventorySlots": [],
+    "addtoModSlots": false,
+    "modSlot": [],
+    "ModdableItemWhitelist": [],
+    "ModdableItemBlacklist": [],
+    "fleaPriceRoubles": 1,
+    "handbookPriceRoubles": 10000,
+    "addtoTraders": true,
+    "traderId": "PEACEKEEPER",
+    "traderItems": [
+      {
+        "unlimitedCount": true,
+        "stackObjectsCount": 5
+      }
+    ],
+    "barterScheme": [
+      {
+        "count": 87,
+        "_tpl": "DOLLARS"
+      }
+    ],
+    "loyallevelitems": 4,
+    "addtoBots": false,
+    "addtostaticlootcontainer": false,
+    "StaticLootContainers": [
+      {
+        "ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+        "Probability": 3000
+      },
+      {
+        "ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+        "Probability": 3000
+      },
+      {
+        "ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+        "Probability": 3000
+      },
+      {
+        "ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X5",
+        "Probability": 3000
+      },
+      {
+        "ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+        "Probability": 3000
+      },
+      {
+        "ContainerName": "LOOTCONTAINER_WOODEN_CRATE",
+        "Probability": 3000
+      }
+    ],
+    "masteries": false,
+    "masterySections": [
+      {
+        "Name": "M4",
+        "Templates": [
+          "4b81488c78c8a8ac7d37f9b9"
+        ]
+      }
+    ],
+    "addweaponpreset": false,
+    "weaponpresets": []
+  }
+}

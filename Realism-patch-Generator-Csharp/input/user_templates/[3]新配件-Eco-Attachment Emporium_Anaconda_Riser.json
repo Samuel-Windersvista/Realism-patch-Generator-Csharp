@@ -1,0 +1,244 @@
+{
+	"68bd7b4d8ce7029b6409b4a2": {
+		"itemTplToClone": "5c064c400db834001d23f468",
+		"parentId": "55818b224bdc2dde698b456f",
+		"handbookParentId": "5b5f755f86f77447ec5d770e",
+		"overrideProperties": {
+			"ExaminedByDefault": true,
+			"Prefab": {
+				"path": "Mods/Anaconda_Riser/anaconda_picatinny_riser.bundle",
+				"rcid": ""
+			},
+			"Weight": 0.085,
+			"Accuracy": 2,
+			"Conflictingitems": [],
+			"Slots": [
+				{
+					"_name": "mod_scope",
+					"_id": "006c68f92a368d4b93703de9",
+					"_parent": "2e681ada9836f6e030080191",
+					"_props": {
+						"filters": [
+							{
+								"Shift": 0,
+								"Filter": [
+									"6165ac8c290d254f5e6b2f6c",
+									"584984812459776a704a82a6",
+									"570fd721d2720bc5458b4596",
+									"57ae0171245977343c27bfcf",
+									"609bab8b455afd752b2e6138",
+									"58d39d3d86f77445bb794ae7",
+									"616554fe50224f204c1da2aa",
+									"615d8d878004cc50514c3233",
+									"577d128124597739d65d0e56",
+									"58d2664f86f7747fec5834f6",
+									"61714b2467085e45ef140b2c",
+									"5b31163c5acfc400153b71cb",
+									"5a33b652c4a28232996e407c",
+									"5a33b2c9c4a282000c5a9511"
+								]
+							}
+						]
+					},
+					"_required": false,
+					"_mergeSlotWithChildren": false,
+					"_proto": "55d30c4c4bdc2db4468b457e"
+				}
+			]
+		},
+		"locales": {
+			"en": {
+				"name": "Anaconda 皮卡汀尼增高座",
+"shortName": "ANACONDA",
+"description": "由Anaconda Arms出品的趣味增高座，专为提升安装低位光学瞄具的步枪及其他武器的瞄准线而设计。采用轻质铝合金制造，兼具耐用性与抗腐蚀性。增高座顶部设有皮卡汀尼导轨，便于快速安装各类瞄具和附件。其流线型设计确保增加的重量极小，是在不牺牲机动性的前提下提升步枪性能的理想选择。"
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": true,
+		"modSlot": [
+			"mod_scope",
+			"mod_scope_000",
+			"mod_scope_001"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+		"fleaPriceRoubles": 14300,
+		"handbookPriceRoubles": 2900,
+		"addtoTraders": true,
+		"traderId": "SKIER",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 3950,
+				"_tpl": "ROUBLES"
+			}
+		],
+		"loyallevelitems": 3,
+		"addtoBots": false,
+		"addtostaticlootcontainer": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 2000
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 2000
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 2000
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X5",
+				"Probability": 2000
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 2000
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WOODEN_CRATE",
+				"Probability": 2000
+			}
+		],
+		"masteries": false,
+		"masterySections": [
+			{
+				"Name": "M4",
+				"Templates": [
+					"4b81488c78c8a8ac7d37f9b9"
+				]
+			}
+		],
+		"addweaponpreset": false,
+		"weaponpresets": []
+	},
+	"68bd7b4d8ce7029b6409b4a3": {
+		"itemTplToClone": "5c064c400db834001d23f468",
+		"parentId": "55818b224bdc2dde698b456f",
+		"handbookParentId": "5b5f755f86f77447ec5d770e",
+		"overrideProperties": {
+			"ExaminedByDefault": true,
+			"Prefab": {
+				"path": "Mods/Anaconda_Riser/anaconda_picatinny_riser_fde.bundle",
+				"rcid": ""
+			},
+			"Weight": 0.085,
+			"Accuracy": 2,
+			"Conflictingitems": [],
+			"Slots": [
+				{
+					"_name": "mod_scope",
+					"_id": "006c68f92a368d4b93703de9",
+					"_parent": "2e681ada9836f6e030080191",
+					"_props": {
+						"filters": [
+							{
+								"Shift": 0,
+								"Filter": [
+									"6165ac8c290d254f5e6b2f6c",
+									"584984812459776a704a82a6",
+									"570fd721d2720bc5458b4596",
+									"57ae0171245977343c27bfcf",
+									"609bab8b455afd752b2e6138",
+									"58d39d3d86f77445bb794ae7",
+									"616554fe50224f204c1da2aa",
+									"615d8d878004cc50514c3233",
+									"577d128124597739d65d0e56",
+									"58d2664f86f7747fec5834f6",
+									"61714b2467085e45ef140b2c",
+									"5b31163c5acfc400153b71cb",
+									"5a33b652c4a28232996e407c",
+									"5a33b2c9c4a282000c5a9511"
+								]
+							}
+						]
+					},
+					"_required": false,
+					"_mergeSlotWithChildren": false,
+					"_proto": "55d30c4c4bdc2db4468b457e"
+				}
+			]
+		},
+		"locales": {
+			"en": {
+				"name": "Anaconda 皮卡汀尼增高座（土狼色）",
+"shortName": "ANACONDA",
+"description": "由 Anaconda Arms 制造的趣味增高座，专为抬高光学瞄具安装位置较低的步枪及其他武器的瞄准线而设计。采用轻质铝合金制造，兼具耐用性与抗腐蚀性。顶部配备皮卡汀尼导轨，便于快速安装各类光学瞄具和配件。其流线型设计确保增加的重量极小，是在不牺牲机动性的前提下提升步枪性能的理想选择。颜色为土狼色（FDE）。"
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": true,
+		"modSlot": [
+			"mod_scope",
+			"mod_scope_000",
+			"mod_scope_001"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+		"fleaPriceRoubles": 14300,
+		"handbookPriceRoubles": 2900,
+		"addtoTraders": true,
+		"traderId": "SKIER",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 3950,
+				"_tpl": "ROUBLES"
+			}
+		],
+		"loyallevelitems": 3,
+		"addtoBots": false,
+		"addtostaticlootcontainer": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 2000
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 2000
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 2000
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X5",
+				"Probability": 2000
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 2000
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WOODEN_CRATE",
+				"Probability": 2000
+			}
+		],
+		"masteries": false,
+		"masterySections": [
+			{
+				"Name": "M4",
+				"Templates": [
+					"4b81488c78c8a8ac7d37f9b9"
+				]
+			}
+		],
+		"addweaponpreset": false,
+		"weaponpresets": []
+	}
+}

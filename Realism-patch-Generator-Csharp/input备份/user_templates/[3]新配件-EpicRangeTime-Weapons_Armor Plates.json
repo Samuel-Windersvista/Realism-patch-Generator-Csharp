@@ -1,0 +1,355 @@
+{
+	"b5223cb4b895fb6a438ac533": {
+		"itemTplToClone": "656fa61e94b480b8a500c0e8",
+		"parentId": "ARMORPLATE",
+		"handbookParentId": "GEAR_COMPONENTS",
+		"overrideProperties": {
+			"ExaminedByDefault": false,
+			"Prefab": {
+				"path": "assets/content/items/equipment/plate_ar500/item_equipment_plate_ar500_new.bundle",
+				"rcid": ""
+			},
+			"Weight": 1,
+			"armorClass": "5",
+			"CanSellOnRagfair": true,
+			"ArmorMaterial": "UHMWPE"
+		},
+		"locales": {
+			"en": {
+				"name": "Hesco 3800C-SA-MC 防弹板",
+				"shortName": "Hesco 3800C",
+				"description": "3800C 装甲板采用聚脲涂层，而标准 3800 装甲板使用 Cordura 覆层。防护等级相同，但防水性更强。3800C 最近被美国海关与边境保护局选为数千名人员的标准配发装甲板。"
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": true,
+		"modSlot": [
+			"Front_plate",
+			"Back_plate"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+		"fleaPriceRoubles": 24250,
+		"handbookPriceRoubles": 48217,
+		"addtoTraders": true,
+		"traderId": "BADGER",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 237,
+				"_tpl": "DOLLARS"
+			}
+		],
+		"loyallevelitems": 2,
+		"addtoBots": false,
+		"addtostaticlootcontainer": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 168
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 168
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 168
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X5",
+				"Probability": 168
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 168
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WOODEN_CRATE",
+				"Probability": 168
+			}
+		],
+		"masteries": false,
+		"masterySections": [
+			{
+				"Name": "M870",
+				"Templates": [
+					"SerbuShotgun"
+				]
+			}
+		],
+		"addweaponpreset": false,
+		"weaponpresets": []
+	},
+	"cf2ab73b0f0c00a0df3852e4": {
+		"itemTplToClone": "656fa61e94b480b8a500c0e8",
+		"parentId": "ARMORPLATE",
+		"handbookParentId": "GEAR_COMPONENTS",
+		"overrideProperties": {
+			"ExaminedByDefault": false,
+			"Prefab": {
+				"path": "assets/content/items/equipment/plate_ar500/item_equipment_plate_ar500_new.bundle",
+				"rcid": ""
+			},
+			"Weight": 2.2,
+			"armorClass": "6",
+			"CanSellOnRagfair": false,
+			"ArmorMaterial": "Ceramic"
+		},
+		"locales": {
+			"en": {
+				"name": "Hesco 4800 防弹板",
+				"shortName": "Hesco 4800",
+				"description": "旗舰级 800 系列旨在在高速、极不稳定的环境中表现出色，提供广泛的防护同时保持机动性。采用新一代材料，800 系列装甲在同类中重量最轻且质量最高。表面采用高耐久包裹和防水涂层，在手感和性能上提供无与伦比的品质。"
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": true,
+		"modSlot": [
+			"Front_plate",
+			"Back_plate"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+		"fleaPriceRoubles": 150000,
+		"handbookPriceRoubles": 96217,
+		"addtoTraders": true,
+		"traderId": "RAGMAN",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 76845,
+				"_tpl": "ROUBLES"
+			}
+		],
+		"loyallevelitems": 3,
+		"addtoBots": false,
+		"addtostaticlootcontainer": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 168
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 168
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 168
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X5",
+				"Probability": 168
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 168
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WOODEN_CRATE",
+				"Probability": 168
+			}
+		],
+		"masteries": false,
+		"masterySections": [
+			{
+				"Name": "M870",
+				"Templates": [
+					"SerbuShotgun"
+				]
+			}
+		],
+		"addweaponpreset": false,
+		"weaponpresets": []
+	},
+	"58c0a16f420c97fe1c3d2e27": {
+		"itemTplToClone": "656fa61e94b480b8a500c0e8",
+		"parentId": "ARMORPLATE",
+		"handbookParentId": "GEAR_COMPONENTS",
+		"overrideProperties": {
+			"ExaminedByDefault": false,
+			"Prefab": {
+				"path": "assets/content/items/equipment/plate_ar500/item_equipment_plate_ar500_new.bundle",
+				"rcid": ""
+			},
+			"Weight": 1.76,
+			"armorClass": "5",
+			"CanSellOnRagfair": false,
+			"ArmorMaterial": "UHMWPE"
+		},
+		"locales": {
+			"en": {
+				"name": "Hesco U211 防弹板",
+				"shortName": "Hesco U211",
+				"description": "HESCO U211 及 200 系列装甲板专为需要隐蔽性的场合设计，兼具低可见性与对特殊威胁的防护。几乎接近于不穿着装甲的感受，采用超低可见性的人体工学设计，提供隐蔽生存能力的极致表现。"
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": true,
+		"modSlot": [
+			"Front_plate",
+			"Back_plate"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+		"fleaPriceRoubles": 84250,
+		"handbookPriceRoubles": 86240,
+		"addtoTraders": true,
+		"traderId": "PEACEKEEPER",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 476,
+				"_tpl": "DOLLARS"
+			}
+		],
+		"loyallevelitems": 2,
+		"addtoBots": false,
+		"addtostaticlootcontainer": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 205
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 205
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 205
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X5",
+				"Probability": 205
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 205
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WOODEN_CRATE",
+				"Probability": 205
+			}
+		],
+		"masteries": false,
+		"masterySections": [
+			{
+				"Name": "M870",
+				"Templates": [
+					"SerbuShotgun"
+				]
+			}
+		],
+		"addweaponpreset": false,
+		"weaponpresets": []
+	},
+	"2aed3f0a15813b3d366fcdb9": {
+		"itemTplToClone": "656fa61e94b480b8a500c0e8",
+		"parentId": "ARMORPLATE",
+		"handbookParentId": "GEAR_COMPONENTS",
+		"overrideProperties": {
+			"ExaminedByDefault": false,
+			"Prefab": {
+				"path": "assets/content/items/equipment/plate_ar500/item_equipment_plate_ar500_new.bundle",
+				"rcid": ""
+			},
+			"Weight": 0.86,
+			"armorClass": "5",
+			"CanSellOnRagfair": false,
+			"ArmorMaterial": "UHMWPE",
+			"speedPenaltyPercent": -1.5
+		},
+		"locales": {
+			"en": {
+				"name": "Tyr Tactical 超低可见性三级防弹板",
+				"shortName": "Tyr ULV",
+				"description": "这款世界级防弹板曾在全球范围内为特战人员与外交人员提供防护。"
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": true,
+		"modSlot": [
+			"Front_plate",
+			"Back_plate"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+		"fleaPriceRoubles": 124250,
+		"handbookPriceRoubles": 86240,
+		"addtoTraders": true,
+		"traderId": "BADGER",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 360,
+				"_tpl": "DOLLARS"
+			}
+		],
+		"loyallevelitems": 4,
+		"addtoBots": false,
+		"addtostaticlootcontainer": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 138
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 138
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 138
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X5",
+				"Probability": 138
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 138
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WOODEN_CRATE",
+				"Probability": 138
+			}
+		],
+		"masteries": false,
+		"masterySections": [
+			{
+				"Name": "M870",
+				"Templates": [
+					"SerbuShotgun"
+				]
+			}
+		],
+		"addweaponpreset": false,
+		"weaponpresets": []
+	}
+}

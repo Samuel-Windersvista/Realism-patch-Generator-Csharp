@@ -1,0 +1,58 @@
+{
+    "66ba297b859e57cf91e38a5d": {
+        "$type": "RealismMod.WeaponMod, RealismMod",
+        "ItemID": "66ba297b859e57cf91e38a5d",
+        "Name": "Magpul MBUS Gen3 flip-up rear sight",
+        "ModType": "sight",
+        "AimSpeed": 2,
+        "Accuracy": 0,
+        "ConflictingItems": [],
+        "Ergonomics": 1,
+        "Weight": 0.036,
+        "VerticalRecoil": 0,
+        "HorizontalRecoil": 0,
+        "LoyaltyLevel": 2
+    },
+    "66ba29d44744d98a4df0073b": {
+        "$type": "RealismMod.WeaponMod, RealismMod",
+        "ItemID": "66ba29d44744d98a4df0073b",
+        "Name": "Magpul MBUS Gen3 flip-up rear sight",
+        "ModType": "sight",
+        "AimSpeed": 1,
+        "Accuracy": 0,
+        "ConflictingItems": [],
+        "Ergonomics": 1,
+        "Weight": 0.036,
+        "VerticalRecoil": 0,
+        "HorizontalRecoil": 0,
+        "LoyaltyLevel": 2
+    },
+    "66ba2a6be18ed84221edd72d": {
+        "$type": "RealismMod.WeaponMod, RealismMod",
+        "ItemID": "66ba2a6be18ed84221edd72d",
+        "Name": "Magpul MBUS Gen3 flip-up front sight",
+        "ModType": "sight",
+        "AimSpeed": 1,
+        "Accuracy": 0,
+        "ConflictingItems": [],
+        "Ergonomics": 0,
+        "Weight": 0.034,
+        "VerticalRecoil": 0,
+        "HorizontalRecoil": 0,
+        "LoyaltyLevel": 2
+    },
+    "66ba2a7583204e25695233c0": {
+        "$type": "RealismMod.WeaponMod, RealismMod",
+        "ItemID": "66ba2a7583204e25695233c0",
+        "Name": "Magpul MBUS Gen3 flip-up front sight",
+        "ModType": "sight",
+        "AimSpeed": 0,
+        "Accuracy": 0,
+        "ConflictingItems": [],
+        "Ergonomics": 1,
+        "Weight": 0.034,
+        "VerticalRecoil": 0,
+        "HorizontalRecoil": 0,
+        "LoyaltyLevel": 2
+    }
+}

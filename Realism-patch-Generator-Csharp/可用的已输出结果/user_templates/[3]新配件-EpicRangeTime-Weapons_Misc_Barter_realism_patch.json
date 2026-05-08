@@ -1,0 +1,72 @@
+{
+    "b7d643dc4b783b2805c743c9": {
+        "$type": "RealismMod.WeaponMod, RealismMod",
+        "ModType": "",
+        "Ergonomics": 0,
+        "Weight": 0.1,
+        "ConflictingItems": [],
+        "LoyaltyLevel": 1,
+        "VerticalRecoil": 0,
+        "HorizontalRecoil": 0,
+        "AimSpeed": 0,
+        "Accuracy": 0,
+        "ItemID": "b7d643dc4b783b2805c743c9",
+        "Name": "9x19 PSO gzh 弹药箱（900发）"
+    },
+    "0554e5da796b8133eb65b389": {
+        "$type": "RealismMod.WeaponMod, RealismMod",
+        "ModType": "",
+        "Ergonomics": 0,
+        "Weight": 0.098,
+        "ConflictingItems": [],
+        "LoyaltyLevel": 1,
+        "VerticalRecoil": 0,
+        "HorizontalRecoil": 0,
+        "AimSpeed": 0,
+        "Accuracy": 0,
+        "ItemID": "0554e5da796b8133eb65b389",
+        "Name": "Tamagotchi 玩具"
+    },
+    "349f9715d8899a1d4ca845c0": {
+        "$type": "RealismMod.WeaponMod, RealismMod",
+        "ModType": "",
+        "Ergonomics": 0,
+        "Weight": 0.14,
+        "ConflictingItems": [],
+        "LoyaltyLevel": 1,
+        "VerticalRecoil": 0,
+        "HorizontalRecoil": 0,
+        "AimSpeed": 0,
+        "Accuracy": 0,
+        "ItemID": "349f9715d8899a1d4ca845c0",
+        "Name": "《星际牛仔》黑胶唱片"
+    },
+    "e44b40d309fa123643258996": {
+        "$type": "RealismMod.WeaponMod, RealismMod",
+        "ModType": "",
+        "Ergonomics": 0,
+        "Weight": 0.14,
+        "ConflictingItems": [],
+        "LoyaltyLevel": 1,
+        "VerticalRecoil": 0,
+        "HorizontalRecoil": 0,
+        "AimSpeed": 0,
+        "Accuracy": 0,
+        "ItemID": "e44b40d309fa123643258996",
+        "Name": "波士顿乐队精选集黑胶唱片"
+    },
+    "42b95b1bf04e5b70d4005d19": {
+        "$type": "RealismMod.WeaponMod, RealismMod",
+        "ModType": "",
+        "Ergonomics": 0,
+        "Weight": 0.391,
+        "ConflictingItems": [],
+        "LoyaltyLevel": 1,
+        "VerticalRecoil": 0,
+        "HorizontalRecoil": 0,
+        "AimSpeed": 0,
+        "Accuracy": 0,
+        "ItemID": "42b95b1bf04e5b70d4005d19",
+        "Name": "索尼 TPS-L2 随身听磁带播放器"
+    }
+}

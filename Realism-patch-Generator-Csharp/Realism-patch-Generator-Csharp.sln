@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RealismPatchGenerator.Cli (1)", "RealismPatchGenerator.Cli (1)", "{DB392EF9-C967-969B-FB2E-A1231708F620}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RealismPatchGenerator.Cli", "RealismPatchGenerator.Cli\RealismPatchGenerator.Cli.csproj", "{8AA40453-DA61-FFEA-460C-DEB3D303C542}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RealismPatchGenerator.Core", "RealismPatchGenerator.Core\RealismPatchGenerator.Core.csproj", "{7C034195-03C5-3273-1219-EFF27F558E56}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RealismPatchGenerator.Gui", "RealismPatchGenerator.Gui\RealismPatchGenerator.Gui.csproj", "{4EB9922E-AD19-AB25-3368-ECD26B968AD2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RealismPatchGenerator.Tests", "RealismPatchGenerator.Tests\RealismPatchGenerator.Tests.csproj", "{ED72EBF7-D36D-7EEF-83B6-458CBB2349A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RealismPatchGenerator.Cli-副本20260325084455", "RealismPatchGenerator.Cli\RealismPatchGenerator.Cli-副本20260325084455.csproj", "{D3CABE0F-1160-C3D9-DC84-4B1787A288D9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8AA40453-DA61-FFEA-460C-DEB3D303C542}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AA40453-DA61-FFEA-460C-DEB3D303C542}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AA40453-DA61-FFEA-460C-DEB3D303C542}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AA40453-DA61-FFEA-460C-DEB3D303C542}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C034195-03C5-3273-1219-EFF27F558E56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C034195-03C5-3273-1219-EFF27F558E56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C034195-03C5-3273-1219-EFF27F558E56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C034195-03C5-3273-1219-EFF27F558E56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EB9922E-AD19-AB25-3368-ECD26B968AD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EB9922E-AD19-AB25-3368-ECD26B968AD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EB9922E-AD19-AB25-3368-ECD26B968AD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EB9922E-AD19-AB25-3368-ECD26B968AD2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED72EBF7-D36D-7EEF-83B6-458CBB2349A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED72EBF7-D36D-7EEF-83B6-458CBB2349A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED72EBF7-D36D-7EEF-83B6-458CBB2349A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED72EBF7-D36D-7EEF-83B6-458CBB2349A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3CABE0F-1160-C3D9-DC84-4B1787A288D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3CABE0F-1160-C3D9-DC84-4B1787A288D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3CABE0F-1160-C3D9-DC84-4B1787A288D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3CABE0F-1160-C3D9-DC84-4B1787A288D9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D3CABE0F-1160-C3D9-DC84-4B1787A288D9} = {DB392EF9-C967-969B-FB2E-A1231708F620}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {37CB2EA1-0ACB-4D7E-9179-05B62FE788BA}
+	EndGlobalSection
+EndGlobal

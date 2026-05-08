@@ -1,0 +1,158 @@
+{
+    "685782ebcb63ccdc073e6c5b": {
+        "itemTplToClone": "5a6b5f868dc32e000a311389",
+        "parentId": "BARREL",
+        "handbookParentId": "MOD_BARREL",
+        "overrideProperties": {
+            "Prefab": {
+                "path": "assets/content/items/mods/barrels/barrel_glock_glock_114mm_9x19_std.bundle",
+                "rcid": ""
+            },
+            "Slots": []
+        },
+        "locales": {
+            "en": {
+                "name": "Glock 22 .40 S&W 114mm barrel",
+                "shortName": "G22",
+                "description": "A standard barrel for the Glock 22 .40 S&W pistol."
+            }
+        },
+        "clearClonedProps": false,
+        "addtoInventorySlots": [],
+        "addtoModSlots": false,
+        "modSlot": [
+            "mod_reciever"
+        ],
+        "ModdableItemWhitelist": [],
+        "ModdableItemBlacklist": [
+            "5a7ae0c351dfba0017554310",
+            "5a7ad74e51dfba0015068f45"
+        ],
+        "addtoTraders": true,
+        "traderId": "MECHANIC",
+        "traderItems": [
+            {
+                "unlimitedCount": true,
+                "stackObjectsCount": 99
+            }
+        ],
+        "barterScheme": [
+            {
+                "count": 14,
+                "_tpl": "EUROS"
+            }
+        ],
+        "loyallevelitems": 2,
+        "fleaPriceRoubles": 8895,
+        "handbookPriceRoubles": 1800,
+        "addtoStaticLootContainers": true,
+        "StaticLootContainers": [
+            {
+                "ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+                "Probability": 7
+            },
+            {
+                "ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+                "Probability": 6
+            },
+            {
+                "ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+                "Probability": 5
+            },
+            {
+                "ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+                "Probability": 1
+            }
+        ]
+    },
+    "685783eaa05975b2c91ca071": {
+        "itemTplToClone": "5a6b5f868dc32e000a311389",
+        "parentId": "BARREL",
+        "handbookParentId": "MOD_BARREL",
+        "overrideProperties": {
+            "Prefab": {
+                "path": "assets/content/items/mods/barrels/barrel_glock_alpha_wolf_114mm_threaded_9x19.bundle",
+                "rcid": ""
+            },
+            "Slots": [
+                {
+                    "_name": "mod_muzzle",
+                    "_id": "685783e647078850a6b2d6a9",
+                    "_parent": "685783eaa05975b2c91ca071",
+                    "_props": {
+                        "filters": [
+                            {
+                                "Shift": 0,
+                                "Filter": [
+                                    "5fc4b992187fea44d52edaa9",
+                                    "5a6b585a8dc32e5a9c28b4f1",
+                                    "5a6b592c8dc32e00094b97bf",
+                                    "5a6b59a08dc32e000b452fb7",
+                                    "68343b29f48104d3a6265db3",
+                                    "68343c10334d72dc0066a8f3"
+                                ]
+                            }
+                        ]
+                    },
+                    "_required": false,
+                    "_mergeSlotWithChildren": false,
+                    "_proto": "55d30c4c4bdc2db4468b457e"
+                }
+            ]
+        },
+        "locales": {
+            "en": {
+                "name": "Glock .40 S&W Lone Wolf AlphaWolf threaded barrel",
+                "shortName": "G AW",
+                "description": "A threaded barrel for .40 S&W pistols of the Glock family. Manufactured by Lone Wolf."
+            }
+        },
+        "clearClonedProps": false,
+        "addtoInventorySlots": [],
+        "addtoModSlots": false,
+        "modSlot": [
+            "mod_reciever"
+        ],
+        "ModdableItemWhitelist": [],
+        "ModdableItemBlacklist": [
+            "5a7ae0c351dfba0017554310",
+            "5a7ad74e51dfba0015068f45"
+        ],
+        "addtoTraders": true,
+        "traderId": "MECHANIC",
+        "traderItems": [
+            {
+                "unlimitedCount": true,
+                "stackObjectsCount": 99
+            }
+        ],
+        "barterScheme": [
+            {
+                "count": 109,
+                "_tpl": "EUROS"
+            }
+        ],
+        "loyallevelitems": 2,
+        "fleaPriceRoubles": 10572,
+        "handbookPriceRoubles": 16450,
+        "addtoStaticLootContainers": true,
+        "StaticLootContainers": [
+            {
+                "ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+                "Probability": 7
+            },
+            {
+                "ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+                "Probability": 6
+            },
+            {
+                "ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+                "Probability": 5
+            },
+            {
+                "ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+                "Probability": 1
+            }
+        ]
+    }
+}

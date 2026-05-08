@@ -1,0 +1,16 @@
+{
+    "67cda57f8f59300db5c0ec5b": {
+        "ItemToClone": "GRENADELAUNCHER_FLARE",
+        "OverrideProperties": {},
+        "LocalePush": {
+            "name": "特种白色信号弹（后勤处）",
+"shortName": "SWF",
+"description": "一种用于向后勤处发出信号的特种白色信号弹。一旦发射，他们将派出快速反应部队（QRF）前来营救你。"
+        },
+        "Handbook": {
+            "HandbookParent": "SpecialWeapons",
+            "HandbookPrice": 499999
+        },
+        "CloneToFilters": true
+    }
+}

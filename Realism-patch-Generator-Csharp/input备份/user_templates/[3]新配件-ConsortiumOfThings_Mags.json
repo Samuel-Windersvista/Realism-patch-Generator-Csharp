@@ -1,0 +1,1035 @@
+{
+    "685c83e3b9ee925a05b52461": {
+		"itemTplToClone": "5d1340cad7ad1a0b0b249869",
+		"parentId": "MAGAZINE",
+		"handbookParentId": "MOD_MAGAZINE",
+		"overrideProperties": {
+			"Prefab": {
+				"path": "Attachments/Mags/mag_stanag_hk_mr556_pmag_blk.bundle",
+				"rcid": ""
+			},
+			"ConflictingItems": [],
+			"ExaminedByDefault": true,
+			"InsuranceDisabled": false,
+			"Ergonomics": -2.5,
+			"CanSellOnRagfair": true,
+			"Height": 2,
+			"CheckOverride": 1,
+			"CheckTimeModifier": -20,
+			"VisibleAmmoRangesString": "1-1;18-30",
+			"Cartridges": [
+				{
+					"_name": "cartridges",
+					"_id": "685c83e55ab0834a9cc5d2b0",
+					"_parent": "685c83e3b9ee925a05b52461",
+					"_max_count": 30,
+					"_props": {
+						"filters": [
+							{
+                                "Filter": [
+                                    "59e6920f86f77411d82aa167",
+                                    "59e6927d86f77411da468256",
+                                    "54527a984bdc2d4e668b4567",
+                                    "54527ac44bdc2d36668b4567",
+                                    "59e68f6f86f7746c9f75e846",
+                                    "59e6906286f7746c9f75e847",
+                                    "59e690b686f7746c9f75e848",
+                                    "59e6918f86f7746c9f75e849",
+                                    "60194943740c5d77f6705eea",
+                                    "601949593ae8f707c4608daa",
+                                    "5c0d5ae286f7741e46554302",
+                                    "5fbe3ffdf8b6a877a729ea82",
+                                    "5fd20ff893a8961fc660a954",
+                                    "619636be6db0f2477964e710",
+                                    "6196364158ef8c428c287d9f",
+                                    "6196365d58ef8c428c287da1",
+                                    "64b8725c4b75259c590fa899"
+                                ]
+							}
+						]
+					},
+					"_proto": "5748538b2459770af276a261"
+				}
+			]
+		},
+		"locales": {
+			"en": {
+				"name": "AR-15 5.56x45 HK MR556 PMAG Gen3 STANAG 30-round magazine",
+				"shortName": "MR556",
+				"description": "A durable 30-round polymer STANAG magazine designed by Magpul for the HK MR556 and compatible 5.56x45 AR-15 platforms. Features an anti-tilt follower, reinforced feed lips, and a textured body for reliable handling and feeding in harsh conditions. Trusted by military and PMC operators for its lightweight build and field-proven reliability."
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": true,
+		"modSlot": [
+			"mod_magazine"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+        "addtoTraders": true,
+		"traderId": "MECHANIC",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 4
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 4065,
+				"_tpl": "ROUBLES"
+			}
+		],
+		"loyallevelitems": 4,
+		"fleaPriceRoubles": 48372,
+		"handbookPriceRoubles": 4065,
+		"addtoStaticLootContainers": true,
+		"addtoragfair": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 7
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 6
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 5
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 1
+			}
+		]
+	},
+    "685c83ee6a8af2446b13f814": {
+		"itemTplToClone": "5d1340cad7ad1a0b0b249869",
+		"parentId": "MAGAZINE",
+		"handbookParentId": "MOD_MAGAZINE",
+		"overrideProperties": {
+			"Prefab": {
+				"path": "Attachments/Mags/mag_stanag_hk_mr556_pmag_fde.bundle",
+				"rcid": ""
+			},
+			"ConflictingItems": [],
+			"ExaminedByDefault": true,
+			"InsuranceDisabled": false,
+			"Ergonomics": -2.5,
+			"CanSellOnRagfair": true,
+			"Height": 2,
+			"CheckOverride": 1,
+			"CheckTimeModifier": -20,
+			"VisibleAmmoRangesString": "1-1;18-30",
+			"Cartridges": [
+				{
+					"_name": "cartridges",
+					"_id": "685c83f11ede121d5c451787",
+					"_parent": "685c83ee6a8af2446b13f814",
+					"_max_count": 30,
+					"_props": {
+						"filters": [
+							{
+                                "Filter": [
+                                    "59e6920f86f77411d82aa167",
+                                    "59e6927d86f77411da468256",
+                                    "54527a984bdc2d4e668b4567",
+                                    "54527ac44bdc2d36668b4567",
+                                    "59e68f6f86f7746c9f75e846",
+                                    "59e6906286f7746c9f75e847",
+                                    "59e690b686f7746c9f75e848",
+                                    "59e6918f86f7746c9f75e849",
+                                    "60194943740c5d77f6705eea",
+                                    "601949593ae8f707c4608daa",
+                                    "5c0d5ae286f7741e46554302",
+                                    "5fbe3ffdf8b6a877a729ea82",
+                                    "5fd20ff893a8961fc660a954",
+                                    "619636be6db0f2477964e710",
+                                    "6196364158ef8c428c287d9f",
+                                    "6196365d58ef8c428c287da1",
+                                    "64b8725c4b75259c590fa899"
+                                ]
+							}
+						]
+					},
+					"_proto": "5748538b2459770af276a261"
+				}
+			]
+		},
+		"locales": {
+			"en": {
+				"name": "AR-15 5.56x45 HK MR556 PMAG Gen3 STANAG 30-round magazine (FDE)",
+				"shortName": "MR556",
+				"description": "A durable 30-round polymer STANAG magazine designed by Magpul for the HK MR556 and compatible 5.56x45 AR-15 platforms. Features an anti-tilt follower, reinforced feed lips, and a textured body for reliable handling and feeding in harsh conditions. Trusted by military and PMC operators for its lightweight build and field-proven reliability. <color=#9c8638><b>Flat Dark Earth version.</b></color>"
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": true,
+		"modSlot": [
+			"mod_magazine"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+        "addtoTraders": true,
+		"traderId": "MECHANIC",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 4
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 4065,
+				"_tpl": "ROUBLES"
+			}
+		],
+		"loyallevelitems": 4,
+		"fleaPriceRoubles": 48372,
+		"handbookPriceRoubles": 4065,
+		"addtoStaticLootContainers": true,
+		"addtoragfair": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 7
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 6
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 5
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 1
+			}
+		]
+	},
+    "685c8415ed68f153c9bcf5ff": {
+		"itemTplToClone": "5d1340cad7ad1a0b0b249869",
+		"parentId": "MAGAZINE",
+		"handbookParentId": "MOD_MAGAZINE",
+		"overrideProperties": {
+			"Prefab": {
+				"path": "Attachments/Mags/mag_stanag_hk_mr556_pmag_sand.bundle",
+				"rcid": ""
+			},
+			"ConflictingItems": [],
+			"ExaminedByDefault": true,
+			"InsuranceDisabled": false,
+			"Ergonomics": -2.5,
+			"CanSellOnRagfair": true,
+			"Height": 2,
+			"CheckOverride": 1,
+			"CheckTimeModifier": -20,
+			"VisibleAmmoRangesString": "1-1;18-30",
+			"Cartridges": [
+				{
+					"_name": "cartridges",
+					"_id": "685c8417c509a1b966f4bb27",
+					"_parent": "685c8415ed68f153c9bcf5ff",
+					"_max_count": 30,
+					"_props": {
+						"filters": [
+							{
+                                "Filter": [
+                                    "59e6920f86f77411d82aa167",
+                                    "59e6927d86f77411da468256",
+                                    "54527a984bdc2d4e668b4567",
+                                    "54527ac44bdc2d36668b4567",
+                                    "59e68f6f86f7746c9f75e846",
+                                    "59e6906286f7746c9f75e847",
+                                    "59e690b686f7746c9f75e848",
+                                    "59e6918f86f7746c9f75e849",
+                                    "60194943740c5d77f6705eea",
+                                    "601949593ae8f707c4608daa",
+                                    "5c0d5ae286f7741e46554302",
+                                    "5fbe3ffdf8b6a877a729ea82",
+                                    "5fd20ff893a8961fc660a954",
+                                    "619636be6db0f2477964e710",
+                                    "6196364158ef8c428c287d9f",
+                                    "6196365d58ef8c428c287da1",
+                                    "64b8725c4b75259c590fa899"
+                                ]
+							}
+						]
+					},
+					"_proto": "5748538b2459770af276a261"
+				}
+			]
+		},
+		"locales": {
+			"en": {
+				"name": "AR-15 5.56x45 HK MR556 PMAG Gen3 STANAG 30-round magazine (Sand)",
+				"shortName": "MR556",
+				"description": "A durable 30-round polymer STANAG magazine designed by Magpul for the HK MR556 and compatible 5.56x45 AR-15 platforms. Features an anti-tilt follower, reinforced feed lips, and a textured body for reliable handling and feeding in harsh conditions. Trusted by military and PMC operators for its lightweight build and field-proven reliability. <color=#d19432><b>Sand version.</b></color>"
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": true,
+		"modSlot": [
+			"mod_magazine"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+        "addtoTraders": true,
+		"traderId": "MECHANIC",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 4
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 4065,
+				"_tpl": "ROUBLES"
+			}
+		],
+		"loyallevelitems": 4,
+		"fleaPriceRoubles": 48372,
+		"handbookPriceRoubles": 4065,
+		"addtoStaticLootContainers": true,
+		"addtoragfair": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 7
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 6
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 5
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 1
+			}
+		]
+	},
+	"685ea2d7d361ce968d776a61": {
+		"itemTplToClone": "5d1340cad7ad1a0b0b249869",
+		"parentId": "MAGAZINE",
+		"handbookParentId": "MOD_MAGAZINE",
+		"overrideProperties": {
+			"Prefab": {
+				"path": "Attachments/Mags/mag_ar15_hexmag_blk.bundle",
+				"rcid": ""
+			},
+			"ConflictingItems": [],
+			"ExaminedByDefault": true,
+			"InsuranceDisabled": false,
+			"MalfunctionChange": 0.07,
+			"Ergonomics": -4,
+			"CanSellOnRagfair": true,
+			"Height": 2,
+			"CheckOverride": 1,
+			"CheckTimeModifier": -30,
+			"VisibleAmmoRangesString": "1-3",
+			"Cartridges": [
+				{
+					"_name": "cartridges",
+					"_id": "685ea2d9731c694010d5df98",
+					"_parent": "685ea2d7d361ce968d776a61",
+					"_max_count": 30,
+					"_props": {
+						"filters": [
+							{
+                                "Filter": [
+                                    "59e6920f86f77411d82aa167",
+                                    "59e6927d86f77411da468256",
+                                    "54527a984bdc2d4e668b4567",
+                                    "54527ac44bdc2d36668b4567",
+                                    "59e68f6f86f7746c9f75e846",
+                                    "59e6906286f7746c9f75e847",
+                                    "59e690b686f7746c9f75e848",
+                                    "59e6918f86f7746c9f75e849",
+                                    "60194943740c5d77f6705eea",
+                                    "601949593ae8f707c4608daa",
+                                    "5c0d5ae286f7741e46554302",
+                                    "5fbe3ffdf8b6a877a729ea82",
+                                    "5fd20ff893a8961fc660a954",
+                                    "619636be6db0f2477964e710",
+                                    "6196364158ef8c428c287d9f",
+                                    "6196365d58ef8c428c287da1",
+                                    "64b8725c4b75259c590fa899"
+                                ]
+							}
+						]
+					},
+					"_proto": "5748538b2459770af276a261"
+				}
+			]
+		},
+		"locales": {
+			"en": {
+				"name": "AR-15 5.56x45 HEXMAG Series 2 PMAG 30-round magazine",
+				"shortName": "HEXMAG",
+				"description": "A Lightweight polymer magazine with a signature hex-pattern grip for improved handling. Holds 30 rounds of 5.56x45 and features an anti-tilt follower and reinforced feed lips."
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": true,
+		"modSlot": [
+			"mod_magazine"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+        "addtoTraders": true,
+		"traderId": "MECHANIC",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 4
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 3582,
+				"_tpl": "ROUBLES"
+			}
+		],
+		"loyallevelitems": 3,
+		"fleaPriceRoubles": 12459,
+		"handbookPriceRoubles": 2502,
+		"addtoStaticLootContainers": true,
+		"addtoragfair": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 7
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 6
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 5
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 1
+			}
+		]
+	},
+	"685ea424ae29ce869f15365a": {
+		"itemTplToClone": "5d1340cad7ad1a0b0b249869",
+		"parentId": "MAGAZINE",
+		"handbookParentId": "MOD_MAGAZINE",
+		"overrideProperties": {
+			"Prefab": {
+				"path": "Attachments/Mags/mag_ar15_hexmag_fde.bundle",
+				"rcid": ""
+			},
+			"ConflictingItems": [],
+			"ExaminedByDefault": true,
+			"InsuranceDisabled": false,
+			"MalfunctionChange": 0.07,
+			"Ergonomics": -4,
+			"CanSellOnRagfair": true,
+			"Height": 2,
+			"CheckOverride": 1,
+			"CheckTimeModifier": -30,
+			"VisibleAmmoRangesString": "1-3",
+			"Cartridges": [
+				{
+					"_name": "cartridges",
+					"_id": "685ea4284c5821b14b2bb809",
+					"_parent": "685ea424ae29ce869f15365a",
+					"_max_count": 30,
+					"_props": {
+						"filters": [
+							{
+                                "Filter": [
+                                    "59e6920f86f77411d82aa167",
+                                    "59e6927d86f77411da468256",
+                                    "54527a984bdc2d4e668b4567",
+                                    "54527ac44bdc2d36668b4567",
+                                    "59e68f6f86f7746c9f75e846",
+                                    "59e6906286f7746c9f75e847",
+                                    "59e690b686f7746c9f75e848",
+                                    "59e6918f86f7746c9f75e849",
+                                    "60194943740c5d77f6705eea",
+                                    "601949593ae8f707c4608daa",
+                                    "5c0d5ae286f7741e46554302",
+                                    "5fbe3ffdf8b6a877a729ea82",
+                                    "5fd20ff893a8961fc660a954",
+                                    "619636be6db0f2477964e710",
+                                    "6196364158ef8c428c287d9f",
+                                    "6196365d58ef8c428c287da1",
+                                    "64b8725c4b75259c590fa899"
+                                ]
+							}
+						]
+					},
+					"_proto": "5748538b2459770af276a261"
+				}
+			]
+		},
+		"locales": {
+			"en": {
+				"name": "AR-15 5.56x45 HEXMAG Series 2 PMAG 30-round magazine (FDE)",
+				"shortName": "HEXMAG",
+				"description": "A Lightweight polymer magazine with a signature hex-pattern grip for improved handling. Holds 30 rounds of 5.56x45 and features an anti-tilt follower and reinforced feed lips.<color=#9c8638><b>Flat Dark Earth version.</b></color>"
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": true,
+		"modSlot": [
+			"mod_magazine"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+        "addtoTraders": true,
+		"traderId": "MECHANIC",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 4
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 3582,
+				"_tpl": "ROUBLES"
+			}
+		],
+		"loyallevelitems": 3,
+		"fleaPriceRoubles": 12459,
+		"handbookPriceRoubles": 2502,
+		"addtoStaticLootContainers": true,
+		"addtoragfair": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 7
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 6
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 5
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 1
+			}
+		]
+	},
+	"685ea5774f566619e928fd4c": {
+		"itemTplToClone": "5d1340cad7ad1a0b0b249869",
+		"parentId": "MAGAZINE",
+		"handbookParentId": "MOD_MAGAZINE",
+		"overrideProperties": {
+			"Prefab": {
+				"path": "Attachments/Mags/mag_strike_industries_33_blk.bundle",
+				"rcid": ""
+			},
+			"ConflictingItems": [],
+			"ExaminedByDefault": true,
+			"InsuranceDisabled": false,
+			"Weight": 0.15,
+			"MalfunctionChange": 0.07,
+			"Ergonomics": -4,
+			"CanSellOnRagfair": true,
+			"Height": 2,
+			"CheckOverride": 1,
+			"CheckTimeModifier": -12,
+			"VisibleAmmoRangesString": "1-3",
+			"Cartridges": [
+				{
+					"_name": "cartridges",
+					"_id": "685ea5794a60d887fd408ab4",
+					"_parent": "685ea5774f566619e928fd4c",
+					"_max_count": 33,
+					"_props": {
+						"filters": [
+							{
+                                "Filter": [
+                                    "59e6920f86f77411d82aa167",
+                                    "59e6927d86f77411da468256",
+                                    "54527a984bdc2d4e668b4567",
+                                    "54527ac44bdc2d36668b4567",
+                                    "59e68f6f86f7746c9f75e846",
+                                    "59e6906286f7746c9f75e847",
+                                    "59e690b686f7746c9f75e848",
+                                    "59e6918f86f7746c9f75e849",
+                                    "60194943740c5d77f6705eea",
+                                    "601949593ae8f707c4608daa",
+                                    "5c0d5ae286f7741e46554302",
+                                    "5fbe3ffdf8b6a877a729ea82",
+                                    "5fd20ff893a8961fc660a954",
+                                    "619636be6db0f2477964e710",
+                                    "6196364158ef8c428c287d9f",
+                                    "6196365d58ef8c428c287da1",
+                                    "64b8725c4b75259c590fa899"
+                                ]
+							}
+						]
+					},
+					"_proto": "5748538b2459770af276a261"
+				}
+			]
+		},
+		"locales": {
+			"en": {
+				"name": "AR-15 5.56x45 Strike Industries PMAG 33-round magazine",
+				"shortName": "Strike",
+				"description": "Extended-capacity polymer magazine holding 33 rounds of 5.56x45. Built with enhanced grip texture, anti-tilt follower, and reinforced internals for smooth feeding. Offers increased firepower over standard mags without excessive bulk. Manufactured by Strike Industries."
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": true,
+		"modSlot": [
+			"mod_magazine"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+        "addtoTraders": true,
+		"traderId": "PEACEKEEPER",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 4
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 45,
+				"_tpl": "DOLLARS"
+			}
+		],
+		"loyallevelitems": 4,
+		"fleaPriceRoubles": 34928,
+		"handbookPriceRoubles": 5631,
+		"addtoStaticLootContainers": true,
+		"addtoragfair": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 7
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 6
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 5
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 1
+			}
+		]
+	},
+	"685ea58fd46519c32d440109": {
+		"itemTplToClone": "5d1340cad7ad1a0b0b249869",
+		"parentId": "MAGAZINE",
+		"handbookParentId": "MOD_MAGAZINE",
+		"overrideProperties": {
+			"Prefab": {
+				"path": "Attachments/Mags/mag_strike_industries_33_fde.bundle",
+				"rcid": ""
+			},
+			"ConflictingItems": [],
+			"ExaminedByDefault": true,
+			"InsuranceDisabled": false,
+			"Weight": 0.15,
+			"MalfunctionChange": 0.07,
+			"Ergonomics": -4,
+			"CanSellOnRagfair": true,
+			"Height": 2,
+			"CheckOverride": 1,
+			"CheckTimeModifier": -12,
+			"VisibleAmmoRangesString": "1-3",
+			"Cartridges": [
+				{
+					"_name": "cartridges",
+					"_id": "685ea592f855fc3791c93f9a",
+					"_parent": "685ea58fd46519c32d440109",
+					"_max_count": 33,
+					"_props": {
+						"filters": [
+							{
+                                "Filter": [
+                                    "59e6920f86f77411d82aa167",
+                                    "59e6927d86f77411da468256",
+                                    "54527a984bdc2d4e668b4567",
+                                    "54527ac44bdc2d36668b4567",
+                                    "59e68f6f86f7746c9f75e846",
+                                    "59e6906286f7746c9f75e847",
+                                    "59e690b686f7746c9f75e848",
+                                    "59e6918f86f7746c9f75e849",
+                                    "60194943740c5d77f6705eea",
+                                    "601949593ae8f707c4608daa",
+                                    "5c0d5ae286f7741e46554302",
+                                    "5fbe3ffdf8b6a877a729ea82",
+                                    "5fd20ff893a8961fc660a954",
+                                    "619636be6db0f2477964e710",
+                                    "6196364158ef8c428c287d9f",
+                                    "6196365d58ef8c428c287da1",
+                                    "64b8725c4b75259c590fa899"
+                                ]
+							}
+						]
+					},
+					"_proto": "5748538b2459770af276a261"
+				}
+			]
+		},
+		"locales": {
+			"en": {
+				"name": "AR-15 5.56x45 Strike Industries PMAG 33-round magazine (FDE)",
+				"shortName": "Strike",
+				"description": "Extended-capacity polymer magazine holding 33 rounds of 5.56x45. Built with enhanced grip texture, anti-tilt follower, and reinforced internals for smooth feeding. Offers increased firepower over standard mags without excessive bulk. Manufactured by Strike Industries. <color=#9c8638><b>Flat Dark Earth version.</b></color>"
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": true,
+		"modSlot": [
+			"mod_magazine"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+        "addtoTraders": true,
+		"traderId": "PEACEKEEPER",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 4
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 45,
+				"_tpl": "DOLLARS"
+			}
+		],
+		"loyallevelitems": 4,
+		"fleaPriceRoubles": 34928,
+		"handbookPriceRoubles": 5631,
+		"addtoStaticLootContainers": true,
+		"addtoragfair": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 7
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 6
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 5
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 1
+			}
+		]
+	},
+	"686693bfa7e7678c13d94dcd": {
+		"itemTplToClone": "55d480c04bdc2d1d4e8b456a",
+		"parentId": "MAGAZINE",
+		"handbookParentId": "MOD_MAGAZINE",
+		"overrideProperties": {
+			"Prefab": {
+				"path": "Attachments/Mags/mag_ak74_6l23_window_blk.bundle",
+				"rcid": ""
+			},
+			"ConflictingItems": [],
+			"ExaminedByDefault": true,
+			"InsuranceDisabled": false,
+			"Ergonomics": -3,
+			"CanSellOnRagfair": true,
+			"Height": 2,
+			"VisibleAmmoRangesString": "1-4;8-30",
+			"magAnimationIndex": 4,
+			"CheckOverride": 1
+		},
+		"locales": {
+			"en": {
+				"name": "AK-74 5.45x39 6L23 modified windowed 30-round magazine",
+				"shortName": "6L23",
+				"description": "A 30-round polymer Izhmash 6L23 magazine for 5.45x39 ammo, for AK-74 and compatible systems. This mag has been hastily modified to cut a viewing port into the side of the magazine."
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": true,
+		"modSlot": [
+			"mod_magazine"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+        "addtoTraders": true,
+		"traderId": "PRAPOR",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 3
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 3572,
+				"_tpl": "ROUBLES"
+			}
+		],
+		"loyallevelitems": 2,
+		"fleaPriceRoubles": 17482,
+		"handbookPriceRoubles": 1999,
+		"addtoStaticLootContainers": true,
+		"addtoragfair": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 7
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 6
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 5
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 1
+			}
+		]
+	},
+	"6866948c33d189a854f4593c": {
+		"itemTplToClone": "55d480c04bdc2d1d4e8b456a",
+		"parentId": "MAGAZINE",
+		"handbookParentId": "MOD_MAGAZINE",
+		"overrideProperties": {
+			"Prefab": {
+				"path": "Attachments/Mags/mag_ak74_6l23_window_plum.bundle",
+				"rcid": ""
+			},
+			"ConflictingItems": [],
+			"ExaminedByDefault": true,
+			"InsuranceDisabled": false,
+			"Ergonomics": -3,
+			"CanSellOnRagfair": true,
+			"Height": 2,
+			"VisibleAmmoRangesString": "1-30",
+			"magAnimationIndex": 4,
+			"CheckOverride": 1
+		},
+		"locales": {
+			"en": {
+				"name": "AK-74 5.45x39 6L23 modified windowed 30-round magazine (Plum)",
+				"shortName": "6L23",
+				"description": "A 30-round polymer Izhmash 6L23 magazine for 5.45x39 ammo, for AK-74 and compatible systems. This mag has been hastily modified to cut a viewing port into the side of the magazine."
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": true,
+		"modSlot": [
+			"mod_magazine"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+        "addtoTraders": true,
+		"traderId": "PRAPOR",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 3
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 3572,
+				"_tpl": "ROUBLES"
+			}
+		],
+		"loyallevelitems": 2,
+		"fleaPriceRoubles": 17482,
+		"handbookPriceRoubles": 1999,
+		"addtoStaticLootContainers": true,
+		"addtoragfair": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 7
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 6
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 5
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 1
+			}
+		]
+	},
+	"6867206a980fcf4a475d4678": {
+		"itemTplToClone": "64b9cf0ac12b9c38db26923a",
+		"parentId": "MAGAZINE",
+		"handbookParentId": "MOD_MAGAZINE",
+		"overrideProperties": {
+			"Prefab": {
+				"path": "Attachments/Mags/mag_akm_20.bundle",
+				"rcid": ""
+			},
+			"ConflictingItems": [],
+			"ExaminedByDefault": true,
+			"InsuranceDisabled": false,
+			"Ergonomics": -1,
+			"CanSellOnRagfair": true,
+			"Height": 2,
+			"VisibleAmmoRangesString": "1-20",
+			"CheckOverride": 1
+		},
+		"locales": {
+			"en": {
+				"name": "AK 7.62x39 Hungarian \"Tanker\" 20-round magazine",
+				"shortName": "Tanker",
+				"description": "A 20-round steel magazine for the AK-47/AKM series of rifles, manufactured for Hungarian Tank crews. This mag has been hastily modified to cut a viewing port into the side of the magazine."
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": true,
+		"modSlot": [
+			"mod_magazine"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+        "addtoTraders": true,
+		"traderId": "PRAPOR",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 6
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 1172,
+				"_tpl": "ROUBLES"
+			}
+		],
+		"loyallevelitems": 1,
+		"fleaPriceRoubles": 3296,
+		"handbookPriceRoubles": 872,
+		"addtoStaticLootContainers": true,
+		"addtoragfair": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 7
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 6
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 5
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 1
+			}
+		]
+	},
+	"6867211462ddc1942b59637b": {
+		"itemTplToClone": "59d625f086f774661516605d",
+		"parentId": "MAGAZINE",
+		"handbookParentId": "MOD_MAGAZINE",
+		"overrideProperties": {
+			"Prefab": {
+				"path": "Attachments/Mags/mag_akm_30.bundle",
+				"rcid": ""
+			},
+			"ConflictingItems": [],
+			"ExaminedByDefault": true,
+			"InsuranceDisabled": false,
+			"CanSellOnRagfair": true,
+			"Height": 2,
+			"VisibleAmmoRangesString": "1-30",
+			"CheckOverride": 1
+		},
+		"locales": {
+			"en": {
+				"name": "AK 7.62x39 modified windowed 30-round magazine (issued '55 or later)",
+				"shortName": "AK55",
+				"description": "A standard 30-round metal magazine for 7.62x39 AK and compatible weapons from 1955 onward. Can also be supplied with .366 TKM ammo for use with the corresponding caliber AK-compatible weapons. This mag has been hastily modified to cut a viewing port into the side of the magazine."
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": true,
+		"modSlot": [
+			"mod_magazine"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+        "addtoTraders": true,
+		"traderId": "PRAPOR",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 3
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 1763,
+				"_tpl": "ROUBLES"
+			}
+		],
+		"loyallevelitems": 2,
+		"fleaPriceRoubles": 11258,
+		"handbookPriceRoubles": 1763,
+		"addtoStaticLootContainers": true,
+		"addtoragfair": true,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+				"Probability": 7
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 6
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+				"Probability": 5
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+				"Probability": 1
+			}
+		]
+	}
+}
