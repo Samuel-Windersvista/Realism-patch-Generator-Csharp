@@ -126,3 +126,7 @@ Examples:
 - RadProtection: radiation protection level
 - mousePenalty: control sensitivity penalty (not actively recomputed by current gear rules)
 - Price: final generated gear price inside profile price range
+
+## 11. Document Strategy
+
+This guide describes the current gear rule structure, covered fields, and matching logic. Exact numeric truth remains in RealismItemRules/gear_rules.json. For field semantics and overlap, cross-reference the weapon, attachment, and ammo rule guides.

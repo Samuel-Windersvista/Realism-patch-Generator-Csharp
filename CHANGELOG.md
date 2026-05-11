@@ -1,4 +1,9 @@
-# 更新日志
+# 更新日志 / Changelog
+
+> 中文版本在前，英文镜像版本在后。
+> Chinese release history appears first, followed by an English mirror.
+
+## 中文
 
 ## v2.7
 
@@ -8,11 +13,11 @@
 - 修复标准 `TemplateID` clone 在 alias 解析过宽时误命中无关模板的问题，避免 clone 继承到错误的武器分类。
 - 修复 Requisitions / WTT fallback 场景下 `ChamberSpeed` 被错误过滤的问题，保证合法字段在 fallback attachment patch 中继续保留。
 - 清理并更新 README、CHANGELOG 与核心 docs 到 v2.7，移除失效的 audit / `audit_reports` 叙述，并清理内部计划型文档不进入正式发版面。
-- 发布脚本默认版本更新到 v2.7，发包时不再携带 `audit_reports` 空目录与 `docs/superpowers` 内部计划文档。
+- 发布脚本默认版本更新到 v2.7，发包时不再携带 `audit_reports` 空目录与内部计划文档。
 
 ### 本轮验证
 
-- `dotnet test "RealismPatchGenerator.Tests\RealismPatchGenerator.Tests.csproj" --no-restore` 全量通过，结果为 `38/38`。
+- `dotnet test "RealismPatchGenerator.Tests\RealismPatchGenerator.Tests.csproj" --no-restore` 全量通过，结果为 `39/39`。
 - 与 `TemplateID` clone alias、WTT/Requisitions fallback 相关的聚焦回归测试已补跑通过。
 
 ## v2.5
@@ -160,76 +165,82 @@
 - GUI 自动化交互测试尚未补齐
 - 部分 profile 中文名称仍可继续按项目术语优化
 
-## v2.0
+---
+
+## English Mirror
+
+## v2.7
+
+### Changes This Release
+
+- Consolidated the boundary-refactor results around `RealismPatchGenerator`, and documented the currently landed state of `TemplateRepository`, `TemplateMetadataCache`, `PatchStore`, `PatchTextInferenceHelpers`, and `PatchFieldPermissionService`.
+- Fixed overly broad alias resolution for standard `TemplateID` clones so unrelated templates are no longer matched, preventing clones from inheriting the wrong weapon classification.
+- Fixed `ChamberSpeed` being filtered out in Requisitions / WTT fallback scenarios so valid fields remain in fallback attachment patches.
+- Refreshed README, CHANGELOG, and core docs for v2.7; removed obsolete audit / `audit_reports` references; and removed internal planning docs from the formal release surface.
+- Updated the release script default version to v2.7, and release packages no longer include the empty `audit_reports` directory or internal planning docs.
+
+### Verification
+
+- `dotnet test "RealismPatchGenerator.Tests\RealismPatchGenerator.Tests.csproj" --no-restore` passed in full, with a result of `39/39`.
+- Focused regression tests covering `TemplateID` clone alias resolution and WTT/Requisitions fallback were re-run successfully.
+
+## v2.5
+
+This release was not about adding new features. Its focus was performance optimization after the patch-generation pipeline had been fully split into clearer stages. The generator now includes baseline timing, rule-context caching, alias pre-indexing, streaming JSON reads, and streaming output writing. With a fixed seed, small/medium/large sample runs all produced identical results, while total runtime and memory allocation both dropped significantly.
+
+In short, v2.5 is a performance-focused release: faster generation, lower memory usage, and still stable, reproducible results.
+
+## v2.1
 
 ### Project Refactor
 
-- Refactored the project structure and generation pipeline, including rule loading, template recognition, merge flow, and output writing.
-- Added stable support for multiple MOD input shapes, including RealismStandardTemplate, Moxo_Template, and Mixed_templates.
-- Added a dedicated CLI entry point with seed, logging, file filter, and directory filter support for targeted generation and debugging.
-- Unified output naming and item ordering rules so standard template outputs keep their original names while other compatible outputs use the _realism_patch suffix.
-- Changed clone merge precedence so legal source fields override conflicting official clone base values.
-- Added a final allowed-field pruning stage so generated patches only contain fields permitted by rules or templates.
-- Removed default template field leakage and normalized dirty field casing to prevent invalid or duplicated output fields.
-- Rewrote README and docs so the documentation matches the current GUI/CLI workflow and rule-driven output behavior.
-
-### Fixes
-
-- Fixed cases where clone chains could lose source fields, produce unstable names, or break source item order.
-- Fixed ConflictingItems being cleared incorrectly for some generated items such as SIG MCX entries.
-- Fixed handguard outputs incorrectly containing ChamberSpeed.
-- Fixed Moxo item output issues where Name could be taken from the wrong source and Prefab could leak into the final patch.
-- Fixed invalid fields such as weapFireType, shotgunDispersion, RecoilCenter, BurstShotsCount, and DoubleActionAccuracyPenalty appearing in SIG MCX output.
-
-### Validation
-
-- Verified targeted outputs across the supported input structures, including Moxo, Mixed, and standard template items.
-- Validated CLI generation for single-file, single-directory, and full-output workflows.
-- Regenerated the formal output set and spot-checked key samples to confirm invalid fields were removed while legal fields and ConflictingItems were preserved.
+- Refactored the project and reorganized the generator, rule loading, template recognition, and output writing flow.
+- Removed the incomplete auditing functionality.
 
 ## v1.30.0
 
-### Changes
+### Changes This Release
 
-- Reworked rule customization and output generation flow so results are clearer, more controllable, and more stable.
-- Expanded fallback generation so the tool can still attempt basic compatibility for weapon and equipment mods whose rule style is not fully recognized.
-- Improved auditing so it now checks not only numeric ranges but also whether item properties match their templates, greatly reducing structural output errors.
-- Removed historical output samples, temporary build artifacts, and directories unrelated to the current GUI-first workflow.
-- Reviewed README and the docs set end to end, aligning them to the GUI-only workflow, template-driven structure auditing, and the current release process.
-- Raised the default release script version to v1.30.0 and added notes for the lightweight runtime-dependent package.
+- Reworked rule customization and output logic so generated results are clearer, more controllable, and more stable.
+- Improved compatibility with current MOD item data types.
+- Added broader fallback generation so weapon and equipment mods that the rules do not fully recognize can still receive basic compatibility handling where possible.
+- Improved the checking flow so it now validates not only numeric ranges, but also whether item properties match template structure, significantly reducing structural data errors.
+- Cleaned up legacy code.
+- Re-reviewed README and the docs set end to end and aligned them to the GUI-only workflow, template-driven structure checking, and the current release model.
+- Raised the default release-script version to v1.30.0 and added notes about the lightweight runtime-dependent package.
 
-### Fixes
+### Fixes This Release
 
 - Fixed incorrect output structure in generated patches.
 - Fixed missing fields in some attachment patches.
-- Cleared the current set of audit warnings.
+- Cleared all current checking warnings.
 
 ### Verification
 
 - Rechecked patch subclasses one by one against the reorganized rule logic.
-- Added matching generation and audit validation for the adjusted subclasses.
+- Added matching generation and checking validation for the affected subclasses.
 - Re-ran the full test pass successfully.
 
 ## v1.22
 
 ### Added
 
-- Added an optional Seed input box to the GUI, supporting fixed-seed generation, clearing the seed back to random mode, and restoring the most recently used seed.
+- Added an optional Seed input box to the GUI, supporting fixed-seed generation, clearing the seed to return to random mode, and restoring the most recently used seed.
 
-### Changed
+### Changes
 
-- Removed the standalone CLI entry point and consolidated generation and audit flow into the GUI.
-- Updated the release script so it no longer builds or packages the CLI executable.
-- Changed the generator default so each run uses a fresh runtime seed and repeated runs resample values within rule ranges.
-- Updated generation results so they explicitly return the actual seed used in that run, making GUI reuse and downstream integration more stable.
-- Synchronized README, user guides, and SPTHub docs to the GUI-only workflow, and added notes about random resampling, fixed seeds, and the GUI seed workflow.
+- Removed the standalone CLI project entry point and consolidated generation and checking into the GUI.
+- The release script no longer builds or packages the CLI executable.
+- The generator now defaults to a fresh runtime seed for each run, so repeated generation resamples values within rule ranges.
+- The generation result now explicitly returns the actual seed used in the run, making GUI reuse and downstream integration more stable.
+- Updated README, the user guide, and the SPTHub docs to the GUI-only workflow, with notes covering random sampling, fixed seeds, and the GUI seed workflow.
 - Updated the project version to v1.22.
-- Adjusted the default split layout and search area layout in the Item Exceptions window to reduce the crowded first-open experience.
+- Adjusted the default split layout and initial search-area layout in the Item Exceptions window to reduce crowding on first open.
 
 ### Fixes
 
-- Fixed overlap between search hint text and buttons in the Item Exceptions window under the English UI.
-- Fixed the issue where the split layout in the Item Exceptions window initially opened too wide and needed manual dragging to return to a usable ratio.
+- Fixed overlap between the search hint text and buttons in the Item Exceptions window under the English UI.
+- Fixed the issue where the Item Exceptions window initially opened with an overly wide split and needed manual dragging to recover a usable ratio.
 - Fixed a release-build crash when opening the Item Exceptions window, caused by a SplitContainer initialization conflict between minimum panel width and the default splitter distance.
 
 ### Verification
@@ -238,28 +249,28 @@
 
 ## v1.1
 
-### Changed
+### Changes
 
-- Split the base shotgun ammo profile rules into shotgun_shell_12g, shotgun_shell_20g, and shotgun_shell_23x75.
-- Split the shotgun caliber repair logic in weapon rules into separate 12g, 20g, and 23x75 profiles.
-- Updated GUI profile names, README, and the main guide to match the new shotgun-by-caliber design.
-- Changed C# output to preserve item order from input source files so it matches Python output ordering and is easier to review manually.
-- Updated README and both Chinese and English user guides to document the current output ordering behavior.
+- Split the base shotgun ammo rules into `shotgun_shell_12g`, `shotgun_shell_20g`, and `shotgun_shell_23x75`.
+- Split the shotgun caliber adjustment in weapon rules into separate 12g, 20g, and 23x75 profiles.
+- Updated GUI profile names, README, and the main guide to match the shotgun-by-caliber design.
+- Changed the C# output to preserve item order from input source files so it matches Python output ordering and is easier to review manually.
+- Updated README and the Chinese/English user guides to document the current output ordering behavior.
 
 ### Verification
 
-- Added audit tests to confirm that ammo_profile and weapon caliber_profile correctly map to the new shotgun profiles.
+- Added audit tests to confirm that `ammo_profile` and weapon `caliber_profile` correctly map to the new shotgun profiles.
 - Added an integration test to confirm that generated output preserves input item ordering.
 - Regenerated output and compared it against the Python version; all 210 same-named JSON files matched in ItemID order.
-- Re-ran CLI audit successfully, with the current output showing 0 violations and 0 warnings.
+- Re-ran CLI audit successfully; the current output audit result is 0 violations and 0 warnings.
 
 ### Fixes
 
-- Corrected one expected output filename in a user_templates integration test and removed unrelated test noise.
+- Corrected one expected output filename in a `user_templates` integration test to remove unrelated test noise.
 
 ### Remaining
 
-- The 12g, 20g, and 23x75 handling ranges still need additional tuning based on real generated results.
+- The 12g, 20g, and 23x75 handling ranges still need further tuning based on real generated results.
 
 ## v1.0
 
@@ -268,16 +279,16 @@
 - Reworked the Item Exceptions management window into a workflow based on searching output items by Name.
 - Added allowed-field insertion based on the current item category in the Item Exceptions editor.
 - Added rule-driven suggested ranges and safe clamping when saving newly edited fields.
-- Added an explicit Save Item workflow in the Item Exceptions window.
-- Reorganized the main documentation set into the v1.0 documentation for the current C# project.
+- Added an explicit "Save Item" flow in the Item Exceptions window.
+- Reorganized the main documentation set into the current C# project's v1.0 docs.
 
-### Changed
+### Changes
 
-- Updated the Add Field button label to Add/Modify Field so it matches actual behavior.
+- Updated the "Add Field" button label to "Add/Modify Field" so it matches actual behavior.
 - Changed the Item Exceptions window to search only output results instead of input as older docs described.
 - Unified output and documentation wording to clarify that target files are overwritten without clearing the whole output directory.
-- Removed duplicate alias documents from docs and kept only the primary documentation set.
-- Updated README to v1.0 and added notes about Item Exceptions and the current audit status.
+- Removed duplicate alias docs from `docs/` and kept only the primary documentation set.
+- Updated README to v1.0 and added notes about Item Exceptions and the current checking status.
 
 ### Fixes
 
@@ -294,27 +305,27 @@
 ### Added
 
 - Added a structured GUI for editing rule ranges.
-- Added a rule category tree on the left and a range editing table in the center.
+- Added a left-side rule category tree and a center range-editing table.
 - Added a field description panel and a runtime log panel.
 - Added user-friendly Chinese mappings for profile names.
-- Added workflows for save, reload, generate patches, and check items that do not follow rules.
-- Added the user guide and rule overview documentation.
+- Added workflows for save, reload, generate patches, and checking items that do not follow rules.
+- Added the user guide and rule guide.
 - Added an Item Exceptions management window that stores final field overrides by ItemID.
-- Added the rules/item_exceptions.json configuration file and integrated it into generation and checking.
-- Added the ability to import Item Exception fields from existing top-level fields in output or input items.
+- Added the `rules/item_exceptions.json` configuration file and integrated it into generation and checking.
+- Added import support for Item Exception fields from existing top-level fields in output or input items.
 - Added a table-based Item Exception field editor to replace raw JSON block editing.
-- Added a read-only Item Exceptions overview page on the main window for quick inspection of current matched items.
+- Added a read-only Item Exceptions overview page on the main window for quick inspection of current configured hits.
 
-### Changed
+### Changes
 
-- Updated the GUI name to SPT Realism Value Range Editor Generator v0.9.
+- Updated the GUI name to "SPT Realism Value Range Editor Generator v0.9".
 - Set the Chinese UI as the current primary optimization direction.
-- Unified Chinese audit wording around checking items that do not follow rules.
-- Adjusted the width of the left rule category pane for the current Chinese reading experience.
-- Removed the redundant profile level column from the rule range table and gave that space back to core editing fields.
+- Unified Chinese wording around checking items that do not follow rules.
+- Adjusted the width of the left rule-category pane for the current Chinese reading experience.
+- Removed the redundant level column from the rule range table and gave that space back to core editing fields.
 
-### Known Issues / Next Steps
+### Remaining Issues / Next Steps
 
-- The English UI still has basic support, but has not yet received further polish.
+- The English UI still has basic support, but has not received further polish.
 - GUI automation interaction tests are still missing.
 - Some Chinese profile names can still be improved to better match project terminology.

@@ -43,13 +43,13 @@ The generator combines recoil, handling, suppression/flash behavior, loading beh
 
 modProfileRanges currently includes:
 
-- muzzle_suppressor, muzzle_suppressor_compact, muzzle_flashhider, muzzle_brake, muzzle_thread, muzzle_adapter
+- muzzle_suppressor, muzzle_suppressor_compact, muzzle_flashhider, muzzle_brake, muzzle_thread, muzzle_adapter, booster
 - magazine_compact, magazine_standard, magazine_extended, magazine_drum, magazine
 - scope_magnified, scope_red_dot, iron_sight, optic_eyecup, optic_killflash
 - stock_fixed, stock_folding, stock_ads_support, stock_buttpad, stock, buffer_adapter, stock_adapter, stock_rear_hook
 - pistol_grip, foregrip, receiver, mount, catch, hammer, trigger, charging_handle
 - barrel_short, barrel_medium, barrel_integral_suppressed, barrel_long, handguard_short, handguard_medium, handguard_long
-- gasblock, flashlight_laser, bipod, rail_panel
+- gasblock, flashlight_laser, bipod, rail_panel, bayonet
 
 ## 5. Typical Fields
 

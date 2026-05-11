@@ -90,6 +90,12 @@ Current behavior:
   - RaidOverhaul_templates
   - Moxo_Template
   - Mixed_templates
+- RealismStandardTemplate may use TemplateID as an internal standard-template clone base; generation expands that base first and then emits a complete Realism patch structure
+- Moxo_Template prioritizes locales.Name for output Name when available
+- Moxo_Template can also clone from items already generated earlier in the same source file
+- Mixed_templates supports clone + item/items entries and direct item/items entries in the same file
+- Mixed_templates falls back to direct item/items patch construction when clone base resolution is unavailable
+- current active generation focus is weapons, attachments, ammo, and gear; consumable is not a primary standalone rule-driven path and currently only keeps baseline fallback generation/statistics support
 - item_exceptions is applied as final override layer after automatic rule processing
 
 ## 6. Release Packages
@@ -97,10 +103,11 @@ Current behavior:
 - full package: no preinstalled .NET runtime required
 - lightweight package: smaller size, requires matching .NET Desktop Runtime on target machine
 - packaging script: scripts/build-release.ps1
+- use the FrameworkDependent switch in scripts/build-release.ps1 to choose lightweight packaging instead of the full runtime-bundled package
 
 ## 7. Entry Points
 
-Recommended primary entry is GUI. CLI keeps a one-click generation entry.
+Recommended primary entry is GUI. CLI keeps a one-click generation entry. artifacts may also contain temporary runners used for maintenance or investigation.
 
 Start GUI in development:
 
@@ -125,7 +132,11 @@ CLI boundary:
 - generation only
 - rule editing, exception management, and interactive checks are handled in GUI
 
-For reproducible generation, fill a fixed seed in GUI; clear it to return to random mode.
+For reproducible generation:
+
+- fill a fixed unsigned integer seed in the GUI Seed box
+- run generation with that fixed seed to reproduce the same range-driven output
+- clear the Seed box to return to random mode
 
 ## 8. Current Boundaries
 
