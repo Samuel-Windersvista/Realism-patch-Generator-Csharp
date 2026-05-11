@@ -4,9 +4,9 @@ namespace RealismPatchGenerator.Core;
 
 internal static class WeaponRuleEngine
 {
-    public static void ApplyWeaponSanityCheck(RealismPatchGenerator generator, RuleSet rules, JsonObject patch, ItemInfo itemInfo)
+    public static void ApplyWeaponSanityCheck(RealismPatchGenerator generator, RuleSet rules, JsonObject patch, ItemInfo itemInfo, CompatibleRandom random)
     {
-        ApplyWeaponSanityCheck(new PatchRuleContext(generator, rules, patch, itemInfo));
+        ApplyWeaponSanityCheck(new PatchRuleContext(generator, rules, patch, itemInfo, random));
     }
 
     public static void ApplyWeaponSanityCheck(PatchRuleContext context)
@@ -32,7 +32,7 @@ internal static class WeaponRuleEngine
                 context.InvalidateAnalysis();
             }
 
-            generator.ApplyNumericRanges(patch, ranges, ensureFields: true, preserveExistingValues);
+            generator.ApplyNumericRanges(patch, ranges, ensureFields: true, context.Random, preserveExistingValues);
             ApplyWeaponRefinementRanges(context, weaponProfile, preserveExistingValues);
             RealismPatchGenerator.ApplyFieldClamps(patch, rules.Weapon.GunClampRules);
         }
@@ -119,7 +119,7 @@ internal static class WeaponRuleEngine
             var max = pair.Value.Max + deltaMax;
             patch[pair.Key] = preserveExistingValues
                 ? RealismPatchGenerator.ClampRangeValue(patch[pair.Key], min, max, pair.Value.PreferInt)
-                : generator.SampleRangeValue(patch[pair.Key], min, max, pair.Value.PreferInt);
+                : generator.SampleRangeValue(patch[pair.Key], min, max, pair.Value.PreferInt, context.Random);
         }
 
         var supplementalKeys = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
@@ -172,7 +172,7 @@ internal static class WeaponRuleEngine
 
             patch[key] = preserveExistingValues
                 ? RealismPatchGenerator.ClampRangeValue(patch[key], min, max, preferInt)
-                : generator.SampleRangeValue(patch[key], min, max, preferInt);
+                : generator.SampleRangeValue(patch[key], min, max, preferInt, context.Random);
         }
     }
 

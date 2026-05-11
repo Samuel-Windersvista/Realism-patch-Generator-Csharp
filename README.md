@@ -1,4 +1,4 @@
-# SPT Realism Patch Generator v2.5
+# SPT Realism Patch Generator v2.7
 
 这是当前 C# 版 SPT Realism 补丁生成器仓库。
 
@@ -10,7 +10,7 @@
 
 ## 当前状态
 
-- 当前版本：v2.5
+- 当前版本：v2.7
 - 当前主要入口：GUI、CLI
 - 核心生成入口：RealismPatchGenerator.Core/RealismPatchGenerator.cs
 - 当前有效生成大类：武器、附件、弹药、装备
@@ -110,6 +110,7 @@ CLI 支持参数：
 
 - 位置参数 `[basePath] [outputPath]`：可选，默认使用当前目录和默认 output
 - `--seed <uint>`：指定随机种子
+- `--include <path>`：仅生成指定输入文件或子路径
 
 CLI 示例：
 
@@ -117,9 +118,10 @@ CLI 示例：
 dotnet run --project .\RealismPatchGenerator.Cli\RealismPatchGenerator.Cli.csproj
 dotnet run --project .\RealismPatchGenerator.Cli\RealismPatchGenerator.Cli.csproj -- . .\output
 dotnet run --project .\RealismPatchGenerator.Cli\RealismPatchGenerator.Cli.csproj -- . .\output --seed 123456
+dotnet run --project .\RealismPatchGenerator.Cli\RealismPatchGenerator.Cli.csproj -- . .\artifacts\perf-small --seed 123456 --include user_templates/file.json
 ```
 
-规则编辑、例外物品管理、结构检查与交互式操作统一归属 GUI。
+规则编辑、例外物品管理与交互式操作统一归属 GUI。
 
 常规工作流：
 

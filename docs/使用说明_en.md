@@ -1,10 +1,10 @@
-# SPT Realism Range Editor Generator v2.5 User Guide
+# SPT Realism Range Editor Generator v2.7 User Guide
 
 This document reflects the current C# project status and covers GUI workflow, rule editing, item exceptions, and patch generation.
 
 ## 1. Version Positioning
 
-- Version: v2.5
+- Version: v2.7
 - Runtime shape: standalone .NET GUI application (full package or lightweight package)
 - Main focus: rule editing, patch generation, and item exceptions in one project
 
@@ -118,6 +118,7 @@ Optional CLI parameters:
 
 - [basePath] [outputPath] (positional, optional)
 - --seed <uint>
+- --include <path>
 
 CLI boundary:
 

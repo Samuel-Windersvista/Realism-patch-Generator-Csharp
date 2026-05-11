@@ -1,5 +1,20 @@
 # 更新日志
 
+## v2.7
+
+### 本轮调整
+
+- 收敛 `RealismPatchGenerator` 的边界整理成果，补齐 `TemplateRepository`、`TemplateMetadataCache`、`PatchStore`、`PatchTextInferenceHelpers` 与 `PatchFieldPermissionService` 的当前落地状态。
+- 修复标准 `TemplateID` clone 在 alias 解析过宽时误命中无关模板的问题，避免 clone 继承到错误的武器分类。
+- 修复 Requisitions / WTT fallback 场景下 `ChamberSpeed` 被错误过滤的问题，保证合法字段在 fallback attachment patch 中继续保留。
+- 清理并更新 README、CHANGELOG 与核心 docs 到 v2.7，移除失效的 audit / `audit_reports` 叙述，并清理内部计划型文档不进入正式发版面。
+- 发布脚本默认版本更新到 v2.7，发包时不再携带 `audit_reports` 空目录与 `docs/superpowers` 内部计划文档。
+
+### 本轮验证
+
+- `dotnet test "RealismPatchGenerator.Tests\RealismPatchGenerator.Tests.csproj" --no-restore` 全量通过，结果为 `38/38`。
+- 与 `TemplateID` clone alias、WTT/Requisitions fallback 相关的聚焦回归测试已补跑通过。
+
 ## v2.5
 
 这次版本的重点不是增加新功能，而是把补丁生成链彻底分拆后，对主流程进行性能优化。现在生成器已经补上了基线计时、规则上下文缓存、alias 预索引、流式 JSON 读取和流式输出写出，在固定 seed 的小中大三档样本里都确认输出不变，同时整体耗时和内存分配都明显下降。
@@ -144,16 +159,6 @@
 - 英文界面仍保留基础支持，但尚未继续细修
 - GUI 自动化交互测试尚未补齐
 - 部分 profile 中文名称仍可继续按项目术语优化
-
-# Changelog
-
-## Unreleased
-
-- Started the staged RealismPatchGenerator split.
-- Added TemplateCatalog to isolate template loading and template index construction from the main generator.
-- Kept LoadAllTemplates behavior-compatible by loading a catalog snapshot first and then repopulating the existing in-memory dictionaries.
-- Added phase-one and phase-two split planning documents to the docs folder as the execution baseline for the next refactor steps.
-- Re-ran RuleDataSynchronizationTests and confirmed the current 16-test suite still passes after the first split step.
 
 ## v2.0
 

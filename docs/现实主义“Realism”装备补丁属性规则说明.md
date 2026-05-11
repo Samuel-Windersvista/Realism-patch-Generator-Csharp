@@ -32,7 +32,7 @@
 - 装备默认模板：RealismPatchGenerator.Core/StaticData.cs 中的 CreateDefaultGearTemplate
 - 附件默认模板：RealismPatchGenerator.Core/StaticData.cs 中的 CreateDefaultModTemplate
 - modType 专属字段：RealismPatchGenerator.Core/StaticData.cs 中的 ModTypeSpecificAttributes
-- 最终输出裁剪：RealismPatchGenerator.Core/RealismPatchGenerator.cs 中的 CreateAllowedFieldMap、AddRuleAllowedFields、AddRequiredAllowedFields、PruneDisallowedOutputFields
+- 最终输出字段边界：RealismPatchGenerator.Core/PatchFieldPermissionService.cs 与 RealismPatchGenerator.Core/RealismPatchGenerator.cs 中的最终字段裁剪流程
 
 ## 3. 总体原则
 

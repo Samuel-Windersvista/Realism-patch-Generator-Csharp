@@ -29,34 +29,33 @@ internal static class ProfileInferenceService
             return sourceFileProfile;
         }
 
-        if (context.Name.Contains("pistol", StringComparison.OrdinalIgnoreCase)
-            || context.Name.Contains("handgun", StringComparison.OrdinalIgnoreCase)
+        if (context.NameTokens.Contains("pistol")
+            || context.NameTokens.Contains("handgun")
             || context.WeapType.Contains("pistol", StringComparison.OrdinalIgnoreCase))
         {
             return "pistol";
         }
 
-        if (context.Name.Contains("smg", StringComparison.OrdinalIgnoreCase)
+        if (context.NameTokens.Contains("smg")
             || context.WeapType.Contains("smg", StringComparison.OrdinalIgnoreCase))
         {
             return "smg";
         }
 
-        if (context.Name.Contains("launcher", StringComparison.OrdinalIgnoreCase)
-            || context.Name.Contains("grenade launcher", StringComparison.OrdinalIgnoreCase)
-            || context.Name.Contains("m203", StringComparison.OrdinalIgnoreCase)
-            || context.Name.Contains("gp25", StringComparison.OrdinalIgnoreCase)
-            || context.Name.Contains("ubgl", StringComparison.OrdinalIgnoreCase)
+        if (context.NameTokens.Contains("launcher")
+            || (context.NameTokens.Contains("grenade") && context.NameTokens.Contains("launcher"))
+            || context.NameTokens.Contains("m203")
+            || context.NameTokens.Contains("gp25")
+            || context.NameTokens.Contains("ubgl")
             || context.WeapType.Contains("launcher", StringComparison.OrdinalIgnoreCase))
         {
             return "launcher";
         }
 
-        if (context.Name.Contains("sniper", StringComparison.OrdinalIgnoreCase)
-            || context.Name.Contains("marksman", StringComparison.OrdinalIgnoreCase)
-            || context.Name.Contains("dmr", StringComparison.OrdinalIgnoreCase)
-            || context.Name.Contains("anti-materiel", StringComparison.OrdinalIgnoreCase)
-            || context.Name.Contains("anti materiel", StringComparison.OrdinalIgnoreCase)
+        if (context.NameTokens.Contains("sniper")
+            || context.NameTokens.Contains("marksman")
+            || context.NameTokens.Contains("dmr")
+            || (context.NameTokens.Contains("anti") && context.NameTokens.Contains("materiel"))
             || context.Name.Contains("狙击", StringComparison.OrdinalIgnoreCase))
         {
             return "sniper";
@@ -70,7 +69,7 @@ internal static class ProfileInferenceService
             return "machinegun";
         }
 
-        if (context.Name.Contains("shotgun", StringComparison.OrdinalIgnoreCase)
+        if (context.NameTokens.Contains("shotgun")
             || context.WeapType.Contains("shotgun", StringComparison.OrdinalIgnoreCase))
         {
             return "shotgun";
@@ -97,8 +96,8 @@ internal static class ProfileInferenceService
         }
 
         if (context.WeapType.Contains("pistol", StringComparison.OrdinalIgnoreCase)
-            || context.Name.Contains("pistol", StringComparison.OrdinalIgnoreCase)
-            || context.Name.Contains("handgun", StringComparison.OrdinalIgnoreCase))
+            || context.NameTokens.Contains("pistol")
+            || context.NameTokens.Contains("handgun"))
         {
             return "pistol_caliber";
         }
@@ -115,9 +114,9 @@ internal static class ProfileInferenceService
         }
 
         if (context.WeapType.Contains("pistol", StringComparison.OrdinalIgnoreCase)
-            || context.Name.Contains("pistol", StringComparison.OrdinalIgnoreCase)
-            || context.Name.Contains("machine pistol", StringComparison.OrdinalIgnoreCase)
-            || context.Name.Contains("stockless", StringComparison.OrdinalIgnoreCase))
+            || context.NameTokens.Contains("pistol")
+            || (context.NameTokens.Contains("machine") && context.NameTokens.Contains("pistol"))
+            || context.NameTokens.Contains("stockless"))
         {
             return "stockless";
         }
@@ -267,7 +266,7 @@ internal static class ProfileInferenceService
             return InferBackpackProfile(context);
         }
 
-        if (context.TemplateFileName == "armorMasksTemplates.json" && ContainsAnyKeyword(context.Name, ["glasses", "goggles", "eyewear", "射击眼镜", "护目镜", "眼镜", "condor"]))
+        if (context.TemplateFileName == "armorMasksTemplates.json" && PatchTextInferenceHelpers.ContainsAnyKeyword(context.Name, ["glasses", "goggles", "eyewear", "射击眼镜", "护目镜", "眼镜", "condor"]))
         {
             return InferEyewearProfile(context);
         }
@@ -287,77 +286,77 @@ internal static class ProfileInferenceService
             return "headset";
         }
 
-        if (ContainsAnyKeyword(context.Name, ["headset", "headphones", "耳机", "耳麦"]))
+        if (PatchTextInferenceHelpers.ContainsAnyKeyword(context.Name, ["headset", "headphones", "耳机", "耳麦"]))
         {
             return "headset";
         }
 
-        if (ContainsAnyKeyword(context.Name, ["beret", "贝雷帽", "boonie", "watch cap"]))
+        if (PatchTextInferenceHelpers.ContainsAnyKeyword(context.Name, ["beret", "贝雷帽", "boonie", "watch cap"]))
         {
             return "cosmetic_headwear";
         }
 
-        if (ContainsAnyKeyword(context.Name, ["back panel", "背部面板"]))
+        if (PatchTextInferenceHelpers.ContainsAnyKeyword(context.Name, ["back panel", "背部面板"]))
         {
             return "back_panel";
         }
 
-        if (ContainsAnyKeyword(context.Name, ["腰带", "belt", "warbelt", "battle belt", "警用腰带", "mule"]))
+        if (PatchTextInferenceHelpers.ContainsAnyKeyword(context.Name, ["腰带", "belt", "warbelt", "battle belt", "警用腰带", "mule"]))
         {
             return "belt_harness";
         }
 
-        if (ContainsAnyKeyword(context.Name, ["backpack", "ruck", "pack", "bag", "背包", "背负系统", "bvs", "nice comm"]))
+        if (PatchTextInferenceHelpers.ContainsAnyKeyword(context.Name, ["backpack", "ruck", "pack", "bag", "背包", "背负系统", "bvs", "nice comm"]))
         {
             return InferBackpackProfile(context);
         }
 
-        if (ContainsAnyKeyword(context.Name, ["soft armor", "armor plate", "plate", "插板", "软甲", "防弹插板"]))
+        if (PatchTextInferenceHelpers.ContainsAnyKeyword(context.Name, ["soft armor", "armor plate", "plate", "插板", "软甲", "防弹插板"]))
         {
             return InferArmorPlateProfile(context);
         }
 
-        if (ContainsAnyKeyword(context.Name, ["helmet", "头盔", "helm", "ops-core", "ops core", "fast mt", "tc2000", "mich", "ronin"]))
+        if (PatchTextInferenceHelpers.ContainsAnyKeyword(context.Name, ["helmet", "头盔", "helm", "ops-core", "ops core", "fast mt", "tc2000", "mich", "ronin"]))
         {
             return InferHelmetProfile(context);
         }
 
-        if (ContainsAnyKeyword(context.Name, ["glasses", "goggles", "eyewear", "射击眼镜", "护目镜", "眼镜", "condor"]))
+        if (PatchTextInferenceHelpers.ContainsAnyKeyword(context.Name, ["glasses", "goggles", "eyewear", "射击眼镜", "护目镜", "眼镜", "condor"]))
         {
             return InferEyewearProfile(context);
         }
 
-        if (ContainsAnyKeyword(context.Name, ["visor", "face shield", "mandible", "aventail", "side armor", "applique", "护颈", "面甲"]))
+        if (PatchTextInferenceHelpers.ContainsAnyKeyword(context.Name, ["visor", "face shield", "mandible", "aventail", "side armor", "applique", "护颈", "面甲"]))
         {
             return InferFaceProtectionProfile("armor_component", context);
         }
 
-        if (ContainsAnyKeyword(context.Name, ["gas mask", "respirator", "mask", "面罩", "防毒"]))
+        if (PatchTextInferenceHelpers.ContainsAnyKeyword(context.Name, ["gas mask", "respirator", "mask", "面罩", "防毒"]))
         {
             return InferFaceProtectionProfile("armor_mask", context);
         }
 
-        if (ContainsAnyKeyword(context.Name, ["plate carrier", "armor rig", "armored rig", "carrier", "jpc", "apc", "sohpc", "cgpc", "avs", "tqs", "战术背心", "携行背心", "板携行", "板携行背心", "护甲胸挂", "防弹胸挂"]))
+        if (PatchTextInferenceHelpers.ContainsAnyKeyword(context.Name, ["plate carrier", "armor rig", "armored rig", "carrier", "jpc", "apc", "sohpc", "cgpc", "avs", "tqs", "战术背心", "携行背心", "板携行", "板携行背心", "护甲胸挂", "防弹胸挂"]))
         {
             return InferBodyArmorProfile("armor_chest_rig", context);
         }
 
-        if (hasArmorClass && ContainsAnyKeyword(context.Name, ["rig", "胸挂", "背心", "vest"]))
+        if (hasArmorClass && PatchTextInferenceHelpers.ContainsAnyKeyword(context.Name, ["rig", "胸挂", "背心", "vest"]))
         {
             return InferBodyArmorProfile("armor_chest_rig", context);
         }
 
-        if (ContainsAnyKeyword(context.Name, ["rig", "胸挂"]))
+        if (PatchTextInferenceHelpers.ContainsAnyKeyword(context.Name, ["rig", "胸挂"]))
         {
             return InferChestRigProfile(context);
         }
 
-        if (hasArmorClass && ContainsAnyKeyword(context.Name, ["背心", "vest"]))
+        if (hasArmorClass && PatchTextInferenceHelpers.ContainsAnyKeyword(context.Name, ["背心", "vest"]))
         {
             return InferBodyArmorProfile("armor_vest", context);
         }
 
-        if (ContainsAnyKeyword(context.Name, ["armor", "vest", "body armor", "护甲", "防弹衣"]))
+        if (PatchTextInferenceHelpers.ContainsAnyKeyword(context.Name, ["armor", "vest", "body armor", "护甲", "防弹衣"]))
         {
             return InferBodyArmorProfile("armor_vest", context);
         }
@@ -391,27 +390,27 @@ internal static class ProfileInferenceService
                 return "muzzle_adapter";
             }
 
-            if (context.Name.Contains("adapter", StringComparison.OrdinalIgnoreCase) && ContainsAnyKeyword(context.Name, ["muzzle", "suppressor", "silencer", "taper", "qd"]))
+            if (context.Name.Contains("adapter", StringComparison.OrdinalIgnoreCase) && PatchTextInferenceHelpers.ContainsAnyKeyword(context.Name, ["muzzle", "suppressor", "silencer", "taper", "qd"]))
             {
                 return "muzzle_adapter";
             }
 
-            if (ContainsAnyKeyword(context.Name, ["silencer", "suppressor", "qd", "pbs", "消音器", "抑制器", "消声器", "глушитель"]))
+            if (PatchTextInferenceHelpers.ContainsAnyKeyword(context.Name, ["silencer", "suppressor", "qd", "pbs", "消音器", "抑制器", "消声器", "глушитель"]))
             {
-                return RealismPatchGenerator.InferSuppressorProfileFromName(context.Name);
+                return PatchTextInferenceHelpers.InferSuppressorProfileFromName(context.Name);
             }
 
-            if (ContainsAnyKeyword(context.Name, ["brake", "comp", "compensator", "制退器"]))
+            if (PatchTextInferenceHelpers.ContainsAnyKeyword(context.Name, ["brake", "comp", "compensator", "制退器"]))
             {
                 return "muzzle_brake";
             }
 
-            if (ContainsAnyKeyword(context.Name, ["thread", "protector", "螺纹保护", "保护帽"]))
+            if (PatchTextInferenceHelpers.ContainsAnyKeyword(context.Name, ["thread", "protector", "螺纹保护", "保护帽"]))
             {
                 return "muzzle_thread";
             }
 
-            if (ContainsAnyKeyword(context.Name, ["消焰器", "消焰", "火帽", "flash hider"]))
+            if (PatchTextInferenceHelpers.ContainsAnyKeyword(context.Name, ["消焰器", "消焰", "火帽", "flash hider"]))
             {
                 return "muzzle_flashhider";
             }
@@ -421,17 +420,17 @@ internal static class ProfileInferenceService
 
         if (context.ModType.Contains("barrel", StringComparison.OrdinalIgnoreCase) || context.ModType.Contains("short_barrel", StringComparison.OrdinalIgnoreCase) || (baseProfile?.StartsWith("barrel", StringComparison.OrdinalIgnoreCase) ?? false))
         {
-            return RealismPatchGenerator.InferBarrelProfileFromName(context.Name);
+            return PatchTextInferenceHelpers.InferBarrelProfileFromName(context.Name);
         }
 
-        if (context.ModType.Contains("handguard", StringComparison.OrdinalIgnoreCase) || (baseProfile?.StartsWith("handguard", StringComparison.OrdinalIgnoreCase) ?? false) || RealismPatchGenerator.IsHandguardLikeName(context.Name))
+        if (context.ModType.Contains("handguard", StringComparison.OrdinalIgnoreCase) || (baseProfile?.StartsWith("handguard", StringComparison.OrdinalIgnoreCase) ?? false) || PatchTextInferenceHelpers.IsHandguardLikeName(context.Name))
         {
-            return RealismPatchGenerator.InferHandguardProfileFromName(context.Name);
+            return PatchTextInferenceHelpers.InferHandguardProfileFromName(context.Name);
         }
 
         if (context.ModType == "magazine" || string.Equals(baseProfile, "magazine", StringComparison.OrdinalIgnoreCase) || (context.ModType.Contains("mag", StringComparison.OrdinalIgnoreCase) && !context.ModType.Contains("malf", StringComparison.OrdinalIgnoreCase)))
         {
-            return RealismPatchGenerator.InferMagazineProfile(RealismPatchGenerator.ExtractMagCapacity(itemInfo, context.Name), context.Name);
+            return PatchTextInferenceHelpers.InferMagazineProfile(PatchTextInferenceHelpers.ExtractMagCapacity(itemInfo, context.Name), context.Name);
         }
 
         if (context.ModType == "foregrip_adapter")
@@ -471,7 +470,7 @@ internal static class ProfileInferenceService
 
         if (context.ModType == "stock" || context.ModType.StartsWith("stock", StringComparison.OrdinalIgnoreCase) || context.ModType.EndsWith("_stock", StringComparison.OrdinalIgnoreCase))
         {
-            return RealismPatchGenerator.InferModStockProfile(context.Name, patch, itemInfo);
+            return PatchTextInferenceHelpers.InferModStockProfile(context.Name, patch, itemInfo);
         }
 
         if (context.ModType is "pistolgrip" or "pistol_grip" || (context.ModType.Contains("pistol", StringComparison.OrdinalIgnoreCase) && context.ModType.Contains("grip", StringComparison.OrdinalIgnoreCase)))
@@ -493,14 +492,14 @@ internal static class ProfileInferenceService
 
         if (context.ModType == "mount" || context.ModType.Contains("mount", StringComparison.OrdinalIgnoreCase) || context.ModType.Contains("rail", StringComparison.OrdinalIgnoreCase))
         {
-            if (ContainsAnyKeyword(context.Name, ["silencer_", "suppressor", "消音器", "抑制器", "消声器", "глушитель"]))
+            if (PatchTextInferenceHelpers.ContainsAnyKeyword(context.Name, ["silencer_", "suppressor", "消音器", "抑制器", "消声器", "глушитель"]))
             {
-                return RealismPatchGenerator.InferSuppressorProfileFromName(context.Name);
+                return PatchTextInferenceHelpers.InferSuppressorProfileFromName(context.Name);
             }
 
-            if (ContainsAnyKeyword(context.Name, ["barrel and rail system", "rail system", "front-end assembly", "front end assembly"]) && ContainsAnyKeyword(context.Name, ["m-lok", "mlok", "handguard", "forend", "barrel"]))
+            if (PatchTextInferenceHelpers.ContainsAnyKeyword(context.Name, ["barrel and rail system", "rail system", "front-end assembly", "front end assembly"]) && PatchTextInferenceHelpers.ContainsAnyKeyword(context.Name, ["m-lok", "mlok", "handguard", "forend", "barrel"]))
             {
-                return RealismPatchGenerator.InferHandguardProfileFromName(context.Name);
+                return PatchTextInferenceHelpers.InferHandguardProfileFromName(context.Name);
             }
 
             return "mount";
@@ -543,7 +542,7 @@ internal static class ProfileInferenceService
 
         if (context.ModType == "sight")
         {
-            var sightProfile = RealismPatchGenerator.InferSightProfileFromName(context.Name);
+            var sightProfile = PatchTextInferenceHelpers.InferSightProfileFromName(context.Name);
             if (!string.IsNullOrWhiteSpace(sightProfile))
             {
                 return sightProfile;
@@ -590,12 +589,12 @@ internal static class ProfileInferenceService
         var itemName = RealismPatchGenerator.GetLowerText(patch["Name"]);
         return templateFile switch
         {
-            "MagazineTemplates.json" => RealismPatchGenerator.InferMagazineProfile(RealismPatchGenerator.ExtractMagCapacity(itemInfo, itemName), itemName),
-            "BarrelTemplates.json" => RealismPatchGenerator.InferBarrelProfileFromName(itemName),
-            "HandguardTemplates.json" => RealismPatchGenerator.InferHandguardProfileFromName(itemName),
-            "StockTemplates.json" => RealismPatchGenerator.InferModStockProfile(itemName, patch, itemInfo),
+            "MagazineTemplates.json" => PatchTextInferenceHelpers.InferMagazineProfile(PatchTextInferenceHelpers.ExtractMagCapacity(itemInfo, itemName), itemName),
+            "BarrelTemplates.json" => PatchTextInferenceHelpers.InferBarrelProfileFromName(itemName),
+            "HandguardTemplates.json" => PatchTextInferenceHelpers.InferHandguardProfileFromName(itemName),
+            "StockTemplates.json" => PatchTextInferenceHelpers.InferModStockProfile(itemName, patch, itemInfo),
             "ChargingHandleTemplates.json" => "charging_handle",
-            "ScopeTemplates.json" => RealismPatchGenerator.InferSightProfileFromName(itemName) ?? "scope_red_dot",
+            "ScopeTemplates.json" => PatchTextInferenceHelpers.InferSightProfileFromName(itemName) ?? "scope_red_dot",
             "MuzzleDeviceTemplates.json" => "muzzle_flashhider",
             "ForegripTemplates.json" => "foregrip",
             "PistolGripTemplates.json" => "pistol_grip",
@@ -627,17 +626,17 @@ internal static class ProfileInferenceService
             return "trigger";
         }
 
-        if (name.StartsWith("charge_", StringComparison.OrdinalIgnoreCase) || ContainsAnyKeyword(name, ["charging handle", "charging_handle", "拉机柄"]))
+        if (name.StartsWith("charge_", StringComparison.OrdinalIgnoreCase) || PatchTextInferenceHelpers.ContainsAnyKeyword(name, ["charging handle", "charging_handle", "拉机柄"]))
         {
             return "charging_handle";
         }
 
-        if (name.StartsWith("bipod_", StringComparison.OrdinalIgnoreCase) || ContainsAnyKeyword(name, ["bipod", "二脚架"]))
+        if (name.StartsWith("bipod_", StringComparison.OrdinalIgnoreCase) || PatchTextInferenceHelpers.ContainsAnyKeyword(name, ["bipod", "二脚架"]))
         {
             return "bipod";
         }
 
-        if (ContainsAnyKeyword(name, ["rear_hook", "rear hook"]))
+        if (PatchTextInferenceHelpers.ContainsAnyKeyword(name, ["rear_hook", "rear hook"]))
         {
             return "stock_rear_hook";
         }
@@ -657,22 +656,22 @@ internal static class ProfileInferenceService
             return "rail_panel";
         }
 
-        if (name.StartsWith("gas_block_", StringComparison.OrdinalIgnoreCase) || name.StartsWith("gasblock_", StringComparison.OrdinalIgnoreCase) || ContainsAnyKeyword(name, ["gas block", "导气箍"]))
+        if (name.StartsWith("gas_block_", StringComparison.OrdinalIgnoreCase) || name.StartsWith("gasblock_", StringComparison.OrdinalIgnoreCase) || PatchTextInferenceHelpers.ContainsAnyKeyword(name, ["gas block", "导气箍"]))
         {
             return "gasblock";
         }
 
-        if (name.StartsWith("foregrip_", StringComparison.OrdinalIgnoreCase) || ContainsAnyKeyword(name, ["前握把", "垂直前握把", "斜握把", "握把挡块", "前握挡块", "hand stop", "grip stop", "handstop", "vertical grip", "angled grip", "foregrip", "sturmgriff"]))
+        if (name.StartsWith("foregrip_", StringComparison.OrdinalIgnoreCase) || PatchTextInferenceHelpers.ContainsAnyKeyword(name, ["前握把", "垂直前握把", "斜握把", "握把挡块", "前握挡块", "hand stop", "grip stop", "handstop", "vertical grip", "angled grip", "foregrip", "sturmgriff"]))
         {
             return "foregrip";
         }
 
-        if (name.StartsWith("pistolgrip_", StringComparison.OrdinalIgnoreCase) || ContainsAnyKeyword(name, ["pistol grip", "小角度握把", "后握把", "пистолетная рукоятка"]))
+        if (name.StartsWith("pistolgrip_", StringComparison.OrdinalIgnoreCase) || PatchTextInferenceHelpers.ContainsAnyKeyword(name, ["pistol grip", "小角度握把", "后握把", "пистолетная рукоятка"]))
         {
             return "pistol_grip";
         }
 
-        if (name.Contains("握把", StringComparison.OrdinalIgnoreCase) && !ContainsAnyKeyword(name, ["前握把", "垂直", "斜握"]))
+        if (name.Contains("握把", StringComparison.OrdinalIgnoreCase) && !PatchTextInferenceHelpers.ContainsAnyKeyword(name, ["前握把", "垂直", "斜握"]))
         {
             return "pistol_grip";
         }
@@ -682,39 +681,39 @@ internal static class ProfileInferenceService
             return "stock_adapter";
         }
 
-        if (ContainsAnyKeyword(name, ["buttpad", "butt pad", "托腮", "枪托垫", "后托垫"]))
+        if (PatchTextInferenceHelpers.ContainsAnyKeyword(name, ["buttpad", "butt pad", "托腮", "枪托垫", "后托垫"]))
         {
             return "stock_buttpad";
         }
 
-        if (name.StartsWith("buffer_", StringComparison.OrdinalIgnoreCase) || name.StartsWith("buffertube_", StringComparison.OrdinalIgnoreCase) || ContainsAnyKeyword(name, ["buffer tube", "缓冲管"]))
+        if (name.StartsWith("buffer_", StringComparison.OrdinalIgnoreCase) || name.StartsWith("buffertube_", StringComparison.OrdinalIgnoreCase) || PatchTextInferenceHelpers.ContainsAnyKeyword(name, ["buffer tube", "缓冲管"]))
         {
             return "buffer_adapter";
         }
 
-        if (name.StartsWith("stock_", StringComparison.OrdinalIgnoreCase) || ContainsAnyKeyword(name, ["枪托", "buttstock", "brace", "底盘枪托", "приклад", "托"]))
+        if (name.StartsWith("stock_", StringComparison.OrdinalIgnoreCase) || PatchTextInferenceHelpers.ContainsAnyKeyword(name, ["枪托", "buttstock", "brace", "底盘枪托", "приклад", "托"]))
         {
-            return RealismPatchGenerator.InferModStockProfile(name, patch, itemInfo);
+            return PatchTextInferenceHelpers.InferModStockProfile(name, patch, itemInfo);
         }
 
-        if (name.StartsWith("receiver_", StringComparison.OrdinalIgnoreCase) || name.StartsWith("reciever_", StringComparison.OrdinalIgnoreCase) || ContainsAnyKeyword(name, ["机匣", "机匣盖", "防尘盖", "receiver", "reciever", "dust cover", "upper receiver", "upper reciever", "slide", "крышка ствольной коробки"]))
+        if (name.StartsWith("receiver_", StringComparison.OrdinalIgnoreCase) || name.StartsWith("reciever_", StringComparison.OrdinalIgnoreCase) || PatchTextInferenceHelpers.ContainsAnyKeyword(name, ["机匣", "机匣盖", "防尘盖", "receiver", "reciever", "dust cover", "upper receiver", "upper reciever", "slide", "крышка ствольной коробки"]))
         {
             return "receiver";
         }
 
-        if (name.StartsWith("mag_", StringComparison.OrdinalIgnoreCase) || name.StartsWith("magazine_", StringComparison.OrdinalIgnoreCase) || ContainsAnyKeyword(name, ["弹匣", "magazine", "drum", "casket", "магазин"]))
+        if (name.StartsWith("mag_", StringComparison.OrdinalIgnoreCase) || name.StartsWith("magazine_", StringComparison.OrdinalIgnoreCase) || PatchTextInferenceHelpers.ContainsAnyKeyword(name, ["弹匣", "magazine", "drum", "casket", "магазин"]))
         {
-            return RealismPatchGenerator.InferMagazineProfile(RealismPatchGenerator.ExtractMagCapacity(itemInfo, name), name);
+            return PatchTextInferenceHelpers.InferMagazineProfile(PatchTextInferenceHelpers.ExtractMagCapacity(itemInfo, name), name);
         }
 
-        if (RealismPatchGenerator.IsHandguardLikeName(name))
+        if (PatchTextInferenceHelpers.IsHandguardLikeName(name))
         {
-            return RealismPatchGenerator.InferHandguardProfileFromName(name);
+            return PatchTextInferenceHelpers.InferHandguardProfileFromName(name);
         }
 
-        if (name.StartsWith("silencer_", StringComparison.OrdinalIgnoreCase) || ContainsAnyKeyword(name, ["suppressor", "消音器", "抑制器", "消声器", "глушитель"]))
+        if (name.StartsWith("silencer_", StringComparison.OrdinalIgnoreCase) || PatchTextInferenceHelpers.ContainsAnyKeyword(name, ["suppressor", "消音器", "抑制器", "消声器", "глушитель"]))
         {
-            return RealismPatchGenerator.InferSuppressorProfileFromName(name);
+            return PatchTextInferenceHelpers.InferSuppressorProfileFromName(name);
         }
 
         if (name.StartsWith("railq", StringComparison.OrdinalIgnoreCase))
@@ -722,27 +721,27 @@ internal static class ProfileInferenceService
             return "handguard_medium";
         }
 
-        if (ContainsAnyKeyword(name, ["barrel and rail system", "rail system", "front-end assembly", "front end assembly"]) && ContainsAnyKeyword(name, ["m-lok", "mlok", "keymod", "barrel", "forend", "handguard", "护木"]))
+        if (PatchTextInferenceHelpers.ContainsAnyKeyword(name, ["barrel and rail system", "rail system", "front-end assembly", "front end assembly"]) && PatchTextInferenceHelpers.ContainsAnyKeyword(name, ["m-lok", "mlok", "keymod", "barrel", "forend", "handguard", "护木"]))
         {
-            return RealismPatchGenerator.InferHandguardProfileFromName(name);
+            return PatchTextInferenceHelpers.InferHandguardProfileFromName(name);
         }
 
-        if (name.StartsWith("mount_", StringComparison.OrdinalIgnoreCase) || ContainsAnyKeyword(name, ["导轨", "基座", "偏移座", "镜座", "mount", "rail segment", "rail", "offset mount"]))
+        if (name.StartsWith("mount_", StringComparison.OrdinalIgnoreCase) || PatchTextInferenceHelpers.ContainsAnyKeyword(name, ["导轨", "基座", "偏移座", "镜座", "mount", "rail segment", "rail", "offset mount"]))
         {
             return "mount";
         }
 
-        if (name.StartsWith("barrel_", StringComparison.OrdinalIgnoreCase) || ContainsAnyKeyword(name, ["枪管", "barrel", "ствол"]))
+        if (name.StartsWith("barrel_", StringComparison.OrdinalIgnoreCase) || PatchTextInferenceHelpers.ContainsAnyKeyword(name, ["枪管", "barrel", "ствол"]))
         {
-            return RealismPatchGenerator.InferBarrelProfileFromName(name);
+            return PatchTextInferenceHelpers.InferBarrelProfileFromName(name);
         }
 
-        if (name.StartsWith("sight_", StringComparison.OrdinalIgnoreCase) || name.StartsWith("scope_", StringComparison.OrdinalIgnoreCase) || ContainsAnyKeyword(name, ["瞄具", "瞄准镜", "全息", "红点", "反射式"]))
+        if (name.StartsWith("sight_", StringComparison.OrdinalIgnoreCase) || name.StartsWith("scope_", StringComparison.OrdinalIgnoreCase) || PatchTextInferenceHelpers.ContainsAnyKeyword(name, ["瞄具", "瞄准镜", "全息", "红点", "反射式"]))
         {
-            return RealismPatchGenerator.InferSightProfileFromName(name) ?? "scope_red_dot";
+            return PatchTextInferenceHelpers.InferSightProfileFromName(name) ?? "scope_red_dot";
         }
 
-        if (name.Contains("adapter", StringComparison.OrdinalIgnoreCase) && ContainsAnyKeyword(name, ["muzzle", "suppressor", "silencer", "taper", "qd", "消音器", "抑制器"]))
+        if (name.Contains("adapter", StringComparison.OrdinalIgnoreCase) && PatchTextInferenceHelpers.ContainsAnyKeyword(name, ["muzzle", "suppressor", "silencer", "taper", "qd", "消音器", "抑制器"]))
         {
             return "muzzle_adapter";
         }
@@ -752,34 +751,34 @@ internal static class ProfileInferenceService
             return "booster";
         }
 
-        if (ContainsAnyKeyword(name, ["thread protector", "螺纹保护", "protective cap"]))
+        if (PatchTextInferenceHelpers.ContainsAnyKeyword(name, ["thread protector", "螺纹保护", "protective cap"]))
         {
             return "muzzle_thread";
         }
 
-        if (ContainsAnyKeyword(name, ["制退器", "compensator", "muzzle brake", "brake"]))
+        if (PatchTextInferenceHelpers.ContainsAnyKeyword(name, ["制退器", "compensator", "muzzle brake", "brake"]))
         {
             return "muzzle_brake";
         }
 
-        if (name.StartsWith("muzzle_", StringComparison.OrdinalIgnoreCase) || name.Contains("flashhider", StringComparison.OrdinalIgnoreCase) || name.Contains("compensator", StringComparison.OrdinalIgnoreCase) || ContainsAnyKeyword(name, ["消焰器", "消焰", "火帽", "flash hider"]))
+        if (name.StartsWith("muzzle_", StringComparison.OrdinalIgnoreCase) || name.Contains("flashhider", StringComparison.OrdinalIgnoreCase) || name.Contains("compensator", StringComparison.OrdinalIgnoreCase) || PatchTextInferenceHelpers.ContainsAnyKeyword(name, ["消焰器", "消焰", "火帽", "flash hider"]))
         {
             return "muzzle_flashhider";
         }
 
-        if (ContainsAnyKeyword(name, ["flashlight", "laser", "peq", "dbal", "x400", "xc1", "战术灯", "战术装置", "手电", "手电筒", "激光", "镭射", "照明", "wmx", "wmlx", "x300", "m300", "m600", "m640", "wmx200"]) && !ContainsAnyKeyword(name, ["偏移座", "基座", "导轨", "mount", "rail"]))
+        if (PatchTextInferenceHelpers.ContainsAnyKeyword(name, ["flashlight", "laser", "peq", "dbal", "x400", "xc1", "战术灯", "战术装置", "手电", "手电筒", "激光", "镭射", "照明", "wmx", "wmlx", "x300", "m300", "m600", "m640", "wmx200"]) && !PatchTextInferenceHelpers.ContainsAnyKeyword(name, ["偏移座", "基座", "导轨", "mount", "rail"]))
         {
             return "flashlight_laser";
         }
 
-        if (ContainsAnyKeyword(name, ["gas tube", "导气管"]))
+        if (PatchTextInferenceHelpers.ContainsAnyKeyword(name, ["gas tube", "导气管"]))
         {
             return "gasblock";
         }
 
-        if (ContainsAnyKeyword(name, ["front-end assembly", "front end assembly"]))
+        if (PatchTextInferenceHelpers.ContainsAnyKeyword(name, ["front-end assembly", "front end assembly"]))
         {
-            return RealismPatchGenerator.InferHandguardProfileFromName(name);
+            return PatchTextInferenceHelpers.InferHandguardProfileFromName(name);
         }
 
         return null;
@@ -787,12 +786,12 @@ internal static class ProfileInferenceService
 
     private static string InferArmorPlateProfile(PatchAnalysisContext context)
     {
-        if (ContainsAnyKeyword(context.GearArmorClassText, ["helmet_armor", "helmet armor", "helmet", "ears", "nape", "top", "jaw", "eyes"]))
+        if (PatchTextInferenceHelpers.ContainsAnyKeyword(context.GearArmorClassText, ["helmet_armor", "helmet armor", "helmet", "ears", "nape", "top", "jaw", "eyes"]))
         {
             return "armor_plate_helmet";
         }
 
-        if (ContainsAnyKeyword(context.GearArmorClassText, ["soft armor", "soft", "backer", "iiia", "gost 2", "gost 2a", "2a", "3a", "soft_armor", "软甲", "软插板"]))
+        if (PatchTextInferenceHelpers.ContainsAnyKeyword(context.GearArmorClassText, ["soft armor", "soft", "backer", "iiia", "gost 2", "gost 2a", "2a", "3a", "soft_armor", "软甲", "软插板"]))
         {
             return "armor_plate_soft";
         }
@@ -802,12 +801,12 @@ internal static class ProfileInferenceService
 
     private static string InferBodyArmorProfile(string baseProfile, PatchAnalysisContext context)
     {
-        if (ContainsAnyKeyword(context.GearArmorClassText, ["gost 4", "gost 5", "gost 5a", "gost 6", "nij iii+", "nij iv", "rf3", "xsapi", "esapi", "mk4a", "rev. g", "rev. j", "pm 5", "pm 8", "pm 10", "plates"]))
+        if (PatchTextInferenceHelpers.ContainsAnyKeyword(context.GearArmorClassText, ["gost 4", "gost 5", "gost 5a", "gost 6", "nij iii+", "nij iv", "rf3", "xsapi", "esapi", "mk4a", "rev. g", "rev. j", "pm 5", "pm 8", "pm 10", "plates"]))
         {
             return $"{baseProfile}_heavy";
         }
 
-        if (ContainsAnyKeyword(context.GearArmorClassText, ["gost 2", "gost 2a", "gost 3", "gost 3a", "nij ii", "nij iia", "nij iii", "pm 2", "pm 3"]))
+        if (PatchTextInferenceHelpers.ContainsAnyKeyword(context.GearArmorClassText, ["gost 2", "gost 2a", "gost 3", "gost 3a", "nij ii", "nij iia", "nij iii", "pm 2", "pm 3"]))
         {
             return $"{baseProfile}_light";
         }
@@ -827,12 +826,12 @@ internal static class ProfileInferenceService
             return "cosmetic_gasmask";
         }
 
-        if (ContainsAnyKeyword(context.Name, ["gas mask", "respirator", "防毒", "防毒面具", "gasmask", "maska"]))
+        if (PatchTextInferenceHelpers.ContainsAnyKeyword(context.Name, ["gas mask", "respirator", "防毒", "防毒面具", "gasmask", "maska"]))
         {
             return "cosmetic_gasmask";
         }
 
-        if (ContainsAnyKeyword(context.Name, ["beret", "贝雷帽", "cap", "帽", "boonie", "watch cap"]))
+        if (PatchTextInferenceHelpers.ContainsAnyKeyword(context.Name, ["beret", "贝雷帽", "cap", "帽", "boonie", "watch cap"]))
         {
             return "cosmetic_headwear";
         }
@@ -842,7 +841,7 @@ internal static class ProfileInferenceService
 
     private static string InferHelmetProfile(PatchAnalysisContext context)
     {
-        return ContainsAnyKeyword(context.Name, ["altyn", "rys", "ronin", "maska", "vulkan", "tor", "zsh", "lshz", "kiver", "sphera", "devtac", "k1c", "shpm", "psh97", "ssh-68", "ssh68", "neosteel"])
+        return PatchTextInferenceHelpers.ContainsAnyKeyword(context.Name, ["altyn", "rys", "ronin", "maska", "vulkan", "tor", "zsh", "lshz", "kiver", "sphera", "devtac", "k1c", "shpm", "psh97", "ssh-68", "ssh68", "neosteel"])
             ? "helmet_heavy"
             : "helmet_light";
     }
@@ -851,39 +850,35 @@ internal static class ProfileInferenceService
     {
         if (baseProfile == "armor_component")
         {
-            return ContainsAnyKeyword(context.Name, ["shield", "face shield", "faceshield", "visor", "面甲", "面罩"])
+            return PatchTextInferenceHelpers.ContainsAnyKeyword(context.Name, ["shield", "face shield", "faceshield", "visor", "面甲", "面罩"])
                 ? "armor_component_faceshield"
                 : "armor_component_accessory";
         }
 
-        return ContainsAnyKeyword(context.GearArmorClassText, ["nij", "gost", "v50", "anti-shatter", "ansi", "mil-prf", "bs en", "ballistic"])
+        return PatchTextInferenceHelpers.ContainsAnyKeyword(context.GearArmorClassText, ["nij", "gost", "v50", "anti-shatter", "ansi", "mil-prf", "bs en", "ballistic"])
             ? "armor_mask_ballistic"
             : "armor_mask_decorative";
     }
 
     private static string InferBackpackProfile(PatchAnalysisContext context)
     {
-        return ContainsAnyKeyword(context.Name, ["sling", "daypack", "day pack", "drawbridge", "switchblade", "medpack", "medbag", "redfox", "wild", "takedown", "t20", "vertx"])
+        return PatchTextInferenceHelpers.ContainsAnyKeyword(context.Name, ["sling", "daypack", "day pack", "drawbridge", "switchblade", "medpack", "medbag", "redfox", "wild", "takedown", "t20", "vertx"])
             ? "backpack_compact"
             : "backpack_full";
     }
 
     private static string InferEyewearProfile(PatchAnalysisContext context)
     {
-        return ContainsAnyKeyword(context.GearArmorClassText, ["v50", "anti-shatter", "ansi", "mil-prf", "ballistic", "z87", "31013"])
+        return PatchTextInferenceHelpers.ContainsAnyKeyword(context.GearArmorClassText, ["v50", "anti-shatter", "ansi", "mil-prf", "ballistic", "z87", "31013"])
             ? "protective_eyewear_ballistic"
             : "protective_eyewear_standard";
     }
 
     private static string InferChestRigProfile(PatchAnalysisContext context)
     {
-        return ContainsAnyKeyword(context.Name, ["bankrobber", "micro", "d3crx", "cs_assault", "thunderbolt", "bssmk1", "recon", "zulu"])
+        return PatchTextInferenceHelpers.ContainsAnyKeyword(context.Name, ["bankrobber", "micro", "d3crx", "cs_assault", "thunderbolt", "bssmk1", "recon", "zulu"])
             ? "chest_rig_light"
             : "chest_rig_heavy";
     }
 
-    private static bool ContainsAnyKeyword(string text, IEnumerable<string> keywords)
-    {
-        return keywords.Any(keyword => text.Contains(keyword, StringComparison.OrdinalIgnoreCase));
-    }
 }

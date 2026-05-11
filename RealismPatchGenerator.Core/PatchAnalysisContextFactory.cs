@@ -84,8 +84,8 @@ internal static class PatchAnalysisContextFactory
                 || itemInfo.Properties["gasProtection"] is not null
                 || itemInfo.Properties["RadProtection"] is not null
                 || itemInfo.Properties["radProtection"] is not null,
-            NameTokens = RealismPatchGenerator.ExtractAlphaNumericTokens(name),
-            AmmoVariantTokens = RealismPatchGenerator.ExtractAlphaNumericTokens(BuildCombinedLowerText(
+            NameTokens = PatchTextInferenceHelpers.ExtractAlphaNumericTokens(name),
+            AmmoVariantTokens = PatchTextInferenceHelpers.ExtractAlphaNumericTokens(BuildCombinedLowerText(
                 patch["Name"],
                 patch["ShortName"],
                 patch["Description"],

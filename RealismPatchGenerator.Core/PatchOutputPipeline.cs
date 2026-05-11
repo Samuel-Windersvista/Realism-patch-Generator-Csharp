@@ -66,21 +66,17 @@ internal sealed class PatchOutputBuffer
     private readonly List<string> fileBasedPatchOrder = [];
     private readonly Dictionary<string, bool> fileUsesSuffixOutput = new(StringComparer.OrdinalIgnoreCase);
 
-    public void RegisterSource(string sourceFile, bool useSuffixOutput)
+    public void AppendFileEntries(string sourceFile, bool useSuffixOutput, IReadOnlyList<KeyValuePair<string, JsonObject>> entries)
     {
-        fileUsesSuffixOutput[sourceFile] = useSuffixOutput;
-    }
-
-    public void AddOrUpdate(string sourceFile, string itemId, JsonObject patch)
-    {
-        if (!fileBasedPatches.TryGetValue(sourceFile, out var group))
+        var group = new OrderedPatchGroup();
+        foreach (var entry in entries)
         {
-            group = new OrderedPatchGroup();
-            fileBasedPatches[sourceFile] = group;
-            fileBasedPatchOrder.Add(sourceFile);
+            group.AddOrUpdate(entry.Key, entry.Value);
         }
 
-        group.AddOrUpdate(itemId, patch);
+        fileBasedPatches[sourceFile] = group;
+        fileUsesSuffixOutput[sourceFile] = useSuffixOutput;
+        fileBasedPatchOrder.Add(sourceFile);
     }
 
     public List<FilePatchOutput> CreateOutputs()

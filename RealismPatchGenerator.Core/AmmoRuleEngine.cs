@@ -4,9 +4,9 @@ namespace RealismPatchGenerator.Core;
 
 internal static class AmmoRuleEngine
 {
-    public static void ApplyAmmoProfileRanges(RealismPatchGenerator generator, RuleSet rules, JsonObject patch, ItemInfo itemInfo)
+    public static void ApplyAmmoProfileRanges(RealismPatchGenerator generator, RuleSet rules, JsonObject patch, ItemInfo itemInfo, CompatibleRandom random)
     {
-        ApplyAmmoProfileRanges(new PatchRuleContext(generator, rules, patch, itemInfo));
+        ApplyAmmoProfileRanges(new PatchRuleContext(generator, rules, patch, itemInfo, random));
     }
 
     public static void ApplyAmmoProfileRanges(PatchRuleContext context)
@@ -73,7 +73,7 @@ internal static class AmmoRuleEngine
                 patch[pair.Key] = RealismPatchGenerator.CreateNumericNode(RealismPatchGenerator.GetRangeSeedValue(min, max, pair.Value.PreferInt), pair.Value.PreferInt);
             }
 
-            patch[pair.Key] = generator.SampleRangeValue(patch[pair.Key], min, max, pair.Value.PreferInt);
+            patch[pair.Key] = generator.SampleRangeValue(patch[pair.Key], min, max, pair.Value.PreferInt, context.Random);
         }
     }
 

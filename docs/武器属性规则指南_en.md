@@ -1,4 +1,4 @@
-# Weapon Rule Guide (v2.0)
+# Weapon Rule Guide (v2.7)
 
 This document describes the current C# weapon rule pipeline. Source of truth: RealismItemRules/weapon_rules.json, aligned with RealismPatchGenerator.Core/WeaponRuleData.cs and RealismPatchGenerator.Core/RealismPatchGenerator.cs.
 

@@ -1,4 +1,4 @@
-# Gear Rule Guide (v2.0)
+# Gear Rule Guide (v2.7)
 
 This document describes the current C# gear rule pipeline. Source of truth: RealismItemRules/gear_rules.json, aligned with RealismPatchGenerator.Core/GearRuleData.cs and RealismPatchGenerator.Core/RealismPatchGenerator.cs.
 

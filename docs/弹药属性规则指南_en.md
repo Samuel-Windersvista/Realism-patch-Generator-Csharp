@@ -1,4 +1,4 @@
-# Ammo Rule Guide (v2.0)
+# Ammo Rule Guide (v2.7)
 
 This document describes the current C# ammo rule pipeline. Source of truth: RealismItemRules/ammo_rules.json, aligned with RealismPatchGenerator.Core/AmmoRuleData.cs and RealismPatchGenerator.Core/RealismPatchGenerator.cs.
 

@@ -4,9 +4,9 @@ namespace RealismPatchGenerator.Core;
 
 internal static class GearRuleEngine
 {
-    public static void ApplyGearSanityCheck(RealismPatchGenerator generator, RuleSet rules, JsonObject patch, ItemInfo itemInfo)
+    public static void ApplyGearSanityCheck(RealismPatchGenerator generator, RuleSet rules, JsonObject patch, ItemInfo itemInfo, CompatibleRandom random)
     {
-        ApplyGearSanityCheck(new PatchRuleContext(generator, rules, patch, itemInfo));
+        ApplyGearSanityCheck(new PatchRuleContext(generator, rules, patch, itemInfo, random));
     }
 
     public static void ApplyGearSanityCheck(PatchRuleContext context)
@@ -26,7 +26,7 @@ internal static class GearRuleEngine
             return;
         }
 
-        generator.ApplyNumericRanges(patch, ranges, ensureFields: true);
+        generator.ApplyNumericRanges(patch, ranges, ensureFields: true, context.Random);
         RealismPatchGenerator.ApplyFieldClamps(patch, rules.Gear.GearClampRules);
         ApplyGearPriceRule(generator, rules, patch, itemInfo, gearProfile);
         RealismPatchGenerator.ApplyGlobalSafetyClamps(patch);

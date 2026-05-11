@@ -4,11 +4,11 @@ namespace RealismPatchGenerator.Core;
 
 internal static class PatchRuleApplier
 {
-    public static void ApplyRealismSanityCheck(RealismPatchGenerator generator, RuleSet rules, JsonObject patch, ItemInfo itemInfo)
+    public static void ApplyRealismSanityCheck(RealismPatchGenerator generator, RuleSet rules, JsonObject patch, ItemInfo itemInfo, CompatibleRandom random)
     {
         EnsureRequiredFields(patch, itemInfo);
         ApplyPreRuleHeuristics(patch);
-        var ruleContext = new PatchRuleContext(generator, rules, patch, itemInfo);
+        var ruleContext = new PatchRuleContext(generator, rules, patch, itemInfo, random);
 
         var itemType = patch["$type"]?.GetValue<string?>() ?? string.Empty;
         if (itemType.Contains("RealismMod.Gun", StringComparison.OrdinalIgnoreCase))
@@ -132,7 +132,7 @@ internal static class PatchRuleApplier
 
     private static void ApplyBarrelVelocityHeuristic(JsonObject patch, string itemName)
     {
-        var barrelLengthMm = RealismPatchGenerator.ExtractBarrelLengthMm(itemName);
+        var barrelLengthMm = PatchTextInferenceHelpers.ExtractBarrelLengthMm(itemName);
         if (barrelLengthMm is null || !itemName.Contains("barrel", StringComparison.OrdinalIgnoreCase))
         {
             return;

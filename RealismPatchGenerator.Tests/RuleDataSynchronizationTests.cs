@@ -1,4 +1,5 @@
 using System.Text.Json.Nodes;
+using System.Reflection;
 using RealismPatchGenerator.Core;
 using Xunit;
 
@@ -56,6 +57,378 @@ public sealed class RuleDataSynchronizationTests : IDisposable
         }
 
         Assert.True(mismatches.Count == 0, "默认 RuleData 与 RealismItemRules 不同步: " + string.Join(" | ", mismatches));
+    }
+
+    [Fact]
+    public void MultiItemFile_GenerationPreservesPerFileOutputAndItemOrder()
+    {
+            var workspaceRoot = CreateGeneratorWorkspace("file-processing-context-order");
+            var inputRoot = Path.Combine(workspaceRoot, "input", "user_templates");
+
+            var inputPath = Path.Combine(inputRoot, "file-processing-context-order.json");
+            File.WriteAllText(inputPath, """
+            {
+                "test_context_weapon": {
+                    "$type": "RealismMod.Gun, RealismMod",
+                    "ItemID": "test_context_weapon",
+                    "parentId": "5447b5e04bdc2d62278b4567",
+                    "Name": "Test Context Rifle",
+                    "WeapType": "rifle",
+                    "LoyaltyLevel": 2,
+                    "Price": 42000,
+                    "Ergonomics": 62,
+                    "VerticalRecoil": 82,
+                    "HorizontalRecoil": 164,
+                    "Dispersion": 7,
+                    "Convergence": 14,
+                    "RecoilIntensity": 0.18,
+                    "AutoROF": 650,
+                    "SemiROF": 320,
+                    "Weight": 3.7
+                },
+                "test_context_ammo": {
+                    "$type": "RealismMod.Ammo, RealismMod",
+                    "ItemID": "test_context_ammo",
+                    "Name": "Test Context Ammo",
+                    "Caliber": "Caliber9x19PARA",
+                    "Weight": 0.012,
+                    "Damage": 52,
+                    "PenetrationPower": 18,
+                    "InitialSpeed": 410,
+                    "ArmorDamage": 18
+                }
+            }
+            """);
+
+            var generator = new RealismPatchGenerator.Core.RealismPatchGenerator(workspaceRoot, seed: 12345);
+            var result = generator.Generate(Path.Combine(workspaceRoot, "generated-output"));
+
+            var patchPath = Path.Combine(result.OutputPath, "user_templates", "file-processing-context-order_realism_patch.json");
+            Assert.True(File.Exists(patchPath), $"缺少输出文件: {patchPath}");
+
+            var root = JsonNode.Parse(File.ReadAllText(patchPath))!.AsObject();
+            Assert.Equal(["test_context_weapon", "test_context_ammo"], root.Select(pair => pair.Key).ToArray());
+    }
+
+    [Fact]
+    public void DisabledItem_IsSkippedWithoutBreakingSiblingOutputInSameFile()
+    {
+            var workspaceRoot = CreateGeneratorWorkspace("file-processing-context-disabled-item");
+            var inputRoot = Path.Combine(workspaceRoot, "input", "user_templates");
+
+            var inputPath = Path.Combine(inputRoot, "file-processing-context-disabled-item.json");
+            File.WriteAllText(inputPath, """
+            {
+                "test_disabled_weapon": {
+                    "$type": "RealismMod.Gun, RealismMod",
+                    "ItemID": "test_disabled_weapon",
+                    "enable": false,
+                    "Name": "Disabled Weapon"
+                },
+                "test_enabled_gear": {
+                    "$type": "RealismMod.Gear, RealismMod",
+                    "ItemID": "test_enabled_gear",
+                    "Name": "Enabled Chest Rig",
+                    "LoyaltyLevel": 1,
+                    "Price": 20000,
+                    "ReloadSpeedMulti": 1.0,
+                    "Comfort": 0.9,
+                    "speedPenaltyPercent": -2.5,
+                    "weaponErgonomicPenalty": 0,
+                    "Grids": [
+                        {
+                            "_props": {
+                                "cellsH": 4,
+                                "cellsV": 4
+                            }
+                        }
+                    ],
+                    "Slots": []
+                }
+            }
+            """);
+
+            var generator = new RealismPatchGenerator.Core.RealismPatchGenerator(workspaceRoot, seed: 12345);
+            var result = generator.Generate(Path.Combine(workspaceRoot, "generated-output"));
+
+            var patchPath = Path.Combine(result.OutputPath, "user_templates", "file-processing-context-disabled-item_realism_patch.json");
+            Assert.True(File.Exists(patchPath), $"缺少输出文件: {patchPath}");
+
+            var root = JsonNode.Parse(File.ReadAllText(patchPath))!.AsObject();
+            Assert.DoesNotContain("test_disabled_weapon", root.Select(pair => pair.Key));
+            Assert.Contains("test_enabled_gear", root.Select(pair => pair.Key));
+    }
+
+    [Fact]
+    public void SampleRangeValue_UsesProvidedRandomInstance()
+    {
+            var workspaceRoot = CreateGeneratorWorkspace("rng-context-sample-range");
+            var generator = new RealismPatchGenerator.Core.RealismPatchGenerator(workspaceRoot, seed: 12345);
+            var assembly = typeof(RealismPatchGenerator.Core.RealismPatchGenerator).Assembly;
+
+            var compatibleRandomType = assembly.GetType("RealismPatchGenerator.Core.CompatibleRandom", throwOnError: true)!;
+            var randomCtor = compatibleRandomType.GetConstructor(new[] { typeof(uint) })!;
+            var sampleRangeValue = typeof(RealismPatchGenerator.Core.RealismPatchGenerator)
+                .GetMethod(
+                    "SampleRangeValue",
+                    BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public,
+                    binder: null,
+                    types: [typeof(JsonNode), typeof(double), typeof(double), typeof(bool), compatibleRandomType],
+                    modifiers: null);
+
+            Assert.NotNull(sampleRangeValue);
+
+            var firstRandom = randomCtor.Invoke([123u]);
+            var secondRandom = randomCtor.Invoke([456u]);
+
+            var firstResult = (JsonNode?)sampleRangeValue!.Invoke(generator, [JsonValue.Create(50.0)!, 10.0, 90.0, false, firstRandom]);
+            var secondResult = (JsonNode?)sampleRangeValue.Invoke(generator, [JsonValue.Create(50.0)!, 10.0, 90.0, false, secondRandom]);
+
+            Assert.NotNull(firstResult);
+            Assert.NotNull(secondResult);
+            Assert.NotEqual(firstResult!.GetValue<double>(), secondResult!.GetValue<double>());
+    }
+
+    [Fact]
+    public void SameSeed_GenerateTwice_ProducesIdenticalRangeDrivenOutput()
+    {
+            var workspaceRoot = CreateGeneratorWorkspace("rng-context-determinism");
+            var inputRoot = Path.Combine(workspaceRoot, "input", "user_templates");
+
+            var inputPath = Path.Combine(inputRoot, "rng-context-determinism.json");
+            File.WriteAllText(inputPath, """
+            {
+                "test_rng_ammo": {
+                    "$type": "RealismMod.Ammo, RealismMod",
+                    "ItemID": "test_rng_ammo",
+                    "Name": "Test RNG Ammo",
+                    "Caliber": "Caliber9x19PARA",
+                    "Weight": 0.012,
+                    "Damage": 52,
+                    "PenetrationPower": 18,
+                    "InitialSpeed": 410,
+                    "ArmorDamage": 18
+                }
+            }
+            """);
+
+            var firstOutput = GenerateOutputText(workspaceRoot, seed: 12345, outputDirectoryName: "generated-output-a", outputFileName: "rng-context-determinism_realism_patch.json");
+            var secondOutput = GenerateOutputText(workspaceRoot, seed: 12345, outputDirectoryName: "generated-output-b", outputFileName: "rng-context-determinism_realism_patch.json");
+
+            Assert.Equal(firstOutput, secondOutput);
+    }
+
+    [Fact]
+    public void StoredPatches_FromMultipleTypes_RemainResolvableByItemId()
+    {
+            var workspaceRoot = CreateGeneratorWorkspace("patch-store-multi-type-lookup");
+            var inputRoot = Path.Combine(workspaceRoot, "input", "user_templates");
+
+            var inputPath = Path.Combine(inputRoot, "patch-store-multi-type-lookup.json");
+            File.WriteAllText(inputPath, """
+            {
+                "test_patchstore_weapon": {
+                    "$type": "RealismMod.Gun, RealismMod",
+                    "ItemID": "test_patchstore_weapon",
+                    "parentId": "5447b5e04bdc2d62278b4567",
+                    "Name": "PatchStore Weapon",
+                    "WeapType": "rifle",
+                    "LoyaltyLevel": 2,
+                    "Price": 42000,
+                    "Ergonomics": 62,
+                    "VerticalRecoil": 82,
+                    "HorizontalRecoil": 164,
+                    "Dispersion": 7,
+                    "Convergence": 14,
+                    "RecoilIntensity": 0.18,
+                    "AutoROF": 650,
+                    "SemiROF": 320,
+                    "Weight": 3.7
+                },
+                "test_patchstore_ammo": {
+                    "$type": "RealismMod.Ammo, RealismMod",
+                    "ItemID": "test_patchstore_ammo",
+                    "Name": "PatchStore Ammo",
+                    "Caliber": "Caliber9x19PARA",
+                    "Weight": 0.012,
+                    "Damage": 52,
+                    "PenetrationPower": 18,
+                    "InitialSpeed": 410,
+                    "ArmorDamage": 18
+                },
+                "test_patchstore_gear": {
+                    "$type": "RealismMod.Gear, RealismMod",
+                    "ItemID": "test_patchstore_gear",
+                    "Name": "PatchStore Rig",
+                    "LoyaltyLevel": 1,
+                    "Price": 20000,
+                    "ReloadSpeedMulti": 1.0,
+                    "Comfort": 0.9,
+                    "speedPenaltyPercent": -2.5,
+                    "weaponErgonomicPenalty": 0,
+                    "Grids": [
+                        {
+                            "_props": {
+                                "cellsH": 4,
+                                "cellsV": 4
+                            }
+                        }
+                    ],
+                    "Slots": []
+                }
+            }
+            """);
+
+            var generator = new RealismPatchGenerator.Core.RealismPatchGenerator(workspaceRoot, seed: 12345);
+            generator.Generate(Path.Combine(workspaceRoot, "generated-output"));
+
+            var tryGetStoredPatchById = typeof(RealismPatchGenerator.Core.RealismPatchGenerator)
+                .GetMethod("TryGetStoredPatchById", BindingFlags.Instance | BindingFlags.NonPublic)!;
+
+            var weaponArgs = new object?[] { "test_patchstore_weapon", null };
+            var ammoArgs = new object?[] { "test_patchstore_ammo", null };
+            var gearArgs = new object?[] { "test_patchstore_gear", null };
+
+            Assert.True((bool)tryGetStoredPatchById.Invoke(generator, weaponArgs)!);
+            Assert.True((bool)tryGetStoredPatchById.Invoke(generator, ammoArgs)!);
+            Assert.True((bool)tryGetStoredPatchById.Invoke(generator, gearArgs)!);
+
+            var weaponPatch = Assert.IsType<JsonObject>(weaponArgs[1]);
+            var ammoPatch = Assert.IsType<JsonObject>(ammoArgs[1]);
+            var gearPatch = Assert.IsType<JsonObject>(gearArgs[1]);
+
+            Assert.Equal("RealismMod.Gun, RealismMod", weaponPatch["$type"]?.GetValue<string>());
+            Assert.Equal("RealismMod.Ammo, RealismMod", ammoPatch["$type"]?.GetValue<string>());
+            Assert.Equal("RealismMod.Gear, RealismMod", gearPatch["$type"]?.GetValue<string>());
+    }
+
+    [Fact]
+    public void CrossFileCloneResolution_RemainsValidWhenOutputFlushIsDeferredPerFile()
+    {
+            var workspaceRoot = CreateGeneratorWorkspace("output-merge-cross-file-clone");
+            var inputRoot = Path.Combine(workspaceRoot, "input", "user_templates");
+
+            var baseInputPath = Path.Combine(inputRoot, "a-base-weapon.json");
+            File.WriteAllText(baseInputPath, """
+            {
+                "test_base_weapon": {
+                    "$type": "RealismMod.Gun, RealismMod",
+                    "ItemID": "test_base_weapon",
+                    "parentId": "5447b5e04bdc2d62278b4567",
+                    "Name": "Test Base Weapon",
+                    "WeapType": "rifle",
+                    "LoyaltyLevel": 2,
+                    "Price": 42000,
+                    "Ergonomics": 62,
+                    "VerticalRecoil": 82,
+                    "HorizontalRecoil": 164,
+                    "Dispersion": 7,
+                    "Convergence": 14,
+                    "RecoilIntensity": 0.18,
+                    "AutoROF": 650,
+                    "SemiROF": 320,
+                    "Weight": 3.7
+                }
+            }
+            """);
+
+            var cloneInputPath = Path.Combine(inputRoot, "b-clone-weapon.json");
+            File.WriteAllText(cloneInputPath, """
+            {
+                "test_clone_weapon": {
+                    "$type": "RealismMod.Gun, RealismMod",
+                    "ItemID": "test_clone_weapon",
+                    "TemplateID": "test_base_weapon",
+                    "parentId": "5447b5e04bdc2d62278b4567",
+                    "Name": "Test Clone Weapon",
+                    "LoyaltyLevel": 2,
+                    "Price": 43000,
+                    "Ergonomics": 58,
+                    "VerticalRecoil": 88,
+                    "HorizontalRecoil": 170,
+                    "Dispersion": 8,
+                    "Convergence": 15,
+                    "RecoilIntensity": 0.20,
+                    "AutoROF": 620,
+                    "SemiROF": 300,
+                    "Weight": 3.9
+                }
+            }
+            """);
+
+            var basePatch = GenerateSinglePatch(workspaceRoot, "a-base-weapon_realism_patch.json", "test_base_weapon");
+            var clonePatch = GenerateSinglePatch(workspaceRoot, "b-clone-weapon_realism_patch.json", "test_clone_weapon");
+
+            Assert.Equal("RealismMod.Gun, RealismMod", basePatch["$type"]?.GetValue<string>());
+            Assert.Equal("RealismMod.Gun, RealismMod", clonePatch["$type"]?.GetValue<string>());
+            Assert.Equal("test_clone_weapon", clonePatch["ItemID"]?.GetValue<string>());
+    }
+
+    [Fact]
+    public void MultiItemFile_ItemOrderRemainsStableAfterPerFileBatchFlush()
+    {
+            var workspaceRoot = CreateGeneratorWorkspace("output-merge-item-order");
+            var inputRoot = Path.Combine(workspaceRoot, "input", "user_templates");
+
+            var inputPath = Path.Combine(inputRoot, "output-merge-item-order.json");
+            File.WriteAllText(inputPath, """
+            {
+                "test_merge_weapon": {
+                    "$type": "RealismMod.Gun, RealismMod",
+                    "ItemID": "test_merge_weapon",
+                    "parentId": "5447b5e04bdc2d62278b4567",
+                    "Name": "Test Merge Weapon",
+                    "WeapType": "rifle",
+                    "LoyaltyLevel": 2,
+                    "Price": 42000,
+                    "Ergonomics": 62,
+                    "VerticalRecoil": 82,
+                    "HorizontalRecoil": 164,
+                    "Dispersion": 7,
+                    "Convergence": 14,
+                    "RecoilIntensity": 0.18,
+                    "AutoROF": 650,
+                    "SemiROF": 320,
+                    "Weight": 3.7
+                },
+                "test_merge_ammo": {
+                    "$type": "RealismMod.Ammo, RealismMod",
+                    "ItemID": "test_merge_ammo",
+                    "Name": "Test Merge Ammo",
+                    "Caliber": "Caliber9x19PARA",
+                    "Weight": 0.012,
+                    "Damage": 52,
+                    "PenetrationPower": 18,
+                    "InitialSpeed": 410,
+                    "ArmorDamage": 18
+                },
+                "test_merge_gear": {
+                    "$type": "RealismMod.Gear, RealismMod",
+                    "ItemID": "test_merge_gear",
+                    "Name": "Test Merge Rig",
+                    "LoyaltyLevel": 1,
+                    "Price": 20000,
+                    "ReloadSpeedMulti": 1.0,
+                    "Comfort": 0.9,
+                    "speedPenaltyPercent": -2.5,
+                    "weaponErgonomicPenalty": 0,
+                    "Grids": [
+                        {
+                            "_props": {
+                                "cellsH": 4,
+                                "cellsV": 4
+                            }
+                        }
+                    ],
+                    "Slots": []
+                }
+            }
+            """);
+
+            var outputText = GenerateOutputText(workspaceRoot, seed: 12345, outputDirectoryName: "generated-output", outputFileName: "output-merge-item-order_realism_patch.json");
+            var root = JsonNode.Parse(outputText)!.AsObject();
+
+            Assert.Equal(["test_merge_weapon", "test_merge_ammo", "test_merge_gear"], root.Select(pair => pair.Key).ToArray());
     }
 
     public void Dispose()
@@ -143,6 +516,237 @@ public sealed class RuleDataSynchronizationTests : IDisposable
 
                 Assert.InRange(price, 22000, 65000);
                 Assert.NotEqual(999999, price);
+        }
+
+        [Fact]
+        public void WeaponName_SubstringOnlyKeyword_DoesNotOverrideRealTokenProfile()
+        {
+                var workspaceRoot = CreateGeneratorWorkspace("weapon-token-profile");
+                var inputRoot = Path.Combine(workspaceRoot, "input", "user_templates");
+
+                var weaponInputPath = Path.Combine(inputRoot, "weapon-token-profile.json");
+                File.WriteAllText(weaponInputPath, """
+                {
+                    "test_weapon_token_profile": {
+                        "$type": "RealismMod.Gun, RealismMod",
+                        "ItemID": "test_weapon_token_profile",
+                        "Name": "Test Pistolero Rifle",
+                        "LoyaltyLevel": 2,
+                        "Price": 42000,
+                        "Ergonomics": 62,
+                        "VerticalRecoil": 82,
+                        "HorizontalRecoil": 164,
+                        "Dispersion": 7,
+                        "Convergence": 14,
+                        "RecoilIntensity": 0.18,
+                        "AutoROF": 650,
+                        "SemiROF": 320,
+                        "Weight": 3.7
+                    }
+                }
+                """);
+
+                var patch = GenerateSinglePatch(workspaceRoot, "weapon-token-profile_realism_patch.json", "test_weapon_token_profile");
+
+                Assert.Equal("rifle", patch["WeapType"]?.GetValue<string>());
+        }
+
+        [Fact]
+        public void WeaponName_SubstringOnlyStockKeyword_DoesNotForceStocklessProfile()
+        {
+                var workspaceRoot = CreateGeneratorWorkspace("weapon-stock-token-profile");
+                var inputRoot = Path.Combine(workspaceRoot, "input", "user_templates");
+
+                var weaponInputPath = Path.Combine(inputRoot, "weapon-stock-token-profile.json");
+                File.WriteAllText(weaponInputPath, """
+                {
+                    "test_weapon_stock_token_profile": {
+                        "$type": "RealismMod.Gun, RealismMod",
+                        "ItemID": "test_weapon_stock_token_profile",
+                        "Name": "Test Stocklesser Rifle",
+                        "LoyaltyLevel": 2,
+                        "Price": 42000,
+                        "Ergonomics": 62,
+                        "VerticalRecoil": 82,
+                        "HorizontalRecoil": 164,
+                        "Dispersion": 7,
+                        "Convergence": 14,
+                        "RecoilIntensity": 0.18,
+                        "AutoROF": 650,
+                        "SemiROF": 320,
+                        "Weight": 3.7
+                    }
+                }
+                """);
+
+                var patch = GenerateSinglePatch(workspaceRoot, "weapon-stock-token-profile_realism_patch.json", "test_weapon_stock_token_profile");
+
+                Assert.NotNull(patch["BaseReloadSpeedMulti"]);
+        }
+
+        [Fact]
+        public void WeaponName_SubstringOnlyCaliberKeyword_DoesNotForcePistolCaliberProfile()
+        {
+                var workspaceRoot = CreateGeneratorWorkspace("weapon-caliber-token-profile");
+                var inputRoot = Path.Combine(workspaceRoot, "input", "user_templates");
+
+                var weaponInputPath = Path.Combine(inputRoot, "weapon-caliber-token-profile.json");
+                File.WriteAllText(weaponInputPath, """
+                {
+                    "test_weapon_caliber_token_profile": {
+                        "$type": "RealismMod.Gun, RealismMod",
+                        "ItemID": "test_weapon_caliber_token_profile",
+                        "Name": "Test Pistolero Rifle",
+                        "LoyaltyLevel": 2,
+                        "Price": 42000,
+                        "Ergonomics": 62,
+                        "VerticalRecoil": 82,
+                        "HorizontalRecoil": 164,
+                        "Dispersion": 7,
+                        "Convergence": 14,
+                        "RecoilIntensity": 0.18,
+                        "AutoROF": 650,
+                        "SemiROF": 320,
+                        "Weight": 3.7
+                    }
+                }
+                """);
+
+                var patch = GenerateSinglePatch(workspaceRoot, "weapon-caliber-token-profile_realism_patch.json", "test_weapon_caliber_token_profile");
+
+                Assert.Null(patch["Velocity"]);
+        }
+
+        [Fact]
+        public void WeaponName_SubstringOnlyShotgunKeyword_DoesNotOverrideAssaultProfile()
+        {
+                var workspaceRoot = CreateGeneratorWorkspace("weapon-shotgun-token-profile");
+                var inputRoot = Path.Combine(workspaceRoot, "input", "user_templates");
+
+                var weaponInputPath = Path.Combine(inputRoot, "weapon-shotgun-token-profile.json");
+                File.WriteAllText(weaponInputPath, """
+                {
+                    "test_weapon_shotgun_token_profile": {
+                        "$type": "RealismMod.Gun, RealismMod",
+                        "ItemID": "test_weapon_shotgun_token_profile",
+                        "Name": "Test Shotgunner Rifle",
+                        "LoyaltyLevel": 2,
+                        "Price": 42000,
+                        "Ergonomics": 62,
+                        "VerticalRecoil": 82,
+                        "HorizontalRecoil": 164,
+                        "Dispersion": 7,
+                        "Convergence": 14,
+                        "RecoilIntensity": 0.18,
+                        "AutoROF": 650,
+                        "SemiROF": 320,
+                        "Weight": 3.7
+                    }
+                }
+                """);
+
+                var patch = GenerateSinglePatch(workspaceRoot, "weapon-shotgun-token-profile_realism_patch.json", "test_weapon_shotgun_token_profile");
+
+                Assert.Equal("rifle", patch["WeapType"]?.GetValue<string>());
+        }
+
+        [Fact]
+        public void WeaponName_SubstringOnlyLauncherKeyword_DoesNotOverrideProfile()
+        {
+                var workspaceRoot = CreateGeneratorWorkspace("weapon-launcher-token-profile");
+                var inputRoot = Path.Combine(workspaceRoot, "input", "user_templates");
+
+                var weaponInputPath = Path.Combine(inputRoot, "weapon-launcher-token-profile.json");
+                File.WriteAllText(weaponInputPath, """
+                {
+                    "test_weapon_launcher_token_profile": {
+                        "$type": "RealismMod.Gun, RealismMod",
+                        "ItemID": "test_weapon_launcher_token_profile",
+                        "Name": "Test Relauncher Tool",
+                        "LoyaltyLevel": 2,
+                        "Price": 42000,
+                        "Ergonomics": 62,
+                        "VerticalRecoil": 82,
+                        "HorizontalRecoil": 164,
+                        "Dispersion": 7,
+                        "Convergence": 14,
+                        "RecoilIntensity": 0.18,
+                        "AutoROF": 650,
+                        "SemiROF": 320,
+                        "Weight": 3.7
+                    }
+                }
+                """);
+
+                var patch = GenerateSinglePatch(workspaceRoot, "weapon-launcher-token-profile_realism_patch.json", "test_weapon_launcher_token_profile");
+
+                Assert.Null(patch["WeapType"]);
+        }
+
+        [Fact]
+        public void WeaponName_SubstringOnlySniperKeyword_DoesNotOverrideAssaultProfile()
+        {
+                var workspaceRoot = CreateGeneratorWorkspace("weapon-sniper-token-profile");
+                var inputRoot = Path.Combine(workspaceRoot, "input", "user_templates");
+
+                var weaponInputPath = Path.Combine(inputRoot, "weapon-sniper-token-profile.json");
+                File.WriteAllText(weaponInputPath, """
+                {
+                    "test_weapon_sniper_token_profile": {
+                        "$type": "RealismMod.Gun, RealismMod",
+                        "ItemID": "test_weapon_sniper_token_profile",
+                        "Name": "Test Gunsniper Rifle",
+                        "LoyaltyLevel": 2,
+                        "Price": 42000,
+                        "Ergonomics": 62,
+                        "VerticalRecoil": 82,
+                        "HorizontalRecoil": 164,
+                        "Dispersion": 7,
+                        "Convergence": 14,
+                        "RecoilIntensity": 0.18,
+                        "AutoROF": 650,
+                        "SemiROF": 320,
+                        "Weight": 3.7
+                    }
+                }
+                """);
+
+                var patch = GenerateSinglePatch(workspaceRoot, "weapon-sniper-token-profile_realism_patch.json", "test_weapon_sniper_token_profile");
+
+                Assert.Equal("rifle", patch["WeapType"]?.GetValue<string>());
+        }
+
+        [Fact]
+        public void WeaponName_SubstringOnlySmgKeyword_DoesNotOverrideAssaultProfile()
+        {
+                var workspaceRoot = CreateGeneratorWorkspace("weapon-smg-token-profile");
+                var inputRoot = Path.Combine(workspaceRoot, "input", "user_templates");
+
+                var weaponInputPath = Path.Combine(inputRoot, "weapon-smg-token-profile.json");
+                File.WriteAllText(weaponInputPath, """
+                {
+                    "test_weapon_smg_token_profile": {
+                        "$type": "RealismMod.Gun, RealismMod",
+                        "ItemID": "test_weapon_smg_token_profile",
+                        "Name": "Test Cosmg Rifle",
+                        "LoyaltyLevel": 2,
+                        "Price": 42000,
+                        "Ergonomics": 62,
+                        "VerticalRecoil": 82,
+                        "HorizontalRecoil": 164,
+                        "Dispersion": 7,
+                        "Convergence": 14,
+                        "RecoilIntensity": 0.18,
+                        "AutoROF": 650,
+                        "SemiROF": 320,
+                        "Weight": 3.7
+                    }
+                }
+                """);
+
+                var patch = GenerateSinglePatch(workspaceRoot, "weapon-smg-token-profile_realism_patch.json", "test_weapon_smg_token_profile");
+
+                Assert.Equal("rifle", patch["WeapType"]?.GetValue<string>());
         }
 
         [Fact]
@@ -277,6 +881,238 @@ public sealed class RuleDataSynchronizationTests : IDisposable
                 Assert.Equal(550, patch["SingleFireRate"]?.GetValue<int>());
                 Assert.Equal(1, patch["ConflictingItems"]?.AsArray().Count);
                 Assert.Null(patch["itemTplToClone"]);
+        }
+
+        [Fact]
+        public void TryResolveTemplateCloneByIdOrAlias_CachesResolvedAliasResult()
+        {
+                var workspaceRoot = CreateGeneratorWorkspace("template-alias-cache-hit");
+                var generator = new RealismPatchGenerator.Core.RealismPatchGenerator(workspaceRoot, seed: 12345);
+
+                var ensureAuditContextLoaded = typeof(RealismPatchGenerator.Core.RealismPatchGenerator)
+                    .GetMethod("EnsureAuditContextLoaded", BindingFlags.Instance | BindingFlags.NonPublic)!;
+                ensureAuditContextLoaded.Invoke(generator, null);
+
+                var metadataCacheField = typeof(RealismPatchGenerator.Core.RealismPatchGenerator)
+                    .GetField("templateMetadataCache", BindingFlags.Instance | BindingFlags.NonPublic);
+                var resolveMethod = typeof(RealismPatchGenerator.Core.RealismPatchGenerator)
+                    .GetMethod("TryResolveTemplateCloneByIdOrAlias", BindingFlags.Instance | BindingFlags.NonPublic)!;
+                Assert.NotNull(metadataCacheField);
+
+                var metadataCache = metadataCacheField!.GetValue(generator)!;
+                var cacheField = metadataCache.GetType()
+                    .GetField("templateAliasCache", BindingFlags.Instance | BindingFlags.NonPublic);
+
+                Assert.NotNull(cacheField);
+
+                var args = new object?[] { "weapon_izhmash_ak101_556x45", null, null };
+                var first = (bool)resolveMethod.Invoke(generator, args)!;
+                var second = (bool)resolveMethod.Invoke(generator, args)!;
+                var cache = (System.Collections.IDictionary)cacheField!.GetValue(metadataCache)!;
+
+                Assert.True(first);
+                Assert.True(second);
+                Assert.True(cache.Contains("weapon_izhmash_ak101_556x45"));
+        }
+
+        [Fact]
+        public void TemplateRepository_Reload_ClearsResolvedAliasCacheAndRebuildsAliasIndex()
+        {
+                var workspaceRoot = CreateGeneratorWorkspace("template-repo-reload-cache");
+                var generator = new RealismPatchGenerator.Core.RealismPatchGenerator(workspaceRoot, seed: 12345);
+
+                var repositoryField = typeof(RealismPatchGenerator.Core.RealismPatchGenerator)
+                    .GetField("templateRepository", BindingFlags.Instance | BindingFlags.NonPublic);
+                Assert.NotNull(repositoryField);
+
+                var repository = repositoryField!.GetValue(generator)!;
+                var reloadMethod = repository.GetType()
+                    .GetMethod("Reload", BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
+                Assert.NotNull(reloadMethod);
+
+                var ensureAuditContextLoaded = typeof(RealismPatchGenerator.Core.RealismPatchGenerator)
+                    .GetMethod("EnsureAuditContextLoaded", BindingFlags.Instance | BindingFlags.NonPublic)!;
+                ensureAuditContextLoaded.Invoke(generator, null);
+
+                var resolveMethod = typeof(RealismPatchGenerator.Core.RealismPatchGenerator)
+                    .GetMethod("TryResolveTemplateCloneByIdOrAlias", BindingFlags.Instance | BindingFlags.NonPublic)!;
+
+                var firstArgs = new object?[] { "weapon_izhmash_ak101_556x45", null, null };
+                Assert.True((bool)resolveMethod.Invoke(generator, firstArgs)!);
+                var resolvedIdBefore = (string)firstArgs[1]!;
+                Assert.False(string.IsNullOrWhiteSpace(resolvedIdBefore));
+
+                reloadMethod.Invoke(repository, null);
+
+                var secondArgs = new object?[] { "weapon_izhmash_ak101_556x45", null, null };
+                Assert.True((bool)resolveMethod.Invoke(generator, secondArgs)!);
+                var resolvedIdAfter = (string)secondArgs[1]!;
+
+                Assert.Equal(resolvedIdBefore, resolvedIdAfter);
+                Assert.IsType<JsonObject>(secondArgs[2]);
+        }
+
+        [Fact]
+        public void TryResolveTemplateCloneByIdOrAlias_CachedAliasAndDirectIdReturnSameTemplateInstance()
+        {
+                var workspaceRoot = CreateGeneratorWorkspace("template-alias-instance-same");
+                var generator = new RealismPatchGenerator.Core.RealismPatchGenerator(workspaceRoot, seed: 12345);
+
+                var ensureAuditContextLoaded = typeof(RealismPatchGenerator.Core.RealismPatchGenerator)
+                    .GetMethod("EnsureAuditContextLoaded", BindingFlags.Instance | BindingFlags.NonPublic)!;
+                ensureAuditContextLoaded.Invoke(generator, null);
+
+                var resolveMethod = typeof(RealismPatchGenerator.Core.RealismPatchGenerator)
+                    .GetMethod("TryResolveTemplateCloneByIdOrAlias", BindingFlags.Instance | BindingFlags.NonPublic)!;
+
+                var aliasArgs = new object?[] { "weapon_izhmash_ak101_556x45", null, null };
+                Assert.True((bool)resolveMethod.Invoke(generator, aliasArgs)!);
+                var resolvedId = (string)aliasArgs[1]!;
+                Assert.False(string.IsNullOrWhiteSpace(resolvedId));
+                var aliasTemplate = Assert.IsType<JsonObject>(aliasArgs[2]);
+
+                var directArgs = new object?[] { resolvedId, null, null };
+                Assert.True((bool)resolveMethod.Invoke(generator, directArgs)!);
+                var directTemplate = Assert.IsType<JsonObject>(directArgs[2]);
+
+                Assert.Same(directTemplate, aliasTemplate);
+        }
+
+        [Fact]
+        public void IsWeapon_CachesParentIdResult()
+        {
+                var workspaceRoot = CreateGeneratorWorkspace("template-metadata-cache-weapon");
+                var generator = new RealismPatchGenerator.Core.RealismPatchGenerator(workspaceRoot, seed: 12345);
+
+                var ensureAuditContextLoaded = typeof(RealismPatchGenerator.Core.RealismPatchGenerator)
+                    .GetMethod("EnsureAuditContextLoaded", BindingFlags.Instance | BindingFlags.NonPublic)!;
+                ensureAuditContextLoaded.Invoke(generator, null);
+
+                var metadataCacheField = typeof(RealismPatchGenerator.Core.RealismPatchGenerator)
+                    .GetField("templateMetadataCache", BindingFlags.Instance | BindingFlags.NonPublic);
+                var isWeaponMethod = typeof(RealismPatchGenerator.Core.RealismPatchGenerator)
+                    .GetMethod("IsWeapon", BindingFlags.Instance | BindingFlags.NonPublic)!;
+                Assert.NotNull(metadataCacheField);
+
+                var metadataCache = metadataCacheField!.GetValue(generator)!;
+                var cacheField = metadataCache.GetType()
+                    .GetField("isWeaponCache", BindingFlags.Instance | BindingFlags.NonPublic);
+
+                Assert.NotNull(cacheField);
+
+                var first = (bool)isWeaponMethod.Invoke(generator, new object?[] { "5447b5fc4bdc2d87278b4567" })!;
+                var second = (bool)isWeaponMethod.Invoke(generator, new object?[] { "5447b5fc4bdc2d87278b4567" })!;
+
+                var cache = (System.Collections.IDictionary)cacheField!.GetValue(metadataCache)!;
+
+                Assert.True(first);
+                Assert.True(second);
+                Assert.True(cache.Contains("5447b5fc4bdc2d87278b4567"));
+                Assert.True((bool)cache["5447b5fc4bdc2d87278b4567"]!);
+        }
+
+        [Fact]
+        public void IsWeapon_CachesMissingParentIdAsFalse()
+        {
+                var workspaceRoot = CreateGeneratorWorkspace("template-metadata-cache-miss");
+                var generator = new RealismPatchGenerator.Core.RealismPatchGenerator(workspaceRoot, seed: 12345);
+
+                var ensureAuditContextLoaded = typeof(RealismPatchGenerator.Core.RealismPatchGenerator)
+                    .GetMethod("EnsureAuditContextLoaded", BindingFlags.Instance | BindingFlags.NonPublic)!;
+                ensureAuditContextLoaded.Invoke(generator, null);
+
+                var metadataCacheField = typeof(RealismPatchGenerator.Core.RealismPatchGenerator)
+                    .GetField("templateMetadataCache", BindingFlags.Instance | BindingFlags.NonPublic)!;
+                var isWeaponMethod = typeof(RealismPatchGenerator.Core.RealismPatchGenerator)
+                    .GetMethod("IsWeapon", BindingFlags.Instance | BindingFlags.NonPublic)!;
+                var metadataCache = metadataCacheField.GetValue(generator)!;
+                var cacheField = metadataCache.GetType()
+                    .GetField("isWeaponCache", BindingFlags.Instance | BindingFlags.NonPublic)!;
+
+                var result = (bool)isWeaponMethod.Invoke(generator, new object?[] { "deadbeef0000000000000000" })!;
+                var cache = (System.Collections.IDictionary)cacheField.GetValue(metadataCache)!;
+
+                Assert.False(result);
+                Assert.True(cache.Contains("deadbeef0000000000000000"));
+                Assert.False((bool)cache["deadbeef0000000000000000"]!);
+        }
+
+        [Fact]
+        public void ProfileInferenceService_DoesNotDependOn_RealismPatchGenerator_NameInferenceHelpers()
+        {
+                var helperNames = new[]
+                {
+                    "InferMagazineProfile",
+                    "ExtractMagCapacity",
+                    "InferBarrelProfileFromName",
+                    "ExtractBarrelLengthMm",
+                    "IsHandguardLikeName",
+                    "InferHandguardProfileFromName",
+                    "InferSuppressorProfileFromName",
+                    "InferSightProfileFromName",
+                    "InferModStockProfile",
+                    "ContainsAnyKeyword"
+                };
+
+                var generatorType = typeof(RealismPatchGenerator.Core.RealismPatchGenerator);
+                var profileInferenceText = File.ReadAllText(Path.Combine(repoRoot, "RealismPatchGenerator.Core", "ProfileInferenceService.cs"));
+
+                foreach (var helperName in helperNames)
+                {
+                    Assert.DoesNotContain($"RealismPatchGenerator.{helperName}", profileInferenceText, StringComparison.Ordinal);
+                    Assert.Null(generatorType.GetMethod(helperName, BindingFlags.Static | BindingFlags.NonPublic | BindingFlags.Public));
+                }
+        }
+
+        [Fact]
+        public void ItemInfoFactory_DoesNotDependOn_RealismPatchGenerator_TextHelpers()
+        {
+                var helperNames = new[]
+                {
+                    "ExtractLocalizedName",
+                    "FirstNonEmpty",
+                    "SelectBestDisplayName",
+                    "ExtractEffectiveInputFields",
+                    "ExtractProperties",
+                    "GetLegacyItemNode",
+                    "ResolveEffectiveModType"
+                };
+
+                var generatorType = typeof(RealismPatchGenerator.Core.RealismPatchGenerator);
+                var itemInfoFactoryText = File.ReadAllText(Path.Combine(repoRoot, "RealismPatchGenerator.Core", "ItemInfoFactory.cs"));
+
+                foreach (var helperName in helperNames)
+                {
+                    Assert.DoesNotContain($"RealismPatchGenerator.{helperName}", itemInfoFactoryText, StringComparison.Ordinal);
+                    Assert.Null(generatorType.GetMethod(helperName, BindingFlags.Static | BindingFlags.NonPublic | BindingFlags.Public));
+                }
+        }
+
+        [Fact]
+        public void ItemInfoFactory_DoesNotDependOn_RealismPatchGenerator_FieldPermissionHelpers()
+        {
+                var helperNames = new[]
+                {
+                    "CreateAllowedPatchFieldSet",
+                    "AddRuleAllowedFieldsToSet",
+                    "AddRuleAllowedFields",
+                    "AddRequiredAllowedFields",
+                    "AddRequiredAllowedFieldsToSet",
+                    "AddRangeFieldNames",
+                    "AddFieldNames",
+                    "CreateAllowedFieldMap",
+                    "TryAddCanonicalField"
+                };
+
+                var generatorType = typeof(RealismPatchGenerator.Core.RealismPatchGenerator);
+                var itemInfoFactoryText = File.ReadAllText(Path.Combine(repoRoot, "RealismPatchGenerator.Core", "ItemInfoFactory.cs"));
+
+                Assert.DoesNotContain("generator.CreateAllowedPatchFieldSet", itemInfoFactoryText, StringComparison.Ordinal);
+
+                foreach (var helperName in helperNames)
+                {
+                    Assert.Null(generatorType.GetMethod(helperName, BindingFlags.Instance | BindingFlags.Static | BindingFlags.NonPublic | BindingFlags.Public));
+                }
         }
 
         [Fact]
@@ -709,6 +1545,17 @@ public sealed class RuleDataSynchronizationTests : IDisposable
 
                 var root = JsonNode.Parse(File.ReadAllText(patchPath))!.AsObject();
                 return root[itemId]!.AsObject();
+        }
+
+        private static string GenerateOutputText(string workspaceRoot, uint seed, string outputDirectoryName, string outputFileName)
+        {
+                var generator = new RealismPatchGenerator.Core.RealismPatchGenerator(workspaceRoot, seed);
+                var result = generator.Generate(Path.Combine(workspaceRoot, outputDirectoryName));
+
+                var patchPath = Path.Combine(result.OutputPath, "user_templates", outputFileName);
+                Assert.True(File.Exists(patchPath), $"缺少输出文件: {patchPath}");
+
+                return File.ReadAllText(patchPath);
         }
 
         private static void CopyDirectory(string sourceDirectory, string targetDirectory)

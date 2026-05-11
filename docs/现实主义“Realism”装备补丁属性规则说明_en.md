@@ -32,7 +32,7 @@ Main code anchors:
 - default gear template: CreateDefaultGearTemplate in RealismPatchGenerator.Core/StaticData.cs
 - default attachment template: CreateDefaultModTemplate in RealismPatchGenerator.Core/StaticData.cs
 - modType-specific attributes: ModTypeSpecificAttributes in RealismPatchGenerator.Core/StaticData.cs
-- final pruning: CreateAllowedFieldMap / AddRuleAllowedFields / AddRequiredAllowedFields / PruneDisallowedOutputFields in RealismPatchGenerator.Core/RealismPatchGenerator.cs
+- final field boundary/pruning: RealismPatchGenerator.Core/PatchFieldPermissionService.cs together with the final output pruning flow in RealismPatchGenerator.Core/RealismPatchGenerator.cs
 
 ## 3. Global Principles
 

@@ -24,12 +24,13 @@ internal sealed class PatchRuleContext
     private bool ammoPenetrationTierResolved;
     private string ammoPenetrationTier = string.Empty;
 
-    public PatchRuleContext(RealismPatchGenerator generator, RuleSet rules, JsonObject patch, ItemInfo itemInfo)
+    public PatchRuleContext(RealismPatchGenerator generator, RuleSet rules, JsonObject patch, ItemInfo itemInfo, CompatibleRandom random)
     {
         Generator = generator;
         Rules = rules;
         Patch = patch;
         ItemInfo = itemInfo;
+        Random = random;
     }
 
     public RealismPatchGenerator Generator { get; }
@@ -39,6 +40,8 @@ internal sealed class PatchRuleContext
     public JsonObject Patch { get; }
 
     public ItemInfo ItemInfo { get; }
+
+    public CompatibleRandom Random { get; }
 
     public PatchAnalysisContext AnalysisContext => analysisContext ??= PatchAnalysisContextFactory.Create(Generator, Patch, ItemInfo);
 

@@ -1,4 +1,4 @@
-# Rule and Documentation Sync Checklist (v2.0)
+# Rule and Documentation Sync Checklist (v2.7)
 
 Purpose: after changing rules, template mapping, item-exception workflow, or audit logic, quickly confirm code and docs are still aligned.
 
@@ -8,7 +8,7 @@ Primary files to verify:
 
 - RealismPatchGenerator.Core/RuleSetLoader.cs
 - RealismPatchGenerator.Core/RealismPatchGenerator.cs
-- RealismPatchGenerator.Core/OutputRuleAuditor.cs
+- RealismPatchGenerator.Core/PatchFieldPermissionService.cs
 - RealismPatchGenerator.Core/WeaponRuleData.cs
 - RealismPatchGenerator.Core/AttachmentRuleData.cs
 - RealismPatchGenerator.Core/AmmoRuleData.cs
@@ -39,7 +39,7 @@ Prioritized documents:
 ### C1. GUI
 
 - startup command still: dotnet run --project RealismPatchGenerator.Gui
-- docs still clearly state generation and audit are executed from GUI
+- docs still clearly state GUI handles rule editing, item exceptions, and generation
 - button names in docs still match current GUI labels
 
 ### C2. Item Exceptions
@@ -48,13 +48,7 @@ Prioritized documents:
 - behavior description of "Add/Modify Field" and "Save Item" is still accurate
 - item_exceptions.json location and scope are correct
 
-### C3. Audit Scope
-
-- consumable and regular cosmetic are still outside primary audit scope
-- mod_profile_unresolved is still excluded as attachment audit noise
-- exception behavior is still field-level exemption, not full-item skip
-
-### C4. Output Behavior
+### C3. Output Behavior
 
 - docs still state output directory is not wiped entirely
 - docs still state only target files are overwritten
@@ -63,7 +57,7 @@ Prioritized documents:
 - docs still state output item order follows source input order
 - template-consistency explanation still covers the four major item format families
 
-### C5. Version
+### C4. Version
 
 - docs titles and version notes are updated to the release version
 - CHANGELOG.md and README.md are synced to the same version
@@ -73,6 +67,6 @@ Prioritized documents:
 1. Update code, rules, and template-related logic.
 2. Run dotnet build RealismPatchGenerator.slnx.
 3. Generate a small output sample and validate key files.
-4. Run audit from GUI and inspect audit_reports.
+4. Run generation from GUI or CLI and inspect key output files.
 5. Sync docs and version metadata.
 6. Run full generation and manual regression checks.

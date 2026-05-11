@@ -1,5 +1,5 @@
 param(
-    [string]$Version = "2.5",
+    [string]$Version = "2.7",
     [string]$RuntimeIdentifier = "win-x64",
     [string]$Configuration = "Release",
     [string]$ArtifactsRoot = "artifacts\release",
@@ -94,7 +94,10 @@ function Copy-CommonPayload {
     Copy-Item -Path $TemplatesDirectory.FullName -Destination $Destination -Recurse -Force
 
     New-Item -ItemType Directory -Path (Join-Path $Destination "output") | Out-Null
-    New-Item -ItemType Directory -Path (Join-Path $Destination "audit_reports") | Out-Null
+
+    $releaseDocsRoot = Join-Path $Destination "docs"
+    Remove-Item -LiteralPath (Join-Path $releaseDocsRoot "superpowers") -Recurse -Force -ErrorAction SilentlyContinue
+    Remove-Item -LiteralPath (Join-Path $releaseDocsRoot "~allenexplorer~.ala") -Force -ErrorAction SilentlyContinue
 }
 
 function Write-ReleaseInfo {
@@ -127,7 +130,6 @@ Bundled data directories:
 - RealismItemRules
 - docs
 - output
-- audit_reports
 
 Recommended usage:
 $recommendedUsageText

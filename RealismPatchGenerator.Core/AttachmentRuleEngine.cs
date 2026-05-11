@@ -4,9 +4,9 @@ namespace RealismPatchGenerator.Core;
 
 internal static class AttachmentRuleEngine
 {
-    public static void ApplyAttachmentSanityCheck(RealismPatchGenerator generator, RuleSet rules, JsonObject patch, ItemInfo itemInfo)
+    public static void ApplyAttachmentSanityCheck(RealismPatchGenerator generator, RuleSet rules, JsonObject patch, ItemInfo itemInfo, CompatibleRandom random)
     {
-        ApplyAttachmentSanityCheck(new PatchRuleContext(generator, rules, patch, itemInfo));
+        ApplyAttachmentSanityCheck(new PatchRuleContext(generator, rules, patch, itemInfo, random));
     }
 
     public static void ApplyAttachmentSanityCheck(PatchRuleContext context)
@@ -19,7 +19,7 @@ internal static class AttachmentRuleEngine
 
         if (string.IsNullOrWhiteSpace(RealismPatchGenerator.GetText(patch["ModType"])))
         {
-            var resolvedModType = RealismPatchGenerator.ResolveEffectiveModType(itemInfo.SourceProperties, patch, itemInfo.TemplateFile);
+            var resolvedModType = PatchTextInferenceHelpers.ResolveEffectiveModType(itemInfo.SourceProperties, patch, itemInfo.TemplateFile);
             if (!string.IsNullOrWhiteSpace(resolvedModType))
             {
                 patch["ModType"] = resolvedModType;
@@ -69,7 +69,7 @@ internal static class AttachmentRuleEngine
             return;
         }
 
-        context.Generator.ApplyNumericRanges(patch, ranges, ensureFields: true);
+        context.Generator.ApplyNumericRanges(patch, ranges, ensureFields: true, context.Random);
         ApplyAttachmentPreservedSourceFields(patch, itemInfo, modProfile, ranges);
         RemoveAttachmentFieldsByProfile(patch, modProfile);
         RealismPatchGenerator.ApplyFieldClamps(patch, rules.Attachment.ModClampRules);
@@ -232,7 +232,7 @@ internal static class AttachmentRuleEngine
 
         if (modProfile?.StartsWith("magazine", StringComparison.OrdinalIgnoreCase) == true)
         {
-            var capacity = RealismPatchGenerator.ExtractMagCapacity(itemInfo, RealismPatchGenerator.GetLowerText(patch["Name"]));
+            var capacity = PatchTextInferenceHelpers.ExtractMagCapacity(itemInfo, RealismPatchGenerator.GetLowerText(patch["Name"]));
             if (capacity is not null)
             {
                 contributions.Add(RealismPatchGenerator.Normalize(capacity.Value, 5, 95));
@@ -241,7 +241,7 @@ internal static class AttachmentRuleEngine
 
         if (modProfile?.StartsWith("barrel_", StringComparison.OrdinalIgnoreCase) == true)
         {
-            var length = RealismPatchGenerator.ExtractBarrelLengthMm(RealismPatchGenerator.GetLowerText(patch["Name"]));
+            var length = PatchTextInferenceHelpers.ExtractBarrelLengthMm(RealismPatchGenerator.GetLowerText(patch["Name"]));
             if (length is not null)
             {
                 contributions.Add(RealismPatchGenerator.Normalize(length.Value, 100, 650));

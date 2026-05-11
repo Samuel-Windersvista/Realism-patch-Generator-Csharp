@@ -4,7 +4,7 @@ namespace RealismPatchGenerator.Core;
 
 internal static class ItemInfoFactory
 {
-    public static ItemInfo CreateStandardTemplateItemInfo(RealismPatchGenerator generator, string itemId, JsonObject itemData, string? sourceFile)
+    public static ItemInfo CreateStandardTemplateItemInfo(RealismPatchGenerator generator, PatchFieldPermissionService fieldPermissionService, string itemId, JsonObject itemData, string? sourceFile)
     {
         var info = new ItemInfo
         {
@@ -14,25 +14,25 @@ internal static class ItemInfoFactory
         };
 
         info.ItemType = itemData["$type"]?.GetValue<string?>();
-        info.Name = itemData["Name"]?.GetValue<string?>() ?? RealismPatchGenerator.ExtractLocalizedName(itemData["locales"]) ?? RealismPatchGenerator.ExtractLocalizedName(itemData["LocalePush"]);
+        info.Name = itemData["Name"]?.GetValue<string?>() ?? PatchTextInferenceHelpers.ExtractLocalizedName(itemData["locales"]) ?? PatchTextInferenceHelpers.ExtractLocalizedName(itemData["LocalePush"]);
         info.ParentId = generator.NormalizeParentId(itemData["parentId"]?.GetValue<string?>());
         if (!string.IsNullOrWhiteSpace(info.ParentId))
         {
             info.TemplateFile = generator.GetTemplateForParentId(info.ParentId);
         }
 
-        info.Properties = RealismPatchGenerator.ExtractProperties(itemData, ItemJsonSchema.RealismStandardTemplateIgnoredKeys);
+        info.Properties = PatchTextInferenceHelpers.ExtractProperties(itemData, ItemJsonSchema.RealismStandardTemplateIgnoredKeys);
 
         generator.EnrichItemInfoWithSourceContext(info, itemData);
         info.SourceProperties = (JsonObject)info.Properties.DeepClone();
-        info.AllowedPatchFields = generator.CreateAllowedPatchFieldSet(info.Properties, info.ItemType, info.SourceProperties["ModType"]?.GetValue<string?>());
+        info.AllowedPatchFields = fieldPermissionService.CreateAllowedPatchFieldSet(info.Properties, info.ItemType, info.SourceProperties["ModType"]?.GetValue<string?>());
         return info;
     }
 
-    public static ItemInfo CreateStandardTemplateCloneItemInfo(RealismPatchGenerator generator, string itemId, JsonObject itemData, string sourceFile, ItemInfo cloneInfo, JsonObject clonePatch)
+    public static ItemInfo CreateStandardTemplateCloneItemInfo(RealismPatchGenerator generator, PatchFieldPermissionService fieldPermissionService, string itemId, JsonObject itemData, string sourceFile, ItemInfo cloneInfo, JsonObject clonePatch)
     {
-        var properties = RealismPatchGenerator.ExtractProperties(itemData, ItemJsonSchema.RealismStandardTemplateIgnoredKeys);
-        var localizedName = RealismPatchGenerator.ExtractLocalizedName(itemData["locales"]) ?? RealismPatchGenerator.ExtractLocalizedName(itemData["LocalePush"]);
+        var properties = PatchTextInferenceHelpers.ExtractProperties(itemData, ItemJsonSchema.RealismStandardTemplateIgnoredKeys);
+        var localizedName = PatchTextInferenceHelpers.ExtractLocalizedName(itemData["locales"]) ?? PatchTextInferenceHelpers.ExtractLocalizedName(itemData["LocalePush"]);
 
         var info = new ItemInfo
         {
@@ -42,7 +42,7 @@ internal static class ItemInfoFactory
             TemplateFile = cloneInfo.TemplateFile,
             ParentId = cloneInfo.ParentId,
             ItemType = cloneInfo.ItemType ?? clonePatch["$type"]?.GetValue<string?>(),
-            Name = RealismPatchGenerator.FirstNonEmpty(localizedName, itemData["Name"]?.GetValue<string?>(), clonePatch["Name"]?.GetValue<string?>()),
+            Name = PatchTextInferenceHelpers.FirstNonEmpty(localizedName, itemData["Name"]?.GetValue<string?>(), clonePatch["Name"]?.GetValue<string?>()),
             Properties = properties,
             SourceProperties = (JsonObject)properties.DeepClone(),
             IsWeapon = cloneInfo.IsWeapon,
@@ -51,15 +51,15 @@ internal static class ItemInfoFactory
         };
 
         generator.EnrichItemInfoWithSourceContext(info, clonePatch);
-        info.AllowedPatchFields = generator.CreateAllowedPatchFieldSet(clonePatch, info.ItemType, clonePatch["ModType"]?.GetValue<string?>());
+        info.AllowedPatchFields = fieldPermissionService.CreateAllowedPatchFieldSet(clonePatch, info.ItemType, clonePatch["ModType"]?.GetValue<string?>());
         return info;
     }
 
-    public static ItemInfo CreateStandardTemplateCloneItemInfo(RealismPatchGenerator generator, string itemId, JsonObject itemData, string sourceFile, string cloneId, JsonObject cloneTemplate)
+    public static ItemInfo CreateStandardTemplateCloneItemInfo(RealismPatchGenerator generator, PatchFieldPermissionService fieldPermissionService, string itemId, JsonObject itemData, string sourceFile, string cloneId, JsonObject cloneTemplate)
     {
-        var templateFile = generator.TemplateFileByItemId.GetValueOrDefault(cloneId);
-        var properties = RealismPatchGenerator.ExtractProperties(itemData, ItemJsonSchema.RealismStandardTemplateIgnoredKeys);
-        var localizedName = RealismPatchGenerator.ExtractLocalizedName(itemData["locales"]) ?? RealismPatchGenerator.ExtractLocalizedName(itemData["LocalePush"]);
+        var templateFile = generator.GetTemplateFileByItemId(cloneId);
+        var properties = PatchTextInferenceHelpers.ExtractProperties(itemData, ItemJsonSchema.RealismStandardTemplateIgnoredKeys);
+        var localizedName = PatchTextInferenceHelpers.ExtractLocalizedName(itemData["locales"]) ?? PatchTextInferenceHelpers.ExtractLocalizedName(itemData["LocalePush"]);
 
         var info = new ItemInfo
         {
@@ -69,20 +69,20 @@ internal static class ItemInfoFactory
             TemplateFile = templateFile,
             ParentId = generator.InferParentIdFromTemplateFile(templateFile ?? string.Empty),
             ItemType = cloneTemplate["$type"]?.GetValue<string?>(),
-            Name = RealismPatchGenerator.FirstNonEmpty(localizedName, itemData["Name"]?.GetValue<string?>(), cloneTemplate["Name"]?.GetValue<string?>()),
+            Name = PatchTextInferenceHelpers.FirstNonEmpty(localizedName, itemData["Name"]?.GetValue<string?>(), cloneTemplate["Name"]?.GetValue<string?>()),
             Properties = properties,
             SourceProperties = (JsonObject)properties.DeepClone(),
         };
 
         generator.EnrichItemInfoWithSourceContext(info, cloneTemplate);
-        info.AllowedPatchFields = generator.CreateAllowedPatchFieldSet(cloneTemplate, info.ItemType, cloneTemplate["ModType"]?.GetValue<string?>());
+        info.AllowedPatchFields = fieldPermissionService.CreateAllowedPatchFieldSet(cloneTemplate, info.ItemType, cloneTemplate["ModType"]?.GetValue<string?>());
         return info;
     }
 
-    public static ItemInfo CreateMoxoItemInfo(RealismPatchGenerator generator, string itemId, JsonObject itemData, string sourceFile, ItemInfo cloneInfo, JsonObject clonePatch)
+    public static ItemInfo CreateMoxoItemInfo(RealismPatchGenerator generator, PatchFieldPermissionService fieldPermissionService, string itemId, JsonObject itemData, string sourceFile, ItemInfo cloneInfo, JsonObject clonePatch)
     {
-        var properties = RealismPatchGenerator.ExtractEffectiveInputFields(itemData, clonePatch);
-        var localizedName = RealismPatchGenerator.ExtractLocalizedName(itemData["locales"]) ?? RealismPatchGenerator.ExtractLocalizedName(itemData["LocalePush"]);
+        var properties = PatchTextInferenceHelpers.ExtractEffectiveInputFields(itemData, clonePatch);
+        var localizedName = PatchTextInferenceHelpers.ExtractLocalizedName(itemData["locales"]) ?? PatchTextInferenceHelpers.ExtractLocalizedName(itemData["LocalePush"]);
 
         var info = new ItemInfo
         {
@@ -92,7 +92,7 @@ internal static class ItemInfoFactory
             TemplateFile = cloneInfo.TemplateFile,
             ParentId = cloneInfo.ParentId,
             ItemType = cloneInfo.ItemType ?? clonePatch["$type"]?.GetValue<string?>(),
-            Name = RealismPatchGenerator.FirstNonEmpty(localizedName, itemData["Name"]?.GetValue<string?>(), clonePatch["Name"]?.GetValue<string?>()),
+            Name = PatchTextInferenceHelpers.FirstNonEmpty(localizedName, itemData["Name"]?.GetValue<string?>(), clonePatch["Name"]?.GetValue<string?>()),
             Properties = properties,
             SourceProperties = (JsonObject)properties.DeepClone(),
             IsWeapon = cloneInfo.IsWeapon,
@@ -101,15 +101,15 @@ internal static class ItemInfoFactory
         };
 
         generator.EnrichItemInfoWithSourceContext(info, clonePatch);
-        info.AllowedPatchFields = generator.CreateAllowedPatchFieldSet(clonePatch, info.ItemType, clonePatch["ModType"]?.GetValue<string?>());
+        info.AllowedPatchFields = fieldPermissionService.CreateAllowedPatchFieldSet(clonePatch, info.ItemType, clonePatch["ModType"]?.GetValue<string?>());
         return info;
     }
 
-    public static ItemInfo CreateMoxoItemInfo(RealismPatchGenerator generator, string itemId, JsonObject itemData, string sourceFile, string cloneId, JsonObject cloneTemplate)
+    public static ItemInfo CreateMoxoItemInfo(RealismPatchGenerator generator, PatchFieldPermissionService fieldPermissionService, string itemId, JsonObject itemData, string sourceFile, string cloneId, JsonObject cloneTemplate)
     {
-        var templateFile = generator.TemplateFileByItemId.GetValueOrDefault(cloneId);
-        var properties = RealismPatchGenerator.ExtractEffectiveInputFields(itemData, cloneTemplate);
-        var localizedName = RealismPatchGenerator.ExtractLocalizedName(itemData["locales"]) ?? RealismPatchGenerator.ExtractLocalizedName(itemData["LocalePush"]);
+        var templateFile = generator.GetTemplateFileByItemId(cloneId);
+        var properties = PatchTextInferenceHelpers.ExtractEffectiveInputFields(itemData, cloneTemplate);
+        var localizedName = PatchTextInferenceHelpers.ExtractLocalizedName(itemData["locales"]) ?? PatchTextInferenceHelpers.ExtractLocalizedName(itemData["LocalePush"]);
 
         var info = new ItemInfo
         {
@@ -119,20 +119,20 @@ internal static class ItemInfoFactory
             TemplateFile = templateFile,
             ParentId = generator.InferParentIdFromTemplateFile(templateFile ?? string.Empty),
             ItemType = cloneTemplate["$type"]?.GetValue<string?>(),
-            Name = RealismPatchGenerator.FirstNonEmpty(localizedName, itemData["Name"]?.GetValue<string?>(), cloneTemplate["Name"]?.GetValue<string?>()),
+            Name = PatchTextInferenceHelpers.FirstNonEmpty(localizedName, itemData["Name"]?.GetValue<string?>(), cloneTemplate["Name"]?.GetValue<string?>()),
             Properties = properties,
             SourceProperties = (JsonObject)properties.DeepClone(),
         };
 
         generator.EnrichItemInfoWithSourceContext(info, cloneTemplate);
-        info.AllowedPatchFields = generator.CreateAllowedPatchFieldSet(cloneTemplate, info.ItemType, cloneTemplate["ModType"]?.GetValue<string?>());
+        info.AllowedPatchFields = fieldPermissionService.CreateAllowedPatchFieldSet(cloneTemplate, info.ItemType, cloneTemplate["ModType"]?.GetValue<string?>());
         return info;
     }
 
-    public static ItemInfo CreateRaidOverhaulItemInfo(RealismPatchGenerator generator, string itemId, JsonObject itemData, string sourceFile, ItemInfo cloneInfo, JsonObject clonePatch)
+    public static ItemInfo CreateRaidOverhaulItemInfo(RealismPatchGenerator generator, PatchFieldPermissionService fieldPermissionService, string itemId, JsonObject itemData, string sourceFile, ItemInfo cloneInfo, JsonObject clonePatch)
     {
-        var properties = RealismPatchGenerator.ExtractEffectiveInputFields(itemData, clonePatch);
-        var localizedName = RealismPatchGenerator.ExtractLocalizedName(itemData["locales"]) ?? RealismPatchGenerator.ExtractLocalizedName(itemData["LocalePush"]);
+        var properties = PatchTextInferenceHelpers.ExtractEffectiveInputFields(itemData, clonePatch);
+        var localizedName = PatchTextInferenceHelpers.ExtractLocalizedName(itemData["locales"]) ?? PatchTextInferenceHelpers.ExtractLocalizedName(itemData["LocalePush"]);
 
         var info = new ItemInfo
         {
@@ -142,7 +142,7 @@ internal static class ItemInfoFactory
             TemplateFile = cloneInfo.TemplateFile,
             ParentId = cloneInfo.ParentId,
             ItemType = cloneInfo.ItemType ?? clonePatch["$type"]?.GetValue<string?>(),
-            Name = RealismPatchGenerator.FirstNonEmpty(localizedName, itemData["Name"]?.GetValue<string?>(), clonePatch["Name"]?.GetValue<string?>()),
+            Name = PatchTextInferenceHelpers.FirstNonEmpty(localizedName, itemData["Name"]?.GetValue<string?>(), clonePatch["Name"]?.GetValue<string?>()),
             Properties = properties,
             SourceProperties = (JsonObject)properties.DeepClone(),
             IsWeapon = cloneInfo.IsWeapon,
@@ -151,15 +151,15 @@ internal static class ItemInfoFactory
         };
 
         generator.EnrichItemInfoWithSourceContext(info, clonePatch);
-        info.AllowedPatchFields = generator.CreateAllowedPatchFieldSet(clonePatch, info.ItemType, clonePatch["ModType"]?.GetValue<string?>());
+        info.AllowedPatchFields = fieldPermissionService.CreateAllowedPatchFieldSet(clonePatch, info.ItemType, clonePatch["ModType"]?.GetValue<string?>());
         return info;
     }
 
-    public static ItemInfo CreateRaidOverhaulItemInfo(RealismPatchGenerator generator, string itemId, JsonObject itemData, string sourceFile, string cloneId, JsonObject cloneTemplate)
+    public static ItemInfo CreateRaidOverhaulItemInfo(RealismPatchGenerator generator, PatchFieldPermissionService fieldPermissionService, string itemId, JsonObject itemData, string sourceFile, string cloneId, JsonObject cloneTemplate)
     {
-        var templateFile = generator.TemplateFileByItemId.GetValueOrDefault(cloneId);
-        var properties = RealismPatchGenerator.ExtractEffectiveInputFields(itemData, cloneTemplate);
-        var localizedName = RealismPatchGenerator.ExtractLocalizedName(itemData["locales"]) ?? RealismPatchGenerator.ExtractLocalizedName(itemData["LocalePush"]);
+        var templateFile = generator.GetTemplateFileByItemId(cloneId);
+        var properties = PatchTextInferenceHelpers.ExtractEffectiveInputFields(itemData, cloneTemplate);
+        var localizedName = PatchTextInferenceHelpers.ExtractLocalizedName(itemData["locales"]) ?? PatchTextInferenceHelpers.ExtractLocalizedName(itemData["LocalePush"]);
 
         var info = new ItemInfo
         {
@@ -169,18 +169,19 @@ internal static class ItemInfoFactory
             TemplateFile = templateFile,
             ParentId = generator.InferParentIdFromTemplateFile(templateFile ?? string.Empty),
             ItemType = cloneTemplate["$type"]?.GetValue<string?>(),
-            Name = RealismPatchGenerator.FirstNonEmpty(localizedName, itemData["Name"]?.GetValue<string?>(), cloneTemplate["Name"]?.GetValue<string?>()),
+            Name = PatchTextInferenceHelpers.FirstNonEmpty(localizedName, itemData["Name"]?.GetValue<string?>(), cloneTemplate["Name"]?.GetValue<string?>()),
             Properties = properties,
             SourceProperties = (JsonObject)properties.DeepClone(),
         };
 
         generator.EnrichItemInfoWithSourceContext(info, cloneTemplate);
-        info.AllowedPatchFields = generator.CreateAllowedPatchFieldSet(cloneTemplate, info.ItemType, cloneTemplate["ModType"]?.GetValue<string?>());
+        info.AllowedPatchFields = fieldPermissionService.CreateAllowedPatchFieldSet(cloneTemplate, info.ItemType, cloneTemplate["ModType"]?.GetValue<string?>());
         return info;
     }
 
     public static ItemInfo CreateSupportedWttSubclassItemInfo(
         RealismPatchGenerator generator,
+        PatchFieldPermissionService fieldPermissionService,
         string itemId,
         JsonObject itemData,
         string sourceFile,
@@ -189,11 +190,11 @@ internal static class ItemInfoFactory
         Func<JsonObject, string?> resolveParentId,
         Func<string, JsonObject, string?, string?, string?> resolveTemplateFile)
     {
-        var properties = RealismPatchGenerator.ExtractEffectiveInputFields(itemData, clonePatch);
-        var localizedName = RealismPatchGenerator.ExtractLocalizedName(itemData["locales"]) ?? RealismPatchGenerator.ExtractLocalizedName(itemData["LocalePush"]);
+        var properties = PatchTextInferenceHelpers.ExtractEffectiveInputFields(itemData, clonePatch);
+        var localizedName = PatchTextInferenceHelpers.ExtractLocalizedName(itemData["locales"]) ?? PatchTextInferenceHelpers.ExtractLocalizedName(itemData["LocalePush"]);
         var resolvedParentId = resolveParentId(itemData) ?? cloneInfo.ParentId;
         var templateFile = resolveTemplateFile(sourceFile, itemData, resolvedParentId, cloneInfo.TemplateFile);
-        var effectiveModType = RealismPatchGenerator.ResolveEffectiveModType(properties, clonePatch, templateFile);
+        var effectiveModType = PatchTextInferenceHelpers.ResolveEffectiveModType(properties, clonePatch, templateFile);
         if (!string.IsNullOrWhiteSpace(effectiveModType))
         {
             properties["ModType"] = effectiveModType;
@@ -207,7 +208,7 @@ internal static class ItemInfoFactory
             TemplateFile = templateFile,
             ParentId = resolvedParentId,
             ItemType = cloneInfo.ItemType ?? clonePatch["$type"]?.GetValue<string?>(),
-            Name = RealismPatchGenerator.FirstNonEmpty(localizedName, itemData["Name"]?.GetValue<string?>(), clonePatch["Name"]?.GetValue<string?>()),
+            Name = PatchTextInferenceHelpers.FirstNonEmpty(localizedName, itemData["Name"]?.GetValue<string?>(), clonePatch["Name"]?.GetValue<string?>()),
             Properties = properties,
             SourceProperties = (JsonObject)properties.DeepClone(),
             IsWeapon = cloneInfo.IsWeapon,
@@ -216,12 +217,13 @@ internal static class ItemInfoFactory
         };
 
         generator.EnrichItemInfoWithSourceContext(info, clonePatch);
-        info.AllowedPatchFields = generator.CreateAllowedPatchFieldSet(clonePatch, info.ItemType, effectiveModType);
+        info.AllowedPatchFields = fieldPermissionService.CreateAllowedPatchFieldSet(clonePatch, info.ItemType, effectiveModType);
         return info;
     }
 
     public static ItemInfo CreateSupportedWttSubclassItemInfo(
         RealismPatchGenerator generator,
+        PatchFieldPermissionService fieldPermissionService,
         string itemId,
         JsonObject itemData,
         string sourceFile,
@@ -231,10 +233,10 @@ internal static class ItemInfoFactory
         Func<string, JsonObject, string?, string?, string?> resolveTemplateFile)
     {
         var resolvedParentId = resolveParentId(itemData);
-        var templateFile = resolveTemplateFile(sourceFile, itemData, resolvedParentId, generator.TemplateFileByItemId.GetValueOrDefault(cloneId));
-        var properties = RealismPatchGenerator.ExtractEffectiveInputFields(itemData, cloneTemplate);
-        var localizedName = RealismPatchGenerator.ExtractLocalizedName(itemData["locales"]) ?? RealismPatchGenerator.ExtractLocalizedName(itemData["LocalePush"]);
-        var effectiveModType = RealismPatchGenerator.ResolveEffectiveModType(properties, cloneTemplate, templateFile);
+        var templateFile = resolveTemplateFile(sourceFile, itemData, resolvedParentId, generator.GetTemplateFileByItemId(cloneId));
+        var properties = PatchTextInferenceHelpers.ExtractEffectiveInputFields(itemData, cloneTemplate);
+        var localizedName = PatchTextInferenceHelpers.ExtractLocalizedName(itemData["locales"]) ?? PatchTextInferenceHelpers.ExtractLocalizedName(itemData["LocalePush"]);
+        var effectiveModType = PatchTextInferenceHelpers.ResolveEffectiveModType(properties, cloneTemplate, templateFile);
         if (!string.IsNullOrWhiteSpace(effectiveModType))
         {
             properties["ModType"] = effectiveModType;
@@ -248,18 +250,19 @@ internal static class ItemInfoFactory
             TemplateFile = templateFile,
             ParentId = resolvedParentId ?? generator.InferParentIdFromTemplateFile(templateFile ?? string.Empty),
             ItemType = cloneTemplate["$type"]?.GetValue<string?>(),
-            Name = RealismPatchGenerator.FirstNonEmpty(localizedName, itemData["Name"]?.GetValue<string?>(), cloneTemplate["Name"]?.GetValue<string?>()),
+            Name = PatchTextInferenceHelpers.FirstNonEmpty(localizedName, itemData["Name"]?.GetValue<string?>(), cloneTemplate["Name"]?.GetValue<string?>()),
             Properties = properties,
             SourceProperties = (JsonObject)properties.DeepClone(),
         };
 
         generator.EnrichItemInfoWithSourceContext(info, cloneTemplate);
-        info.AllowedPatchFields = generator.CreateAllowedPatchFieldSet(cloneTemplate, info.ItemType, effectiveModType);
+        info.AllowedPatchFields = fieldPermissionService.CreateAllowedPatchFieldSet(cloneTemplate, info.ItemType, effectiveModType);
         return info;
     }
 
     public static ItemInfo CreateMixedDirectItemInfo(
         RealismPatchGenerator generator,
+        PatchFieldPermissionService fieldPermissionService,
         string itemId,
         JsonObject itemData,
         string sourceFile,
@@ -267,10 +270,10 @@ internal static class ItemInfoFactory
         string? templateFile,
         JsonObject basePatch)
     {
-        var itemNode = RealismPatchGenerator.GetLegacyItemNode(itemData);
+        var itemNode = PatchTextInferenceHelpers.GetLegacyItemNode(itemData);
         var itemProps = itemNode?["_props"] as JsonObject;
-        var localizedName = RealismPatchGenerator.ExtractLocalizedName(itemData["locales"]) ?? RealismPatchGenerator.ExtractLocalizedName(itemData["LocalePush"]);
-        var properties = RealismPatchGenerator.ExtractEffectiveInputFields(itemData, basePatch);
+        var localizedName = PatchTextInferenceHelpers.ExtractLocalizedName(itemData["locales"]) ?? PatchTextInferenceHelpers.ExtractLocalizedName(itemData["LocalePush"]);
+        var properties = PatchTextInferenceHelpers.ExtractEffectiveInputFields(itemData, basePatch);
 
         var info = new ItemInfo
         {
@@ -280,7 +283,7 @@ internal static class ItemInfoFactory
             TemplateFile = templateFile,
             ParentId = parentId,
             ItemType = basePatch["$type"]?.GetValue<string?>(),
-            Name = RealismPatchGenerator.SelectBestDisplayName(
+            Name = PatchTextInferenceHelpers.SelectBestDisplayName(
                 localizedName,
                 itemProps?["Name"]?.GetValue<string?>(),
                 itemData["Name"]?.GetValue<string?>(),
@@ -290,12 +293,13 @@ internal static class ItemInfoFactory
         };
 
         generator.EnrichItemInfoWithSourceContext(info, basePatch);
-        info.AllowedPatchFields = generator.CreateAllowedPatchFieldSet(basePatch, info.ItemType, basePatch["ModType"]?.GetValue<string?>());
+        info.AllowedPatchFields = fieldPermissionService.CreateAllowedPatchFieldSet(basePatch, info.ItemType, basePatch["ModType"]?.GetValue<string?>());
         return info;
     }
 
     public static ItemInfo CreateRaidOverhaulFallbackItemInfo(
         RealismPatchGenerator generator,
+        PatchFieldPermissionService fieldPermissionService,
         string itemId,
         JsonObject itemData,
         string sourceFile,
@@ -303,8 +307,8 @@ internal static class ItemInfoFactory
         string? templateFile,
         JsonObject basePatch)
     {
-        var localizedName = RealismPatchGenerator.ExtractLocalizedName(itemData["locales"]) ?? RealismPatchGenerator.ExtractLocalizedName(itemData["LocalePush"]);
-        var properties = RealismPatchGenerator.ExtractEffectiveInputFields(itemData, basePatch);
+        var localizedName = PatchTextInferenceHelpers.ExtractLocalizedName(itemData["locales"]) ?? PatchTextInferenceHelpers.ExtractLocalizedName(itemData["LocalePush"]);
+        var properties = PatchTextInferenceHelpers.ExtractEffectiveInputFields(itemData, basePatch);
 
         var info = new ItemInfo
         {
@@ -314,18 +318,19 @@ internal static class ItemInfoFactory
             TemplateFile = templateFile,
             ParentId = parentId,
             ItemType = basePatch["$type"]?.GetValue<string?>(),
-            Name = RealismPatchGenerator.SelectBestDisplayName(localizedName, itemData["Name"]?.GetValue<string?>()),
+            Name = PatchTextInferenceHelpers.SelectBestDisplayName(localizedName, itemData["Name"]?.GetValue<string?>()),
             Properties = properties,
             SourceProperties = (JsonObject)properties.DeepClone(),
         };
 
         generator.EnrichItemInfoWithSourceContext(info, basePatch);
-        info.AllowedPatchFields = generator.CreateAllowedPatchFieldSet(basePatch, info.ItemType, basePatch["ModType"]?.GetValue<string?>());
+        info.AllowedPatchFields = fieldPermissionService.CreateAllowedPatchFieldSet(basePatch, info.ItemType, basePatch["ModType"]?.GetValue<string?>());
         return info;
     }
 
     public static ItemInfo CreateWttSubclassFallbackItemInfo(
         RealismPatchGenerator generator,
+        PatchFieldPermissionService fieldPermissionService,
         string itemId,
         JsonObject itemData,
         string sourceFile,
@@ -333,8 +338,8 @@ internal static class ItemInfoFactory
         string? templateFile,
         JsonObject basePatch)
     {
-        var localizedName = RealismPatchGenerator.ExtractLocalizedName(itemData["locales"]) ?? RealismPatchGenerator.ExtractLocalizedName(itemData["LocalePush"]);
-        var properties = RealismPatchGenerator.ExtractEffectiveInputFields(itemData, basePatch);
+        var localizedName = PatchTextInferenceHelpers.ExtractLocalizedName(itemData["locales"]) ?? PatchTextInferenceHelpers.ExtractLocalizedName(itemData["LocalePush"]);
+        var properties = PatchTextInferenceHelpers.ExtractEffectiveInputFields(itemData, basePatch);
 
         var info = new ItemInfo
         {
@@ -344,27 +349,28 @@ internal static class ItemInfoFactory
             TemplateFile = templateFile,
             ParentId = parentId,
             ItemType = basePatch["$type"]?.GetValue<string?>(),
-            Name = RealismPatchGenerator.SelectBestDisplayName(localizedName, itemData["Name"]?.GetValue<string?>()),
+            Name = PatchTextInferenceHelpers.SelectBestDisplayName(localizedName, itemData["Name"]?.GetValue<string?>()),
             Properties = properties,
             SourceProperties = (JsonObject)properties.DeepClone(),
         };
 
         generator.EnrichItemInfoWithSourceContext(info, basePatch);
-        info.AllowedPatchFields = generator.CreateAllowedPatchFieldSet(basePatch, info.ItemType, basePatch["ModType"]?.GetValue<string?>());
+        info.AllowedPatchFields = fieldPermissionService.CreateAllowedPatchFieldSet(basePatch, info.ItemType, basePatch["ModType"]?.GetValue<string?>());
         return info;
     }
 
     public static ItemInfo CreateMixedBootstrapItemInfo(
         RealismPatchGenerator generator,
+        PatchFieldPermissionService fieldPermissionService,
         string itemId,
         JsonObject itemData,
         string sourceFile,
         string? parentId,
         string? templateFile)
     {
-        var itemNode = RealismPatchGenerator.GetLegacyItemNode(itemData);
+        var itemNode = PatchTextInferenceHelpers.GetLegacyItemNode(itemData);
         var itemProps = itemNode?["_props"] as JsonObject;
-        var localizedName = RealismPatchGenerator.ExtractLocalizedName(itemData["locales"]) ?? RealismPatchGenerator.ExtractLocalizedName(itemData["LocalePush"]);
+        var localizedName = PatchTextInferenceHelpers.ExtractLocalizedName(itemData["locales"]) ?? PatchTextInferenceHelpers.ExtractLocalizedName(itemData["LocalePush"]);
 
         var info = new ItemInfo
         {
@@ -373,22 +379,23 @@ internal static class ItemInfoFactory
             Format = ItemFormat.MixedTemplate,
             TemplateFile = templateFile,
             ParentId = parentId,
-            Name = RealismPatchGenerator.SelectBestDisplayName(
+            Name = PatchTextInferenceHelpers.SelectBestDisplayName(
                 localizedName,
                 itemProps?["Name"]?.GetValue<string?>(),
                 itemData["Name"]?.GetValue<string?>(),
                 itemNode?["_name"]?.GetValue<string?>()),
-            Properties = RealismPatchGenerator.ExtractEffectiveInputFields(itemData, null),
+            Properties = PatchTextInferenceHelpers.ExtractEffectiveInputFields(itemData, null),
         };
 
         info.SourceProperties = (JsonObject)info.Properties.DeepClone();
         generator.EnrichItemInfoWithSourceContext(info, new JsonObject());
-        info.AllowedPatchFields = generator.CreateAllowedPatchFieldSet(info.Properties, info.ItemType, info.SourceProperties["ModType"]?.GetValue<string?>());
+        info.AllowedPatchFields = fieldPermissionService.CreateAllowedPatchFieldSet(info.Properties, info.ItemType, info.SourceProperties["ModType"]?.GetValue<string?>());
         return info;
     }
 
     public static ItemInfo CreateRaidOverhaulBootstrapItemInfo(
         RealismPatchGenerator generator,
+        PatchFieldPermissionService fieldPermissionService,
         string itemId,
         JsonObject itemData,
         string sourceFile,
@@ -396,7 +403,7 @@ internal static class ItemInfoFactory
         string? templateFile,
         string cloneId)
     {
-        var localizedName = RealismPatchGenerator.ExtractLocalizedName(itemData["locales"]) ?? RealismPatchGenerator.ExtractLocalizedName(itemData["LocalePush"]);
+        var localizedName = PatchTextInferenceHelpers.ExtractLocalizedName(itemData["locales"]) ?? PatchTextInferenceHelpers.ExtractLocalizedName(itemData["LocalePush"]);
 
         var info = new ItemInfo
         {
@@ -405,26 +412,27 @@ internal static class ItemInfoFactory
             Format = ItemFormat.RaidOverhaulTemplate,
             TemplateFile = templateFile,
             ParentId = parentId,
-            Name = RealismPatchGenerator.SelectBestDisplayName(localizedName, itemData["Name"]?.GetValue<string?>()),
-            Properties = RealismPatchGenerator.ExtractEffectiveInputFields(itemData, null),
+            Name = PatchTextInferenceHelpers.SelectBestDisplayName(localizedName, itemData["Name"]?.GetValue<string?>()),
+            Properties = PatchTextInferenceHelpers.ExtractEffectiveInputFields(itemData, null),
         };
 
         ApplyRaidOverhaulCategoryHints(info, cloneId);
         info.SourceProperties = (JsonObject)info.Properties.DeepClone();
         generator.EnrichItemInfoWithSourceContext(info, new JsonObject());
-        info.AllowedPatchFields = generator.CreateAllowedPatchFieldSet(info.Properties, info.ItemType, info.SourceProperties["ModType"]?.GetValue<string?>());
+        info.AllowedPatchFields = fieldPermissionService.CreateAllowedPatchFieldSet(info.Properties, info.ItemType, info.SourceProperties["ModType"]?.GetValue<string?>());
         return info;
     }
 
     public static ItemInfo CreateWttBootstrapItemInfo(
         RealismPatchGenerator generator,
+        PatchFieldPermissionService fieldPermissionService,
         string itemId,
         JsonObject itemData,
         string sourceFile,
         string? parentId,
         string? templateFile)
     {
-        var localizedName = RealismPatchGenerator.ExtractLocalizedName(itemData["locales"]) ?? RealismPatchGenerator.ExtractLocalizedName(itemData["LocalePush"]);
+        var localizedName = PatchTextInferenceHelpers.ExtractLocalizedName(itemData["locales"]) ?? PatchTextInferenceHelpers.ExtractLocalizedName(itemData["LocalePush"]);
 
         var info = new ItemInfo
         {
@@ -433,13 +441,13 @@ internal static class ItemInfoFactory
             Format = ItemFormat.WTTTemplate,
             TemplateFile = templateFile,
             ParentId = parentId,
-            Name = RealismPatchGenerator.SelectBestDisplayName(localizedName, itemData["Name"]?.GetValue<string?>()),
-            Properties = RealismPatchGenerator.ExtractEffectiveInputFields(itemData, null),
+            Name = PatchTextInferenceHelpers.SelectBestDisplayName(localizedName, itemData["Name"]?.GetValue<string?>()),
+            Properties = PatchTextInferenceHelpers.ExtractEffectiveInputFields(itemData, null),
         };
 
         info.SourceProperties = (JsonObject)info.Properties.DeepClone();
         generator.EnrichItemInfoWithSourceContext(info, new JsonObject());
-        info.AllowedPatchFields = generator.CreateAllowedPatchFieldSet(info.Properties, info.ItemType, info.SourceProperties["ModType"]?.GetValue<string?>());
+        info.AllowedPatchFields = fieldPermissionService.CreateAllowedPatchFieldSet(info.Properties, info.ItemType, info.SourceProperties["ModType"]?.GetValue<string?>());
         return info;
     }
 

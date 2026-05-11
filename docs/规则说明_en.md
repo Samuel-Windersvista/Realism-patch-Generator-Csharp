@@ -1,4 +1,4 @@
-# SPT Realism Range Editor Generator v2.0 Rule Guide
+# SPT Realism Range Editor Generator v2.7 Rule Guide
 
 This document explains the responsibility of each rule file under RealismItemRules and how GUI categories map to the actual JSON structure.
 
