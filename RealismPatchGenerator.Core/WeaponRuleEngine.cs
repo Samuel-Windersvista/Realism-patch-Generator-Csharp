@@ -23,7 +23,7 @@ internal static class WeaponRuleEngine
         }
 
         var weaponProfile = context.GetWeaponProfile();
-        var preserveExistingValues = true;
+        var preserveExistingValues = false;
         if (!string.IsNullOrWhiteSpace(weaponProfile) && rules.Weapon.WeaponProfileRanges.TryGetValue(weaponProfile, out var ranges))
         {
             if (string.IsNullOrWhiteSpace(RealismPatchGenerator.GetText(patch["WeapType"])))

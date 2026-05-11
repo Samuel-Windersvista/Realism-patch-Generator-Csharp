@@ -189,34 +189,88 @@ public sealed class RuleDataSynchronizationTests : IDisposable
             Assert.NotEqual(firstResult!.GetValue<double>(), secondResult!.GetValue<double>());
     }
 
-    [Fact]
-    public void SameSeed_GenerateTwice_ProducesIdenticalRangeDrivenOutput()
-    {
-            var workspaceRoot = CreateGeneratorWorkspace("rng-context-determinism");
-            var inputRoot = Path.Combine(workspaceRoot, "input", "user_templates");
+        [Fact]
+        public void SameSeed_GenerateTwice_ProducesIdenticalRangeDrivenOutput()
+        {
+                var workspaceRoot = CreateGeneratorWorkspace("rng-context-determinism");
+                var inputRoot = Path.Combine(workspaceRoot, "input", "user_templates");
 
-            var inputPath = Path.Combine(inputRoot, "rng-context-determinism.json");
-            File.WriteAllText(inputPath, """
-            {
-                "test_rng_ammo": {
-                    "$type": "RealismMod.Ammo, RealismMod",
-                    "ItemID": "test_rng_ammo",
-                    "Name": "Test RNG Ammo",
-                    "Caliber": "Caliber9x19PARA",
-                    "Weight": 0.012,
-                    "Damage": 52,
-                    "PenetrationPower": 18,
-                    "InitialSpeed": 410,
-                    "ArmorDamage": 18
+                var inputPath = Path.Combine(inputRoot, "rng-context-determinism.json");
+                File.WriteAllText(inputPath, """
+                {
+                    "test_rng_ammo": {
+                        "$type": "RealismMod.Ammo, RealismMod",
+                        "ItemID": "test_rng_ammo",
+                        "Name": "Test RNG Ammo",
+                        "Caliber": "Caliber9x19PARA",
+                        "Weight": 0.012,
+                        "Damage": 52,
+                        "PenetrationPower": 18,
+                        "InitialSpeed": 410,
+                        "ArmorDamage": 18
+                    },
+                    "test_rng_weapon": {
+                        "$type": "RealismMod.Gun, RealismMod",
+                        "ItemID": "test_rng_weapon",
+                        "parentId": "5447b5f14bdc2d61278b4567",
+                        "Name": "Test RNG Weapon",
+                        "WeapType": "rifle",
+                        "LoyaltyLevel": 2,
+                        "Price": 42000,
+                        "Ergonomics": 62,
+                        "VerticalRecoil": 82,
+                        "HorizontalRecoil": 164,
+                        "Dispersion": 7,
+                        "Convergence": 14,
+                        "RecoilIntensity": 0.18,
+                        "AutoROF": 650,
+                        "SemiROF": 320,
+                        "Weight": 3.7
+                    }
                 }
-            }
-            """);
+                """);
 
-            var firstOutput = GenerateOutputText(workspaceRoot, seed: 12345, outputDirectoryName: "generated-output-a", outputFileName: "rng-context-determinism_realism_patch.json");
-            var secondOutput = GenerateOutputText(workspaceRoot, seed: 12345, outputDirectoryName: "generated-output-b", outputFileName: "rng-context-determinism_realism_patch.json");
+                var firstOutput = GenerateOutputText(workspaceRoot, seed: 12345, outputDirectoryName: "generated-output-a", outputFileName: "rng-context-determinism_realism_patch.json");
+                var secondOutput = GenerateOutputText(workspaceRoot, seed: 12345, outputDirectoryName: "generated-output-b", outputFileName: "rng-context-determinism_realism_patch.json");
 
-            Assert.Equal(firstOutput, secondOutput);
-    }
+                Assert.Equal(firstOutput, secondOutput);
+        }
+
+        [Fact]
+        public void DifferentSeeds_StandardWeaponGeneration_ProducesDifferentOutput()
+        {
+                var workspaceRoot = CreateGeneratorWorkspace("rng-context-different-seeds");
+                var inputRoot = Path.Combine(workspaceRoot, "input", "user_templates");
+
+                var inputPath = Path.Combine(inputRoot, "rng-context-different-seeds.json");
+                File.WriteAllText(inputPath, """
+                {
+                    "test_diffseed_weapon": {
+                        "$type": "RealismMod.Gun, RealismMod",
+                        "ItemID": "test_diffseed_weapon",
+                        "parentId": "5447b5f14bdc2d61278b4567",
+                        "Name": "Test DiffSeed Weapon",
+                        "WeapType": "rifle",
+                        "LoyaltyLevel": 2,
+                        "Price": 42000,
+                        "Ergonomics": 62,
+                        "VerticalRecoil": 82,
+                        "HorizontalRecoil": 164,
+                        "Dispersion": 7,
+                        "Convergence": 14,
+                        "RecoilIntensity": 0.18,
+                        "AutoROF": 650,
+                        "SemiROF": 320,
+                        "Weight": 3.7
+                    }
+                }
+                """);
+
+                var firstOutput = GenerateOutputText(workspaceRoot, seed: 12345, outputDirectoryName: "generated-output-a", outputFileName: "rng-context-different-seeds_realism_patch.json");
+                var secondOutput = GenerateOutputText(workspaceRoot, seed: 54321, outputDirectoryName: "generated-output-b", outputFileName: "rng-context-different-seeds_realism_patch.json");
+
+                Assert.NotEqual(firstOutput, secondOutput);
+        }
 
     [Fact]
     public void StoredPatches_FromMultipleTypes_RemainResolvableByItemId()
@@ -877,7 +931,7 @@ public sealed class RuleDataSynchronizationTests : IDisposable
                 Assert.Equal("RealismMod.Gun, RealismMod", patch["$type"]?.GetValue<string>());
                 Assert.Equal("Test WTT Weapon", patch["Name"]?.GetValue<string>());
                 Assert.Equal("bullpup", patch["WeapType"]?.GetValue<string>());
-                Assert.Equal(91, patch["Ergonomics"]?.GetValue<int>());
+                Assert.InRange(patch["Ergonomics"]?.GetValue<int>() ?? -1, 79, 97);
                 Assert.Equal(550, patch["SingleFireRate"]?.GetValue<int>());
                 Assert.Equal(1, patch["ConflictingItems"]?.AsArray().Count);
                 Assert.Null(patch["itemTplToClone"]);
